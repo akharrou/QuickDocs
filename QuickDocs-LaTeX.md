@@ -11,8 +11,6 @@ QuickDocs | $\LaTeX$
 
 <small>`[>commands >functions >funcs >fts >cmds >macros]`</small>
 
-- In $\LaTeX$, "_commands_" are essentially at times **_macros_** and at others **_functions_** –– in the sense that they take arguments and result in some form of output.
-
 - In $\LaTeX$, this output is in the form of either an **expansion** in source code, in which case they are referred to as **macros**, else their output is in **print** (i.e formatted output).
 
 - Commands follow the form:
