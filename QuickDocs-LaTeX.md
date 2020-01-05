@@ -1756,6 +1756,3 @@ The following is how to create a basic title page:
 %         depth of nested lists
 %     \blinddocument
 %         full document
-
-
-
