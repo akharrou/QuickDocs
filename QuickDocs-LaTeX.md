@@ -4,13 +4,15 @@ QuickDocs | $\LaTeX$
 
 ---
 
+<!-- TOC -->autoauto- [1. Common Elements](#1-common-elements)auto	- [1.1. [Commands / Macros](https://en.wikibooks.org/wiki/LaTeX/Macros)](#11-commands--macroshttpsenwikibooksorgwikilatexmacros)auto	- [1.2. [Document Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)](#12-document-classeshttpsenwikibooksorgwikilatexdocument_structuredocument_classes)auto	- [1.3. [Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)](#13-packageshttpsenwikibooksorgwikilatexdocument_structurepackages)auto	- [1.4. Document Structure](#14-document-structure)auto	- [1.5. Title Page](#15-title-page)auto	- [1.6. Table of Contents (ToC)](#16-table-of-contents-toc)autoauto<!-- /TOC -->
+
 
 # 1. Common Elements
 
 
 ## 1.1. [Commands / Macros](https://en.wikibooks.org/wiki/LaTeX/Macros)
 
-<small>`[>commands >functions >funcs >fts >cmds >macros]`</small>
+<small>`[Search Tags: Search Tags: >commands >functions >funcs >fts >cmds >macros]`</small>
 
 - In $\LaTeX$, the output of commands/macros is in the form of either an **expansion** in source code or in the form of **formatted print**.
 
@@ -27,7 +29,7 @@ QuickDocs | $\LaTeX$
 
 ## 1.2. [Document Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)
 
-<small>`[>init >documentclass >docclass >doclass >classes >doctype]`</small>
+<small>`[Search Tags: >init >documentclass >docclass >doclass >classes >doctype]`</small>
 
 -   When processing an input file, LaTeX needs to know which layout standard to use. Layouts standards are contained within 'class files' which have .cls as their filename extension.
 
@@ -54,7 +56,7 @@ Document | Classes
 -   There also exists non-generic classes (those provided by university departments or publication houses).
 -   These have different options than those shown below or no options at all. Normally, third-party classes come with their own documentation.
 
-<small>`[>docoptions >docops >dcops >documentoptions >documentops]`</small>
+<small>`[Search Tags: >docoptions >docops >dcops >documentoptions >documentops]`</small>
 
 The most **common options** for the generic document classes are listed in the following table:
 
@@ -86,7 +88,7 @@ For example, if you want a report to be in `12pt` type on `A4`, but printed `one
 
 ## 1.3. [Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
 
-<small>`[>packages >packs >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs]`</small>
+<small>`[Search Tags: >packages >packs >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs]`</small>
 
 -   The command to import/use a package is:
 
@@ -126,7 +128,7 @@ The actual document content starts only after `\begin{document}` and ends at: `\
 
 ## 1.5. Title Page
 
-<small>`[>title >author >date >maketitle]`</small>
+<small>`[Search Tags: >title >author >date >maketitle]`</small>
 
 
 The following is how to create a basic title page:
@@ -142,7 +144,7 @@ The following is how to create a basic title page:
 
 
 ## 1.6. Table of Contents (ToC)
-<small>`[>toc, >lof, >lot, >tableofcontents, >tableoffigures >tableoftable]`</small>
+<small>`[Search Tags: >toc, >lof, >lot, >tableofcontents, >tableoffigures >tableoftable]`</small>
 
 % All auto-numbered headings get entered in the Table of Contents (ToC)
 % automatically. You don't have to print a ToC, but if you want to, just
