@@ -86,7 +86,7 @@ For example, if you want a report to be in `12pt` type on `A4`, but printed `one
 
 ## 1.3. [Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
 
-<small>`[>packages >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs]`</small>
+<small>`[>packages >packs >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs]`</small>
 
 -   The command to import/use a package is:
 
@@ -94,10 +94,10 @@ For example, if you want a report to be in `12pt` type on `A4`, but printed `one
     \usepackage[options]{package}
     ```
 
--   You can pass several options to a package, each separated by a comma.
+-   You can pass several (comma separated) options to a package.
 
     ```latex
-    \usepackage[option1,option2,option3]{''package_name''}
+    \usepackage[option1,option2,option3]{<package>}
     ```
 
 **Usage Example**:
