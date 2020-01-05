@@ -15,7 +15,7 @@ QuickDocs | $\LaTeX$
 
 - In $\LaTeX$, this output is in the form of either an **expansion** in source code, in which case they are referred to as **macros**, else their output is in **print** (i.e formatted output).
 
-- Commands follow the form: <br/><br/>
+- Commands follow the form:
 
 	```latex
 	\cmdname[<options>]{<argument>}{<argument>} ...  {<argument>}
@@ -31,7 +31,7 @@ QuickDocs | $\LaTeX$
 
 <small>`[>init >documentclass >docclass >doclass >classes >doctype]`</small>
 
--   When processing an input file, LaTeX needs to know which layout standard to use. Layouts standards are contained within 'class files' which have .cls as their filename extension. <br/><br/>
+-   When processing an input file, LaTeX needs to know which layout standard to use. Layouts standards are contained within 'class files' which have .cls as their filename extension.
 
     ```latex
     \documentclass[<options>]{<class>}
@@ -90,13 +90,13 @@ For example, if you want a report to be in `12pt` type on `A4`, but printed `one
 
 <small>`[>packages >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs]`</small>
 
--   The command to import/use a package is: <br/><br/>
+-   The command to import/use a package is:
 
     ```latex
     \usepackage[options]{package}
     ```
 
--   You can pass several options to a package, each separated by a comma. <br/><br/>
+-   You can pass several options to a package, each separated by a comma.
 
     ```latex
     \usepackage[option1,option2,option3]{''package_name''}
