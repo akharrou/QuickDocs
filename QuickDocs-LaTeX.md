@@ -7,6 +7,7 @@ QuickDocs | $\LaTeX$
 
 # 1. Common Elements
 
+
 ## 1.1. [Commands / Macros](https://en.wikibooks.org/wiki/LaTeX/Macros)
 
 <small>`[>commands >functions >funcs >fts >cmds >macros]`</small>
@@ -19,11 +20,8 @@ QuickDocs | $\LaTeX$
 	\cmdname[<options>]{<argument>}{<argument>} ...  {<argument>}
 	```
 
-- **commands** commands can take multiple (comma separated) options, all in the same square bracket `[]`, as well as multiple arguments given in individual curly brackets: `{#1}{#2} ... {#n}`.
-
 <!-- TODO LINK THE BELOW COMMANDS TO THEIR appropriate SECTIONS -->
 - See `\newcommand` and `\renewcommand` to, respectively, define new commands and redefine existing ones.
-
 
 
 
