@@ -1,21 +1,21 @@
 
-# QuickDocs | $\LaTeX$
-----
+QuickDocs | $\LaTeX$
+---
+
+---
 
 
+# 1. Common Elements
 
+## 1.1. [Commands / Macros](https://en.wikibooks.org/wiki/LaTeX/Macros)
 
-
-
-### [Commands / Macros](https://en.wikibooks.org/wiki/LaTeX/Macros)
-
-> `[>commands >functions >funcs >fts >cmds >macros]`
+<small>`[>commands >functions >funcs >fts >cmds >macros]`</small>
 
 - In $\LaTeX$, "_commands_" are essentially at times **_macros_** and at others **_functions_** –– in the sense that they take arguments and result in some form of output.
 
 - In $\LaTeX$, this output is in the form of either an **expansion** in source code, in which case they are referred to as **macros**, else their output is in **print** (i.e formatted output).
 
-- Commands follow the form:
+- Commands follow the form: <br/><br/>
 
 	```latex
 	\cmdname[<options>]{<argument>}{<argument>} ...  {<argument>}
@@ -27,59 +27,52 @@
 
 
 
+## 1.2. [Document Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)
 
+<small>`[>init >documentclass >docclass >doclass >classes >doctype]`</small>
 
+-   When processing an input file, LaTeX needs to know which layout standard to use. Layouts standards are contained within 'class files' which have .cls as their filename extension. <br/><br/>
 
-
-
-### [Document Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)
-
-> `[>init >documentclass >docclass >doclass >classes >doctype]`
-
--	When processing an input file, LaTeX needs to know which layout standard to use. Layouts standards are contained within 'class files' which have .cls as their filename extension.
-
-	```latex
-	\documentclass[<options>]{<class>}
-	```
+    ```latex
+    \documentclass[<options>]{<class>}
+    ```
 
     Here, the class parameter for the command `\documentclass` specifies the `.cls` file to use for the document. It is recommended to put this declaration at the very beginning.
 
-----
 The available **document classes** are:
 
 Document | Classes
----------|--------
-article | For articles in scientific journals, presentations, short reports, program documentation, invitations, ...
+---------|-------------------------------------------------------------------------------------------------------------------------------------
+article  | For articles in scientific journals, presentations, short reports, program documentation, invitations, ...
 IEEEtran | For articles with the IEEE Transactions format.
-proc | A class for proceedings based on the article class.
-report | For longer reports containing several chapters, small books, thesis, ...
-book | For real books.
-slides | For slides. The class uses big sans serif letters.
-memoir | For changing sensibly the output of the document. It is based on the book class, but you can create any kind of document with it [1]
-letter | For writing letters.
-beamer | For writing presentations (see LaTeX/Presentations).
+proc     | A class for proceedings based on the article class.
+report   | For longer reports containing several chapters, small books, thesis, ...
+book     | For real books.
+slides   | For slides. The class uses big sans serif letters.
+memoir   | For changing sensibly the output of the document. It is based on the book class, but you can create any kind of document with it [1]
+letter   | For writing letters.
+beamer   | For writing presentations (see LaTeX/Presentations).
 
-- There also exists non-generic classes (those provided by university departments or publication houses).
-- These have different options than those shown below or no options at all. Normally, third-party classes come with their own documentation.
+-   There also exists non-generic classes (those provided by university departments or publication houses).
+-   These have different options than those shown below or no options at all. Normally, third-party classes come with their own documentation.
 
-----
-> `[>docoptions >docops >dcops >documentoptions >documentops]`
+<small>`[>docoptions >docops >dcops >documentoptions >documentops]`</small>
 
 The most **common options** for the generic document classes are listed in the following table:
 
 
-Document | Class Options
----------|-------|
-10pt, 11pt, 12pt | Sets the size of the main font in the document. If no option is specified, 10pt is assumed.
+Document                 | Class Options
+-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10pt, 11pt, 12pt         | Sets the size of the main font in the document. If no option is specified, 10pt is assumed.
 a4paper, letterpaper,... | Defines the paper size. The default size is letterpaper; However, many European distributions of TeX now come pre-set for A4, not Letter, and this is also true of all distributions of pdfLaTeX. Besides that, a5paper, b5paper, executivepaper, and legalpaper can be specified.
-fleqn | Typesets displayed formulas left-aligned instead of centered.
-leqno | Places the numbering of formulas on the left hand side instead of the right.
-titlepage, notitlepage | Specifies whether a new page should be started after the document title or not. The article class does not start a new page by default, while report and book do.
-twocolumn | Instructs LaTeX to typeset the document in two columns instead of one.
-twoside, oneside | Specifies whether double or single sided output should be generated. The classes article and report are single sided and the book class is double sided by default. Note that this option concerns the style of the document only. The option twoside does not tell the printer you use that it should actually make a two-sided printout.
-landscape | Changes the layout of the document to print in landscape mode.
-openright, openany | Makes chapters begin either only on right hand pages or on the next page available. This does not work with the article class, as it does not know about chapters. The report class by default starts chapters on the next page available and the book class starts them on right hand pages.
-draft | makes LaTeX indicate hyphenation and justification problems with a small square in the right-hand margin of the problem line so they can be located quickly by a human. It also suppresses the inclusion of images and shows only a frame where they would normally occur.
+fleqn                    | Typesets displayed formulas left-aligned instead of centered.
+leqno                    | Places the numbering of formulas on the left hand side instead of the right.
+titlepage, notitlepage   | Specifies whether a new page should be started after the document title or not. The article class does not start a new page by default, while report and book do.
+twocolumn                | Instructs LaTeX to typeset the document in two columns instead of one.
+twoside, oneside         | Specifies whether double or single sided output should be generated. The classes article and report are single sided and the book class is double sided by default. Note that this option concerns the style of the document only. The option twoside does not tell the printer you use that it should actually make a two-sided printout.
+landscape                | Changes the layout of the document to print in landscape mode.
+openright, openany       | Makes chapters begin either only on right hand pages or on the next page available. This does not work with the article class, as it does not know about chapters. The report class by default starts chapters on the next page available and the book class starts them on right hand pages.
+draft                    | makes LaTeX indicate hyphenation and justification problems with a small square in the right-hand margin of the problem line so they can be located quickly by a human. It also suppresses the inclusion of images and shows only a frame where they would normally occur.
 
 **Example:**
 
@@ -93,37 +86,49 @@ For example, if you want a report to be in `12pt` type on `A4`, but printed `one
 
 
 
-### [Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
+## 1.3. [Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
 
-> `[>packages >libs >libraries >modules >mods >imports >includes >usepackage >pckgs >pkgs]`
+<small>`[>packages >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs]`</small>
 
-- "**_Packages_**" are synonym to **libraries** and/or **modules**. They import bundles of extra source code that make available extra functionalities.
+-   The command to import/use a package is: <br/><br/>
 
+    ```latex
+    \usepackage[options]{package}
+    ```
 
+-   You can pass several options to a package, each separated by a comma. <br/><br/>
+
+    ```latex
+    \usepackage[option1,option2,option3]{''package_name''}
+    ```
+
+**Usage Example**:
+
+```latex
+\documentclass{report}
+% ...
+
+\usepackage[inline]{enumitem}
+
+\begin{document}
+...
+\end{document}
 ```
-\usepackage [utf8]  { inputenc }  % ?
-\usepackage         { hyperref }  % Allow hyperlinking of sections
-
-% \usepackage         { tools    }  % Miscellaneous packages written by the LATEX3 project team.
-                                  % This collection of packages includes, at least, the following
-                                  % (some files may have % slightly different names on certain
-                                  % systems): array, calc, dcolumn, delarray, hhline, longtable,
-                                  % tabularx, afterpage, bm, enumerate, fontsmpl, ftnright,
-                                  % indentfirst, layout, multicol, rawfonts, % somedefs, showkeys,
-                                  % theorem, varioref, verbatim, xr, xspace
-```
 
 
-### Document Structure
+
+
+
+## 1.4. Document Structure
 
 The actual document content starts only after `\begin{document}` and ends at: `\end{document}`.
 
 `\begin` initiates here what is called an
 
 
-### Title Page
+## 1.5. Title Page
 
-> `[>title >author >date >maketitle]`
+<small>`[>title >author >date >maketitle]`</small>
 
 
 The following is how to create a basic title page:
@@ -138,8 +143,8 @@ The following is how to create a basic title page:
 
 
 
-### Table of Contents (ToC)
-> `[>toc, >lof, >lot, >tableofcontents, >tableoffigures >tableoftable]`
+## 1.6. Table of Contents (ToC)
+<small>`[>toc, >lof, >lot, >tableofcontents, >tableoffigures >tableoftable]`</small>
 
 % All auto-numbered headings get entered in the Table of Contents (ToC)
 % automatically. You don't have to print a ToC, but if you want to, just
