@@ -11,7 +11,7 @@ QuickDocs | $\LaTeX$
 
 <small>`[>commands >functions >funcs >fts >cmds >macros]`</small>
 
-- In $\LaTeX$, this output is in the form of either an **expansion** in source code, in which case they are referred to as **macros**, else their output is in **print** (i.e formatted output).
+- In $\LaTeX$, the output of commands/macros is in the form of either an **expansion** in source code or in the form of **formatted print**.
 
 - Commands follow the form:
 
@@ -19,9 +19,11 @@ QuickDocs | $\LaTeX$
 	\cmdname[<options>]{<argument>}{<argument>} ...  {<argument>}
 	```
 
-- All **commands** are prepended by backslash `\`, can take `options` in square brackets `[]` and can take argument(s) in subsequent curly brackets `{#1}` `{#2}` ... `{#n}`. But they need not to, it depends on the implementation of the command obviously.
+- **commands** commands can take multiple (comma separated) options, all in the same square bracket `[]`, as well as multiple arguments given in individual curly brackets: `{#1}{#2} ... {#n}`.
 
-- See how to define new commands with `\newcommand` and how to redefine existing ones with `\renewcommand` in sections §ref & §ref, respectively.
+<!-- TODO LINK THE BELOW COMMANDS TO THEIR appropriate SECTIONS -->
+- See `\newcommand` and `\renewcommand` to, respectively, define new commands and redefine existing ones.
+
 
 
 
