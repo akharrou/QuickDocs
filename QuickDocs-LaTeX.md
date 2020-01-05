@@ -5,12 +5,12 @@ QuickDocs | $\LaTeX$
 ---
 
 [1. Common Elements](#1-common-elements)
-    [1.1. [Commands / Macros]](#11-commands--macros)
-    [1.2. [Document Classes]](#12-document-classes)
-    [1.3. [Packages]](#13-packages)
+    [1.1. Commands / Macros](#11-commands--macros)
+    [1.2. Document Classes](#12-document-classes)
+    [1.3. Packages](#13-packages)
     [1.4. Document Structure](#14-document-structure)
     [1.5. Title Page](#15-title-page)
-    [1.6. Table of Contents (ToC)](#16-table-of-contents-toc)
+    [1.6. Table of Contents](#16-table-of-contents-toc)
 
 
 # 1. Common Elements
