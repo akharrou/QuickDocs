@@ -298,7 +298,7 @@ Result:
 ### 2.4.3. Definition Lists
 <small>`[Search Tags: >list.defs >list.definitions >definitionlists >listdefinitions >deflists >listsdefs >deflists >listdefs]`</small>
 
-> $\small [Note:$ -	Not all Markdown processors allow you to create _definition lists_. $\small - \space end \space note]$
+> $\small [Note:$ Not all Markdown processors support this feature. $\small - \space end \space note]$
 
 -	To create a definition list, type the term on the first line. On the next line, type a colon followed by a space and the definition.
 
@@ -336,6 +336,8 @@ Second Term
 ### 2.4.4. Task Lists
 <small>`[Search Tags: >list.tasks >tasklists >listtasks >tasklists >liststasks]`</small>
 
+> $\small [Note:$ Not all Markdown processors support this feature. $\small - \space end \space note]$
+
 -	Task lists allow you to create a list of items with checkboxes.
 -	To create a task list, add dashes (`-`) and brackets with a space (`[ ]`) in front of task list items. To select a checkbox, add an `x` in between the brackets (`[x]`).
 
@@ -350,7 +352,6 @@ The rendered output looks like this:
 - [ ] Update the website
 - [ ] Contact the media
 
-> $\small [Note:$ Not all Markdown processors support ***task lists***. $\small - \space end \space note]$
 
 
 ## 2.5. Horizontal Rules
@@ -682,7 +683,10 @@ _**Rendered Output:**_
 ## 3.5. Footnotes
 <small>`[Search Tags: >footnotes >notesfoot]`</small>
 
+> $\small [Note:$ Not all Markdown processors support this feature. $\small - \space end \space note]$
+
 -	***Footnotes allow you*** to add notes and references without cluttering the body of the document. When you create a footnote, a superscript number with a link appears where you added the footnote reference. Readers can click the link to jump to the content of the footnote at the bottom of the page.
+<br>
 
 -	*To create a* ***footnote reference***: `[^<footnote-id>]`, e.g.:
 
@@ -690,10 +694,13 @@ _**Rendered Output:**_
 	Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 	```
 
+
 -	*To create the* ***footnote***: `[^<footnote-id]: <footnote>`
 
 	```
-	[^1]: This is a footnote example.
+	[^1]: This is a footnote example. If you are seeing this at the very bottom of the
+	screen then your processor supports this feature, otherwise it doesn't.
+
 	[^bignote]: Here's Here's another foot note example, one with multiple paragraphs
 		and code.
 
@@ -706,23 +713,25 @@ _**Rendered Output:**_
 
 -	Identifiers can be numbers or words, but they can’t contain spaces or tabs. Identifiers only correlate the footnote reference with the footnote itself — in the output, footnotes are numbered sequentially.
 
--	The rendered output looks like this:
+_**Example:**_
 
-	Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
-	[^1]: This is a footnote example.
-	[^bignote]: Here's another foot note example, one with multiple paragraphs
-		and code.
+[^1]: This is a footnote example. If you are seeing this at the very bottom of the
+screen then your processor supports this feature, otherwise it doesn't.
 
-	    Indent paragraphs to include them in the footnote.
-	    `{ my code }`
-	    Add as many paragraphs as you like.
+[^bignote]: Here's another foot note example, one with multiple paragraphs
+	and code.
+
+	Indent paragraphs to include them in the footnote.
+		`{ my code }`
+	Add as many paragraphs as you like.
 
 
 ## 3.6. Latex
 <small>`[Search Tags: >LaTeX]`</small>
 
-> $\small [Note:$ Not all Markdown processors support $\LaTeX$. $\small - \space end \space note]$
+> $\small [Note:$ Not all Markdown processors support this feature. $\small - \space end \space note]$
 
 -	You can insert inline $\LaTeX$ by enclosing (source) text in dollar signs: `$<text>$`.
 
