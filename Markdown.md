@@ -29,8 +29,8 @@ QuickDocs \| Markdown
 -	[3. Span Elements](#3-span-elements)
 	-	[3.1. Links & References](#31-links--references)
 		-	[3.1.1. Inline Links](#311-inline-links)
+			-	[3.1.1.1. Automatic Links](#3111-automatic-links)
 		-	[3.1.2. Reference Links](#312-reference-links)
-		-	[3.1.3. Automatic Links](#313-automatic-links)
 	-	[3.2. Emphasis](#32-emphasis)
 		-	[3.2.1. Bold](#321-bold)
 		-	[3.2.2. Italic](#322-italic)
@@ -470,16 +470,6 @@ This is another regular paragraph.
 
 	>– place the text you desire to link between a pair of (square) brackets `[]` and follow it by a pair of parentheses `()` immediately after, and place within it the _**URL**_ or **_relative path_** (to a file) where you want the link to point, along with an _optional_ title, after the link, in the parentheses, surrounded in quotes.
 
--	To quickly turn a URL or email address into a link, enclose it in angle brackets, e.g.:
-
-	```markdown
-	<email-address>
-
-	<url-address>
-	```
-
-	> See [3.1.3. Automatic Links](#313-automatic-links).
-
 **Example:**
 
 ```
@@ -488,8 +478,6 @@ This is another regular paragraph.
 2. [This link](http://example.net/) has no title attribute.
 
 3. See my [About](/about/) page for details.
-
-4. <https://www.fakewebsite.org> or <fake@example.com>
 ```
 
 Output:
@@ -498,6 +486,25 @@ Output:
 > 2. [This link](http://example.net/) has no title attribute.
 > 3. See my [About](/about/) page for details.
 > 4. <https://www.fakewebsite.org> or <fake@example.com>
+
+#### 3.1.1.1. Automatic Links
+<small>`[Search Tags: >autolinks >automaticlinks >linksautomatic >linkautomatic >emails >linkemails >emaillinks >link.emails >links.emails >emaillinkage >emailslinkage >emailreferences >referenceemails]`</small>
+
+-	Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses.
+-	_**Create an (automatic) Link:**_ `<<email-address>>`, `<<URL>>`
+
+	> – enclose the email-address or URL in angle brackets.
+
+**Example:**
+
+```markdown
+<http://example.com/>
+<address@example.com>
+```
+Rendered Output:
+
+<http://example.com/>
+<address@example.com>
 
 
 ### 3.1.2. Reference Links
@@ -509,15 +516,15 @@ Output:
 		```markdown
 		[<linked-text>][<reference-id>]
 		...
-		[<reference-id>]: <link | relative-path>  "<link-info-title>"
+		[<reference-id>]: <link | relative-path>  "<link-title>"
 		```
 
 	-	***Implicit linking***:
 
 		```markdown
-		[<Linked-Text>][]
+		[<linked-text>][]
 		...
-		[<Linked-Text>]: <Link>
+		[<linked-text>]: <link | relative-path>
 		```
 
 	> – reference-style links use a second set of square brackets, inside which you place a **label** of your choosing to ***identify the link***.
@@ -555,21 +562,6 @@ I get 10 times more traffic from [Google][] than from
   [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
   [msn]:    http://search.msn.com/    "MSN Search"
 ```
-
-### 3.1.3. Automatic Links
-<small>`[Search Tags: >autolinks >automaticlinks >linksautomatic >linkautomatic >emails >linkemails >emaillinks >link.emails >links.emails >emaillinkage >emailslinkage >emailreferences >referenceemails]`</small>
-
--	Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses.
--	To quickly turn a URL or email address into a link, enclose it in angle brackets:
-
-	```markdown
-	<http://example.com/>
-	<address@example.com>
-	```
-	Becomes:
-
-	<http://example.com/>
-	<address@example.com>
 
 
 ## 3.2. Emphasis
