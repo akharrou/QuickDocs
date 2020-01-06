@@ -514,7 +514,7 @@ Rendered Output:
 
 -	_**Create a (reference) link:**_
 
-	-	***Create an explicit reference***:
+	-	***explicit reference***:
 		```markdown
 		[<linked-text>][<reference-id>] <!-- Creation -->
 		...
@@ -524,7 +524,7 @@ Rendered Output:
 		>   – enclose the text you desire to link in a pair of square brackets `[]`, follow it by another pair of square brackets `[]`, inside of which write a `reference-id`, which can be understood as a label/tag/identifier, something to identify the reference with, it can be comprised of letters and/or digits. <br> <br> Then, the `reference-id`/label/tag/identifier must be defined, i.e assigned to it a URL or relative-path (to a file). <br> <br> To do so – and this can be done anywhere in the document – place between a pair of square brackets the `reference-id`/label/tag/identifier, follow it by a colon (`:`), then your URL or relative path (to a file) and optionally a title for your link, in quotes (`""`|`''`).
 
 
-	-	***Create an implicit reference***:
+	-	***implicit reference***:
 
 		```markdown
 		[<linked-text>][] <!-- Creation -->
