@@ -470,7 +470,15 @@ This is another regular paragraph.
 
 	>– place the text you desire to link between a pair of (square) brackets `[]` and follow it by a pair of parentheses `()` immediately after, and place within it the _**URL**_ or **_relative path_** (to a file) where you want the link to point, along with an _optional_ title, after the link, in the parentheses, surrounded in quotes.
 
--	To quickly turn a URL or email address into a link, enclose it in angle brackets, e.g.: `<<email-address>>` or `<<url-address>>`; see [3.1.3. Automatic Links](#313-automatic-links).
+-	To quickly turn a URL or email address into a link, enclose it in angle brackets, e.g.:
+
+	```markdown
+	<<email-address>>`
+
+	<<url-address>>
+	```
+
+	> See [3.1.3. Automatic Links](#313-automatic-links).
 
 **Example:**
 
