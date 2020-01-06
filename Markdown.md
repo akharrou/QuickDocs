@@ -44,7 +44,8 @@ QuickDocs \| Markdown
 	-	[3.7. Escape Characters](#37-escape-characters)
 		-	[3.7.1. Automated Escaping](#371-automated-escaping)
 		-	[3.7.2. Backslash Escapes](#372-backslash-escapes)
-	-	[3.8. Great Resources](#38-great-resources)
+-	[4. Appendices](#4-appendices)
+	-	[4.1. Resources](#41-resources)
 
 <!-- TOC -->
 
@@ -808,7 +809,10 @@ _   underscore
 !   exclamation mark
 ```
 
-## 3.8. Great Resources
+# 4. Appendices
+
+## 4.1. Resources
+<small>[Search Tags: >resources >ressources >greatlinks >greatresources >guides >cheatsheets >documentation >docs]</small>
 
 | # | Type | Author | Link |
 | - | ---- | ------ | ---- |
