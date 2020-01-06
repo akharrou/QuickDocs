@@ -817,14 +817,14 @@ _   underscore
 
 | # | Type | Author | Link |
 | - | ---- | ------ | ---- |
-| 1 | Documentation | Markdown Author(s) | [Official Markdown Documentation][1] |
-| 2 | Guide | Markdownguide | [Markdown Documentation][2] |
-| 3 | Cheat Sheet | Markdownguide | [Markdown Cheat Sheet][3] |
+| 1 | Documentation | Markdown Author(s) | [Official Markdown Documentation][11] |
+| 2 | Guide | Markdownguide | [Markdown Documentation][22] |
+| 3 | Cheat Sheet | Markdownguide | [Markdown Cheat Sheet][33] |
 
 <!-- Links -->
-[3]: https://www.markdownguide.org/cheat-sheet/
+[33]: https://www.markdownguide.org/cheat-sheet/
 	"Markdownguide \| Markdown Cheat Sheet"
-[2]: https://www.markdownguide.org/basic-syntax/
+[22]: https://www.markdownguide.org/basic-syntax/
 	"Markdownguide \| Markdown Documentation"
-[1]: https://daringfireball.net/projects/markdown/syntax
+[11]: https://daringfireball.net/projects/markdown/syntax
 	"Markdown Authors \| Official Documentation"
