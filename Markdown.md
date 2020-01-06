@@ -468,7 +468,7 @@ This is another regular paragraph.
 
 -	_**Create an (inline) link:**_ `[<linked-text>](<URL | relative-path> "<optional-title>")`
 
-	>– place the text you desire to link between a pair of (square) brackets `[]` and follow it by a pair of parentheses `()` immediately after, and place within it the _**URL**_ or **_relative path_** (to a file) where you want the link to point, along with an _optional_ title, after the said link, in the (same) parentheses, surrounded in quotes (`""`|`''`).
+	>– place the text you desire to link between a pair of (square) brackets `[]` and follow it by a pair of parentheses `()`, placing within it the _**URL**_ or **_relative path_** (to a file) where you want the link to point, along with an _optional_ title, after the said link, in the (same) parentheses, surrounded in quotes (`""`|`''`).
 
 **Example:**
 
