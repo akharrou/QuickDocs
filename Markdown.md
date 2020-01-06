@@ -2,34 +2,35 @@ QuickDocs \| Markdown
 ====
 > _**January 2020**_
 
+
 <!-- TOC -->
+
 -	[1. Overview / Cheat Sheet](#1-overview--cheat-sheet)
 	-	[1.1. Basic Syntax](#11-basic-syntax)
 	-	[1.2. Extended Syntax](#12-extended-syntax)
 -	[2. Block Elements](#2-block-elements)
-	-	[2.1. Title, Author, Date](#21-title-author-date)
-	-	[2.2. Headers](#22-headers)
-		-	[2.2.1. atx Headers](#221-atx-headers)
-		-	[2.2.2. Setext Headers](#222-setext-headers)
-		-	[2.2.3. Defining Heading  IDs](#223-defining-heading--ids)
-		-	[2.2.4. Linking to Heading IDs](#224-linking-to-heading-ids)
-	-	[2.3. Paragraphs](#23-paragraphs)
-	-	[2.4. Blockquotes](#24-blockquotes)
-	-	[2.5. Lists](#25-lists)
-		-	[2.5.1. Unordered Lists](#251-unordered-lists)
-		-	[2.5.2. Ordered Lists](#252-ordered-lists)
-		-	[2.5.3. Definition Lists](#253-definition-lists)
-		-	[2.5.4. Task Lists](#254-task-lists)
-	-	[2.6. Horizontal Rules](#26-horizontal-rules)
-	-	[2.7. Code Spans & Blocks](#27-code-spans--blocks)
-		-	[2.7.1. Code Blocks](#271-code-blocks)
-		-	[2.7.2. Code Spans](#272-code-spans)
-	-	[2.8. Inline/Embed HTML](#28-inlineembed-html)
+	-	[2.1. Headers](#21-headers)
+		-	[2.1.1. atx Headers](#211-atx-headers)
+		-	[2.1.2. Setext Headers](#212-setext-headers)
+		-	[2.1.3. Defining Heading  IDs](#213-defining-heading--ids)
+		-	[2.1.4. Linking to Heading IDs](#214-linking-to-heading-ids)
+	-	[2.2. Paragraphs](#22-paragraphs)
+	-	[2.3. Blockquotes](#23-blockquotes)
+	-	[2.4. Lists](#24-lists)
+		-	[2.4.1. Unordered Lists](#241-unordered-lists)
+		-	[2.4.2. Ordered Lists](#242-ordered-lists)
+		-	[2.4.3. Definition Lists](#243-definition-lists)
+		-	[2.4.4. Task Lists](#244-task-lists)
+	-	[2.5. Horizontal Rules](#25-horizontal-rules)
+	-	[2.6. Code Spans & Blocks](#26-code-spans--blocks)
+		-	[2.6.1. Code Blocks](#261-code-blocks)
+		-	[2.6.2. Code Spans](#262-code-spans)
+	-	[2.7. Inline/Embed HTML](#27-inlineembed-html)
 -	[3. Span Elements](#3-span-elements)
 	-	[3.1. Links & References](#31-links--references)
 		-	[3.1.1. Inline Links](#311-inline-links)
 		-	[3.1.2. Reference Links](#312-reference-links)
-		-	[3.1.3. Automatic Links](#313-automatic-links)
+	-	[3.1.3. Automatic Links](#313-automatic-links)
 	-	[3.2. Emphasis](#32-emphasis)
 		-	[3.2.1. Bold](#321-bold)
 		-	[3.2.2. Italic](#322-italic)
@@ -44,6 +45,7 @@ QuickDocs \| Markdown
 		-	[3.7.1. Automated Escaping](#371-automated-escaping)
 		-	[3.7.2. Backslash Escapes](#372-backslash-escapes)
 	-	[3.8. Great Resources](#38-great-resources)
+
 <!-- TOC -->
 
 
@@ -88,20 +90,14 @@ These elements extend the basic syntax by adding additional features. Not all Ma
 # 2. Block Elements
 <small>`[Search Tags: >part01 >part1 >chapter1 >chap1 >blockelements >elementsblock >elementblock >part.01 >part.1 >chapter.1 >chap.1 >block.elements >elements.block >element.block]`</small>
 
-## 2.1. Title, Author, Date
-<small>`[Search Tags: >title >author >date]`</small>
 
--	You can start a document by
-
-
-
-## 2.2. Headers
+## 2.1. Headers
 <small>`[Search Tags: >headers >hders >hdrs >titles]`</small>
 
 Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.net/mirror/setext.html) and [atx](http://www.aaronsw.com/2002/atx/).
 
 
-### 2.2.1. atx Headers
+### 2.1.1. atx Headers
 <small>`[Search Tags: >headers.atx >header.atx >atxheaders >atx.headers >atxhders >atxhdrs]`</small>
 
 -	Atx-style headers use 1-6 hash characters at the start of the line, corresponding to header levels 1-6.
@@ -124,7 +120,7 @@ Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.ne
 > ```
 >$\small - \space end \space note]$
 
-### 2.2.2. Setext Headers
+### 2.1.2. Setext Headers
 
 <small>`[Search Tags: >headers.setex >header.setex >setextheaders >setexthders >settexthdrs]`</small>
 
@@ -144,7 +140,7 @@ Title (Level 2)
 ------
 ```
 
-### 2.2.3. Defining Heading  IDs
+### 2.1.3. Defining Heading  IDs
 <small>`[Search Tags: >defineheaderids >defheadids >definitionheaderids >headers.ids >header.ids >idheaders >idsheaders >ids.headers >idhders >idhdrs >hdrids >headerids >headeridentity >hdrsids >ids >headingids >headingidentity >headids >headrids >headidentity]`</small>
 
 -	Many Markdown processors support custom IDs for headings — some Markdown processors automatically add them.
@@ -161,7 +157,7 @@ Title (Level 2)
 	<h3 id="custom-id">My Great Heading</h3>
 	```
 
-### 2.2.4. Linking to Heading IDs
+### 2.1.4. Linking to Heading IDs
 <small>`[Search Tags: >linkhdrs >linkheaders >linkheads >linkheadrs >headlinks >headlinking]`</small>
 
 -	You can link to headings with the custom IDs that you've defined, in your Markdown file, for your headers.
@@ -176,7 +172,7 @@ Markdown | HTML | Rendered Output
 	`[<linked-text>](https://www.website.com/section#<heading-ID>)`
 
 
-## 2.3. Paragraphs
+## 2.2. Paragraphs
 <small>`[Search Tags: >paragraphs >paras >text]`</small>
 
 -	A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines.
@@ -194,7 +190,7 @@ its end as well.
 ```
 
 
-## 2.4. Blockquotes
+## 2.3. Blockquotes
 <small>`[Search Tags: >quoteblocks >quotes >blockquotes >quotations >nestedquotes >nestquotes]`</small>
 
 -	Blockquotes are nice looking quote formatting, it looks like this:
@@ -243,12 +239,12 @@ its end as well.
 ```
 
 
-## 2.5. Lists
+## 2.4. Lists
 <small>`[Search Tags: >lists >enums >bulletpoints >checklists >dropdownlists]`</small>
 
 -	Markdown supports **ordered (numbered)** and **unordered (bulleted)** lists.
 
-### 2.5.1. Unordered Lists
+### 2.4.1. Unordered Lists
 <small>`[Search Tags: >list.unorder >list.unordered >lists.unorder >lists.unordered >unorder.lists >unordered.lists >unorderedlists >unorderlists >listunordered >ulists]`</small>
 
 -	They use asterisks (`*`), pluses (`+`), and hyphens (`-`),  interchangably, as list markers:
@@ -263,7 +259,7 @@ its end as well.
 > *  Green
 > *  Blue
 
-### 2.5.2. Ordered Lists
+### 2.4.2. Ordered Lists
 <small>`[Search Tags: >list.order >list.ordered >lists.order >lists.ordered >order.lists >ordered.lists >orderedlists >orderlists >listordered >olists]`</small>
 
 -	They use numbers (`1. 2. 3. ...`) followed by periods:
@@ -299,7 +295,7 @@ Result:
 -	You can have *words*, *sentences*, *paragraphs*, *quotes*, *code* *spans/blocks*, *images*, *etc.,* as list items.
 
 
-### 2.5.3. Definition Lists
+### 2.4.3. Definition Lists
 <small>`[Search Tags: >list.defs >list.definitions >definitionlists >listdefinitions >deflists >listsdefs >deflists >listdefs]`</small>
 
 > $\small [Note:$ -	Not all Markdown processors allow you to create _definition lists_. $\small - \space end \space note]$
@@ -337,7 +333,7 @@ Second Term
 : This is another definition of the second term.
 
 
-### 2.5.4. Task Lists
+### 2.4.4. Task Lists
 <small>`[Search Tags: >list.tasks >tasklists >listtasks >tasklists >liststasks]`</small>
 
 -	Task lists allow you to create a list of items with checkboxes.
@@ -357,7 +353,7 @@ The rendered output looks like this:
 > $\small [Note:$ Not all Markdown processors support ***task lists***. $\small - \space end \space note]$
 
 
-## 2.6. Horizontal Rules
+## 2.5. Horizontal Rules
 <small>`[Search Tags: >horizontalrules >rules >lines >straightlines >hlines >horilines >horizlines >linehorizontal >lineshorizontal >horizontals >horzis]`</small>
 
 -	You can produce a line --- horizontal rule tag (`<hr />`) --- by placing three or more *hyphens* (`-`), *asterisks* (`*`), or *underscores* (`_`) on a line by themselves.
@@ -383,13 +379,13 @@ ___
 > ___
 
 
-## 2.7. Code Spans & Blocks
+## 2.6. Code Spans & Blocks
 
 <small>`[Search Tags: >code >ttfamily >typewriter >raw]`</small>
 
 There are 2 methods to inserting code in your markdown. One is inlined, ***code spans***, the other is not, ***code blocks***.
 
-### 2.7.1. Code Blocks
+### 2.6.1. Code Blocks
 <small>`[Search Tags: >codeblocks >blockscodes >blockcode]`</small>
 
 -	Code blocks are (non-inlined) code environments.
@@ -416,7 +412,7 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 
 > $\small [Note:$	It is also possible to create a code block by preprending each line of code with one level of indentation --- 4 spaces or a tab. Syntax highlighting is not supported with this; it is better to stick to the former way. $\small - \space end \space note]$
 
-### 2.7.2. Code Spans
+### 2.6.2. Code Spans
 
 <small>`[Search Tags: >codespans >spanscodes >spancode >codesspans]`</small>
 
@@ -432,7 +428,7 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 ```
 --- his code span needed three backticks, on either sides, to be enclosed properly.
 
-## 2.8. Inline/Embed HTML
+## 2.7. Inline/Embed HTML
 <small>`[Search Tags: >inlinehtml >embed.html >embedhtml >htmlemded >htmlembedding >htmlinline]`</small>
 
 -	You can write **HTML** inline in your markdown.

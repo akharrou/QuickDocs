@@ -1,22 +1,11 @@
 
-QuickDocs | $\LaTeX$
----
-
----
-
-[1. Common Elements](#1-common-elements)
-    [1.1. Commands / Macros](#11-commands--macros)
-    [1.2. Document Classes](#12-document-classes)
-    [1.3. Packages](#13-packages)
-    [1.4. Document Structure](#14-document-structure)
-    [1.5. Title Page](#15-title-page)
-    [1.6. Table of Contents](#16-table-of-contents-toc)
+QuickDocs \| $\LaTeX$
+===
 
 
-# 1. Common Elements
 
 
-## 1.1. [Commands / Macros](https://en.wikibooks.org/wiki/LaTeX/Macros)
+## Commands / Macros
 
 <small>`[Search Tags: Search Tags: >commands >functions >funcs >fts >cmds >macros]`</small>
 
@@ -33,7 +22,7 @@ QuickDocs | $\LaTeX$
 
 
 
-## 1.2. [Document Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)
+## [Document Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)
 
 <small>`[Search Tags: >init >documentclass >docclass >doclass >classes >doctype]`</small>
 
@@ -92,7 +81,7 @@ For example, if you want a report to be in `12pt` type on `A4`, but printed `one
 
 
 
-## 1.3. [Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
+## [Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
 
 <small>`[Search Tags: >packages >packs >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs]`</small>
 
@@ -125,14 +114,14 @@ For example, if you want a report to be in `12pt` type on `A4`, but printed `one
 
 
 
-## 1.4. Document Structure
+## Document Structure
 
 The actual document content starts only after `\begin{document}` and ends at: `\end{document}`.
 
 `\begin` initiates here what is called an
 
 
-## 1.5. Title Page
+## Title Page
 
 <small>`[Search Tags: >title >author >date >maketitle]`</small>
 
@@ -149,7 +138,7 @@ The following is how to create a basic title page:
 
 
 
-## 1.6. Table of Contents (ToC)
+## Table of Contents (ToC)
 <small>`[Search Tags: >toc, >lof, >lot, >tableofcontents, >tableoffigures >tableoftable]`</small>
 
 % All auto-numbered headings get entered in the Table of Contents (ToC)
