@@ -732,7 +732,7 @@ Markdown | HTML | Rendered Output
 
 _**Example:**_
 
-Here Newton’s universal law of gravitation:
+Here's Newton’s universal law of gravitation:
 
 ```markdown
 $$
