@@ -300,7 +300,8 @@ Result:
 ### 2.4.3. Definition Lists
 <small>`[Search Tags: >list.defs >list.definitions >definitionlists >listdefinitions >deflists >listsdefs >deflists >listdefs]`</small>
 
--	Some Markdown processors allow you to create _definition lists_ of terms and their corresponding definitions.
+> $\small [Note:$ -	Not all Markdown processors allow you to create _definition lists_. $\small - \space end \space note]$
+
 -	To create a definition list, type the term on the first line. On the next line, type a colon followed by a space and the definition.
 
 ```markdown
@@ -351,7 +352,7 @@ The rendered output looks like this:
 - [ ] Update the website
 - [ ] Contact the media
 
-> $\small [Note:$ Certain Markdown applications don't support ***task lists***. $\small - \space end \space note]$
+> $\small [Note:$ Not all Markdown processors support ***task lists***. $\small - \space end \space note]$
 
 
 ## 2.5. Horizontal Rules
