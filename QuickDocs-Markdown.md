@@ -1,47 +1,49 @@
-QuickDocs | Markdown
-----
+QuickDocs \| Markdown
+====
+> _**January 2020**_
 
 <!-- TOC -->
-<br>[1. Overview / Cheat Sheet](#1-overview--cheat-sheet)
-<br>[1.1. Basic Syntax](#11-basic-syntax)
-<br>[1.2. Extended Syntax](#12-extended-syntax)
-<br>[2. Block Elements](#2-block-elements)
-<br>[2.1. Headers](#21-headers)
-<br>[2.1.1. atx Headers](#211-atx-headers)
-<br>[2.1.2. Setext Headers](#212-setext-headers)
-<br>[2.1.3. Defining Heading  IDs](#213-defining-heading--ids)
-<br>[2.1.4. Linking to Heading IDs](#214-linking-to-heading-ids)
-<br>[2.2. Paragraphs](#22-paragraphs)
-<br>[2.3. Blockquotes](#23-blockquotes)
-<br>[2.4. Lists](#24-lists)
-<br>[2.4.1. Unordered Lists](#241-unordered-lists)
-<br>[2.4.2. Ordered Lists](#242-ordered-lists)
-<br>[2.4.3. Definition Lists](#243-definition-lists)
-<br>[2.4.4. Task Lists](#244-task-lists)
-<br>[2.5. Horizontal Rules](#25-horizontal-rules)
-<br>[2.6. Code Spans & Blocks](#26-code-spans--blocks)
-<br>[2.6.1. Code Blocks](#261-code-blocks)
-<br>[2.6.2. Code Spans](#262-code-spans)
-<br>[2.7. Inline/Embed HTML](#27-inlineembed-html)
-<br>[3. Span Elements](#3-span-elements)
-<br>[3.1. Links & References](#31-links--references)
-<br>[3.1.1. Inline Links](#311-inline-links)
-<br>[3.1.2. Reference Links](#312-reference-links)
-<br>[3.1.3. Automatic Links](#313-automatic-links)
-<br>[3.2. Emphasis](#32-emphasis)
-<br>[3.2.1. Bold](#321-bold)
-<br>[3.2.2. Italic](#322-italic)
-<br>[3.2.3. Bold & Italic](#323-bold--italic)
-<br>[3.2.4. Strikethrough (Extended Syntax)](#324-strikethrough-extended-syntax)
-<br>[3.3. Images](#33-images)
-<br>[3.4. Tables](#34-tables)
-<br>[3.4.1. Alignment](#341-alignment)
-<br>[3.5. Footnotes](#35-footnotes)
-<br>[3.6. Escape Characters](#36-escape-characters)
-<br>[3.6.1. Automated Escaping](#361-automated-escaping)
-<br>[3.6.2. Backslash Escapes](#362-backslash-escapes)
-<br>[3.7. Great Resources](#37-great-resources)
+- [1. Overview / Cheat Sheet](#1-overview--cheat-sheet)
+  - [1.1. Basic Syntax](#11-basic-syntax)
+  - [1.2. Extended Syntax](#12-extended-syntax)
+-	[2. Block Elements](#2-block-elements)
+	-	[2.1. Headers](#21-headers)
+		-	[2.1.1. atx Headers](#211-atx-headers)
+		-	[2.1.2. Setext Headers](#212-setext-headers)
+		-	[2.1.3. Defining Heading  IDs](#213-defining-heading--ids)
+		-	[2.1.4. Linking to Heading IDs](#214-linking-to-heading-ids)
+	-	[2.2. Paragraphs](#22-paragraphs)
+	-	[2.3. Blockquotes](#23-blockquotes)
+	-	[2.4. Lists](#24-lists)
+		-	[2.4.1. Unordered Lists](#241-unordered-lists)
+		-	[2.4.2. Ordered Lists](#242-ordered-lists)
+		-	[2.4.3. Definition Lists](#243-definition-lists)
+		-	[2.4.4. Task Lists](#244-task-lists)
+	-	[2.5. Horizontal Rules](#25-horizontal-rules)
+	-	[2.6. Code Spans & Blocks](#26-code-spans--blocks)
+		-	[2.6.1. Code Blocks](#261-code-blocks)
+		-	[2.6.2. Code Spans](#262-code-spans)
+	-	[2.7. Inline/Embed HTML](#27-inlineembed-html)
+-	[3. Span Elements](#3-span-elements)
+	-	[3.1. Links & References](#31-links--references)
+		-	[3.1.1. Inline Links](#311-inline-links)
+		-	[3.1.2. Reference Links](#312-reference-links)
+		-	[3.1.3. Automatic Links](#313-automatic-links)
+	-	[3.2. Emphasis](#32-emphasis)
+		-	[3.2.1. Bold](#321-bold)
+		-	[3.2.2. Italic](#322-italic)
+		-	[3.2.3. Bold & Italic](#323-bold--italic)
+		-	[3.2.4. Strikethrough (Extended Syntax)](#324-strikethrough-extended-syntax)
+	-	[3.3. Images](#33-images)
+	-	[3.4. Tables](#34-tables)
+	-	[3.4.1. Alignment](#341-alignment)
+	-	[3.5. Footnotes](#35-footnotes)
+	-	[3.6. Escape Characters](#36-escape-characters)
+		-	[3.6.1. Automated Escaping](#361-automated-escaping)
+		-	[3.6.2. Backslash Escapes](#362-backslash-escapes)
+	-	[3.7. Great Resources](#37-great-resources)
 <!-- TOC -->
+
 
 # 1. Overview / Cheat Sheet
 <small>`[Search Tags: >overview >cheat >sheet >cheatsheet >quick >revise >revision]`</small>
@@ -83,6 +85,13 @@ These elements extend the basic syntax by adding additional features. Not all Ma
 
 # 2. Block Elements
 <small>`[Search Tags: >part01 >part1 >chapter1 >chap1 >blockelements >elementsblock >elementblock >part.01 >part.1 >chapter.1 >chap.1 >block.elements >elements.block >element.block]`</small>
+
+## 2.1. Title, Author, Date
+<small>`[Search Tags: >title >author >date]`</small>
+
+-	You can start a document by
+
+
 
 ## 2.1. Headers
 <small>`[Search Tags: >headers >hders >hdrs >titles]`</small>
@@ -675,6 +684,7 @@ Markdown | HTML | Rendered Output
 	```
 
 -	*To create the* ***footnote***: `[^<footnote-id]: <footnote>`
+
 	```
 	[^1]: This is a footnote example.
 	[^bignote]: Here's Here's another foot note example, one with multiple paragraphs
@@ -691,17 +701,15 @@ Markdown | HTML | Rendered Output
 
 -	The rendered output looks like this:
 
-	Here's a simple footnote,[^1] and here's a longer one.[^bignote].
+	Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
-[^1]: This is a footnote example.
+	[^1]: This is a footnote example.
+	[^bignote]: Here's another foot note example, one with multiple paragraphs
+		and code.
 
-[^bignote]: Here's another foot note example, one with multiple paragraphs and code.
-
-	Indent paragraphs to include them in the footnote.
-
-	`{ my code }`
-
-	Add as many paragraphs as you like.
+	    Indent paragraphs to include them in the footnote.
+	    `{ my code }`
+	    Add as many paragraphs as you like.
 
 
 ## 3.6. Escape Characters
