@@ -654,12 +654,12 @@ Markdown | HTML | Rendered Output
 	| Paragraph   | Text        | And more      |
 	```
 
-***Rendered Output:*** <br>
+***Rendered Output:***
 
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Super      | Title       | Here   |
-| Pad   | Text        | And more      |
+| Syntax | Description | Test Text |
+|--------|-------------|-----------|
+| Super  | Title       | Here      |
+| Pad    | Text        | And more  |
 
 
 ## 3.5. Footnotes
