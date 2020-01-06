@@ -458,7 +458,7 @@ This is another regular paragraph.
 
 
 ## 3.1. Links & References
-<small>`[Search Tags: >links >linking >linkage >references >refs >urls >websites]`</small>
+<small>`[Search Tags: >links >linking >linkage >references >refs >urls >websites >urllinks >urlslink linkurls >linkwebsites >websitelinks]`</small>
 
 -	Markdown supports two style of links: ***inline*** and ***reference***
 -	In both styles, the *link **text*** is delimited by square brackets `[]`.
@@ -466,9 +466,13 @@ This is another regular paragraph.
 ### 3.1.1. Inline Links
 <small>`[Search Tags: >inlinelinks >inlinelinking >inlinelinkage >inlinereferences >inlinerefs >link.inline >links.inline >linking.inline >linkage.inline >references.inline >refs.inline]`</small>
 
--	To create an inline link, use a set of regular parentheses immediately after the link text’s closing square bracket. Inside the parentheses, put the URL where you want the link to point, along with an _optional_ title for the link, surrounded in quotes.
+-	_**Create an (inline) link:**_ `[<linked-text>](<link | relative-path> "<optional-title>")`
+
+	>– place the text you desire to link between a pair of (square) brackets `[]` and follow it by a pair of parentheses `()` immediately after, and place within it the _**URL**_ or **_relative path_** (to a file) where you want the link to point, along with an _optional_ title for the link after the link, in the parentheses, surrounded in quotes.
+
 -	If you’re referring to a local resource on the same server, you can use relative paths.
--	To quickly turn a URL or email address into a link, enclose it in angle brackets. See {#Automatic Links}
+
+-	To quickly turn a URL or email address into a link, enclose it in angle brackets. See [Automatic Links](#313-automatic-links)
 
 **Example:**
 
@@ -491,9 +495,26 @@ Output:
 
 
 ### 3.1.2. Reference Links
-<small>`[Search Tags: >referencelinks >referencelinking >referencelinkage >references >link.references >links.references >linking.references >linkage.references]`</small>
+<small>`[Search Tags: >referencelinks >referencelinking >referencelinkage >references >link.references >links.references >linking.references >linkage.references >reflinks]`</small>
 
--	Reference-style links use a second set of square brackets, inside which you place a **label** of your choosing to ***identify the link***.
+-	_**Create a (reference) link:**_
+
+	-	***Explicit linking***:
+		```markdown
+		[<linked-text>][<reference-id>]
+		...
+		[<reference-id>]: <link | relative-path>  "<link-info-title>"
+		```
+
+	-	***Implicit linking***:
+
+		```markdown
+		[<Linked-Text>][]
+		...
+		[<Linked-Text>]: <Link>
+		```
+
+	> – reference-style links use a second set of square brackets, inside which you place a **label** of your choosing to ***identify the link***.
 	```
 	This is [an example][id] reference-style link.
 	```
@@ -504,21 +525,6 @@ Output:
 	```
 
 -	Link definition names (`id`) may consist of *letters*, *numbers*, *spaces*, and *punctuation* — but they are **_not_ case sensitive**, i.e `a` <==> `A`.
-
--	***Explicit linking***:
-	```markdown
-	[<Linked-Text>][<Link-Name>]
-	...
-	[<Link-Name>]: <Link>  "<Link-Info-Title>"
-	```
-
--	***Implicit linking***:
-
-	```markdown
-	[<Linked-Text>][]
-	...
-	[<Linked-Text>]: <Link>
-	```
 
 **Example:**
 
@@ -544,7 +550,7 @@ I get 10 times more traffic from [Google][] than from
   [msn]:    http://search.msn.com/    "MSN Search"
 ```
 
-### 3.1.3. Automatic Links
+### 3.1.3. Automatic Links {#auto-links}
 <small>`[Search Tags: >autolinks >automaticlinks >linksautomatic >linkautomatic >emails >linkemails >emaillinks >link.emails >links.emails >emaillinkage >emailslinkage >emailreferences >referenceemails]`</small>
 
 -	Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses.
