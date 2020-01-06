@@ -473,9 +473,9 @@ This is another regular paragraph.
 -	To quickly turn a URL or email address into a link, enclose it in angle brackets, e.g.:
 
 	```markdown
-	<<email-address>>`
+	<email-address>
 
-	<<url-address>>
+	<url-address>
 	```
 
 	> See [3.1.3. Automatic Links](#313-automatic-links).
