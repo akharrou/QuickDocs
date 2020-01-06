@@ -1,26 +1,56 @@
 QuickDocs | Markdown
 ----
 
-# Overview / Cheat Sheet
+<!-- TOC -->autoauto- [1. Overview / Cheat Sheet](#1-overview--cheat-sheet)auto	- [1.1. Basic Syntax](#11-basic-syntax)auto	- [1.2. Extended Syntax](#12-extended-syntax)auto- [2. Block Elements](#2-block-elements)auto	- [2.1. Headers](#21-headers)auto		- [2.1.1. atx Headers](#211-atx-headers)auto		- [2.1.2. Setext Headers](#212-setext-headers)auto		- [2.1.3. Defining Heading  IDs](#213-defining-heading--ids)auto		- [2.1.4. Linking to Heading IDs](#214-linking-to-heading-ids)auto	- [2.2. Paragraphs](#22-paragraphs)auto	- [2.3. Blockquotes](#23-blockquotes)auto	- [2.4. Lists](#24-lists)auto		- [2.4.1. Unordered Lists](#241-unordered-lists)auto		- [2.4.2. Ordered Lists](#242-ordered-lists)auto		- [2.4.3. Definition Lists](#243-definition-lists)auto		- [2.4.4. Task Lists](#244-task-lists)auto	- [2.5. Horizontal Rules](#25-horizontal-rules)auto	- [2.6. Code Spans & Blocks](#26-code-spans--blocks)auto		- [2.6.1. Code Blocks](#261-code-blocks)auto		- [2.6.2. Code Spans](#262-code-spans)auto	- [2.7. Inline/Embed HTML](#27-inlineembed-html)auto- [3. Span Elements](#3-span-elements)auto	- [3.1. Links & References](#31-links--references)auto		- [3.1.1. Inline Links](#311-inline-links)auto		- [3.1.2. Reference Links](#312-reference-links)auto		- [3.1.3. Automatic Links](#313-automatic-links)auto	- [3.2. Emphasis](#32-emphasis)auto		- [3.2.1. Bold](#321-bold)auto		- [3.2.2. Italic](#322-italic)auto		- [3.2.3. Bold & Italic](#323-bold--italic)auto		- [3.2.4. Strikethrough (Extended Syntax)](#324-strikethrough-extended-syntax)auto	- [3.3. Images](#33-images)auto	- [3.4. Tables](#34-tables)auto		- [3.4.1. Alignment](#341-alignment)auto	- [3.5. Footnotes](#35-footnotes)auto	- [3.6. Escape Characters](#36-escape-characters)auto		- [3.6.1. Automated Escaping](#361-automated-escaping)auto		- [3.6.2. Backslash Escapes](#362-backslash-escapes)auto	- [3.7. Great Resources](#37-great-resources)autoauto<!-- /TOC -->
+
+# 1. Overview / Cheat Sheet
+<small>`[Search Tags: >overview >cheat >sheet >cheatsheet >quick >revise >revision]`</small>
+
+## 1.1. Basic Syntax
+<small>`[Search Tags: >basicsyntax >syntax.basic>]`</small>
+
+All Markdown applications support these elements.
+
+| Element | Markdown Syntax
+| :-------------- | :---------------------------------------------------------
+| Heading | `# H1` <br> `## H2` <br> `### H3`
+| Bold | `**bold text**`
+| Italic | `*italicized text*`
+| Blockquote | `> blockquote`
+| Ordered List | `1. First item` <br> `2. Second item` <br> `3. Third item`
+| Unordered List | `- First item` <br> `* Second item` <br> `+ Third item`
+| Code | `` `code` ``
+| Horizontal Rule | `---`
+| Link | `[title](https://www.example.com)`
+| Image | `![alt text](image.jpg)`
 
 
->TODO
+## 1.2. Extended Syntax
+<small>`[Search Tags: >extendedsyntax >syntax.extended>]`</small>
+
+These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.
+
+| Element | Markdown Syntax
+| :----------------- | -----------------------------------
+| Table | `| Syntax | Description |`<br> `| ----------- | ----------- |` <br> `| Header | Title |` <br> `| Paragraph | Text |`
+| Fenced Code Block | ``` <br> `{` <br> `"firstName": "John",` <br> `"lastName": "Smith",` <br> `"age": 25` <br> `}` <br> \`\`\`
+| Footnote | `Here's a sentence with a footnote. [^1]` <br> <br>`[^1]: This is the footnote.`
+| Heading ID | `### My Great Heading {#custom-id}`
+| Definition List | `term` <br> `: definition`
+| Strikethrough | `~~The world is flat.~~`
+| Task List | `- [x] Write the press release` <br> `- [ ] Update the website` <br> `- [ ] Contact the media`
 
 
->
-
-
-
-# Block Elements
+# 2. Block Elements
 <small>`[Search Tags: >part01 >part1 >chapter1 >chap1 >blockelements >elementsblock >elementblock >part.01 >part.1 >chapter.1 >chap.1 >block.elements >elements.block >element.block]`</small>
 
-## Headers
+## 2.1. Headers
 <small>`[Search Tags: >headers >hders >hdrs >titles]`</small>
 
 Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.net/mirror/setext.html) and [atx](http://www.aaronsw.com/2002/atx/).
 
 
-### atx Headers
+### 2.1.1. atx Headers
 <small>`[Search Tags: >headers.atx >header.atx >atxheaders >atx.headers >atxhders >atxhdrs]`</small>
 
 -	Atx-style headers use 1-6 hash characters at the start of the line, corresponding to header levels 1-6.
@@ -43,7 +73,7 @@ Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.ne
 > ```
 >$\small - \space end \space note]$
 
-### Setext Headers
+### 2.1.2. Setext Headers
 
 <small>`[Search Tags: >headers.setex >header.setex >setextheaders >setexthders >settexthdrs]`</small>
 
@@ -63,7 +93,7 @@ Title (Level 2)
 ------
 ```
 
-### Defining Heading  IDs
+### 2.1.3. Defining Heading  IDs
 <small>`[Search Tags: >defineheaderids >defheadids >definitionheaderids >headers.ids >header.ids >idheaders >idsheaders >ids.headers >idhders >idhdrs >hdrids >headerids >headeridentity >hdrsids >ids >headingids >headingidentity >headids >headrids >headidentity]`</small>
 
 -	Many Markdown processors support custom IDs for headings — some Markdown processors automatically add them.
@@ -80,7 +110,7 @@ Title (Level 2)
 	<h3 id="custom-id">My Great Heading</h3>
 	```
 
-### Linking to Heading IDs
+### 2.1.4. Linking to Heading IDs
 <small>`[Search Tags: >linkhdrs >linkheaders >linkheads >linkheadrs >headlinks >headlinking]`</small>
 
 -	You can link to headings with the custom IDs that you've defined, in your Markdown file, for your headers.
@@ -95,7 +125,7 @@ Markdown | HTML | Rendered Output
 	`[<linked-text>](https://www.website.com/section#<heading-ID>)`
 
 
-## Paragraphs
+## 2.2. Paragraphs
 <small>`[Search Tags: >paragraphs >paras >text]`</small>
 
 -	A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines.
@@ -113,7 +143,7 @@ its end as well.
 ```
 
 
-## Blockquotes
+## 2.3. Blockquotes
 <small>`[Search Tags: >quoteblocks >quotes >blockquotes >quotations >nestedquotes >nestquotes]`</small>
 
 -	Blockquotes are nice looking quote formatting, it looks like this:
@@ -162,12 +192,12 @@ its end as well.
 ```
 
 
-## Lists
+## 2.4. Lists
 <small>`[Search Tags: >lists >enums >bulletpoints >checklists >dropdownlists]`</small>
 
 -	Markdown supports **ordered (numbered)** and **unordered (bulleted)** lists.
 
-### Unordered Lists
+### 2.4.1. Unordered Lists
 <small>`[Search Tags: >list.unorder >list.unordered >lists.unorder >lists.unordered >unorder.lists >unordered.lists >unorderedlists >unorderlists >listunordered >ulists]`</small>
 
 -	They use asterisks (`*`), pluses (`+`), and hyphens (`-`),  interchangably, as list markers:
@@ -182,7 +212,7 @@ its end as well.
 > *  Green
 > *  Blue
 
-### Ordered Lists
+### 2.4.2. Ordered Lists
 <small>`[Search Tags: >list.order >list.ordered >lists.order >lists.ordered >order.lists >ordered.lists >orderedlists >orderlists >listordered >olists]`</small>
 
 -	They use numbers (`1. 2. 3. ...`) followed by periods:
@@ -218,7 +248,7 @@ Result:
 -	You can have *words*, *sentences*, *paragraphs*, *quotes*, *code* *spans/blocks*, *images*, *etc.,* as list items.
 
 
-### Definition Lists
+### 2.4.3. Definition Lists
 <small>`[Search Tags: >list.defs >list.definitions >definitionlists >listdefinitions >deflists >listsdefs >deflists >listdefs]`</small>
 
 -	Some Markdown processors allow you to create _definition lists_ of terms and their corresponding definitions.
@@ -255,7 +285,7 @@ Second Term
 : This is another definition of the second term.
 
 
-### Task Lists
+### 2.4.4. Task Lists
 <small>`[Search Tags: >list.tasks >tasklists >listtasks >tasklists >liststasks]`</small>
 
 -	Task lists allow you to create a list of items with checkboxes.
@@ -275,7 +305,7 @@ The rendered output looks like this:
 > $\small [Note:$ Certain Markdown applications don't support ***task lists***. $\small - \space end \space note]$
 
 
-## Horizontal Rules
+## 2.5. Horizontal Rules
 <small>`[Search Tags: >horizontalrules >rules >lines >straightlines >hlines >horilines >horizlines >linehorizontal >lineshorizontal >horizontals >horzis]`</small>
 
 -	You can produce a line --- horizontal rule tag (`<hr />`) --- by placing three or more *hyphens* (`-`), *asterisks* (`*`), or *underscores* (`_`) on a line by themselves.
@@ -301,13 +331,13 @@ ___
 > ___
 
 
-## Code Spans & Blocks
+## 2.6. Code Spans & Blocks
 
 <small>`[Search Tags: >code >ttfamily >typewriter >raw]`</small>
 
 There are 2 methods to inserting code in your markdown. One is inlined, ***code spans***, the other is not, ***code blocks***.
 
-### Code Blocks
+### 2.6.1. Code Blocks
 <small>`[Search Tags: >codeblocks >blockscodes >blockcode]`</small>
 
 -	Code blocks are (non-inlined) code environments.
@@ -334,7 +364,7 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 
 > $\small [Note:$	It is also possible to create a code block by preprending each line of code with one level of indentation --- 4 spaces or a tab. Syntax highlighting is not supported with this; it is better to stick to the former way. $\small - \space end \space note]$
 
-### Code Spans
+### 2.6.2. Code Spans
 
 <small>`[Search Tags: >codespans >spanscodes >spancode >codesspans]`</small>
 
@@ -350,7 +380,7 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 ```
 --- his code span needed three backticks, on either sides, to be enclosed properly.
 
-## Inline/Embed HTML
+## 2.7. Inline/Embed HTML
 <small>`[Search Tags: >inlinehtml >embed.html >embedhtml >htmlemded >htmlembedding >htmlinline]`</small>
 
 -	You can write **HTML** inline in your markdown.
@@ -374,17 +404,17 @@ This is another regular paragraph.
 ```
 
 
-# Span Elements
+# 3. Span Elements
 <small>`[Search Tags: >part02 >part2 >chapter2 >chap2 >spanelements >elementsspans >elementspans >part.02 >part.2 >chapter.2 >chap.2 >span.elements >spans.elements >elements.spans >element.spans]`</small>
 
 
-## Links & References
+## 3.1. Links & References
 <small>`[Search Tags: >links >linking >linkage >references >refs >urls >websites]`</small>
 
--	Markdown supports two style of links: *inline* and *reference*
+-	Markdown supports two style of links: ***inline*** and ***reference***
 -	In both styles, the *link **text*** is delimited by square brackets `[]`.
 
-### Inline Links
+### 3.1.1. Inline Links
 <small>`[Search Tags: >inlinelinks >inlinelinking >inlinelinkage >inlinereferences >inlinerefs >link.inline >links.inline >linking.inline >linkage.inline >references.inline >refs.inline]`</small>
 
 -	To create an inline link, use a set of regular parentheses immediately after the link text’s closing square bracket. Inside the parentheses, put the URL where you want the link to point, along with an _optional_ title for the link, surrounded in quotes.
@@ -411,7 +441,7 @@ Output:
 > 4. <https://www.fakewebsite.org> or <fake@example.com>
 
 
-### Reference Links
+### 3.1.2. Reference Links
 <small>`[Search Tags: >referencelinks >referencelinking >referencelinkage >references >link.references >links.references >linking.references >linkage.references]`</small>
 
 -	Reference-style links use a second set of square brackets, inside which you place a **label** of your choosing to ***identify the link***.
@@ -452,7 +482,6 @@ I get 10 times more traffic from [Google] [1] than from
   [1]: http://google.com/        "Google"
   [2]: http://search.yahoo.com/  "Yahoo Search"
   [3]: http://search.msn.com/    "MSN Search"
-
 ```
 
  - Implicit link name shortcut:
@@ -466,7 +495,7 @@ I get 10 times more traffic from [Google][] than from
   [msn]:    http://search.msn.com/    "MSN Search"
 ```
 
-### Automatic Links
+### 3.1.3. Automatic Links
 <small>`[Search Tags: >autolinks >automaticlinks >linksautomatic >linkautomatic >emails >linkemails >emaillinks >link.emails >links.emails >emaillinkage >emailslinkage >emailreferences >referenceemails]`</small>
 
 -	Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses.
@@ -482,11 +511,11 @@ I get 10 times more traffic from [Google][] than from
 	<address@example.com>
 
 
-## Emphasis
+## 3.2. Emphasis
 <small>`[Search Tags: >fonts >fontstyles >emphasis >styles]`</small>
 
 
-### Bold
+### 3.2.1. Bold
 <small>`[Search Tags: >bold >strong]`</small>
 
 Markdown | HTML | Rendered Output
@@ -496,7 +525,7 @@ Markdown | HTML | Rendered Output
 `Love**is**bold` | Love<strong>is</strong>bold | Loveisbold
 
 
-### Italic
+### 3.2.2. Italic
 <small>`[Search Tags: >italics]`</small>
 
 Markdown | HTML | Rendered Output
@@ -506,7 +535,7 @@ Markdown | HTML | Rendered Output
 `A*cat*meow` | A<em>cat</em>meow | Acatmeow
 
 
-### Bold & Italic
+### 3.2.3. Bold & Italic
 
 Markdown | HTML | Rendered Output
 ---------|------|----------------
@@ -515,7 +544,7 @@ Markdown | HTML | Rendered Output
 `This text is __*really important*__.` | This text is <strong><em>really important</em></strong>. | This text is really important.
 `This text is **_really important_**.` | This text is <strong><em>really important</em></strong>. | This text is really important.
 
-### Strikethrough (Extended Syntax)
+### 3.2.4. Strikethrough (Extended Syntax)
 <small>`[Search Tags: >strikethrough >strikes]`</small>
 
 **Example:**
@@ -525,7 +554,7 @@ Markdown | HTML | Rendered Output
 ~~The world is flat.~~
 
 
-## Images
+## 3.3. Images
 <small>`[Search Tags: >images >graphics >pics >pictures >photos >pasteimage >imagepaste >imagepasting]`</small>
 
 -	Inserting images into markdown is done in the exact same manner and syntax as links but with a preceding exclamation (`!`) mark:
@@ -545,44 +574,103 @@ Markdown | HTML | Rendered Output
 -	As of this writing, Markdown has no syntax for specifying the dimensions of an image; if this is important to you, you can simply use regular HTML `<img>` tags.
 
 
-## Tables
-<small>`[Search Tags: >tables >tabs >dictionaries >charts >grids]`</small>
+## 3.4. Tables
+<small>`[Search Tags: >tabls >tebles >tables >tabs >dictionaries >charts >grids]`</small>
 
->TODO
+-	To add a table, use three or more hyphens (`---`) to create each column’s header, and use pipes (`|`) to separate each column. You can optionally add pipes on either end of the table.
 
-| Author | Link |
+-	Cell widths can vary, as shown below. The rendered output will look the same.
+
+***Example:***
+```
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+```
+```
+| Syntax | Description |
 | --- | ----------- |
-| Markdownguide | [Tables](https://www.markdownguide.org/extended-syntax/#alignment) |
+| Header | Title |
+| Paragraph | Text |
+```
 
-### Alignment
+***Rendered Output:*** (for both)
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+
+
+### 3.4.1. Alignment
 <small>`[Search Tags: >tabalignment >aligntables >aligntabs]`</small>
 
-> Good Ressources:
->| Author | Link |
->| --- | ----------- |
-| Markdownguide | [Alignement](https://www.markdownguide.org/extended-syntax/#alignment) |
+-	You can align text in the columns to the left, right, or center by adding a colon (`:`) to the left, right, or on both side of the hyphens within the header row.
+
+	```
+	| Syntax      | Description | Test Text     |
+	| :---        |    :----:   |          ---: |
+	| Header      | Title       | Here's this   |
+	| Paragraph   | Text        | And more      |
+	```
+
+***Rendered Output:***
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Super      | Title       | Here   |
+| Pad   | Text        | And more      |
 
 
-
-## Footnotes
+## 3.5. Footnotes
 <small>`[Search Tags: >footnotes >notesfoot]`</small>
 
->TODO
+-	***Footnotes allow you*** to add notes and references without cluttering the body of the document. When you create a footnote, a superscript number with a link appears where you added the footnote reference. Readers can click the link to jump to the content of the footnote at the bottom of the page.
+
+-	*To create a* ***footnote reference***: `[^<footnote-id>]`, e.g.:
+
+	```
+	Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+	```
+
+-	*To create the* ***footnote***: `[^<footnote-id]: <footnote>`
+	```
+	[^1]: This is a footnote example.
+	[^bignote]: Here's Here's another foot note example, one with multiple paragraphs
+		and code.
+
+	    Indent paragraphs to include them in the footnote.
+	    `{ my code }`
+	    Add as many paragraphs as you like.
+	```
+
+-	You don’t have to put footnotes at the end of the document. You can put them anywhere except inside other elements like lists, block quotes, and tables.
+
+-	Identifiers can be numbers or words, but they can’t contain spaces or tabs. Identifiers only correlate the footnote reference with the footnote itself — in the output, footnotes are numbered sequentially.
+
+-	The rendered output looks like this:
+
+	Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+
+	[^1]: This is a footnote example.
+	[^bignote]: Here's another foot note example, one with multiple paragraphs
+		and code.
+
+	    Indent paragraphs to include them in the footnote.
+	    `{ my code }`
+	    Add as many paragraphs as you like.
 
 
-
-
-## Escape Characters
+## 3.6. Escape Characters
 <small>`[Search Tags: >escapecharacers >escapechars >escchars >esccharacters >& >< >escapesequences >escpcharacters >escpchars >escpechars]`</small>
 
-### Automated Escaping
+### 3.6.1. Automated Escaping
 <small>`[Search Tags: >autoescapes >autoescapechars >autoescapecharacters]`</small>
 
 -	In **HTML**, there are two characters that demand special treatment: `<` and `&`. Left angle brackets are used to start tags; ampersands are used to denote HTML entities. If you want to use them as entities, e.g. `&lt;`, and `&amp;`.
 
 -	**Markdown** on the other hand allows you to use these character naturally. It takes care of all the necessary escaping for you. If you use an ampersand as part of an **HTML** entity, it remains unchanged; otherwise it will be translated into `&amp;`.
 
-### Backslash Escapes
+### 3.6.2. Backslash Escapes
 <small>`[Search Tags: >backslashcharacters >backslashescps >backslashescapecharacters >bkslhchars >backslashchars]`</small>
 
 -	Markdown allows you to use backslash escapes to generate literal characters which would otherwise have special meaning in Markdown’s formatting syntax.
@@ -602,3 +690,19 @@ _   underscore
 .   dot
 !   exclamation mark
 ```
+
+## 3.7. Great Resources
+
+| # | Type | Author | Link |
+| - | ---- | ------ | ---- |
+| 1 | Documentation | Markdown Author(s) | [Official Markdown Documentation][1] |
+| 2 | Guide | Markdownguide | [Markdown Documentation][2] |
+| 3 | Cheat Sheet | Markdownguide | [Markdown Cheat Sheet][3] |
+
+<!-- Links -->
+[3]: https://www.markdownguide.org/cheat-sheet/
+	"Markdownguide \| Markdown Cheat Sheet"
+[2]: https://www.markdownguide.org/basic-syntax/
+	"Markdownguide \| Markdown Documentation"
+[1]: https://daringfireball.net/projects/markdown/syntax
+	"Markdown Authors \| Official Documentation"
