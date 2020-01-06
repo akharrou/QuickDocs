@@ -655,6 +655,7 @@ Markdown | HTML | Rendered Output
 	```
 
 ***Rendered Output:***
+
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
 | Super      | Title       | Here   |
