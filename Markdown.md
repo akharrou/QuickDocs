@@ -556,7 +556,7 @@ I get 10 times more traffic from [Google][] than from
   [msn]:    http://search.msn.com/    "MSN Search"
 ```
 
-### 3.1.3. Automatic Links {#auto-links}
+### 3.1.3. Automatic Links
 <small>`[Search Tags: >autolinks >automaticlinks >linksautomatic >linkautomatic >emails >linkemails >emaillinks >link.emails >links.emails >emaillinkage >emailslinkage >emailreferences >referenceemails]`</small>
 
 -	Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses.
