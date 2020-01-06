@@ -810,6 +810,7 @@ _   underscore
 ```
 
 # 4. Appendices
+<small>[Search Tags: >appendices]</small>
 
 ## 4.1. Resources
 <small>[Search Tags: >resources >ressources >greatlinks >greatresources >guides >cheatsheets >documentation >docs]</small>
