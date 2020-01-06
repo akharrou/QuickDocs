@@ -466,9 +466,9 @@ This is another regular paragraph.
 ### 3.1.1. Inline Links
 <small>`[Search Tags: >inlinelinks >inlinelinking >inlinelinkage >inlinereferences >inlinerefs >link.inline >links.inline >linking.inline >linkage.inline >references.inline >refs.inline]`</small>
 
--	_**Create an (inline) link:**_ `[<linked-text>](<link | relative-path> "<optional-title>")`
+-	_**Create an (inline) link:**_ `[<linked-text>](<URL | relative-path> "<optional-title>")`
 
-	>– place the text you desire to link between a pair of (square) brackets `[]` and follow it by a pair of parentheses `()` immediately after, and place within it the _**URL**_ or **_relative path_** (to a file) where you want the link to point, along with an _optional_ title, after the link, in the parentheses, surrounded in quotes.
+	>– place the text you desire to link between a pair of (square) brackets `[]` and follow it by a pair of parentheses `()` immediately after, and place within it the _**URL**_ or **_relative path_** (to a file) where you want the link to point, along with an _optional_ title, after the said link, in the (same) parentheses, surrounded in quotes (`""`|`''`).
 
 **Example:**
 
@@ -514,56 +514,63 @@ Rendered Output:
 
 -	_**Create a (reference) link:**_
 
-	-	***Explicit linking***:
+	-	***Create an explicit reference***:
 		```markdown
-		[<linked-text>][<reference-id>]
+		[<linked-text>][<reference-id>] <!-- Creation -->
 		...
-		[<reference-id>]: <link | relative-path>  "<link-title>"
+		[<reference-id>]: <link | relative-path>  "<link-title>" <!-- Definition -->
 		```
 
-	-	***Implicit linking***:
+		>   – enclose the text you desire to link in a pair of square brackets `[]`, follow it by another pair of square brackets `[]`, inside of which write a `reference-id`, which can be understood as a label/tag/identifier, something to identify the reference with, it can be comprised of letters and/or digits. <br> <br> Then, the `reference-id`/label/tag/identifier must be defined, i.e assigned to it a URL or relative-path (to a file). <br> <br> To do so – and this can be done anywhere in the document – place between a pair of square brackets the `reference-id`/label/tag/identifier, follow it by a colon (`:`), then your URL or relative path (to a file) and optionally a title for your link, in quotes (`""`|`''`).
+
+
+	-	***Create an implicit reference***:
 
 		```markdown
-		[<linked-text>][]
+		[<linked-text>][] <!-- Creation -->
 		...
-		[<linked-text>]: <link | relative-path>
+		[<linked-text>]: <URL | relative-path> "<link-title> <!-- Definition -->
 		```
 
-	> – reference-style links use a second set of square brackets, inside which you place a **label** of your choosing to ***identify the link***.
-	```
-	This is [an example][id] reference-style link.
-	```
--	Then, anywhere in the document, you define your **link label**, i.e assign to it a link.
+		> – again do the exact same as with _explicit references_ only – in the _creation phase_ of the reference – leave the the pair of square brackets, that is supposed to have the `reference-id`, empty. <br><br> This is because in the _definition phase_ of the reference, it will be the `linked-text` that will serve as `reference-id`.
 
-	```
-	[id]: http://example.com/  "Optional Title Here"
-	```
-
--	Link definition names (`id`) may consist of *letters*, *numbers*, *spaces*, and *punctuation* — but they are **_not_ case sensitive**, i.e `a` <==> `A`.
+-	`reference-id`s may consist of *letters*, *numbers*, *spaces*, and *punctuation* — but they are **_not_ case sensitive**, i.e `a` $<=>$ `A`.
 
 **Example:**
 
--	*Reference links in action:*
+-	*Explicit Reference Links:*
 
 ```
-I get 10 times more traffic from [Google] [1] than from
-[Yahoo] [2] or [MSN] [3].
+These are explicit links: [Google][1], [Yahoo][2] or [MSN][3].
 
-  [1]: http://google.com/        "Google"
+  [1]: http://google.com/        'Google'
   [2]: http://search.yahoo.com/  "Yahoo Search"
   [3]: http://search.msn.com/    "MSN Search"
 ```
 
- - Implicit link name shortcut:
+-	*Implicit Reference Links:*
 
 ```
-I get 10 times more traffic from [Google][] than from
-[Yahoo][] or [MSN][].
+And these are implicit links: [Google][], [Yahoo][] or [MSN][].
 
   [google]: http://google.com/        "Google"
   [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
   [msn]:    http://search.msn.com/    "MSN Search"
 ```
+
+***Rendered Output:***
+
+These are explicit links: [Google][1], [Yahoo][2] or [MSN][3].
+
+  [1]: http://google.com/        'Google'
+  [2]: http://search.yahoo.com/  "Yahoo Search"
+  [3]: http://search.msn.com/    "MSN Search"
+
+And these are implicit links: [Google][], [Yahoo][] or [MSN][].
+
+  [google]: http://google.com/        "Google"
+  [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
+  [msn]:    http://search.msn.com/    "MSN Search"
 
 
 ## 3.2. Emphasis
