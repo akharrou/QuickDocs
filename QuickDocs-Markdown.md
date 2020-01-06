@@ -654,7 +654,7 @@ Markdown | HTML | Rendered Output
 	| Paragraph   | Text        | And more      |
 	```
 
-***Rendered Output:***
+Rendered Output:
 
 | Syntax | Description | Test Text |
 |--------|-------------|-----------|
