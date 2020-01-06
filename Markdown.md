@@ -625,6 +625,14 @@ Markdown | HTML | Rendered Output
 	```
 -	As of this writing, Markdown has no syntax for specifying the dimensions of an image; if this is important to you, you can simply use regular HTML `<img>` tags.
 
+_**Example:**_
+
+`![Lion | King of the Animal Kingdom](Assets/lion.jpg)`
+
+_**Rendered Output:**_
+
+![Lion | King of the Animal Kingdom](Assets/lion.jpg)
+
 
 ## 3.4. Tables
 <small>`[Search Tags: >tabls >tebles >tables >tabs >dictionaries >charts >grids]`</small>
