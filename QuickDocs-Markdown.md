@@ -691,14 +691,16 @@ Markdown | HTML | Rendered Output
 
 -	The rendered output looks like this:
 
-	Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+	Here's a simple footnote,[^1] and here's a longer one.[^bignote].
 
 [^1]: This is a footnote example.
-[^bignote]: Here's another foot note example, one with multiple paragraphs
-	and code.
+
+[^bignote]: Here's another foot note example, one with multiple paragraphs and code.
 
 	Indent paragraphs to include them in the footnote.
+
 	`{ my code }`
+
 	Add as many paragraphs as you like.
 
 
