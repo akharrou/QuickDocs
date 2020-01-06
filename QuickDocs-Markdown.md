@@ -7,6 +7,9 @@ QuickDocs | Markdown
 >TODO
 
 
+>
+
+
 
 # Block Elements
 <small>`[Search Tags: >part01 >part1 >chapter1 >chap1 >blockelements >elementsblock >elementblock >part.01 >part.1 >chapter.1 >chap.1 >block.elements >elements.block >element.block]`</small>
@@ -59,6 +62,37 @@ Title (Level 1)
 Title (Level 2)
 ------
 ```
+
+### Defining Heading  IDs
+<small>`[Search Tags: >defineheaderids >defheadids >definitionheaderids >headers.ids >header.ids >idheaders >idsheaders >ids.headers >idhders >idhdrs >hdrids >headerids >headeridentity >hdrsids >ids >headingids >headingidentity >headids >headrids >headidentity]`</small>
+
+-	Many Markdown processors support custom IDs for headings — some Markdown processors automatically add them.
+-	Adding custom IDs ***allows you to link directly to headings*** and modify them with CSS.
+-	To add a custom heading ID, enclose the custom ID in curly braces on the same line as the heading, where a custom ID can be any combination of letters and digits.
+
+	***Form:***
+	```markdown
+	### <Heading> {#<custom-id>}
+	```
+
+	***HTML:***
+	```html
+	<h3 id="custom-id">My Great Heading</h3>
+	```
+
+### Linking to Heading IDs
+<small>`[Search Tags: >linkhdrs >linkheaders >linkheads >linkheadrs >headlinks >headlinking]`</small>
+
+-	You can link to headings with the custom IDs that you've defined, in your Markdown file, for your headers.
+-	The syntax is the exact same as that of normal URL links, except that in the `<link>` portion, write the heading ID instead, preprended by a `#` (*hash*):
+
+Markdown | HTML | Rendered Output
+---------|------|----------------
+`[Heading ID](#heading-id)` | `<a  href="#heading-id">Heading ID</a>` | [Heading ID](#heading-id)
+
+-	Other websites can link to the heading by adding the custom heading ID to the full URL of the webpage, e.g.:
+
+	`[<linked-text>](https://www.website.com/section#<heading-ID>)`
 
 
 ## Paragraphs
@@ -185,10 +219,40 @@ Result:
 
 
 ### Definition Lists
-<small>`[Search Tags: >list.defs >list.definitions >definitionlists >listdefinitions >deflists >listsdefs]`</small>
+<small>`[Search Tags: >list.defs >list.definitions >definitionlists >listdefinitions >deflists >listsdefs >deflists >listdefs]`</small>
 
+-	Some Markdown processors allow you to create _definition lists_ of terms and their corresponding definitions.
+-	To create a definition list, type the term on the first line. On the next line, type a colon followed by a space and the definition.
 
->TODO
+```markdown
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
+```
+
+The HTML looks like this:
+```html
+<dl>
+  <dt>First Term</dt>
+  <dd>This is the definition of the first term.</dd>
+  <dt>Second Term</dt>
+  <dd>This is one definition of the second term. </dd>
+  <dd>This is another definition of the second term.</dd>
+</dl>
+
+```
+
+The rendered output looks like this:
+
+First Term
+: This is the definition of the first term.
+
+Second Term
+: This is one definition of the second term.
+: This is another definition of the second term.
 
 
 ### Task Lists
@@ -235,31 +299,6 @@ ___
 > - - -
 > ---------------------------------------
 > ___
-
-
-
-## Inline HTML
-<small>`[Search Tags: >inlinehtml >html >htmlinline]`</small>
-
--	You can write **HTML** inline in your markdown.
-
--	The only restrictions are that block-level HTML elements — e.g. `<div>`, `<table>`, `<pre>`, `<p>`, etc. — must be separated from surrounding content by blank lines, and the start and end tags of the block should not be indented with tabs or spaces.
-
--	You can’t use **Markdown-style**  (e.g. `*emphasis*`)  inside an **HTML** block.
-
-**Example**:
-
-```markdown
-This is a regular paragraph.
-
-<table>
-    <tr>
-        <td>Foo</td>
-    </tr>
-</table>
-
-This is another regular paragraph.
-```
 
 
 ## Code Spans & Blocks
@@ -310,6 +349,29 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 	```The name ``Tuple`2`` is a valid .NET type name.```
 ```
 --- his code span needed three backticks, on either sides, to be enclosed properly.
+
+## Inline/Embed HTML
+<small>`[Search Tags: >inlinehtml >embed.html >embedhtml >htmlemded >htmlembedding >htmlinline]`</small>
+
+-	You can write **HTML** inline in your markdown.
+
+-	The only restrictions are that block-level HTML elements — e.g. `<div>`, `<table>`, `<pre>`, `<p>`, etc. — must be separated from surrounding content by blank lines, and the start and end tags of the block should not be indented with tabs or spaces.
+
+-	You can’t use **Markdown-style**  (e.g. `*emphasis*`)  inside an **HTML** block.
+
+**Example**:
+
+```markdown
+This is a regular paragraph.
+
+<table>
+    <tr>
+        <td>Foo</td>
+    </tr>
+</table>
+
+This is another regular paragraph.
+```
 
 
 # Span Elements
@@ -420,13 +482,6 @@ I get 10 times more traffic from [Google][] than from
 	<address@example.com>
 
 
-### Markdown Heading &  ID Referencing
-
-
->TODO
-
-
-
 ## Emphasis
 <small>`[Search Tags: >fonts >fontstyles >emphasis >styles]`</small>
 
@@ -473,8 +528,21 @@ Markdown | HTML | Rendered Output
 ## Images
 <small>`[Search Tags: >images >graphics >pics >pictures >photos >pasteimage >imagepaste >imagepasting]`</small>
 
+-	Inserting images into markdown is done in the exact same manner and syntax as links but with a preceding exclamation (`!`) mark:
 
->TODO
+	**Inline:**
+	```markdown
+	![Alt text](/path/to/img.jpg)
+	...
+	![Alt text](/path/to/img.jpg "Optional title")
+	```
+	**Reference:**
+	```markdown
+	![Alt text][id]
+	...
+	[id]: url/to/image  "Optional title attribute"
+	```
+-	As of this writing, Markdown has no syntax for specifying the dimensions of an image; if this is important to you, you can simply use regular HTML `<img>` tags.
 
 
 ## Tables
