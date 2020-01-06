@@ -30,7 +30,7 @@ QuickDocs \| Markdown
 	-	[3.1. Links & References](#31-links--references)
 		-	[3.1.1. Inline Links](#311-inline-links)
 		-	[3.1.2. Reference Links](#312-reference-links)
-	-	[3.1.3. Automatic Links](#313-automatic-links)
+		-	[3.1.3. Automatic Links](#313-automatic-links)
 	-	[3.2. Emphasis](#32-emphasis)
 		-	[3.2.1. Bold](#321-bold)
 		-	[3.2.2. Italic](#322-italic)
@@ -472,7 +472,7 @@ This is another regular paragraph.
 
 -	If you’re referring to a local resource on the same server, you can use relative paths.
 
--	To quickly turn a URL or email address into a link, enclose it in angle brackets. See [Automatic Links](#313-automatic-links)
+-	To quickly turn a URL or email address into a link, enclose it in angle brackets, e.g.: `<<email-address>>` or `<<url-address>>`; see [3.1.3. Automatic Links](#313-automatic-links).
 
 **Example:**
 
