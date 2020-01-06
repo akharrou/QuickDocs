@@ -636,6 +636,7 @@ Markdown | HTML | Rendered Output
 ```
 
 ***Rendered Output:*** (for both)
+
 | Syntax      | Description |
 | ----------- | ----------- |
 | Header      | Title       |
@@ -647,14 +648,14 @@ Markdown | HTML | Rendered Output
 
 -	You can align text in the columns to the left, right, or center by adding a colon (`:`) to the left, right, or on both side of the hyphens within the header row.
 
-```markdown
-| Syntax      | Description | Test Text     |
-| :---        |    :----:   |          ---: |
-| Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
-```
+	```markdown
+	| Syntax      | Description | Test Text     |
+	| :---        |    :----:   |          ---: |
+	| Header      | Title       | Here's this   |
+	| Paragraph   | Text        | And more      |
+	```
 
-Rendered Output:
+***Rendered Output:***
 
 | Syntax | Description | Test Text |
 |--------|-------------|-----------|
