@@ -1,7 +1,47 @@
 QuickDocs | Markdown
 ----
 
-<!-- TOC -->autoauto- [1. Overview / Cheat Sheet](#1-overview--cheat-sheet)auto	- [1.1. Basic Syntax](#11-basic-syntax)auto	- [1.2. Extended Syntax](#12-extended-syntax)auto- [2. Block Elements](#2-block-elements)auto	- [2.1. Headers](#21-headers)auto		- [2.1.1. atx Headers](#211-atx-headers)auto		- [2.1.2. Setext Headers](#212-setext-headers)auto		- [2.1.3. Defining Heading  IDs](#213-defining-heading--ids)auto		- [2.1.4. Linking to Heading IDs](#214-linking-to-heading-ids)auto	- [2.2. Paragraphs](#22-paragraphs)auto	- [2.3. Blockquotes](#23-blockquotes)auto	- [2.4. Lists](#24-lists)auto		- [2.4.1. Unordered Lists](#241-unordered-lists)auto		- [2.4.2. Ordered Lists](#242-ordered-lists)auto		- [2.4.3. Definition Lists](#243-definition-lists)auto		- [2.4.4. Task Lists](#244-task-lists)auto	- [2.5. Horizontal Rules](#25-horizontal-rules)auto	- [2.6. Code Spans & Blocks](#26-code-spans--blocks)auto		- [2.6.1. Code Blocks](#261-code-blocks)auto		- [2.6.2. Code Spans](#262-code-spans)auto	- [2.7. Inline/Embed HTML](#27-inlineembed-html)auto- [3. Span Elements](#3-span-elements)auto	- [3.1. Links & References](#31-links--references)auto		- [3.1.1. Inline Links](#311-inline-links)auto		- [3.1.2. Reference Links](#312-reference-links)auto		- [3.1.3. Automatic Links](#313-automatic-links)auto	- [3.2. Emphasis](#32-emphasis)auto		- [3.2.1. Bold](#321-bold)auto		- [3.2.2. Italic](#322-italic)auto		- [3.2.3. Bold & Italic](#323-bold--italic)auto		- [3.2.4. Strikethrough (Extended Syntax)](#324-strikethrough-extended-syntax)auto	- [3.3. Images](#33-images)auto	- [3.4. Tables](#34-tables)auto		- [3.4.1. Alignment](#341-alignment)auto	- [3.5. Footnotes](#35-footnotes)auto	- [3.6. Escape Characters](#36-escape-characters)auto		- [3.6.1. Automated Escaping](#361-automated-escaping)auto		- [3.6.2. Backslash Escapes](#362-backslash-escapes)auto	- [3.7. Great Resources](#37-great-resources)autoauto<!-- /TOC -->
+<!-- TOC -->
+[1. Overview / Cheat Sheet](#1-overview--cheat-sheet)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.1. Basic Syntax](#11-basic-syntax)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1.2. Extended Syntax](#12-extended-syntax)
+[2. Block Elements](#2-block-elements)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.1. Headers](#21-headers)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.1.1. atx Headers](#211-atx-headers)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.1.2. Setext Headers](#212-setext-headers)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.1.3. Defining Heading  IDs](#213-defining-heading--ids)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.1.4. Linking to Heading IDs](#214-linking-to-heading-ids)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.2. Paragraphs](#22-paragraphs)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.3. Blockquotes](#23-blockquotes)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.4. Lists](#24-lists)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.4.1. Unordered Lists](#241-unordered-lists)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.4.2. Ordered Lists](#242-ordered-lists)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.4.3. Definition Lists](#243-definition-lists)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.4.4. Task Lists](#244-task-lists)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.5. Horizontal Rules](#25-horizontal-rules)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.6. Code Spans & Blocks](#26-code-spans--blocks)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.6.1. Code Blocks](#261-code-blocks)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.6.2. Code Spans](#262-code-spans)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[2.7. Inline/Embed HTML](#27-inlineembed-html)
+[3. Span Elements](#3-span-elements)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.1. Links & References](#31-links--references)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.1.1. Inline Links](#311-inline-links)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.1.2. Reference Links](#312-reference-links)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.1.3. Automatic Links](#313-automatic-links)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.2. Emphasis](#32-emphasis)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.2.1. Bold](#321-bold)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.2.2. Italic](#322-italic)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.2.3. Bold & Italic](#323-bold--italic)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.2.4. Strikethrough (Extended Syntax)](#324-strikethrough-extended-syntax)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.3. Images](#33-images)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.4. Tables](#34-tables)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.4.1. Alignment](#341-alignment)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.5. Footnotes](#35-footnotes)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.6. Escape Characters](#36-escape-characters)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.6.1. Automated Escaping](#361-automated-escaping)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.6.2. Backslash Escapes](#362-backslash-escapes)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.7. Great Resources](#37-great-resources)
+<!-- TOC -->
 
 # 1. Overview / Cheat Sheet
 <small>`[Search Tags: >overview >cheat >sheet >cheatsheet >quick >revise >revision]`</small>
