@@ -2,8 +2,10 @@ QuickDocs \| Markdown
 ====
 > _**January 2020**_
 
+
+
 <!-- TOC -->
-- [1. Overview / Cheat Sheet](#1-overview--cheat-sheet)
+<!-- - [1. Overview / Cheat Sheet](#1-overview--cheat-sheet)
   - [1.1. Basic Syntax](#11-basic-syntax)
   - [1.2. Extended Syntax](#12-extended-syntax)
 -	[2. Block Elements](#2-block-elements)
@@ -41,7 +43,7 @@ QuickDocs \| Markdown
 	-	[3.6. Escape Characters](#36-escape-characters)
 		-	[3.6.1. Automated Escaping](#361-automated-escaping)
 		-	[3.6.2. Backslash Escapes](#362-backslash-escapes)
-	-	[3.7. Great Resources](#37-great-resources)
+	-	[3.7. Great Resources](#37-great-resources) -->
 <!-- TOC -->
 
 
@@ -93,13 +95,13 @@ These elements extend the basic syntax by adding additional features. Not all Ma
 
 
 
-## 2.1. Headers
+## 2.2. Headers
 <small>`[Search Tags: >headers >hders >hdrs >titles]`</small>
 
 Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.net/mirror/setext.html) and [atx](http://www.aaronsw.com/2002/atx/).
 
 
-### 2.1.1. atx Headers
+### 2.2.1. atx Headers
 <small>`[Search Tags: >headers.atx >header.atx >atxheaders >atx.headers >atxhders >atxhdrs]`</small>
 
 -	Atx-style headers use 1-6 hash characters at the start of the line, corresponding to header levels 1-6.
@@ -122,7 +124,7 @@ Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.ne
 > ```
 >$\small - \space end \space note]$
 
-### 2.1.2. Setext Headers
+### 2.2.2. Setext Headers
 
 <small>`[Search Tags: >headers.setex >header.setex >setextheaders >setexthders >settexthdrs]`</small>
 
@@ -142,7 +144,7 @@ Title (Level 2)
 ------
 ```
 
-### 2.1.3. Defining Heading  IDs
+### 2.2.3. Defining Heading  IDs
 <small>`[Search Tags: >defineheaderids >defheadids >definitionheaderids >headers.ids >header.ids >idheaders >idsheaders >ids.headers >idhders >idhdrs >hdrids >headerids >headeridentity >hdrsids >ids >headingids >headingidentity >headids >headrids >headidentity]`</small>
 
 -	Many Markdown processors support custom IDs for headings — some Markdown processors automatically add them.
@@ -159,7 +161,7 @@ Title (Level 2)
 	<h3 id="custom-id">My Great Heading</h3>
 	```
 
-### 2.1.4. Linking to Heading IDs
+### 2.2.4. Linking to Heading IDs
 <small>`[Search Tags: >linkhdrs >linkheaders >linkheads >linkheadrs >headlinks >headlinking]`</small>
 
 -	You can link to headings with the custom IDs that you've defined, in your Markdown file, for your headers.
@@ -174,7 +176,7 @@ Markdown | HTML | Rendered Output
 	`[<linked-text>](https://www.website.com/section#<heading-ID>)`
 
 
-## 2.2. Paragraphs
+## 2.3. Paragraphs
 <small>`[Search Tags: >paragraphs >paras >text]`</small>
 
 -	A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines.
@@ -192,7 +194,7 @@ its end as well.
 ```
 
 
-## 2.3. Blockquotes
+## 2.4. Blockquotes
 <small>`[Search Tags: >quoteblocks >quotes >blockquotes >quotations >nestedquotes >nestquotes]`</small>
 
 -	Blockquotes are nice looking quote formatting, it looks like this:
@@ -241,12 +243,12 @@ its end as well.
 ```
 
 
-## 2.4. Lists
+## 2.5. Lists
 <small>`[Search Tags: >lists >enums >bulletpoints >checklists >dropdownlists]`</small>
 
 -	Markdown supports **ordered (numbered)** and **unordered (bulleted)** lists.
 
-### 2.4.1. Unordered Lists
+### 2.5.1. Unordered Lists
 <small>`[Search Tags: >list.unorder >list.unordered >lists.unorder >lists.unordered >unorder.lists >unordered.lists >unorderedlists >unorderlists >listunordered >ulists]`</small>
 
 -	They use asterisks (`*`), pluses (`+`), and hyphens (`-`),  interchangably, as list markers:
@@ -261,7 +263,7 @@ its end as well.
 > *  Green
 > *  Blue
 
-### 2.4.2. Ordered Lists
+### 2.5.2. Ordered Lists
 <small>`[Search Tags: >list.order >list.ordered >lists.order >lists.ordered >order.lists >ordered.lists >orderedlists >orderlists >listordered >olists]`</small>
 
 -	They use numbers (`1. 2. 3. ...`) followed by periods:
@@ -297,7 +299,7 @@ Result:
 -	You can have *words*, *sentences*, *paragraphs*, *quotes*, *code* *spans/blocks*, *images*, *etc.,* as list items.
 
 
-### 2.4.3. Definition Lists
+### 2.5.3. Definition Lists
 <small>`[Search Tags: >list.defs >list.definitions >definitionlists >listdefinitions >deflists >listsdefs >deflists >listdefs]`</small>
 
 > $\small [Note:$ -	Not all Markdown processors allow you to create _definition lists_. $\small - \space end \space note]$
@@ -335,7 +337,7 @@ Second Term
 : This is another definition of the second term.
 
 
-### 2.4.4. Task Lists
+### 2.5.4. Task Lists
 <small>`[Search Tags: >list.tasks >tasklists >listtasks >tasklists >liststasks]`</small>
 
 -	Task lists allow you to create a list of items with checkboxes.
@@ -355,7 +357,7 @@ The rendered output looks like this:
 > $\small [Note:$ Not all Markdown processors support ***task lists***. $\small - \space end \space note]$
 
 
-## 2.5. Horizontal Rules
+## 2.6. Horizontal Rules
 <small>`[Search Tags: >horizontalrules >rules >lines >straightlines >hlines >horilines >horizlines >linehorizontal >lineshorizontal >horizontals >horzis]`</small>
 
 -	You can produce a line --- horizontal rule tag (`<hr />`) --- by placing three or more *hyphens* (`-`), *asterisks* (`*`), or *underscores* (`_`) on a line by themselves.
@@ -381,13 +383,13 @@ ___
 > ___
 
 
-## 2.6. Code Spans & Blocks
+## 2.7. Code Spans & Blocks
 
 <small>`[Search Tags: >code >ttfamily >typewriter >raw]`</small>
 
 There are 2 methods to inserting code in your markdown. One is inlined, ***code spans***, the other is not, ***code blocks***.
 
-### 2.6.1. Code Blocks
+### 2.7.1. Code Blocks
 <small>`[Search Tags: >codeblocks >blockscodes >blockcode]`</small>
 
 -	Code blocks are (non-inlined) code environments.
@@ -414,7 +416,7 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 
 > $\small [Note:$	It is also possible to create a code block by preprending each line of code with one level of indentation --- 4 spaces or a tab. Syntax highlighting is not supported with this; it is better to stick to the former way. $\small - \space end \space note]$
 
-### 2.6.2. Code Spans
+### 2.7.2. Code Spans
 
 <small>`[Search Tags: >codespans >spanscodes >spancode >codesspans]`</small>
 
@@ -430,7 +432,7 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 ```
 --- his code span needed three backticks, on either sides, to be enclosed properly.
 
-## 2.7. Inline/Embed HTML
+## 2.8. Inline/Embed HTML
 <small>`[Search Tags: >inlinehtml >embed.html >embedhtml >htmlemded >htmlembedding >htmlinline]`</small>
 
 -	You can write **HTML** inline in your markdown.
@@ -713,17 +715,53 @@ Markdown | HTML | Rendered Output
 	    Add as many paragraphs as you like.
 
 
-## 3.6. Escape Characters
+## 3.6. Latex
+<small>`[Search Tags: >LaTeX]`</small>
+
+> $\small [Note:$ Not all Markdown processors support $\LaTeX$. $\small - \space end \space note]$
+
+-	You can insert inline $\LaTeX$ by enclosing (source) text in dollar signs: `$<text>$`.
+
+-	You can create a $\LaTeX$ environment with two enclosing double dollar signs (`$$`), e.g.:
+
+	```markdown
+	$$
+	<latex>
+	$$
+	```
+
+_**Example:**_
+
+Here Newton’s universal law of gravitation:
+
+```markdown
+$$
+F = GM⋅m / r^{2}
+$$
+
+$$ ``If \space I \space have \space ever \space made \space any \space valuable \space discoveries, \space it \space has \space been \space owing \space more \space to \space patient \space attention, \space than \space to \space any \space other \space talent." \\  - Isaac \space Newton $$
+```
+
+_**Rendered Output:**_
+
+$$
+F = GM⋅m / r^{2}
+$$
+
+$$ ``If \space I \space have \space ever \space made \space any \space valuable \space discoveries, \space it \space has \space been \space owing \space more \space to \space patient \space attention, \space than \space to \space any \space other \space talent." \\  - Isaac \space Newton $$
+
+
+## 3.7. Escape Characters
 <small>`[Search Tags: >escapecharacers >escapechars >escchars >esccharacters >& >< >escapesequences >escpcharacters >escpchars >escpechars]`</small>
 
-### 3.6.1. Automated Escaping
+### 3.7.1. Automated Escaping
 <small>`[Search Tags: >autoescapes >autoescapechars >autoescapecharacters]`</small>
 
 -	In **HTML**, there are two characters that demand special treatment: `<` and `&`. Left angle brackets are used to start tags; ampersands are used to denote HTML entities. If you want to use them as entities, e.g. `&lt;`, and `&amp;`.
 
 -	**Markdown** on the other hand allows you to use these character naturally. It takes care of all the necessary escaping for you. If you use an ampersand as part of an **HTML** entity, it remains unchanged; otherwise it will be translated into `&amp;`.
 
-### 3.6.2. Backslash Escapes
+### 3.7.2. Backslash Escapes
 <small>`[Search Tags: >backslashcharacters >backslashescps >backslashescapecharacters >bkslhchars >backslashchars]`</small>
 
 -	Markdown allows you to use backslash escapes to generate literal characters which would otherwise have special meaning in Markdown’s formatting syntax.
@@ -744,7 +782,7 @@ _   underscore
 !   exclamation mark
 ```
 
-## 3.7. Great Resources
+## 3.8. Great Resources
 
 | # | Type | Author | Link |
 | - | ---- | ------ | ---- |
