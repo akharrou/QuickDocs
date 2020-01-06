@@ -521,7 +521,7 @@ Rendered Output:
 		[<reference-id>]: <link | relative-path>  "<link-title>" <!-- Definition -->
 		```
 
-		>   – enclose the text you desire to link in a pair of square brackets `[]`, follow it by another pair of square brackets `[]`, inside of which write a `reference-id`, which can be understood as a label/tag/identifier, something to identify the reference with, it can be comprised of letters and/or digits. <br> <br> Then, the `reference-id`/label/tag/identifier must be defined, i.e assigned to a URL or relative-path (to a file). <br> <br> To do so – and this can be done anywhere in the document – place between a pair of square brackets the `reference-id`/label/tag/identifier, follow it by a colon (`:`), then your URL or relative path (to a file) and optionally a title for your link, in quotes (`""`|`''`).
+		>   – enclose the text you desire to link in a pair of square brackets `[]`, follow it by another pair of square brackets `[]`, inside of which write a `reference-id`, which can be understood as a label/tag/identifier, something to identify the reference with, it can be comprised of letters and/or digits. <br> <br> Then, the `reference-id`/label/tag/identifier must be defined, i.e assigned to a **URL** or **relative-path** (to a file). <br> <br> To do so – and this can be done anywhere in the document – place between a pair of square brackets the `reference-id`/label/tag/identifier, follow it by a colon (`:`), then your URL or relative path (to a file) and optionally a title for your link, in quotes (`""`|`''`).
 
 
 	-	***implicit reference***:
