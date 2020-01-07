@@ -26,28 +26,32 @@ QuickDocs \| $\LaTeX$
 > Table of Contents
 -->
 
-**Contents**
 
-- [1. :: Document Structure](#1--document-structure)
-	- [1.1. :: Global structure](#11--global-structure)
-	- [1.2. :: Preamble](#12--preamble)
-		- [1.2.1. :: Document classes](#121--document-classes)
-		- [1.2.2. :: Packages](#122--packages)
-	- [1.3. :: The document environment](#13--the-document-environment)
-		- [1.3.1. :: Top matter](#131--top-matter)
-		- [1.3.2. :: Abstract](#132--abstract)
-		- [1.3.3. :: Sectioning commands](#133--sectioning-commands)
-			- [1.3.3.1. :: Section numbering](#1331--section-numbering)
-			- [1.3.3.2. :: Section number style](#1332--section-number-style)
-	- [1.4. :: Ordinary paragraphs](#14--ordinary-paragraphs)
-		- [1.4.1. :: Table of contents](#141--table-of-contents)
-			- [1.4.1.1. :: Depth](#1411--depth)
-	- [1.5. :: Book structure](#15--book-structure)
-		- [1.5.1. :: Page order](#151--page-order)
-	- [1.6. :: Special pages](#16--special-pages)
-		- [1.6.1. :: Bibliography](#161--bibliography)
-	- [1.7. :: Resources](#17--resources)
+> Note: `[~]` = incomplete, `[√]` = complete
 
+## Contents
+
+- *Part 01\.* **Common Elements**
+	- *1\.* **[Document Structure](#1.:-Document-Structure)**
+	- *2\.* **Text Formatting**
+	- *3\.* **Paragraph Formatting**
+	- *4\.* **Colors**
+	- *5\.* **Fonts**
+	- *6\.* **List Structures**
+	- *7\.* **Special Characters**
+	- *8\.* **Internationalization**
+	- *9\.* **Rotations**
+	- *10\.* **Tables**
+	- *11\.* **Title creation**
+	- *12\.* **Page Layout**
+	- *13\.* **Customizing Page Headers and Footers‎**
+	- *14\.* **Importing Graphics**
+	- *15\.* **Floats, Figures and Captions**
+	- *16\.* **Footnotes and Margin Notes**
+	- *17\.* **Hyperlinks**
+	- *18\.* **Labels and Cross-referencing**
+	- *19\.* **Initials**
+<br>
 
 ---
 
@@ -59,145 +63,37 @@ QuickDocs \| $\LaTeX$
 .
 -->
 
-
 Part 01: Common Elements
-================================================================================
+===
+
+
+# 1.: Document Structure {#1.:-Document-Structure}
 <small>`[Search Tags: >]`</small>
 
-> TODO: Common Elements
-
-
-# 1. :: Document Structure
-<small>`[Search Tags: >]`</small>
-
-> TODO: Document Structure
-
-
-
-## 1.1. :: Global structure
-<small>`[Search Tags: >]`</small>
-
-> TODO: Global structure
-
-
-
-## 1.2. :: Preamble
-<small>`[Search Tags: >]`</small>
-
-> TODO: Preamble
-
-
-
-### 1.2.1. :: Document classes
-<small>`[Search Tags: >]`</small>
-
-> TODO: Document classes
-
-
-
-### 1.2.2. :: Packages
-<small>`[Search Tags: >]`</small>
-
-> TODO: Packages
-
-
-
-## 1.3. :: The document environment
-<small>`[Search Tags: >]`</small>
-
-> TODO: The document environment
-
-
-
-### 1.3.1. :: Top matter
-<small>`[Search Tags: >]`</small>
-
-> TODO: Top matter
-
-
-
-### 1.3.2. :: Abstract
-<small>`[Search Tags: >]`</small>
-
-> TODO: Abstract
-
-
-
-### 1.3.3. :: Sectioning commands
-<small>`[Search Tags: >]`</small>
-
-> TODO: Sectioning commands
-
-
-
-#### 1.3.3.1. :: Section numbering
-<small>`[Search Tags: >]`</small>
-
-> TODO: Section numbering
-
-
-
-#### 1.3.3.2. :: Section number style
-<small>`[Search Tags: >]`</small>
-
-> TODO: Section number style
-
-
-
-## 1.4. :: Ordinary paragraphs
-<small>`[Search Tags: >]`</small>
-
-> TODO: Ordinary paragraphs
-
-
-
-### 1.4.1. :: Table of contents
-<small>`[Search Tags: >]`</small>
-
-> TODO: Table of contents
-
-
-
-#### 1.4.1.1. :: Depth
-<small>`[Search Tags: >]`</small>
-
-> TODO: Depth
-
-
-
-## 1.5. :: Book structure
-<small>`[Search Tags: >]`</small>
-
-> TODO: Book structure
-
-
-
-### 1.5.1. :: Page order
-<small>`[Search Tags: >]`</small>
-
-> TODO: Page order
-
-
-
-## 1.6. :: Special pages
-<small>`[Search Tags: >]`</small>
-
-> TODO: Special pages
-
-
-
-### 1.6.1. :: Bibliography
-<small>`[Search Tags: >]`</small>
-
-> TODO: Bibliography
-
-
-
-## 1.7. :: Resources
-<small>`[Search Tags: >]`</small>
-
-> TODO: Resources
-
+### Contents
+
+- *1.1\.* **[Global structure](#1.1.:-Global-structure)** *[~]*
+- *1.2\.* **Preamble** *[~]*
+	- *1.2.1\.* **Document classes** *[~]*
+	- *1.2.2\.* **Packages** *[~]*
+- *1.3\.* **The document environment** *[~]*
+	- *1.3.1\.* **Top matter** *[~]*
+	- *1.3.2\.* **Abstract** *[~]*
+	- *1.3.3\.* **Sectioning commands** *[~]*
+		- *1.3.3.1\.* **Section numbering** *[~]*
+		- *1.3.3.2\.* **Section number style** *[~]*
+- *1.3.4\.* **Ordinary paragraphs** *[~]*
+	- *1.3.5\.* **Table of contents** *[~]*
+		- *1.3.5.1\.* **Depth** *[~]*
+- *1.4\.* **Book structure** *[~]*
+	- *1.4.1\.* **Page order** *[~]*
+- *1.5\.* **Special pages** *[~]*
+	- *1.5.1\.* **Bibliography** *[~]*
+- *1.6\.* **Resources** *[~]*
+
+---
+
+## 1.1.: Global structure {#1.1.:-Global-structure}
 
 
 
@@ -401,12 +297,12 @@ Part 01: Common Elements
 		- *8.5\.* **References** [~]
 		<br>
 
-	- *9\.* **Rotations** [√]
+	- *9\.* **Rotations** *[√]*
 		- *9.1\.* **The rotating Package** [~]
 		- *9.2\.* **The rotfloat Package** [~]
 		<br>
 
-	- *10\.* **Tables** [√]
+	- *10\.* **Tables** *[√]*
 		- *10.1\.* **The tabular environment** [~]
 			- *10.1.1\.* **Basic examples** [~]
 			- *10.1.2\.* **Text wrapping in tables** [~]
@@ -453,7 +349,7 @@ Part 01: Common Elements
 		- *10.19\.* **References** [~]
 		<br>
 
-	- *11\.* **Title creation** [√]
+	- *11\.* **Title creation** *[√]*
 		- *11.1\.* **Standard Titles** [~]
 		- *11.2\.* **The title for journal submission** [~]
 		- *11.3\.* **Create a custom title for a report or book** [~]
@@ -465,7 +361,7 @@ Part 01: Common Elements
 		- *11.7\.* **Notes and References** [~]
 		<br>
 
-	- *12\.* **Page Layout** [√]
+	- *12\.* **Page Layout** *[√]*
 		- *12.1\.* **Two-sided documents** [~]
 		- *12.2\.* **Page dimensions** [~]
 		- *12.3\.* **Page size** [~]
@@ -490,7 +386,7 @@ Part 01: Common Elements
 		- *12.12\.* **Notes and References** [~]
 		<br>
 
-	- *13\.* **Customizing Page Headers and Footers‎** [√] [25% developed]
+	- *13\.* **Customizing Page Headers and Footers‎** *[√]* [25% developed]
 		- *13.1\.* **Standard page styles** [~]
 			- *13.1.1\.* **Plain pages issue** [~]
 		- *13.2\.* **Customizing with fancyhdr** [~]
@@ -505,7 +401,7 @@ Part 01: Common Elements
 		- *13.5\.* **Customizing with titleps** [~]
 		<br>
 
-	- *14\.* **Importing Graphics** [√]
+	- *14\.* **Importing Graphics** *[√]*
 		- *14.1\.* **Importing external graphics** [~]
 		- *14.2\.* **Converting graphics** [~]
 			- *14.2.1\.* **PNG alpha channel** [~]
@@ -518,7 +414,7 @@ Part 01: Common Elements
 		- *14.4\.* **Notes and References** [~]
 		<br>
 
-	- *15\.* **Floats, Figures and Captions** [√]
+	- *15\.* **Floats, Figures and Captions** *[√]*
 		- *15.1\.* **Floats** [~]
 			- *15.1.1\.* **Figures** [~]
 				- *15.1.1.1\.* **Figures with borders** [~]
@@ -542,7 +438,7 @@ Part 01: Common Elements
 		- *15.13\.* **Notes and references** [~]
 		<br>
 
-	- 16. Footnotes and Margin Notes [√]
+	- *16\.* **Footnotes and Margin Notes** *[√]*
 		- *16.1\.* **Footnotes** [~]
 			- *16.1.1\.* **Customization** [~]
 			- *16.1.2\.* **Reset counter** [~]
@@ -551,7 +447,7 @@ Part 01: Common Elements
   		- *16.3\.* **Notes and References** [~]
 		<br>
 
-	- *17\.* **Hyperlinks** [√]
+	- *17\.* **Hyperlinks** *[√]*
 		- *17.1\.* **Hyperref** [~]
 		- *17.2\.* **Usage** [~]
 			- *17.2.1\.* **Commands** [~]
@@ -578,7 +474,7 @@ Part 01: Common Elements
 		- *17.5\.* **Notes and References** [~]
 		<br>
 
-	- *18\.* **Labels and Cross-referencing** [√]
+	- *18\.* **Labels and Cross-referencing** *[√]*
 		- *18.1\.* **Introduction** [~]
 		- *18.2\.* **Examples** [~]
 			- *18.2.1\.* **Sections** [~]
@@ -601,7 +497,7 @@ Part 01: Common Elements
 		- *18.8\.* **Notes and References** [~]
 		<br>
 
-	- *19\.* **Initials** [√]
+	- *19\.* **Initials** *[√]*
 		<br>
 
 
@@ -610,17 +506,17 @@ REMAINING PARTS:
 
 - Mechanics [~]
 	- Errors and Warnings [75% developed]
-	- Lengths [√]
-	- Counters [√]
-	- Boxes [√]
-	- Rules and Struts [√]
+	- Lengths *[√]*
+	- Counters *[√]*
+	- Boxes *[√]*
+	- Rules and Struts *[√]*
 - Technical Texts
-	- Mathematics [√]
+	- Mathematics *[√]*
 	- Advanced Mathematics [75% developed]
 	- Theorems [75% developed]
 	- Chemical Graphics [75% developed]
 	- Algorithms [75% developed]
-	- Source Code Listings [√]
+	- Source Code Listings *[√]*
 	- Linguistics [75% developed]
 - Special Pages
 	- Indexing [75% developed]
@@ -634,7 +530,7 @@ REMAINING PARTS:
 	- Teacher's Corner [50% developed]
 	- Curriculum Vitae [50% developed]
 - Creating Graphics
-	- Introducing Procedural Graphics [√]
+	- Introducing Procedural Graphics *[√]*
 	- MetaPos [0% developed]
 	- Picture [50% developed]
 	- PGF/TikZ [25% developed]
@@ -642,19 +538,103 @@ REMAINING PARTS:
 	- Xy-pic [25% developed]
 	- Creating 3D graphic [0% developed]
 - Programming
-	- Macros [√]
-	- Plain TeX [√]
-	- Creating Packages [√]
+	- Macros *[√]*
+	- Plain TeX *[√]*
+	- Creating Packages *[√]*
 	- Creating Package Documentatio [0% developed]
 	- Themes [75% developed]
 - Miscellaneous
-	- Modular Documents [√]
+	- Modular Documents *[√]*
 	- Collaborative Writing of LaTeX Documents [75% developed]
-	- Export To Other Formats [√]
+	- Export To Other Formats *[√]*
 - Help and Recommendations
-	- FAQ [√]
+	- FAQ *[√]*
 	- Tips and Tricks [75% developed]
 - Appendices
+	- Author [0% developed]
+	- Link [0% developed]
+	- Package Referenc [0% developed]
+	- Sample LaTeX document [0% developed]
+	- Inde [0% developed]
+	- Command Glossar [0% developed]
+
+
+
+
+
+
+
+
+
+
+
+
+Continued Table:
+
+
+- *Part 02\.* **Mechanics**
+	- Errors and Warnings [75% developed]
+	- Lengths *[√]*
+	- Counters *[√]*
+	- Boxes *[√]*
+	- Rules and Struts *[√]*
+<br>
+
+- *Part 03\.* **Technical Texts**
+	- Mathematics *[√]*
+	- Advanced Mathematics [75% developed]
+	- Theorems [75% developed]
+	- Chemical Graphics [75% developed]
+	- Algorithms [75% developed]
+	- Source Code Listings *[√]*
+	- Linguistics [75% developed]
+<br>
+
+- *Part 04\.* **Special Pages**
+	- Indexing [75% developed]
+	- Glossary [75% developed]
+	- Bibliography Management [75% developed]
+	- More Bibliographies [25% developed]
+<br>
+
+- *Part 05\.* **Special Documents**
+	- Scientific Reports (Bachelor Report, Master Thesis, Dissertation) [25% developed]
+	- Letters [75% developed]
+	- Presentations [75% developed]
+	- Teacher's Corner [50% developed]
+	- Curriculum Vitae [50% developed]
+<br>
+
+- *Part 06\.* **Creating Graphics**
+	- Introducing Procedural Graphics *[√]*
+	- MetaPos [0% developed]
+	- Picture [50% developed]
+	- PGF/TikZ [25% developed]
+	- PSTricks [50% developed]
+	- Xy-pic [25% developed]
+	- Creating 3D graphic [0% developed]
+<br>
+
+- *Part 07\.* **Programming**
+	- Macros *[√]*
+	- Plain TeX *[√]*
+	- Creating Packages *[√]*
+	- Creating Package Documentatio [0% developed]
+	- Themes [75% developed]
+<br>
+
+- *Part 08\.* **Miscellaneous**
+	- Modular Documents *[√]*
+	- Collaborative Writing of LaTeX Documents [75% developed]
+	- Export To Other Formats *[√]*
+<br>
+
+- *Part 09\.* **Help and Recommendations**
+	- FAQ *[√]*
+	- Tips and Tricks [75% developed]
+<br>
+
+- *Part 10\.* **Appendices**
 	- Author [0% developed]
 	- Link [0% developed]
 	- Package Referenc [0% developed]
