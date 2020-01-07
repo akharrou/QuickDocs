@@ -111,7 +111,7 @@ Step 4:
 
 
 [Back](#1-document-structure) | [Previous](#1-document-structure) | [Next](#2-preamble)
-# 1. Global structure §
+# 1. Global structure § {#1-global-structure}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Global structure
@@ -124,7 +124,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes)
-# 2. Preamble §
+# 2. Preamble § {#2-preamble}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Preamble
@@ -137,7 +137,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#2-preamble) | [Next](#22-packages)
-## 2.1. Document classes §
+## 2.1. Document classes § {#21-document-classes}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Document classes
@@ -150,7 +150,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#21-document-classes) | [Next](#3-the-document-environment)
-## 2.2. Packages §
+## 2.2. Packages § {#22-packages}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Packages
@@ -163,7 +163,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#22-packages) | [Next](#31-top-matter)
-# 3. The document environment §
+# 3. The document environment § {#3-the-document-environment}
 <small>`[Search Tags: >]`</small>
 
 > TODO: The document environment
@@ -176,7 +176,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#3-the-document-environment) | [Next](#32-abstract)
-## 3.1. Top matter §
+## 3.1. Top matter § {#31-top-matter}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Top matter
@@ -189,7 +189,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#31-top-matter) | [Next](#33-sectioning-commands)
-## 3.2. Abstract §
+## 3.2. Abstract § {#32-abstract}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Abstract
@@ -202,7 +202,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#32-abstract) | [Next](#331-section-numbering)
-## 3.3. Sectioning commands §
+## 3.3. Sectioning commands § {#33-sectioning-commands}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Sectioning commands
@@ -215,7 +215,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#33-sectioning-commands) | [Next](#332-section-number-style)
-### 3.3.1. Section numbering §
+### 3.3.1. Section numbering § {#331-section-numbering}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Section numbering
@@ -228,7 +228,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#331-section-numbering) | [Next](#34-ordinary-paragraphs)
-### 3.3.2. Section number style §
+### 3.3.2. Section number style § {#332-section-number-style}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Section number style
@@ -241,7 +241,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#332-section-number-style) | [Next](#35-table-of-contents)
-# 3.4. Ordinary paragraphs §
+# 3.4. Ordinary paragraphs § {#34-ordinary-paragraphs}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Ordinary paragraphs
@@ -254,7 +254,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#34-ordinary-paragraphs) | [Next](#351-depth)
-## 3.5. Table of contents §
+## 3.5. Table of contents § {#35-table-of-contents}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Table of contents
@@ -267,7 +267,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#35-table-of-contents) | [Next](#4-book-structure)
-### 3.5.1. Depth §
+### 3.5.1. Depth § {#351-depth}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Depth
@@ -280,7 +280,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#351-depth) | [Next](#41-page-order)
-# 4. Book structure §
+# 4. Book structure § {#4-book-structure}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Book structure
@@ -293,7 +293,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#4-book-structure) | [Next](#5-special-pages)
-## 4.1. Page order §
+## 4.1. Page order § {#41-page-order}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Page order
@@ -306,7 +306,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#41-page-order) | [Next](#51-bibliography)
-# 5. Special pages §
+# 5. Special pages § {#5-special-pages}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Special pages
@@ -319,7 +319,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#5-special-pages) | [Next](#6-resources)
-## 5.1. Bibliography §
+## 5.1. Bibliography § {#51-bibliography}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Bibliography
@@ -332,7 +332,7 @@ Step 4:
 
 ---
 [Back](#1-document-structure) | [Previous](#2-text-formatting) | [Next](#51-bibliography)
-# 6. Resources §
+# 6. Resources § {#6-resources}
 <small>`[Search Tags: >]`</small>
 
 > TODO: Resources
@@ -428,6 +428,7 @@ Step 4:
 	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
 > ***Ressources:***
+>
 > | # | Type | Author | Link |
 > | - | ---- | ------ | ---- |
 > | 1 | Video | Youtube | [Markdown Preambule][1] |
@@ -437,62 +438,6 @@ Step 4:
 [1]: www.google.com
 	"Youtube \| Markdown Preambule"
 ---
-**[Back](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
-## 2. Preamble [§][1]
-<small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
-
--	_**LaTeX document global structure**_:
-
-	```latex
-	\documentclass{...}
-
-	% Preamble
-
-	\begin{document}
-	...
-	\end{document}
-	```
-	> _The `Preamble` area normally contains commands that affect the entire document._
-
-	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
----
-**[Back](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
-## 2. Preamble [§][1]
-<small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
-
--	_**LaTeX document global structure**_:
-
-	```latex
-	\documentclass{...}
-
-	% Preamble
-
-	\begin{document}
-	...
-	\end{document}
-	```
-	> _The `Preamble` area normally contains commands that affect the entire document._
-
-	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
-
-**[Back](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
-## 2. Preamble [§][1]
-<small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
-
--	_**LaTeX document global structure**_:
-
-	```latex
-	\documentclass{...}
-
-	% Preamble
-
-	\begin{document}
-	...
-	\end{document}
-	```
-	> _The `Preamble` area normally contains commands that affect the entire document._
-
-	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
 
 <!--
