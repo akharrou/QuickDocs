@@ -145,15 +145,9 @@ Part 01: Common Elements
 
 > ***Ressources:***
 >
-> | # | Type | Author | Link |
-> | - | ---- | ------ | ---- |
-> | 1 | Video | Youtube | [Markdown Preambule][1] |
-> | 2 | Video | Youtube | [Markdown Table][1] |
-> | 3 | Video | Youtube | [Markdown Images][1] |
-
-[1]: www.google.com
-	"Youtube \| Markdown Preambule"
-
+> | # | Type              | Author                 | Link
+> | - | ----------------- | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
 
 ---
 [Home](#1-document-structure) | [Previous](#2-preamble) | [Next](#22-packages)
