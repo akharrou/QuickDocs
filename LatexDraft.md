@@ -33,7 +33,7 @@ QuickDocs \| $\LaTeX$
 
 - *Part 01\.* **Common Elements**
 
-	- *1\.* **[Document Structure](#1.:-document-structure)**
+	- *1\.* **[Document Structure](#1-document-structure)**
 	- *2\.* **Text Formatting**
 	- *3\.* **Paragraph Formatting**
 	- *4\.* **Colors**
@@ -68,12 +68,12 @@ Part 01: Common Elements
 ===
 
 
-# 1.: Document Structure {#1.:-document-structure}
+# 1.: Document Structure
 <small>`[Search Tags: >]`</small>
 
 ### Contents
 
-- *1.1\.* **[Global structure](#1.1.:-Global-structure)** *[~]*
+- *1.1\.* **[Global structure](11-global-structure)** *[~]*
 - *1.2\.* **Preamble** *[~]*
 	- *1.2.1\.* **Document classes** *[~]*
 	- *1.2.2\.* **Packages** *[~]*
@@ -94,7 +94,7 @@ Part 01: Common Elements
 
 ---
 
-## 1.1.: [Global structure][1] {#1.1.:-Global-structure}
+## 1.1.: [Global structure][1]
 <small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
 
 -	_**LaTeX document global structure**_:
