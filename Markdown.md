@@ -12,7 +12,7 @@ QuickDocs \| Markdown
 	-	[2.1. Headers](#21-headers)
 		-	[2.1.1. atx Headers](#211-atx-headers)
 		-	[2.1.2. Setext Headers](#212-setext-headers)
-		-	[2.1.3. Defining Heading  IDs](#213-defining-heading--ids)
+		-	[2.1.3. Defining Heading IDs](#213-defining-heading-ids)
 		-	[2.1.4. Linking to Heading IDs](#214-linking-to-heading-ids)
 	-	[2.2. Paragraphs](#22-paragraphs)
 	-	[2.3. Blockquotes](#23-blockquotes)
@@ -141,7 +141,7 @@ Title (Level 2)
 ------
 ```
 
-### 2.1.3. Defining Heading  IDs
+### 2.1.3. Defining Heading IDs
 <small>`[Search Tags: >defineheaderids >defheadids >definitionheaderids >headers.ids >header.ids >idheaders >idsheaders >ids.headers >idhders >idhdrs >hdrids >headerids >headeridentity >hdrsids >ids >headingids >headingidentity >headids >headrids >headidentity]`</small>
 
 -	Many Markdown processors support custom IDs for headings — some Markdown processors automatically add them.

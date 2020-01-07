@@ -53,7 +53,6 @@ QuickDocs \| $\LaTeX$
 	- *18\.* **Labels and Cross-referencing**
 	- *19\.* **Initials**
 
-
 ---
 
 <!--
@@ -68,12 +67,13 @@ Part 01: Common Elements
 ===
 
 
-# 1.: Document Structure
+# 1. Document Structure
 <small>`[Search Tags: >]`</small>
+
 
 ### Contents
 
-- *1.1\.* **[Global structure](11-global-structure)** *[~]*
+- *1.1\.* **[Global structure](11)** *[~]*
 - *1.2\.* **Preamble** *[~]*
 	- *1.2.1\.* **Document classes** *[~]*
 	- *1.2.2\.* **Packages** *[~]*
@@ -92,9 +92,16 @@ Part 01: Common Elements
 	- *1.5.1\.* **Bibliography** *[~]*
 - *1.6\.* **Resources** *[~]*
 
+> | # | Type | Author | Link |
+> | - | ---- | ------ | ---- |
+> | 1 | Encyclopedia | Wikipedia | [Latex :: Document Structure][1] |
+
+[1]: https://en.wikibooks.org/wiki/LaTeX/Document_Structure
+	"Wikipedia \| Latex :: Document Structure"
+
 ---
 
-## 1.1.: [Global structure][1]
+## 1.1. Global structure {#11}
 <small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
 
 -	_**LaTeX document global structure**_:
@@ -114,14 +121,13 @@ Part 01: Common Elements
 
 -	LaTeX will never typeset anything after `\end{document}`.
 
----
-#### Ressources:
+> #### Ressources:
 > | # | Type | Author | Link |
 > | - | ---- | ------ | ---- |
-> | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Global Structure][1] |
+> | 1 | Encyclopedia | Wikipedia | [Latex :: Document Structure :: Global Structure][2] |
 
-[1]: https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Global_structure
-	"Wikipedia \| Latex :: Document Structure :: Global Structure"
+[2]: https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Global_structure
+	"Wikibooks \| Latex \| Document Structure \| Global Structure"
 
 
 
