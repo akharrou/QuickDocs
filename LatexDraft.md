@@ -140,7 +140,7 @@ Part 01: Common Elements
 asdqw
 
 ---
-[**🏠**](#1-document-structure) | [Previous](#2-preamble) | [Next](#22-packages)
+[🏠](#1-document-structure) | [⬅️](#2-preamble) | [➡️](#22-packages)
 ## 2.1. Document classes
 <small>`[Search Tags: >]`</small>
 
