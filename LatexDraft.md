@@ -116,7 +116,7 @@ Part 01: Common Elements
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Encyclopedia             | Wikipedia                 | [Global Structure](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Global_structure)
 
 
 ---
