@@ -102,6 +102,23 @@ Part 01: Common Elements
 # 1. Global structure
 <small>`[Search Tags: >]`</small>
 
+-	_**LaTeX document global structure**_:
+
+	```latex
+	\documentclass{...}
+
+	% Preamble
+
+	\begin{document}
+	...
+	\end{document}
+	```
+	> _The `Preamble` area normally contains commands that affect the entire document._
+
+	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
+
+---
+
 > ***Ressources:***
 >
 > | # | Type | Author | Link |
@@ -112,6 +129,11 @@ Part 01: Common Elements
 
 [1]: www.google.com
 	"Youtube \| Markdown Preambule"
+
+---
+[Home](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes)
+# 2. Preamble
+<small>`[Search Tags: >]`</small>
 
 -	_**LaTeX document global structure**_:
 
@@ -129,9 +151,6 @@ Part 01: Common Elements
 	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
 ---
-[Home](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes)
-# 2. Preamble
-<small>`[Search Tags: >]`</small>
 
 > ***Ressources:***
 >
@@ -143,21 +162,6 @@ Part 01: Common Elements
 
 [1]: www.google.com
 	"Youtube \| Markdown Preambule"
-
--	_**LaTeX document global structure**_:
-
-	```latex
-	\documentclass{...}
-
-	% Preamble
-
-	\begin{document}
-	...
-	\end{document}
-	```
-	> _The `Preamble` area normally contains commands that affect the entire document._
-
-	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
 ---
 [Home](#1-document-structure) | [Previous](#2-preamble) | [Next](#22-packages)
