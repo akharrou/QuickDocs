@@ -68,7 +68,7 @@ Part 01: Common Elements
 ---
 
 # 1. Document Structure
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >docstructure >docstructs >docstrcts >documentstructures]`</small>
 
 
 - *1.1\.* **[Global structure](#11-global-structure-)**
@@ -101,7 +101,7 @@ Part 01: Common Elements
 ---
 **[Top](#1-document-structure)** | **[Chapter](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#1-document-structure)**
 
-## 1.1. Global structure [§][1]
+## 1.1. Global structure [§][2]
 <small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
 
 -	_**LaTeX document global structure**_:
