@@ -112,9 +112,7 @@ Part 01: Common Elements
 	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
 
-<br>
-<br>
-
+<br><br>
 > ***Ressources:***
 >
 > | # | Type               | Author                 | Link
