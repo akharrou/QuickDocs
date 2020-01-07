@@ -70,114 +70,133 @@ Part 01: Common Elements
 # 1. :: Document Structure
 <small>`[Search Tags: >]`</small>
 
+> TODO: Document Structure
 
 
 
 ## 1.1. :: Global structure
 <small>`[Search Tags: >]`</small>
 
+> TODO: Global structure
 
 
 
 ## 1.2. :: Preamble
 <small>`[Search Tags: >]`</small>
 
+> TODO: Preamble
 
 
 
 ### 1.2.1. :: Document classes
 <small>`[Search Tags: >]`</small>
 
+> TODO: Document classes
 
 
 
 ### 1.2.2. :: Packages
 <small>`[Search Tags: >]`</small>
 
+> TODO: Packages
 
 
 
 ## 1.3. :: The document environment
 <small>`[Search Tags: >]`</small>
 
+> TODO: The document environment
 
 
 
 ### 1.3.1. :: Top matter
 <small>`[Search Tags: >]`</small>
 
+> TODO: Top matter
 
 
 
 ### 1.3.2. :: Abstract
 <small>`[Search Tags: >]`</small>
 
+> TODO: Abstract
 
 
 
 ### 1.3.3. :: Sectioning commands
 <small>`[Search Tags: >]`</small>
 
+> TODO: Sectioning commands
 
 
 
 #### 1.3.3.1. :: Section numbering
 <small>`[Search Tags: >]`</small>
 
+> TODO: Section numbering
 
 
 
 #### 1.3.3.2. :: Section number style
 <small>`[Search Tags: >]`</small>
 
+> TODO: Section number style
 
 
 
 ## 1.4. :: Ordinary paragraphs
 <small>`[Search Tags: >]`</small>
 
+> TODO: Ordinary paragraphs
 
 
 
 ### 1.4.1. :: Table of contents
 <small>`[Search Tags: >]`</small>
 
+> TODO: Table of contents
 
 
 
 #### 1.4.1.1. :: Depth
 <small>`[Search Tags: >]`</small>
 
+> TODO: Depth
 
 
 
 ## 1.5. :: Book structure
 <small>`[Search Tags: >]`</small>
 
+> TODO: Book structure
 
 
 
 ### 1.5.1. :: Page order
 <small>`[Search Tags: >]`</small>
 
+> TODO: Page order
 
 
 
 ## 1.6. :: Special pages
 <small>`[Search Tags: >]`</small>
 
+> TODO: Special pages
 
 
 
 ### 1.6.1. :: Bibliography
 <small>`[Search Tags: >]`</small>
 
+> TODO: Bibliography
 
 
 
 ## 1.7. :: Resources
 <small>`[Search Tags: >]`</small>
 
+> TODO: Resources
 
 
 
