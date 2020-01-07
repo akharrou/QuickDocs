@@ -71,7 +71,7 @@ Part 01: Common Elements
 <small>`[Search Tags: >]`</small>
 
 
-- *1.1\.* **[Global structure](#11-global-structure-§)**
+- *1.1\.* **[Global structure](#11-global-structure-)**
 - *1.2\.* **[Preamble](#12-preamble)**
 	- *1.2.1\.* **[Document classes](#121-document-classes)**
 	- *1.2.2\.* **[Packages](#122-packages)**
