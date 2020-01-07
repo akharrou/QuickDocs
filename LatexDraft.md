@@ -73,7 +73,7 @@ Part 01: Common Elements
 
 ### Contents
 
-- *1.1\.* **[Global structure](11)** *[~]*
+- *1.1\.* **[Global structure](#11-Global-structure)** *[~]*
 - *1.2\.* **Preamble** *[~]*
 	- *1.2.1\.* **Document classes** *[~]*
 	- *1.2.2\.* **Packages** *[~]*
