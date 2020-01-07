@@ -32,7 +32,7 @@ QuickDocs \| $\LaTeX$
 ## Contents
 
 - *Part 01\.* **Common Elements**
-<br>
+
 	- *1\.* **[Document Structure](#1.:-Document-Structure)**
 	- *2\.* **Text Formatting**
 	- *3\.* **Paragraph Formatting**
@@ -52,7 +52,7 @@ QuickDocs \| $\LaTeX$
 	- *17\.* **Hyperlinks**
 	- *18\.* **Labels and Cross-referencing**
 	- *19\.* **Initials**
-<br>
+
 
 ---
 
