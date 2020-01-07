@@ -28,7 +28,7 @@ QuickDocs \| $\LaTeX$
 
 ## Contents
 
-#### *Part 01\.* **Common Elements**
+#### PART 01: Common Elements
 
 - *1\.* [Document Structure](#1-document-structure)
 - *2\.* [Text Formatting](#2-text-formatting)
@@ -87,14 +87,6 @@ Part 01: Common Elements
 	-	*5.1*. [Bibliography](#51-bibliography)
 -	*6*. [Resources](#6-resources)
 
-
-[3]:https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Preamble
-	"Wikipedia \| Latex :: Document Structure :: Preamble"
-[2]: https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Global_structure
-	"Wikibooks \| Latex \| Document Structure \| Global Structure"
-[1]: https://en.wikibooks.org/wiki/LaTeX/Document_Structure
-	"Wikipedia \| Latex :: Document Structure"
-
 ---
 
 
@@ -151,7 +143,7 @@ Part 01: Common Elements
 
 	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
----
+<br>
 
 > ***Ressources:***
 >
