@@ -381,6 +381,7 @@ Part 01: Common Elements
 
 [1]: www.google.com
 	"Youtube \| Markdown Preambule"
+
 ---
 
 
