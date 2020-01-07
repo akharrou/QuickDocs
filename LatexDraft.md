@@ -1,6 +1,217 @@
+<!-- Metadata ------------------------------------------------------------------
+
+	AUTHOR(S)
+		akharrou
+
+	CONTACT
+		idev.aymen@gmail.com
+
+	OBJECTIVE(S)
+		Get the big picture & the details. Keep track of (good) resources. Keep track of what has been learned and what hasn't. Make all the above accessible in fractions of seconds.
+
+	DESCRIPTION
+		Documentation of that which has been learned in regards to LaTeX.
+
+------------------------------------------------------------------------------->
+
 QuickDocs \| $\LaTeX$
 ===
+
 > ***January 2020***
+
+---
+
+<!--
+--------------------------------------------------------------------------------
+> Table of Contents
+-->
+
+**Contents**
+
+- [1. :: Document Structure](#1--document-structure)
+	- [1.1. :: Global structure](#11--global-structure)
+	- [1.2. :: Preamble](#12--preamble)
+		- [1.2.1. :: Document classes](#121--document-classes)
+		- [1.2.2. :: Packages](#122--packages)
+	- [1.3. :: The document environment](#13--the-document-environment)
+		- [1.3.1. :: Top matter](#131--top-matter)
+		- [1.3.2. :: Abstract](#132--abstract)
+		- [1.3.3. :: Sectioning commands](#133--sectioning-commands)
+			- [1.3.3.1. :: Section numbering](#1331--section-numbering)
+			- [1.3.3.2. :: Section number style](#1332--section-number-style)
+	- [1.4. :: Ordinary paragraphs](#14--ordinary-paragraphs)
+		- [1.4.1. :: Table of contents](#141--table-of-contents)
+			- [1.4.1.1. :: Depth](#1411--depth)
+	- [1.5. :: Book structure](#15--book-structure)
+		- [1.5.1. :: Page order](#151--page-order)
+	- [1.6. :: Special pages](#16--special-pages)
+		- [1.6.1. :: Bibliography](#161--bibliography)
+	- [1.7. :: Resources](#17--resources)
+
+
+---
+
+<!--
+--------------------------------------------------------------------------------
+> Start
+.
+.
+.
+-->
+
+
+Part 01: Common Elements
+================================================================================
+<small>`[Search Tags: >]`</small>
+
+> TODO: Common Elements
+
+
+# 1. :: Document Structure
+<small>`[Search Tags: >]`</small>
+
+
+
+
+## 1.1. :: Global structure
+<small>`[Search Tags: >]`</small>
+
+
+
+
+## 1.2. :: Preamble
+<small>`[Search Tags: >]`</small>
+
+
+
+
+### 1.2.1. :: Document classes
+<small>`[Search Tags: >]`</small>
+
+
+
+
+### 1.2.2. :: Packages
+<small>`[Search Tags: >]`</small>
+
+
+
+
+## 1.3. :: The document environment
+<small>`[Search Tags: >]`</small>
+
+
+
+
+### 1.3.1. :: Top matter
+<small>`[Search Tags: >]`</small>
+
+
+
+
+### 1.3.2. :: Abstract
+<small>`[Search Tags: >]`</small>
+
+
+
+
+### 1.3.3. :: Sectioning commands
+<small>`[Search Tags: >]`</small>
+
+
+
+
+#### 1.3.3.1. :: Section numbering
+<small>`[Search Tags: >]`</small>
+
+
+
+
+#### 1.3.3.2. :: Section number style
+<small>`[Search Tags: >]`</small>
+
+
+
+
+## 1.4. :: Ordinary paragraphs
+<small>`[Search Tags: >]`</small>
+
+
+
+
+### 1.4.1. :: Table of contents
+<small>`[Search Tags: >]`</small>
+
+
+
+
+#### 1.4.1.1. :: Depth
+<small>`[Search Tags: >]`</small>
+
+
+
+
+## 1.5. :: Book structure
+<small>`[Search Tags: >]`</small>
+
+
+
+
+### 1.5.1. :: Page order
+<small>`[Search Tags: >]`</small>
+
+
+
+
+## 1.6. :: Special pages
+<small>`[Search Tags: >]`</small>
+
+
+
+
+### 1.6.1. :: Bibliography
+<small>`[Search Tags: >]`</small>
+
+
+
+
+## 1.7. :: Resources
+<small>`[Search Tags: >]`</small>
+
+
+
+
+
+
+
+
+<!--
+.
+.
+.
+> End
+--------------------------------------------------------------------------------
+> Footnotes:
+-->
+
+
+
+<!--
+> Document End
+--------------------------------------------------------------------------------
+> References:
+-->
+
+
+
+
+<!--
+--------------------------------------------------------------------------------
+> Notes:
+
+
+
+>plan:
 
 - *Part 01\:* **Common Elements**
 		<br>
@@ -227,8 +438,8 @@ QuickDocs \| $\LaTeX$
 		- *11.1\.* **Standard Titles** [~]
 		- *11.2\.* **The title for journal submission** [~]
 		- *11.3\.* **Create a custom title for a report or book** [~]
-		- *11.3.1\.* **A practical example** [~]
-		- *11.3.2\.* **Integrating the title page** [~]
+			- *11.3.1\.* **A practical example** [~]
+			- *11.3.2\.* **Integrating the title page** [~]
 		- *11.4\.* **A title to be re-used multiple times** [~]
 		- *11.5\.* **Packages for custom titles** [~]
 		- *11.6\.* **More titlepage examples** [~]
@@ -239,21 +450,21 @@ QuickDocs \| $\LaTeX$
 		- *12.1\.* **Two-sided documents** [~]
 		- *12.2\.* **Page dimensions** [~]
 		- *12.3\.* **Page size** [~]
-		- *12.3.1\.* **More size options with geometry** [~]
-		- *12.3.2\.* **Page size issues** [~]
-		- *12.3.3\.* **Page size for tablets** [~]
+			- *12.3.1\.* **More size options with geometry** [~]
+			- *12.3.2\.* **Page size issues** [~]
+			- *12.3.3\.* **Page size for tablets** [~]
 		- *12.4\.* **Margins** [~]
-		- *12.4.1\.* **Odd and even margins** [~]
-		- *12.4.2\.* **Top margin above Chapter** [~]
+			- *12.4.1\.* **Odd and even margins** [~]
+			- *12.4.2\.* **Top margin above Chapter** [~]
 		- *12.5\.* **Page orientation** [~]
-		- *12.5.1\.* **Change orientation of the whole document** [~]
-		- *12.5.2\.* **Change orientation of specific part** [~]
-		- *12.5.3\.* **Change orientation of floating environment** [~]
+			- *12.5.1\.* **Change orientation of the whole document** [~]
+			- *12.5.2\.* **Change orientation of specific part** [~]
+			- *12.5.3\.* **Change orientation of floating environment** [~]
 		- *12.6\.* **Margins, page size and rotation of a specific page** [~]
 		- *12.7\.* **Page background** [~]
 		- *12.8\.* **Multi-column pages** [~]
-		- *12.8.1\.* **Using the twocolumn optional class argument** [~]
-		- *12.8.2\.* **Using multicol package** [~]
+			- *12.8.1\.* **Using the twocolumn optional class argument** [~]
+			- *12.8.2\.* **Using multicol package** [~]
 		- *12.9\.* **Manual page formatting** [~]
 		- *12.10\.* **Widows and orphans** [~]
 		- *12.11\.* **Troubleshooting** [~]
@@ -261,52 +472,52 @@ QuickDocs \| $\LaTeX$
 		<br>
 
 	- *13\.* **Customizing Page Headers and Footers‎** [√] [25% developed]
-		- *12.1\.* **Standard page styles** [~]
-		- *12.1.1\.* **Plain pages issue** [~]
-		- *12.2\.* **Customizing with fancyhdr** [~]
-		- *12.2.1\.* **Style customization** [~]
-		- *12.2.2\.* **Plain pages** [~]
-		- *12.2.3\.* **Examples** [~]
-		- *12.3\.* **Customizing with scrlayer-scrpage** [~]
-		- *12.3.1\.* **How can one move the page number to the center of the footer and remove the capitalization of the  [~]header?** [~]
-		- *12.3.2\.* **How can I have my name and title of my thesis in the inner foot?** [~]
-		- *12.3.3\.* **How to change to font style in headers and footers?** [~]
-		- *12.4\.* **Page n of m** [~]
-		- *12.5\.* **Customizing with titleps** [~]
+		- *13.1\.* **Standard page styles** [~]
+			- *13.1.1\.* **Plain pages issue** [~]
+		- *13.2\.* **Customizing with fancyhdr** [~]
+			- *13.2.1\.* **Style customization** [~]
+			- *13.2.2\.* **Plain pages** [~]
+			- *13.2.3\.* **Examples** [~]
+		- *13.3\.* **Customizing with scrlayer-scrpage** [~]
+			- *13.3.1\.* **How can one move the page number to the center of the footer and remove the capitalization of the  [~]header?** [~]
+			- *13.3.2\.* **How can I have my name and title of my thesis in the inner foot?** [~]
+			- *13.3.3\.* **How to change to font style in headers and footers?** [~]
+		- *13.4\.* **Page n of m** [~]
+		- *13.5\.* **Customizing with titleps** [~]
 		<br>
 
 	- *14\.* **Importing Graphics** [√]
 		- *14.1\.* **Importing external graphics** [~]
 		- *14.2\.* **Converting graphics** [~]
-		- *14.2.1\.* **PNG alpha channel** [~]
-		- *14.2.2\.* **Converting a color EPS to grayscale** [~]
+			- *14.2.1\.* **PNG alpha channel** [~]
+			- *14.2.2\.* **Converting a color EPS to grayscale** [~]
 		- *14.3\.* **Third-party graphics tools** [~]
-		- *14.3.1\.* **Vector graphics** [~]
-		- *14.3.2\.* **Raster graphics** [~]
-		- *14.3.3\.* **Plots and Charts** [~]
-		- *14.3.4\.* **Editing EPS graphics** [~]
+			- *14.3.1\.* **Vector graphics** [~]
+			- *14.3.2\.* **Raster graphics** [~]
+			- *14.3.3\.* **Plots and Charts** [~]
+			- *14.3.4\.* **Editing EPS graphics** [~]
 		- *14.4\.* **Notes and References** [~]
 		<br>
 
 	- *15\.* **Floats, Figures and Captions** [√]
 		- *15.1\.* **Floats** [~]
-		- *15.1.1\.* **Figures** [~]
-		- *15.1.1.1\.* **Figures with borders** [~]
-		- *15.1.2\.* **Tables** [~]
+			- *15.1.1\.* **Figures** [~]
+				- *15.1.1.1\.* **Figures with borders** [~]
+			- *15.1.2\.* **Tables** [~]
 		- *15.2\.* **Keeping floats in their place** [~]
 		- *15.3\.* **Captions** [~]
-		- *15.3.1\.* **Side captions** [~]
-		- *15.3.2\.* **Unnumbered captions** [~]
-		- *15.3.3\.* **Renaming table caption prefix** [~]
+			- *15.3.1\.* **Side captions** [~]
+			- *15.3.2\.* **Unnumbered captions** [~]
+			- *15.3.3\.* **Renaming table caption prefix** [~]
 		- *15.4\.* **Lists of figures and tables** [~]
 		- *15.5\.* **Labels and cross-referencing** [~]
 		- *15.6\.* **Wrapping text around figures** [~]
-		- *15.6.1\.* **Tip for figures with too much white space** [~]
+			- *15.6.1\.* **Tip for figures with too much white space** [~]
 		- *15.7\.* **Subfloats** [~]
 		- *15.8\.* **Figures in multiple parts** [~]
 		- *15.9\.* **Wide figures in two-column documents** [~]
 		- *15.10\.* **Custom floats** [~]
-		- *15.10.1\.* **Caption styles** [~]
+			- *15.10.1\.* **Caption styles** [~]
 		- *15.11\.* **Labels in the figures** [~]
 		- *15.12\.* **Summary** [~]
 		- *15.13\.* **Notes and references** [~]
@@ -314,9 +525,9 @@ QuickDocs \| $\LaTeX$
 
 	- 16. Footnotes and Margin Notes [√]
 		- *16.1\.* **Footnotes** [~]
-		- *16.1.1\.* **Customization** [~]
-		- *16.1.2\.* **Reset counter** [~]
-		- *16.1.3\.* **Common problems and workarounds** [~]
+			- *16.1.1\.* **Customization** [~]
+			- *16.1.2\.* **Reset counter** [~]
+			- *16.1.3\.* **Common problems and workarounds** [~]
 		- *16.2\.* **Margin Notes** [~]
   		- *16.3\.* **Notes and References** [~]
 		<br>
@@ -324,47 +535,47 @@ QuickDocs \| $\LaTeX$
 	- *17\.* **Hyperlinks** [√]
 		- *17.1\.* **Hyperref** [~]
 		- *17.2\.* **Usage** [~]
-		- *17.2.1\.* **Commands** [~]
-		- *17.2.1.1\.* **\hyperref** [~]
-		- *17.2.1.2\.* **\url** [~]
-		- *17.2.1.3\.* **\href** [~]
-		- *17.2.2\.* **Other possibilities** [~]
-		- *17.2.2.1\.* **E-mail address** [~]
-		- *17.2.2.2\.* **Local file** [~]
-		- *17.2.2.3\.* **Hyperlink and Hypertarget** [~]
-		- *17.2.2.3.1\.* **Viewing in a browser** [~]
+			- *17.2.1\.* **Commands** [~]
+				- *17.2.1.1\.* **\hyperref** [~]
+				- *17.2.1.2\.* **\url** [~]
+				- *17.2.1.3\.* **\href** [~]
+			- *17.2.2\.* **Other possibilities** [~]
+				- *17.2.2.1\.* **E-mail address** [~]
+				- *17.2.2.2\.* **Local file** [~]
+				- *17.2.2.3\.* **Hyperlink and Hypertarget** [~]
+					- *17.2.2.3.1\.* **Viewing in a browser** [~]
 		- *17.3\.* **Customization** [~]
 		- *17.4\.* **Troubleshooting** [~]
-		- *17.4.1\.* **Problems with Links and Equations 1** [~]
-		- *17.4.2\.* **Problems with Links and Equations 2** [~]
-		- *17.4.3\.* **Problems with Links and Pages** [~]
-		- *17.4.4\.* **Problems with bookmarks** [~]
-		- *17.4.5\.* **Problems with tables and figures** [~]
-		- *17.4.6\.* **Problems with long caption and \listoffigures or long title** [~]
-		- *17.4.7\.* **Problems with already existing .toc, .lof and similar files** [~]
-		- *17.4.8\.* **Problems with footnotes and special characters** [~]
-		- *17.4.9\.* **Problems with Beamer** [~]
-		- *17.4.10\.* **Problems with draft mode** [~]
+			- *17.4.1\.* **Problems with Links and Equations 1** [~]
+			- *17.4.2\.* **Problems with Links and Equations 2** [~]
+			- *17.4.3\.* **Problems with Links and Pages** [~]
+			- *17.4.4\.* **Problems with bookmarks** [~]
+			- *17.4.5\.* **Problems with tables and figures** [~]
+			- *17.4.6\.* **Problems with long caption and \listoffigures or long title** [~]
+			- *17.4.7\.* **Problems with already existing .toc, .lof and similar files** [~]
+			- *17.4.8\.* **Problems with footnotes and special characters** [~]
+			- *17.4.9\.* **Problems with Beamer** [~]
+			- *17.4.10\.* **Problems with draft mode** [~]
 		- *17.5\.* **Notes and References** [~]
 		<br>
 
 	- *18\.* **Labels and Cross-referencing** [√]
 		- *18.1\.* **Introduction** [~]
 		- *18.2\.* **Examples** [~]
-		- *18.2.1\.* **Sections** [~]
-		- *18.2.2\.* **Pictures** [~]
-		- *18.2.2.1\.* **Fixing wrong labels** [~]
-		- *18.2.2.2\.* **Issues with links to tables and figures handled by hyperref** [~]
-		- *18.2.3\.* **Formulae** [~]
-		- *18.2.3.1\.* **eqref** [~]
-		- *18.2.3.2\.* **tag** [~]
-		- *18.2.3.3\.* **numberwithin** [~]
-		- *18.2.3.4\.* **cases** [~]
+			- *18.2.1\.* **Sections** [~]
+			- *18.2.2\.* **Pictures** [~]
+				- *18.2.2.1\.* **Fixing wrong labels** [~]
+				- *18.2.2.2\.* **Issues with links to tables and figures handled by hyperref** [~]
+			- *18.2.3\.* **Formulae** [~]
+				- *18.2.3.1\.* **eqref** [~]
+				- *18.2.3.2\.* **tag** [~]
+				- *18.2.3.3\.* **numberwithin** [~]
+				- *18.2.3.4\.* **cases** [~]
 		- *18.3\.* **The varioref package** [~]
 		- *18.4\.* **The hyperref package** [~]
-		- *18.4.1\.* **autoref** [~]
-		- *18.4.2\.* **nameref** [~]
-		- *18.4.3\.* **Anchor manual positioning** [~]
+			- *18.4.1\.* **autoref** [~]
+			- *18.4.2\.* **nameref** [~]
+			- *18.4.3\.* **Anchor manual positioning** [~]
 		- *18.5\.* **The cleveref package** [~]
 		- *18.6\.* **Interpackage interactions for varioref , hyperref , and cleveref** [~]
 		- *18.7\.* **See also** [~]
@@ -376,37 +587,7 @@ QuickDocs \| $\LaTeX$
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- REMAINING **PARTS**
+REMAINING PARTS:
 
 - Mechanics [~]
 	- Errors and Warnings [75% developed]
@@ -460,4 +641,6 @@ QuickDocs \| $\LaTeX$
 	- Package Referenc [0% developed]
 	- Sample LaTeX document [0% developed]
 	- Inde [0% developed]
-	- Command Glossar [0% developed] -->
+	- Command Glossar [0% developed]
+
+-->
