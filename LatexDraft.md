@@ -98,7 +98,7 @@ Part 01: Common Elements
 ---
 
 
-[Back](#1-document-structure) | [Previous](#1-document-structure) | [Next](#2-preamble)
+[Home](#1-document-structure) | [Previous](#1-document-structure) | [Next](#2-preamble)
 # 1. Global structure
 <small>`[Search Tags: >]`</small>
 
@@ -111,7 +111,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes)
+[Home](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes)
 # 2. Preamble
 <small>`[Search Tags: >]`</small>
 
@@ -124,7 +124,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#2-preamble) | [Next](#22-packages)
+[Home](#1-document-structure) | [Previous](#2-preamble) | [Next](#22-packages)
 ## 2.1. Document classes
 <small>`[Search Tags: >]`</small>
 
@@ -137,7 +137,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#21-document-classes) | [Next](#3-the-document-environment)
+[Home](#1-document-structure) | [Previous](#21-document-classes) | [Next](#3-the-document-environment)
 ## 2.2. Packages
 <small>`[Search Tags: >]`</small>
 
@@ -150,7 +150,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#22-packages) | [Next](#31-top-matter)
+[Home](#1-document-structure) | [Previous](#22-packages) | [Next](#31-top-matter)
 # 3. The document environment
 <small>`[Search Tags: >]`</small>
 
@@ -163,7 +163,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#3-the-document-environment) | [Next](#32-abstract)
+[Home](#1-document-structure) | [Previous](#3-the-document-environment) | [Next](#32-abstract)
 ## 3.1. Top matter
 <small>`[Search Tags: >]`</small>
 
@@ -176,7 +176,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#31-top-matter) | [Next](#33-sectioning-commands)
+[Home](#1-document-structure) | [Previous](#31-top-matter) | [Next](#33-sectioning-commands)
 ## 3.2. Abstract
 <small>`[Search Tags: >]`</small>
 
@@ -189,7 +189,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#32-abstract) | [Next](#331-section-numbering)
+[Home](#1-document-structure) | [Previous](#32-abstract) | [Next](#331-section-numbering)
 ## 3.3. Sectioning commands
 <small>`[Search Tags: >]`</small>
 
@@ -202,7 +202,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#33-sectioning-commands) | [Next](#332-section-number-style)
+[Home](#1-document-structure) | [Previous](#33-sectioning-commands) | [Next](#332-section-number-style)
 ### 3.3.1. Section numbering
 <small>`[Search Tags: >]`</small>
 
@@ -215,7 +215,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#331-section-numbering) | [Next](#34-ordinary-paragraphs)
+[Home](#1-document-structure) | [Previous](#331-section-numbering) | [Next](#34-ordinary-paragraphs)
 ### 3.3.2. Section number style
 <small>`[Search Tags: >]`</small>
 
@@ -228,7 +228,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#332-section-number-style) | [Next](#35-table-of-contents)
+[Home](#1-document-structure) | [Previous](#332-section-number-style) | [Next](#35-table-of-contents)
 # 3.4. Ordinary paragraphs
 <small>`[Search Tags: >]`</small>
 
@@ -241,7 +241,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#34-ordinary-paragraphs) | [Next](#351-depth)
+[Home](#1-document-structure) | [Previous](#34-ordinary-paragraphs) | [Next](#351-depth)
 ## 3.5. Table of contents
 <small>`[Search Tags: >]`</small>
 
@@ -254,7 +254,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#35-table-of-contents) | [Next](#4-book-structure)
+[Home](#1-document-structure) | [Previous](#35-table-of-contents) | [Next](#4-book-structure)
 ### 3.5.1. Depth
 <small>`[Search Tags: >]`</small>
 
@@ -267,7 +267,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#351-depth) | [Next](#41-page-order)
+[Home](#1-document-structure) | [Previous](#351-depth) | [Next](#41-page-order)
 # 4. Book structure
 <small>`[Search Tags: >]`</small>
 
@@ -280,7 +280,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#4-book-structure) | [Next](#5-special-pages)
+[Home](#1-document-structure) | [Previous](#4-book-structure) | [Next](#5-special-pages)
 ## 4.1. Page order
 <small>`[Search Tags: >]`</small>
 
@@ -293,7 +293,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#41-page-order) | [Next](#51-bibliography)
+[Home](#1-document-structure) | [Previous](#41-page-order) | [Next](#51-bibliography)
 # 5. Special pages
 <small>`[Search Tags: >]`</small>
 
@@ -306,7 +306,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#5-special-pages) | [Next](#6-resources)
+[Home](#1-document-structure) | [Previous](#5-special-pages) | [Next](#6-resources)
 ## 5.1. Bibliography
 <small>`[Search Tags: >]`</small>
 
@@ -319,7 +319,7 @@ Part 01: Common Elements
 
 
 ---
-[Back](#1-document-structure) | [Previous](#2-text-formatting) | [Next](#51-bibliography)
+[Home](#1-document-structure) | [Previous](#2-text-formatting) | [Next](#51-bibliography)
 # 6. Resources
 <small>`[Search Tags: >]`</small>
 
@@ -351,7 +351,7 @@ Part 01: Common Elements
 > References:
 -->
 
-**[Back](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
+**[Home](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
 ## 2. Preamble [§][1]
 <small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
 <br>
