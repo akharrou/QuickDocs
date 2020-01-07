@@ -33,7 +33,7 @@ QuickDocs \| $\LaTeX$
 
 - *Part 01\.* **Common Elements**
 
-	- *1\.* **[Document Structure](#1.:-Document-Structure)**
+	- *1\.* **[Document Structure](#1.:-document-structure)**
 	- *2\.* **Text Formatting**
 	- *3\.* **Paragraph Formatting**
 	- *4\.* **Colors**
@@ -68,7 +68,7 @@ Part 01: Common Elements
 ===
 
 
-# 1.: Document Structure {#1.:-Document-Structure}
+# 1.: Document Structure {#1.:-document-structure}
 <small>`[Search Tags: >]`</small>
 
 ### Contents
