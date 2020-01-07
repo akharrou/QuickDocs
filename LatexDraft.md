@@ -94,9 +94,34 @@ Part 01: Common Elements
 
 ---
 
-## 1.1.: Global structure {#1.1.:-Global-structure}
+## 1.1.: [Global structure][1] {#1.1.:-Global-structure}
+<small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
 
+-	_**LaTeX document global structure**_:
 
+	```latex
+	\documentclass{...}
+
+	% Preamble
+
+	\begin{document}
+	...
+	\end{document}
+	```
+	> _The `Preamble` area normally contains commands that affect the entire document._
+
+	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+---
+#### Ressources:
+> | # | Type | Author | Link |
+> | - | ---- | ------ | ---- |
+> | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Global Structure][1] |
+
+[1]: https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Global_structure
+	"Wikipedia \| Latex :: Document Structure :: Global Structure"
 
 
 
