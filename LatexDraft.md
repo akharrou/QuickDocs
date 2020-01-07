@@ -131,9 +131,10 @@ Part 01: Common Elements
 	"Youtube \| Markdown Preambule"
 
 ---
-[Home](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes)
 # 2. Preamble
 <small>`[Search Tags: >]`</small>
+
+[Home](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes)
 
 -	_**LaTeX document global structure**_:
 
