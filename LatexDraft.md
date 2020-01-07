@@ -93,9 +93,7 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#1-document-structure) | [➡️](#2-preamble)
 # 1. Global structure
 <small>`[Search Tags: >document.structure.global >document.global.structure >structure.global >global.structure >globalstructure >structureglobal >globaldocumentstructure >globadocstructure >docglobalstructure >gstructures >gdocstructures]`</small>
-
-<br>
-<br>
+<br><br>
 
 
 -	_**LaTeX document global structure**_:
