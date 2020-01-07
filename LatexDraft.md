@@ -31,27 +31,27 @@ QuickDocs \| $\LaTeX$
 
 ## Contents
 
-- *Part 01\.* **Common Elements**
+#### *Part 01\.* **Common Elements**
 
-	- *1\.* **[Document Structure](#1-document-structure)**
-	- *2\.* **Text Formatting**
-	- *3\.* **Paragraph Formatting**
-	- *4\.* **Colors**
-	- *5\.* **Fonts**
-	- *6\.* **List Structures**
-	- *7\.* **Special Characters**
-	- *8\.* **Internationalization**
-	- *9\.* **Rotations**
-	- *10\.* **Tables**
-	- *11\.* **Title creation**
-	- *12\.* **Page Layout**
-	- *13\.* **Customizing Page Headers and Footers‎**
-	- *14\.* **Importing Graphics**
-	- *15\.* **Floats, Figures and Captions**
-	- *16\.* **Footnotes and Margin Notes**
-	- *17\.* **Hyperlinks**
-	- *18\.* **Labels and Cross-referencing**
-	- *19\.* **Initials**
+- *1\.* [Document Structure](#1-document-structure)
+- *2\.* [Text Formatting](#2-text-formatting)
+- *3\.* [Paragraph Formatting](#3-paragraph-formatting)
+- *4\.* [Colors](#4-colors)
+- *5\.* [Fonts](#5-fonts)
+- *6\.* [List Structures](#6-list-structures)
+- *7\.* [Special Characters](#7-special-characters)
+- *8\.* [Internationalization](#8-internationalization)
+- *9\.* [Rotations](#9-rotations)
+- *10\.* [Tables](#10-tables)
+- *11\.* [Title creation](#11-title-creation)
+- *12\.* [Page Layout](#12-page-layout)
+- *13\.* [Customizing Page Headers and Footers‎](#13-customizing-page-headers-and-footers‎)
+- *14\.* [Importing Graphics](#14-importing-graphics)
+- *15\.* [Floats, Figures and Captions](#15-floats,-figures-and-captions)
+- *16\.* [Footnotes and Margin Notes](#16-footnotes-and-margin-notes)
+- *17\.* [Hyperlinks](#17-hyperlinks)
+- *18\.* [Labels and Cross-referencing](#18-labels-and-cross-referencing)
+- *19\.* [Initials](#19-initials)
 
 ---
 
@@ -65,30 +65,30 @@ QuickDocs \| $\LaTeX$
 
 Part 01: Common Elements
 ===
+
 ---
 
-# 1. Document Structure
+# 1. Document Structure §
 <small>`[Search Tags: >docstructure >docstructs >docstrcts >documentstructures]`</small>
 
-
-- *1.1\.* **[Global structure](#11-global-structure-)**
-- *1.2\.* **[Preamble](#12-preamble)**
-	- *1.2.1\.* **[Document classes](#121-document-classes)**
-	- *1.2.2\.* **[Packages](#122-packages)**
-- *1.3\.* **[The document environment](#13-the-document-environment)**
-	- *1.3.1\.* **[Top matter](#131-top-matter)**
-	- *1.3.2\.* **[Abstract](#132-abstract)**
-	- *1.3.3\.* **[Sectioning commands](#133-sectioning-commands)**
-		- *1.3.3.1\.* **[Section numbering](#1331-section-numbering)**
-		- *1.3.3.2\.* **[Section number style](#1332-section-number-style)**
-- *1.3.4\.* **[Ordinary paragraphs](#134-ordinary-paragraphs)**
-	- *1.3.5\.* **[Table of contents](#135-table-of-contents)**
-		- *1.3.5.1\.* **[Depth](#1351-depth)**
-- *1.4\.* **[Book structure](#14-book-structure)**
-	- *1.4.1\.* **[Page order](#141-page-order)**
-- *1.5\.* **[Special pages](#15-special-pages)**
-	- *1.5.1\.* **[Bibliography](#151-bibliography)**
-- *1.6\.* **[Resources](#16-resources)**
+- 1. [Global structure](#1-global-structure)
+- 2. [Preamble](#2-preamble)
+	- 2.1. [Document classes](#21-document-classes)
+	- 2.2. [Packages](#22-packages)
+- 3. [The document environment](#3-the-document-environment)
+	- 3.1. [Top matter](#31-top-matter)
+	- 3.2. [Abstract](#32-abstract)
+	- 3.3. [Sectioning commands](#33-sectioning-commands)
+		- 3.3.1. [Section numbering](#331-section-numbering)
+		- 3.3.2. [Section number style](#332-section-number-style)
+- 3.4. [Ordinary paragraphs](#34-ordinary-paragraphs)
+	- 3.5. [Table of contents](#35-table-of-contents)
+		- 3.5.1. [Depth](#351-depth)
+- 4. [Book structure](#4-book-structure)
+	- 4.1. [Page order](#41-page-order)
+- 5. [Special pages](#5-special-pages)
+	- 5.1. [Bibliography](#51-bibliography)
+- 6. [Resources](#6-resources)
 
 
 [3]:https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Preamble
@@ -99,74 +99,292 @@ Part 01: Common Elements
 	"Wikipedia \| Latex :: Document Structure"
 
 ---
-**[Back](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
 
-## 1.1. Global structure [§][2]
-<small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
-
--	_**LaTeX document global structure**_:
-
-	```latex
-	\documentclass{...}
-
-	% Preamble
-
-	\begin{document}
-	...
-	\end{document}
-	```
-	> _The `Preamble` area normally contains commands that affect the entire document._
-
-	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
-
--	LaTeX will never typeset anything after `\end{document}`.
+<!--
+Step 1: make parentheses and put a '#'
+Step 2: grab titles and paste them in parentheses
+Step 3: Lowercase them
+Step 4:
+-->
 
 
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
--	LaTeX will never typeset anything after `\end{document}`.
+
+
+[Back](#1-document-structure) | [Previous](#1-document-structure) | [Next](#2-preamble)
+# 1. Global structure §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Global structure
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes)
+# 2. Preamble §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Preamble
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#2-preamble) | [Next](#22-packages)
+## 2.1. Document classes §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Document classes
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#21-document-classes) | [Next](#3-the-document-environment)
+## 2.2. Packages §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Packages
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#22-packages) | [Next](#31-top-matter)
+# 3. The document environment §
+<small>`[Search Tags: >]`</small>
+
+> TODO: The document environment
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#3-the-document-environment) | [Next](#32-abstract)
+## 3.1. Top matter §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Top matter
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#31-top-matter) | [Next](#33-sectioning-commands)
+## 3.2. Abstract §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Abstract
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#32-abstract) | [Next](#331-section-numbering)
+## 3.3. Sectioning commands §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Sectioning commands
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#33-sectioning-commands) | [Next](#332-section-number-style)
+### 3.3.1. Section numbering §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Section numbering
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#331-section-numbering) | [Next](#34-ordinary-paragraphs)
+### 3.3.2. Section number style §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Section number style
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#332-section-number-style) | [Next](#35-table-of-contents)
+# 3.4. Ordinary paragraphs §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Ordinary paragraphs
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#34-ordinary-paragraphs) | [Next](#351-depth)
+## 3.5. Table of contents §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Table of contents
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#35-table-of-contents) | [Next](#4-book-structure)
+### 3.5.1. Depth §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Depth
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#351-depth) | [Next](#41-page-order)
+# 4. Book structure §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Book structure
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#4-book-structure) | [Next](#5-special-pages)
+## 4.1. Page order §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Page order
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#41-page-order) | [Next](#51-bibliography)
+# 5. Special pages §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Special pages
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#5-special-pages) | [Next](#6-resources)
+## 5.1. Bibliography §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Bibliography
+
+
+
+
+
+
+
+---
+[Back](#1-document-structure) | [Previous](#2-text-formatting) | [Next](#51-bibliography)
+# 6. Resources §
+<small>`[Search Tags: >]`</small>
+
+> TODO: Resources
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- - *1\.* **Global structure** *[~]*
+- *2\.* **Preamble** *[~]*
+	- *2.1\.* **Document classes** *[~]*
+	- *2.2\.* **Packages** *[~]*
+- *3\.* **The document environment** *[~]*
+	- *3.1\.* **Top matter** *[~]*
+	- *3.2\.* **Abstract** *[~]*
+	- *3.3\.* **Sectioning commands** *[~]*
+		- *3.3.1\.* **Section numbering** *[~]*
+		- *3.3.2\.* **Section number style** *[~]*
+- *3.4\.* **Ordinary paragraphs** *[~]*
+	- *3.5\.* **Table of contents** *[~]*
+		- *3.5.1\.* **Depth** *[~]*
+- *4\.* **Book structure** *[~]*
+	- *4.1\.* **Page order** *[~]*
+- *5\.* **Special pages** *[~]*
+	- *5.1\.* **Bibliography** *[~]*
+- *6\.* **Resources** *[~]* -->
+
+
+
 
 
 
@@ -189,7 +407,92 @@ Part 01: Common Elements
 > References:
 -->
 
+**[Back](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
+## 2. Preamble [§][1]
+<small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
+<br>
 
+-	_**LaTeX document global structure**_:
+
+	```latex
+	\documentclass{...}
+
+	% Preamble
+
+	\begin{document}
+	...
+	\end{document}
+	```
+	> _The `Preamble` area normally contains commands that affect the entire document._
+
+	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
+
+> ***Ressources:***
+> | # | Type | Author | Link |
+> | - | ---- | ------ | ---- |
+> | 1 | Video | Youtube | [Markdown Preambule][1] |
+> | 2 | Video | Youtube | [Markdown Table][1] |
+> | 3 | Video | Youtube | [Markdown Images][1] |
+
+[1]: www.google.com
+	"Youtube \| Markdown Preambule"
+---
+**[Back](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
+## 2. Preamble [§][1]
+<small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
+
+-	_**LaTeX document global structure**_:
+
+	```latex
+	\documentclass{...}
+
+	% Preamble
+
+	\begin{document}
+	...
+	\end{document}
+	```
+	> _The `Preamble` area normally contains commands that affect the entire document._
+
+	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
+---
+**[Back](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
+## 2. Preamble [§][1]
+<small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
+
+-	_**LaTeX document global structure**_:
+
+	```latex
+	\documentclass{...}
+
+	% Preamble
+
+	\begin{document}
+	...
+	\end{document}
+	```
+	> _The `Preamble` area normally contains commands that affect the entire document._
+
+	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
+
+**[Back](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
+## 2. Preamble [§][1]
+<small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
+
+-	_**LaTeX document global structure**_:
+
+	```latex
+	\documentclass{...}
+
+	% Preamble
+
+	\begin{document}
+	...
+	\end{document}
+	```
+	> _The `Preamble` area normally contains commands that affect the entire document._
+
+	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
 
 <!--
@@ -715,3 +1018,14 @@ Continued Table:
 	- Command Glossar [0% developed]
 
 -->
+
+<!-- HOW TO QUICKLY MAKE TOC FROM WIKIPEDIA TOC:
+
+Step 1: Make a dup of the whole list of titles.
+Step 2: remove all dashes '-'
+Step 3: remove all periods '.'
+Step 4: remove all whitespaces ' '
+Step 5: lowercase everything
+Step 6: prefix everyline with a hash '#'
+Step 7: copy and paste as link for the original list
+ -->
