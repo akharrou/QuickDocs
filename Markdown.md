@@ -820,8 +820,12 @@ _   underscore
 | 1 | Documentation | Markdown Author(s) | [Official Markdown Documentation][11] |
 | 2 | Guide | Markdownguide | [Markdown Documentation][22] |
 | 3 | Cheat Sheet | Markdownguide | [Markdown Cheat Sheet][33] |
+| 4 | Documentation | VSCode Ext. Authors | [Markdown All in One \| Documentation][44] |
+
 
 <!-- Links -->
+[44]:https://shd101wyy.github.io/markdown-preview-enhanced/
+	"VSCode Ext. Authors \| Markdown All in One \| Documentation"
 [33]: https://www.markdownguide.org/cheat-sheet/
 	"Markdownguide \| Markdown Cheat Sheet"
 [22]: https://www.markdownguide.org/basic-syntax/
