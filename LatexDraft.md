@@ -65,43 +65,43 @@ QuickDocs \| $\LaTeX$
 
 Part 01: Common Elements
 ===
-
+---
 
 # 1. Document Structure
 <small>`[Search Tags: >]`</small>
 
 
-### Contents
+- *1.1\.* **[Global structure](#11-global-structure-§)**
+- *1.2\.* **[Preamble](#12-preamble)**
+	- *1.2.1\.* **[Document classes](#121-document-classes)**
+	- *1.2.2\.* **[Packages](#122-packages)**
+- *1.3\.* **[The document environment](#13-the-document-environment)**
+	- *1.3.1\.* **[Top matter](#131-top-matter)**
+	- *1.3.2\.* **[Abstract](#132-abstract)**
+	- *1.3.3\.* **[Sectioning commands](#133-sectioning-commands)**
+		- *1.3.3.1\.* **[Section numbering](#1331-section-numbering)**
+		- *1.3.3.2\.* **[Section number style](#1332-section-number-style)**
+- *1.3.4\.* **[Ordinary paragraphs](#134-ordinary-paragraphs)**
+	- *1.3.5\.* **[Table of contents](#135-table-of-contents)**
+		- *1.3.5.1\.* **[Depth](#1351-depth)**
+- *1.4\.* **[Book structure](#14-book-structure)**
+	- *1.4.1\.* **[Page order](#141-page-order)**
+- *1.5\.* **[Special pages](#15-special-pages)**
+	- *1.5.1\.* **[Bibliography](#151-bibliography)**
+- *1.6\.* **[Resources](#16-resources)**
 
-- *1.1\.* **[Global structure](#11-Global-structure)** *[~]*
-- *1.2\.* **Preamble** *[~]*
-	- *1.2.1\.* **Document classes** *[~]*
-	- *1.2.2\.* **Packages** *[~]*
-- *1.3\.* **The document environment** *[~]*
-	- *1.3.1\.* **Top matter** *[~]*
-	- *1.3.2\.* **Abstract** *[~]*
-	- *1.3.3\.* **Sectioning commands** *[~]*
-		- *1.3.3.1\.* **Section numbering** *[~]*
-		- *1.3.3.2\.* **Section number style** *[~]*
-- *1.3.4\.* **Ordinary paragraphs** *[~]*
-	- *1.3.5\.* **Table of contents** *[~]*
-		- *1.3.5.1\.* **Depth** *[~]*
-- *1.4\.* **Book structure** *[~]*
-	- *1.4.1\.* **Page order** *[~]*
-- *1.5\.* **Special pages** *[~]*
-	- *1.5.1\.* **Bibliography** *[~]*
-- *1.6\.* **Resources** *[~]*
 
-> | # | Type | Author | Link |
-> | - | ---- | ------ | ---- |
-> | 1 | Encyclopedia | Wikipedia | [Latex :: Document Structure][1] |
-
+[3]:https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Preamble
+	"Wikipedia \| Latex :: Document Structure :: Preamble"
+[2]: https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Global_structure
+	"Wikibooks \| Latex \| Document Structure \| Global Structure"
 [1]: https://en.wikibooks.org/wiki/LaTeX/Document_Structure
 	"Wikipedia \| Latex :: Document Structure"
 
 ---
+**[Top](#1-document-structure)** | **[Chapter](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#1-document-structure)**
 
-## 1.1. Global structure {#11}
+## 1.1. Global structure [§][1]
 <small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
 
 -	_**LaTeX document global structure**_:
@@ -121,13 +121,53 @@ Part 01: Common Elements
 
 -	LaTeX will never typeset anything after `\end{document}`.
 
-> #### Ressources:
-> | # | Type | Author | Link |
-> | - | ---- | ------ | ---- |
-> | 1 | Encyclopedia | Wikipedia | [Latex :: Document Structure :: Global Structure][2] |
+-	LaTeX will never typeset anything after `\end{document}`.
 
-[2]: https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Global_structure
-	"Wikibooks \| Latex \| Document Structure \| Global Structure"
+-	LaTeX will never typeset anything after `\end{document}`.
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+-	LaTeX will never typeset anything after `\end{document}`.
+
+
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+-	LaTeX will never typeset anything after `\end{document}`.
+
 
 
 
