@@ -99,7 +99,7 @@ Part 01: Common Elements
 	"Wikipedia \| Latex :: Document Structure"
 
 ---
-**[Top](#1-document-structure)** | **[Chapter](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#1-document-structure)**
+**[Back](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
 
 ## 1.1. Global structure [§][2]
 <small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
