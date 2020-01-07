@@ -90,7 +90,7 @@ Part 01: Common Elements
 ---
 
 
-[Home](#1-document-structure) | [Previous](#1-document-structure) | [Next](#2-preamble)
+[🏠](#1-document-structure) | [⬅️](#1-document-structure) | [➡️](#2-preamble)
 # 1. Global structure
 <small>`[Search Tags: >]`</small>
 
@@ -109,35 +109,34 @@ Part 01: Common Elements
 
 	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
+
+<br>
+
 > ***Ressources:***
 >
-> | # | Type | Author | Link |
-> | - | ---- | ------ | ---- |
-> | 1 | Video | Youtube | [Markdown Preambule][1] |
-> | 2 | Video | Youtube | [Markdown Table][1] |
-> | 3 | Video | Youtube | [Markdown Images][1] |
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
 
-[1]: www.google.com
-	"Youtube \| Markdown Preambule"
 
 ---
-<!-- [Home](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes) -->
-
-
+[🏠](#1-document-structure) | [⬅️](#1-global-structure) | [➡️](#21-document-classes)
 # 2. Preamble
 <small>`[Search Tags: >]`</small>
+
+
+
+
 
 
 <br>
 
 > ***Ressources:***
 >
-> | # | Type              | Author                 | Link
-> | - | ----------------- | ---------------------- | --------------------------
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
 > | 1 | n/a               | n/a                    | n/a
-> | 1 | Video             | Youtube                | Markdown Tutorial
 
-asdqw
 
 ---
 [🏠](#1-document-structure) | [⬅️](#2-preamble) | [➡️](#22-packages)
@@ -152,8 +151,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#21-document-classes) | [Next](#3-the-document-environment)
+[🏠](#1-document-structure) | [⬅️](#21-document-classes) | [➡️](#3-the-document-environment)
 ## 2.2. Packages
 <small>`[Search Tags: >]`</small>
 
@@ -165,8 +173,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#22-packages) | [Next](#31-top-matter)
+[🏠](#1-document-structure) | [⬅️](#22-packages) | [➡️](#31-top-matter)
 # 3. The document environment
 <small>`[Search Tags: >]`</small>
 
@@ -178,8 +195,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#3-the-document-environment) | [Next](#32-abstract)
+[🏠](#1-document-structure) | [⬅️](#3-the-document-environment) | [➡️](#32-abstract)
 ## 3.1. Top matter
 <small>`[Search Tags: >]`</small>
 
@@ -191,8 +217,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#31-top-matter) | [Next](#33-sectioning-commands)
+[🏠](#1-document-structure) | [⬅️](#31-top-matter) | [➡️](#33-sectioning-commands)
 ## 3.2. Abstract
 <small>`[Search Tags: >]`</small>
 
@@ -204,8 +239,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#32-abstract) | [Next](#331-section-numbering)
+[🏠](#1-document-structure) | [⬅️](#32-abstract) | [➡️](#331-section-numbering)
 ## 3.3. Sectioning commands
 <small>`[Search Tags: >]`</small>
 
@@ -217,8 +261,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#33-sectioning-commands) | [Next](#332-section-number-style)
+[🏠](#1-document-structure) | [⬅️](#33-sectioning-commands) | [➡️](#332-section-number-style)
 ### 3.3.1. Section numbering
 <small>`[Search Tags: >]`</small>
 
@@ -230,8 +283,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#331-section-numbering) | [Next](#34-ordinary-paragraphs)
+[🏠](#1-document-structure) | [⬅️](#331-section-numbering) | [➡️](#34-ordinary-paragraphs)
 ### 3.3.2. Section number style
 <small>`[Search Tags: >]`</small>
 
@@ -243,8 +305,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#332-section-number-style) | [Next](#35-table-of-contents)
+[🏠](#1-document-structure) | [⬅️](#332-section-number-style) | [➡️](#35-table-of-contents)
 # 3.4. Ordinary paragraphs
 <small>`[Search Tags: >]`</small>
 
@@ -256,8 +327,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#34-ordinary-paragraphs) | [Next](#351-depth)
+[🏠](#1-document-structure) | [⬅️](#34-ordinary-paragraphs) | [➡️](#351-depth)
 ## 3.5. Table of contents
 <small>`[Search Tags: >]`</small>
 
@@ -269,8 +349,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#35-table-of-contents) | [Next](#4-book-structure)
+[🏠](#1-document-structure) | [⬅️](#35-table-of-contents) | [➡️](#4-book-structure)
 ### 3.5.1. Depth
 <small>`[Search Tags: >]`</small>
 
@@ -282,8 +371,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#351-depth) | [Next](#41-page-order)
+[🏠](#1-document-structure) | [⬅️](#351-depth) | [➡️](#41-page-order)
 # 4. Book structure
 <small>`[Search Tags: >]`</small>
 
@@ -295,8 +393,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#4-book-structure) | [Next](#5-special-pages)
+[🏠](#1-document-structure) | [⬅️](#4-book-structure) | [➡️](#5-special-pages)
 ## 4.1. Page order
 <small>`[Search Tags: >]`</small>
 
@@ -308,8 +415,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#41-page-order) | [Next](#51-bibliography)
+[🏠](#1-document-structure) | [⬅️](#41-page-order) | [➡️](#51-bibliography)
 # 5. Special pages
 <small>`[Search Tags: >]`</small>
 
@@ -321,8 +437,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#5-special-pages) | [Next](#6-resources)
+[🏠](#1-document-structure) | [⬅️](#5-special-pages) | [➡️](#6-resources)
 ## 5.1. Bibliography
 <small>`[Search Tags: >]`</small>
 
@@ -334,8 +459,17 @@ asdqw
 
 
 
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
 ---
-[Home](#1-document-structure) | [Previous](#2-text-formatting) | [Next](#51-bibliography)
+[🏠](#1-document-structure) | [⬅️](#2-text-formatting) | [➡️](#51-bibliography)
 # 6. Resources
 <small>`[Search Tags: >]`</small>
 
@@ -367,7 +501,7 @@ asdqw
 > References:
 -->
 
-**[Home](#1-document-structure)** | **[Previous](#1-document-structure)** | **[Next](#12-preamble)**
+**[🏠](#1-document-structure)** | **[⬅️](#1-document-structure)** | **[➡️](#12-preamble)**
 ## 2. Preamble [§][1]
 <small>`[Search Tags: >globalstructure >documentstructure >mainstructure]`</small>
 <br>
