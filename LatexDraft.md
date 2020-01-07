@@ -65,7 +65,7 @@ Part 01: Common Elements
 
 ---
 
-# 1. Document Structure §
+# 1. Document Structure
 <small>`[Search Tags: >docstructure >docstructs >docstrcts >documentstructures]`</small>
 
 -	1. [Global structure](#1-global-structure)
