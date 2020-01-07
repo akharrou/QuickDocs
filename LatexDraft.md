@@ -123,25 +123,10 @@ Part 01: Common Elements
 ---
 <!-- [Home](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes) -->
 
-<small><a href="#1-document-structure">Home</a> | <a href="#1-global-structure">Previous</a> | <a href="#21-document-classes">Next</a></small>
+
 # 2. Preamble
 <small>`[Search Tags: >]`</small>
 
-
--	_**LaTeX document global structure**_:
-
-	```latex
-	\documentclass{...}
-
-	% Preamble
-
-	\begin{document}
-	...
-	\end{document}
-	```
-	> _The `Preamble` area normally contains commands that affect the entire document._
-
-	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
 <br>
 
@@ -150,9 +135,12 @@ Part 01: Common Elements
 > | # | Type              | Author                 | Link
 > | - | ----------------- | ---------------------- | --------------------------
 > | 1 | n/a               | n/a                    | n/a
+> | 1 | Video             | Youtube                | Markdown Tutorial
+
+asdqw
 
 ---
-[Home](#1-document-structure) | [Previous](#2-preamble) | [Next](#22-packages)
+[**↩︎**](#1-document-structure) | [Previous](#2-preamble) | [Next](#22-packages)
 ## 2.1. Document classes
 <small>`[Search Tags: >]`</small>
 
