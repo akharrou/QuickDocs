@@ -121,7 +121,9 @@ Part 01: Common Elements
 	"Youtube \| Markdown Preambule"
 
 ---
-[Home](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes)
+<!-- [Home](#1-document-structure) | [Previous](#1-global-structure) | [Next](#21-document-classes) -->
+
+<small><a href="#1-document-structure">Home</a> | <a href="#1-global-structure">Previous</a> | <a href="#21-document-classes">Next</a></small>
 # 2. Preamble
 <small>`[Search Tags: >]`</small>
 
