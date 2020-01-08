@@ -217,7 +217,7 @@ Option | Description
 <br>
 <br>
 
--	A **pacakge** is an abstraction – of a set of commands, that add features and functionalities [to a document], giving you new capabilties. These bundles of features and functionalities are imported, *so to speak*, independant of *document classes*.
+-	A **pacakge** is an abstraction – of a set of commands, that add features and functionalities [to the LaTeX processor], giving you new capabilties. Packages are imported, *so to speak*, independantly from *document classes*.
 
 -	***To use packages:***
 	```latex
@@ -230,7 +230,11 @@ Option | Description
 	\usepackage[ampersand]{easylist} % Introduces an Enhanced & Very Powerful and Customizable Type of Enum/List
 	```
 
+-	Each package comes with its documentation. In it is specified the option(s) that come with it [the package] and that you can use [in the `<options>` field] when you import them [the packages], via `\usepackage{}`. <br> <br>
 
+	Package documentation also details the added features and functionalities [to the LaTeX processor] and how to use them [in your document].
+
+	>	A package's documentation can be found (and downloaded) on the – [CTAN Archive Network](https://www.overleaf.com/learn/latex/List_of_packages_and_class_files) – server archiving them *[packages & document classes]* alongside their documentation and other relevant information.
 
 
 <br>
