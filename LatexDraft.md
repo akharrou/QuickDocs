@@ -66,7 +66,7 @@ Part 01: Common Elements
 ---
 
 # 1. Document Structure
-<small>`[Search Tags: >docstructure >docstructs >docstrcts >documentstructures >init >documentclass >docclass >doclass >classes >doctype]`</small>
+<small>`[Search Tags: >docstructure >docstructs >docstrcts >documentstructures]`</small>
 <br>
 <br>
 
@@ -128,7 +128,7 @@ Part 01: Common Elements
 ---
 [🏠](#1-document-structure) | [⬅️](#1-global-structure) | [➡️](#21-document-classes)
 # 2. Preamble
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >preamble >perambule >documentclass >docclass >init >documentclass >docclass >doclass >classes >doctype >doclayoutclass >doclasslayout >layout]`</small>
 <br>
 <br>
 
