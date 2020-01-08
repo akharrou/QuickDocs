@@ -69,9 +69,11 @@ Part 01: Common Elements
 <small>`[Search Tags: >docstructure >docstructs >docstrcts >documentstructures]`</small>
 <br>
 
-> *The main point of writing a text is to convey ideas, information, or knowledge to the reader. The reader will understand the text better if these ideas are well-structured, and will see and feel this structure much better if the typographical form reflects the logical and semantic structure of the content.*
+> *The main objective in writing is to convey ideas, information, or knowledge to the reader. The better these ideas are structured, the better the reader will understand and retain them. And in addition, the more the typographical form reflects this logical/semantic structure, the better this structure will appear and be felt [by the reader]*
 >
-> *LaTeX is different from other typesetting systems in that you just have to tell it the logical and semantical structure of a text. It then derives the typographical form of the text according to the “rules” given in the document class file and in various style files. LaTeX allows users to structure their documents with a variety of hierarchical constructs, including chapters, sections, subsections and paragraphs.*
+> *This is where LaTeX, as opposed to other typesetting systems, shines. LaTeX allows you to simply tell it the logical/semantical structure of the text that you want. It then derives the typographical form of the text according to the “rules” given in the _document class file_ (and in various style files).*
+>
+> *LaTeX allows users to structure their documents with a variety of hierarchical constructs, including chapters, sections, subsections, paragraphs and even subparagraphs.*
 
 -	*1*. [Global structure](#1-global-structure)
 -	*2*. [Preamble](#2-preamble)
