@@ -184,8 +184,6 @@ Option | Description
 <br>
 
 ##### Ressources:
-##### Ressources:
-##### Ressources:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
