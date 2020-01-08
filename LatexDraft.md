@@ -69,11 +69,13 @@ Part 01: Common Elements
 <small>`[Search Tags: >docstructure >docstructs >docstrcts >documentstructures]`</small>
 <br>
 
-> *The main objective in writing is to convey ideas, information, or knowledge to the reader. The better these ideas are structured, the better the reader will understand and retain them. And in addition, the more the typographical form reflects this logical/semantic structure, the better this structure will appear and be felt [by the reader]*
+>	*The main objective in writing is to convey ideas, information, or knowledge to the reader. The better these ideas are structured, the better the reader will understand and retain them. And in addition, the more the typographical form reflects this logical/semantic structure, the better this structure will appear and be felt [by the reader]*
 >
-> *This is where LaTeX, as opposed to other typesetting systems, shines. LaTeX allows you to simply tell it the logical/semantical structure of the text that you want. It then derives the typographical form of the text according to the “rules” given in the _document class file_ (and in various style files).*
+>	*This is where LaTeX, in contrast to other typesetting systems, shines. LaTeX allows you to simply tell it the logical/semantical structure of the text that you want with commands (e.g. `\part{}`, `\chapter{}`, `\section{}`). It then derives the typographical form of the text according to the “rules” given in the _document class file_ (and in various style files).*
 >
-> *LaTeX allows users to structure their documents with a variety of hierarchical constructs, including chapters, sections, subsections, paragraphs and even subparagraphs.*
+>	*The _document class file_ is a `.cls` file and contains *
+>
+>	*LaTeX allows users to structure their documents with a variety of hierarchical constructs, including parts, chapters, sections, subsections, paragraphs and even subparagraphs.*
 
 -	*1*. [Global structure](#1-global-structure)
 -	*2*. [Preamble](#2-preamble)
@@ -124,7 +126,7 @@ Part 01: Common Elements
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -136,7 +138,7 @@ Part 01: Common Elements
 # 2. Preamble
 <small>`[Search Tags: >preamble >perambule]`</small>
 
-The preambule area is meant to be a place where **things affecting the entire document** are supposed to be declared / defined / brought-up. Things like, the **document class** and **packages** which we will discuss below.
+The preambule area is meant to be a place where **things affecting the entire document** are supposed to be declared / defined. Things like, the **document class** and **packages** which we will discuss below.
 
 ---
 [🏠](#1-document-structure) | [⬅️](#2-preamble) | [➡️](#22-packages)
@@ -199,7 +201,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -224,7 +226,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -249,7 +251,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -274,7 +276,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -299,7 +301,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -324,7 +326,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -349,7 +351,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -374,7 +376,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -399,7 +401,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -424,7 +426,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -449,7 +451,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -474,7 +476,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -499,7 +501,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -524,7 +526,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -549,7 +551,7 @@ Option | Description
 <br>
 <br>
 
-> ***Resources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
