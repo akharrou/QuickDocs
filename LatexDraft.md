@@ -140,8 +140,7 @@ Part 01: Common Elements
 	```latex
 	\documentclass[<options>]{<class>}
 	```
-	> --- use the above command; it should be placed at the very top of the document.
-	Then replace the `<class>` field with one of the *standard document classes* available, listed below:
+	> – use the above command; it should be placed at the very top of the document. Then replace the `<class>` field with one of the following *standard document classes* available:
 
 	   Class     | Description
 	   ----------|--------------
@@ -155,6 +154,8 @@ Part 01: Common Elements
 	   `letter` | For writing letters.
 	   `beamer` | For writing presentations (see [LaTeX/Presentations](https://en.wikibooks.org/wiki/LaTeX/Presentations)).
 
+	  > It is also possible to create your own *document layout class*.
+	  > It is also possible to create your own *document layout class*.
 	  > It is also possible to create your own *document layout class*.
 
 
