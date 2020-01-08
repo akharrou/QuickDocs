@@ -110,8 +110,9 @@ Part 01: Common Elements
 	...
 	\end{document}
 	```
-	> _The `Preamble` area normally contains commands that affect the entire document._
-
+	>
+	> _The reason for marking off the beginning of your text is that LaTeX allows you to insert extra setup specifications (with regards to many things pertaining to document customizablity, e.g. document layout) before it._
+	>
 	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
 
@@ -130,8 +131,10 @@ Part 01: Common Elements
 # 2. Preamble
 <small>`[Search Tags: >preamble >perambule]`</small>
 
+The preambule area is meant to be a place where **things affecting the entire document** are supposed to be declared / defined / brought-up. Things like, the **document class** and **packages**; we will discuss them below.
+
 ---
-[🏠](#1-document-structure) | [⬅️](#2-preamble) | [➡️](#22-packages) | [📜](#21-document-classes-resources)
+[🏠](#1-document-structure) | [⬅️](#2-preamble) | [➡️](#22-packages)
 
 ## 2.1. Document classes
 <small>`[Search Tags: >documentclass >docclass >init >documentclass >docclass >doclass >classes >doctype >doclayoutclass >doclasslayout >layout]`</small>
@@ -183,11 +186,11 @@ Option | Description
 <br>
 <br>
 
-##### Ressources:
+> ***Ressources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Encyclopedia | Wikipedia | [Latex :: Preamble :: Document Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)
+> | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)
 
 
 ---
@@ -208,11 +211,11 @@ Option | Description
 <br>
 <br>
 
-##### Ressources: {#22-packages}
-
+> ***Ressources:***
+>
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Preambule :: Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
 
 
 ---
