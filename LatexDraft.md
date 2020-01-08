@@ -144,7 +144,7 @@ The preambule area is meant to be a place where **things affecting the entire do
 <br>
 <br>
 
--	A ***document class*** is an abstraction – of a set of rules (commands) – defined in a file – governing a documents' typographical form (i.e layout, style, etc.).
+-	A ***document class*** is an abstraction – of a set of rules (commands), defined in a file, governing a documents' typographical form (i.e layout, style, etc).
 
 -	A *document class* is defined in a ***document class file*** – a file with a `.cls` extention (name), containing "rules" that describe *[to the LaTeX processor]* the typographical form of a document – i.e how to format a document, i.e how to make it look in print.
 
@@ -192,9 +192,9 @@ Option | Description
 `openright`, `openany` | Makes chapters begin either only on right hand pages     or on the next page available. This does not work with the `article` class,     as it does not know about chapters. The `report` class by default starts     chapters on the next page available and the `book` class starts them on right     hand pages.
 `draft` | Makes LaTeX indicate hyphenation and justification problems with a     small square in the right-hand margin of the problem line so they can be     located quickly by a human. It also suppresses the inclusion of images and     shows only a frame where they would normally occur.
 
--	Non-generic classes (those provided by university departments or publication houses) may have different options than those shown above or no options at all. Normally, third-party classes come with their own documentation.
+-	Non-generic classes (e.g. some provided by university departments or publication houses) may have different options than those shown above or no options at all. Normally, third-party classes come with their own documentation.
 
-	>	A document class's documentation (and other relevant information) can be found (and downloaded) on the – [Comprehensive TeX Archive Network (CTAN)](https://ctan.org) – *"central place for all kinds of material around TeX"*.
+	>	A [document] class's documentation (and other relevant information) can be found (and downloaded) on the – [Comprehensive TeX Archive Network (CTAN)](https://ctan.org) – *"central place for all kinds of material around TeX"*.
 
 -	It is also possible to create & use your own *document class(es)*.
 
@@ -219,7 +219,7 @@ Option | Description
 <br>
 <br>
 
--	A **pacakge** is an abstraction – of a set of commands and macros – defined in a file – that add features and functionalities *[to the LaTeX processor]* – when imported – giving you new capabilties. Packages are imported – *so to speak* – independantly from *document classes*.
+-	A **pacakge** is an abstraction – of a set of commands and macros, defined in a file, that add features and functionalities *[to the LaTeX processor]* – when imported – giving you new capabilties. Packages are imported – *so to speak* – independantly from *document classes*.
 
 -	A *package* is defined in a ***package file*** – a file with a `.sty` extention (name), containing commands and macros, that extends LaTeX's *[processor]* capabilties.
 
