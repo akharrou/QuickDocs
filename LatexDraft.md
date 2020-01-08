@@ -68,7 +68,6 @@ Part 01: Common Elements
 # 1. Document Structure
 <small>`[Search Tags: >docstructure >docstructs >docstrcts >documentstructures]`</small>
 <br>
-<br>
 
 *The main point of writing a text is to convey ideas, information, or knowledge to the reader. The reader will understand the text better if these ideas are well-structured, and will see and feel this structure much better if the typographical form reflects the logical and semantic structure of the content.*
 
