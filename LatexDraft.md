@@ -215,7 +215,7 @@ Option | Description
 ---
 [🏠](#1-document-structure) | [⬅️](#21-document-classes) | [➡️](#3-the-document-environment)
 ## 2.2. Packages
-<small>`[Search Tags: >packages >packs >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs]`</small>
+<small>`[Search Tags: >packages >packs >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs >exts >extensions >extens]`</small>
 <br>
 <br>
 
