@@ -700,7 +700,6 @@ _**Rendered Output:**_
 > $\small [Note:$ Not all Markdown processors support this feature. $\small - \space end \space note]$
 
 -	***Footnotes allow you*** to add notes and references without cluttering the body of the document. When you create a footnote, a superscript number with a link appears where you added the footnote reference. Readers can click the link to jump to the content of the footnote at the bottom of the page.
-<br>
 
 -	*To create a* ***footnote reference***: `[^<footnote-id>]`, e.g.:
 
