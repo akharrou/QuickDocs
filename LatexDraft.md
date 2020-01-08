@@ -158,7 +158,7 @@ Class     | Description
 `letter` | For writing letters.
 `beamer` | For writing presentations (see [LaTeX/Presentations](https://en.wikibooks.org/wiki/LaTeX/Presentations)).
 
-<small>`[Search Tags: >documentoptions >docoptions >documentoptions >docoptions >dooptions >optionses >doclayoutoptions >dooptionslayout]`</small>
+<small>`[Search Tags: >documentoptions >docoptions >documentoptions >docoptions >dooptions >optionses >doclayoutoptions >dooptionslayout >docops >layoutoptions >layoutops]`</small>
 
 Replace the `<option>` field with one of the following **standard document class options**:
 
