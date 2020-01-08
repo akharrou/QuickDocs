@@ -131,7 +131,7 @@ Part 01: Common Elements
 <small>`[Search Tags: >preamble >perambule]`</small>
 
 ---
-[🏠](#1-document-structure) | [⬅️](#2-preamble) | [➡️](#22-packages)
+[🏠](#1-document-structure) | [⬅️](#2-preamble) | [➡️](#22-packages) | [📜](#21-document-classes-resources)
 
 ## 2.1. Document classes
 <small>`[Search Tags: >documentclass >docclass >init >documentclass >docclass >doclass >classes >doctype >doclayoutclass >doclasslayout >layout]`</small>
@@ -160,7 +160,7 @@ Class     | Description
 
 <small>`[Search Tags: >documentoptions >docoptions >documentoptions >docoptions >dooptions >optionses >doclayoutoptions >dooptionslayout >docops >layoutoptions >layoutops]`</small>
 
-Replace the `<option>` field with one of the following **standard document class options**:
+Replace the `<option>` field with one of the following **class options**:
 
 Option | Description
 -------|--------------
@@ -183,7 +183,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+##### Ressources: {#21-document-classes-resources}
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -208,8 +208,8 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
->
+##### Ressources: {#22-packages}
+
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | n/a               | n/a                    | n/a
