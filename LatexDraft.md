@@ -144,16 +144,15 @@ The preambule area is meant to be a place where **things affecting the entire do
 <small>`[Search Tags: >documentclass >docclass >init >documentclass >docclass >doclass >classes >doctype >doclayoutclass >doclasslayout >layout]`</small>
 
 
--	A _**document class**_ is an abstraction – of a set of
- rules governing a documents' typographical form.
+-	A _**document class**_ is an abstraction – of a set of rules governing a documents' typographical form (i.e layout, style, etc.).
 
--	A _document class_ is defined in a _**document class file**_ – a file with a `.cls` extention, containing "rules" (logical statements) that describe [to the LaTeX processor] the typographical form (e.g. layout, style, etc.) of a document, i.e how to format a document, i.e how to make it look in print.
+-	A _document class_ is defined in a _**document class file**_ – a file with a `.cls` extention, containing "rules" (logical statements) that describe [to the LaTeX processor] the typographical form of a document – i.e how to format a document, i.e how to make it look in print.
 
 -	***To specify which document class [to use]:***
 	```latex
 	\documentclass[<options>]{<class>}
 	```
-	> – use the above command at the very top of your document.
+	> – write the above command at the very top of your document.
 
 	**Example:**
 
