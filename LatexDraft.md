@@ -103,7 +103,7 @@ Part 01: Common Elements
 <br>
 <br>
 
--	_**LaTeX document global structure**_:
+-	***LaTeX document global structure***:
 
 	```latex
 	\documentclass{...}
@@ -115,9 +115,9 @@ Part 01: Common Elements
 	\end{document}
 	```
 	>
-	> _The reason for marking off the beginning of your text is that LaTeX allows you to insert extra setup specifications (e.g. document layout) before it._
+	> *The reason for marking off the beginning of your text is that LaTeX allows you to insert extra setup specifications (e.g. document layout) before it.*
 	>
-	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
+	> *The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index.*
 
 
 <br>
@@ -144,9 +144,9 @@ The preambule area is meant to be a place where **things affecting the entire do
 <br>
 <br>
 
--	A _**document class**_ is an abstraction – of a set of rules (commands) governing a documents' typographical form (i.e layout, style, etc.).
+-	A ***document class*** is an abstraction – of a set of rules (commands) – defined in a file – governing a documents' typographical form (i.e layout, style, etc.).
 
--	A _document class_ is defined in a _**document class file**_ – a file with a `.cls` extention, containing "rules" that describe *[to the LaTeX processor]* the typographical form of a document – i.e how to format a document, i.e how to make it look in print.
+-	A *document class* is defined in a ***document class file*** – a file with a `.cls` extention (name), containing "rules" that describe *[to the LaTeX processor]* the typographical form of a document – i.e how to format a document, i.e how to make it look in print.
 
 -	***To specify which document class [to use]:***
 	```latex
@@ -177,7 +177,7 @@ Class     | Description
 
 <small>`[Search Tags: >documentoptions >docoptions >documentoptions >docoptions >dooptions >optionses >doclayoutoptions >dooptionslayout >docops >layoutoptions >layoutops]`</small>
 
-Replace the `<option>` field with one or more, comma seperated, **class options**:
+... and replace the `<option>` field with one or more of the common **class options**:
 
 Option | Description
 -------|--------------
@@ -192,9 +192,11 @@ Option | Description
 `openright`, `openany` | Makes chapters begin either only on right hand pages     or on the next page available. This does not work with the `article` class,     as it does not know about chapters. The `report` class by default starts     chapters on the next page available and the `book` class starts them on right     hand pages.
 `draft` | Makes LaTeX indicate hyphenation and justification problems with a     small square in the right-hand margin of the problem line so they can be     located quickly by a human. It also suppresses the inclusion of images and     shows only a frame where they would normally occur.
 
--	It is also possible to create your own *document classes*, and therefore your own custom layouts.
-
 -	Non-generic classes (those provided by university departments or publication houses) may have different options than those shown above or no options at all. Normally, third-party classes come with their own documentation.
+
+	>	A document class's documentation (and other relevant information) can be found (and downloaded) on the – [Comprehensive TeX Archive Network (CTAN)](https://ctan.org) – *"central place for all kinds of material around TeX"*.
+
+-	It is also possible to create & use your own *document class(es)*.
 
 
 <br>
@@ -207,7 +209,7 @@ Option | Description
 > | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)
 > | 2 | Documentation | Overleaf | [Latex :: Understanding [...] class files](https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files)
 > | 3 | Documentation | Overleaf | [Latex :: Writing your own class](https://www.overleaf.com/learn/latex/Writing_your_own_class)
-> | 4 | Documentation | Overleaf | [CTAN :: Class Archive Network](https://ctan.org/)
+> | 4 | Archive | CTAN | [Classes](https://ctan.org/topic/class)
 
 
 ---
@@ -217,7 +219,9 @@ Option | Description
 <br>
 <br>
 
--	A **pacakge** is an abstraction – of a set of commands, that add features and functionalities *[to the LaTeX processor]*, giving you new capabilties. Packages are imported – *so to speak* – independantly from *document classes*.
+-	A **pacakge** is an abstraction – of a set of commands and macros – defined in a file – that add features and functionalities *[to the LaTeX processor]* – when imported – giving you new capabilties. Packages are imported – *so to speak* – independantly from *document classes*.
+
+-	A *package* is defined in a ***package file*** – a file with a `.sty` extention (name), containing commands and macros, that extends LaTeX's *[processor]* capabilties.
 
 -	***To use packages:***
 	```latex
@@ -240,7 +244,7 @@ Option | Description
 
 	Package documentation also details the added features and functionalities [to the LaTeX processor] and how to use them [in your document].
 
-	>	A package's documentation can be found (and downloaded) on the – [CTAN Archive Network](https://www.overleaf.com/learn/latex/List_of_packages_and_class_files) – server that archives them *[packages (& document classes)]* alongside their documentation and other relevant information.
+	>	A package's documentation (and other relevant information) can be found (and downloaded) on the – [Comprehensive TeX Archive Network (CTAN)](https://ctan.org) – *"central place for all kinds of material around TeX. CTAN has currently 5781 packages. 2651 contributors have contributed to it. Most of the packages are free and can be downloaded and used immediately"*.
 
 
 <br>
@@ -253,7 +257,7 @@ Option | Description
 > | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
 > | 2 | Documentation | Overleaf | [Latex :: Understanding [...] packages](https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files)
 > | 3 | Documentation | Overleaf | [Writing your own package](https://www.overleaf.com/learn/latex/Writing_your_own_package)
-> | 4 | Documentation | Overleaf | [CTAN :: Package Archive Network](https://www.overleaf.com/learn/latex/List_of_packages_and_class_files)
+> | 4 | Archive | CTAN | [Packages](https://ctan.org/pkg)
 
 
 ---
