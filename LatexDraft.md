@@ -92,8 +92,8 @@ Part 01: Common Elements
 ---
 
 
-[🏠](#1-document-structure) | [⬅️](#1-document-structure) | [➡️](#2-preamble)
 # 1. Global structure
+[🏠](#1-document-structure) | [⬅️](#1-document-structure) | [➡️](#2-preamble)
 <small>`[Search Tags: >document.structure.global >document.global.structure >structure.global >global.structure >globalstructure >structureglobal >globaldocumentstructure >globadocstructure >docglobalstructure >gstructures >gdocstructures]`</small>
 <br>
 <br>
@@ -127,8 +127,8 @@ Part 01: Common Elements
 
 
 ---
-[🏠](#1-document-structure) | [⬅️](#1-global-structure) | [➡️](#21-document-classes)
 # 2. Preamble
+[🏠](#1-document-structure) | [⬅️](#1-global-structure) | [➡️](#21-document-classes)
 <small>`[Search Tags: >preamble >perambule]`</small>
 
 The preambule area is meant to be a place where **things affecting the entire document** are supposed to be declared / defined / brought-up. Things like, the **document class** and **packages** which we will discuss below.
