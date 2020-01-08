@@ -841,7 +841,7 @@ The following is how to create a basic title page:
 % ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
 % >REFERENCES AND >BIBLIOGRAPHY
 
-    % --- SELF REFERENCE A SECTION
+    % --- SELF REFERENCE A SECTIONs
 
         % \section { <title> } \label { sec:<label> }
         % ...
