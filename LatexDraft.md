@@ -183,7 +183,9 @@ Option | Description
 <br>
 <br>
 
-##### Ressources: {#21-document-classes-resources}
+##### Ressources:
+##### Ressources:
+##### Ressources:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
