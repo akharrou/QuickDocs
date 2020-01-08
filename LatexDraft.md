@@ -131,7 +131,7 @@ Part 01: Common Elements
 # 2. Preamble
 <small>`[Search Tags: >preamble >perambule]`</small>
 
-The preambule area is meant to be a place where **things affecting the entire document** are supposed to be declared / defined / brought-up. Things like, the **document class** and **packages**; we will discuss them below.
+The preambule area is meant to be a place where **things affecting the entire document** are supposed to be declared / defined / brought-up. Things like, the **document class** and **packages** which we will discuss below.
 
 ---
 [🏠](#1-document-structure) | [⬅️](#2-preamble) | [➡️](#22-packages)
@@ -139,7 +139,7 @@ The preambule area is meant to be a place where **things affecting the entire do
 ## 2.1. Document classes
 <small>`[Search Tags: >documentclass >docclass >init >documentclass >docclass >doclass >classes >doctype >doclayoutclass >doclasslayout >layout]`</small>
 
--	> TODO: The layout of the document class
+-	> TODO: what is meant by the 'layout' of a document, and how does classes having anything to do with them.
 
 -	***To specify the document class:***
 	```latex
