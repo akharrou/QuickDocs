@@ -103,8 +103,6 @@ Part 01: Common Elements
 <br>
 <br>
 
--	The _document class file_ is a `.cls` file containing "rules" (logical statements) that describe to the LaTeX processor the typographical form of of the document, i.e how to format the document, i.e how to make it look in print.
-
 -	_**LaTeX document global structure**_:
 
 	```latex
@@ -145,9 +143,13 @@ The preambule area is meant to be a place where **things affecting the entire do
 ## 2.1. Document classes
 <small>`[Search Tags: >documentclass >docclass >init >documentclass >docclass >doclass >classes >doctype >doclayoutclass >doclasslayout >layout]`</small>
 
--	> TODO: what is meant by the 'layout' of a document, and how does classes having anything to do with them.
 
--	***To specify the document class:***
+-	A _**document class**_ is an abstraction – of a set of
+ rules governing a documents' typographical form.
+
+-	A _document class_ is defined in a _**document class file**_ – a file with a `.cls` extention, containing "rules" (logical statements) that describe [to the LaTeX processor] the typographical form (e.g. layout, style, etc.) of a document, i.e how to format a document, i.e how to make it look in print.
+
+-	***To specify which document class [to use]:***
 	```latex
 	\documentclass[<options>]{<class>}
 	```

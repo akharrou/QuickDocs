@@ -158,7 +158,7 @@ The following is how to create a basic title page:
 % with \listfigurename for LoF and \listtablename for LoT.
 
 % ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
-% >TEXT, >SECTION , >SUBSECTION, >PARAGRAPH, >SUBPARAGRAPH, >CHAPTER, >PART
+% >TEXT, >SECTION , >SUBSECTION, RAGRAPH, >SUBPARAGRAPH, >CHAPTER, >PART
 
 % All the titles of the sections are added automatically to the table of
 % contents (if you decide to insert one). Notice that you do not need to
