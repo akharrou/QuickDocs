@@ -147,6 +147,8 @@ The preambule area is meant to be a place where **things affecting the entire do
 	```
 	> – use the above command at the very top of your document.
 
+<br>
+
 Replace the `<class>` field with one of the following **standard document classes**:
 
 Class     | Description
