@@ -113,13 +113,15 @@ Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.ne
 ###### H6
 ```
 
-> [Note:	Optionally, you may “close” atx-style headers --- this is purely cosmetic. For example:
+> <small>_[Note: Optionally, you may “close” atx-style headers --- this is purely cosmetic. For example:_
+>
 > ```markdown
 > # This is an H1 #
 > ## This is an H2 ##
 > ### This is an H3 ###### <!-- They don't need to match. -->
 > ```
-- *<small>end note]</small>*
+>
+> _- end note]_</small>
 
 ### 2.1.2. Setext Headers
 
