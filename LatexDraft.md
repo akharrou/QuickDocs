@@ -30,7 +30,7 @@ QuickDocs \| $\LaTeX$
 
 #### PART 01: Common Elements
 
-- *1\.* [Document Structure](#1-document-structure)
+- *1\.* [Document Structure](./LatexDraft&#32;|&#32;01.&#32;Document-Structure.md#1-document-structure)
 - *2\.* [Text Formatting](#2-text-formatting)
 - *3\.* [Paragraph Formatting](#3-paragraph-formatting)
 - *4\.* [Colors](#4-colors)
