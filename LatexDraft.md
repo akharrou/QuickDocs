@@ -217,7 +217,7 @@ Option | Description
 <br>
 <br>
 
--	A **pacakge** is an abstraction – of a set of commands, that add features and functionalities [to the LaTeX processor], giving you new capabilties. Packages are imported, *so to speak*, independantly from *document classes*.
+-	A **pacakge** is an abstraction – of a set of commands, that add features and functionalities [to the LaTeX processor], giving you new capabilties. Packages are imported – *so to speak* – independantly from *document classes*.
 
 -	***To use packages:***
 	```latex
