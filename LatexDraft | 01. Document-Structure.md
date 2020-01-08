@@ -211,7 +211,7 @@ Option | Description
 ---
 [🏠](#1-document-structure) | [⬅️](#3-the-document-environment) | [➡️](#33-abstract)
 ## 3.1. Top matter
-<small>`[Search Tags: >topmatter >top.matter >matter.top >document.topmatter >doctopmatter >docmattertop]`</small>
+<small>`[Search Tags: >topmatter >top.matter >matter.top >document.topmatter >doctopmatter >docmattertop >doc.topmatter]`</small>
 <br>
 <br>
 
