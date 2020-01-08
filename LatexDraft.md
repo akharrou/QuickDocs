@@ -73,7 +73,7 @@ Part 01: Common Elements
 >
 >	*This is where LaTeX, in contrast to other typesetting systems, shines. LaTeX allows you to simply tell it the logical/semantical structure of the text that you want with commands (e.g. `\part{}`, `\chapter{}`, `\section{}`). It then derives the typographical form of the text according to the “rules” given in the _document class file_ (and in various style files).*
 >
->	*The _document class file_ is a `.cls` file and contains *
+>	*The _document class file_ is a `.cls` file containing essentially logical statements that describe to the LaTeX processor how to typeset the document.*
 >
 >	*LaTeX allows users to structure their documents with a variety of hierarchical constructs, including parts, chapters, sections, subsections, paragraphs and even subparagraphs.*
 
@@ -211,7 +211,7 @@ Option | Description
 ---
 [🏠](#1-document-structure) | [⬅️](#21-document-classes) | [➡️](#3-the-document-environment)
 ## 2.2. Packages
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >packages >packs >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs]`</small>
 <br>
 <br>
 

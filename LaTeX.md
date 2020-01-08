@@ -83,7 +83,7 @@ For example, if you want a report to be in `12pt` type on `A4`, but printed `one
 
 ## [Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
 
-<small>`[Search Tags: >packages >packs >libs >libraries >modules >mods >imports >includes >usepackage >pcks >pckgs >pkgs]`</small>
+<small>`[Search Tags:]`</small>
 
 -   The command to import/use a package is:
 
