@@ -240,7 +240,7 @@ Option | Description
 
 	Package documentation also details the added features and functionalities [to the LaTeX processor] and how to use them [in your document].
 
-	>	A package's documentation can be found (and downloaded) on the – [CTAN Archive Network](https://www.overleaf.com/learn/latex/List_of_packages_and_class_files) – server archiving them *[packages & document classes]* alongside their documentation and other relevant information.
+	>	A package's documentation can be found (and downloaded) on the – [CTAN Archive Network](https://www.overleaf.com/learn/latex/List_of_packages_and_class_files) – server that archives them *[packages (& document classes)]* alongside their documentation and other relevant information.
 
 
 <br>
