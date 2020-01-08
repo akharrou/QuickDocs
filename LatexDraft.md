@@ -71,9 +71,7 @@ Part 01: Common Elements
 
 >	*The main objective in writing is to convey ideas, information, or knowledge to the reader. The better these ideas are structured, the better the reader will understand and retain them. And in addition, the more the typographical form reflects this logical/semantic structure, the better this structure will appear and be felt [by the reader]*
 >
->	*This is where LaTeX, in contrast to other typesetting systems, shines. LaTeX allows you to simply tell it the logical/semantical structure of the text that you want with commands (e.g. `\part{}`, `\chapter{}`, `\section{}`). It then derives the typographical form of the text according to the “rules” given in the _document class file_ (and in various style files).*
->
->	*The _document class file_ is a `.cls` file containing essentially logical statements that describe to the LaTeX processor how to typeset the document.*
+>	*This is where LaTeX, in contrast to other typesetting systems, shines. LaTeX allows you to simply tell it the logical/semantical structure of the text that you want, using commands (e.g. `\part{}`, `\chapter{}`, `\section{}`). It then derives the typographical form of the text according to the “rules” given in the _document class file_ (and in various style files).*
 >
 >	*LaTeX allows users to structure their documents with a variety of hierarchical constructs, including parts, chapters, sections, subsections, paragraphs and even subparagraphs.*
 
@@ -105,6 +103,7 @@ Part 01: Common Elements
 <br>
 <br>
 
+-	The _document class file_ is a `.cls` file containing "rules" (logical statements) that describe to the LaTeX processor the typographical form of of the document, i.e how to format the document, i.e how to make it look in print.
 
 -	_**LaTeX document global structure**_:
 
@@ -230,7 +229,7 @@ Option | Description
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Preambule :: Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
+> | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
 
 
 ---
