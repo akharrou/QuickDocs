@@ -17,13 +17,13 @@
 	-	*2.2*. [Packages](#22-packages)
 -	*3*. [The document environment](#3-the-document-environment)
 	-	*3.1*. [Top matter](#31-top-matter)
-	-	*3.2*. [Abstract](#32-abstract)
-	-	*3.3*. [Sectioning commands](#33-sectioning-commands)
-		-	*3.3.1*. [Section numbering](#331-section-numbering)
-		-	*3.3.2*. [Section number style](#332-section-number-style)
--	*3.4*. [Ordinary paragraphs](#34-ordinary-paragraphs)
-	-	*3.5*. [Table of contents](#35-table-of-contents)
-		-	*3.5.1*. [Depth](#351-depth)
+	-	*3.2*. [Table of contents](#32-table-of-contents)
+		-	*3.2.1*. [Depth](#321-depth)
+	-	*3.3*. [Abstract](#33-abstract)
+	-	*3.4*. [Sectioning commands](#34-sectioning-commands)
+		-	*3.4.1*. [Section numbering](#341-section-numbering)
+		-	*3.4.2*. [Section number style](#342-section-number-style)
+	-	*3.5*. [Paragraphs](#35-paragraphs)
 -	*4*. [Book structure](#4-book-structure)
 	-	*4.1*. [Page order](#41-page-order)
 -	*5*. [Special pages](#5-special-pages)
@@ -206,52 +206,33 @@ Option | Description
 <small>`[Search Tags: >docenvironment >documentenvironment >envdocument]`</small>
 <br>
 
-> The document environment <!--(§ SECTION )--> a.
-
-<!-- ##### Sub-sections
-
--	*3.1*. [Top matter](#31-top-matter)
--	*3.2*. [Abstract](#32-abstract)
--	*3.3*. [Sectioning commands](#33-sectioning-commands)
-	-	*3.3.1*. [Section numbering](#331-section-numbering)
-	-	*3.3.2*. [Section number style](#332-section-number-style)
--	*3.4*. [Ordinary paragraphs](#34-ordinary-paragraphs)
--	*3.5*. [Table of contents](#35-table-of-contents)
-	-	*3.5.1*. [Depth](#351-depth) -->
+> The document environment <!--(§ SECTION )--> can be divided into five subdivisions: ***top matter*** ([§3.1](#31-top-matter)), ***table of contents*** ([§3.2](#32-table-of-contents)), ***abstract*** ([§3.3](#33-abstract)), ***subdivisions of the actual content*** ([§3.4](#34-sectioning-commands)) *(e.g. parts, chapters, sections, subsections)* and lastly *(ordinary)* ***paragraphs*** ([§3.5](#35-paragraphs)).
 
 ---
-[🏠](#1-document-structure) | [⬅️](#3-the-document-environment) | [➡️](#32-abstract)
+[🏠](#1-document-structure) | [⬅️](#3-the-document-environment) | [➡️](#33-abstract)
 ## 3.1. Top matter
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >topmatter >top.matter >matter.top >document.topmatter >doctopmatter >docmattertop]`</small>
 <br>
 <br>
 
-> TODO: Top matter
+-	The top matter:
 
+	```latex
+	\documentclass[12pt, a4paper, oneside, draft]{report}
 
+	...
 
+	\begin{document}
 
+	\title     {<title>}
+	\author    {<author>}
+	\date      {<date>}
+	\maketitle
 
+	\end{document}
+	```
 
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#1-document-structure) | [⬅️](#31-top-matter) | [➡️](#33-sectioning-commands)
-## 3.2. Abstract
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-> TODO: Abstract
+	> – consists of
 
 
 
@@ -270,108 +251,8 @@ Option | Description
 
 
 ---
-[🏠](#1-document-structure) | [⬅️](#32-abstract) | [➡️](#331-section-numbering)
-## 3.3. Sectioning commands
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-> TODO: Sectioning commands
-
-
-
-
-
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#1-document-structure) | [⬅️](#33-sectioning-commands) | [➡️](#332-section-number-style)
-### 3.3.1. Section numbering
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-> TODO: Section numbering
-
-
-
-
-
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#1-document-structure) | [⬅️](#331-section-numbering) | [➡️](#34-ordinary-paragraphs)
-### 3.3.2. Section number style
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-> TODO: Section number style
-
-
-
-
-
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#1-document-structure) | [⬅️](#332-section-number-style) | [➡️](#35-table-of-contents)
-# 3.4. Ordinary paragraphs
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-> TODO: Ordinary paragraphs
-
-
-
-
-
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#1-document-structure) | [⬅️](#34-ordinary-paragraphs) | [➡️](#351-depth)
-## 3.5. Table of contents
+[🏠](#1-document-structure) | [⬅️](#35-paragraphs) | [➡️](#321-depth)
+## 3.2. Table of contents
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
@@ -395,8 +276,8 @@ Option | Description
 
 
 ---
-[🏠](#1-document-structure) | [⬅️](#35-table-of-contents) | [➡️](#4-book-structure)
-### 3.5.1. Depth
+[🏠](#1-document-structure) | [⬅️](#32-table-of-contents) | [➡️](#4-book-structure)
+### 3.2.1. Depth
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
@@ -420,7 +301,132 @@ Option | Description
 
 
 ---
-[🏠](#1-document-structure) | [⬅️](#351-depth) | [➡️](#41-page-order)
+[🏠](#1-document-structure) | [⬅️](#31-top-matter) | [➡️](#34-sectioning-commands)
+## 3.3. Abstract
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+> TODO: Abstract
+
+
+
+
+
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#1-document-structure) | [⬅️](#33-abstract) | [➡️](#341-section-numbering)
+## 3.4. Sectioning commands
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+> TODO: Sectioning commands
+
+
+
+
+
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#1-document-structure) | [⬅️](#34-sectioning-commands) | [➡️](#342-section-number-style)
+### 3.4.1. Section numbering
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+> TODO: Section numbering
+
+
+
+
+
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#1-document-structure) | [⬅️](#341-section-numbering) | [➡️](#35-paragraphs)
+### 3.4.2. Section number style
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+> TODO: Section number style
+
+
+
+
+
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#1-document-structure) | [⬅️](#342-section-number-style) | [➡️](#32-table-of-contents)
+# 3.5. Paragraphs
+<small>`[Search Tags: >paragraphs >ordinaryparagraphs >paras >texts >textboxes]`</small>
+<br>
+<br>
+
+> TODO: Ordinary paragraphs
+
+
+
+
+
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#1-document-structure) | [⬅️](#321-depth) | [➡️](#41-page-order)
 # 4. Book structure
 <small>`[Search Tags: >]`</small>
 <br>

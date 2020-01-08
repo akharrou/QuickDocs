@@ -126,9 +126,9 @@ Part 01: Common Elements
 > Notes:
 
 
-Section-Referrals: \s\(\[§([\d+]\.?)+\]\(#\d+-(\w+-?)+\)\)
-
-
+Section-Referrals     :  \s\(\[§([\d+]\.?)+\]\(#\d+-(\w+-?)+\)\)
+Unique Section Number :  ((\[§)|\*|(#\s))3\.5(\]|(\*|\.))   # ex: 3.5
+                                         ^  ^
 
 >plan:
 
