@@ -278,7 +278,7 @@ Result:
 > 2.  McHale
 > 3.  Parish
 
-> [Note:	The actual numbers you use to mark the list have no effect on the HT*<small>ML output Markdown produces. - end note]</small>*
+> *<small>[Note: The actual numbers you use to mark the list have no effect on the HTML output Markdown produces. - end note]</small>*
 
 -	Adding a seperation line between any of the elements of a list will cause it to be seperated by a wider vertical space.
 
@@ -414,7 +414,7 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 	```
 ```
 
-> [Note:	It is also possible to create a code block by preprending each line of code with one level of indentation --- 4 spaces or a tab. Syntax highlighting is not supported with this; it is better to stick to the fo*<small>rmer way. - end note]</small>*
+> *<small>[Note: It is also possible to create a code block by preprending each line of code with one level of indentation --- 4 spaces or a tab. Syntax highlighting is not supported with this; it is better to stick to the former way. - end note]</small>*
 
 ### 2.6.2. Code Spans
 
