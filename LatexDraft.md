@@ -139,15 +139,14 @@ The preambule area is meant to be a place where **things affecting the entire do
 
 ---
 [🏠](#1-document-structure) | [⬅️](#2-preamble) | [➡️](#22-packages)
-
 ## 2.1. Document classes
 <small>`[Search Tags: >documentclass >docclass >init >documentclass >docclass >doclass >classes >doctype >doclayoutclass >doclasslayout >layout]`</small>
 <br>
 <br>
 
--	A _**document class**_ is an abstraction – of a set of rules governing a documents' typographical form (i.e layout, style, etc.).
+-	A _**document class**_ is an abstraction – of a set of rules (commands) governing a documents' typographical form (i.e layout, style, etc.).
 
--	A _document class_ is defined in a _**document class file**_ – a file with a `.cls` extention, containing "rules" (logical statements) that describe [to the LaTeX processor] the typographical form of a document – i.e how to format a document, i.e how to make it look in print.
+-	A _document class_ is defined in a _**document class file**_ – a file with a `.cls` extention, containing "rules" that describe [to the LaTeX processor] the typographical form of a document – i.e how to format a document, i.e how to make it look in print.
 
 -	***To specify which document class [to use]:***
 	```latex
@@ -156,7 +155,6 @@ The preambule area is meant to be a place where **things affecting the entire do
 	> – write the above command at the very top of your document.
 
 	**Example:**
-
 	```latex
 	\documentclass[12pt, a4paper, oneside, draft]{report}
 	```
@@ -207,6 +205,9 @@ Option | Description
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)
+> | 2 | Documentation | Overleaf | [Latex :: Understanding [...] class files](https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files)
+> | 3 | Documentation | Overleaf | [Latex :: Writing your own class](https://www.overleaf.com/learn/latex/Writing_your_own_class)
+> | 4 | Documentation | Overleaf | [CTAN :: Class Archive Network](https://ctan.org/)
 
 
 ---
@@ -216,10 +217,18 @@ Option | Description
 <br>
 <br>
 
-> TODO: Packages
+-	A **pacakge** is an abstraction – of a set of commands, that add features and functionalities [to a document], giving you new capabilties. These bundles of features and functionalities are imported, *so to speak*, independant of *document classes*.
 
+-	***To use packages:***
+	```latex
+	\usepackage[<options>]{<package>}
+	```
+	> – write the above command at the top of your file, after the `\documentclass[]{}` command.
 
-
+	**Example:**
+	```latex
+	\usepackage[ampersand]{easylist} % Introduces an Enhanced & Very Powerful and Customizable Type of Enum/List
+	```
 
 
 
@@ -232,6 +241,9 @@ Option | Description
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Packages](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Packages)
+> | 2 | Documentation | Overleaf | [Latex :: Understanding [...] packages](https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files)
+> | 3 | Documentation | Overleaf | [Writing your own package](https://www.overleaf.com/learn/latex/Writing_your_own_package)
+> | 4 | Documentation | Overleaf | [CTAN :: Package Archive Network](https://www.overleaf.com/learn/latex/List_of_packages_and_class_files)
 
 
 ---
