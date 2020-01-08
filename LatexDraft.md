@@ -70,6 +70,10 @@ Part 01: Common Elements
 <br>
 <br>
 
+> The main point of writing a text is to convey ideas, information, or knowledge to the reader. The reader will understand the text better if these ideas are well-structured, and will see and feel this structure much better if the typographical form reflects the logical and semantic structure of the content.
+>
+> LaTeX is different from other typesetting systems in that you just have to tell it the logical and semantical structure of a text. It then derives the typographical form of the text according to the “rules” given in the document class file and in various style files. LaTeX allows users to structure their documents with a variety of hierarchical constructs, including chapters, sections, subsections and paragraphs.
+
 -	*1*. [Global structure](#1-global-structure)
 -	*2*. [Preamble](#2-preamble)
 	-	*2.1*. [Document classes](#21-document-classes)
@@ -147,6 +151,12 @@ The preambule area is meant to be a place where **things affecting the entire do
 	```
 	> – use the above command at the very top of your document.
 
+	**Example:**
+
+	```latex
+	\documentclass[12pt, a4paper, oneside, draft]{report}
+	```
+
 <br>
 
 Replace the `<class>` field with one of the following **standard document classes**:
@@ -165,7 +175,7 @@ Class     | Description
 
 <small>`[Search Tags: >documentoptions >docoptions >documentoptions >docoptions >dooptions >optionses >doclayoutoptions >dooptionslayout >docops >layoutoptions >layoutops]`</small>
 
-Replace the `<option>` field with one of the following **class options**:
+Replace the `<option>` field with one or more, comma seperated, **class options**:
 
 Option | Description
 -------|--------------
