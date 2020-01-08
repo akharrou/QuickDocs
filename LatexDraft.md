@@ -142,7 +142,8 @@ The preambule area is meant to be a place where **things affecting the entire do
 
 ## 2.1. Document classes
 <small>`[Search Tags: >documentclass >docclass >init >documentclass >docclass >doclass >classes >doctype >doclayoutclass >doclasslayout >layout]`</small>
-
+<br>
+<br>
 
 -	A _**document class**_ is an abstraction – of a set of rules governing a documents' typographical form (i.e layout, style, etc.).
 
