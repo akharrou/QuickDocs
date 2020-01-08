@@ -144,7 +144,7 @@ The preambule area is meant to be a place where **things affecting the entire do
 <br>
 <br>
 
--	A ***document class*** is an abstraction – of a set of rules (commands), defined in a file, governing a documents' typographical form (i.e layout, style, etc).
+-	A ***document class*** is an abstraction – of a set of rules (commands), defined in a file, governing a documents' typographical form (i.e layout, style, etc), when imported.
 
 -	A *document class* is defined in a ***document class file*** – a file with a `.cls` extention (name), containing "rules" that describe *[to the LaTeX processor]* the typographical form of a document – i.e how to format a document, i.e how to make it look in print.
 
@@ -219,7 +219,7 @@ Option | Description
 <br>
 <br>
 
--	A **pacakge** is an abstraction – of a set of commands and macros, defined in a file, that add features and functionalities *[to the LaTeX processor]* – when imported – giving you new capabilties. Packages are imported – *so to speak* – independantly from *document classes*.
+-	A **pacakge** is an abstraction – of a set of commands and macros, defined in a file, that add features and functionalities *[to the LaTeX processor]*, when imported, giving you new or enhanced capabilties. Packages are imported – *so to speak* – independantly from *document classes*.
 
 -	A *package* is defined in a ***package file*** – a file with a `.sty` extention (name), containing commands and macros, that extends LaTeX's *[processor]* capabilties.
 
