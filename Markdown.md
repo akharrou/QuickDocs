@@ -113,13 +113,13 @@ Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.ne
 ###### H6
 ```
 
-> $\small [Note:$	Optionally, you may “close” atx-style headers --- this is purely cosmetic. For example:
+> [Note:	Optionally, you may “close” atx-style headers --- this is purely cosmetic. For example:
 > ```markdown
 > # This is an H1 #
 > ## This is an H2 ##
 > ### This is an H3 ###### <!-- They don't need to match. -->
 > ```
->$\small - \space end \space note]$
+- *<small>end note]</small>*
 
 ### 2.1.2. Setext Headers
 
@@ -276,7 +276,7 @@ Result:
 > 2.  McHale
 > 3.  Parish
 
-> $\small [Note:$	The actual numbers you use to mark the list have no effect on the HTML output Markdown produces. $\small - \space end \space note]$
+> [Note:	The actual numbers you use to mark the list have no effect on the HT*<small>ML output Markdown produces. - end note]</small>*
 
 -	Adding a seperation line between any of the elements of a list will cause it to be seperated by a wider vertical space.
 
@@ -299,7 +299,7 @@ Result:
 ### 2.4.3. Definition Lists
 <small>`[Search Tags: >list.defs >list.definitions >definitionlists >listdefinitions >deflists >listsdefs >deflists >listdefs]`</small>
 
-> $\small [Note:$ Not all Markdown processors support this feature. $\small - \space end \space note]$
+> *<small>[Note: Not all Markdown processors support this feature. - end note]</small>*
 
 -	To create a definition list, type the term on the first line. On the next line, type a colon followed by a space and the definition.
 
@@ -337,7 +337,7 @@ Second Term
 ### 2.4.4. Task Lists
 <small>`[Search Tags: >list.tasks >tasklists >listtasks >tasklists >liststasks]`</small>
 
-> $\small [Note:$ Not all Markdown processors support this feature. $\small - \space end \space note]$
+> *<small>[Note: Not all Markdown processors support this feature. - end note]</small>*
 
 -	Task lists allow you to create a list of items with checkboxes.
 -	To create a task list, add dashes (`-`) and brackets with a space (`[ ]`) in front of task list items. To select a checkbox, add an `x` in between the brackets (`[x]`).
@@ -412,7 +412,7 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 	```
 ```
 
-> $\small [Note:$	It is also possible to create a code block by preprending each line of code with one level of indentation --- 4 spaces or a tab. Syntax highlighting is not supported with this; it is better to stick to the former way. $\small - \space end \space note]$
+> [Note:	It is also possible to create a code block by preprending each line of code with one level of indentation --- 4 spaces or a tab. Syntax highlighting is not supported with this; it is better to stick to the fo*<small>rmer way. - end note]</small>*
 
 ### 2.6.2. Code Spans
 
@@ -697,7 +697,7 @@ _**Rendered Output:**_
 ## 3.5. Footnotes
 <small>`[Search Tags: >footnotes >notesfoot]`</small>
 
-> $\small [Note:$ Not all Markdown processors support this feature. $\small - \space end \space note]$
+> *<small>[Note: Not all Markdown processors support this feature. - end note]</small>*
 
 -	***Footnotes allow you*** to add notes and references without cluttering the body of the document. When you create a footnote, a superscript number with a link appears where you added the footnote reference. Readers can click the link to jump to the content of the footnote at the bottom of the page.
 
@@ -744,7 +744,7 @@ screen then your processor supports this feature, otherwise it doesn't.
 ## 3.6. Latex
 <small>`[Search Tags: >LaTeX]`</small>
 
-> $\small [Note:$ Not all Markdown processors support this feature. $\small - \space end \space note]$
+> *<small>[Note: Not all Markdown processors support this feature. - end note]</small>*
 
 -	You can insert inline $\LaTeX$ by enclosing (source) text in dollar signs: `$<text>$`.
 
