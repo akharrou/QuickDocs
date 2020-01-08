@@ -236,7 +236,7 @@ Option | Description
 	...
 	```
 
--	Each package comes with its documentation. In it is specified the option(s) that come with it *[the package]* and that can be used *[in the `<options>` field]* when you import them *[the packages]*, via `\usepackage[]{}`. <br> <br>
+-	Each package comes with its documentation. In it is specified the option(s) that come with it *[the package]* and that can be used *[in the `<options>` field]* when you import them *[the packages]*, via `\usepackage[]{}`. <br>
 
 	Package documentation also details the added features and functionalities [to the LaTeX processor] and how to use them [in your document].
 
