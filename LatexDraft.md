@@ -67,6 +67,8 @@ Part 01: Common Elements
 
 # 1. Document Structure
 <small>`[Search Tags: >docstructure >docstructs >docstrcts >documentstructures]`</small>
+<br>
+<br>
 
 -	*1*. [Global structure](#1-global-structure)
 -	*2*. [Preamble](#2-preamble)
@@ -120,19 +122,22 @@ Part 01: Common Elements
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Encyclopedia             | Wikipedia                 | [Global Structure](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Global_structure)
+> | 1 | Encyclopedia       | Wikipedia              | [Latex :: Document :: Global Structure](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Global_structure)
 
 
 ---
 [🏠](#1-document-structure) | [⬅️](#1-global-structure) | [➡️](#21-document-classes)
 # 2. Preamble
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 
 
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -146,6 +151,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#2-preamble) | [➡️](#22-packages)
 ## 2.1. Document classes
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Document classes
 
@@ -155,6 +162,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -168,6 +176,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#21-document-classes) | [➡️](#3-the-document-environment)
 ## 2.2. Packages
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Packages
 
@@ -177,6 +187,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -190,6 +201,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#22-packages) | [➡️](#31-top-matter)
 # 3. The document environment
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: The document environment
 
@@ -199,6 +212,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -212,6 +226,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#3-the-document-environment) | [➡️](#32-abstract)
 ## 3.1. Top matter
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Top matter
 
@@ -221,6 +237,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -234,6 +251,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#31-top-matter) | [➡️](#33-sectioning-commands)
 ## 3.2. Abstract
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Abstract
 
@@ -243,6 +262,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -256,6 +276,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#32-abstract) | [➡️](#331-section-numbering)
 ## 3.3. Sectioning commands
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Sectioning commands
 
@@ -265,6 +287,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -278,6 +301,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#33-sectioning-commands) | [➡️](#332-section-number-style)
 ### 3.3.1. Section numbering
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Section numbering
 
@@ -287,6 +312,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -300,6 +326,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#331-section-numbering) | [➡️](#34-ordinary-paragraphs)
 ### 3.3.2. Section number style
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Section number style
 
@@ -309,6 +337,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -322,6 +351,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#332-section-number-style) | [➡️](#35-table-of-contents)
 # 3.4. Ordinary paragraphs
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Ordinary paragraphs
 
@@ -331,6 +362,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -344,6 +376,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#34-ordinary-paragraphs) | [➡️](#351-depth)
 ## 3.5. Table of contents
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Table of contents
 
@@ -353,6 +387,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -366,6 +401,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#35-table-of-contents) | [➡️](#4-book-structure)
 ### 3.5.1. Depth
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Depth
 
@@ -375,6 +412,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -388,6 +426,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#351-depth) | [➡️](#41-page-order)
 # 4. Book structure
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Book structure
 
@@ -397,6 +437,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -410,6 +451,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#4-book-structure) | [➡️](#5-special-pages)
 ## 4.1. Page order
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Page order
 
@@ -419,6 +462,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -432,6 +476,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#41-page-order) | [➡️](#51-bibliography)
 # 5. Special pages
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Special pages
 
@@ -441,6 +487,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -454,6 +501,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#5-special-pages) | [➡️](#6-resources)
 ## 5.1. Bibliography
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Bibliography
 
@@ -463,6 +512,7 @@ Part 01: Common Elements
 
 
 
+<br>
 <br>
 
 > ***Ressources:***
@@ -476,6 +526,8 @@ Part 01: Common Elements
 [🏠](#1-document-structure) | [⬅️](#2-text-formatting) | [➡️](#51-bibliography)
 # 6. Resources
 <small>`[Search Tags: >]`</small>
+<br>
+<br>
 
 > TODO: Resources
 
@@ -504,6 +556,40 @@ Part 01: Common Elements
 --------------------------------------------------------------------------------
 > References:
 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1052,3 +1138,25 @@ Step 3: Lowercase them
 Step 4:
 -->
 
+
+
+[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+# 1.2. Settings
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+This is a section that deals with what settings are configurable and which ones aren't.
+
+
+<br>
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
