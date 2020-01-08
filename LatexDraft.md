@@ -146,7 +146,7 @@ The preambule area is meant to be a place where **things affecting the entire do
 
 -	A _**document class**_ is an abstraction – of a set of rules (commands) governing a documents' typographical form (i.e layout, style, etc.).
 
--	A _document class_ is defined in a _**document class file**_ – a file with a `.cls` extention, containing "rules" that describe [to the LaTeX processor] the typographical form of a document – i.e how to format a document, i.e how to make it look in print.
+-	A _document class_ is defined in a _**document class file**_ – a file with a `.cls` extention, containing "rules" that describe *[to the LaTeX processor]* the typographical form of a document – i.e how to format a document, i.e how to make it look in print.
 
 -	***To specify which document class [to use]:***
 	```latex
@@ -217,7 +217,7 @@ Option | Description
 <br>
 <br>
 
--	A **pacakge** is an abstraction – of a set of commands, that add features and functionalities [to the LaTeX processor], giving you new capabilties. Packages are imported – *so to speak* – independantly from *document classes*.
+-	A **pacakge** is an abstraction – of a set of commands, that add features and functionalities *[to the LaTeX processor]*, giving you new capabilties. Packages are imported – *so to speak* – independantly from *document classes*.
 
 -	***To use packages:***
 	```latex
@@ -227,10 +227,16 @@ Option | Description
 
 	**Example:**
 	```latex
-	\usepackage[ampersand]{easylist} % Introduces an Enhanced & Very Powerful and Customizable Type of Enum/List
+	\documentclass[12pt, a4paper, oneside, draft]{report}
+
+	\usepackage[ampersand]{easylist}  % Introduces an Enhanced & (More) Flexible Enums/Lists
+	\usepackage[utf8]{inputenc}       % Added [UTF8] (Input) Encoding Capability
+	\usepackage{tasks}                % Added Horizontal Enum Items Capability
+	\usepackage{amsmath}              % Added Math Capability
+	...
 	```
 
--	Each package comes with its documentation. In it is specified the option(s) that come with it [the package] and that you can use [in the `<options>` field] when you import them [the packages], via `\usepackage{}`. <br> <br>
+-	Each package comes with its documentation. In it is specified the option(s) that come with it *[the package]* and that can be used *[in the `<options>` field]* when you import them *[the packages]*, via `\usepackage[]{}`. <br> <br>
 
 	Package documentation also details the added features and functionalities [to the LaTeX processor] and how to use them [in your document].
 
