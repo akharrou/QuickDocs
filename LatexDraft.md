@@ -111,7 +111,7 @@ Part 01: Common Elements
 	\end{document}
 	```
 	>
-	> _The reason for marking off the beginning of your text is that LaTeX allows you to insert extra setup specifications (with regards to many things pertaining to document customizablity, e.g. document layout) before it._
+	> _The reason for marking off the beginning of your text is that LaTeX allows you to insert extra setup specifications (e.g. document layout) before it._
 	>
 	> _The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index._
 
