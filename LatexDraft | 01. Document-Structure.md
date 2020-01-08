@@ -58,8 +58,8 @@
 	> *The reason for marking off the end of your text is to provide a place for LaTeX to be programmed to do extra stuff automatically at the end of the document, like making an index.*
 	>
 	> *See preamble ([§2](#2-preamble)), document environment ([§3](#3-the-document-environment)).*
-sadqwd
-s
+
+
 <br>
 <br>
 
