@@ -119,7 +119,7 @@ Part 01: Common Elements
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -186,7 +186,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -211,7 +211,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -236,7 +236,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -261,7 +261,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -286,7 +286,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -311,7 +311,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -336,7 +336,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -361,7 +361,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -386,7 +386,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -411,7 +411,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -436,7 +436,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -461,7 +461,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -486,7 +486,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -511,7 +511,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -536,7 +536,7 @@ Option | Description
 <br>
 <br>
 
-> ***Ressources:***
+> ***Resources:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
