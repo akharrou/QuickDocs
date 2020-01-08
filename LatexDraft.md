@@ -221,7 +221,7 @@ Option | Description
 
 -	A **pacakge** is an abstraction – of a set of commands and macros, defined in a file, that add features and functionalities *[to the LaTeX processor]*, when imported, giving you new or enhanced capabilties. Packages are imported – *so to speak* – independantly from *document classes*.
 
--	A *package* is defined in a ***package file*** – a file with a `.sty` extention (name), containing commands and macros, that extends LaTeX's *[processor]* capabilties.
+-	A *package* is defined in a ***package file*** – a file with a `.sty` extention (name), containing commands and macros, that extend LaTeX's *[processor]* capabilties.
 
 -	***To use packages:***
 	```latex
@@ -236,13 +236,13 @@ Option | Description
 	\usepackage[ampersand]{easylist}  % Introduces an Enhanced & (More) Flexible Enums/Lists
 	\usepackage[utf8]{inputenc}       % Added [UTF8] (Input) Encoding Capability
 	\usepackage{tasks}                % Added Horizontal Enum Items Capability
-	\usepackage{amsmath}              % Added Math Capability
+	\usepackage{amsmath}              % Added Math Capabilities
 	...
 	```
 
--	Each package comes with its documentation. In it is specified the option(s) that come with it *[the package]* and that can be used *[in the `<options>` field]* when you import them *[the packages]*, via `\usepackage[]{}`. <br>
+-	Each package comes with its documentation. In it is specified the option(s) that come with it *[the package]* and that can be used *[in the `<options>` field]* when importing it *[the package]*, via `\usepackage[]{}`. <br>
 
-	Package documentation also details the added features and functionalities [to the LaTeX processor] and how to use them [in your document].
+	Package documentation also details the added features and functionalities *[to the LaTeX processor]* and how to use them *[in your document]*.
 
 	>	A package's documentation (and other relevant information) can be found (and downloaded) on the – [Comprehensive TeX Archive Network (CTAN)](https://ctan.org) – *"central place for all kinds of material around TeX. CTAN has currently 5781 packages. 2651 contributors have contributed to it. Most of the packages are free and can be downloaded and used immediately"*.
 
