@@ -31,24 +31,24 @@ QuickDocs \| $\LaTeX$
 #### PART 01: Common Elements
 
 - *1\.* [Document Structure](#1-document-structure)
-<!-- - *2\.* [Text Formatting](#2-text-formatting) -->
-<!-- - *3\.* [Paragraph Formatting](#3-paragraph-formatting) -->
-<!-- - *4\.* [Colors](#4-colors) -->
-<!-- - *5\.* [Fonts](#5-fonts) -->
-<!-- - *6\.* [List Structures](#6-list-structures) -->
-<!-- - *7\.* [Special Characters](#7-special-characters) -->
-<!-- - *8\.* [Internationalization](#8-internationalization) -->
-<!-- - *9\.* [Rotations](#9-rotations) -->
-<!-- - *10\.* [Tables](#10-tables) -->
-<!-- - *11\.* [Title creation](#11-title-creation) -->
-<!-- - *12\.* [Page Layout](#12-page-layout) -->
-<!-- - *13\.* [Customizing Page Headers and Footers‎](#13-customizing-page-headers-and-footers‎) -->
-<!-- - *14\.* [Importing Graphics](#14-importing-graphics) -->
-<!-- - *15\.* [Floats, Figures and Captions](#15-floats,-figures-and-captions) -->
-<!-- - *16\.* [Footnotes and Margin Notes](#16-footnotes-and-margin-notes) -->
-<!-- - *17\.* [Hyperlinks](#17-hyperlinks) -->
-<!-- - *18\.* [Labels and Cross-referencing](#18-labels-and-cross-referencing) -->
-<!-- - *19\.* [Initials](#19-initials) -->
+- *2\.* [Text Formatting](#2-text-formatting)
+- *3\.* [Paragraph Formatting](#3-paragraph-formatting)
+- *4\.* [Colors](#4-colors)
+- *5\.* [Fonts](#5-fonts)
+- *6\.* [List Structures](#6-list-structures)
+- *7\.* [Special Characters](#7-special-characters)
+- *8\.* [Internationalization](#8-internationalization)
+- *9\.* [Rotations](#9-rotations)
+- *10\.* [Tables](#10-tables)
+- *11\.* [Title creation](#11-title-creation)
+- *12\.* [Page Layout](#12-page-layout)
+- *13\.* [Customizing Page Headers and Footers‎](#13-customizing-page-headers-and-footers‎)
+- *14\.* [Importing Graphics](#14-importing-graphics)
+- *15\.* [Floats, Figures and Captions](#15-floats,-figures-and-captions)
+- *16\.* [Footnotes and Margin Notes](#16-footnotes-and-margin-notes)
+- *17\.* [Hyperlinks](#17-hyperlinks)
+- *18\.* [Labels and Cross-referencing](#18-labels-and-cross-referencing)
+- *19\.* [Initials](#19-initials)
 
 ---
 
