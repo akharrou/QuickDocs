@@ -134,10 +134,30 @@ Part 01: Common Elements
 
 > TODO: Preamble
 
+-	> TODO: The layout of the document class
 
--	***To specify which document layout standard to use:***
-	-
-	Text and more text
+-	***To specify the document class:***
+	```latex
+	\documentclass[<options>]{<class>}
+	```
+	> --- use the above command; it should be placed at the very top of the document.
+	Then replace the `<class>` field with one of the *standard document classes* available, listed below:
+
+	   Class     | Description
+	   ----------|--------------
+	   `article` | For articles in scientific journals, presentations, <br> short reports, program documentation, invitations, <br> ...
+	   `IEEEtran` | For articles with the IEEE Transactions format.
+	   `proc` | A class for proceedings based on the article class.
+	   `report` | For longer reports containing several chapters, <br> small books, thesis, ...
+	   `book` | For real books.
+	   `slides` | For slides. The class uses big sans serif letters.
+	   `memoir` | For changing sensibly the output of the document. <br> It is based on the `book` class, but you can create <br> any kind of document with it
+	   `letter` | For writing letters.
+	   `beamer` | For writing presentations (see [LaTeX/Presentations](https://en.wikibooks.org/wiki/LaTeX/Presentations)).
+
+	  > It is also possible to create your own *document layout class*.
+
+
 
 
 
