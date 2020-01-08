@@ -142,8 +142,9 @@ Part 01: Common Elements
 	```
 	> – use the above command at the very top of your document.
 
+	<br>
 	Replace the `<class>` field with one of the following **standard document classes**:
-
+	<br>
 	   Class     | Description
 	   ----------|--------------
 	   `article` | For articles in scientific journals, presentations, short reports, program documentation, invitations, ...
@@ -158,7 +159,7 @@ Part 01: Common Elements
 
 	<br>
 	Replace the `<option>` field with one of the following **standard document class options**:
-
+	<br>
     Option | Description
     -------|--------------
     `10pt`, `11pt`,`12pt` | Sets the size of the main font in the document. If no     option is specified, 10pt is assumed.
