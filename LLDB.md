@@ -106,9 +106,9 @@ Contents
 	> *The short answer,* **YES !** – you should be care, and here's why: ***it will save you hours, of debugging*** – ***the process of trying to figure out:***
     >	- where a bug is
 	>	- what caused it
-	>	- how to fix it <br>
+	>	- *[possibly even]* how to fix it <br> <br>
 	>
-	> ***Bug***
+	> ***Bug*** <br>
 		>	*IN SUPER SHORT, an error in (code) logic, committed by a programmer causing unintended/undesired/unplanned for behavior(s)/output(s)).*
 
 
