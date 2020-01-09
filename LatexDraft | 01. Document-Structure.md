@@ -149,7 +149,8 @@ Option | Description
 > | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Classes](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Document_classes)
 > | 2 | Documentation | Overleaf | [Latex :: Understanding [...] class files](https://www.overleaf.com/learn/latex/Understanding_packages_and_class_files)
 > | 3 | Documentation | Overleaf | [Latex :: Writing your own class](https://www.overleaf.com/learn/latex/Writing_your_own_class)
-> | 4 | Archive | CTAN | [Classes](https://ctan.org/topic/class)
+> | 4 | Documentation | Overleaf | [The Preamble of a Document](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#The_preamble_of_a_document)
+> | 5 | Archive | CTAN | [Classes](https://ctan.org/topic/class)
 
 
 ---
@@ -218,7 +219,6 @@ Option | Description
 -	***Top matter:***
 
 	```latex
-
 	% Preamble
 
 	\begin{document}
@@ -231,25 +231,33 @@ Option | Description
 	\end{document}
 	```
 
-	– the term refers to all of the information about the document itself: title, date, and also information about the author(s): name, address, email, etc.
+	– *[the term]* refers to all of the information about the document itself (e.g. title, date, etc) and also information about the author(s) (e.g. name, address, email, etc).
 
-	> The above commands: `\title{}`, `\author{}`, and `\date{}` do as they advertise. Simply type – in the curly brackets – the required information.
+	***Example:***
+
+	```latex
+	\title     {The Boy and the Whale}
+	\author    {Fredrich Stevenson}
+	\date      {January 1974}
+	\maketitle
+	```
+
+	> The above commands: `\title{}`, `\author{}`, and `\date{}` are self-explanatory.
 	>
 	> With regards to the `\date` command; <br>
 	>	-	omitting it (i.e not writing it at all),  causes LaTeX to typeset the title with the current day's date. <br>
-	>	-	not passing any arguments (i.e leaving the curly brackets blank: `\date{}`) causes LaTeX to typeset the title while omitting to write any date. <br> <br>
+	>	-	not passing any arguments (i.e leaving the curly brackets blank: `\date{}`) causes LaTeX to typeset the title without any date. <br> <br>
 	>
-	> `\maketitle` is the command that informs, the *[LaTeX]* processor to typeset *(i.e process for printing)* the title. Omitting it, causes LaTeX to omit typesetting the title.
+	> `\maketitle` is the command that tells *[the]* LaTeX *[processor]* to typeset *(i.e process for printing)* the title. Omitting it, causes no title to be typeset.
 	>
 	> *<small>[Note:*
 	>
-	> -	In this manner, you can only create titles with a fixed layout. To have greater flexibility, see the Title Creation ([§11](#11-title-creation)). <br>
+	> -	In this *[the shown above]* manner, you can only create titles with a fixed layout. To have greater flexibility, see Title Creation ([§11](#11-title-creation)). <br>
 	> -	You should remember, however, that the goal of LaTeX is to leave formatting to the documentclass designer, and if you wish to submit your work to multiple publishers then you should avoid designing a custom title.
 	>
 	> <br> *- end note]</small>*
 
 
-
 <br>
 <br>
 
@@ -257,22 +265,55 @@ Option | Description
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Top matter](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Top_matter)
+> | 2 | Documentation | Overleaf | [Adding a titlem author and date](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Adding_a_title.2C_author_and_date)
 
 
 ---
-[🏠](#1-document-structure) | [⬅️](#35-paragraphs) | [➡️](#321-depth)
+[🏠](#1-document-structure) | [⬅️](#31-top-matter) | [➡️](#321-depth)
 ## 3.2. Table of contents
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >toc, >lof, >lot, >tableofcontents, >tableoffigures >tableoftable]`</small>
 <br>
 <br>
 
-> TODO: Table of contents
 
+-	***To create the table of contents:***
 
+	```latex
+	% Preamble
 
+	\begin{document}
 
+	% Top Matter
 
+	\tableofcontents
+
+	\end{document}
+	```
+
+	> – write the above command *[`\tableofcontents`]*.
+	>
+	> LaTeX automatically generates the table of contents, modified to fit a specific style.
+
+To change the title of the ToC, you have to paste this command \renewcommand{\contentsname}{<New table of contents title>} in your document preamble. The List of Figures (LoF) and List of Tables (LoT) names can be changed by replacing the \contentsname with \listfigurename for LoF and \listtablename for LoT.
+
+To manually add entries, for example when you want an unnumbered section, use the command \addcontentsline as shown in the example.
+
+Note: For the table of contents to work properly you must compile the document twice or use latexmk -pdf
+
+The default title for the table of contents is "Contents", this can be changed into whatever you need.
+\renewcommand*\contentsname{Summary}
+
+The commands \listoffigures and \listoftables work in exactly the same way as \tableofcontents to automatically list all your tables and figures. They normally go after the \tableofcontents command.
+
+The \tableofcontents command normally shows only numbered section headings, and only down to the level defined by the tocdepth counter, but you can add extra entries with the \addcontentsline command.
+
+For example if you use an unnumbered section heading command to start a preliminary piece of text like a Foreword or Preface, you can write:
+
+\subsection*{Preface}
+\addcontentsline{toc}{subsection}{Preface}
+
+> This will format an unnumbered ToC entry for "Preface" in the "subsection" style. You can use the same mechanism to add lines to the List of Figures or List of Tables by substituting lof or lot for toc.
 
 
 <br>
@@ -282,22 +323,29 @@ Option | Description
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Encyclopedia | Wikipedia | [Latex :: Document :: Table of Contents](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Table_of_contents)
+> | 2 | Documentation | Overleaf | [Overleaf :: Table of Contents](https://www.overleaf.com/learn/latex/Table_of_contents#Introduction)
 
 
 ---
-[🏠](#1-document-structure) | [⬅️](#32-table-of-contents) | [➡️](#4-book-structure)
+[🏠](#1-document-structure) | [⬅️](#32-table-of-contents) | [➡️](#33-abstract)
 ### 3.2.1. Depth
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >tocdepth >depthtoc >toc.depth >tableofcontentsdepth >depthtableofcontents]`</small>
 <br>
 <br>
 
 > TODO: Depth
 
+The default ToC will list headings of level 3 and above.
+
+To change how deep the table of contents displays automatically the following command can be used in the preamble:
+
+\setcounter{tocdepth}{4}
+
+> This will make the table of contents include everything down to paragraphs.
 
 
-
-
+In order to further tune the display or the numbering of the table of contents, for instance if the appendix should be less detailed, you can make use of the tocvsec2 package ([CTAN](https://www.ctan.org/pkg/tocvsec2), [doc](http://mirror.utexas.edu/ctan/macros/latex/contrib/tocvsec2/tocvsec2.pdf)). "The tocvsec2 package provides means of controlling the sectional numbering and/or the entries in the Table of Contents on a section by section basis."
 
 
 <br>
@@ -307,21 +355,36 @@ Option | Description
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Encyclopedia | Wikipedia | [Latex :: Table of Contents :: Depth](https://en.wikibooks.org/wiki/LaTeX/Document_Structure#Depth)
 
 
 ---
 [🏠](#1-document-structure) | [⬅️](#31-top-matter) | [➡️](#34-sectioning-commands)
 ## 3.3. Abstract
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >abstract >documentabstract >articleabstract >docabstract]`</small>
 <br>
 <br>
 
 > TODO: Abstract
 
+overleaf:In LATEX there's the abstract environment for this. The abstract environment will put the text in a special format at the top of your document.
 
+wikibooks:
+there are predefined commands for telling LaTeX which part of the content makes up the abstract. This should appear in its logical order, therefore, after the top matter, but before the main sections of the body. This command is available for the document classes article and report, but not book.
 
+\documentclass{article}
 
+\begin{document}
+
+\begin{abstract}
+Your abstract goes here...
+...
+\end{abstract}
+...
+\end{document}
+By default, LaTeX will use the word "Abstract" as a title for your abstract. If you want to change it into anything else, e.g. "Executive Summary", add the following line before you begin the abstract environment:
+
+\renewcommand{\abstractname}{Executive Summary}
 
 
 
@@ -332,7 +395,8 @@ Option | Description
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Documentation | Overleaf | [Basic Formatting :: Abstract](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Abstracts)
+> | 2 | Video | Overleaf | [Including an abstract in an article](https://www.overleaf.com/learn/latex/Questions%2FIncluding_an_abstract_in_your_article)
 
 
 ---
@@ -343,11 +407,56 @@ Option | Description
 <br>
 
 > TODO: Sectioning commands
+-	LaTeX offers specific commands to insert sections.
 
+	***Section inserting commands:***
 
+	```latex
+	\part{Introduction}
+	This part's content...
 
+	\chapter{Introduction}
+	This chapter's content...
 
+	\section{Structure}
+	This section's content...
 
+	\subsection{Top Matter}
+	This subsection's content...
+
+	\subsubsection{Article Information}
+	This subsubsection's content...
+	```
+
+> *<small>[Note:*
+>
+>
+> <br> *- end note]</small>*
+
+-	LaTeX provides 7 levels of depth for defining sections (see table below). Each section in this table is a subsection of the one above it.
+
+    | Command                          | Level | Comment
+    |:---------------------------------|:------|:------------------------
+    | `\part{<part>}`                  |  -1   | *not in letters*
+    | `\chapter{<chapter>}`            |   0   | *only books and reports*
+    | `\section{<section>}`            |   1   | *not in letters*
+    | `\subsection{<subsection>}`      |   2   | *not in letters*
+    | `\subsubsection{<subsubsection>}`|   3   | *not in letters*
+    | `\paragraph{<paragraph>}`        |   4   | *not in letters*
+    | `\subparagraph{<subparagraph>}`  |   5   | *not in letters*
+
+-	Notice: <br>
+
+	-	You do not need to specify section numbers; LaTeX will sort that out for you.
+	-	You do not need to use `\begin{}` and `\end{}` commands to indicate which content belongs to a given block. <br>
+
+-	All the titles of the sections *(parts, chapters, sections, etc)* are added automatically to the table of contents
+
+if you make manual styling changes to your heading, for example a very long title, or some special line-breaks or unusual font-play, this would appear in the Table of Contents as well, which you almost certainly don't want. LaTeX allows you to give an optional extra version of the heading text which only gets used in the Table of Contents and any running heads, if they are in effect. This optional alternative heading goes in [square brackets] before the curly braces:
+
+\section[Effect on staff turnover]{An analysis of the
+effect of the revised recruitment policies on staff
+turnover at divisional headquarters}
 
 
 <br>
@@ -369,10 +478,50 @@ Option | Description
 
 > TODO: Section numbering
 
+-	***Numbering of the sections is performed automatically by LaTeX***, so don't bother adding them explicitly.
 
+	>	Parts get roman numerals (Part I, Part II, etc.); chapters and sections get decimal numbering like this document, and appendices (which are just a special case of chapters, and share the same structure) are lettered (A, B, C, etc.).
 
+-	***To set depth of section numbering:***
+	```latex
+	\setcounter{secnumdepth}{1} % Default=3
+	```
+	>	– that's *[the above source code]* if you only wanted parts, chapters, and sections numbered, not subsections or subsubsections etc.
 
+-	***To set depth of table of contents:***
+	```latex
+	\setcounter{tocdepth}{3}
+	```
 
+	> – it is modified in exactly the same way as `secnumdepth`.
+
+-	***To add unnumbered sections, which aren't added to the Table of Contents:***
+
+	```latex
+	\subsection*{Introduction}
+	```
+
+	>	– follow the *[sectionning]* command name with an asterisk `*` before the opening curly brace `*{}`.
+	>
+	>	– All the divisional commands from `\part*` to `\subparagraph*` have this "starred" version which can be used on special occasions for an *unnumbered heading* when the setting of `secnumdepth` would normally mean it would be numbered.
+
+-	***To add unnumbered sections, which are added to the table of contents:***
+	```latex
+	\usepackage{unnumberedtotoc}
+
+	...
+
+	\addpart{Introduction}
+	This part's contents ...
+
+	\addchap{Introduction}
+	This chapter's contents ...
+
+	\addsec{Introduction}
+	This section's contents ...
+	```
+	– you can use these *[the shown above]* commands, from the *`unnumberedtotoc`* package.
+	> *<small>[Note: KOMA classes provide those commands by default. - end note]</small>*
 
 
 <br>
@@ -411,7 +560,7 @@ Option | Description
 
 
 ---
-[🏠](#1-document-structure) | [⬅️](#342-section-number-style) | [➡️](#32-table-of-contents)
+[🏠](#1-document-structure) | [⬅️](#342-section-number-style) | [➡️](#4-book-structure)
 # 3.5. Paragraphs
 <small>`[Search Tags: >paragraphs >ordinaryparagraphs >paras >texts >textboxes]`</small>
 <br>
@@ -436,7 +585,7 @@ Option | Description
 
 
 ---
-[🏠](#1-document-structure) | [⬅️](#321-depth) | [➡️](#41-page-order)
+[🏠](#1-document-structure) | [⬅️](#35-paragraphs) | [➡️](#41-page-order)
 # 4. Book structure
 <small>`[Search Tags: >]`</small>
 <br>

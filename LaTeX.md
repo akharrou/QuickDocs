@@ -139,7 +139,7 @@ The following is how to create a basic title page:
 
 
 ## Table of Contents (ToC)
-<small>`[Search Tags: >toc, >lof, >lot, >tableofcontents, >tableoffigures >tableoftable]`</small>
+<small>`[Search Tags:]`</small>
 
 % All auto-numbered headings get entered in the Table of Contents (ToC)
 % automatically. You don't have to print a ToC, but if you want to, just
