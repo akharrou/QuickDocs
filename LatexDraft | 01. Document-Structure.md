@@ -233,16 +233,15 @@ Option | Description
 
 	– *[the term]* refers to all of the information about the document itself (e.g. title, date, etc) and also information about the author(s) (e.g. name, address, email, etc).
 
-	***Example:***
-
-	```latex
-	\title     {The Boy and the Whale}
-	\author    {Fredrich Stevenson}
-	\date      {January 1974}
-	\maketitle
-	```
 
 	> The above commands: `\title{}`, `\author{}`, and `\date{}` are self-explanatory.
+	>
+	> ```latex
+	> \title     {The Boy and the Whale}
+	> \author    {Fredrich Stevenson}
+	> \date      {January 1974}
+	> \maketitle
+	> ```
 	>
 	> With regards to the `\date` command; <br>
 	>	-	omitting it (i.e not writing it at all),  causes LaTeX to typeset the title with the current day's date. <br>
