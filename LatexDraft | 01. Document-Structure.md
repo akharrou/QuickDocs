@@ -242,10 +242,11 @@ Option | Description
 	> `\maketitle` is the command that informs, the *[LaTeX]* processor to typeset *(i.e process for printing)* the title. Omitting it, causes LaTeX to omit typesetting the title.
 	>
 	> *<small>[Note:*
+	>
 	> -	In this manner, you can only create titles with a fixed layout. To have greater flexibility, see the Title Creation ([§11](#11-title-creation)). <br>
 	> -	You should remember, however, that the goal of LaTeX is to leave formatting to the documentclass designer, and if you wish to submit your work to multiple publishers then you should avoid designing a custom title.
 	>
-	> <br><br> *- end note]</small>*
+	> <br> *- end note]</small>*
 
 
 
