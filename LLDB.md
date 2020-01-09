@@ -36,21 +36,16 @@ Contents
 		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g-amp--o0)
 		- [3.1.2. Helpful Flags: The `fsanitize` Family](#312-helpful-flags-the-fsanitize-family)
 	- [3.2. Start LLDB](#32-start-lldb)
-	- [3.2. Load LLDB](#32-load-lldb)
-	- [3.3. Setup LLDB](#33-setup-lldb)
-		- [3.3.1. Breakpoints](#331-breakpoints)
-		- [3.3.2. Watchpoints](#332-watchpoints)
-	- [3.4. Run Program](#34-run-program)
-	- [3.5. Examine Execution](#35-examine-execution)
-		- [3.5.1. Source Code](#351-source-code)
-		- [3.5.2. Variable(s)](#352-variables)
-		- [3.5.3. Thread State(s)](#353-thread-states)
-		- [3.5.4. Stack Frame State(s)](#354-stack-frame-states)
-	- [3.9. Graphical User Interface (GUI)](#39-graphical-user-interface-gui)
-		- [3.9.2. Panels](#392-panels)
-			- [3.9.2.1. Source Code](#3921-source-code)
-			- [3.9.2.2. Variables](#3922-variables)
-			- [3.9.2.3. Thread &amp; Stack](#3923-thread-amp-stack)
+	- [3.3. Load LLDB](#33-load-lldb)
+	- [3.4. Setup LLDB](#34-setup-lldb)
+		- [3.4.1. Breakpoints](#341-breakpoints)
+		- [3.4.2. Watchpoints](#342-watchpoints)
+	- [3.5. Run Program](#35-run-program)
+	- [3.6. Examine Execution](#36-examine-execution)
+		- [3.6.1. Source Code](#361-source-code)
+		- [3.6.2. Variable(s)](#362-variables)
+		- [3.6.3. Thread State(s)](#363-thread-states)
+		- [3.6.4. Stack Frame State(s)](#364-stack-frame-states)
 - [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
 
 ---
@@ -140,11 +135,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ***To use LLDB***:
 
->	1. **Compile** ([§2.1](#21-compile-program)) your program with **debug flags** ([§2.1.1 ](#211-debug-flags), [§2.1.2](#212-helpful-flags-fsanitize-family))
->	3. **Start LLDB** ([§2.2](#22-start-lldb))
->	3. **Load LLDB** *[with your program]* ([§2.2](#22-load-lldb))
->	3. **Setup LLDB** ([§2.3](#23-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
->	4. **Run your program** ([§2.4](#24-run-program)) *(within LLDB)*
+>	1. **Compile** ([§3.1](#31-compile-program)) your program with **debug flags** ([§3.1.1 ](#311-debug-flags), [§3.1.2](#312-helpful-flags-fsanitize-family))
+>	3. **Start LLDB** ([§3.2](#32-start-lldb))
+>	3. **Load LLDB** *[with your program]* ([§3.2](#33-load-lldb))
+>	3. **Setup LLDB** ([§3.3](#34-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
+>	4. **Run your program** ([§3.4](#35-run-program)) *(within LLDB)*
 >	5. **Walk through the execution** s *[of your program]*.
 
 -
@@ -157,11 +152,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Documentation | LLDB | [Official Tutorial](https://lldb.llvm.org/use/tutorial.html)
+> | 1 | Documentation | LLDB | [(Official) Tutorial](https://lldb.llvm.org/use/tutorial.html)
 
 
 ---
-[🏠](#contents) | [⬅️](#3-how-do-i-use-it-) | [➡️](#311-debug-flags--g---o0)
+[🏠](#contents) | [⬅️](#3-how-do-i-use-it-) | [➡️](#311-debug-flags--g-amp--o0)
 ## 3.1. Compile Program
 <small>`[Search Tags: >]`</small>
 <br>
@@ -210,7 +205,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-start-lldb)
+[🏠](#contents) | [⬅️](#311-debug-flags--g-amp--o0) | [➡️](#32-start-lldb)
 ### 3.1.2. Helpful Flags: The `fsanitize` Family
 <small>`[Search Tags: >]`</small>
 <br>
@@ -233,7 +228,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > | 2 | Documentation | GNU | [Compiler :: `fsanitize` Family (scroll down) ](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html#-fsanitize=address)
 
 ---
-[🏠](#contents) | [⬅️](#312-helpful-flags-the-fsanitize-family) | [➡️](#32-load-lldb)
+[🏠](#contents) | [⬅️](#312-helpful-flags-the-fsanitize-family) | [➡️](#33-load-lldb)
 ## 3.2. Start LLDB
 <small>`[Search Tags: >lldb.start >startlldb >startdebugger >debugger.start >db.start]`</small>
 <br>
@@ -259,14 +254,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#32-start-lldb) | [➡️](#33-setup-lldb)
-## 3.2. Load LLDB
+[🏠](#contents) | [⬅️](#32-start-lldb) | [➡️](#34-setup-lldb)
+## 3.3. Load LLDB
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ## 3.2. Load LLDB
+> TODO: ## 3.3. Load LLDB
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -282,14 +277,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#32-load-lldb) | [➡️](#331-breakpoints)
-## 3.3. Setup LLDB
+[🏠](#contents) | [⬅️](#33-load-lldb) | [➡️](#341-breakpoints)
+## 3.4. Setup LLDB
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ## 3.3. Setup LLDB
+> TODO: ## 3.4. Setup LLDB
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -305,14 +300,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#33-setup-lldb) | [➡️](#332-watchpoints)
-### 3.3.1. Breakpoints
+[🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
+### 3.4.1. Breakpoints
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.3.1. Breakpoints
+> TODO: ### 3.4.1. Breakpoints
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -328,14 +323,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#331-breakpoints) | [➡️](#34-run-program)
-### 3.3.2. Watchpoints
+[🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-run-program)
+### 3.4.2. Watchpoints
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.3.2. Watchpoints
+> TODO: ### 3.4.2. Watchpoints
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -351,14 +346,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#332-watchpoints) | [➡️](#35-examine-execution)
-## 3.4. Run Program
+[🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-examine-execution)
+## 3.5. Run Program
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ## 3.4. Run Program
+> TODO: ## 3.5. Run Program
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -374,14 +369,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#34-run-program) | [➡️](#351-source-code)
-## 3.5. Examine Execution
+[🏠](#contents) | [⬅️](#35-run-program) | [➡️](#361-source-code)
+## 3.6. Examine Execution
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ## 3.5. Examine Execution
+> TODO: ## 3.6. Examine Execution
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -397,14 +392,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#35-examine-execution) | [➡️](#352-variables)
-### 3.5.1. Source Code
+[🏠](#contents) | [⬅️](#36-examine-execution) | [➡️](#362-variables)
+### 3.6.1. Source Code
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.5.1. Source Code
+> TODO: ### 3.6.1. Source Code
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -420,14 +415,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#351-source-code) | [➡️](#353-thread-states)
-### 3.5.2. Variable(s)
+[🏠](#contents) | [⬅️](#361-source-code) | [➡️](#363-thread-states)
+### 3.6.2. Variable(s)
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.5.2. Variable(s)
+> TODO: ### 3.6.2. Variable(s)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -443,14 +438,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#352-variables) | [➡️](#354-stack-frame-states)
-### 3.5.3. Thread State(s)
+[🏠](#contents) | [⬅️](#362-variables) | [➡️](#364-stack-frame-states)
+### 3.6.3. Thread State(s)
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.5.3. Thread State(s)
+> TODO: ### 3.6.3. Thread State(s)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -466,14 +461,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#353-thread-states) | [➡️](#39-graphical-user-interface-gui)
-### 3.5.4. Stack Frame State(s)
+[🏠](#contents) | [⬅️](#363-thread-states) | [➡️](#39-graphical-user-interface-gui)
+### 3.6.4. Stack Frame State(s)
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.5.4. Stack Frame State(s)
+> TODO: ### 3.6.4. Stack Frame State(s)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
