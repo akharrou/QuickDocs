@@ -26,8 +26,8 @@
 > Table of Contents
 -->
 
-<!-- Contents
---- -->
+Contents
+---
 
 - [1. Overview / Cheat Sheet](#1-overview--cheat-sheet)
 - [2. What is it ?](#2-what-is-it-)
@@ -92,7 +92,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 [🏠](#contents) | [⬅️](#contents) | [➡️](#2-usage)
 # 2. What is it ?
-<small>`[Search Tags: >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro]`</small>
+<small>`[Search Tags: >lldb.what? >lldb.who? >lldb.why? >lldb.whocares? >lldb.whycare? >lldb.? >lldb? >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro >lldb.whatisit >lldb.whycare? >lldb.whyshouldicare?]`</small>
 <br>
 <br>
 
@@ -135,7 +135,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 [🏠](#contents) | [⬅️](#1-what-is-it-) | [➡️](#21-compile-program)
 # 3. How do I use it ?
-<small>`[Search Tags: >use >usage >howtouse >using]`</small>
+<small>`[Search Tags: >lldb.usage > lldb.use >use >usage >howtouse >usinglldb >howtouse >howdoiuseit >howtousage >lldbhowtouse >uselldb >lldbusage]`</small>
 <br>
 <br>
 
