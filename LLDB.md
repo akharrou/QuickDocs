@@ -131,7 +131,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 
 
-[🏠](#contents) | [⬅️](#1-what-is-it-) | [➡️](#21-compile-program)
+[🏠](#contents) | [⬅️](#1-what-is-it-) | [➡️](#31-compile-program)
 # 3. How do I use it ?
 <small>`[Search Tags: >lldb.usage > lldb.use >use >usage >howtouse >usinglldb >howtouse >howdoiuseit >howtousage >lldbhowtouse >uselldb >lldbusage]`</small>
 <br>
@@ -391,7 +391,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#35-examine-execution) | [➡️](#352-variable(s))
+[🏠](#contents) | [⬅️](#35-examine-execution) | [➡️](#352-variables)
 ### 3.5.1. Source Code
 <small>`[Search Tags: >]`</small>
 <br>
