@@ -135,7 +135,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To use LLDB***:
 
-	```bash
+	```shell
 	$> clang <source-code-files> -g -O0 -fsanitize=address -fsanitize=undefined
 	$> lldb <execuable>
 	$> (lldb) b main
@@ -155,27 +155,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	- *6.* **Launch Graphical User Interface** ([3.6](#36-graphical-user-interface-gui)) mode
 	>	- *7.* **Examine the Execution** ([§3.7](#37-examine-execution)) *[of your program]*. <br> <br>
 	>
-	> > *Annotated Command Line:*
-	> >
-	> > ```bash
-	> > $> # 1. Compile
-	> > $> clang <source-code> -g -O0 -fsanitize=address -fsanitize=undefined
-	> > $>
-	> > $> # 2,3. Launch & Load
-	> > $> lldb <execuable>
-	> > $>
-	> > $> # 4. Setup
-	> > $> (lldb) b main  # Choose your entry-point, I chose the `int main()` function
-	> > $> (lldb) b ...   # Add more breakpoints if you want
-	> > $>
-	> > $> # 5. Run (optionally, with arguments)
-	> > $> (lldb) run <arg-1> <arg-2> ... <arg-n>
-	> > $>
-	> > $> # 6. Launch 'gui' mode
-	> > $> (lldb) gui
-	> > $>
-	> > $> # 7. Examine Code
-	> > ```
+	> *Annotated Command Line:*
+	>
+	> ```shell
+	> $> # 1. Compile
+	> $> clang <source-code> -g -O0 -fsanitize=address -fsanitize=undefined
+	> $>
+	> $> # 2,3. Launch & Load
+	> $> lldb <execuable>
+	> $>
+	> $> # 4. Setup
+	> $> (lldb) b main  # Choose your entry-point, I chose the `int main()` function
+	> $> (lldb) b ...   # Add more breakpoints if you want
+	> $>
+	> $> # 5. Run (optionally, with arguments)
+	> $> (lldb) run <arg-1> <arg-2> ... <arg-n>
+	> $>
+	> $> # 6. Launch 'gui' mode
+	> $> (lldb) gui
+	> $>
+	> $> # 7. Examine Code
+	> ```
 
 
 <br>
@@ -191,12 +191,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#3-how-do-i-use-it-) | [➡️](#311-debug-flags--g---o0)
 ## 3.1. Compile Program
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >lldb.compile >debugger.compile >db.compile]`</small>
 <br>
 <br>
 
 
--	LLDB works by passing to it as input (i.e arguments, i.e parameters) compiled programs. So first thing would be to compile your program.
+-	LLDB works by loading it with *(i.e setting it up to run)* an execuable file *(compiled source code program)*. So first thing would be to [compile](http://www.cs.ecu.edu/~karl/3300/spr16/Notes/System/compile.html) a program.
+
+-	To see source code in the *"examination phase"* you'll have to add the *[compiler]* option/flag *(specific to the used compiler)* that generates ***debug information***.
+
+	> – in the case of the `clang` and `gcc` compilers that will be: `-g` option/flag.
 
 
 <br>
@@ -268,12 +272,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	To launch/start LLDB:
 
-	```bash
+	```shell
 	$> lldb
 	```
 
 	> – if you see this:
-	> ```bash
+	> ```shell
 	> $> (lldb)
 	> ```
 	> Then you're in ! *(the program)*
