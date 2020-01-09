@@ -226,8 +226,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***To make sure that no source code is not optimized away*** *(i.e modified by the compiler in order to optimize the [speed and efficiency of a] program)*, you'll have to add *[in the compilation step]* the *[compiler]* option/flag, specific to the compiler used, that ***turns off optimizations***; if you don't do this, then during *"examination phase"*, `lldb` might appear to be excute *[the source code]* in a non-linear manner *(i.e it will (seem to) jump (skip) over some lines and loops, etc)*.
 
 	> In the case of the `clang` and `gcc` compilers that option/flag is: `-O0`
-	>
-	> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
+	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
 
 
 <br>
