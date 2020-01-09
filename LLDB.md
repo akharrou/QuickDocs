@@ -15,8 +15,8 @@
 ------------------------------------------------------------------------------->
 
 Low Level Debugger (LLDB)
+*(Beginner-Intermediate Level)*
 ===
-*(Beginner Level)*
 ---
 
 > ***January 2020***
