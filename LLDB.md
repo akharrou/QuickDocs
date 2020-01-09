@@ -135,11 +135,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ***To use LLDB***:
 
->	1. **Compile** ([§3.1](#31-compile-program)) your program with **debug flags** ([§3.1.1 ](#311-debug-flags), [§3.1.2](#312-helpful-flags-fsanitize-family))
+>	1. **Compile** ([§3.1](#31-compile-program)) your program with **debug flags** ([§3.1.1 ](#311-debug-flags--g-amp--o0), [§3.1.2](#312-helpful-flags-the-fsanitize-family))
 >	3. **Start LLDB** ([§3.2](#32-start-lldb))
->	3. **Load LLDB** *[with your program]* ([§3.2](#33-load-lldb))
->	3. **Setup LLDB** ([§3.3](#34-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
->	4. **Run your program** ([§3.4](#35-run-program)) *(within LLDB)*
+>	3. **Load LLDB** *[with your program]* ([§3.3](#33-load-lldb))
+>	3. **Setup LLDB** ([§3.4](#34-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
+>	4. **Run your program** ([§3.5](#35-run-program)) *(within LLDB)*
 >	5. **Walk through the execution** s *[of your program]*.
 
 -
