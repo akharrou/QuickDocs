@@ -14,10 +14,10 @@
 
 ------------------------------------------------------------------------------->
 
-Low Level Debugger (LLDB) <br>
-*(Beginner-Intermediate Level)*
+Low Level Debugger (LLDB)
 ===
 
+> For *Beginner to Intermediate Levels.*
 > ***January 2020***
 
 ---
