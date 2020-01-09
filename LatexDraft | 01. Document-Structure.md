@@ -235,9 +235,11 @@ Option | Description
 
 	> The above commands: `\title{}`, `\author{}`, and `\date{}` do as they advertise. Write between their curly brackets, the required information.
 	>
-	> Omitting the `\date` command, makes LaTeX put the current day's date, by default.
+	> With regards to the `\date` command;
+		> -	omitting it [the `\date` command] (i.e not writing it at all),  causes LaTeX to typeset the title with the current day's date.
+		> -	leaving the curly brackets blank (e.g. `\date{}`) causes LaTeX to typeset the title without any date.
 	>
-	> `\maketitle` is the command that informs, the *[LaTeX]* processor to typeset *(i.e process for printing)* the title, omitting it *[the `\maketitle` command]* will result in no title being typeset.
+	> `\maketitle` is the command that informs, the *[LaTeX]* processor to typeset *(i.e process for printing)* the title. Omitting it *[the `\maketitle` command]*, causes LaTeX to omit typesetting the title.
 	>
 	> *<small>[Note:*
 		> -	In this manner, you can only create titles with a fixed layout. To have greater flexibility, see the Title Creation ([§11](#11-title-creation)). <br>
