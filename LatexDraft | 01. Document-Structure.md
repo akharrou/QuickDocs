@@ -212,7 +212,7 @@ Option | Description
 ---
 [🏠](#1-document-structure) | [⬅️](#3-the-document-environment) | [➡️](#33-abstract)
 ## 3.1. Top matter
-<small>`[Search Tags: >topmatter >top.matter >matter.top >document.topmatter >doctopmatter >docmattertop >doc.topmatter]`</small>
+<small>`[Search Tags: >topmatter >top.matter >matter.top >document.topmatter >doctopmatter >docmattertop >doc.topmatter >tpmatter]`</small>
 <br>
 <br>
 
@@ -236,11 +236,11 @@ Option | Description
 
 	> The commands: `\title{}`, `\author{}`, and `\date{}` are self-explanatory.
 	>
+	> <small>*Example:*</small>
 	> ```latex
 	> \title     {The Boy and the Whale}
 	> \author    {Fredrich Stevenson}
 	> \date      {January 1974}
-	> \maketitle
 	> ```
 	>
 	> With regards to the `\date` command; <br>
@@ -252,7 +252,7 @@ Option | Description
 	> *<small>[Note:*
 	>
 	> -	In this *[the shown above]* manner, you can only create titles with a fixed layout. To have greater flexibility, see Title Creation ([§11](#11-title-creation)). <br>
-	> -	You should remember, however, that the goal of LaTeX is to leave formatting to the documentclass designer, and if you wish to submit your work to multiple publishers then you should avoid designing a custom title.
+	> -	You should remember, however, that the goal of LaTeX is to leave formatting to the document class designer, and if you wish to submit your work to multiple publishers then you should avoid designing a custom title.
 	>
 	> <br> *- end note]</small>*
 
