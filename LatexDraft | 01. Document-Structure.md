@@ -233,11 +233,11 @@ Option | Description
 
 	– the term refers to all of the information about the document itself: title, date, and also information about the author(s): name, address, email, etc.
 
-	> The above commands: `\title{}`, `\author{}`, and `\date{}` do as they advertise. Simply type, in the curly brackets, the required information.
+	> The above commands: `\title{}`, `\author{}`, and `\date{}` do as they advertise. Simply type – in the curly brackets – the required information.
 	>
 	> With regards to the `\date` command; <br>
 	>	-	omitting it (i.e not writing it at all),  causes LaTeX to typeset the title with the current day's date. <br>
-	>	-	leaving the curly brackets blank (e.g. `\date{}`) causes LaTeX to typeset the title while omitting to write any date. <br> <br>
+	>	-	not passing any arguments (i.e leaving the curly brackets blank: `\date{}`) causes LaTeX to typeset the title while omitting to write any date. <br> <br>
 	>
 	> `\maketitle` is the command that informs, the *[LaTeX]* processor to typeset *(i.e process for printing)* the title. Omitting it, causes LaTeX to omit typesetting the title.
 	>
