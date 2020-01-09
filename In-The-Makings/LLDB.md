@@ -136,10 +136,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***To use LLDB***:
 
 	```bash
-	$> clang <source-code> -g -O0 -fsanitize=address -fsanitize=undefined
+	$> clang <source-code-files> -g -O0 -fsanitize=address -fsanitize=undefined
 	$> lldb <execuable>
 	$> (lldb) b main
-	$> (lldb) run <arg-1> <arg-2> ... <arg-n>
+	$> (lldb) r <arg-1> <arg-2> ... <arg-n>
 	$> (lldb) gui
 	```
 
@@ -153,24 +153,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	- *6.* **Launch Graphical User Interface** ([3.6](#36-graphical-user-interface-gui)) mode
 	>	- *7.* **Examine the Execution** ([§3.7](#37-examine-execution)) *[of your program]*. <br> <br>
 	>
-	> *Annotated Command Line:*
-	>
-	> ```bash
-	> $> # 1. Compile
-	> $> clang <source-code> -g -O0 -fsanitize=address -fsanitize=undefined
-	> $>
-	> $> # 2,3. Launch & Load
-	> $> lldb <execuable>
-	> $>
-	> $> # 4. Setup
-	> $> (lldb) b main
-	> $>
-	> $> # 5. Run
-	> $> (lldb) run <arg-1> <arg-2> ... <arg-n>
-	> $>
-	> $> # 6. Launch 'gui' mode
-	> $> (lldb) gui
-	> ```
+	> > *Annotated Command Line:*
+	> >
+	> > ```bash
+	> > $> # 1. Compile
+	> > $> clang <source-code> -g -O0 -fsanitize=address -fsanitize=undefined
+	> > $>
+	> > $> # 2,3. Launch & Load
+	> > $> lldb <execuable>
+	> > $>
+	> > $> # 4. Setup
+	> > $> (lldb) b main  # Choose your entry-point, I chose the `int main()` function
+	> > $> (lldb) b ...   # Add more breakpoints if you want
+	> > $>
+	> > $> # 5. Run (optionally, with arguments)
+	> > $> (lldb) run <arg-1> <arg-2> ... <arg-n>
+	> > $>
+	> > $> # 6. Launch 'gui' mode
+	> > $> (lldb) gui
+	> > $>
+	> > $> # 7. Examine Code
+	> > ```
 
 
 <br>
