@@ -198,13 +198,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***LLDB works by loading it with*** *(i.e setting it up to run)* ***an execuable*** file *(compiled source code program)*. So first thing would be to [compile](http://www.cs.ecu.edu/~karl/3300/spr16/Notes/System/compile.html) a program.
 
--	***To see source code in the *"examination phase"**** *(instead of [assembly code](https://en.wikipedia.org/wiki/Assembly_language))*, you'll have to add *[in the compilation step]* the *[compiler]* option/flag, specific to the compiler used, that ***generatesdebug information***; but if your goal is to see *assembly*, then omit this step.
-
-	> In the case of the `clang` and `gcc` compilers that option/flag is: `-g`.
-
--	***To make sure that no source code is not optimized away*** *(i.e modified by the compiler in order to optimize the [speed and efficiency of a] program)*, you'll have to add *[in the compilation step]* the *[compiler]* option/flag, specific to the compiler used, that ***turns off optimizations***; if you don't do this, then during *"examination phase"*, `lldb` might appear to be jumping around the source code in a non-linear manner *(i.e it will (seem to) jump (skip) over some lines and loops, etc)*.
-
-	> In the case of the `clang` and `gcc` compilers that option/flag is: `-O0` <br> (uppercase letter /Oh/ `O`, and the digit /zero/ '0').
+-	During *"examination phase"*, to see source code that executes in a linear manner - you might wanna add *[in the compilation step [of your program]]* the flags : `-g -O0`, see ([§3.1.1](#311-debug-flags--g-amp--o0)).
 
 
 <br>
@@ -225,9 +219,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
-> TODO: ### 3.1.1. Debug Flags: `-g` & `-O0`
+-	***To see source code in the *"examination phase"**** *(instead of [assembly code](https://en.wikipedia.org/wiki/Assembly_language))*, you'll have to add *[in the compilation step]* the *[compiler]* option/flag, specific to the compiler used, that ***generatesdebug information***; but if your goal is to see *assembly*, then omit this step.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+	> In the case of the `clang` and `gcc` compilers that option/flag is: `-g`.
+
+-	***To make sure that no source code is not optimized away*** *(i.e modified by the compiler in order to optimize the [speed and efficiency of a] program)*, you'll have to add *[in the compilation step]* the *[compiler]* option/flag, specific to the compiler used, that ***turns off optimizations***; if you don't do this, then during *"examination phase"*, `lldb` might appear to be jumping around the source code in a non-linear manner *(i.e it will (seem to) jump (skip) over some lines and loops, etc)*.
+
+	> In the case of the `clang` and `gcc` compilers that option/flag is: `-O0`
+	> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
 
 
 <br>
