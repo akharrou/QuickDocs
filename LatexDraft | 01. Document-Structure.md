@@ -252,7 +252,7 @@ Option | Description
 	> *<small>[Note:*
 	>
 	> -	In this *[the shown above]* manner, you can only create titles with a fixed layout. To have greater flexibility, see Title Creation ([§11](#11-title-creation)). <br>
-	> -	You should remember, however, that the goal of LaTeX is to leave formatting to the document class designer, and if you wish to submit your work to multiple publishers then you should avoid designing a custom title.
+	> -	Remember, however, that the goal of LaTeX is to leave formatting to the document class designer, and if you wish to submit your work to multiple publishers then you should avoid designing a custom title.
 	>
 	> <br> *- end note]</small>*
 
@@ -278,17 +278,17 @@ Option | Description
 
 -	***To create the table of contents:***
 
-	> ```latex
-	> \tableofcontents
-	> ```
+	```latex
+	\tableofcontents
+	```
 
 	> – write this command. It tells LaTeX to generate the table of contents, *according to the predefined settings and styles*.
 
 -	To change the title of the ToC:
 
-	> ```latex
-	> \renewcommand{\contentsname}{<New table of contents title>}
-	> ```
+	```latex
+	\renewcommand{\contentsname}{<New table of contents title>}
+	```
 
 	>
 	>	you have to paste this command  in your document preamble. The List of Figures (LoF) and List of Tables (LoT) names can be changed by replacing the \contentsname with \listfigurename for LoF and \listtablename for LoT.
