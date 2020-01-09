@@ -23,7 +23,7 @@
 
 <!--
 --------------------------------------------------------------------------------
-> Table of Contents
+> Table of >Contents
 -->
 
 Contents
@@ -41,11 +41,12 @@ Contents
 		- [3.4.1. Breakpoints](#341-breakpoints)
 		- [3.4.2. Watchpoints](#342-watchpoints)
 	- [3.5. Run Program](#35-run-program)
-	- [3.6. Examine Execution](#36-examine-execution)
-		- [3.6.1. Source Code](#361-source-code)
-		- [3.6.2. Variable(s)](#362-variables)
-		- [3.6.3. Thread State(s)](#363-thread-states)
-		- [3.6.4. Stack Frame State(s)](#364-stack-frame-states)
+	- [3.6. Graphical User Interface (GUI)](#36-graphical-user-interface-gui)
+	- [3.7. Examine Execution](#37-examine-execution)
+		- [3.7.1. Source Code](#371-source-code)
+		- [3.7.2. Variable(s)](#372-variables)
+		- [3.7.3. Thread State(s)](#373-thread-states)
+		- [3.7.4. Stack Frame State(s)](#374-stack-frame-states)
 - [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
 
 ---
@@ -346,7 +347,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-examine-execution)
+[🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-graphical-user-interface-gui)
 ## 3.5. Run Program
 <small>`[Search Tags: >]`</small>
 <br>
@@ -369,14 +370,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#35-run-program) | [➡️](#361-source-code)
-## 3.6. Examine Execution
+[🏠](#contents) | [⬅️](#35-run-program) | [➡️](#362-panels)
+## 3.6. Graphical User Interface (GUI)
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ## 3.6. Examine Execution
+> TODO: ## 3.6. Graphical User Interface (GUI)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -392,14 +393,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#36-examine-execution) | [➡️](#362-variables)
-### 3.6.1. Source Code
+[🏠](#contents) | [⬅️](#36-graphical-user-interface-gui) | [➡️](#3621-source-code)
+### 3.6.2. Panels
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.6.1. Source Code
+> TODO: ### 3.6.2. Panels
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -415,14 +416,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#361-source-code) | [➡️](#363-thread-states)
-### 3.6.2. Variable(s)
+[🏠](#contents) | [⬅️](#362-panels) | [➡️](#3622-variables)
+#### 3.6.2.1. Source Code
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.6.2. Variable(s)
+> TODO: #### 3.6.2.1. Source Code
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -438,14 +439,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#362-variables) | [➡️](#364-stack-frame-states)
-### 3.6.3. Thread State(s)
+[🏠](#contents) | [⬅️](#3621-source-code) | [➡️](#3623-thread--stack)
+#### 3.6.2.2. Variables
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.6.3. Thread State(s)
+> TODO: #### 3.6.2.2. Variables
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -461,14 +462,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#363-thread-states) | [➡️](#39-graphical-user-interface-gui)
-### 3.6.4. Stack Frame State(s)
+[🏠](#contents) | [⬅️](#3622-variables) | [➡️](#37-examine-execution)
+#### 3.6.2.3. Thread & Stack
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.6.4. Stack Frame State(s)
+> TODO: #### 3.6.2.3. Thread & Stack
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -484,12 +485,121 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
+[🏠](#contents) | [⬅️](#3623-thread-amp-stack) | [➡️](#371-source-code)
+## 3.7. Examine Execution
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
 
-## 3.9. Graphical User Interface (GUI)
-### 3.9.2. Panels
-#### 3.9.2.1. Source Code
-#### 3.9.2.2. Variables
-#### 3.9.2.3. Thread & Stack
+
+> TODO: ## 3.7. Examine Execution
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#37-examine-execution) | [➡️](#372-variables)
+### 3.7.1. Source Code
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.7.1. Source Code
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#371-source-code) | [➡️](#373-thread-states)
+### 3.7.2. Variable(s)
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.7.2. Variable(s)
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#372-variables) | [➡️](#374-stack-frame-states)
+### 3.7.3. Thread State(s)
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.7.3. Thread State(s)
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#373-thread-states) | [➡️](#39-graphical-user-interface-gui)
+### 3.7.4. Stack Frame State(s)
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.7.4. Stack Frame State(s)
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
 
 # 3. Tips & Shortcuts
 
