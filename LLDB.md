@@ -41,10 +41,6 @@
 		- [3.4.2. Watchpoints](#342-watchpoints)
 	- [3.5. Run Program](#35-run-program)
 	- [3.6. Graphical User Interface (GUI)](#36-graphical-user-interface-gui)
-		- [3.6.1. Panels](#361-panels)
-			- [3.6.1.1. Source Code](#3611-source-code)
-			- [3.6.1.2. Variables](#3612-variables)
-  			- [3.6.1.3. Thread & Stack](#3613-thread-amp-stack)
 	- [3.7. Examine Execution](#37-examine-execution)
 		- [3.7.1. Source Code](#371-source-code)
 		- [3.7.2. Variable(s)](#372-variables)
@@ -373,7 +369,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#35-run-program) | [➡️](#361-panels)
+[🏠](#contents) | [⬅️](#35-run-program) | [➡️](#37-examine-execution)
 ## 3.6. Graphical User Interface (GUI)
 <small>`[Search Tags: >]`</small>
 <br>
@@ -396,99 +392,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#36-graphical-user-interface-gui) | [➡️](#3611-source-code)
-### 3.6.1. Panels
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: ### 3.6.1. Panels
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#contents) | [⬅️](#361-panels) | [➡️](#3612-variables)
-#### 3.6.1.1. Source Code
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: #### 3.6.1.1. Source Code
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#contents) | [⬅️](#3611-source-code) | [➡️](#3613-thread-amp-stack)
-#### 3.6.1.2. Variables
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: #### 3.6.1.2. Variables
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#contents) | [⬅️](#3612-variables) | [➡️](#37-examine-execution)
-#### 3.6.1.3. Thread & Stack
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: #### 3.6.1.3. Thread & Stack
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#contents) | [⬅️](#3613-thread-amp-stack) | [➡️](#371-source-code)
+[🏠](#contents) | [⬅️](#36-graphical-user-interface-gui) | [➡️](#371-source-code)
 ## 3.7. Examine Execution
 <small>`[Search Tags: >]`</small>
 <br>
