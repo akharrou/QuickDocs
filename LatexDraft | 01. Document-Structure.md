@@ -235,7 +235,7 @@ Option | Description
 
 	> The above commands: `\title{}`, `\author{}`, and `\date{}` do as they advertise. Write between their curly brackets, the required information.
 	>
-	> With regards to the `\date` command;
+	> With regards to the `\date` command; <br>
 		> -	omitting it [the `\date` command] (i.e not writing it at all),  causes LaTeX to typeset the title with the current day's date.
 		> -	leaving the curly brackets blank (e.g. `\date{}`) causes LaTeX to typeset the title without any date.
 	>
