@@ -16,6 +16,8 @@
 
 Low Level Debugger (LLDB)
 ===
+*(Beginner Level)*
+---
 
 > ***January 2020***
 
@@ -82,7 +84,7 @@ Contents
 -->
 
 
-[🏠](#contents) | [⬅️](#contents) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#contents) | [➡️](#2-usage)
 # 1. What is it ?
 <small>`[Search Tags: >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro]`</small>
 <br>
@@ -107,7 +109,7 @@ Contents
     >	- where a bug is
 	>	- what caused it
 	>	- *[possibly even]* how to fix it <br> <br>
-	>
+
 	> ***Bug*** <br>
 		*In short, an error in (code) logic, committed by a programmer causing unintended/undesired/unplanned for behavior(s) and/or output(s).*
 
@@ -125,7 +127,29 @@ Contents
 ---
 
 
+[🏠](#contents) | [⬅️](#1-what-is-it-) | [➡️](#21-compile-program)
 # 2. Usage
+<small>`[Search Tags: >use >usage >howtouse >using]`</small>
+<br>
+<br>
+
+
+> TODO: 2. Usage
+
+-
+
+
+<br>
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
 ## 2.1. Compile Program
 ### 2.1.1. Debug Flags: Fsanitize Family
 ### 2.1.2. Compiler Flags: Fsanitize Family
