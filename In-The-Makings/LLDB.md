@@ -151,7 +151,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	- *4.* **Setup LLDB** ([§3.4](#34-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
 	>	- *5.* **Run your program** ([§3.5](#35-run-program)) *(within LLDB)*
 	>	- *6.* **Launch Graphical User Interface** ([3.6](#36-graphical-user-interface-gui)) mode
-	>	- *7.* **Examine the Execution** ([§3.7](#37-examine-execution)) *[of your program]*. <br>
+	>	- *7.* **Examine the Execution** ([§3.7](#37-examine-execution)) *[of your program]*. <br> <br>
 	>
 	> *Annotated Command Line:*
 	>
