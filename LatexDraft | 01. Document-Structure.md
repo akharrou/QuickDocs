@@ -231,9 +231,9 @@ Option | Description
 	\end{document}
 	```
 
-	– refers to all of the information about the document itself: title, date, and also information about the author(s): name, address, email, etc.
+	– the term refers to all of the information about the document itself: title, date, and also information about the author(s): name, address, email, etc.
 
-	> The above commands: `\title{}`, `\author{}`, and `\date{}` do as they advertise. Write between their curly brackets, the required information.
+	> The above commands: `\title{}`, `\author{}`, and `\date{}` do as they advertise. Simply type in, in the curly brackets, the required information.
 	>
 	> With regards to the `\date` command; <br>
 	>	-	omitting it (i.e not writing it at all),  causes LaTeX to typeset the title with the current day's date. <br>
@@ -247,10 +247,6 @@ Option | Description
 	> -	You should remember, however, that the goal of LaTeX is to leave formatting to the documentclass designer, and if you wish to submit your work to multiple publishers then you should avoid designing a custom title.
 	>
 	> <br> *- end note]</small>*
-
-
-
-
 
 
 
