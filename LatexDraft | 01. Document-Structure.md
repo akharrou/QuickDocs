@@ -234,7 +234,7 @@ Option | Description
 	– *[the term]* refers to all of the information about the document itself (e.g. title, date, etc) and also information about the author(s) (e.g. name, address, email, etc).
 
 
-	> The above commands: `\title{}`, `\author{}`, and `\date{}` are self-explanatory.
+	> The commands: `\title{}`, `\author{}`, and `\date{}` are self-explanatory.
 	>
 	> ```latex
 	> \title     {The Boy and the Whale}
