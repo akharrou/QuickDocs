@@ -143,7 +143,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	$> (lldb) gui
 	```
 
-	>	Further broken down:
+	>	In words;
 	>
 	>	- *1.* **Compile Program** ([§3.1](#31-compile-program)) with **Debug Flags** ([§3.1.1 ](#311-debug-flags--g---o0), [§3.1.2](#312-helpful-flags-the-fsanitize-family))
 	>	- *2.* **Launch LLDB** ([§3.2](#32-launch-lldb))
@@ -151,7 +151,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	- *4.* **Setup LLDB** ([§3.4](#34-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
 	>	- *5.* **Run your program** ([§3.5](#35-run-program)) *(within LLDB)*
 	>	- *6.* **Launch Graphical User Interface** ([3.6](#36-graphical-user-interface-gui)) mode
-	>	- *7.* **Examine the Execution** ([§3.7](#37-examine-execution)) *[of your program]*.
+	>	- *7.* **Examine the Execution** ([§3.7](#37-examine-execution)) *[of your program]*. <br>
+	>
+	> *Annotated Command Line:*
+	>
+	> ```bash
+	> $> # 1. Compile
+	> $> clang <source-code> -g -O0 -fsanitize=address -fsanitize=undefined
+	> $>
+	> $> # 2,3. Launch & Load
+	> $> lldb <execuable>
+	> $>
+	> $> # 4. Setup
+	> $> (lldb) b main
+	> $>
+	> $> # 5. Run
+	> $> (lldb) run <arg-1> <arg-2> ... <arg-n>
+	> $>
+	> $> # 6. Launch 'gui' mode
+	> $> (lldb) gui
+	> ```
 
 
 <br>
