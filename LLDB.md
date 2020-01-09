@@ -7,70 +7,53 @@
 		idev.aymen@gmail.com
 
 	OBJECTIVE(S)
-		Promote, simplyify and reminder LLDB and its usage.
+		Promote, explain and reminder what LLDB is and how to use it.
 
 	DESCRIPTION
-		Tutorial on LLDB.
+		[Beginner to Intermediate Level] Tutorial on LLDB.
 
 ------------------------------------------------------------------------------->
 
-Low Level Debugger (LLDB)
-===
+<!-- Low Level Debugger (LLDB)
+=== -->
 
 > ***January 2020***
 
 ---
-> For *Beginner to Intermediate Level.* <br>
 
 <!--
---------------------------------------------------------------------------------
-> Planning
-
-
-
-- What is it ?
-
-
-- Usage
--- Compile
---- Debug Flags: Fsanitize Family
---- Compiler Flags: Fsanitize Family
--- Start
--- Setup
--- Run
--- Graphical User Interface (GUI)
---- Cheat Sheet
---- Navigation
---- Code File
---- Variables
---- Stack Frame
-
-- Tips
-
-
-
 --------------------------------------------------------------------------------
 > Table of Contents
 -->
 
-Contents
----
+<!-- Contents
+--- -->
 
-- [1. What is it ?](#1-what-is-it-)
-- [2. Usage](#2-usage)
-	- [2.1. Compile](#21-compile)
-		- [2.1.1. Debug Flags: Fsanitize Family](#211-debug-flags-fsanitize-family)
-		- [2.1.2. Compiler Flags: Fsanitize Family](#212-compiler-flags-fsanitize-family)
-	- [2.2. Start](#22-start)
-	- [2.3. Setup](#23-setup)
-	- [2.4. Run](#24-run)
-	- [2.5. Graphical User Interface (GUI)](#25-graphical-user-interface-gui)
-		- [2.5.1. Cheat Sheet](#251-cheat-sheet)
-		- [2.5.2. Navigation](#252-navigation)
-		- [2.5.3. Code File](#253-code-file)
-		- [2.5.4. Variables](#254-variables)
-		- [2.5.5. Stack Frame](#255-stack-frame)
-- [3. Tips](#3-tips)
+- [1. Overview / Cheat Sheet](#1-overview--cheat-sheet)
+- [2. What is it ?](#2-what-is-it-)
+- [3. How do I use it ?](#3-how-do-i-use-it-)
+	- [3.1. Compile Program](#31-compile-program)
+		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g-amp--o0)
+		- [3.1.2. Helpful Flags: The `fsanitize` Family](#312-helpful-flags-the-fsanitize-family)
+	- [3.2. Start LLDB](#32-start-lldb)
+	- [3.2. Load LLDB](#32-load-lldb)
+		- [3.2.1. From Command Line](#321-from-command-line)
+		- [3.2.2. From Program](#322-from-program)
+	- [3.3. Setup LLDB](#33-setup-lldb)
+		- [3.3.1. Breakpoints](#331-breakpoints)
+		- [3.3.2. Watchpoints](#332-watchpoints)
+	- [3.4. Run Program](#34-run-program)
+	- [3.5. Examine Execution](#35-examine-execution)
+		- [3.5.1. Source Code](#351-source-code)
+		- [3.5.2. Variable(s)](#352-variables)
+		- [3.5.3. Thread State(s)](#353-thread-states)
+		- [3.5.4. Stack Frame State(s)](#354-stack-frame-states)
+	- [3.9. Graphical User Interface (GUI)](#39-graphical-user-interface-gui)
+		- [3.9.2. Panels](#392-panels)
+			- [3.9.2.1. Source Code](#3921-source-code)
+			- [3.9.2.2. Variables](#3922-variables)
+			- [3.9.2.3. Thread &amp; Stack](#3923-thread-amp-stack)
+- [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
 
 ---
 
@@ -82,9 +65,33 @@ Contents
 .
 -->
 
+[🏠](#contents) | [⬅️](#contents) | [➡️](#2-what-is-it-)
+# 1. Overview / Cheat Sheet
+<small>`[Search Tags: >overview >cheatsheet >brief >review >revision >reminder >quickreminder >viewover >fastreview >quickreview]`</small>
+<br>
+<br>
+
+
+> TODO: 1. Overview / Cheat Sheet
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Ressources:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+
 
 [🏠](#contents) | [⬅️](#contents) | [➡️](#2-usage)
-# 1. What is it ?
+# 2. What is it ?
 <small>`[Search Tags: >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro]`</small>
 <br>
 <br>
@@ -127,13 +134,20 @@ Contents
 
 
 [🏠](#contents) | [⬅️](#1-what-is-it-) | [➡️](#21-compile-program)
-# 2. Usage
+# 3. How do I use it ?
 <small>`[Search Tags: >use >usage >howtouse >using]`</small>
 <br>
 <br>
 
 
-> TODO: 2. Usage
+***To use LLDB***:
+
+>	1. **Compile** ([§2.1](#21-compile-program)) your program with **debug flags** ([§2.1.1 ](#211-debug-flags), [§2.1.2](#212-helpful-flags-fsanitize-family))
+>	3. **Start LLDB** ([§2.2](#22-start-lldb))
+>	3. **Load LLDB** *[with your program]* ([§2.2](#22-load-lldb))
+>	3. **Setup LLDB** ([§2.3](#23-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
+>	4. **Run your program** ([§2.4](#24-run-program)) *(within LLDB)*
+>	5. **Walk through the execution** s *[of your program]*.
 
 -
 
@@ -149,18 +163,29 @@ Contents
 
 
 ---
-## 2.1. Compile Program
-### 2.1.1. Debug Flags: Fsanitize Family
-### 2.1.2. Compiler Flags: Fsanitize Family
-## 2.2. Start LLDB
-## 2.3. Setup LLDB
-## 2.4. Run Program
-## 2.5. Graphical User Interface (GUI)
-### 2.5.1. Cheat Sheet
-### 2.5.2. Navigation
-### 2.5.3. Code File
-### 2.5.4. Variables
-### 2.5.5. Stack Frame
+
+## 3.1. Compile Program
+### 3.1.1. Debug Flags: `-g` & `-O0`
+### 3.1.2. Helpful Flags: The `fsanitize` Family
+## 3.2. Start LLDB
+## 3.2. Load LLDB
+### 3.2.1. From Command Line
+### 3.2.2. From Program
+## 3.3. Setup LLDB
+### 3.3.1. Breakpoints
+### 3.3.2. Watchpoints
+## 3.4. Run Program
+## 3.5. Examine Execution
+### 3.5.1. Source Code
+### 3.5.2. Variable(s)
+### 3.5.3. Thread State(s)
+### 3.5.4. Stack Frame State(s)
+
+## 3.9. Graphical User Interface (GUI)
+### 3.9.2. Panels
+#### 3.9.2.1. Source Code
+#### 3.9.2.2. Variables
+#### 3.9.2.3. Thread & Stack
 
 # 3. Tips & Shortcuts
 
