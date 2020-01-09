@@ -143,6 +143,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	$> (lldb) gui
 	```
 
+	---
+
 	>	In words;
 	>
 	>	- *1.* **Compile Program** ([§3.1](#31-compile-program)) with **Debug Flags** ([§3.1.1 ](#311-debug-flags--g---o0), [§3.1.2](#312-helpful-flags-the-fsanitize-family))
