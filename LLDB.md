@@ -115,12 +115,12 @@ Contents
 <br>
 <br>
 
-> ***Ressources:***
+> ***Furthur Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Documentation | LLDB | [The LLDB Debugger \| Official Website](https://lldb.llvm.org/)
-
+> | 2 | Encyclopedia | Wikipedia | [LLDB (debugger)](https://en.wikipedia.org/wiki/LLDB_(debugger))
 
 ---
 
