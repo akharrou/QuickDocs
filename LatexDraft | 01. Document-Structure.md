@@ -231,7 +231,7 @@ Option | Description
 	\end{document}
 	```
 
-	– refers to all of the information about the document itself, such as the title and date, and also information about the authors, such as name, address, email etc.
+	– refers to all of the information about the document itself: title, date, and also information about the author(s): name, address, email, etc.
 
 	> The above commands: `\title{}`, `\author{}`, and `\date{}` do as they advertise. Write between their curly brackets, the required information.
 	>
