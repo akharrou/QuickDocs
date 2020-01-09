@@ -126,9 +126,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 
 
-[🏠](#contents) | [⬅️](#1-what-is-it-) | [➡️](#31-compile-program)
+[🏠](#contents) | [⬅️](#2-what-is-it-) | [➡️](#31-compile-program)
 # 3. How do I use it ?
-<small>`[Search Tags: >lldb.usage > lldb.use >use >usage >howtouse >usinglldb >howtouse >howdoiuseit >howtousage >lldbhowtouse >uselldb >lldbusage]`</small>
+<small>`[Search Tags: >lldb.usage > lldb.use >use >usage >how? >howtouse >usinglldb >howtouse >howdoiuseit >howtousage >lldbhowtouse >uselldb >lldbusage]`</small>
 <br>
 <br>
 
