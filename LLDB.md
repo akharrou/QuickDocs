@@ -82,9 +82,9 @@ Contents
 -->
 
 
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#contents) | [➡️](#NEXT)
 # 1. What is it ?
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro]`</small>
 <br>
 <br>
 
