@@ -17,10 +17,10 @@
 Low Level Debugger (LLDB)
 ===
 
-> For *Beginner to Intermediate Levels.* <br>
 > ***January 2020***
 
 ---
+> For *Beginner to Intermediate Level.* <br>
 
 <!--
 --------------------------------------------------------------------------------
