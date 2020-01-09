@@ -278,23 +278,20 @@ Option | Description
 
 -	***To create the table of contents:***
 
-	```latex
-	% Preamble
+	> ```latex
+	> \tableofcontents
+	> ```
 
-	\begin{document}
+	> – write this command. It tells LaTeX to generate the table of contents, *according to the predefined settings and styles*.
 
-	% Top Matter
+-	To change the title of the ToC:
 
-	\tableofcontents
+	> ```latex
+	> \renewcommand{\contentsname}{<New table of contents title>}
+	> ```
 
-	\end{document}
-	```
-
-	> – write the above command *[`\tableofcontents`]*.
 	>
-	> LaTeX automatically generates the table of contents, modified to fit a specific style.
-
-To change the title of the ToC, you have to paste this command \renewcommand{\contentsname}{<New table of contents title>} in your document preamble. The List of Figures (LoF) and List of Tables (LoT) names can be changed by replacing the \contentsname with \listfigurename for LoF and \listtablename for LoT.
+	>	you have to paste this command  in your document preamble. The List of Figures (LoF) and List of Tables (LoT) names can be changed by replacing the \contentsname with \listfigurename for LoF and \listtablename for LoT.
 
 To manually add entries, for example when you want an unnumbered section, use the command \addcontentsline as shown in the example.
 
