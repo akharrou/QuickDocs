@@ -215,12 +215,11 @@ Option | Description
 <br>
 <br>
 
--	The top matter:
+-	***Top matter:***
 
 	```latex
-	\documentclass[12pt, a4paper, oneside, draft]{report}
 
-	...
+	% Preamble
 
 	\begin{document}
 
@@ -232,7 +231,19 @@ Option | Description
 	\end{document}
 	```
 
-	> – consists of
+	– refers to all of the information about the document itself, such as the title and date, and also information about the authors, such as name, address, email etc.
+
+	> The above commands: `\title{}`, `\author{}`, and `\date{}` do as they advertise. Write between their curly brackets, the required information.
+	>
+	> Omitting the `\date` command, makes LaTeX put the current day's date, by default.
+	>
+	> `\maketitle` is the command that informs, the *[LaTeX]* processor to typeset *(i.e process for printing)* the title, omitting it *[the `\maketitle` command]* will result in no title being typeset.
+	>
+	> *<small>[Note:*
+		> -	In this manner, you can only create titles with a fixed layout. To have greater flexibility, see the Title Creation ([§11](#11-title-creation)). <br>
+		> -	You should remember, however, that the goal of LaTeX is to leave formatting to the documentclass designer, and if you wish to submit your work to multiple publishers then you should avoid designing a custom title. <br>
+	>
+	> *- end note]</small>*
 
 
 
