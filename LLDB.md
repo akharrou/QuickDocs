@@ -37,8 +37,6 @@ Contents
 		- [3.1.2. Helpful Flags: The `fsanitize` Family](#312-helpful-flags-the-fsanitize-family)
 	- [3.2. Start LLDB](#32-start-lldb)
 	- [3.2. Load LLDB](#32-load-lldb)
-		- [3.2.1. From Command Line](#321-from-command-line)
-		- [3.2.2. From Program](#322-from-program)
 	- [3.3. Setup LLDB](#33-setup-lldb)
 		- [3.3.1. Breakpoints](#331-breakpoints)
 		- [3.3.2. Watchpoints](#332-watchpoints)
@@ -163,15 +161,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#3-how-do-i-use-it-) | [➡️](#311-debug-flags--g---o0)
 ## 3.1. Compile Program
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ## 3.1. Compile Program
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -179,7 +176,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -187,14 +184,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#31-compile-program) | [➡️](#312-helpful-flags-the-fsanitize-family)
 ### 3.1.1. Debug Flags: `-g` & `-O0`
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ### 3.1.1. Debug Flags: `-g` & `-O0`
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -202,7 +199,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -210,14 +207,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-start-lldb)
 ### 3.1.2. Helpful Flags: The `fsanitize` Family
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ### 3.1.2. Helpful Flags: The `fsanitize` Family
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -225,7 +222,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -233,14 +230,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#312-helpful-flags-the-fsanitize-family) | [➡️](#32-load-lldb)
 ## 3.2. Start LLDB
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ## 3.2. Start LLDB
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -248,7 +245,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -256,14 +253,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#32-start-lldb) | [➡️](#33-setup-lldb)
 ## 3.2. Load LLDB
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ## 3.2. Load LLDB
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -271,7 +268,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -279,60 +276,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.2.1. From Command Line
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: TITLE
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Ressources:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.2.2. From Program
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: TITLE
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Ressources:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#32-load-lldb) | [➡️](#331-breakpoints)
 ## 3.3. Setup LLDB
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ## 3.3. Setup LLDB
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -340,7 +291,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -348,14 +299,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#33-setup-lldb) | [➡️](#332-watchpoints)
 ### 3.3.1. Breakpoints
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ### 3.3.1. Breakpoints
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -363,7 +314,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -371,14 +322,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#331-breakpoints) | [➡️](#34-run-program)
 ### 3.3.2. Watchpoints
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ### 3.3.2. Watchpoints
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -386,7 +337,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -394,14 +345,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#332-watchpoints) | [➡️](#35-examine-execution)
 ## 3.4. Run Program
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ## 3.4. Run Program
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -409,7 +360,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -417,14 +368,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#34-run-program) | [➡️](#351-source-code)
 ## 3.5. Examine Execution
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ## 3.5. Examine Execution
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -432,7 +383,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -440,14 +391,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#35-examine-execution) | [➡️](#352-variable(s))
 ### 3.5.1. Source Code
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ### 3.5.1. Source Code
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -455,7 +406,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -463,14 +414,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#351-source-code) | [➡️](#353-thread-states)
 ### 3.5.2. Variable(s)
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ### 3.5.2. Variable(s)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -478,7 +429,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -486,14 +437,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#352-variables) | [➡️](#354-stack-frame-states)
 ### 3.5.3. Thread State(s)
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ### 3.5.3. Thread State(s)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -501,7 +452,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
@@ -509,14 +460,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#353-thread-states) | [➡️](#39-graphical-user-interface-gui)
 ### 3.5.4. Stack Frame State(s)
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: TITLE
+> TODO: ### 3.5.4. Stack Frame State(s)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -524,7 +475,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> ***Ressources:***
+> ***Further Reading:***
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
