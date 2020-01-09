@@ -109,7 +109,7 @@ Contents
 	>	- *[possibly even]* how to fix it <br> <br>
 	>
 	> ***Bug*** <br>
-		*IN SUPER SHORT, an error in (code) logic, committed by a programmer causing unintended/undesired/unplanned for behavior(s) and/or output(s).*
+		*In short, an error in (code) logic, committed by a programmer causing unintended/undesired/unplanned for behavior(s) and/or output(s).*
 
 
 <br>
