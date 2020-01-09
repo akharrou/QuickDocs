@@ -33,7 +33,7 @@ Contents
 - [2. What is it ?](#2-what-is-it-)
 - [3. How do I use it ?](#3-how-do-i-use-it-)
 	- [3.1. Compile Program](#31-compile-program)
-		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g-amp--o0)
+		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g---o0)
 		- [3.1.2. Helpful Flags: The `fsanitize` Family](#312-helpful-flags-the-fsanitize-family)
 	- [3.2. Start LLDB](#32-start-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
@@ -135,7 +135,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ***To use LLDB***:
 
->	1. **Compile** ([§3.1](#31-compile-program)) your program with **debug flags** ([§3.1.1 ](#311-debug-flags--g-amp--o0), [§3.1.2](#312-helpful-flags-the-fsanitize-family))
+>	1. **Compile** ([§3.1](#31-compile-program)) your program with **debug flags** ([§3.1.1 ](#311-debug-flags--g---o0), [§3.1.2](#312-helpful-flags-the-fsanitize-family))
 >	3. **Start LLDB** ([§3.2](#32-start-lldb))
 >	3. **Load LLDB** *[with your program]* ([§3.3](#33-load-lldb))
 >	3. **Setup LLDB** ([§3.4](#34-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
@@ -156,7 +156,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#3-how-do-i-use-it-) | [➡️](#311-debug-flags--g-amp--o0)
+[🏠](#contents) | [⬅️](#3-how-do-i-use-it-) | [➡️](#311-debug-flags--g---o0)
 ## 3.1. Compile Program
 <small>`[Search Tags: >]`</small>
 <br>
@@ -205,7 +205,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#311-debug-flags--g-amp--o0) | [➡️](#32-start-lldb)
+[🏠](#contents) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-start-lldb)
 ### 3.1.2. Helpful Flags: The `fsanitize` Family
 <small>`[Search Tags: >]`</small>
 <br>
