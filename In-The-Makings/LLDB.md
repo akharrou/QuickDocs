@@ -349,7 +349,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	***To load a program [into `lldb`]*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
+-	***To load a program [into `lldb`]*** ; *(i.e set `lldb` up to target a specific program [for debugging/examination, when run])*:
 
 	> ***From outside [`lldb`]** (i.e before, and at the same time as, launch *[of `lldb`]* , on the *[terminal]* command prompt):*
 	>	```shell
@@ -358,15 +358,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
 	>	```shell
-	>	(lldb) file <program>            | OR |
-	>	(lldb) target create <program>   | OR |
+	>	(lldb) file <program>
+	>	(lldb) target create <program>
 	>	(lldb) ta cr <program>
 	>	```
+	>
+	>	*– we use any of the above *[commands]*.*
 
 -	***To un-load a program [from `lldb`]:***
 
 	> ```shell
-	> (lldb) target delete   | OR |
+	> (lldb) target delete
 	> (lldb) ta de
 	> ```
 	> *– this is inside `lldb`, after having loaded a `target`. <br>*
