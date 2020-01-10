@@ -351,7 +351,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***To load a program into `lldb`*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
 
 	> - ***From outside [`lldb`]** (i.e before, and at the same time as, launch, on the [terminal] command prompt):*
-	<	```shell
+	>	```shell
 		$> lldb <program-execuable-name>
 		```
 	>
