@@ -85,7 +85,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 [🏠](#contents) | [⬅️](#contents) | [➡️](#3-how-do-i-use-it-)
 # 2. What is it ?
-<small>`[Search Tags: >lldb.what? >lldb.who? >lldb.why? >lldb.whocares? >lldb.whycare? >lldb.? >lldb? >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro >lldb.whatisit >lldb.whycare? >lldb.whyshouldicare?]`</small>
+<small>`[Search Tags: >lldb.what? >lldbwhat? >lldb.who? >lldb.why? >lldb.whocares? >lldb.whycare? >lldb.? >lldb? >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro >lldb.whatisit >lldb.whycare? >lldb.whyshouldicare?]`</small>
 <br>
 <br>
 
@@ -179,7 +179,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> -	There is also a brief section on a set of *[compiler]* flags that make debugging as easy as pie, ***the `fsanitize` family*** [§3.1.2](#312-helpful-flags-the-fsanitize-family) *[of flags]*. Don't miss it, you'll miss out on a LOT ! `lldb` and the `fsanitize` family of flags are two debugging tools that go hand in hand !
+	> -	There is also a brief section on a set of *[compiler]* flags that make debugging as easy as pie – ***the `fsanitize` family*** ([§3.1.2](#312-helpful-flags-the-fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br> `lldb` and the `fsanitize` family of flags are two debugging tools that go hand in hand !
 	>
 	> <br> *- end note]</small>*
 
