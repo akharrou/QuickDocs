@@ -354,7 +354,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	```shell
 	>	$> lldb <program-execuable-name>
 	>	```
-	>
+
 	>- ***From (inside) `lldb`** (i.e after launch, on the `lldb` prompt):*
 	>	```shell
 	>	file <program>   | OR |   target create <program>   | OR |   ta cr <program>
