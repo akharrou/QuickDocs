@@ -147,7 +147,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	>	In words;
 	>
-	>	- *1.* **Compile Program** ([§3.1](#31-compile-program)) with **Debug Flags** ([§3.1.1 ](#311-debug-flags--g---o0), [§3.1.2](#312-helpful-flags-the-fsanitize-family))
+	>	- *1.* **Compile Program** ([§3.1](#31-compile-program)) with **Debug Flags** ([§3.1.1 ](#311-debug-flags--g---o0))
 	>	- *2.* **Launch LLDB** ([§3.2](#32-launch-lldb))
 	>	- *3.* **Load LLDB** *[with your program]* ([§3.3](#33-load-lldb))
 	>	- *4.* **Setup LLDB** ([§3.4](#34-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
@@ -159,7 +159,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ```shell
 	> $> # 1. Compile
-	> $> clang <source-code> -g -O0 -fsanitize=address -fsanitize=undefined
+	> $> clang <source-code> -g -O0
 	> $>
 	> $> # 2,3. Launch & Load
 	> $> lldb <execuable>
@@ -176,6 +176,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> $>
 	> $> # 7. Examine Code
 	> ```
+
+	*<small>[Note:*
+
+	-	There is also a brief section on a set of *[compiler]* flags that make debugging as easy as pie, the `fsanitize` family [§3.1.2](#312-helpful-flags-the-fsanitize-family). Check it out !
+
+	<br> *- end note]</small>*
 
 
 <br>
