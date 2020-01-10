@@ -357,17 +357,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	>- ***From (inside) `lldb`** (i.e after launch, on the `lldb` prompt):*
 	>	```shell
-	>	(lldb) file <program-executable-name>
-	>	```
-	>	or
-	>	```shell
-	>	(lldb) target create <program-executable-name>
-	>	```
-	>
-	>	> or, *for short*:
-	>
-	>	```shell
-	>	(lldb) ta cr <program>
+	>	file <program>   | OR |   target create <program>   | OR |   ta cr <program>
 	>	```
 	>
 	>	The output of `lldb` *[for all the approachs above]* should be something along the lines of:
@@ -375,7 +365,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	Current executable set to '<program>' (<system-architecture>).
 	>	```
 
--	***To un-load [a program]:***
+-	***To un-load [a program] from `lldb`:***
 
 	```shell
 	(lldb) target delete
