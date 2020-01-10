@@ -358,17 +358,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
 	>	```shell
-	>	(lldb) file <program>
-	>	(lldb) target create <program>
+	>	(lldb) file <program>            | OR |
+	>	(lldb) target create <program>   | OR |
 	>	(lldb) ta cr <program>
 	>	```
-	>
-	>	*– any of the above commands work.*
 
 -	***To un-load a program [from `lldb`]:***
 
 	> ```shell
-	> (lldb) target delete
+	> (lldb) target delete   | OR |
 	> (lldb) ta de
 	> ```
 	> *– this is inside `lldb`, after having loaded a `target`. <br>*
