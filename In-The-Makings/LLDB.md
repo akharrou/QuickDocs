@@ -369,7 +369,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) target delete   | OR |
 	> (lldb) ta de
 	> ```
-	> *– this is inside `lldb`, after having loaded a program. <br>*
+	> *– this is inside `lldb`, after having loaded a `target`. <br>*
+
+	> *<small>[Note: `lldb`'s lexicon, refers to **a program** as **a `target`** - end note]</small>*
 
 
 <br>
