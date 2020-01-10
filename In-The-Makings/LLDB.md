@@ -359,11 +359,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	```shell
 	>	file <program>   | OR |   target create <program>   | OR |   ta cr <program>
 	>	```
-	>
-	>	> `lldb` will output, *for all the commands above*, something along the > lines of:
-	>	> ```shell
-	>	> Current executable set to '<program>' (<system-architecture>).
-	>	> ```
+
+	>	`lldb` will output, *for all the commands above*, something along the lines of:
+	>	```shell
+	>	Current executable set to '<program>' (<system-architecture>).
+	>	```
 
 -	***To un-load [a program] from `lldb`:***
 
