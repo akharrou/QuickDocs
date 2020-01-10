@@ -283,9 +283,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	$> clang <source-code-files> -g -O0 -fsanitize=address -fsanitize=undefined ...
 	```
 
-	> – add it *[it's corresponding (enabler) flag]* to the compilation step. The shown above adds the *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
+	> – add it *[it's corresponding (enabler) flag]* to the compilation step. The shown above *(command)*, adds the *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
 
-	> *<small>[Note:* It is not possible to combine more than one of the *`-fsanitize=address`*, *`-fsanitize=thread`*, and *`-fsanitize=memory`* checkers in the same program. *- end note]*
+	> *<small>[Note:* It is not possible to combine the following sanitizers: *`-fsanitize=address`*, *`-fsanitize=thread`*, and *`-fsanitize=memory`* at the same time. *- end note]*
 	>
 
 <br>
@@ -335,27 +335,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	***To load `lldb`****(a program)* ; *(i.e set it [`lldb`] up to run a program)*:
+-	***To load `lldb`****(with a program)* ; *(i.e set it [`lldb`] up to target a specific program [for examination])*:
 
-	- *From Launch (i.e on the command line):*
-		```shell
-		$> lldb <program-execuable-name>
-		```
-
-	- *From `lldb` (i.e after launch, on the `lldb` prompt):*
-		```shell
-		(lldb) file <program-executable-name>
-		```
-		or
-		```shell
-		(lldb) target create <program-executable-name>
-		```
-
-		> for short:
-
-		```shell
-		(lldb) ta cr <program>
-		```
+	>- *From Launch (i.e on the command line):*
+	>	```shell
+	>	$> lldb <program-execuable-name>
+	>	```
+	>
+	>- *From `lldb` (i.e after launch, on the `lldb` prompt):*
+	>	```shell
+	>	(lldb) file <program-executable-name>
+	>	```
+	>	or
+	>	```shell
+	>	(lldb) target create <program-executable-name>
+	>	```
+	>
+	>	> for short:
+	>
+	>	```shell
+	>	(lldb) ta cr <program>
+	>	```
 
 <br>
 <br>
