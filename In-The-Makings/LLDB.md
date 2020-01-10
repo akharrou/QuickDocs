@@ -235,7 +235,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
 
 	- ***Demonstration:*** <br> <br>
-		> ![Compilation Step with Debug Flags](https://media.giphy.com/media/kHxIhkV0ZhEgIID1eV/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-flags.gif -->
+		> ![Compilation Step with Debug Flags](../Assets/LLDB/compile-with-debug-flags.gif) <!--  -->
 
 <br>
 <br>
