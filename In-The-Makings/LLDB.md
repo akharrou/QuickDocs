@@ -206,7 +206,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	During *"examination phase"*, ***to see source code*** – as opposed to *[assembly instructions (code)](https://en.wikipedia.org/wiki/Assembly_language)* – ***that executes in a linear fashion*** (i.e line by line, statement by statement), you might want to add *[in the compilation step [of your program]]* the options/flags : `-g -O0`, see ([§3.1.1](#311-debug-flags--g-amp--o0)).
 
--	Unrelated to `lldb`, but assisting tremendously in debugging, doing, arguably, half the debugging effort for you, again, is the `fsanitize` family ([3.1.2](#312-helpful-flags-the-fsanitize-family)) of *[compiler]* flags. Don't jump over reading this section ! You'll miss out on WAY more than you think !
+-	Unrelated to `lldb`, but ***assisting tremendously in debugging***, doing, arguably, half the debugging effort for you, again, is the ***`fsanitize` family*** ([3.1.2](#312-helpful-flags-the-fsanitize-family)) of *[compiler]* flags. Don't jump over reading this section ! You'll miss out on WAY more than you think !
 
 -	***Demonstration:*** <br> <br>
 	> ![Demo: compile-with-debug-and-fsanitize-flags](https://media.giphy.com/media/LqrKqRXd6B0qtAy3nX/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-and-fsanitize-flags.gif -->
