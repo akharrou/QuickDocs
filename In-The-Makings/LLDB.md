@@ -255,7 +255,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
-	> *<small>[Note: Adding the `-g` flag allows the sanitizers to give you better diagnostic messages, so keep it ! - end note]</small>*
+	> *<small>[Note:* Adding the `-g` flag allows the sanitizers to give you better diagnostic messages, so keep it ! *- end note]</small>*
 
 	Here are the ***available sanitizers***:
 
