@@ -209,7 +209,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	Unrelated to `lldb`, but ***assisting tremendously in debugging***, doing, arguably, half the debugging effort for you, again, is the ***`fsanitize` family*** ([3.1.2](#312-helpful-flags-the-fsanitize-family)) of *[compiler]* flags. Don't jump over reading this section ! You'll miss out on WAY more than you think !
 
 -	***Demonstration:*** <br> <br>
-	> ![Demo: compile-with-debug-and-fsanitize-flags](https://media.giphy.com/media/LqrKqRXd6B0qtAy3nX/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-and-fsanitize-flags.gif -->
+	> ![Demo: compile-with-debug-and-fsanitize-flags](https://media.giphy.com/media/h8rg0kOMDEbXgM6xiL/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-and-fsanitize-flags.gif -->
 	>
 	> If you're *(really)* in a hurry, just copy this demonstration, and skip reading all subsections of [§3.1](#31-compile-program).
 
