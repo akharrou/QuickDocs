@@ -278,7 +278,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	```
 
 	> – add it *[it's corresponding (enabler) flag]* to the compilation step. The shown above adds the *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
-	>
+
 	> *<small>[Note:* It is not possible to combine more than one of the *`-fsanitize=address`*, *`-fsanitize=thread`*, and *`-fsanitize=memory`* checkers in the same program. *- end note]*
 	>
 
