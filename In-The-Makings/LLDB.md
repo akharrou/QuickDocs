@@ -104,13 +104,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> Further broken down:
 	>
-	> *The short answer,* **YES !** – you should be care, and here's why: ***it will save you hours, of debugging*** – ***the process of trying to figure out:***
-    >	- where a bug is
-	>	- what caused it
+	> *The short answer,* **YES !** – you should definitely care, and here's why: ***it will save you hours, of debugging*** – ***the process of trying to figure out:***
+    >	- where a bug lies in source code
+	>	- its cause
 	>	- *(possibly even)* how to fix it <br> <br>
 
 	> ***Bug*** <br>
-		*In short, an error in (code) logic, committed by a programmer causing unintended/undesired/unplanned for behavior(s) and/or output(s).*
+		*In short; an error in (code) logic, committed by a programmer causing unintended/undesired/unplanned for behavior(s) and/or output(s).*
 
 
 <br>
@@ -136,7 +136,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***To use LLDB***:
 
 	```shell
-	$> clang <source-code-files> -g -O0 -fsanitize=address -fsanitize=undefined
+	$> clang <source-code-files> -g -O0
 	$> lldb <execuable>
 	$> (lldb) b main
 	$> (lldb) r <arg-1> <arg-2> ... <arg-n>
@@ -257,7 +257,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > This section is unrelated to LLDB, but related to debugging.
 
--	The `fsanitize` *[compiler]* flag family is an extraordinarily helpful set of flags, with regards to debugging. They enable *[the compiler]* *([runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)))* checks – otherwise disable by default – to detect and avoid bugs. <br>
+-	The `fsanitize` *[compiler]* flag family is an extraordinarily helpful set of flags, with regards to debugging. They enable *[compiler]* *([runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)))* checks – which are disabled by default – to detect and avoid bugs. <br>
 
 	If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
@@ -307,17 +307,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	To launch/start LLDB:
+-	***To launch/start LLDB:***
 
 	```shell
 	$> lldb
+	(lldb)
 	```
 
-	> – if you see this:
-	> ```shell
-	> $> (lldb)
-	> ```
-	> Then you're in ! *(the program)*
+	> – write `lldb` *[on the terminal command prompt]* and press `enter`.
 
 
 <br>
@@ -333,15 +330,32 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#32-launch-lldb) | [➡️](#34-setup-lldb)
 ## 3.3. Load LLDB
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >lldb.load >loadlldb >loaddebugger >debugger.load >db.load]`</small>
 <br>
 <br>
 
 
-> TODO: ## 3.3. Load LLDB
+-	***To load `lldb`****(a program)* ; *(i.e set it [`lldb`] up to run a program)*:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+	- *From Launch (i.e on the command line):*
+		```shell
+		$> lldb <program-execuable-name>
+		```
 
+	- *From `lldb` (i.e after launch, on the `lldb` prompt):*
+		```shell
+		(lldb) file <program-executable-name>
+		```
+		or
+		```shell
+		(lldb) target create <program-executable-name>
+		```
+
+		> for short:
+
+		```shell
+		(lldb) ta cr <program>
+		```
 
 <br>
 <br>
