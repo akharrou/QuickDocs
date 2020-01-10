@@ -179,7 +179,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> -	There is also a brief section on a set of *[compiler]* flags that make debugging as easy as pie, ***the `fsanitize` family*** [§3.1.2](#312-helpful-flags-the-fsanitize-family) *[of flags]*. Check it out !
+	> -	There is also a brief section on a set of *[compiler]* flags that make debugging as easy as pie, ***the `fsanitize` family*** [§3.1.2](#312-helpful-flags-the-fsanitize-family) *[of flags]*. Don't miss it, you'll miss out on a LOT ! `lldb` and the `fsanitize` family of flags are two debugging tools that go hand in hand !
 	>
 	> <br> *- end note]</small>*
 
@@ -251,7 +251,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-launch-lldb)
 ### 3.1.2. Helpful Flags: The `fsanitize` Family
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >fsanitize=address >fsanitize=undefined >fsanitize=memory >fsanitize=leaks >fsanitize=threads >fsanitize=dataflag >fsanitize=cfi >fsanitize=safestack >fsanitize=safe-stack >fsanitize=data-flow >sanitizers >sanitizerflags >sanitizeflags >sanitizer.flags >flags.sanitizers >debug.sanitizers >debugsanitizers >debugfsanitizers >memoryflags >leakflags >threadflags >dataflowflags >undefinedbehaviorflags >safestackflags >cfiflags >memory.flags >leak.flags >thread.flags >dataflow.flags >undefinedbehavior.flags >safestack.flags >cfi.flags] >flags.memory >flags.leak >flags.thread >flags.dataflow >flags.undefinedbehavior >flags.safestack >flags.cfi`</small>
 <br>
 <br>
 
