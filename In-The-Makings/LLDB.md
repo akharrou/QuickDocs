@@ -251,9 +251,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > This section is unrelated to LLDB, but related to debugging.
 
--	The `fsanitize` family is extraordinarily helpful with debugging – they are a set of *[compiler]* flags that enable *([runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)))* checks to detect and avoid bugs.
+-	The `fsanitize` family of *[compiler]* flags are extraordinarily helpful with debugging – enable *([runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)))* checks to detect and avoid bugs. <br>
 
--	These options control whether or not the compiler is to perform *(runtime)* checks for various forms of undefined or suspicious behavior. If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
+	If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
 	> *<small>[Note: Adding the `-g` flag allows the sanitizers to give you better diagnostic messages, so keep it ! - end note]</small>*
 
