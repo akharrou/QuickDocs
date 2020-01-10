@@ -371,7 +371,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 	> *– this is inside `lldb`, after having loaded a `target`. <br>*
 
-	> *<small>[Note: `lldb`'s lexicon refers to **an *[executable]* program** as **a *[debugger]* target** - end note]</small>*
+> *<small>[Note: `lldb`'s lexicon refers to **an *[executable]* program** as **a *[debugger]* target** - end note]</small>*
 
 
 <br>
