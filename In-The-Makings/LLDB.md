@@ -257,7 +257,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > This section is unrelated to LLDB, but related to debugging.
 
--	The `fsanitize` *[compiler]* flag family is an extraordinarily helpful set of flags, with regards to debugging. They enable *[compiler]* *([runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)))* checks – which are disabled by default – to detect and avoid bugs. <br>
+-	The `fsanitize` *[compiler]* flag family is an extraordinarily helpful set of flags, with regards to debugging. They enable *[compiler]* *([runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)))* checks – which are disabled by default – that detect and help avoid bugs. <br>
 
 	If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
