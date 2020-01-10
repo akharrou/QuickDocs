@@ -360,7 +360,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	file <program>   | OR |   target create <program>   | OR |   ta cr <program>
 	>	```
 	>
-	>	The output of `lldb` *[for all the approachs above]* should be something along the lines of:
+	>	The output of `lldb` *[for all the commands above]* will be something along the lines of:
 	>	```shell
 	>	Current executable set to '<program>' (<system-architecture>).
 	>	```
