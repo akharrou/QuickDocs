@@ -179,7 +179,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> -	There is also a brief section on a set of *[compiler]* flags that make debugging as easy as pie, the `fsanitize` family [§3.1.2](#312-helpful-flags-the-fsanitize-family). Check it out !
+	> -	There is also a brief section on a set of *[compiler]* flags that make debugging as easy as pie, ***the `fsanitize` family*** [§3.1.2](#312-helpful-flags-the-fsanitize-family) *[of flags]*. Check it out !
 	>
 	> <br> *- end note]</small>*
 
