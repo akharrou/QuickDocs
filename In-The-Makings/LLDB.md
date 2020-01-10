@@ -204,7 +204,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***LLDB works by loading it with*** *(i.e setting it up to run)* ***an execuable*** *[file]* *(compiled source code program)*. So first thing would be to [compile](http://www.cs.ecu.edu/~karl/3300/spr16/Notes/System/compile.html) a program.
 
--	During *"examination phase"*, to see source code – as opposed to *[assembly instructions (code)](https://en.wikipedia.org/wiki/Assembly_language)* – that executes in a linear fashion (i.e line by line, statement by statement), you might want to add *[in the compilation step [of your program]]* the flags : `-g -O0`, see ([§3.1.1](#311-debug-flags--g-amp--o0)).
+-	During *"examination phase"*, to see source code – as opposed to *[assembly instructions (code)](https://en.wikipedia.org/wiki/Assembly_language)* – that executes in a linear fashion (i.e line by line, statement by statement), you might want to add *[in the compilation step [of your program]]* the options/flags : `-g -O0`, see ([§3.1.1](#311-debug-flags--g-amp--o0)).
+
+-	Unrelated to `lldb`, but assisting greatly in debugging, doing, arguably,	 half the debugging effort for you, again, is the `fsanitize` family ([3.1.2](#312-helpful-flags-the-fsanitize-family)) of *[compiler]* flags. Don't jump over reading this section ! You'll miss out on WAY more than you think !
 
 
 <br>
@@ -225,13 +227,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	***To see source code in the *"examination phase"**** *(instead of assembly code)*, you'll have to add *[in the compilation step]* the *[compiler]* option/flag, specific to the compiler used, that ***generatesdebug information***; but if your goal is to see *assembly*, then omit this step.
+-	***To see source code in the *"examination phase"**** *(instead of assembly code)*, you'll have to add *[in the compilation step]* the *[compiler]* flag, specific to the compiler used, that ***generates debug information***; but if your goal is to see *assembly*, then omit this step.
 
-	> In the case of the `clang` and `gcc` compilers that option/flag is: `-g`.
+	> For `clang` and `gcc` *[compilers]* the flag is: `-g`.
 
--	***To make sure that no source code is not optimized away*** *(i.e modified by the compiler in order to optimize the [speed and efficiency of a] program)*, you'll have to add *[in the compilation step]* the *[compiler]* option/flag, specific to the compiler used, that ***turns off optimizations***; if you don't do this, then during *"examination phase"*, `lldb` might appear to be excute *[the source code]* in a non-linear manner *(i.e it will (seem to) jump (skip) over some lines and loops, etc)*.
+-	***To make sure that no source code is not optimized away*** *(i.e modified by the compiler in order to optimize the [speed and efficiency of a] program)*, you'll have to add *[in the compilation step]* the *[compiler]* flag, specific to the compiler used, that ***turns off optimizations***; if you don't do this, then during *"examination phase"*, `lldb` might appear to be excute *[the source code]* in a non-linear manner *(i.e it will (seem to) jump (skip) over some lines and loops, etc)*.
 
-	> In the case of the `clang` and `gcc` compilers that option/flag is: `-O0`
+	> For `clang` and `gcc` *[compilers]* the flag is: `-O0`
 	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
 
 	- ***Demonstration:*** <br> <br>
