@@ -358,20 +358,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
 	>	```shell
-	>	(lldb) file <program>            | OR |
-	>	(lldb) target create <program>   | OR |
+	>	(lldb) file <program>
+	>	(lldb) target create <program>
 	>	(lldb) ta cr <program>
 	>	```
+	>
+	>	*– any of the above commands work.*
 
 -	***To un-load a program [from `lldb`]:***
 
 	> ```shell
-	> (lldb) target delete   | OR |
+	> (lldb) target delete
 	> (lldb) ta de
 	> ```
 	> *– this is inside `lldb`, after having loaded a `target`. <br>*
 
-> *<small>[Note: `lldb`'s lexicon refers to an ***"[executable]* program"*** as a **"*[debugger]* target"** – to avoid confusion. - end note]</small>*
+> *<small>[Note: `lldb`'s lexicon refers to an ***"[executable] program"*** as a ***"[debugger] target"*** – to avoid confusion. - end note]</small>*
 
 
 <br>
@@ -391,6 +393,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
+
+-	***To setup an entry-point*** *(starting point/location) [for program execution]*:
+
+	```shell
+	(lldb) breakpoint
+	```
 
 -	***To setup `lldb`*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
 
