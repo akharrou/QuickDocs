@@ -335,14 +335,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	***To load `lldb`****(with a program)* ; *(i.e set it [`lldb`] up to target a specific program [for examination])*:
+-	***To load a program into `lldb`*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
+-	***To load a program into `lldb`*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
 
-	>- *From Launch (i.e on the [terminal] command line):*
+	>- ***From Launch** (i.e on the [terminal] command line):*
 	>	```shell
 	>	$> lldb <program-execuable-name>
 	>	```
 	>
-	>- *From `lldb` (i.e after launch, on the `lldb` prompt):*
+	>- ***From (inside) `lldb`** (i.e after launch, on the `lldb` prompt):*
 	>	```shell
 	>	(lldb) file <program-executable-name>
 	>	```
@@ -356,6 +357,28 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	```shell
 	>	(lldb) ta cr <program>
 	>	```
+	>
+	>	The output of `lldb` should be something along the lines of:
+	>	```shell
+	>	Current executable set to '<program>' (<system-architecture>).
+	>	```
+
+-	***To un-load [a program]:***
+
+	```shell
+	(lldb) target delete
+	```
+	> or, *for short*:
+	```shell
+	(lldb) ta de
+	```
+	> – this happens inside `lldb`, after having loaded a program already. <br>
+	>
+	>	The output of `lldb` should be something along the lines of:
+	>	```shell
+	>	Current executable set to '<program>' (<system-architecture>).
+	>	```
+
 
 <br>
 <br>
@@ -364,7 +387,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Documentation | LLDB | [(Official) Tutorial :: Load a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#id2)
 
 
 ---
