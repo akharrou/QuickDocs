@@ -211,7 +211,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***Demonstration:*** <br> <br>
 	![Demo: compile-with-debug-and-fsanitize-flags](https://media.giphy.com/media/JRPUPdiP8Awj39A6A0/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-and-fsanitize-flags.gif -->
 	>
-	> If you're *(really)* in a hurry, just copy this demonstration, and skip reading all subsections of [§3.1](#31-compile-program).
+	> If you're *(really)* in a hurry, just do as the demonstration shows, and skip reading subsections of [§3.1](#31-compile-program).
+	>
+	> ```shell
+	> -g -O0 -fsanitize=address -fsanitize=undefined
+	> ```
 
 
 <br>
@@ -242,7 +246,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
 
 -	***Demonstration:*** <br> <br>
-	> ![Compilation Step with Debug Flags](https://media.giphy.com/media/kHxIhkV0ZhEgIID1eV/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-flags.gif -->
+	> ![Compilation Step with Debug Flags](https://media.giphy.com/media/lPAhT8fwh0K6VEwoDM/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-flags.gif -->
 
 <br>
 <br>
