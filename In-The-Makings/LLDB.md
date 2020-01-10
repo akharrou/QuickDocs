@@ -349,7 +349,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	***To load a program into `lldb`*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
+-	***To load a program [into `lldb`]*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
 
 	> ***From outside [`lldb`]** (i.e before, and at the same time as, launch *[of `lldb`]* , on the *[terminal]* command prompt):*
 	>	```shell
@@ -363,7 +363,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	(lldb) ta cr <program>
 	>	```
 
--	***To un-load [a program] from `lldb`:***
+-	***To un-load a program [from `lldb`]:***
 
 	> ```shell
 	> (lldb) target delete   | OR |
