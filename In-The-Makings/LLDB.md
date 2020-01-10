@@ -350,13 +350,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To load a program into `lldb`*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
 
-	> - ***From outside [`lldb`]** (i.e before, and at the same time as, launch, on the [terminal] command prompt):* <br>
-		```shell
+	> - ***From outside [`lldb`]** (i.e before, and at the same time as, launch, on the [terminal] command prompt):*
+	<	```shell
 		$> lldb <program-execuable-name>
 		```
 	>
-	> - ***From inside [`lldb`]** (i.e after launch, on the `lldb` prompt):* <br>
-		```shell
+	> - ***From inside [`lldb`]** (i.e after launch, on the `lldb` prompt):*
+	>	```shell
 		file <program>   | OR |   target create <program>   | OR |   ta cr <program>
 		```
 
