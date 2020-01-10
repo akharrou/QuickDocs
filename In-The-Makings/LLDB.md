@@ -375,7 +375,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> The output of `lldb` should be something along the lines of:
 	> ```shell
-	> Current executable set to '<program>' (<system-architecture>).
+	> 1 targets deleted.
+	> ```
+	> – if it found a 'target' to delete, else:
+	> ```shell
+	> error: no target is currently selected
 	> ```
 
 
@@ -468,8 +472,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > TODO: ## 3.5. Run Program
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+-	***To run a (loaded) program:***
 
+	```shell
+	(lldb) target delete
+	```
+	> or, *for short*:
+	```shell
+	(lldb) ta de
+	```
+	> This happens inside `lldb`, after having loaded a program already. <br>
+	>
+	> The output of `lldb` should be something along the lines of:
+	> ```shell
+	> 1 targets deleted.
+	> ```
+	> – if it found a 'target' to delete, else:
+	> ```shell
+	> error: no target is currently selected
+	> ```
 
 <br>
 <br>
