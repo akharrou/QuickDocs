@@ -220,7 +220,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#31-compile-program) | [➡️](#312-helpful-flags-the-fsanitize-family)
 ### 3.1.1. Debug Flags: `-g` & `-O0`
-<small>`[Search Tags: >lldb.compile.flags >lldb.compile.debugflags >lldb.debugflags >lldb.flags >debugflags]`</small>
+<small>`[Search Tags: >compileprogram >compileprg >programcompilation >compilation >lldb.compile.flags >lldb.compile.debugflags >lldb.debugflags >lldb.flags >debugflags]`</small>
 <br>
 <br>
 
@@ -234,6 +234,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> In the case of the `clang` and `gcc` compilers that option/flag is: `-O0`
 	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
 
+	![Compilation Step with Debug Flags](../Assets/LLDB/compile.mov)
 
 <br>
 <br>
