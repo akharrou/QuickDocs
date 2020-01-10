@@ -249,40 +249,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
+> This section is unrelated to LLDB, but related to debugging.
 
--	Although unrelated to LLDB, the `fsanitize` family of *[compiler]* options/flags are extremely helpful when it comes detecting bugs.
+-	The `fsanitize` family is extraordinarily helpful with debugging – they are a set of *[compiler]* flags that enable *([runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)))* checks to detect and avoid bugs.
 
--	To use `fsanitize`:
+-	These options control whether or not the compiler is to perform *(runtime)* checks for various forms of undefined or suspicious behavior. If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
-	```shell
-	$> clang <source-code-files> -g -O0 -fsanitize=address -fsanitize=undefined ...
-	```
-
-	> – add the options/flags to the compilation step, like shown above.
-
--	These options control whether the compiler adds *(runtime)* checks for various forms of undefined or suspicious behavior. If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
+	> *<small>[Note: Adding the `-g` flag allows the sanitizers to give you better diagnostic messages, so keep it ! - end note]</small>*
 
 	Here are the ***available sanitizers***:
 
     | Sanitizer                     | Compiler Option/Flag | Description
     | :---------------------------- |----------------------|-------------
-    |  [AddressSanitizer](https://clang.llvm.org/docs/AddressSanitizer.html)             |`-fsanitize=address`    | A fast ***memory error*** detector.
-    |  [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html)              |`-fsanitize=thread`     | A ***data-race detector***.
+    |  [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)             |`-fsanitize=address`    | A fast ***memory error*** detector.
+    |  [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)              |`-fsanitize=thread`     | A ***data-race detector***.
     |  [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)              |`-fsanitize=memory`     | A detector of ***uninitialized reads***.
-    |  [UndefinedBehaviorSanitizer](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html)   |`-fsanitize=undefined`  | A fast ***undefined behavior*** detector.
+    |  [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer)   |`-fsanitize=undefined`  | A fast ***undefined behavior*** detector.
     |  [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)            |`-fsanitize=dataflow`   | A general ***data flow analysis***.
     |  [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)            |`-fsanitize=cfi`   | ***Control flow*** checks.
     |  [SafeStack](https://clang.llvm.org/docs/SafeStack.html)            |`-fsanitize=safe-stack`   | Protection against ***stack-based memory*** corruption errors.
 
+	> *<small>[Note:* Each performs many and various checks, for example: the *UndefinedBehaviorSanitizer*, called for use with `-fsanitize=undefined`, performs all the checks listed [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks). *- end note]</small>*
 
-	> *<small>[Note:*
-	>
-	> - Each performs many and various checks, for example: the *UndefinedBehaviorSanitizer*, called for use with `-fsanitize=undefined`, performs all the checks listed [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks).
-	>
-	> - It is not possible to combine more than one of the `-fsanitize=address`, `-fsanitize=thread`, and `-fsanitize=memory` checkers in the same program. - end note]
-	>
-	> <br> *- end note]</small>*
+-	***To enable sanitizers***:
 
+	```shell
+	$> clang <source-code-files> -g -O0 -fsanitize=address -fsanitize=undefined ...
+	```
+
+	> – add them *[their corresponding enabler flags]* to the compilation step, like shown above.
+	>
+	> - *<small>[Note:* It is not possible to combine more than one of the *`-fsanitize=address`*, *`-fsanitize=thread`*, and *`-fsanitize=memory`* checkers in the same program. *- end note]*
+	>
 
 <br>
 <br>
@@ -291,7 +289,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Documentation | Apple |[Enabling the Undefined Behavior Sanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer/enabling_the_undefined_behavior_sanitizer)
+> | 1 | Documentation | Apple |[Saniziters \| Code Diagnostics](https://developer.apple.com/documentation/code_diagnostics/)
 > | 2 | Documentation | Clang | [Compiler :: Sanitizer Family](https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation)
 > | 4 | Documentation | GNU | [Compiler :: `fsanitize` Family (scroll down) ](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html#-fsanitize=address)
 
