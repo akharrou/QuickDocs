@@ -352,13 +352,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> - ***From outside [`lldb`]** (i.e before, and at the same time as, launch, on the [terminal] command prompt):*
 	>	```shell
-		$> lldb <program-execuable-name>
-		```
+	>	$> lldb <program-execuable-name>
+	>	```
 	>
 	> - ***From inside [`lldb`]** (i.e after launch, on the `lldb` prompt):*
 	>	```shell
-		file <program>   | OR |   target create <program>   | OR |   ta cr <program>
-		```
+	>	file <program>   | OR |   target create <program>   | OR |   ta cr <program>
+	>	```
 
 	> -	`lldb` will output, *for all the commands above*, something along the lines of:
 	>	```shell
