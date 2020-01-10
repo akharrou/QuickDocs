@@ -251,11 +251,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > This section is unrelated to LLDB, but related to debugging.
 
--	The `fsanitize` family of *[compiler]* flags are extraordinarily helpful with regards to debugging. They enable *[the compiler to perform]* *([runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)))* checks to detect and avoid bugs. <br>
+-	The `fsanitize` *[compiler]* flag family is an extraordinarily helpful set of flags, with regards to debugging. They enable *[the compiler]* *([runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)))* checks – otherwise disable by default – to detect and avoid bugs. <br>
 
 	If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
-	> *<small>[Note: Adding the `-g` flag allows the sanitizers to give you better diagnostic messages, so keep it ! - end note]</small>*
+	> *<small>[Note: Adding the `-g` flag causes the sanitizers to give you better (i.e more detailed) diagnostic messages, so keep it ! - end note]</small>*
 
 	Here are the ***available sanitizers***:
 
@@ -269,7 +269,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     |  [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)            |`-fsanitize=cfi`   | ***Control flow*** checks.
     |  [SafeStack](https://clang.llvm.org/docs/SafeStack.html)            |`-fsanitize=safe-stack`   | Protection against ***stack-based memory*** corruption errors.
 
-	Each *[sanitizer]* performs multiple (different) checks, for example: the *UndefinedBehaviorSanitizer*, enabled by `-fsanitize=undefined`, performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics).
+	Each *[sanitizer]* performs multiple (different) checks, for example: the *UndefinedBehaviorSanitizer*, enabled by *`-fsanitize=undefined`*, performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks), same tests just another good resource).
 
 -	***To enable a sanitizer***:
 
