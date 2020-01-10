@@ -191,7 +191,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#3-how-do-i-use-it-) | [➡️](#311-debug-flags--g---o0)
 ## 3.1. Compile Program
-<small>`[Search Tags: >lldb.compile >debugger.compile >db.compile]`</small>
+<small>`[Search Tags: >lldb.compile >db.compile]`</small>
 <br>
 <br>
 
@@ -214,7 +214,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#31-compile-program) | [➡️](#312-helpful-flags-the-fsanitize-family)
 ### 3.1.1. Debug Flags: `-g` & `-O0`
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >lldb.compile.flags >lldb.compile.debugflags >lldb.debugflags >lldb.flags >debugflags]`</small>
 <br>
 <br>
 
@@ -245,14 +245,43 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-launch-lldb)
 ### 3.1.2. Helpful Flags: The `fsanitize` Family
-<small>`[Search Tags: >lldb.compile.flags >lldb.compile.debugflags >lldb.debugflags >lldb.flags]`</small>
+<small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.1.2. Helpful Flags: The `fsanitize` Family
+-	Although unrelated to LLDB, the `fsanitize` family of *[compiler]* options/flags are extremely helpful when it comes detecting bugs.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+-	To use `fsanitize`:
+
+	```shell
+	$> clang <source-code-files> -g -O0 -fsanitize=address -fsanitize=undefined ...
+	```
+
+	> – add the options/flags to the compilation step, like shown above.
+
+-	These options control whether the compiler adds *(runtime)* checks for various forms of undefined or suspicious behavior. If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
+
+	Here are the ***available sanitizers***:
+
+    | Sanitizer                     | Compiler Option/Flag | Description
+    | :---------------------------- |----------------------|-------------
+    |  [AddressSanitizer](https://clang.llvm.org/docs/AddressSanitizer.html)             |`-fsanitize=address`    | A fast ***memory error*** detector.
+    |  [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html)              |`-fsanitize=thread`     | A ***data-race detector***.
+    |  [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)              |`-fsanitize=memory`     | A detector of ***uninitialized reads***.
+    |  [UndefinedBehaviorSanitizer](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html)   |`-fsanitize=undefined`  | A fast ***undefined behavior*** detector.
+    |  [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)            |`-fsanitize=dataflow`   | A general ***data flow analysis***.
+    |  [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)            |`-fsanitize=cfi`   | ***Control flow*** checks.
+    |  [SafeStack](https://clang.llvm.org/docs/SafeStack.html)            |`-fsanitize=safe-stack`   | Protection against ***stack-based memory*** corruption errors.
+
+
+	> *<small>[Note:*
+	>
+	> - Each performs many and various checks, for example: the *UndefinedBehaviorSanitizer*, called for use with `-fsanitize=undefined`, performs all the checks listed [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks).
+	>
+	> - It is not possible to combine more than one of the `-fsanitize=address`, `-fsanitize=thread`, and `-fsanitize=memory` checkers in the same program. - end note]
+	>
+	> <br> *- end note]</small>*
 
 
 <br>
@@ -262,8 +291,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Documentation | Clang | [Compiler :: `fsanitize` Family](https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation)
-> | 2 | Documentation | GNU | [Compiler :: `fsanitize` Family (scroll down) ](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html#-fsanitize=address)
+> | 1 | Documentation | Apple |[Enabling the Undefined Behavior Sanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer/enabling_the_undefined_behavior_sanitizer)
+> | 2 | Documentation | Clang | [Compiler :: Sanitizer Family](https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation)
+> | 4 | Documentation | GNU | [Compiler :: `fsanitize` Family (scroll down) ](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html#-fsanitize=address)
 
 ---
 [🏠](#contents) | [⬅️](#312-helpful-flags-the-fsanitize-family) | [➡️](#33-load-lldb)
