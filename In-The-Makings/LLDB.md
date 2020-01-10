@@ -255,11 +255,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
-	> *<small>[Note:* Adding the `-g` flag allows the sanitizers to give you better diagnostic messages, so keep it ! *- end note]</small>*
+	> *<small>[Note: Adding the `-g` flag allows the sanitizers to give you better diagnostic messages, so keep it ! - end note]</small>*
 
 	Here are the ***available sanitizers***:
 
-    | Sanitizer                     | Compiler Option/Flag | Description
+    | Sanitizer                     | Enabling Flag | Description
     | :---------------------------- |----------------------|-------------
     |  [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)             |`-fsanitize=address`    | A fast ***memory error*** detector.
     |  [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)              |`-fsanitize=thread`     | A ***data-race detector***.
@@ -269,15 +269,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     |  [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)            |`-fsanitize=cfi`   | ***Control flow*** checks.
     |  [SafeStack](https://clang.llvm.org/docs/SafeStack.html)            |`-fsanitize=safe-stack`   | Protection against ***stack-based memory*** corruption errors.
 
-	> *<small>[Note:* Each performs many and various checks, for example: the *UndefinedBehaviorSanitizer*, called for use with `-fsanitize=undefined`, performs all the checks listed [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks). *- end note]</small>*
+	Each *[sanitizer]* performs multiple (different) checks, for example: the *UndefinedBehaviorSanitizer*, enabled by `-fsanitize=undefined`, performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics).
 
--	***To enable sanitizers***:
+-	***To enable a sanitizer***:
 
 	```shell
 	$> clang <source-code-files> -g -O0 -fsanitize=address -fsanitize=undefined ...
 	```
 
-	> – add them *[their corresponding enabler flags]* to the compilation step, like shown above.
+	> – add it *[it's corresponding (enabler) flag]* to the compilation step. The shown above adds the *AddressSanitizer* and the *UndefinedBehaviorSanitizer*.
 	>
 	> - *<small>[Note:* It is not possible to combine more than one of the *`-fsanitize=address`*, *`-fsanitize=thread`*, and *`-fsanitize=memory`* checkers in the same program. *- end note]*
 	>
