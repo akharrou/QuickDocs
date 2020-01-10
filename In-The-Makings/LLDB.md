@@ -289,9 +289,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Documentation | Apple |[Saniziters \| Code Diagnostics](https://developer.apple.com/documentation/code_diagnostics/)
-> | 2 | Documentation | Clang | [Compiler :: Sanitizer Family](https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation)
-> | 4 | Documentation | GNU | [Compiler :: `fsanitize` Family (scroll down) ](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html#-fsanitize=address)
+> | 1 | Documentation | Apple |[Sanitizers Family](https://developer.apple.com/documentation/code_diagnostics/)
+> | 2 | Documentation | Clang | [Sanitizers Family](https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation)
+> | 4 | Documentation | GNU | [Sanitizers Family (scroll down) ](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html#-fsanitize=address)
 
 ---
 [🏠](#contents) | [⬅️](#312-helpful-flags-the-fsanitize-family) | [➡️](#33-load-lldb)
