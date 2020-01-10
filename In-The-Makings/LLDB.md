@@ -337,7 +337,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To load `lldb`****(with a program)* ; *(i.e set it [`lldb`] up to target a specific program [for examination])*:
 
-	>- *From Launch (i.e on the command line):*
+	>- *From Launch (i.e on the [terminal] command line):*
 	>	```shell
 	>	$> lldb <program-execuable-name>
 	>	```
@@ -351,7 +351,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	(lldb) target create <program-executable-name>
 	>	```
 	>
-	>	> for short:
+	>	> or, *for short*:
 	>
 	>	```shell
 	>	(lldb) ta cr <program>
