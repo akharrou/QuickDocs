@@ -343,7 +343,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#32-launch-lldb) | [➡️](#34-setup-lldb)
 ## 3.3. Load LLDB
-<small>`[Search Tags: >lldb.load >loadlldb >loaddebugger >debugger.load >db.load]`</small>
+<small>`[Search Tags: >lldb.loadprogram >loadlldb >loaddebugger >debugger.loadprogram >db.loadprogram >programload >program.load >lldb.unloadprogram >unloadlldb >unloaddebugger >debugger.unloadprogram >db.unloadprogram >programunload >program.unload]`</small>
 <br>
 <br>
 
@@ -368,7 +368,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> target delete   | OR |
 	> ta de
 	> ```
-	> *– this happens inside `lldb`, after having loaded a program already. <br>*
+	> *– this is inside `lldb`, after having loaded a program. <br>*
 
 
 <br>
@@ -378,7 +378,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Documentation | LLDB | [(Official) Tutorial :: Load a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#id2)
+> | 1 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
 
 
 ---
@@ -389,9 +389,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
-> TODO: ## 3.4. Setup LLDB
+-	***To setup `lldb`*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+	> - ***From outside [`lldb`]** (i.e before, and at the same time as, launch, on the [terminal] command prompt):*
+	>	```shell
+	>	$> lldb <program-execuable-name>
+	>	```
+	>
+	> - ***From inside [`lldb`]** (i.e after launch, on the `lldb` prompt):*
+	>	```shell
+	>	file <program>            | OR |
+	>	target create <program>   | OR |
+	>	ta cr <program>
+	>	```
 
 
 <br>
