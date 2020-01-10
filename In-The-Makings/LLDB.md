@@ -357,33 +357,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> - ***From inside [`lldb`]** (i.e after launch, on the `lldb` prompt):*
 	>	```shell
-	>	file <program>   | OR |   target create <program>   | OR |   ta cr <program>
-	>	```
-
-	> -	`lldb` will output, *for all the commands above*, something along the lines of:
-	>	```shell
-	>	Current executable set to '<program>' (<system-architecture>).
+	>	file <program>            | OR |
+	>	target create <program>   | OR |
+	>	ta cr <program>
 	>	```
 
 -	***To un-load [a program] from `lldb`:***
 
-	```shell
-	(lldb) target delete
-	```
-	> or, *for short*:
-	```shell
-	(lldb) ta de
-	```
-	> This happens inside `lldb`, after having loaded a program already. <br>
-	>
-	> The output of `lldb` should be something along the lines of:
 	> ```shell
-	> 1 targets deleted.
+	> target delete   | OR |
+	> ta de
 	> ```
-	> If no 'target' program was found, the output will be something along these lines instead:
-	> ```shell
-	> error: no target is currently selected
-	> ```
+	> *– this happens inside `lldb`, after having loaded a program already. <br>*
 
 
 <br>
