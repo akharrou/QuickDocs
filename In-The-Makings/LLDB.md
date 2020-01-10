@@ -371,12 +371,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	```shell
 	(lldb) ta de
 	```
-	> – this happens inside `lldb`, after having loaded a program already. <br>
+	> This happens inside `lldb`, after having loaded a program already. <br>
 	>
-	>	The output of `lldb` should be something along the lines of:
-	>	```shell
-	>	Current executable set to '<program>' (<system-architecture>).
-	>	```
+	> The output of `lldb` should be something along the lines of:
+	> ```shell
+	> Current executable set to '<program>' (<system-architecture>).
+	> ```
 
 
 <br>
