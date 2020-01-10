@@ -234,7 +234,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> In the case of the `clang` and `gcc` compilers that option/flag is: `-O0`
 	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
 
-	![Compilation Step with Debug Flags](../Assets/LLDB/compile.mov)
+	- ***Demonstration:***
+		> ![Compilation Step with Debug Flags](../Assets/LLDB/compile.gif)
 
 <br>
 <br>
