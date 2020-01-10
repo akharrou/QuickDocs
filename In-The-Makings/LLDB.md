@@ -204,13 +204,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***LLDB works by loading it with*** *(i.e setting it up to run)* ***an execuable*** *[file]* *(compiled source code program)*. So first thing would be to [compile](http://www.cs.ecu.edu/~karl/3300/spr16/Notes/System/compile.html) a program.
 
--	During *"examination phase"*, to see source code – as opposed to *[assembly instructions (code)](https://en.wikipedia.org/wiki/Assembly_language)* – that executes in a linear fashion (i.e line by line, statement by statement), you might want to add *[in the compilation step [of your program]]* the options/flags : `-g -O0`, see ([§3.1.1](#311-debug-flags--g-amp--o0)).
+-	During *"examination phase"*, ***to see source code*** – as opposed to *[assembly instructions (code)](https://en.wikipedia.org/wiki/Assembly_language)* – ***that executes in a linear fashion*** (i.e line by line, statement by statement), you might want to add *[in the compilation step [of your program]]* the options/flags : `-g -O0`, see ([§3.1.1](#311-debug-flags--g-amp--o0)).
 
--	Unrelated to `lldb`, but assisting greatly in debugging, doing, arguably,	 half the debugging effort for you, again, is the `fsanitize` family ([3.1.2](#312-helpful-flags-the-fsanitize-family)) of *[compiler]* flags. Don't jump over reading this section ! You'll miss out on WAY more than you think !
+-	Unrelated to `lldb`, but assisting tremendously in debugging, doing, arguably, half the debugging effort for you, again, is the `fsanitize` family ([3.1.2](#312-helpful-flags-the-fsanitize-family)) of *[compiler]* flags. Don't jump over reading this section ! You'll miss out on WAY more than you think !
 
 -	***Demonstration:*** <br> <br>
 	> ![Demo: compile-with-debug-and-fsanitize-flags](https://media.giphy.com/media/LqrKqRXd6B0qtAy3nX/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-and-fsanitize-flags.gif -->
-
+	>
 	> If you're *(really)* in a hurry, just copy this demonstration, and skip reading all subsections of [§3.1](#31-compile-program).
 
 
