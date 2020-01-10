@@ -235,7 +235,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
 
 	- ***Demonstration:*** <br> <br>
-		> ![Compilation Step with Debug Flags](../Assets/LLDB/compile.gif)
+		> ![Compilation Step with Debug Flags](../Assets/LLDB/compile-with-debug-flags.mp4)
 
 <br>
 <br>
@@ -339,7 +339,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To load a program into `lldb`*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
 
-	>- ***From Launch** (i.e on the [terminal] command line):*
+	>- ***From (outside) `lldb`** (i.e before launch, on the [terminal] command prompt):*
 	>	```shell
 	>	$> lldb <program-execuable-name>
 	>	```
@@ -359,7 +359,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	(lldb) ta cr <program>
 	>	```
 	>
-	>	The output of `lldb` should be something along the lines of:
+	>	The output of `lldb` *[for all the approachs above]* should be something along the lines of:
 	>	```shell
 	>	Current executable set to '<program>' (<system-architecture>).
 	>	```
@@ -379,7 +379,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```shell
 	> 1 targets deleted.
 	> ```
-	> – if it found a 'target' to delete, else:
+	> If no 'target' program was found, the output will be something along these lines instead:
 	> ```shell
 	> error: no target is currently selected
 	> ```
