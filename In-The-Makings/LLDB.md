@@ -399,11 +399,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	`lldb` gives you the option to set it *[`lldb`]* up to stop *(pause/halt/break/rest)* *[during execution [of your program]]*, at certain points/locations *(e.g. at a particular line *[in source code]*, a particular function)* – optionally adding conditions, so as to only stop at that point/location when the *[added]* condition is met *(fulfilled/reached)*. <br>
+-	`lldb` gives you the option to set it *[`lldb`]* up to stop *(pause/halt/break/rest)* *[during execution [of your program]]*, at certain points/locations *(e.g. at a particular line *[in source code]* or at a particular function)* – optionally adding conditions, so as to only stop at that point/location when the *[added]* condition is met *(fulfilled/reached)*. <br>
 
-	A location at which *[`lldb`'s]* execution *[of the program]* is setup to stop *(pause/halt/break)* is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them *[breakpoints]* as ***checkpoints***. <br>
+	A location at which *[`lldb`'s]* execution *[of a program]* is setup to stop *(pause/halt/break)* *[at]* is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them *[breakpoints]* as ***checkpoints***. <br>
 
--	`lldb`, also, gives you the option to set it *[`lldb`]* up to slow down and inform you when certain variables are accessed (`read`) and/or modified/changed (`write`). `lldb` will inform you by log their *[the variable's before and after]* values – optionally adding conditions, so as to only inform you about them when they have met *(fulfilled/reached)* certain condition(s) (e.g. reached, gone above or gone below a certain value, another variable, or other (unrelated) conditons (e.g. when it is 6am, or some function was called, etc)). <br>
+-	`lldb`, also, gives you the option to set it *[`lldb`]* up to slow down and inform you when certain variables are accessed (`read`) and/or modified (`write`). `lldb` will inform you by logging their *[the variable's]* *[before and after]* value – optionally adding conditions, so as to only inform/log about them when they have met *(fulfilled/reached)* certain condition(s), e.g.: reached, gone above/below a certain value or another variable; or (unrelated) conditions, e.g.: when it is 6am, or some function was called, etc. <br>
 
 	A tell to *[`lldb`]* to be extra careful and informative of a particular variable is what is referred to as: a ***watchpoint*** ([§3.4.2](#341-watchpoints)) – you can kind of think of them *[watchpoints]* as ***special eye lent to watch closely a particular object (variable)***. <br>
 
