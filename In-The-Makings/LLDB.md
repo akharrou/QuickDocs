@@ -399,25 +399,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	***To setup an entry-point*** *(starting point/location) [for program execution]*:
-
-	```shell
-	(lldb) breakpoint
-	```
-
--	***To setup `lldb`*** ; *(i.e set `lldb` up to target a specific program [for examination, when run])*:
-
-	> - ***From outside [`lldb`]** (i.e before, and at the same time as, launch, on the [terminal] command prompt):*
-	>	```shell
-	>	$> lldb <program-execuable-name>
-	>	```
-	>
-	> - ***From inside [`lldb`]** (i.e after launch, on the `lldb` prompt):*
-	>	```shell
-	>	file <program>            | OR |
-	>	target create <program>   | OR |
-	>	ta cr <program>
-	>	```
+-	`lldb` gives you the possibility to setup circumstances in which it will stop an entry-point for your program's execution as well as checkpoits
 
 
 <br>
@@ -438,9 +420,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
-> TODO: ### 3.4.1. Breakpoints
+-	You can think of `breakpoints` as checkpoints, or bus stops – a place where the execution *[of your program]* *(the bus)* will stop (i.e pause/halt, temporarily), until YOU resume it.
+-	Certain conditons can
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+Alternatively, you can tell the program (bus) to stop only if a certain condition is met
 
 
 <br>
@@ -493,9 +477,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	(lldb) run
 	(lldb) r
 	```
-	> – we use the *`launch process`* command or one of its built in aliases.
+	> – we use the *`process launch`* command, or one of its built in aliases.
 	>
-	> If you need to pass arguments to your program, you can append them *[the arguments]* as you would on normally, after the launching command. The form follows: *`run [<run-args>]`*
+	> If you need to pass arguments to your program, you can append them *[the arguments]* as you would on normally, after the launching command. The form follows: `<launch-cmd> [<run-args>]`*
 	>
 	> *Example:*
 	>
