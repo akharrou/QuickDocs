@@ -399,7 +399,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	`lldb` gives you the option to set *[`lldb`]* up to stop/pause/halt/break *[during execution [of your program]]*, at certain points/locations *(a particular line, function, method, etc)*, and optionally add conditions, so as to only stop at that point/location when the *[added]* condition is met/fulfilled/reached. <br>
+-	`lldb` gives you the option to set it *[`lldb`]* up to stop (pause/halt/break/rest) *[during execution [of your program]]*, at certain points/locations *(e.g. a particular line *[in source code]*, function)* – optionally adding conditions, so as to only stop at that point/location when the *[added]* condition is met/fulfilled/reached. <br>
 
 	A location at which *[`lldb`'s]* execution *[of the program]* is setup to stop/pause/halt/break is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them as checkpoints.
 <!--
