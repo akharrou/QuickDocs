@@ -366,6 +366,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	```
 	>
 	>	*– we use any of the above *[commands]*.*
+	>
+	> ***Demonstration:*** <br> <br>
+	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
 -	***To un-load a program [from `lldb`]:***
 
@@ -453,7 +456,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-run-program)
 ### 3.4.2. Watchpoints
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >]`</small>
 <br>
 <br>
 
@@ -476,32 +479,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-graphical-user-interface-gui)
 ## 3.5. Run Program
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >lldb.runprocess >lldb.launchprocess >lldb.startprocess >lldb.runprogram >lldb.launchprogram >lldb.startprogram >startprogram >launchprogram >runprogram >startprocess >launchprocess >runprocess  >startexecutable >launchexecutable >runexecutable >programstart >programrun >programlaunch >debugger.runprocess >debugger.launchprocess >debugger.startprocess >debugger.runprogram >debugger.launchprogram >debugger.startprogram]`</small>
 <br>
 <br>
 
 
-> TODO: ## 3.5. Run Program
-
--	***To run a (loaded) program:***
+-	***To run/launch a *[loaded]* program (target):***
 
 	```shell
-	(lldb) target delete
+	(lldb) launch process
+	(lldb) run
+	(lldb) r
 	```
-	> or, *for short*:
+	> – we use the `process launch` command or one of its built in aliases.
+
+-	Launch *[a program]* ***with arguments:***
+
 	```shell
-	(lldb) ta de
+	(lldb) launch process arg1 arg2 ... argN
+	(lldb) run arg1 arg2 ... argN
+	(lldb) r arg1 arg2 ... argN
 	```
-	> This happens inside `lldb`, after having loaded a program already. <br>
-	>
-	> The output of `lldb` should be something along the lines of:
-	> ```shell
-	> 1 targets deleted.
-	> ```
-	> – if it found a 'target' to delete, else:
-	> ```shell
-	> error: no target is currently selected
-	> ```
+	> – append them *[the arguments]* as you would on the *[terminal]* command prompt.
+
+TODO: demo
 
 <br>
 <br>
@@ -510,7 +511,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Documentation | LLDB | [(Official) Tutorial :: Starting or Attaching to Your Program](https://lldb.llvm.org/use/tutorial.html#starting-or-attaching-to-your-program)
 
 
 ---
