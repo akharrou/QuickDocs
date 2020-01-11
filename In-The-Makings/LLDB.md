@@ -484,16 +484,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	***To run/launch a *[loaded]* program (target):***
+-	***To launch/run a *[loaded]* program:***
+
+	`run [<run-args>]`
 
 	```shell
-	(lldb) launch process
+	(lldb) process launch
 	(lldb) run
 	(lldb) r
 	```
 	> – we use the *`launch process`* command or one of its built in aliases.
 	>
-	> – if you need to pass arguments to your program, you can append them *[the arguments]* as you would on the *[terminal]* command prompt, after the launching command.
+	> If you need to pass arguments to your program, you can append them *[the arguments]* as you would on normally, after the launching command. The form follows: *`run [<run-args>]`*
 	>
 	> *Example:*
 	>
