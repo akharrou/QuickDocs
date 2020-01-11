@@ -399,17 +399,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	`lldb` gives you the option to set *[`lldb`]* up to stop/pause/halt/break *[during execution of your program]*, at certain points/locations *(a particular line, function, method, etc)*, optionally only when certain *conditions* are met. <br>
+-	`lldb` gives you the option to set *[`lldb`]* up to stop/pause/halt/break *[during execution [of your program]]*, at certain points/locations *(a particular line, function, method, etc)*, and optionally add conditions, so as to only stop at that point/location when the *[added]* condition is met/fulfilled/reached. <br>
 
 	A location at which *[`lldb`'s]* execution *[of the program]* is setup to stop/pause/halt/break is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them as checkpoints.
-
+<!--
 -	`lldb` gives you the option to set *[`lldb`]* up to stop *[during execution]* at certain locations *(particular line, function, method, etc)* and to set *[`lldb`]* up to do so always or only when certain *conditions* are met. These locations at which *[`lldb`'s]* execution *[of the program]* is setup to stop are what is referred to as: ***breakpoints*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them as checkpoints.
 
 ***watchpoints*** ([§3.4.2](#342-watchpoints))
 
 	, or bus stops – a place where the execution *[of your program]* *(the bus)* will stop (i.e pause/halt, temporarily), until YOU resume it.
 
--	`lldb` gives you the option to setup circumstances in which it will stop an entry-point for your program's execution as well as checkpoits
+-	`lldb` gives you the option to setup circumstances in which it will stop an entry-point for your program's execution as well as checkpoits -->
 
 
 <br>
