@@ -491,16 +491,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	(lldb) run
 	(lldb) r
 	```
-	> – we use the `process launch` command or one of its built in aliases.
-
--	Launch *[a program]* ***with arguments:***
-
-	```shell
-	(lldb) launch process arg1 arg2 ... argN
-	(lldb) run arg1 arg2 ... argN
-	(lldb) r arg1 arg2 ... argN
-	```
-	> – append them *[the arguments]* as you would on the *[terminal]* command prompt.
+	> – we use the *`launch process`* command or one of its built in aliases.
+	>
+	> – if you need to pass arguments to your program, you can append them *[the arguments]* as you would on the *[terminal]* command prompt, after the launching command.
+	>
+	> *Example:*
+	>
+	> ```shell
+	> (lldb) run <arg1> <arg2> ... <argN>
+	> ```
 
 TODO: demo
 
