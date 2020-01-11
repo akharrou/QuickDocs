@@ -401,7 +401,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	`lldb` gives you the option to set it *[`lldb`]* up to stop *(pause/halt/break/rest)* *[during execution [of your program]]*, at certain points/locations *(e.g. at a particular line *[in source code]*, a particular function)* – optionally adding conditions, so as to only stop at that point/location when the *[added]* condition is met *(fulfilled/reached)*. <br>
 
-	A location at which *[`lldb`'s]* execution *[of the program]* is setup to stop/pause/halt/break is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them *[breakpoints]* as ***checkpoints***. <br>
+	A location at which *[`lldb`'s]* execution *[of the program]* is setup to stop *(pause/halt/break)* is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them *[breakpoints]* as ***checkpoints***. <br>
 
 	An analogy *(a(n) example, same, or resembling, in essence)* would be ***bus stops***, `lldb` being the, quote on quote, *bus*. *[In this analogy]*, *breakpoints* are the *bus stops* where *`lldb`*, the *bus*, would stop, the *conditions* being like: "the *bus* only stops here *[at this bus stop, i.e checkpoint, i.e breakpoint]* **in the mornings if it is a weekday**".
 <!--
