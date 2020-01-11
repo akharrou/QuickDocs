@@ -394,14 +394,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#33-load-lldb) | [➡️](#341-breakpoints)
 ## 3.4. Setup LLDB
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >lldb.setup >debugger.setup >lldbsetup >debuggersetup >setuplldb >setupdebugger]`</small>
 <br>
 <br>
 
 
--	`lldb` gives you the option to set it *[`lldb`]* up to stop (pause/halt/break/rest) *[during execution [of your program]]*, at certain points/locations *(e.g. a particular line *[in source code]*, function)* – optionally adding conditions, so as to only stop at that point/location when the *[added]* condition is met/fulfilled/reached. <br>
+-	`lldb` gives you the option to set it *[`lldb`]* up to stop *(pause/halt/break/rest)* *[during execution [of your program]]*, at certain points/locations *(e.g. at a particular line *[in source code]*, a particular function)* – optionally adding conditions, so as to only stop at that point/location when the *[added]* condition is met *(fulfilled/reached)*. <br>
 
-	A location at which *[`lldb`'s]* execution *[of the program]* is setup to stop/pause/halt/break is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them as checkpoints.
+	A location at which *[`lldb`'s]* execution *[of the program]* is setup to stop/pause/halt/break is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them as ***checkpoints***, or ***bus stops***, `lldb` being the, quote on quote, *bus*.
 <!--
 -	`lldb` gives you the option to set *[`lldb`]* up to stop *[during execution]* at certain locations *(particular line, function, method, etc)* and to set *[`lldb`]* up to do so always or only when certain *conditions* are met. These locations at which *[`lldb`'s]* execution *[of the program]* is setup to stop are what is referred to as: ***breakpoints*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them as checkpoints.
 
