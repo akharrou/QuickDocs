@@ -484,7 +484,7 @@ Alternatively, you can tell the program (bus) to stop only if a certain conditio
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
--	***Set watchpoint: on variable:***
+-	***Set watchpoint: on a variable:***
 
 	> *Command:*
 	> ```shell
@@ -497,7 +497,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) wa s v my_var
 	> ```
 
--	***Set a watchpoint: on memory location:***
+-	***Set watchpoint: on an address [by supplying an expression]:***
 
 	> *Command:*
 	> ```shell
@@ -513,7 +513,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> - *For both Where `-s` and -w`:*
+	> - *Where `-s` and -w` [for both commands above]:*
 	>
 	> 	```shell
 	> 	-s <byte-size> ( --size <byte-size> )
