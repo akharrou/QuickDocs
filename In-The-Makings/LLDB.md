@@ -407,7 +407,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	A tell to *[`lldb`]* to keep a special eye and log the activity of a particular variable *(more precisely and generally, object)* is what is referred to as: a ***watchpoint*** ([§3.4.2](#341-watchpoints)) – you can kind of think of them *[watchpoints]* as ***surveillance cameras pointed towards a particular object (variable, etc)*** , *adding a watchpoint* is ***putting an object on the watchlist*** - so to speak. <br>
 
-<!--
+<!-- BREAKPOINT ANALOGY:
+
 -	An analogy *(a situation/narrative same, or resembling, in essence)* *[for the above concepts]* would be that of city *metros or buses*. The *bus* *(**`lldb`**)* stops at designated *bus stops* *(**breakpoints**)*. The *bus stops* are known by *address or reference number* *(**a particular line, in a *[source code]* file**)*, they may also be known by *(a significant) structure/building, junction or area* *(**a particular function [in your code]**)*. Sometimes the *bus* doesn't stop at a particular *bus stop*, because conditions have been tied to it; the *bus* only stops at the *bus stop* at certain hours and/or certain days of the week; i.e the bus stopping at that station is conditional, i.e relies on certain ***condition(s)*** being met, e.g: *"in the morning hours (6am-11am), if it is a weekday"* *(`if (morning == true && (week_day >= 0 && week_day <= 5))`)*.
 -->
 
@@ -427,7 +428,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
 ### 3.4.1. Breakpoints
-<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >watchpointcommands >watchpointcmds >wacmds]`</small>
+<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc]`</small>
 <br>
 <br>
 
@@ -451,40 +452,88 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) b hello.c:10
 	> ```
 
-	> *<small>[Note:*
-	>
-	> - *Where `-f` and -l` [for both commands above]:*
-	>
-	> 	```shell
-	> 	-f <filename> ( --file <filename> )
-	> 		Specifies the source file in which to set this breakpoint.
-	>
-	> 	-l <linenum> ( --line <linenum> )
-	> 		Specifies the line number on which to set this breakpoint.
-	> 	```
-	>
-	> - *For more information: "`help breakpoint set`".*
-	>
-	> <br> *- end note]</small>*
-
 -	***Set a breakpoint: on a function:***
 
 	> *Command:*
 	>
 	> ```shell
-	> breakpoint set -n <filename> -l <line-number>
-	> br s -f <filename> -l <line-number>
-	> b <filename>:<line-number>
+	> breakpoint set --name <function-name>
+	> br s -n <function-name>
+	> b <function-name>
 	> ```
 	>
 	> *Example:*
 	> ```shell
-	> (lldb) breakpoint set -f hello.c -l 10
-	> (lldb) br s -f hello.c -l 10
-	> (lldb) b hello.c:10
+	> (lldb) breakpoint set --name main
+	> (lldb) br s -n main
+	> (lldb) b main
 	> ```
 
-	> breakpoint set --name <function-name>
+-	***Set a condition on a breakpoint:***
+
+	> *Command:*
+	> ```
+	> breakpoint modify [-c <expr>] [<breakpt-id | breakpt-id-list>]
+	> ```
+	>
+	> *Example*:
+	> ```
+	> (lldb) breakpoint set --name main
+	> (lldb) breakpoint modify -c '' TODO : adding conditions to breakpoints
+	> ```
+
+-	***Set a command to run on reaching a breakpoint:***
+
+	> *Command:*
+	> ```
+	> breakpoint modify [-c <expr>] [<breakpt-id | breakpt-id-list>]
+	> ```
+	>
+	> *Example*:
+	> ```
+	> (lldb) breakpoint set --name main
+	> (lldb) breakpoint modify -c '' TODO : adding commands to breakpoints
+	> ```
+
+-	***List breakpoints:***
+
+	> *Command:*
+	>
+	> ```shell
+	> breakpoint list -[bfv] [<breakpt-id | breakpt-id-list>]
+	>
+	>     -b ( --brief   )  :: brief description
+	>     -f ( --full    )  :: full description
+	>     -v ( --verbose )  :: extensive full description
+	>```
+	>
+	> *Example*:
+	> ```shell
+	> (lldb) breakpoint list
+	> (lldb) br l
+	> ```
+
+-	***Delete breakpoint(s):***
+
+	> *Command:*
+	>
+	> ```shell
+	> breakpoint delete [<breakpt-id | breakpt-id-list>]
+	> ```
+	>
+	> *Example*:
+	> ```shell
+	> (lldb) breakpoint delete 1 2 3
+	> (lldb) br de 1 2 3
+	> ```
+	>
+	> *<small>[Note: If no breakpoints are specified, delete them all. - end note]</small>*
+
+	> *<small>[Note:*
+	>
+	> - *For more information on `breakpoint` and its options and what they do, consult its [the command's] manual page, type: "`help breakpoint set`".*
+	>
+	> <br> *- end note]</small>*
 
 -	***Set a breakpoint (full):***
 
@@ -496,7 +545,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> *<small>[Note: I have listed above the common usages. If you really want to discover the full extent of `breakpoint`'s powers, you can consult its' manual page, type: `h br s` - end note]</small>*
 
 
-
 <br>
 <br>
 
@@ -504,7 +552,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
+> | 2 | Documentation | LLDB | [GDB to LLDB command map](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-breakpoints)
 
 
 ---
@@ -580,11 +629,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> *Command:*
 	>
 	> ```shell
-	> watchpoint list -[b|f|v] [<watchpt-id | watchpt-id-list>]
+	> watchpoint list -[bfv] [<watchpt-id | watchpt-id-list>]
 	>
 	>     -b ( --brief   )  :: brief description
 	>     -f ( --full    )  :: full description
-	>     -v ( --verbose )  :: everything known
+	>     -v ( --verbose )  :: extensive full description
 	>```
 	>
 	> *Example*:
@@ -608,6 +657,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 	>
 	> *<small>[Note: If no watchpoints are specified, delete them all. - end note]</small>*
+
+	> *<small>[Note: Trying to set watchpoints before launching a process (running a program) will not work, you'll get this: `error: invalid process`. You have to launch/run the program first. - end note]</small>*
 
 
 <br>
