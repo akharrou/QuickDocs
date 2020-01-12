@@ -403,7 +403,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	*"A location at which *[`lldb`'s]* execution is setup to stop *[at]*"* is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them *[breakpoints]* as ***checkpoints***. <br>
 
--	`lldb`, also, gives you the option to set it up to stop and log activities of a certain variable *(e.g. accesses (`read`) and/or modifications (`write`)*) – `lldb` logs its' *[the variable's]* *(before and after)* values – optionally you can add conditions, so as to only log when it *[the variable]* has met *(fulfilled/reached)* certain condition(s), e.g.: if it *[the variable]* has reached or has gone above or below a certain value or the value of another variable; you could also have conditions that are unrelated *[to the variable]*, e.g.: when it is 6am, or when some function was called, or some other variable reaches some value, etc, you get the point. <br>
+-	`lldb`, also, gives you the option to set it up to stop and log activities of a certain variable *(e.g. accesses (`read`) and/or modifications (`write`)*) – `lldb` logs its *[the variable's]* *(before and after)* values – optionally you can add conditions, so as to only log when it *[the variable]* has met *(fulfilled/reached)* certain condition(s), e.g.: if it *[the variable]* has reached or has gone above or below a certain value or the value of another variable; you could also have conditions that are unrelated *[to the variable]*, e.g.: when it is 6am, or when some function was called, or some other variable reaches some value, etc, you get the point. <br>
 
 	*"A tell to *[`lldb`]* to keep a special eye and log the activity of a particular variable *(more precisely and generally, an object)*"* is what is referred to as: a ***watchpoint*** ([§3.4.2](#341-watchpoints)) – you can kind of think of them *[watchpoints]* as ***surveillance cameras pointed towards a particular objects (variables, etc)*** , *adding a watchpoint* is ***putting an object on the watchlist*** - so to speak. <br>
 
@@ -529,12 +529,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> *<small>[Note: If no breakpoint *[id]* is specified, delete them *[breakpoints]* all. - end note]</small>*
 
-	> *<small>[Note:*
-	>
-	> - *For more information on `breakpoint` and its commands and their options and what they do, consult its [the `breakpoint`'s] manual page, type: "`help breakpoint`", "`help breakpoint <command>`".*
-	>
-	> <br> *- end note]</small>*
-
 -	***Set a breakpoint (full):***
 
 	> *(Full) Command:*
@@ -542,7 +536,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> breakpoint set [-w <watch-type>] [-s <byte-size>] <variable-name> breakpoint set [-DHd] -l <linenum> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] [-m <boolean>] breakpoint set [-DHd] -a <address-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-N <breakpoint-name>] breakpoint set [-DHd] -n <function-name> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -F <fullname> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -S <selector> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -M <method> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -r <regular-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>]
 	> ```
 	>
-	> *<small>[Note: I have listed above the common usages. If you really want to discover the full extent of `breakpoint`'s powers, you can consult its' manual page, type: `h br s` - end note]</small>*
+	> *<small>[Note: Listed above are only the common usages *[of `breakpoint set`]*. To discover the full extent *[of `breakpoint set`'s]* powers, you can consult its manual page, type: `h br s` - end note]</small>*
+
+	> *<small>[Note:*
+	>
+	> - *For more information on `breakpoint` and its commands and their options and what they do, consult its [`breakpoint`'s] manual page, type: "`help breakpoint`", "`help breakpoint <command>`".*
+	>
+	> <br> *- end note]</small>*
 
 
 <br>
@@ -596,7 +596,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> - *Where `-s` and -w` [for both commands above]:*
+	> - *Where `-s` and `-w` [for both commands [above]]:*
 	>
 	> 	```shell
 	> 	-s <byte-size> ( --size <byte-size> )
@@ -608,7 +608,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> 			Values: read | write | read_write
 	> 	```
 	>
-	> - *For more information, consul: "`help watchpoint set`".*
+	> - *For more information, consult its *[`watchpoint set`'s]* manual page: "`help watchpoint set`".*
 	>
 	> <br> *- end note]</small>*
 
@@ -661,7 +661,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> - *For more information on `watchpoint` and its commands and their options and what they do, consult its [the `watchpoint`'s] manual page, type: "`help watchpoint`", "`help watchpoint <command>`".* <br>
+	> - *For more information on `watchpoint` and its commands and their options and what they do, consult its [`watchpoint`'s] manual page, type: "`help watchpoint`", "`help watchpoint <command>`".* <br>
 	>
 	> - *Trying to set watchpoints before launching a process (i.e running a program) will not work, you'll get this: `error: invalid process` (or `thread`). You have to load and launch/run the program first.*
 	>
@@ -689,12 +689,42 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To launch/run a *[loaded]* program:***
 
-	`run [<run-args>]`
+	```shell
+	(lldb) process launch
+	```
+
+	```shell
+
+	```
+
+	```shell
+	(lldb) run
+	(lldb) r
+	```
+
+	> – we use the *`process launch`* command, or one of its built in aliases.
+	>
+	> If you need to pass arguments to your program, you can append them *[the arguments]* as you would on normally, after the launching command. The form follows: `<launch-cmd> [<run-args>]`*
+	>
+	> *Example:*
+	>
+	> ```shell
+	> (lldb) run <arg1> <arg2> ... <argN>
+	> ```
+
+	> *<small>[Note:*
+	>
+	> - *`run`* is an abbreviation for *`process launch -X true --`* , see *`h run`*.
+	>
+	> - *`r`* is an abbreviation for *`run`* , see *`h r`*.
+	>
+	> <br> *- end note]</small>*
+
+-	***To redirect stdout:***
 
 	```shell
 	(lldb) process launch
-	(lldb) run
-	(lldb) r
+	(lldb) pr la -o <filename-terminal>
 	```
 	> – we use the *`process launch`* command, or one of its built in aliases.
 	>
@@ -705,6 +735,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```shell
 	> (lldb) run <arg1> <arg2> ... <argN>
 	> ```
+
+-	***Set a process launch (full):***
+
+	> *(Full) Command:*
+	> ```shell
+	> process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-v <none>] [-c[<filename>]] [-i <filename>] [-o <filename>] [-e <filename>] [<run-args>]
+	> ```
+	>
+	> *<small>[Note: Listed above are only the common usages *[of `process launch`]*. To discover the full extent of *[`process launch`'s]* powers, you can consult it's manual page, type: `h pr la` - end note]</small>*
+
 
 TODO: demo
 
