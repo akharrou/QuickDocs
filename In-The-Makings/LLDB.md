@@ -405,7 +405,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	`lldb`, also, gives you the option to set it up to stop and log activities of a certain variable *(e.g. accesses (`read`) and/or modifications (`write`)*) – `lldb` logs its' *[the variable's]* *(before and after)* values – optionally you can add conditions, so as to only log when it *[the variable]* has met *(fulfilled/reached)* certain condition(s), e.g.: if it *[the variable]* has reached or has gone above or below a certain value or the value of another variable; you could also have conditions that are unrelated *[to the variable]*, e.g.: when it is 6am, or when some function was called, or some other variable reaches some value, etc, you get the point. <br>
 
-	*"A tell to *[`lldb`]* to keep a special eye and log the activity of a particular variable *(more precisely and generally, object)*"* is what is referred to as: a ***watchpoint*** ([§3.4.2](#341-watchpoints)) – you can kind of think of them *[watchpoints]* as ***surveillance cameras pointed towards a particular object (variable, etc)*** , *adding a watchpoint* is ***putting an object on the watchlist*** - so to speak. <br>
+	*"A tell to *[`lldb`]* to keep a special eye and log the activity of a particular variable *(more precisely and generally, an object)*"* is what is referred to as: a ***watchpoint*** ([§3.4.2](#341-watchpoints)) – you can kind of think of them *[watchpoints]* as ***surveillance cameras pointed towards a particular objects (variables, etc)*** , *adding a watchpoint* is ***putting an object on the watchlist*** - so to speak. <br>
 
 <!-- BREAKPOINT ANALOGY:
 
@@ -433,24 +433,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
-> Commands for operating on breakpoints:
-
--	***Set a breakpoint, on a [source file] line:***
-
-	> *Command:*
-	>
-	> ```shell
-	> breakpoint set --file <filename> --line <line-number>
-	> br s -f <filename> -l <line-number>
-	> b <filename>:<line-number>
-	>```
-	>
-	> *Example:*
-	> ```shell
-	> (lldb) breakpoint set -f hello.c -l 10
-	> (lldb) br s -f hello.c -l 10
-	> (lldb) b hello.c:10
-	> ```
+> *Commands for operating on breakpoints:*
 
 -	***Set a breakpoint, on a function:***
 
@@ -467,6 +450,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) breakpoint set --name main
 	> (lldb) br s -n main
 	> (lldb) b main
+	> ```
+
+-	***Set a breakpoint, on a [source file] line:***
+
+	> *Command:*
+	>
+	> ```shell
+	> breakpoint set --file <filename> --line <line-number>
+	> br s -f <filename> -l <line-number>
+	> b <filename>:<line-number>
+	>```
+	>
+	> *Example:*
+	> ```shell
+	> (lldb) breakpoint set -f hello.c -l 10
+	> (lldb) br s -f hello.c -l 10
+	> (lldb) b hello.c:10
 	> ```
 
 -	***Set a condition on a breakpoint:***
@@ -509,8 +509,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> *Example*:
 	> ```shell
-	> (lldb) breakpoint list
-	> (lldb) br l
+	> (lldb) breakpoint list --verbose
+	> (lldb) br l -v
 	> ```
 
 -	***Delete breakpoint(s):***
@@ -527,7 +527,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) br de 1 2 3
 	> ```
 	>
-	> *<small>[Note: If no breakpoints are specified, delete them all. - end note]</small>*
+	> *<small>[Note: If no breakpoint *[id]* is specified, delete them *[breakpoints]* all. - end note]</small>*
 
 	> *<small>[Note:*
 	>
@@ -565,7 +565,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
-> Commands for operating on watchpoints:
+> *Commands for operating on watchpoints:*
 
 -	***Set watchpoint, on a variable:***
 
