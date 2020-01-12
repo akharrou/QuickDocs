@@ -475,12 +475,12 @@ Alternatively, you can tell the program (bus) to stop only if a certain conditio
 ---
 [🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-run-program)
 ### 3.4.2. Watchpoints
-<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >]`</small>
+<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >watchpointcommands >watchpointcmds]`</small>
 <br>
 <br>
 
 
-#### Commands for operating on watchpoints:
+> Commands for operating on watchpoints:
 
 -	***Set watchpoint: on a variable:***
 
