@@ -435,7 +435,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > Commands for operating on breakpoints:
 
--	***Set a breakpoint: on a [source file] line:***
+-	***Set a breakpoint, on a [source file] line:***
 
 	> *Command:*
 	>
@@ -452,7 +452,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) b hello.c:10
 	> ```
 
--	***Set a breakpoint: on a function:***
+-	***Set a breakpoint, on a function:***
 
 	> *Command:*
 	>
@@ -567,7 +567,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > Commands for operating on watchpoints:
 
--	***Set watchpoint: on a variable:***
+-	***Set watchpoint, on a variable:***
 
 	> *Command:*
 	> ```shell
@@ -580,7 +580,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) wa s v my_var
 	> ```
 
--	***Set watchpoint: on an address [by supplying an expression]:***
+-	***Set watchpoint, on an address [by supplying an expression]:***
 
 	> *Command:*
 	> ```shell
