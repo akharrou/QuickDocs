@@ -16,10 +16,10 @@
 
 ------------------------------------------------------------------------------->
 
-> *﷽ <br>
->  In the name of God, the most Gracious, the most Merciful. All praise and thanks are due to Him. Lord of all that exists. Owner & Master of the Day of Resurrection*
+> ﷽ <br> <br>
+>  In the name of God, the most Gracious, the most Merciful. All praise and thanks are due to Him. Lord of all that exists. Owner & Master of the Day of Resurrection
 
-Low Level Debugger (LLDB)
+QuickDocs \| Low Level Debugger (LLDB)
 ===
 
 > ***January 2020***
