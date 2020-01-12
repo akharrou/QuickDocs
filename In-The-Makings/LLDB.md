@@ -434,7 +434,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > Commands for operating on breakpoints:
 
--	***Set breakpoint:***
+-	***Set a breakpoint (full):***
 
 	> *Command:*
 	> ```shell
@@ -443,7 +443,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> *<small>[Note: Lol... I'll leave you figure this one out, type: `h br s`, for the manual page on all these. I will only list below the common usages. - end note]</small>*
 
--	***Set breakpoint: on a [source file] line:***
+-	***Set a breakpoint: on a [source file] line:***
 
 	> *Command:*
 	>
@@ -476,7 +476,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> <br> *- end note]</small>*
 
--	***Set breakpoint: on a function:***
+-	***Set a breakpoint: on a function:***
 
 	> *Command:*
 	>
