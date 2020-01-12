@@ -439,6 +439,29 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Alternatively, you can tell the program (bus) to stop only if a certain condition is met
 
 
+
+	```shell
+
+	b <function-name>
+	```
+
+	```shell
+
+	b main
+	```
+
+
+	```shell
+
+	b <source-file-name>:<line>
+	```
+
+	```shell
+
+	b hello.c:11
+	```
+
+
 <br>
 <br>
 
@@ -461,7 +484,7 @@ Alternatively, you can tell the program (bus) to stop only if a certain conditio
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
--	***Set watchpoint on variable:***
+-	***Set watchpoint: on variable:***
 
 	> *Command:*
 	> ```shell
@@ -474,7 +497,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) wa s v my_var
 	> ```
 
--	***Set a watchpoint on a memory location:***
+-	***Set a watchpoint: on memory location:***
 
 	> *Command:*
 	> ```shell
@@ -490,7 +513,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> - *Where `-s` and -w`:*
+	> - *For both Where `-s` and -w`:*
 	>
 	> 	```shell
 	> 	-s <byte-size> ( --size <byte-size> )
@@ -515,18 +538,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 	> (lldb) watch set var global
 	> (lldb) watchpoint modify -c '(global == 5)'
-	> ```
-	>
-	> *During execution this is what it might look like when the condition becomes met:*
-	>
-	> ```
-	> (lldb) c
-	> ...
-	> (lldb) bt
-	> * thread #1: tid = 0x1c03, 0x0000000100000ef5 a.out`modify + 21 at main.cpp:16, 	stop reason = watchpoint 1
-	> frame #0: 0x0000000100000ef5 a.out`modify + 21 at main.cpp:16
-	> frame #1: 0x0000000100000eac a.out`main + 108 at main.cpp:25
-	> frame #2: 0x00007fff8ac9c7e1 libdyld.dylib`start + 1
 	> ```
 
 -	***List watchpoints:***
@@ -571,7 +582,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-watchpoints)
+> | 2 | Documentation | LLDB | [GDB to LLDB Command Map](https://lldb.llvm.org/use/map.html?highlight=watchpoints#watchpoint-commands)
 
 
 ---
