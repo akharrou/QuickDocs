@@ -427,10 +427,73 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
 ### 3.4.1. Breakpoints
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >watchpointcommands >watchpointcmds >wacmds]`</small>
 <br>
 <br>
 
+
+> Commands for operating on breakpoints:
+
+-	***Set breakpoint: on a function:***
+
+	> *Command:*
+	> ```shell
+	> breakpoint set [-w <watch-type>] [-s <byte-size>] <variable-name> breakpoint set [-DHd] -l <linenum> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] [-m <boolean>] breakpoint set [-DHd] -a <address-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-N <breakpoint-name>] breakpoint set [-DHd] -n <function-name> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -F <fullname> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -S <selector> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -M <method> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -r <regular-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>]
+	> ```
+	>
+	> *<small>[Note: Lol... I'll leave you figure this one out, type: `h br s`, for the manual page on all these. I will only list below the common usages. - end note]</small>*
+
+-	***Set breakpoint: on a [source file] line:***
+
+	> *Command:*
+	>
+	> ```shell
+	> breakpoint set --file <filename> --line <line-number>
+	> br s -f <filename> -l <line-number>
+	> b <filename>:<line-number>
+	>```
+	>
+	> *Example:*
+	> ```shell
+	> (lldb) breakpoint set -f hello.c -l 10
+	> (lldb) br s -f hello.c -l 10
+	> (lldb) b hello.c:10
+	> ```
+
+	> *<small>[Note:*
+	>
+	> - *Where `-f` and -l` [for both commands above]:*
+	>
+	> 	```shell
+	> 	-f <filename> ( --file <filename> )
+	> 		Specifies the source file in which to set this breakpoint.
+	>
+	> 	-l <linenum> ( --line <linenum> )
+	> 		Specifies the line number on which to set this breakpoint.
+	> 	```
+	>
+	> - *For more information: "`help breakpoint set`".*
+	>
+	> <br> *- end note]</small>*
+
+-	***Set breakpoint: on a function:***
+
+	> *Command:*
+	>
+	> ```shell
+	> breakpoint set -n <filename> -l <line-number>
+	> br s -f <filename> -l <line-number>
+	> b <filename>:<line-number>
+	> ```
+	>
+	> *Example:*
+	> ```shell
+	> (lldb) breakpoint set -f hello.c -l 10
+	> (lldb) br s -f hello.c -l 10
+	> (lldb) b hello.c:10
+	> ```
+
+	> breakpoint set --name <function-name>
 
 -	You can think of `breakpoints` as checkpoints, or bus stops – a place where the execution *[of your program]* *(the bus)* will stop (i.e pause/halt, temporarily), until YOU resume it.
 -	Certain conditons can
@@ -475,7 +538,7 @@ Alternatively, you can tell the program (bus) to stop only if a certain conditio
 ---
 [🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-run-program)
 ### 3.4.2. Watchpoints
-<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >watchpointcommands >watchpointcmds]`</small>
+<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds]`</small>
 <br>
 <br>
 
@@ -522,6 +585,8 @@ Alternatively, you can tell the program (bus) to stop only if a certain conditio
 	> 			Specify the type of watching to perform.
 	> 			Values: read | write | read_write
 	> 	```
+	>
+	> - *For more information: "`help watchpoint set`".*
 	>
 	> <br> *- end note]</small>*
 
