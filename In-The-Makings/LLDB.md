@@ -529,21 +529,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> frame #2: 0x00007fff8ac9c7e1 libdyld.dylib`start + 1
 	> ```
 
--	***List all watchpoints:***
+-	***List watchpoints:***
 
 	> *Command:*
 	>
 	> ```shell
 	> watchpoint list -[b|f|v] [<watchpt-id | watchpt-id-list>]
+	>
+	>     -b ( --brief   )  :: brief description
+	>     -f ( --full    )  :: full description
+	>     -v ( --verbose )  :: everything known
 	>```
 	>
 	> *Example*:
 	> ```shell
 	> (lldb) watchpoint list
-	> (lldb) watch l
+	> (lldb) wa l
 	> ```
 
--	***Delete a watchpoint:***
+-	***Delete watchpoint(s):***
 
 	> *Command:*
 	>
@@ -551,13 +555,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> watchpoint delete [<watchpt-id | watchpt-id-list>]
 	> ```
 	>
-	> *<small>[Note: If no watchpoints are specified, delete them all. - end note]</small>*
-	>
 	> *Example*:
 	> ```shell
-	> (lldb) watchpoint delete 1
-	> (lldb) watch del 1
+	> (lldb) watchpoint delete 1 2 3
+	> (lldb) wa de 1 2 3
 	> ```
+	>
+	> *<small>[Note: If no watchpoints are specified, delete them all. - end note]</small>*
 
 
 <br>
