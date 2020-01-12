@@ -461,67 +461,99 @@ Alternatively, you can tell the program (bus) to stop only if a certain conditio
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
+-	***Set watchpoint on variable:***
 
--	***Set a watchpoint on a variable:***
-
-	-	For writes:
-	```shell
-	(lldb) watchpoint set variable global_var
-	(lldb) wa s v global_var
-	```
-
-	-	For reads:
-	```shell
-
-	```
-
-	-	For both *[read & write]*:
-	```shell
-
-	```
+	> *Command:*
+	> ```shell
+	> watchpoint set variable [-w <watch-type>] [-s <byte-size>] <variable-name>
+	> ```
+	>
+	> *Example:*
+	> ```shell
+	> (lldb) watchpoint set variable my_var
+	> (lldb) wa s v my_var
+	> ```
 
 -	***Set a watchpoint on a memory location:***
 
-	```shell
-	(lldb) watchpoint set expression -- my_ptr
-	(lldb) wa s e -- my_ptr
-	```
+	> *Command:*
+	> ```shell
+	> watchpoint set expression [-w <watch-type>] [-s <byte-size>] -- <expr>
+	> watchpoint set expression <expr>
+	> ```
+	>
+	> *Example*:
+	> ```shell
+	> (lldb) watchpoint set expression my_ptr
+	> (lldb) wa s e my_ptr
+	> ```
 
-	> – when it is written into.
+	> *Where `-s` and -w`:*
 	>
-	> *<small>[Note:*
+	> ```shell
+	> -s <byte-size> ( --size <byte-size> )
+	> 		Number of bytes to use to watch a region.
+	> 		Values: 1 | 2 | 4 | 8
 	>
-	> - The size of the region to watch for defaults to the pointer size if no '-x byte_size' is specified. This command takes raw input, evaluated as an expression returning an unsigned integer pointing to the start of the region, after the '--' option terminator.
-	>
-	> <br> *- end note]</small>*
+	> -w <watch-type> ( --watch <watch-type> )
+	> 		Specify the type of watching to perform.
+	> 		Values: read | write | read_write
+	> ```
 
 -	***Set a condition on a watchpoint:***
 
-	```
-	(lldb) watch set var global
-	(lldb) watchpoint modify -c '(global==5)'
-	(lldb) c
-	...
-	(lldb) bt
-	* thread #1: tid = 0x1c03, 0x0000000100000ef5 a.out`modify + 21 at main.cpp:16, 	stop reason = watchpoint 1
-	frame #0: 0x0000000100000ef5 a.out`modify + 21 at main.cpp:16
-	frame #1: 0x0000000100000eac a.out`main + 108 at main.cpp:25
-	frame #2: 0x00007fff8ac9c7e1 libdyld.dylib`start + 1
-	```
+	> *Command:*
+	> ```
+	> watchpoint modify [-c <expr>] [<watchpt-id | watchpt-id-list>]
+	> ```
+	>
+	> *Example*:
+	> ```
+	> (lldb) watch set var global
+	> (lldb) watchpoint modify -c '(global == 5)'
+	> ```
+	>
+	> *During execution this is what it might look like when the condition becomes met:*
+	>
+	> ```
+	> (lldb) c
+	> ...
+	> (lldb) bt
+	> * thread #1: tid = 0x1c03, 0x0000000100000ef5 a.out`modify + 21 at main.cpp:16, 	stop reason = watchpoint 1
+	> frame #0: 0x0000000100000ef5 a.out`modify + 21 at main.cpp:16
+	> frame #1: 0x0000000100000eac a.out`main + 108 at main.cpp:25
+	> frame #2: 0x00007fff8ac9c7e1 libdyld.dylib`start + 1
+	> ```
 
 -	***List all watchpoints:***
 
-	```shell
-	(lldb) watchpoint list
-	(lldb) watch l
-	```
+	> *Command:*
+	>
+	> ```shell
+	> watchpoint list -[b|f|v] [<watchpt-id | watchpt-id-list>]
+	>```
+	>
+	> *Example*:
+	> ```shell
+	> (lldb) watchpoint list
+	> (lldb) watch l
+	> ```
 
 -	***Delete a watchpoint:***
 
-	```shell
-	(lldb) watchpoint delete 1
-	(lldb) watch del 1
-	```
+	> *Command:*
+	>
+	> ```shell
+	> watchpoint delete [<watchpt-id | watchpt-id-list>]
+	> ```
+	>
+	> *<small>[Note: If no watchpoints are specified, delete them all. - end note]</small>*
+	>
+	> *Example*:
+	> ```shell
+	> (lldb) watchpoint delete 1
+	> (lldb) watch del 1
+	> ```
 
 
 <br>
