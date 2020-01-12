@@ -16,10 +16,8 @@
 
 ------------------------------------------------------------------------------->
 
-> ﷽
->
-> *In the name of God, the most Gracious, the most Merciful.*
-----
+<small> ﷽ *In the name of God, the most Gracious, the most Merciful.* </small>
+
 Low Level Debugger (LLDB)
 ===
 
