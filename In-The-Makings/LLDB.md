@@ -110,7 +110,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	- *(possibly even)* how to fix it <br> <br>
 
 	> ***Bug*** <br>
-		*In short; an error in (code) logic, committed by a programmer causing unintended/undesired/unplanned for behavior(s) and/or output(s).*
+		*In short; an error in (code) logic, committed by a programmer, causing unintended/undesireable/unplanned-for behavior(s) and/or output(s).*
 
 
 <br>
@@ -179,7 +179,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> -	There is also a brief section on a set of *[compiler]* flags that make debugging as easy as pie – ***the `fsanitize` family*** ([§3.1.2](#312-helpful-flags-the-fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br> <br>
+	> -	There is also a brief section on a set of *[compiler]* flags which constitues the other half when it comes to debugging tools – ***the `fsanitize` family*** ([§3.1.2](#312-helpful-flags-the-fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br> <br>
 	`lldb` and the `fsanitize` family of flags are two debugging tools that go hand in hand !
 	>
 	> <br> *- end note]</small>*
@@ -325,12 +325,48 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To launch/start LLDB:***
 
-	```shell
-	$> lldb
-	(lldb)
-	```
+	> *Command:*
+	>
+	> ```shell
+	> lldb [-hvdexw] [-a arch] [-c core-file] [-l script-language] [-s lldb-commands] [-n process-name] [-p pid] [[--] <PROGRAM-ARG1> <PROGRAM-ARG2> ...]
+	>
+	> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	>
+    > -f, --file filename
+    >         Specifies the executable file that lldb will be launching /
+    >         attaching to.
+
+	> ```
+	>
+	> *Example:*
+	> ```shell
+	> $> lldb
+	> (lldb)
+	> ```
+	>
+	> ```shell
+	> $> lldb
+	> (lldb)
+	> ```
 
 	> – write `lldb` *[on the terminal command prompt]* and press `enter`.
+
+> *<small>[Note:*
+
+-	***To debug Python [scripts]:***
+
+	```shell
+	lldb -f /path/to/<python> -- <script>
+	```
+
+	or
+
+	```shell
+	(lldb) ta cr /path/to/<python>
+	(lldb) r <script>
+	```
+
+<br> *- end note]</small>*
 
 
 <br>
@@ -355,18 +391,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ***From outside [`lldb`]** (i.e before, and at the same time as, launch *[of `lldb`]* , on the *[terminal]* command prompt):*
 	>	```shell
-	>	$> lldb <program-execuable-name>
+	>	$> lldb --file <program-execuable-name>
+	>	$> lldb -f <program-execuable>
+	>	$> lldb <program-execuable>
 	>	```
 	>
+
 	> ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
 	>	```shell
-	>	(lldb) file <program>
-	>	(lldb) target create <program>
-	>	(lldb) ta cr <program>
+	>	(lldb) target create <program-execuable>
+	>	(lldb) ta cr <program-execuable>
+	>	(lldb) file <program-execuable>
 	>	```
 	>
-	>	*– we use any of the above *[commands]*.*
-	>
+	> *<small>[Note: `file` is a [built-in] alias/abbreviation for `target create`, see `help file`- end note]</small>*
+
 	> ***Demonstration:*** <br> <br>
 	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
@@ -376,9 +415,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) target delete
 	> (lldb) ta de
 	> ```
-	> *– this is inside `lldb`, after having loaded a `target`. <br>*
 
-> *<small>[Note: `lldb`'s lexicon refers to an ***"[executable] program"*** as a ***"[debugger] target"*** – to avoid confusion. - end note]</small>*
+> *<small>[Note: `lldb`'s lexicon refers to an ***"[executable] program"*** , that is to be debugged, as a ***"[debugger] target"*** – to avoid confusion. - end note]</small>*
 
 
 <br>
@@ -469,11 +507,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) b hello.c:10
 	> ```
 
--	***Set a condition on a breakpoint:***
+-	***Set a breakpoint condition:***
 
 	> *Command:*
 	> ```
-	> breakpoint modify [-c <expr>] [<breakpt-id | breakpt-id-list>]
+	> breakpoint modify [-Dde] [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [<breakpt-id | breakpt-id-list>]
+	>
+	>	-c <expr> ( --condition <expr> )
+	>	     The breakpoint stops only if this condition expression evaluates to true.
 	> ```
 	>
 	> *Example*:
@@ -482,11 +523,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) breakpoint modify -c '' TODO : adding conditions to breakpoints
 	> ```
 
--	***Set a command to run on reaching a breakpoint:***
+-	***Set a breakpoint command:***
 
 	> *Command:*
 	> ```
-	> breakpoint modify [-c <expr>] [<breakpt-id | breakpt-id-list>]
+	> breakpoint modify [-Dde] [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [<breakpt-id | breakpt-id-list>]
+	>
+	>
+	>	-G <boolean> ( --auto-continue <boolean> )
+    >		The breakpoint will auto-continue after running its commands.
+	>
+	>	-o <boolean> ( --one-shot <boolean> )
+	>		The breakpoint is deleted the first time it stop causes a stop.
+	>
 	> ```
 	>
 	> *Example*:
@@ -612,7 +661,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> <br> *- end note]</small>*
 
--	***Set a condition on a watchpoint:***
+-	***Set a watchpoint condition:***
 
 	> *Command:*
 	> ```
@@ -926,6 +975,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 --------------------------------------------------------------------------------
 > Notes:
 
-	– Empty –
+	- issue with lldb is it takes time to get back to the orginal point
+
+	ex:
+
+		- how to skip loops, cuz it takes too long
+
+		- and be able to see stderr, stdout
+
+		- segfaults when a variable reaches a value of 3
+		but it takes time to get there, so how can you
+		run the code till it reaches 2 then go line by
+		line from there.
 
 -->
