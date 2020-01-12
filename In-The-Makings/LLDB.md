@@ -434,15 +434,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > Commands for operating on breakpoints:
 
--	***Set a breakpoint (full):***
-
-	> *Command:*
-	> ```shell
-	> breakpoint set [-w <watch-type>] [-s <byte-size>] <variable-name> breakpoint set [-DHd] -l <linenum> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] [-m <boolean>] breakpoint set [-DHd] -a <address-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-N <breakpoint-name>] breakpoint set [-DHd] -n <function-name> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -F <fullname> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -S <selector> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -M <method> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -r <regular-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>]
-	> ```
-	>
-	> *<small>[Note: Lol... I'll leave you figure this one out, type: `h br s`, for the manual page on all these. I will only list below the common usages. - end note]</small>*
-
 -	***Set a breakpoint: on a [source file] line:***
 
 	> *Command:*
@@ -523,6 +514,16 @@ Alternatively, you can tell the program (bus) to stop only if a certain conditio
 
 	b hello.c:11
 	```
+
+-	***Set a breakpoint (full):***
+
+	> *(Full) Command:*
+	> ```shell
+	> breakpoint set [-w <watch-type>] [-s <byte-size>] <variable-name> breakpoint set [-DHd] -l <linenum> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] [-m <boolean>] breakpoint set [-DHd] -a <address-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-N <breakpoint-name>] breakpoint set [-DHd] -n <function-name> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -F <fullname> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -S <selector> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -M <method> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -r <regular-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>]
+	> ```
+	>
+	> *<small>[Note: I have listed above the common usages. If you really want to discover the full extent of `breakpoint`'s powers, you can consult its' manual page, type: `h br s` - end note]</small>*
+
 
 
 <br>
