@@ -486,35 +486,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> breakpoint set --name <function-name>
 
--	You can think of `breakpoints` as checkpoints, or bus stops – a place where the execution *[of your program]* *(the bus)* will stop (i.e pause/halt, temporarily), until YOU resume it.
--	Certain conditons can
-
-
-Alternatively, you can tell the program (bus) to stop only if a certain condition is met
-
-
-
-	```shell
-
-	b <function-name>
-	```
-
-	```shell
-
-	b main
-	```
-
-
-	```shell
-
-	b <source-file-name>:<line>
-	```
-
-	```shell
-
-	b hello.c:11
-	```
-
 -	***Set a breakpoint (full):***
 
 	> *(Full) Command:*
