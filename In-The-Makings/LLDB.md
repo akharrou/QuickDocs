@@ -428,7 +428,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
 ### 3.4.1. Breakpoints
-<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc >setbrpts >brmain >brsmain >brkpts >breakpts >bpts >brpoints]`</small>
+<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc >setbrpts >brmain >brsmain >brkpts >breakpts >bpts >brpoints >bapts >bapoints]`</small>
 <br>
 <br>
 
@@ -531,7 +531,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> - *For more information on `breakpoint` and its options and what they do, consult its [the command's] manual page, type: "`help breakpoint set`".*
+	> - *For more information on `breakpoint` and its commands and their options and what they do, consult its [the `breakpoint`'s] manual page, type: "`help breakpoint`", "`help breakpoint <command>`".*
 	>
 	> <br> *- end note]</small>*
 
@@ -560,7 +560,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-run-program)
 ### 3.4.2. Watchpoints
-<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds >wapts >watchpts >wpts >wpoints >wapoints >setwapts]`</small>
+<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds >wapts >watchpts >wpts >wpoints >wapoints >setwapts >wapts]`</small>
 <br>
 <br>
 
@@ -608,7 +608,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> 			Values: read | write | read_write
 	> 	```
 	>
-	> - *For more information: "`help watchpoint set`".*
+	> - *For more information, consul: "`help watchpoint set`".*
 	>
 	> <br> *- end note]</small>*
 
@@ -659,7 +659,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> *<small>[Note: If no watchpoints are specified, delete them all. - end note]</small>*
 
-	> *<small>[Note: Trying to set watchpoints before launching a process (running a program) will not work, you'll get this: `error: invalid process`. You have to launch/run the program first. - end note]</small>*
+	> *<small>[Note:*
+	>
+	> - *For more information on `watchpoint` and its commands and their options and what they do, consult its [the `watchpoint`'s] manual page, type: "`help watchpoint`", "`help watchpoint <command>`".* <br>
+	>
+	> - *Trying to set watchpoints before launching a process (i.e running a program) will not work, you'll get this: `error: invalid process` (or `thread`). You have to load and launch/run the program first.*
+	>
+	> <br> *- end note]</small>*
 
 
 <br>
