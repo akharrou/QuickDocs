@@ -434,7 +434,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > Commands for operating on breakpoints:
 
--	***Set breakpoint: on a function:***
+-	***Set breakpoint:***
 
 	> *Command:*
 	> ```shell
