@@ -399,24 +399,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	`lldb` gives you the option to set it *[`lldb`]* up to stop *(pause/halt/break/rest)* *[during execution [of your program]]*, at certain points/locations *(e.g. at a particular line *[in source code]* or at a particular function)* – optionally adding conditions, so as to only stop at that point/location when the *[added]* condition is met *(fulfilled/reached)*. <br>
+-	`lldb` gives you the option to set it *[`lldb`]* up to stop *(pause/halt/break/rest)* *[during execution [of your program]]*, everytime it reaches a certain point/location *(e.g. at a particular line *[in source code]* or at a particular function)* – optionally you can add conditions, so as to only stop at that point/location when the *[added]* condition is met *(fulfilled/reached)*. <br>
 
-	A location at which *[`lldb`'s]* execution *[of a program]* is setup to stop *(pause/halt/break)* *[at]* is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them *[breakpoints]* as ***checkpoints***. <br>
+	A location at which *[`lldb`'s]* execution is setup to stop *[at]* is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them *[breakpoints]* as ***checkpoints***. <br>
 
--	`lldb`, also, gives you the option to set it *[`lldb`]* up to slow down and inform you when certain variables are accessed (`read`) and/or modified (`write`). `lldb` will inform you by logging their *[the variable's]* *[before and after]* value – optionally adding conditions, so as to only inform/log about them when they have met *(fulfilled/reached)* certain condition(s), e.g.: reached, gone above/below a certain value or another variable; or (unrelated) conditions, e.g.: when it is 6am, or some function was called, etc. <br>
+-	`lldb`, also, gives you the option to set it up to stop and log activities of a certain variable *(e.g. accesses (`read`) and/or modifications (`write`)*) – `lldb` logs its' *[the variable's]* *(before and after)* values – optionally you can add conditions, so as to only log when it *[the variable]* has met *(fulfilled/reached)* certain condition(s), e.g.: if it reached, has gone above and/or below a certain value or another variable; you could also have (unrelated *[to the variable]*) conditions, e.g.: when it is 6am, or some function was called, etc. <br>
 
-	A tell to *[`lldb`]* to be extra careful and informative of a particular variable is what is referred to as: a ***watchpoint*** ([§3.4.2](#341-watchpoints)) – you can kind of think of them *[watchpoints]* as ***special eye lent to watch closely a particular object (variable)***. <br>
-
--	An analogy *(a situation/narrative same, or resembling, in essence)* *[for the above concepts]* would be that of city *metros or buses*. The *bus* *(**`lldb`**)* stops at designated *bus stops* *(**breakpoints**)*. The *bus stops* are known by *address or reference number* *(**a particular line, in a *[source code]* file**)*, they may also be known by *(a significant) structure/building, junction or area* *(**a particular function [in your code]**)*. Sometimes the *bus* doesn't stop at a particular *bus stop*, because conditions have been tied to it; the *bus* only stops at the *bus stop* at certain hours and/or certain days of the week; i.e the bus stopping at that station is conditional, i.e relies on certain ***condition(s)*** being met, e.g: *"in the morning hours (6am-11am), if it is a weekday"* *(`if (morning == true && (week_day >= 0 && week_day <= 5))`)*.
+	A tell to *[`lldb`]* to keep a special eye and log the activity of a particular variable *(more precisely and generally, object)* is what is referred to as: a ***watchpoint*** ([§3.4.2](#341-watchpoints)) – you can kind of think of them *[watchpoints]* as ***surveillance cameras pointed towards a particular object (variable, etc)*** , *adding a watchpoint* is ***putting an object on the watchlist*** - so to speak. <br>
 
 <!--
--	`lldb` gives you the option to set *[`lldb`]* up to stop *[during execution]* at certain locations *(particular line, function, method, etc)* and to set *[`lldb`]* up to do so always or only when certain *conditions* are met. These locations at which *[`lldb`'s]* execution *[of the program]* is setup to stop are what is referred to as: ***breakpoints*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them as checkpoints.
-
-***watchpoints*** ([§3.4.2](#342-watchpoints))
-
-	, or bus stops – a place where the execution *[of your program]* *(the bus)* will stop (i.e pause/halt, temporarily), until YOU resume it.
-
--	`lldb` gives you the option to setup circumstances in which it will stop an entry-point for your program's execution as well as checkpoits -->
+-	An analogy *(a situation/narrative same, or resembling, in essence)* *[for the above concepts]* would be that of city *metros or buses*. The *bus* *(**`lldb`**)* stops at designated *bus stops* *(**breakpoints**)*. The *bus stops* are known by *address or reference number* *(**a particular line, in a *[source code]* file**)*, they may also be known by *(a significant) structure/building, junction or area* *(**a particular function [in your code]**)*. Sometimes the *bus* doesn't stop at a particular *bus stop*, because conditions have been tied to it; the *bus* only stops at the *bus stop* at certain hours and/or certain days of the week; i.e the bus stopping at that station is conditional, i.e relies on certain ***condition(s)*** being met, e.g: *"in the morning hours (6am-11am), if it is a weekday"* *(`if (morning == true && (week_day >= 0 && week_day <= 5))`)*.
+-->
 
 
 <br>
@@ -426,7 +419,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
+> | 3 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html#setting-watchpoints)
 
 
 ---
@@ -465,6 +460,67 @@ Alternatively, you can tell the program (bus) to stop only if a certain conditio
 > TODO: ### 3.4.2. Watchpoints
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+-	***Set a watchpoint on a variable:***
+
+	-	For writes:
+	```shell
+	(lldb) watchpoint set variable global_var
+	(lldb) wa s v global_var
+	```
+
+	-	For reads:
+	```shell
+
+	```
+
+	-	For both *[read & write]*:
+	```shell
+
+	```
+
+-	***Set a watchpoint on a memory location:***
+
+	```shell
+	(lldb) watchpoint set expression -- my_ptr
+	(lldb) wa s e -- my_ptr
+	```
+
+	> – when it is written into.
+	> *<small>[Note:*
+	>
+	> The size of the region to watch for defaults to the pointer size if no '-x byte_size' is specified. This command takes raw input, evaluated as an expression returning an unsigned integer pointing to the start of the region, after the '--' option terminator:
+	>
+	> <br> *- end note]</small>*
+
+-	***Set a condition on a watchpoint:***
+
+	```
+	(lldb) watch set var global
+	(lldb) watchpoint modify -c '(global==5)'
+	(lldb) c
+	...
+	(lldb) bt
+	* thread #1: tid = 0x1c03, 0x0000000100000ef5 a.out`modify + 21 at main.cpp:16, 	stop reason = watchpoint 1
+	frame #0: 0x0000000100000ef5 a.out`modify + 21 at main.cpp:16
+	frame #1: 0x0000000100000eac a.out`main + 108 at main.cpp:25
+	frame #2: 0x00007fff8ac9c7e1 libdyld.dylib`start + 1
+	```
+
+-	***List all watchpoints:***
+
+	```shell
+	(lldb) watchpoint list
+	(lldb) watch l
+	```
+
+-	***Delete a watchpoint:***
+
+	```shell
+	(lldb) watchpoint delete 1
+	(lldb) watch del 1
+	```
 
 
 <br>
