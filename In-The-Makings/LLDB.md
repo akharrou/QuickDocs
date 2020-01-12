@@ -179,7 +179,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> -	There is also a brief section on a set of *[compiler]* flags which constitues the other half when it comes to debugging tools – ***the `fsanitize` family*** ([§3.1.2](#312-helpful-flags-the-fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br> <br>
+	> -	There is also a brief section on a set of *[compiler]* flags, which constitue basically the other half debugging tools/weapons available to you – ***the `fsanitize` family*** ([§3.1.2](#312-helpful-flags-the-fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br> <br>
 	`lldb` and the `fsanitize` family of flags are two debugging tools that go hand in hand !
 	>
 	> <br> *- end note]</small>*
