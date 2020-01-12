@@ -553,7 +553,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
-> | 2 | Documentation | LLDB | [GDB to LLDB command map](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-breakpoints)
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#breakpoint-names)
+> | 3 | Documentation | LLDB | [GDB to LLDB command map](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-breakpoints)
 
 
 ---
