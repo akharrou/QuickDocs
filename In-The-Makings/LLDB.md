@@ -488,17 +488,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) wa s e my_ptr
 	> ```
 
-	> *Where `-s` and -w`:*
+	> *<small>[Note:*
 	>
-	> ```shell
-	> -s <byte-size> ( --size <byte-size> )
-	> 		Number of bytes to use to watch a region.
-	> 		Values: 1 | 2 | 4 | 8
+	> - *Where `-s` and -w`:*
 	>
-	> -w <watch-type> ( --watch <watch-type> )
-	> 		Specify the type of watching to perform.
-	> 		Values: read | write | read_write
-	> ```
+	> 	```shell
+	> 	-s <byte-size> ( --size <byte-size> )
+	> 			Number of bytes to use to watch a region.
+	> 			Values: 1 | 2 | 4 | 8
+	>
+	> 	-w <watch-type> ( --watch <watch-type> )
+	> 			Specify the type of watching to perform.
+	> 			Values: read | write | read_write
+	> 	```
+	>
+	> <br> *- end note]</small>*
 
 -	***Set a condition on a watchpoint:***
 
