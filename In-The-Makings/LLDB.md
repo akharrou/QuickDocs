@@ -346,6 +346,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	`lldb` must *[then]* be informed of which program we intend to debug – this step is referred to as: ***"loading a program"*** . <br>
 
 	> More precisely, we say – we are ***loading*** *[`lldb` with]* a ***debugging target***, i.e setting `lldb` up to target a specific process *(program)*, for debugging/examination-phase.
+	>
+	> *<small>[Note: `lldb`'s terminalogy for a ***"loaded [executable] program"*** is a ***"[debugger] target"*** . - end note]</small>*
 
 -	***Demonstration:*** <br>
 	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif --> <br>
@@ -399,8 +401,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]* [, on the [`lldb`] command prompt].
 		>
 		> -	`file` is an (built-in) alias/abbreviation for `target create`, see `help file`.
-		>
-		> -	`lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *(i.e setup to be debugged/examined)* as a ***"[debugger] target"*** – to avoid confusion.
 		>
 		> -	To load/debug Python [scripts]:
 		>
