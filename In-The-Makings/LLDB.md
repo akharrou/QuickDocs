@@ -427,7 +427,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
 	> *<small>[Note:*
-	> -	***To debug Python [scripts]:***
+	> -	To load/debug Python [scripts]:
 	>
 	> 	```shell
 	> 	$> lldb -f python -- <script>
@@ -438,7 +438,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> 	(lldb) r <script>
 	> 	```
 	>
+	>	> *This also works for other scripting language interpreters and their *[type of]* scripts.*
+	>
 	> *- end note]</small>*
+
 
 <br>
 <br>
