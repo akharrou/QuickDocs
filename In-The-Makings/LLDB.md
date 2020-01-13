@@ -354,6 +354,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *<small>[Note:*
 
+-	If your arguments resemble option specifiers (i.e., they start with a
+     `-` or `--`), you must use ' `--` ' between the end of the command options and the beginning of the arguments.
+
 -	***To debug Python [scripts]:***
 
 	```shell
@@ -395,8 +398,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> *Command:*
 		>
 		> ```shell
-		> lldb [-f <filename>] [<args> ...]
+		> lldb [-f <filename>] [<run-args>]
+		> ```
 		>
+		> *Options:*
+		>
+		> ```shell
 		> -f, --file <filename>
 		> 	Specifies the executable file that lldb will be launching /
 		> 	attaching to.
@@ -404,9 +411,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> *Variations*:
 		> ```shell
-		> $> lldb --file <filename> [<args> ...]
-		> $> lldb -f <filename> [<args> ...]
-		> $> lldb <filename> [<args> ...]
+		> $> lldb --file <filename> [<run-args>]
+		> $> lldb -f <filename> [<run-args>]
+		> $> lldb <filename> [<run-args>]
 		> ```
 		>
 		> *Example*:
@@ -415,14 +422,45 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> $> lldb -f a.out "firstArgument" "2ndArgument" "youGetThePoint"
 		> $> lldb a.out "firstArgument" "2ndArgument" "youGetThePoint"
 		> ```
+		>
+		> *<small>[Note: `[<run-args>]` represents the argument(s) that you pass to a program. - end note]</small>*
 
 	- ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
-		>	```shell
-		>	(lldb) target create <program-execuable>
-		>	(lldb) ta cr <program-execuable>
-		>	(lldb) file <program-execuable>
-		>	```
 		>
+		> *Command:*
+		>
+		> ```shell
+		> process launch [-i <filename>] [-o <filename>] [-e <filename>] [<run-args>]
+		> ```
+		>
+		> *Options:*
+		>
+		> ```shell
+		> -i <filename> ( --stdin <filename> )
+		> 	Redirect stdin for the process to <filename>.
+		>
+		> -o <filename> ( --stdout <filename> )
+		> 	Redirect stdout for the process to <filename>.
+		>
+		> -e <filename> ( --stderr <filename> )
+		> 	Redirect stderr for the process to <filename>.
+		> ```
+		>
+		> *Variations*:
+		> ```shell
+		> (lldb) process launch --file <filename> [<run-args>]
+		> (lldb) pr la -f <filename> [<run-args>]
+		> (lldb) run <filename> [<run-args>]
+		> (lldb) r <filename> [<run-args>]
+		> ```
+		>
+		> *Example*:
+		> ```shell
+		> (lldb) process launch -o /dev/ttys001 -- "firstArgument" "2ndArgument" "youGetThePoint"
+		> (lldb) pr la -o /dev/ttys001 -- "firstArgument" "2ndArgument" "youGetThePoint"
+		> (lldb) run "firstArgument" "2ndArgument" "youGetThePoint"
+		> (lldb) r "firstArgument" "2ndArgument" "youGetThePoint"
+		> ```
 
 -	***To un-load a program [from `lldb`]:***
 
@@ -436,13 +474,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *<small>[Note:*
 >
-> -	lldb [-hvdexw] [-a arch] [-c core-file] [-l script-language] [-s lldb-commands] [-n process-name] [-p pid] [[--] <PROGRAM-ARG1> <PROGRAM-ARG2> ...]
+> - For more info: `man lldb`, `help process launch`.
 >
 > -	`file` is a [built-in] alias/abbreviation for `target create`, see `help file`
 >
 > -	`lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *[setup to be debugged]* as a ***"[debugger] target"*** – to avoid confusion.
 >
 > *- end note]</small>*
+
+process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-v <none>] [-c[<filename>]] [-i <filename>] [-o <filename>] [-e <filename>] [<run-args>]
 
 
 <!-- ATTACHING TO A PROCESS
