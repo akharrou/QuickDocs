@@ -374,7 +374,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> *<small>[Note:*
 		>
-		> - "[...] from **outside** [`lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [on the [terminal] command prompt].
+		> - "[...] from **outside** [`lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [, on the [terminal] command prompt].
 		>
 		> - `[<run-args>]` represents the argument(s) that you pass to a program.
 		>
@@ -398,7 +398,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> *<small>[Note:*
 		>
-		> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]*, on the `lldb` prompt [on the [`lldb`] command prompt].
+		> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]* [, on the [`lldb`] command prompt].
 		>
 		> -	`file` is a [built-in] alias/abbreviation for `target create`, see `help file`.
 		>
