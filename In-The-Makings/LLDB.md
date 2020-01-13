@@ -210,7 +210,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	Unrelated to `lldb`, but ***assisting tremendously in debugging***, doing, arguably, half the debugging effort for you, again, is the ***`fsanitize` family*** ([3.1.2](#312-helpful-flags-the-fsanitize-family)) ***of *[compiler]* flags***. Don't jump over reading this section ! You'll miss out on WAY more than you think !
 
--	***Demonstration:*** <br> <br>
+-	***Demonstration:*** <br>
 	> ![Demo: compile-with-debug-and-fsanitize-flags](https://media.giphy.com/media/JRPUPdiP8Awj39A6A0/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-and-fsanitize-flags.gif -->
 	>
 	> *<small>[Note: Works with both `gcc` and `clang` [compilers]. * - end note]</small>*
@@ -243,7 +243,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> For `clang` and `gcc` *[compilers]* the flag is: `-O0`
 	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
 
--	***Demonstration:*** <br> <br>
+-	***Demonstration:*** <br>
 	> ![Compilation Step with Debug Flags](https://media.giphy.com/media/lPAhT8fwh0K6VEwoDM/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-flags.gif -->
 
 <br>
