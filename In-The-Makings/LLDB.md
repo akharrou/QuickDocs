@@ -203,9 +203,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note: These [compiler] flags work with both `gcc` and `clang` [compilers]. - end note]</small>*
 
--	Make sure to use *(compile with)* the debugging *[compiler]* flags ([§3.1.1](#311-debug-flags--g---o0)) and the *`fsanitize`* family of *[compiler]* flags ([3.1.2](#312-helpful-flags-the-fsanitize-family)).
+-	Make sure to use *(compile with)* the debugging *[compiler]* flags ([§3.1.1](#311-debug-flags--g---o0)).
 
-	>  *Although unrelated to *`lldb`*, the *`fsanitize`* family of *[compiler]* flags ([3.1.2](#312-helpful-flags-the-fsanitize-family)), is tremendously helpful with debugging.*
+	>  Unrelated to *`lldb`*, but tremendously helpful with debugging:
+	>  *Make sure, when debugging, to always compile with the *`fsanitize`* family of *[compiler]* flags ([3.1.2](#312-helpful-flags-the-fsanitize-family)).*
 
 
 <br>
