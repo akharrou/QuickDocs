@@ -570,12 +570,6 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> breakpoint modify [-c <expr>] [<breakpt-id | watchpt-list>]
 	>```
 	>
-	> ***Option(s):***
-	> ```
-	> -c <expr> ( --condition <expr> )
-	>	The breakpoint stops only if this condition expression evaluates to true.
-	>```
-	>
 	> ***Example(s):***
 	> ```
 	> (lldb) breakpoint set --name foo --condition '(int)strcmp(y,"hello") == 0'
@@ -590,9 +584,6 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> ***Synopsis:***
 	> ```
 	> breakpoint command add <cmd-options> <breakpt-id>
-	>
-	>
-	>
 	> ```
 	>
 	> ***Example(s):***
