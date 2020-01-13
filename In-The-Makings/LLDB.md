@@ -380,7 +380,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> *- end note]</small>*
 
-	- ***From outside [`lldb`]:***
+	- ***From inside [`lldb`]:***
 
 		> ***Synopsis:***
 		>
@@ -390,7 +390,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) target create a.out
+		> (lldb) target create a.out   # setup lldb to debug the program 'a.out'
 		> (lldb) ta cr a.out
 		> (lldb) ta c a.out
 		> (lldb) file a.out
@@ -434,8 +434,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help target create`
-> | 2 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
+> | 1 | Manual Page | Unix / Linux / MacOS | `man lldb`
+> | 2 | Manual Page | LLDB | `(lldb) help target create`
+> | 3 | Manual Page | LLDB | `(lldb) help target delete`
+> | 4 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
 
 
 ---
