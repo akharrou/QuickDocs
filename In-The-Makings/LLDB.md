@@ -213,7 +213,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***Demonstration:*** <br>
 	> ![Demo: compile-with-debug-and-fsanitize-flags](https://media.giphy.com/media/JRPUPdiP8Awj39A6A0/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-and-fsanitize-flags.gif -->
 
-	> *<small>[Note: These [compiler] flags work with both `gcc` and `clang` [compilers]. * - end note]</small>*
+	> *<small>[Note: These [compiler] flags work with both `gcc` and `clang` [compilers]. - end note]</small>*
 
 
 <br>
@@ -223,7 +223,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | MacOS | `man clang`
 
 
 ---
@@ -236,12 +236,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To see source code in the *"examination phase"**** *(instead of assembly code)*, you'll have to add *[in the compilation step]* the *[compiler]* flag *(specific to the compiler used)* that ***generates debug information***; but if your goal is to see *assembly*, then omit this step.
 
-	> For `clang` and `gcc` *[compilers]* the flag is: `-g`.
+	- > For `clang` and `gcc` *[compilers]* the flag is: `-g`.
 
 -	***To make sure that no source code is not optimized away*** *(i.e modified by the compiler in order to optimize the [speed and efficiency of a] program)*, you'll have to add *[in the compilation step]* the *[compiler]* flag *(specific to the compiler used)* that ***turns off optimizations***; if you don't do this, then during *"examination phase"*, `lldb` might appear to be excuting *[the source code]* in a non-linear manner *(i.e it will (seem to) jump (skip) over some lines and loops, etc)*.
 
-	> For `clang` and `gcc` *[compilers]* the flag is: `-O0`
-	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
+	- > For `clang` and `gcc` *[compilers]* the flag is: `-O0`
+	- > Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
 
 -	***Demonstration:*** <br>
 	> ![Compilation Step with Debug Flags](https://media.giphy.com/media/lPAhT8fwh0K6VEwoDM/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-flags.gif -->
