@@ -353,7 +353,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif --> <br>
 
 ---
-> *Commands for loading and un-loading targets (programs [intended for debugging]):*
+> *Commands for loading and un-loading [debugging]targets:*
 
 -	***To load a program [into `lldb`]:***
 
