@@ -527,7 +527,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 <br>
 
 
-> *Commands for operating on breakpoints:*
+> *Commands for operating on breakpoints: <br>*
 > *`man` page: "`(lldb) help breakpoint [<command>]`"*
 
 -	***Set a breakpoint, on a function:***
