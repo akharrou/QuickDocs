@@ -890,10 +890,6 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 > *Commands for attaching to a [running] process (program):*
 
-> Attach
-> : Take over control of a process (program), for debugging – at whatever point in its *[the program's]* execution it currently is (has-reached).
-
-
 -	***To attach to a process (program):***
 
 	> <small> ***Command:*** </small>
@@ -929,6 +925,8 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> ```
 
 	> *<small>[Note:*
+	>
+	> - **Attach:** Take over control of a process (program), for debugging – at whatever point in its *[the program's]* execution it currently is (has-reached).
 	>
 	> - *To clarify – you can attach to a process (program) by process-ID (`pid`) or process name (e.g. `a.out`).* <br>
 	>
