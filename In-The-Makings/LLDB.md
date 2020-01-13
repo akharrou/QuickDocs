@@ -359,22 +359,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ***Synopsis:***
 	>
-	> - Outside `lldb`
+	> - *[from]* Outside `lldb`:
 	> 	```shell
 	> 	$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
 	>	```
 	>
-	> - Inside `lldb`
+	> - *[from]* Inside `lldb`:
 	> 	```shell
 	> 	(lldb) target create <program-execuable-filename>
 	> 	```
 	>
 	> ***Example(s):***
+	> - *[from]* Outside `lldb`:
 	> ```shell
 	> $> lldb --file a.out "arg1" "arg2" "youGetIt"
 	> $> lldb -f a.out "arg1" "arg2" "youGetIt"
 	> $> lldb a.out
 	> ```
+	> - *[from]* Inside `lldb`:
 	> ```
 	> (lldb) target create a.out
 	> (lldb) ta cr a.out
@@ -432,9 +434,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *<small>[Note:*
 >
-> - "[...] from **outside** [`lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [, on the [terminal] command prompt].
+> - "from **outside** [`lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [, on the [terminal] command prompt].
 >
-> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]* [, on the 	[`lldb`] command prompt].
+> - "from **inside** [`lldb`]"; i.e after launch *[of `lldb`]* [, on the 	[`lldb`] command prompt].
 >
 > - `[<run-args>]` represents the argument(s) that you pass to a program.
 >
