@@ -527,7 +527,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 <br>
 
 
-> *Commands for operating on breakpoints:*
+> *Commands for operating on breakpoints: "`help breakpoint`", "`help breakpoint <command>`"*
 
 -	***Set a breakpoint, on a function:***
 
@@ -658,7 +658,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> (lldb) br de 1 2 3
 	> ```
 	>
-	> *<small>[Note: If no breakpoint *[id]* is specified, delete them *[breakpoints]* all. - end note]</small>*
+	> *<small>[Note: If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all. - end note]</small>*
 
 -	***Set a breakpoint (full):***
 
@@ -668,12 +668,6 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> ```
 	>
 	> *<small>[Note: Listed above are only the common usages *[of `breakpoint set`]*. To discover the full extent *[of `breakpoint set`'s]* powers, you can consult its manual page, type: `h br s` - end note]</small>*
-
-	> *<small>[Note:*
-	>
-	> - *For more information on `breakpoint` and its commands and their options and what they do, consult its [`breakpoint`'s] manual page, type: "`help breakpoint`", "`help breakpoint <command>`".*
-	>
-	> *- end note]</small>*
 
 
 <br>
