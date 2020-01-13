@@ -326,7 +326,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To launch/start LLDB:***
 
-	> *Command:*
+	> ***Synopsis:***
 	>
 	> ```shell
 	> lldb [-hvdexw] [-a arch] [-c core-file] [-l script-language] [-s lldb-commands] [-n process-name] [-p pid] [[--] <PROGRAM-ARG1> <PROGRAM-ARG2> ...]
@@ -339,7 +339,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ```
 	>
-	> *Example:*
+	> ***Example(s):***
 	> ```shell
 	> $> lldb
 	> (lldb)
@@ -395,7 +395,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	- ***From outside [`lldb`]** (i.e before, and at the same time as, launch *[of `lldb`]* , on the *[terminal]* command prompt):*
 		>
-		> *Command:*
+		> ***Synopsis:***
 		>
 		> ```shell
 		> lldb [-f <filename>] [<run-args>]
@@ -409,14 +409,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> 	attaching to.
 		> ```
 		>
-		> *Variations*:
+		> ***Variations:***
 		> ```shell
 		> $> lldb --file <filename> [<run-args>]
 		> $> lldb -f <filename> [<run-args>]
 		> $> lldb <filename> [<run-args>]
 		> ```
 		>
-		> *Example(s):*
+		> ***Example(s):***
 		> ```shell
 		> $> lldb --file a.out "firstArgument" "2ndArgument" "youGetThePoint"
 		> $> lldb -f a.out "firstArgument" "2ndArgument" "youGetThePoint"
@@ -531,7 +531,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***Set a breakpoint, on a function:***
 
-	> *Command:*
+	> ***Synopsis:***
 	>
 	> ```shell
 	> breakpoint set --name <function-name>
@@ -539,7 +539,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> b <function-name>
 	> ```
 	>
-	> *Example:*
+	> ***Example(s):***
 	> ```shell
 	> (lldb) breakpoint set --name main
 	> (lldb) br s -n main
@@ -548,7 +548,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***Set a breakpoint, on a [source file] line:***
 
-	> *Command:*
+	> ***Synopsis:***
 	>
 	> ```shell
 	> breakpoint set --file <filename> --line <line-number>
@@ -556,7 +556,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> b <filename>:<line-number>
 	>```
 	>
-	> *Example:*
+	> ***Example(s):***
 	> ```shell
 	> (lldb) breakpoint set -f hello.c -l 10
 	> (lldb) br s -f hello.c -l 10
@@ -565,7 +565,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***Set a breakpoint condition:***
 
-	> *Command:*
+	> ***Synopsis:***
 	> ```
 	> breakpoint modify [-c <expr>]
 	>
@@ -584,7 +584,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>		The breakpoint is deleted the first time it stop causes a stop.
 	> ```
 	>
-	> *Example(s):*
+	> ***Example(s):***
 	> ```
 	> (lldb) b main
 	>
@@ -597,7 +597,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***Set a breakpoint command:***
 
-	> *Command:*
+	> ***Synopsis:***
 	> ```
 	> breakpoint command add <cmd-options> <breakpt-id>
 	>
@@ -605,7 +605,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> ```
 	>
-	> *Example(s):*
+	> ***Example(s):***
 	> ```
 	> (lldb) breakpoint set --name main
 	> (lldb) breakpoint modify -c '' TODO : adding commands to breakpoints
@@ -619,7 +619,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***List breakpoints:***
 
-	> *Command:*
+	> ***Synopsis:***
 	>
 	> ```shell
 	> breakpoint list -[bfv] [<breakpt-id | breakpt-id-list>]
@@ -638,7 +638,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>	Extensive full description.
 	>```
 	>
-	> *Example(s):*
+	> ***Example(s):***
 	> ```shell
 	> (lldb) breakpoint list --verbose
 	> (lldb) br l -v
@@ -646,13 +646,13 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***Delete breakpoint(s):***
 
-	> *Command:*
+	> ***Synopsis:***
 	>
 	> ```shell
 	> breakpoint delete [<breakpt-id | breakpt-id-list>]
 	> ```
 	>
-	> *Example(s):*
+	> ***Example(s):***
 	> ```shell
 	> (lldb) breakpoint delete 1 2 3
 	> (lldb) br de 1 2 3
@@ -695,12 +695,23 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***Set watchpoint, on a variable:***
 
-	> *Command:*
+	> ***Synopsis:***
 	> ```shell
 	> watchpoint set variable [-w <watch-type>] [-s <byte-size>] <variable-name>
 	> ```
 	>
-	> *Example:*
+	> ***Option(s):***
+	> ```shell
+	> -s <byte-size> ( --size <byte-size> )
+	> 		Number of bytes to use to watch a region.
+	> 		Values: 1 | 2 | 4 | 8
+	>
+	> -w <watch-type> ( --watch <watch-type> )
+	> 		Specify the type of watching to perform.
+	> 		Values: read | write | read_write
+	> ```
+	>
+	> ***Example(s):***
 	> ```shell
 	> (lldb) watchpoint set variable my_var
 	> (lldb) wa s v my_var
@@ -708,13 +719,17 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***Set watchpoint, on an address [by supplying an expression]:***
 
-	> *Command:*
+	> ***Synopsis:***
 	> ```shell
 	> watchpoint set expression [-w <watch-type>] [-s <byte-size>] -- <expr>
 	> watchpoint set expression <expr>
 	> ```
+	> ***Option(s):***
+	> ```
+	>    **Same as previous**
+	> ```
 	>
-	> *Example(s):*
+	> ***Example(s):***
 	> ```shell
 	> (lldb) watchpoint set expression my_ptr
 	> (lldb) wa s e my_ptr
@@ -724,15 +739,6 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> - *Where `-s` and `-w` [for both commands [above]]:*
 	>
-	> 	```shell
-	> 	-s <byte-size> ( --size <byte-size> )
-	> 			Number of bytes to use to watch a region.
-	> 			Values: 1 | 2 | 4 | 8
-	>
-	> 	-w <watch-type> ( --watch <watch-type> )
-	> 			Specify the type of watching to perform.
-	> 			Values: read | write | read_write
-	> 	```
 	>
 	> - *For more information, consult its *[`watchpoint set`'s]* manual page: "`help watchpoint set`".*
 	>
@@ -740,12 +746,12 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***Set a watchpoint condition:***
 
-	> *Command:*
+	> ***Synopsis:***
 	> ```
 	> watchpoint modify [-c <expr>] [<watchpt-id | watchpt-id-list>]
 	> ```
 	>
-	> *Example(s):*
+	> ***Example(s):***
 	> ```
 	> (lldb) watch set var global
 	> (lldb) watchpoint modify -c '(global == 5)'
@@ -753,7 +759,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***List watchpoints:***
 
-	> *Command:*
+	> ***Synopsis:***
 	>
 	> ```shell
 	> watchpoint list -[bfv] [<watchpt-id | watchpt-id-list>]
@@ -763,7 +769,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>     -v ( --verbose )  :: extensive full description
 	>```
 	>
-	> *Example(s):*
+	> ***Example(s):***
 	> ```shell
 	> (lldb) watchpoint list
 	> (lldb) wa l
@@ -771,13 +777,13 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***Delete watchpoint(s):***
 
-	> *Command:*
+	> ***Synopsis:***
 	>
 	> ```shell
 	> watchpoint delete [<watchpt-id | watchpt-id-list>]
 	> ```
 	>
-	> *Example(s):*
+	> ***Example(s):***
 	> ```shell
 	> (lldb) watchpoint delete 1 2 3
 	> (lldb) wa de 1 2 3
@@ -809,7 +815,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 ---
 [🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-graphical-user-interface-gui)
 ## 3.5. Start or Attach Program
-<small>`[Search Tags: >lldb.runprocess >lldb.launchprocess >lldb.startprocess >lldb.runprogram >lldb.launchprogram >lldb.startprogram >startprogram >launchprogram >runprogram >startprocess >launchprocess >runprocess  >startexecutable >launchexecutable >runexecutable >programstart >programrun >programlaunch >debugger.runprocess >debugger.launchprocess >debugger.startprocess >debugger.runprogram >debugger.launchprogram >debugger.startprogram >lldb.attachprocess >lldb.attachprogram >attachprogram >attachprocess >attachexecutable ]`</small>
+<small>`[Search Tags: >lldb.runprocess >lldb.launchprocess >lldb.startprocess >lldb.runprogram >lldb.launchprogram >lldb.startprogram >startprogram >launchprogram >runprogram >startprocess >launchprocess >runprocess  >startexecutable >launchexecutable >runexecutable >programstart >programrun >programlaunch >debugger.runprocess >debugger.launchprocess >debugger.startprocess >debugger.runprogram >debugger.launchprogram >debugger.startprogram]`</small>
 <br>
 <br>
 
@@ -818,13 +824,13 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***To launch/run a *[loaded]* program:***
 	>
-	> *Command:*
+	> ***Synopsis:***
 	>
 	> ```shell
 	> process launch [<run-args>]
 	> ```
 	>
-	> *Variations*:
+	> ***Variations:***
 	> ```shell
 	> (lldb) process launch --file <filename> [<run-args>]
 	> (lldb) pr la -f <filename> [<run-args>]
@@ -832,7 +838,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> (lldb) r <filename> [<run-args>]
 	> ```
 	>
-	> *Example(s):*
+	> ***Example(s):***
 	> ```shell
 	> (lldb) process launch "1st-Argument" "2nd-Argument" "youGetThePoint"
 	> (lldb) pr la "1st-Argument" "2nd-Argument" "youGetThePoint"
@@ -869,7 +875,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> 	Redirect stderr for the process to <filename>.
 	> ```
 	>
-	> *Example(s):*
+	> ***Example(s):***
 	> ```shell
 	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
@@ -887,6 +893,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> *<small>[Note: Listed above are only the common usages *[of `process launch`]*. To discover the full extent of *[`process launch`'s]* powers, you can consult it's manual page, type: `h pr la` - end note]</small>*
 
 ---
+<small>`[Search Tags: >lldb.attachprocess >lldb.attachprogram >attachprogram >attachprocess >attachexecutable]`</small>
 
 > *Commands for attaching to a [running] process (program):*
 
@@ -912,7 +919,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>	Wait for the process, with <process-name>, to launch.
 	>```
 	>
-	> ***Example(s):***
+	> *****Example(s):*****
 	> ```shell
 	> (lldb) process attach --pid 123
 	> (lldb) pr a -p 123
