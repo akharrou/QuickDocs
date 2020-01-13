@@ -670,20 +670,16 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> *<small>[Note: Listed above are only the common usages *[of `breakpoint set`]*. To discover the full extent *[of `breakpoint set`'s]* powers, you can consult its manual page, type: `h br s` - end note]</small>*
 
 
-
 <br>
 <br>
 
-
-> ***Further Reading:*** <br> <br>
->
->
+> ***Further Reading:***
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 0 | `man` Page | LLDB | `(lldb) help breakpoint [<command>]`
-> | 1 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
-> | 2 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#breakpoint-names)
-> | 3 | Documentation | LLDB | [GDB to LLDB command map](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-breakpoints)
+> | 1 | `man` Page | LLDB | `(lldb) help breakpoint [<command>]`
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
+> | 3 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#breakpoint-names)
+> | 4 | Documentation | LLDB | [GDB to LLDB command map](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-breakpoints)
 
 
 ---
