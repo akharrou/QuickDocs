@@ -367,9 +367,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> ***Example(s):***
 		> ```shell
-		> $> lldb --file a.out "arg1" "arg2" "youGetIt"    # with arguments
-		> $> lldb -f a.out                                 # without arguments
-		> $> lldb a.out "arg1" "arg2" "youGetIt"           # with arguments
+		> $> lldb --file a.out "arg1" "arg2" "youGetIt"
+		> $> lldb -f a.out "arg1" "arg2" "youGetIt"
+		> $> lldb a.out
 		> ```
 		>
 		> *<small>[Note:*
@@ -426,6 +426,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***Demonstration:*** <br> <br>
 	![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
+	> *<small>[Note:*
+	> -	***To debug Python [scripts]:***
+	>
+	> 	```shell
+	> 	$> lldb -f python -- <script>
+	> 	```
+	> 	or
+	> 	```shell
+	> 	(lldb) ta cr /path/to/<python>
+	> 	(lldb) r <script>
+	> 	```
+	>
+	> *- end note]</small>*
 
 <br>
 <br>
