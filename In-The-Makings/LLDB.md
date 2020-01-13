@@ -183,7 +183,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> -	There is also a brief section on a set of *[compiler]* flags, which, basically, make up the other half of the [debugging](https://en.wikipedia.org/wiki/Debugging) tools/weapons available to you – ***the `"fsanitize"` family*** ([§3.1.2](#312-helpful-flags-the-fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br>
 	>
-	> <br> *- end note]</small>*
+	> *- end note]</small>*
 
 
 <br>
@@ -650,7 +650,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> 	- "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options."
 	>
-	> <br> *- end note]</small>*
+	> *- end note]</small>*
 
 -	***List breakpoints:***
 
@@ -699,7 +699,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> - *For more information on `breakpoint` and its commands and their options and what they do, consult its [`breakpoint`'s] manual page, type: "`help breakpoint`", "`help breakpoint <command>`".*
 	>
-	> <br> *- end note]</small>*
+	> *- end note]</small>*
 
 
 <br>
@@ -767,7 +767,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> - *For more information, consult its *[`watchpoint set`'s]* manual page: "`help watchpoint set`".*
 	>
-	> <br> *- end note]</small>*
+	> *- end note]</small>*
 
 -	***Set a watchpoint condition:***
 
@@ -822,7 +822,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> - *Trying to set watchpoints before launching a process (i.e running a program) will not work, you'll get this: `error: invalid process` (or `thread`). You have to load and launch/run the program first.*
 	>
-	> <br> *- end note]</small>*
+	> *- end note]</small>*
 
 
 <br>
@@ -875,7 +875,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> - *`r`* is an abbreviation for *`run`* , see *`h r`*.
 	>
-	> <br> *- end note]</small>*
+	> *- end note]</small>*
 
 -	***To redirect stdout:***
 
