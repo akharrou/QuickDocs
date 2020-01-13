@@ -96,28 +96,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***LLDB, is a program – that provides an interface for you to examine the execution of a program – instruction by instruction, or line by line, or breakpoint by breakpoint.***
 
-	> Further broken down:
+	> More detailed:
 	>
 	> LLDB, short for ***Low-Level-De-Bugger***, is a program – **that provides an interface** *(a way/channel/portal/access-point/control-panel)* **for you to examine the execution** *([individual] actions/steps taken-by/performed-by)* **of a** *[-nother]* **program** – *[CPU]* **instruction by instruction, or** *[source code]* **line by line, or breakpoint** *(checkpoint(s) set by you, in the source code)* **by breakpoint.** <br>
-	>
-	> Detail:
-	>
-	> "`lldb` is the default debugger in Xcode on macOS and supports debugging C, Objective-C and C++ on the desktop and iOS devices and simulator."
+
+- "`lldb` is the default debugger in Xcode on macOS and supports debugging C, Objective-C and C++ on the desktop and iOS devices and simulator."
 
 #### Why should I care ?
 
--	*The short answer;* ***you should care because it will save you *(thousands of)* hours of debugging.***
-
-	> Further broken down:
-	>
-	> *The short answer,* **YES !** – you should definitely care, and here's why: ***it will save you hours, of debugging*** – ***the process of trying to figure out:***
-    >	- where a bug lies in source code
-	>	- its cause
-	>	- *(possibly even)* how to fix it <br> <br>
-
-	> ***Bug*** <br>
-		*In short; an error in (code) logic, committed by a programmer, causing unintended/undesireable/unplanned-for behavior(s) and/or output(s).*
-
+-	*The short answer;* you should care because it will save you *(***THOUSANDS*** of)* hours of [debugging](https://en.wikipedia.org/wiki/Debugging) – the process of locating [bugs](https://en.wikipedia.org/wiki/Software_bug) *[in source code]*, finding their cause(s) and [patching](https://en.wikipedia.org/wiki/Patch_(computing)) (i.e fixing/removing) them.
 
 <br>
 <br>
