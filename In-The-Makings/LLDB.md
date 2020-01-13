@@ -920,13 +920,13 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> (lldb) process attach --name a.out
 	> (lldb) pr a -n a.out
 	>
-	> (lldbattach (process) -name a.out --waitfor
+	> (lldbattach (process) --name a.out --waitfor
 	> (lldb) pr a -w -n a.out
 	> ```
 
-	> *<small>[Note:*
+	> *<small>[**Note(s):***
 	>
-	> - ***Attach:** Take over control [of the execution] [of a process (program)], for debugging, at whatever point the execution [of the process (process)] has reached.*
+	> - ***Attach:** Take over control [of the execution] [of a proce(s)s (program)], for debugging, at whatever point (i.e instruction) the execution [of the process (program)] has reached.*
 	>
 	> - *To clarify – you can attach to a process (program) by process-ID (`pid`) or process name (e.g. `a.out`).* <br>
 	>
@@ -934,7 +934,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> - *To further clarify – ***processes*** (i.e running programs), can be identified either by ***name*** or by a *[unique]* ***identification/reference number***, called a process-ID, or `pid` for short. Try typing: "`top`" in your terminal, the first column contains all the process-IDs of all the processes (programs) currently running *[on your computer]*.* <br>
 	>
-	> *- end note]</small>*
+	> ****- end note(s)***]</small>*
 
 
 TODO: demo
