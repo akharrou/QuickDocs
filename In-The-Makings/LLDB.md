@@ -426,41 +426,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> *<small>[Note: `[<run-args>]` represents the argument(s) that you pass to a program. - end note]</small>*
 
 	- ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
-		>
-		> *Command:*
-		>
-		> ```shell
-		> process launch [-i <filename>] [-o <filename>] [-e <filename>] [<run-args>]
-		> ```
-		>
-		> *Options:*
-		>
-		> ```shell
-		> -i <filename> ( --stdin <filename> )
-		> 	Redirect stdin for the process to <filename>.
-		>
-		> -o <filename> ( --stdout <filename> )
-		> 	Redirect stdout for the process to <filename>.
-		>
-		> -e <filename> ( --stderr <filename> )
-		> 	Redirect stderr for the process to <filename>.
-		> ```
-		>
-		> *Variations*:
-		> ```shell
-		> (lldb) process launch --file <filename> [<run-args>]
-		> (lldb) pr la -f <filename> [<run-args>]
-		> (lldb) run <filename> [<run-args>]
-		> (lldb) r <filename> [<run-args>]
-		> ```
-		>
-		> *Example*:
-		> ```shell
-		> (lldb) process launch -o /dev/ttys001 -- "firstArgument" "2ndArgument" "youGetThePoint"
-		> (lldb) pr la -o /dev/ttys001 -- "firstArgument" "2ndArgument" "youGetThePoint"
-		> (lldb) run "firstArgument" "2ndArgument" "youGetThePoint"
-		> (lldb) r "firstArgument" "2ndArgument" "youGetThePoint"
-		> ```
 
 -	***To un-load a program [from `lldb`]:***
 
@@ -845,30 +810,29 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 
 -	***To launch/run a *[loaded]* program:***
-
-	```shell
-	(lldb) process launch
-	```
-
-	```shell
-
-	```
-
-	```shell
-	(lldb) run
-	(lldb) r
-	```
-
-	> – we use the *`process launch`* command, or one of its built in aliases.
 	>
-	> If you need to pass arguments to your program, you can append them *[the arguments]* as you would on normally, after the launching command. The form follows: `<launch-cmd> [<run-args>]`*
-	>
-	> *Example:*
+	> *Command:*
 	>
 	> ```shell
-	> (lldb) run <arg1> <arg2> ... <argN>
+	> process launch [<run-args>]
 	> ```
-
+	>
+	> *Variations*:
+	> ```shell
+	> (lldb) process launch --file <filename> [<run-args>]
+	> (lldb) pr la -f <filename> [<run-args>]
+	> (lldb) run <filename> [<run-args>]
+	> (lldb) r <filename> [<run-args>]
+	> ```
+	>
+	> *Example*:
+	> ```shell
+	> (lldb) process launch "1st-Argument" "2nd-Argument" "youGetThePoint"
+	> (lldb) pr la "1st-Argument" "2nd-Argument" "youGetThePoint"
+	> (lldb) run "1st-Argument" "2nd-Argument" "youGetThePoint"
+	> (lldb) r   # no arguments
+	> ```
+	>
 	> *<small>[Note:*
 	>
 	> - *`run`* is an abbreviation for *`process launch -X true --`* , see *`h run`*.
@@ -877,21 +841,34 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> *- end note]</small>*
 
--	***To redirect stdout:***
-
-	```shell
-	(lldb) process launch
-	(lldb) pr la -o <filename-terminal>
-	```
-	> – we use the *`process launch`* command, or one of its built in aliases.
+-	***To redirect standard [in|out|err]:***
 	>
-	> If you need to pass arguments to your program, you can append them *[the arguments]* as you would on normally, after the launching command. The form follows: `<launch-cmd> [<run-args>]`*
-	>
-	> *Example:*
+	> *Command:*
 	>
 	> ```shell
-	> (lldb) run <arg1> <arg2> ... <argN>
+	> process launch [-i <filename>] [-o <filename>] [-e <filename>] [<run-args>]
 	> ```
+	>
+	> *Options:*
+	>
+	> ```shell
+	> -i <filename> ( --stdin <filename> )
+	> 	Redirect stdin for the process to <filename>.
+	>
+	> -o <filename> ( --stdout <filename> )
+	> 	Redirect stdout for the process to <filename>.
+	>
+	> -e <filename> ( --stderr <filename> )
+	> 	Redirect stderr for the process to <filename>.
+	> ```
+	>
+	> *Example*:
+	> ```shell
+	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
+	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
+	> ```
+	>
+	> > *To clarify – we redirect the input stream to come from the terminal [who's id is] `/dev/ttys001`; we redirect the standard output of the program to a `.log` file; we do the same with standard error output. Then we seperate our `lldb` command options from the arguments we want to pass to our program with `lldb`'s parser delimiter ` -- `, and finally we pass to our program 3 arguments.*
 
 -	***Set a process launch (full):***
 
