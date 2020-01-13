@@ -205,7 +205,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	Make sure to use *(compile with)* the debugging *[compiler]* flags ([§3.1.1](#311-debug-flags--g---o0)).
 
-	>  *And, unrelated to *`lldb`* *[but]*, tremendously helpful with debugging – make sure *[when debugging]* to always compile with the *`fsanitize`* family of *[compiler]* flags ([3.1.2](#312-helpful-flags-the-fsanitize-family)).*
+	>  *And, although unrelated to *`lldb`*, make sure *[when debugging]* to always compile with the *`fsanitize`* family of *[compiler]* flags ([3.1.2](#312-helpful-flags-the-fsanitize-family)). They are tremendously helpful *[with debugging]*, they pretty much do ***half of the debugging effort*** for you !*
 
 
 <br>
