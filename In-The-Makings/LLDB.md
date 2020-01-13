@@ -934,7 +934,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> - *To further clarify – ***processes*** (i.e running programs), can be identified either by ***name*** or by a *[unique]* ***identification/reference number***, called a process-ID, or `pid` for short. Try typing: "`top`" in your terminal, the first column contains all the process-IDs of all the processes (programs) currently running *[on your computer]*.* <br>
 	>
-	> ****- end note(s)***]</small>*
+	> *- end note(s)]</small>*
 
 
 TODO: demo
