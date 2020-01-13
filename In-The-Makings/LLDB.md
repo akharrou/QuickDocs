@@ -728,7 +728,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> - *Trying to set watchpoints before launching a process (i.e running a program) will not work, you'll get this: `error: invalid process` (or `thread`). You have to load and launch/run the program first.*
 	>
-	> *- end note]</small>*
+	> <br> *- end note]</small>*
 
 
 <br>
