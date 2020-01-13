@@ -362,7 +362,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> ***Synopsis:***
 		>
 		> ```shell
-		> $> lldb [--file|-f] <program-execuable-name> [<run-args>]
+		> $> lldb [--file|-f] <program-execuable-filename> [<run-args>]
 		> ```
 		>
 		> ***Example(s):***
@@ -374,13 +374,32 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> *<small>[Note:*
 		>
-		> - "To load a program [into `lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [on the [terminal] command prompt].
+		> - "[...] from **outside** [`lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [on the [terminal] command prompt].
 		>
 		> - `[<run-args>]` represents the argument(s) that you pass to a program.
 		>
 		> *- end note]</small>*
 
-	- ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
+	- ***From outside [`lldb`]:***
+
+		> ***Synopsis:***
+		>
+		> ```shell
+		> (lldb) target create <program-execuable-filename>
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) a.out
+		> ```
+		>
+		> *<small>[Note:*
+		>
+		> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]*, on the `lldb` prompt [on the [`lldb`] command prompt].
+		>
+		> *- end note]</small>*
+
+	- ***From inside [`lldb`]** ():*
 
 -	***To un-load a program [from `lldb`]:***
 
