@@ -603,7 +603,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 	> *<small>[Note:*
 	>
-	> 	- "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options." <br>
+	> 	- *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options."* <br>
 	>
 	> <br> *- end note]</small>*
 
@@ -615,23 +615,11 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> breakpoint list -[bfv] [<breakpt-id | breakpt-id-list>]
 	> ```
 	>
-	> ***Option(s):***
-	>
-	> ```shell
-	> -b ( --brief   )
-	>	Brief description.
-	>
-	> -f ( --full    )
-	>	Full description.
-	>
-	> -v ( --verbose )
-	>	Extensive, full description.
-	>```
-	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint list --verbose
-	> (lldb) br l -v
+	> (lldb) breakpoint list -v         # --verbose
+	> (lldb) br l -f                    # --full
+	> (lldb) br l -b                    # --brief
 	> ```
 
 -	***Delete breakpoint(s):***
