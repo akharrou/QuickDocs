@@ -304,7 +304,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	>	The shown above *[command]*, adds/activates the *[runtime checks of the]* *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
 	>
-	> *<small>[Note:* It is not possible to combine the following sanitizers: *"`-fsanitize=address`"*, *"`-fsanitize=thread`"*, and *"`-fsanitize=memory`"*, at the same time. *- end note]*
+	> *<small>[Note:* It is not possible to have more than one the following sanitizers: *"`-fsanitize=address`"*, *"`-fsanitize=thread`"*, and *"`-fsanitize=memory`"*, at the same time. *- end note]*
 	>
 
 <br>
@@ -321,58 +321,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#312-helpful-flags-the-fsanitize-family) | [➡️](#33-load-lldb)
 ## 3.2. Launch LLDB
-<small>`[Search Tags: >lldb.start >startlldb >startdebugger >debugger.start >db.start >lldb.launch >launchlldb >launchdebugger >debugger.launch >db.launch]`</small>
+<small>`[Search Tags: >lldb.launch >debugger.launch >launchlldb >launchdebugger]`</small>
 <br>
 <br>
 
 
 -	***To launch/start LLDB:***
 
-	> ***Synopsis:***
-	>
-	> ```shell
-	> lldb [-hvdexw] [-a arch] [-c core-file] [-l script-language] [-s lldb-commands] [-n process-name] [-p pid] [[--] <PROGRAM-ARG1> <PROGRAM-ARG2> ...]
-	>
-	> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-	>
-    > -f, --file filename
-    >         Specifies the executable file that lldb will be launching /
-    >         attaching to.
-
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> $> lldb
-	> (lldb)
-	> ```
 	>
 	> ```shell
 	> $> lldb
 	> (lldb)
 	> ```
-
-	> – write `lldb` *[on the terminal command prompt]* and press `enter`.
-
-> *<small>[Note:*
->
-> -	If your arguments resemble option specifiers (i.e., they start with a
->      `-` or `--`), you must use ' `--` ' between the end of the command options > and the beginning of the arguments.
->
-> -	***To debug Python [scripts]:***
->
-> 	```shell
-> 	lldb -f /path/to/<python> -- <script>
-> 	```
->
-> 	or
->
-> 	```shell
-> 	(lldb) ta cr /path/to/<python>
-> 	(lldb) r <script>
-> 	```
->
-> *- end note]</small>*
 
 
 <br>
@@ -393,36 +353,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	***To load a program [into `lldb`]*** ; *(i.e set `lldb` up to target a specific program [for debugging/examination, when run])*:
+-	***To load a program [into `lldb`]:***
 
-	- ***From outside [`lldb`]** (i.e before, and at the same time as, launch *[of `lldb`]* , on the *[terminal]* command prompt):*
-		>
+	> *<small>[Note: i.e set `lldb` up to target a specific program [for debugging/examination]. - end note]</small>*
+
+	- ***From outside [`lldb`]:***
+
+		> *<small>[Note: i.e before, and at the same time as, launch [of `lldb`] [on the [terminal] command prompt]. - end note]</small>*
+
 		> ***Synopsis:***
 		>
 		> ```shell
-		> lldb [-f <filename>] [<run-args>]
-		> ```
-		>
-		> ***Option(s):***
-		>
-		> ```shell
-		> -f, --file <filename>
-		> 	Specifies the executable file that lldb will be launching /
-		> 	attaching to.
-		> ```
-		>
-		> ***Variations:***
-		> ```shell
-		> $> lldb --file <filename> [<run-args>]
-		> $> lldb -f <filename> [<run-args>]
-		> $> lldb <filename> [<run-args>]
+		> $> lldb [[-f] <filename> [<run-args>]]
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> $> lldb --file a.out "firstArgument" "2ndArgument" "youGetThePoint"
-		> $> lldb -f a.out "firstArgument" "2ndArgument" "youGetThePoint"
-		> $> lldb a.out "firstArgument" "2ndArgument" "youGetThePoint"
+		> $> lldb
+		> $> lldb --file a.out "arg1" "arg2" "youGetThePoint"
+		> $> lldb -f a.out "arg1" "arg2" "youGetThePoint"
+		> $> lldb a.out "arg1" "arg2" "youGetThePoint"
 		> ```
 		>
 		> *<small>[Note: `[<run-args>]` represents the argument(s) that you pass to a program. - end note]</small>*
@@ -451,31 +401,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-v <none>] [-c[<filename>]] [-i <filename>] [-o <filename>] [-e <filename>] [<run-args>]
 
-
-<!-- ATTACHING TO A PROCESS
-
-
-
-     -n, --attach-name process-name
-             Specifies the name of a currently-running process to attach to.
-             (or the name of a process to wait for if -w is used.)
-
-     -w, --wait-for
-             When used in concert with -n process-name, indicates that lldb
-             should wait for a new process of that name to be started -- and
-             attach to it as early in the process-launch as possible.
-
-     -p, --attach-pid pid
-             Specifies a currently running process that lldb should attach to.
-
-
-
--->
-
-
-
-
-
+> *<small>[Note:*
+>
+> -	If your arguments resemble option specifiers (i.e., they start with a
+>      `-` or `--`), you must use ' `--` ' between the end of the command options > and the beginning of the arguments.
+>
+> -	***To debug Python [scripts]:***
+>
+> 	```shell
+> 	lldb -f /path/to/<python> -- <script>
+> 	```
+>
+> 	or
+>
+> 	```shell
+> 	(lldb) ta cr /path/to/<python>
+> 	(lldb) r <script>
+> 	```
+>
+> *- end note]</small>*
 
 <br>
 <br>
@@ -484,7 +428,8 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
+> | 1 | Manual Page | LLDB | `(lldb) help target create`
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
 
 
 ---
@@ -516,9 +461,11 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
-> | 2 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
-> | 3 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html#setting-watchpoints)
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint [<command>]`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
+> | 3 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
+> | 4 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
+> | 5 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html#setting-watchpoints)
 
 
 ---
@@ -855,6 +802,24 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 <small>`[Search Tags: >lldb.attachprocess >lldb.attachprogram >attachprogram >attachprocess >attachexecutable]`</small>
 
 > *Commands for attaching to a [running] process (program):*
+
+<!-- ATTACHING TO A PROCESS from terminal prompt options
+
+
+     -n, --attach-name process-name
+             Specifies the name of a currently-running process to attach to.
+             (or the name of a process to wait for if -w is used.)
+
+     -w, --wait-for
+             When used in concert with -n process-name, indicates that lldb
+             should wait for a new process of that name to be started -- and
+             attach to it as early in the process-launch as possible.
+
+     -p, --attach-pid pid
+             Specifies a currently running process that lldb should attach to.
+
+
+-->
 
 -	***To attach to a process (program):***
 
