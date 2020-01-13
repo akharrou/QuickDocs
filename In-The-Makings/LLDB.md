@@ -268,7 +268,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *This section is unrelated to LLDB, but related to debugging.*
 
--	The `fsanitize` *[compiler]* flag family is an extraordinarily helpful set of *[compuler]* flags, with regards to debugging. They enable *[compiler]* *([runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase)))* checks – *which are disabled by default* – that detect and help avoid bugs. <br>
+-	The `fsanitize` *[compiler]* flag family is an extraordinarily helpful set of *[compiler]* flags, with regards to debugging. They enable *[compiler]* *[runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase))* checks – *which are disabled by default* – that detect and help avoid bugs. <br>
 
 	If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
@@ -286,7 +286,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     |  [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)            |`-fsanitize=cfi`   | ***Control flow*** checks.
     |  [SafeStack](https://clang.llvm.org/docs/SafeStack.html)            |`-fsanitize=safe-stack`   | Protection against ***stack-based memory*** corruption errors.
 
-	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer*, enabled by *`-fsanitize=undefined`*, performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks), just another good resource).
+	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer*, enabled by *`-fsanitize=undefined`* *[sanitizer enabler flag]*, performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks), just another good resource).
 
 -	***To enable a sanitizer***:
 
