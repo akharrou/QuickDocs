@@ -94,7 +94,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 #### What is it ?
 
--	***LLDB, is a program – that provides an interface for you to examine the execution of a program – instruction by instruction, or line by line, or breakpoint by breakpoint.***
+-	LLDB, is a program – that provides an interface for you to examine the execution of a program – instruction by instruction, or line by line, or breakpoint by breakpoint.
 
 	> More detailed:
 	>
@@ -105,6 +105,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 #### Why should I care ?
 
 -	*The short answer;* you should care because it will save you *(***THOUSANDS*** of)* hours of [debugging](https://en.wikipedia.org/wiki/Debugging) – the process of locating [bugs](https://en.wikipedia.org/wiki/Software_bug) *[in source code]*, finding their cause(s) and [patching](https://en.wikipedia.org/wiki/Patch_(computing)) (i.e fixing/removing) them.
+
 
 <br>
 <br>
@@ -342,12 +343,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
+-	We then need to inform `lldb` which program we intend to debug, this is the step that is referred to as ***"loading a program"*** . <br>
+
+	More specifically – we are setting `lldb` up to target a specific program, for debugging/examination.
+
 -	***Demonstration:*** <br>
 	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
 -	***To load a program [into `lldb`]:***
-
-	> *<small>[Note: i.e set `lldb` up to target a specific program [for debugging/examination]. - end note]</small>*
 
 	- ***From outside [`lldb`]:***
 
@@ -382,7 +385,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) target create a.out   # setup lldb to debug the program 'a.out'
+		> (lldb) target create a.out      # setup lldb to debug the program 'a.out'
 		> (lldb) ta cr a.out
 		> (lldb) ta c a.out
 		> (lldb) file a.out
@@ -392,7 +395,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]* [, on the [`lldb`] command prompt].
 		>
-		> -	`file` is a [built-in] alias/abbreviation for `target create`, see `help file`.
+		> -	`file` is an (built-in) alias/abbreviation for `target create`, see `help file`.
 		>
 		> -	`lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *(i.e setup to be debugged/examined)* as a ***"[debugger] target"*** – to avoid confusion.
 		>
