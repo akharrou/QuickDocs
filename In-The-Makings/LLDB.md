@@ -357,6 +357,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To load a program [into `lldb`]:***
 
+	> ***Synopsis:***
+	>
+	> - Outside `lldb`
+	> 	```shell
+	> 	$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
+	>	```
+	>
+	> - Inside `lldb`
+	> 	```shell
+	> 	(lldb) target create <program-execuable-filename>
+	> 	```
+	>
+	> ***Example(s):***
+	> ```shell
+	> $> lldb --file a.out "arg1" "arg2" "youGetIt"
+	> $> lldb -f a.out "arg1" "arg2" "youGetIt"
+	> $> lldb a.out
+	>
+	> (lldb) target create a.out
+	> (lldb) ta cr a.out
+	> (lldb) file a.out
+	> ```
+
+<!--
 	- ***From outside [`lldb`]:***
 
 		> ***Synopsis:***
@@ -386,7 +410,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> (lldb) ta cr a.out
 		> (lldb) ta c a.out
 		> (lldb) file a.out
-		> ```
+		> ``` -->
 
 -	***To un-load a program [from `lldb`]:***
 
@@ -409,9 +433,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > - "[...] from **outside** [`lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [, on the [terminal] command prompt].
 >
-> - `[<run-args>]` represents the argument(s) that you pass to a program.
+> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]* [, on the 	[`lldb`] command prompt].
 >
-> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]* [, on the [`lldb`] command prompt].
+> - `[<run-args>]` represents the argument(s) that you pass to a program.
 >
 > -	`file` is an (built-in) alias/abbreviation for `target create`, see `help file`.
 >
