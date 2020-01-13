@@ -425,21 +425,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta d -a               # delete all targets
 	> ```
 
-	> *<small>[Note:*
-	> -	To load/debug Python [scripts]:
-	>
-	> 	```shell
-	> 	$> lldb -f python -- <script>
-	> 	```
-	> 	or
-	> 	```shell
-	> 	(lldb) ta cr /path/to/<python>
-	> 	(lldb) r <script>
-	> 	```
-	>
-	>	> *This also works for other scripting language interpreters and their *[type of]* scripts.*
-	>
-	> <br> *- end note]</small>*
+> *<small>[Note:*
+> -	To load/debug Python [scripts]:
+>
+> 	```shell
+> 	$> lldb -f python -- <script>
+> 	```
+> 	or
+> 	```shell
+> 	(lldb) ta cr /path/to/<python>
+> 	(lldb) r <script>
+> 	```
+>
+>	> *This also works for other scripting language interpreters and their *[type of]* scripts.*
+>
+> <br> *- end note]</small>*
 
 
 <br>
