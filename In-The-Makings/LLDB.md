@@ -9,7 +9,7 @@
 		idev.aymen@gmail.com
 
 	OBJECTIVE(S)
-		Promote, explain and reminder what LLDB is and how to use it.
+		Promote LLDB, because it is an amazing tool that can benefit in debugging. Explain/remind what LLDB is and how to use it.
 
 	DESCRIPTION
 		[Beginner to Intermediate Level] Tutorial on LLDB.
@@ -548,18 +548,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***Set a breakpoint condition:***
 
 	> ***Synopsis:***
-	> ```
-	> breakpoint set [-c <condition-expression>]
-	> breakpoint modify [-c <expr>] [<breakpt-id | watchpt-list>]
+	> ```shell
+	> breakpoint set ... [-c <condition-expr>] [-N <breakpt-name>]
+	> breakpoint modify [-c <condition-expr>] [<breakpt-id | watchpt-list | breakpt-name>]
 	>```
 	>
 	> ***Example(s):***
-	> ```
+	> ```shell
 	> (lldb) breakpoint set --name foo --condition '(int)strcmp(y,"hello") == 0'
 	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
-	>
-	> (lldb) breakpoint set --name bar --condition 'my_var == 42'
-	> (lldb) br s -n bar -c 'my_var == 42'
+	> ```
+	> ```shell
+	> (lldb) breakpoint modify --condition 'my_var == 42' 4 2 8          # add a condition to the breakpoint having a the id: 3.
+	> (lldb) br m -c 'my_var < 42' 3                                     # add a condition to the breakpoint having a the id: 3.
+	> ```
+	> ```shell
+	> (lldb) breakpoint set -n baz -N controlFlow     # set a breakpoint, who can be identified as being a 'controlFlow' breakpoint.
+	> (lldb) br m -c 'my_var > 42' -N controlFlow     # add a condition to all breakpoints being identified as `controlFlow` [breakpoints].
 	> ```
 
 -	***Set a breakpoint command:***
@@ -600,9 +605,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint list -v         # --verbose
-	> (lldb) br l -f                    # --full
-	> (lldb) br l -b                    # --brief
+	> (lldb) breakpoint list -v           # --verbose
+	> (lldb) br l -f                      # --full
+	> (lldb) br l -b                      # --brief
 	> ```
 
 -	***Delete breakpoint(s):***
