@@ -406,7 +406,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> *- end note]</small>*
 
-	-	***Demonstration:*** <br> <br>
+	-	***Demonstration:*** <br>
 		> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
 
