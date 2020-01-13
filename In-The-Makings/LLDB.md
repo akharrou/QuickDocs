@@ -286,13 +286,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     |  [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)            |`-fsanitize=cfi`   | ***Control flow*** checks.
     |  [SafeStack](https://clang.llvm.org/docs/SafeStack.html)            |`-fsanitize=safe-stack`   | Protection against ***stack-based memory*** corruption errors.
 
-	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer*, enabled by *[the sanitizer enabler flag]* *`-fsanitize=undefined`*, performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks), just another good resource).
+	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer* – enabled by *[the sanitizer enabler flag:]* *`-fsanitize=undefined`* – performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks), just another good resource).
 
 -	***To enable a sanitizer***:
 
 	> ***Synopsis:***
 	> ```shell
-	> $> <compile-command> [-g] [<sanitizer-enabling-flag> ...]
+	> $> <compile-command> [-g] [<sanitizer-enabling-flags> ...]
 	> ```
 	>
 	> ***Example:***
@@ -300,7 +300,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> $> gcc source.c -g -fsanitize=address -fsanitize=undefined
 	> ```
 	>
-	> – add it *[it's corresponding (enabler) flag]* to the compilation step. The shown above *(command)*, adds the *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
+	> – add it *[the sanitizer's corresponding [enabler] flag]* to the compilation step. The shown above *(command)*, adds the *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
 	>
 	> *<small>[Note:* It is not possible to combine the following sanitizers: *"`-fsanitize=address`"*, *"`-fsanitize=thread`"*, and *"`-fsanitize=memory`"*, at the same time. *- end note]*
 	>
