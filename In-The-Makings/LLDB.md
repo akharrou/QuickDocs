@@ -405,6 +405,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> -	`lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *(i.e setup to be debugged/examined)* as a ***"[debugger] target"*** – to avoid confusion.
 		>
+		> -	To load/debug Python [scripts]:
+		>
+		> 	```shell
+		> 	$> lldb -f python -- <script>
+		> 	```
+		> 	or
+		> 	```shell
+		> 	(lldb) ta cr /path/to/<python>
+		> 	(lldb) r <script>
+		> 	```
+		>
+		>	> *This also works for other scripting language interpreters and their *[type of]* scripts.*
+		>
 		> *- end note]</small>*
 
 
@@ -424,22 +437,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta de --all           # delete all targets
 	> (lldb) ta d -a               # delete all targets
 	> ```
-
-> *<small>[Note:*
-> -	To load/debug Python [scripts]:
->
-> 	```shell
-> 	$> lldb -f python -- <script>
-> 	```
-> 	or
-> 	```shell
-> 	(lldb) ta cr /path/to/<python>
-> 	(lldb) r <script>
-> 	```
->
->	> *This also works for other scripting language interpreters and their *[type of]* scripts.*
->
-> *- end note]</small>*
 
 
 <br>
