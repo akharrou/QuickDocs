@@ -416,7 +416,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> $> lldb <filename> [<run-args>]
 		> ```
 		>
-		> *Example(s)*:
+		> *Example(s):*
 		> ```shell
 		> $> lldb --file a.out "firstArgument" "2ndArgument" "youGetThePoint"
 		> $> lldb -f a.out "firstArgument" "2ndArgument" "youGetThePoint"
@@ -584,7 +584,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>		The breakpoint is deleted the first time it stop causes a stop.
 	> ```
 	>
-	> *Example(s)*:
+	> *Example(s):*
 	> ```
 	> (lldb) b main
 	>
@@ -605,7 +605,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> ```
 	>
-	> *Example(s)*:
+	> *Example(s):*
 	> ```
 	> (lldb) breakpoint set --name main
 	> (lldb) breakpoint modify -c '' TODO : adding commands to breakpoints
@@ -638,7 +638,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>	Extensive full description.
 	>```
 	>
-	> *Example(s)*:
+	> *Example(s):*
 	> ```shell
 	> (lldb) breakpoint list --verbose
 	> (lldb) br l -v
@@ -652,7 +652,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> breakpoint delete [<breakpt-id | breakpt-id-list>]
 	> ```
 	>
-	> *Example(s)*:
+	> *Example(s):*
 	> ```shell
 	> (lldb) breakpoint delete 1 2 3
 	> (lldb) br de 1 2 3
@@ -714,7 +714,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> watchpoint set expression <expr>
 	> ```
 	>
-	> *Example(s)*:
+	> *Example(s):*
 	> ```shell
 	> (lldb) watchpoint set expression my_ptr
 	> (lldb) wa s e my_ptr
@@ -745,7 +745,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> watchpoint modify [-c <expr>] [<watchpt-id | watchpt-id-list>]
 	> ```
 	>
-	> *Example(s)*:
+	> *Example(s):*
 	> ```
 	> (lldb) watch set var global
 	> (lldb) watchpoint modify -c '(global == 5)'
@@ -763,7 +763,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>     -v ( --verbose )  :: extensive full description
 	>```
 	>
-	> *Example(s)*:
+	> *Example(s):*
 	> ```shell
 	> (lldb) watchpoint list
 	> (lldb) wa l
@@ -777,7 +777,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> watchpoint delete [<watchpt-id | watchpt-id-list>]
 	> ```
 	>
-	> *Example(s)*:
+	> *Example(s):*
 	> ```shell
 	> (lldb) watchpoint delete 1 2 3
 	> (lldb) wa de 1 2 3
@@ -832,7 +832,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> (lldb) r <filename> [<run-args>]
 	> ```
 	>
-	> *Example(s)*:
+	> *Example(s):*
 	> ```shell
 	> (lldb) process launch "1st-Argument" "2nd-Argument" "youGetThePoint"
 	> (lldb) pr la "1st-Argument" "2nd-Argument" "youGetThePoint"
@@ -869,13 +869,13 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> 	Redirect stderr for the process to <filename>.
 	> ```
 	>
-	> *Example(s)*:
+	> *Example(s):*
 	> ```shell
 	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> ```
 	>
-	> > *To clarify – we redirect the input stream to come from the terminal [who's id is] `/dev/ttys001`; we redirect the standard output of the program to a `.log` file; we do the same with standard error output. Then we seperate our `lldb` command options from the arguments we want to pass to our program with `lldb`'s parser delimiter ` -- `, and finally we pass to our program 3 arguments.*
+	> > *To clarify – we redirect *[the]* standard input *[stream]* to come/be-given/originate from [the terminal [device] [who's identifier is]] `/dev/ttys001`; we redirect the standard output *[stream]* *[of the program]* to a `.log` file; we do the same with the standard error output *[stream]*. Then we seperate the given *`lldb`* command options from the given program arguments with *[*`lldb`*'s parser delimiter]*: '` -- `'; finally we pass *[to our program]* three arguments.*
 
 -	***Set a process launch (full):***
 
@@ -886,22 +886,24 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> *<small>[Note: Listed above are only the common usages *[of `process launch`]*. To discover the full extent of *[`process launch`'s]* powers, you can consult it's manual page, type: `h pr la` - end note]</small>*
 
+---
+
 > *Commands for attaching to a [running] program (process):*
->
+
 > Attach
-> : Take over control a process (program), for debugging – at whatever point in its *[the program's]* execution it currently is (or has-reached).
+> : Take over control a process (program), for debugging – at whatever point in its *[the program's]* execution it currently is (has-reached).
 
 
 -	***To attach to a *[running]* program (process):***
 
-	> *Command:*
+	> <small> ***Command:*** </small>
 	>
 	> ```shell
 	> process attach [-p <pid>]
 	> process attach [-w] [-n <process-name>]
 	> ```
 	>
-	> *Option(s):*
+	> <small> ***Option(s):*** </small>
 	>
 	> ```shell
 	> -n <process-name> ( --name <process-name> )
@@ -914,7 +916,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>	Wait for the process with <process-name> to launch.
 	>```
 	>
-	> *Example(s)*:
+	> <small> ***Example(s):*** </small>
 	> ```shell
 	> (lldb) process attach --pid 123
 	> (lldb) pr a -p 123
@@ -925,6 +927,8 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> (lldb) process attach --name a.out --waitfor
 	> (lldb) pr a -w -n a.out
 	> ```
+
+-	***To attach to a program (process) that hasn't yet begun:***
 	>
 	> > *"You can also attach to a process by process ID (`pid`) or process name (e.g. `a.out`). When attaching to a process by name, `lldb` also supports the `-–waitfor` option which waits for the next process that has that name to show up, and attaches to it."*
 
