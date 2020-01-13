@@ -440,7 +440,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	>	> *This also works for other scripting language interpreters and their *[type of]* scripts.*
 	>
-	> *- end note]</small>*
+	> <br> *- end note]</small>*
 
 
 <br>
