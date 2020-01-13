@@ -360,10 +360,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	>
 	> 	```shell
-	> 	$> lldb [--file|-f] <program-execuable-filename> [<run-args>]    # [from] outside lldb
+	> 	$> lldb [--file|-f] <program-execuable-filename> [<run-args>]       # [from] outside lldb
 	>	```
 	> 	```shell
-	> 	(lldb) target create <program-execuable-filename>                # [from] inside lldb
+	> 	(lldb) target create <program-execuable-filename>                   # [from] inside lldb
 	> 	```
 	>
 	> ***Example(s):***
