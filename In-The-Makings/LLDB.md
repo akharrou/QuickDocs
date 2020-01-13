@@ -371,14 +371,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> $> lldb -f a.out "arg1" "arg2" "youGetIt"
 		> $> lldb a.out
 		> ```
-		>
-		> *<small>[Note:*
-		>
-		> - "[...] from **outside** [`lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [, on the [terminal] command prompt].
-		>
-		> - `[<run-args>]` represents the argument(s) that you pass to a program.
-		>
-		> *- end note]</small>*
 
 	- ***From inside [`lldb`]:***
 
@@ -395,28 +387,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> (lldb) ta c a.out
 		> (lldb) file a.out
 		> ```
-		>
-		> *<small>[Note:*
-		>
-		> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]* [, on the [`lldb`] command prompt].
-		>
-		> -	`file` is an (built-in) alias/abbreviation for `target create`, see `help file`.
-		>
-		> -	To load/debug Python [scripts]:
-		>
-		> 	```shell
-		> 	$> lldb -f python -- <script>
-		> 	```
-		> 	or
-		> 	```shell
-		> 	(lldb) ta cr /path/to/<python>
-		> 	(lldb) r <script>
-		> 	```
-		>
-		>	> *This also works for other scripting language interpreters and their *[type of]* scripts.*
-		>
-		> *- end note]</small>*
-
 
 -	***To un-load a program [from `lldb`]:***
 
@@ -434,6 +404,31 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta de --all           # delete all targets
 	> (lldb) ta d -a               # delete all targets
 	> ```
+
+> *<small>[Note:*
+>
+> - "[...] from **outside** [`lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [, on the [terminal] command prompt].
+>
+> - `[<run-args>]` represents the argument(s) that you pass to a program.
+>
+> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]* [, on the [`lldb`] command prompt].
+>
+> -	`file` is an (built-in) alias/abbreviation for `target create`, see `help file`.
+>
+> -	To load/debug Python [scripts]:
+>
+> 	```shell
+> 	$> lldb -f python -- <script>
+> 	```
+> 	or
+> 	```shell
+> 	(lldb) ta cr /path/to/<python>
+> 	(lldb) r <script>
+> 	```
+>
+>	> *This also works for other scripting language interpreters and their *[type of]* scripts.*
+>
+> *- end note]</small>*
 
 
 <br>
