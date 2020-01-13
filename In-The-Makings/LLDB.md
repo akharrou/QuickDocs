@@ -373,13 +373,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> $> lldb a.out "arg1" "arg2" "youGetThePoint"
 		> ```
 		>
-		> *<small>[Note(s):*
+		> *<small>[Note:*
 		>
-		> - i.e before, and at the same time as, launch [of `lldb`] [on the [terminal] command prompt].
+		> - "To load a program [into `lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [on the [terminal] command prompt].
 		>
 		> - `[<run-args>]` represents the argument(s) that you pass to a program.
 		>
-		> *- end note(s)]</small>*
+		> *- end note]</small>*
 
 	- ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
 
