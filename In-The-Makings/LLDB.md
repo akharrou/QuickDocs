@@ -406,37 +406,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> *- end note]</small>*
 
-	- ***From inside [`lldb`]** ():*
-
 -	***To un-load a program [from `lldb`]:***
 
+	> ***Synopsis:***
+	>
 	> ```shell
-	> (lldb) target delete
-	> (lldb) ta de
+	> (lldb) target delete [<target-id | target-id-list>]
+	> (lldb) target delete [--all|-a]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) target delete 3   # delete the target with `target-id`: #3
+	> (lldb) tar del 7 5 2     # delete the list of targets: #7 #5 #2
+	> (lldb) ta de --all       # delete all targets
+	> (lldb) ta d -a           # delete all targets
 	> ```
 
 -	***Demonstration:*** <br> <br>
 	![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
-> *<small>[Note:*
->
-> -	If your arguments resemble option specifiers (i.e., they start with a
->      `-` or `--`), you must use ' `--` ' between the end of the command options > and the beginning of the arguments.
->
-> -	***To debug Python [scripts]:***
->
-> 	```shell
-> 	lldb -f /path/to/<python> -- <script>
-> 	```
->
-> 	or
->
-> 	```shell
-> 	(lldb) ta cr /path/to/<python>
-> 	(lldb) r <script>
-> 	```
->
-> *- end note]</small>*
 
 <br>
 <br>
