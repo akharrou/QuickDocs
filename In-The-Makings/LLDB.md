@@ -343,9 +343,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	We then need to inform `lldb` which program we intend to debug, this is the step that is referred to as ***"loading a program"*** . <br>
+-	`lldb` must *[then]* be informed about which program we intend to debug – this is the step that is referred to as ***"loading a program"*** . <br>
 
-	More specifically – we are setting `lldb` up to target a specific program, for debugging/examination.
+	More precisely, with the technical terms, we say – we are setting `lldb` up to target a specific program, for debugging/examination-phase.
 
 -	***Demonstration:*** <br>
 	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
