@@ -934,7 +934,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> - *When attaching to a process by name, `lldb` also supports the '`--waitfor`' option – which waits for the next process that has that name to show up, and attaches to it.*
 	>
-	> - *To further clarify – ***processes*** (i.e running programs), can be identified either by ***name*** or by a *[unique]* ***identification/reference number***, called a process-ID, or `pid` for short. Try typing: "`top`" in your terminal, the first column contains all the process-IDs of all the processes (programs) currently running *[on your computer]*.* <br> <br>
+	> - *To further clarify – ***processes*** (i.e running programs), can be identified either by ***name*** or by a *[unique]* ***identification/reference number***, called a process-ID, or `pid` for short. Try typing: "`top`" in your terminal, the first column contains all the process-IDs of all the processes (programs) currently running *[on your computer]*.* <br>
 	>
 	> *- end note]</small>*
 
