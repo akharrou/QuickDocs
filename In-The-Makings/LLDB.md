@@ -407,9 +407,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> *<small>[Note: `file` is a [built-in] alias/abbreviation for `target create`, see `help file`- end note]</small>*
 
-	> ***Demonstration:*** <br> <br>
-	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
-
 -	***To un-load a program [from `lldb`]:***
 
 	> ```shell
@@ -418,6 +415,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 
 > *<small>[Note: `lldb`'s lexicon refers to an ***"[executable] program"*** , that is to be debugged, as a ***"[debugger] target"*** – to avoid confusion. - end note]</small>*
+
+-	***Demonstration:*** <br> <br>
+	![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
 
 <br>
@@ -512,30 +512,41 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *Command:*
 	> ```
-	> breakpoint modify [-Dde] [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [<breakpt-id | breakpt-id-list>]
+	> breakpoint modify [-c <expr>]
 	>
+	> breakpoint modify [-Dde] [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>]  [-G <boolean>] [<breakpt-id | breakpt-id-list>]
+	>```
+	>
+	> *Manual Page Extract:*
+	>```shell
 	>	-c <expr> ( --condition <expr> )
 	>	     The breakpoint stops only if this condition expression evaluates to true.
-	> ```
-	>
-	> *Example*:
-	> ```
-	> (lldb) breakpoint set --name main
-	> (lldb) breakpoint modify -c '' TODO : adding conditions to breakpoints
-	> ```
-
--	***Set a breakpoint command:***
-
-	> *Command:*
-	> ```
-	> breakpoint modify [-Dde] [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [<breakpt-id | breakpt-id-list>]
-	>
 	>
 	>	-G <boolean> ( --auto-continue <boolean> )
     >		The breakpoint will auto-continue after running its commands.
 	>
 	>	-o <boolean> ( --one-shot <boolean> )
 	>		The breakpoint is deleted the first time it stop causes a stop.
+	> ```
+	>
+	> *Example*:
+	> ```
+	> (lldb) b main
+	>
+	> (lldb) breakpoint list -b
+	> Current breakpoints:
+	> 1: name = 'main', locations = 1
+	>
+	> (lldb) breakpoint command add `<command>` 1
+	> ```
+
+-	***Set a breakpoint command:***
+
+	> *Command:*
+	> ```
+	> breakpoint command add <cmd-options> <breakpt-id>
+	>
+	>
 	>
 	> ```
 	>
@@ -544,6 +555,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) breakpoint set --name main
 	> (lldb) breakpoint modify -c '' TODO : adding commands to breakpoints
 	> ```
+
+	> *<small>[Note:*
+	>
+	> 	- "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options."
+	>
+	> <br> *- end note]</small>*
 
 -	***List breakpoints:***
 
@@ -610,7 +627,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-run-program)
 ### 3.4.2. Watchpoints
-<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds >wapts >watchpts >wpts >wpoints >wapoints >setwapts >wapts]`</small>
+<small>`[Search Tags:>lldb .watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds >wapts >watchpts >wpts >wpoints >wapoints >setwapts >wapts]`</small>
 <br>
 <br>
 
