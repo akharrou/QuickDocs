@@ -670,10 +670,11 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> *<small>[Note: Listed above are only the common usages *[of `breakpoint set`]*. To discover the full extent *[of `breakpoint set`'s]* powers, you can consult its manual page, type: `h br s` - end note]</small>*
 
 
-> *Manual Page(s): `(lldb) help breakpoint [<command>]`*
 
 <br>
 <br>
+
+> *Manual Page(s): `(lldb) help breakpoint [<command>]`*
 
 > ***Further Reading:***
 >
