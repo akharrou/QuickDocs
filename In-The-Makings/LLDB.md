@@ -406,6 +406,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> *- end note]</small>*
 
+	-	***Demonstration:*** <br> <br>
+		![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
+
+
 -	***To un-load a program [from `lldb`]:***
 
 	> ***Synopsis:***
@@ -417,14 +421,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) target delete 3   # delete the target with `target-id`: #3
-	> (lldb) tar del 7 5 2     # delete the list of targets: #7 #5 #2
-	> (lldb) ta de --all       # delete all targets
-	> (lldb) ta d -a           # delete all targets
+	> (lldb) target delete 3       # delete the target with `target-id`: #3
+	> (lldb) tar del 7 5 2         # delete the list of targets: #7 #5 #2
+	> (lldb) ta de --all           # delete all targets
+	> (lldb) ta d -a               # delete all targets
 	> ```
-
--	***Demonstration:*** <br> <br>
-	![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
 	> *<small>[Note:*
 	> -	To load/debug Python [scripts]:
