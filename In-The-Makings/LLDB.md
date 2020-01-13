@@ -345,10 +345,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	`lldb` must *[then]* be informed of which program we intend to debug – this step is referred to as: ***"loading a program"*** . <br>
 
-	> More precisely, we say – we are giving `lldb` a ***debugging target***, i.e setting `lldb` up to target a specific program, for debugging/examination-phase.
+	> More precisely, we say – we are ***loading*** *[`lldb` with]* a ***debugging target***, i.e setting `lldb` up to target a specific process *(program)*, for debugging/examination-phase.
 
 -	***Demonstration:*** <br>
-	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
+	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif --> <br>
+
+> *Commands for loading and un-loading targets (programs [intended for debugging]):*
 
 -	***To load a program [into `lldb`]:***
 
