@@ -422,7 +422,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > -	`lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *[setup to be debugged]* as a ***"[debugger] target"*** – to avoid confusion.
 >
-> <br> *- end note]</small>*
+> *- end note]</small>*
 
 
 <br>
