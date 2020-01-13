@@ -674,6 +674,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 <br>
 
 > ***Further Reading:***
+>
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | `man` Page | LLDB | `(lldb) help breakpoint [<command>]`
