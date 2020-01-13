@@ -850,7 +850,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***To redirect standard [in|out|err]:***
 	>
-	> *Command:*
+	> ***Synopsis:*
 	>
 	> ```shell
 	> process launch [-i <filename>] [-o <filename>] [-e <filename>] [<run-args>]
@@ -892,14 +892,14 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 -	***To attach to a process (program):***
 
-	> <small> ***Command:*** </small>
+	> ***Synopsis:***
 	>
 	> ```shell
 	> process attach [-p <pid>]
 	> process attach [-w] [-n <process-name>]
 	> ```
 	>
-	> <small> ***Option(s):*** </small>
+	> ***Option(s):***
 	>
 	> ```shell
 	> -n <process-name> ( --name <process-name> )
@@ -912,7 +912,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>	Wait for the process, with <process-name>, to launch.
 	>```
 	>
-	> <small> ***Example(s):*** </small>
+	> ***Example(s):***
 	> ```shell
 	> (lldb) process attach --pid 123
 	> (lldb) pr a -p 123
@@ -923,7 +923,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> (lldbattach (process) --name a.out --waitfor
 	> (lldb) pr a -w -n a.out
 	> ```
-
+	>
 	> *<small>[**Note(s):***
 	>
 	> - ***Attach:** Take over control [of the execution] [of a proce(s)s (program)], for debugging, at whatever point (i.e instruction) the execution [of the process (program)] has reached.*
