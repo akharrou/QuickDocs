@@ -212,8 +212,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***Demonstration:*** <br>
 	> ![Demo: compile-with-debug-and-fsanitize-flags](https://media.giphy.com/media/JRPUPdiP8Awj39A6A0/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-and-fsanitize-flags.gif -->
-	>
-	> *<small>[Note: Works with both `gcc` and `clang` [compilers]. * - end note]</small>*
+
+	> *<small>[Note: These [compiler] flags work with both `gcc` and `clang` [compilers]. * - end note]</small>*
 
 
 <br>
