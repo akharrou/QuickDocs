@@ -621,7 +621,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> *<small>[Note: If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all. - end note]</small>*
 
--	Way more to discover *(just to give you an idea...)*:
+-	***Way more to discover:***
 	> ```shell
 	> breakpoint set [-w <watch-type>] [-s <byte-size>] <variable-name> breakpoint set [-DHd] -l <linenum> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] [-m <boolean>] breakpoint set [-DHd] -a <address-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-N <breakpoint-name>] breakpoint set [-DHd] -n <function-name> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -F <fullname> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -S <selector> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -M <method> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -r <regular-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>]
 	> ```
@@ -650,14 +650,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *Commands for operating on watchpoints:*
 
--	***Set watchpoint, on a variable:***
+-	***Set watchpoint, on a variable or *[buffer starting]* address:***
 
 	> ***Synopsis:***
 	> ```shell
-	> watchpoint set variable [-w <watch-type>] [-s <byte-size>] <variable-name>
+	> watchpoint set variable [-w <watch-type>] [-s <byte-size>]<variable-name>
+	> watchpoint set expression [-w <watch-type>] [-s <byte-size>] -- <expr>
+	> watchpoint set expression <expr>
 	> ```
 	>
-	> *****Option(s):*****
+	> ***Option(s):***
 	> ```shell
 	> -s <byte-size> ( --size <byte-size> )
 	> 		Number of bytes to use to watch a region.
@@ -673,21 +675,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) watchpoint set variable my_var
 	> (lldb) wa s v my_var
 	> ```
-
--	***Set watchpoint, on an address [by supplying an expression]:***
-
-	> ***Synopsis:***
-	> ```shell
-	> watchpoint set expression [-w <watch-type>] [-s <byte-size>] -- <expr>
-	> watchpoint set expression <expr>
-	> ```
 	>
-	> *****Option(s):*****
-	> ```
-	>    **Same as previous**
-	> ```
-	>
-	> ***Example(s):***
 	> ```shell
 	> (lldb) watchpoint set expression my_ptr
 	> (lldb) wa s e my_ptr
@@ -710,25 +698,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ***Synopsis:***
 	> ```shell
-	> watchpoint list -[bfv] [<watchpt-id | watchpt-id-list>]
+	> watchpoint list -[bv] [<watchpt-id | watchpt-id-list>]
 	> ```
-	>
-	> *****Option(s):*****
-	> ```shell
-	> -b ( --brief   )
-	>	Brief description.
-	>
-	> -f ( --full    )
-	>	Full description.
-	>
-	> -v ( --verbose )
-	>	Extensive, full description.
-	>```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) watchpoint list
-	> (lldb) wa l
+	> (lldb) watchpoint list            # full description
+	> (lldb) wa l -b                    # brief description
+	> (lldb) w l -v                     # extensive, full description
 	> ```
 
 -	***Delete watchpoint(s):***
@@ -741,8 +718,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) watchpoint delete 1 2 3
-	> (lldb) wa de 1 2 3
+	> (lldb) watchpoint delete 1 2 3    # delete <watchpt-id-list>
+	> (lldb) wa de 5                    # delete <watchpt-id>
 	> ```
 	>
 	> *<small>[Note: If no watchpoints are specified, delete them all. - end note]</small>*
