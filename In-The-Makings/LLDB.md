@@ -623,10 +623,19 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> ```shell
 	> breakpoint list -[bfv] [<breakpt-id | breakpt-id-list>]
+	> ```
 	>
-	>     -b ( --brief   )  :: brief description
-	>     -f ( --full    )  :: full description
-	>     -v ( --verbose )  :: extensive full description
+	> *Options:*
+	>
+	> ```shell
+	> -b ( --brief   )
+	>	Brief description.
+	>
+	> -f ( --full    )
+	>	Full description.
+	>
+	> -v ( --verbose )
+	>	Extensive full description.
 	>```
 	>
 	> *Example*:
