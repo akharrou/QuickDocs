@@ -203,9 +203,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note: These [compiler] flags work with both `gcc` and `clang` [compilers]. - end note]</small>*
 
--	During *"examination phase"*, ***to see source code*** – as opposed to *[assembly instructions (code)](https://en.wikipedia.org/wiki/Assembly_language)* – ***that executes in a linear fashion*** (i.e line by line, statement by statement), you might want to ***add*** *[in the compilation step [of your program]]* the options/flags : **`-g -O0`**, see ([§3.1.1](#311-debug-flags--g---o0)).
+-	Make sure to use *(compile with)* the debugging *[compiler]* flags ([§3.1.1](#311-debug-flags--g---o0)) and the *`fsanitize`* family of *[compiler]* flags ([3.1.2](#312-helpful-flags-the-fsanitize-family)).
 
--	Unrelated to `lldb`, but ***assisting tremendously in debugging***, doing, arguably, half the debugging effort for you, again, is the ***`fsanitize` family*** ([3.1.2](#312-helpful-flags-the-fsanitize-family)) ***of *[compiler]* flags***. Don't jump over reading this section ! You'll miss out on WAY more than you think !
+	>  *Although unrelated to *`lldb`*, the *`fsanitize`* family of *[compiler]* flags ([3.1.2](#312-helpful-flags-the-fsanitize-family)), is tremendously helpful with debugging.*
 
 
 <br>
@@ -353,7 +353,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif --> <br>
 
 ---
-> *Commands for loading and un-loading [debugging]targets:*
+> *Commands for loading and un-loading [debugging] targets:*
 
 -	***To load a program [into `lldb`]:***
 
@@ -429,15 +429,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *<small>[Note:*
 >
-> - "from **outside** [`lldb`]"; i.e before, and at the same time as, launch [of `lldb`] [, on the [terminal] command prompt].
+> - "from **outside** *[`lldb`]*"; i.e before, and at the same time as, launch [of `lldb`] [, on the *[terminal]* command prompt].
 >
-> - "from **inside** [`lldb`]"; i.e after launch *[of `lldb`]* [, on the 	[`lldb`] command prompt].
+> - "from **inside** *[`lldb`]*"; i.e after launch *[of `lldb`]* [, on the 	*[`lldb`]* command prompt].
 >
 > - `[<run-args>]` represents the argument(s) that you pass to a program.
 >
 > -	`file` is an (built-in) alias/abbreviation for `target create`, see `help file`.
 >
-> -	To load/debug Python [scripts]:
+> -	To load/debug Python *[scripts]*:
 >
 > 	```shell
 > 	$> lldb -f python -- <script>
