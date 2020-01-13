@@ -362,15 +362,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> ***Synopsis:***
 		>
 		> ```shell
-		> $> lldb [[-f] <filename> [<run-args>]]
+		> $> lldb [--file|-f] <program-execuable-name> [<run-args>]
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> $> lldb
-		> $> lldb --file a.out "arg1" "arg2" "youGetThePoint"
-		> $> lldb -f a.out "arg1" "arg2" "youGetThePoint"
-		> $> lldb a.out "arg1" "arg2" "youGetThePoint"
+		> $> lldb --file a.out "arg1" "arg2" "youGetIt"    # with arguments
+		> $> lldb -f a.out                                 # without arguments
+		> $> lldb a.out "arg1" "arg2" "youGetIt"           # with arguments
 		> ```
 		>
 		> *<small>[Note:*
