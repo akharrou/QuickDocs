@@ -353,7 +353,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> – write `lldb` *[on the terminal command prompt]* and press `enter`.
 
 > *<small>[Note:*
-> 
+>
 > -	If your arguments resemble option specifiers (i.e., they start with a
 >      `-` or `--`), you must use ' `--` ' between the end of the command options > and the beginning of the arguments.
 >
@@ -370,7 +370,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > 	(lldb) r <script>
 > 	```
 >
-> <br> *- end note]</small>*
+> *- end note]</small>*
 
 
 <br>
