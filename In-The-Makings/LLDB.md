@@ -417,7 +417,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***Demonstration:*** <br> <br>
 	![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
-	> *<small>[Note: `lldb`'s lexicon refers to an ***"[executable] program"*** , that is to be debugged, as a ***"[debugger] target"*** – to avoid confusion. - end note]</small>*
+> *<small>[Note: `lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *[setup to be debugged]* as a ***"[debugger] target"*** – to avoid confusion. - end note]</small>*
 
 <br>
 <br>
