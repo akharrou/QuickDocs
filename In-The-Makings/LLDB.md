@@ -677,6 +677,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 > ***Further Reading:*** <br>
 > *Manual Page(s): `(lldb) help breakpoint [<command>]`*
+> 
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
