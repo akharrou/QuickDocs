@@ -888,13 +888,13 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 
 ---
 
-> *Commands for attaching to a [running] program (process):*
+> *Commands for attaching to a [running] process (program):*
 
 > Attach
-> : Take over control a process (program), for debugging – at whatever point in its *[the program's]* execution it currently is (has-reached).
+> : Take over control of a process (program), for debugging – at whatever point in its *[the program's]* execution it currently is (has-reached).
 
 
--	***To attach to a *[running]* program (process):***
+-	***To attach to a process (program):***
 
 	> <small> ***Command:*** </small>
 	>
@@ -907,13 +907,13 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> ```shell
 	> -n <process-name> ( --name <process-name> )
-	>	The name of the process to attach to.
+	>	The name of the process, to attach to.
 	>
 	> -p <pid> ( --pid <pid> )
-	>	The process ID of an existing process to attach to.
+	>	The process ID, of an existing process, to attach to.
 	>
 	> -w ( --waitfor )
-	>	Wait for the process with <process-name> to launch.
+	>	Wait for the process, with <process-name>, to launch.
 	>```
 	>
 	> <small> ***Example(s):*** </small>
@@ -924,13 +924,19 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> (lldb) process attach --name a.out
 	> (lldb) pr a -n a.out
 	>
-	> (lldb) process attach --name a.out --waitfor
+	> (lldbattach (process) -name a.out --waitfor
 	> (lldb) pr a -w -n a.out
 	> ```
 
--	***To attach to a program (process) that hasn't yet begun:***
+	> *<small>[Note:*
 	>
-	> > *"You can also attach to a process by process ID (`pid`) or process name (e.g. `a.out`). When attaching to a process by name, `lldb` also supports the `-–waitfor` option which waits for the next process that has that name to show up, and attaches to it."*
+	> - *To clarify – you can attach to a process (program) by process-ID (`pid`) or process name (e.g. `a.out`).* <br>
+	>
+	> - *When attaching to a process by name, `lldb` also supports the '`--waitfor`' option – which waits for the next process that has that name to show up, and attaches to it.*
+	>
+	> - *To further clarify – ***processes*** (i.e running programs), can be identified either by ***name*** or by a *[unique]* ***identification/reference number***, called a process-ID, or `pid` for short. Try typing: "`top`" in your terminal, the first column contains all the process-IDs of all the processes (programs) currently running *[on your computer]*.* <br> <br>
+	>
+	> *- end note]</small>*
 
 
 TODO: demo
