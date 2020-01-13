@@ -353,24 +353,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> – write `lldb` *[on the terminal command prompt]* and press `enter`.
 
 > *<small>[Note:*
-
--	If your arguments resemble option specifiers (i.e., they start with a
-     `-` or `--`), you must use ' `--` ' between the end of the command options and the beginning of the arguments.
-
--	***To debug Python [scripts]:***
-
-	```shell
-	lldb -f /path/to/<python> -- <script>
-	```
-
-	or
-
-	```shell
-	(lldb) ta cr /path/to/<python>
-	(lldb) r <script>
-	```
-
-<br> *- end note]</small>*
+> 
+> -	If your arguments resemble option specifiers (i.e., they start with a
+>      `-` or `--`), you must use ' `--` ' between the end of the command options > and the beginning of the arguments.
+>
+> -	***To debug Python [scripts]:***
+>
+> 	```shell
+> 	lldb -f /path/to/<python> -- <script>
+> 	```
+>
+> 	or
+>
+> 	```shell
+> 	(lldb) ta cr /path/to/<python>
+> 	(lldb) r <script>
+> 	```
+>
+> <br> *- end note]</small>*
 
 
 <br>
