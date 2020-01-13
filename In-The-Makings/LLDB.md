@@ -41,7 +41,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 		- [3.4.2. Watchpoints](#342-watchpoints)
-	- [3.5. Run Program](#35-run-program)
+	- [3.5. Start or Attach Program](#35-start-or-attach-program)
 	- [3.6. Graphical User Interface (GUI)](#36-graphical-user-interface-gui)
 	- [3.7. Examine Execution](#37-examine-execution)
 		- [3.7.1. Source Code](#371-source-code)
@@ -153,7 +153,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	- *2.* **Launch LLDB** ([§3.2](#32-launch-lldb))
 	>	- *3.* **Load LLDB** *[with your program]* ([§3.3](#33-load-lldb))
 	>	- *4.* **Setup LLDB** ([§3.4](#34-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
-	>	- *5.* **Run your program** ([§3.5](#35-run-program)) *(within LLDB)*
+	>	- *5.* **Run your program** ([§3.5](#35-start-or-attach-program)) *(within LLDB)*
 	>	- *6.* **Launch Graphical User Interface** ([3.6](#36-graphical-user-interface-gui)) mode
 	>	- *7.* **Examine the Execution** ([§3.7](#37-examine-execution)) *[of your program]*. <br> <br>
 	>
@@ -401,7 +401,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> lldb [-f <filename>] [<run-args>]
 		> ```
 		>
-		> *Options:*
+		> *Option(s):*
 		>
 		> ```shell
 		> -f, --file <filename>
@@ -416,7 +416,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> $> lldb <filename> [<run-args>]
 		> ```
 		>
-		> *Example*:
+		> *Example(s)*:
 		> ```shell
 		> $> lldb --file a.out "firstArgument" "2ndArgument" "youGetThePoint"
 		> $> lldb -f a.out "firstArgument" "2ndArgument" "youGetThePoint"
@@ -584,7 +584,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>		The breakpoint is deleted the first time it stop causes a stop.
 	> ```
 	>
-	> *Example*:
+	> *Example(s)*:
 	> ```
 	> (lldb) b main
 	>
@@ -605,7 +605,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> ```
 	>
-	> *Example*:
+	> *Example(s)*:
 	> ```
 	> (lldb) breakpoint set --name main
 	> (lldb) breakpoint modify -c '' TODO : adding commands to breakpoints
@@ -625,7 +625,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> breakpoint list -[bfv] [<breakpt-id | breakpt-id-list>]
 	> ```
 	>
-	> *Options:*
+	> *Option(s):*
 	>
 	> ```shell
 	> -b ( --brief   )
@@ -638,7 +638,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>	Extensive full description.
 	>```
 	>
-	> *Example*:
+	> *Example(s)*:
 	> ```shell
 	> (lldb) breakpoint list --verbose
 	> (lldb) br l -v
@@ -652,7 +652,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> breakpoint delete [<breakpt-id | breakpt-id-list>]
 	> ```
 	>
-	> *Example*:
+	> *Example(s)*:
 	> ```shell
 	> (lldb) breakpoint delete 1 2 3
 	> (lldb) br de 1 2 3
@@ -677,14 +677,14 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | `man` Page | LLDB | `(lldb) help breakpoint [<command>]`
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint [<command>]`
 > | 2 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
 > | 3 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#breakpoint-names)
 > | 4 | Documentation | LLDB | [GDB to LLDB command map](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-breakpoints)
 
 
 ---
-[🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-run-program)
+[🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-start-or-attach-program)
 ### 3.4.2. Watchpoints
 <small>`[Search Tags:>lldb .watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds >wapts >watchpts >wpts >wpoints >wapoints >setwapts >wapts]`</small>
 <br>
@@ -714,7 +714,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> watchpoint set expression <expr>
 	> ```
 	>
-	> *Example*:
+	> *Example(s)*:
 	> ```shell
 	> (lldb) watchpoint set expression my_ptr
 	> (lldb) wa s e my_ptr
@@ -745,7 +745,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> watchpoint modify [-c <expr>] [<watchpt-id | watchpt-id-list>]
 	> ```
 	>
-	> *Example*:
+	> *Example(s)*:
 	> ```
 	> (lldb) watch set var global
 	> (lldb) watchpoint modify -c '(global == 5)'
@@ -763,7 +763,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>     -v ( --verbose )  :: extensive full description
 	>```
 	>
-	> *Example*:
+	> *Example(s)*:
 	> ```shell
 	> (lldb) watchpoint list
 	> (lldb) wa l
@@ -777,7 +777,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> watchpoint delete [<watchpt-id | watchpt-id-list>]
 	> ```
 	>
-	> *Example*:
+	> *Example(s)*:
 	> ```shell
 	> (lldb) watchpoint delete 1 2 3
 	> (lldb) wa de 1 2 3
@@ -801,17 +801,20 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-watchpoints)
-> | 2 | Documentation | LLDB | [GDB to LLDB Command Map](https://lldb.llvm.org/use/map.html?highlight=watchpoints#watchpoint-commands)
+> | 1 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-watchpoints)
+> | 3 | Documentation | LLDB | [GDB to LLDB Command Map](https://lldb.llvm.org/use/map.html?highlight=watchpoints#watchpoint-commands)
 
 
 ---
 [🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-graphical-user-interface-gui)
-## 3.5. Run Program
-<small>`[Search Tags: >lldb.runprocess >lldb.launchprocess >lldb.startprocess >lldb.runprogram >lldb.launchprogram >lldb.startprogram >startprogram >launchprogram >runprogram >startprocess >launchprocess >runprocess  >startexecutable >launchexecutable >runexecutable >programstart >programrun >programlaunch >debugger.runprocess >debugger.launchprocess >debugger.startprocess >debugger.runprogram >debugger.launchprogram >debugger.startprogram]`</small>
+## 3.5. Start or Attach Program
+<small>`[Search Tags: >lldb.runprocess >lldb.launchprocess >lldb.startprocess >lldb.runprogram >lldb.launchprogram >lldb.startprogram >startprogram >launchprogram >runprogram >startprocess >launchprocess >runprocess  >startexecutable >launchexecutable >runexecutable >programstart >programrun >programlaunch >debugger.runprocess >debugger.launchprocess >debugger.startprocess >debugger.runprogram >debugger.launchprogram >debugger.startprogram >lldb.attachprocess >lldb.attachprogram >attachprogram >attachprocess >attachexecutable ]`</small>
 <br>
 <br>
 
+
+> *Commands for starting/running a program:*
 
 -	***To launch/run a *[loaded]* program:***
 	>
@@ -829,7 +832,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> (lldb) r <filename> [<run-args>]
 	> ```
 	>
-	> *Example*:
+	> *Example(s)*:
 	> ```shell
 	> (lldb) process launch "1st-Argument" "2nd-Argument" "youGetThePoint"
 	> (lldb) pr la "1st-Argument" "2nd-Argument" "youGetThePoint"
@@ -853,7 +856,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> process launch [-i <filename>] [-o <filename>] [-e <filename>] [<run-args>]
 	> ```
 	>
-	> *Options:*
+	> *Option(s):*
 	>
 	> ```shell
 	> -i <filename> ( --stdin <filename> )
@@ -866,7 +869,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	> 	Redirect stderr for the process to <filename>.
 	> ```
 	>
-	> *Example*:
+	> *Example(s)*:
 	> ```shell
 	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
@@ -883,8 +886,51 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> *<small>[Note: Listed above are only the common usages *[of `process launch`]*. To discover the full extent of *[`process launch`'s]* powers, you can consult it's manual page, type: `h pr la` - end note]</small>*
 
+> *Commands for attaching to a [running] program (process):*
+>
+> Attach
+> : Take over control a process (program), for debugging – at whatever point in its *[the program's]* execution it currently is (or has-reached).
+
+
+-	***To attach to a *[running]* program (process):***
+
+	> *Command:*
+	>
+	> ```shell
+	> process attach [-p <pid>]
+	> process attach [-w] [-n <process-name>]
+	> ```
+	>
+	> *Option(s):*
+	>
+	> ```shell
+	> -n <process-name> ( --name <process-name> )
+	>	The name of the process to attach to.
+	>
+	> -p <pid> ( --pid <pid> )
+	>	The process ID of an existing process to attach to.
+	>
+	> -w ( --waitfor )
+	>	Wait for the process with <process-name> to launch.
+	>```
+	>
+	> *Example(s)*:
+	> ```shell
+	> (lldb) process attach --pid 123
+	> (lldb) pr a -p 123
+	>
+	> (lldb) process attach --name a.out
+	> (lldb) pr a -n a.out
+	>
+	> (lldb) process attach --name a.out --waitfor
+	> (lldb) pr a -w -n a.out
+	> ```
+	>
+	> > *"You can also attach to a process by process ID (`pid`) or process name (e.g. `a.out`). When attaching to a process by name, `lldb` also supports the `-–waitfor` option which waits for the next process that has that name to show up, and attaches to it."*
+
 
 TODO: demo
+
 
 <br>
 <br>
@@ -897,7 +943,7 @@ TODO: demo
 
 
 ---
-[🏠](#contents) | [⬅️](#35-run-program) | [➡️](#37-examine-execution)
+[🏠](#contents) | [⬅️](#35-start-or-attach-program) | [➡️](#37-examine-execution)
 ## 3.6. Graphical User Interface (GUI)
 <small>`[Search Tags: >]`</small>
 <br>
