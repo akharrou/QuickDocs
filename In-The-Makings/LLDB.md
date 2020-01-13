@@ -371,17 +371,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***Example(s):***
 	> - *[from]* Outside `lldb`:
-	> ```shell
-	> $> lldb --file a.out "arg1" "arg2" "youGetIt"
-	> $> lldb -f a.out "arg1" "arg2" "youGetIt"
-	> $> lldb a.out
-	> ```
+	> 	```shell
+	> 	$> lldb --file a.out "arg1" "arg2" "youGetIt"
+	> 	$> lldb -f a.out "arg1" "arg2" "youGetIt"
+	> 	$> lldb a.out
+	> 	```
 	> - *[from]* Inside `lldb`:
-	> ```
-	> (lldb) target create a.out
-	> (lldb) ta cr a.out
-	> (lldb) file a.out
-	> ```
+	> 	```
+	> 	(lldb) target create a.out
+	> 	(lldb) ta cr a.out
+	> 	(lldb) file a.out
+	> 	```
 
 <!--
 	- ***From outside [`lldb`]:***
