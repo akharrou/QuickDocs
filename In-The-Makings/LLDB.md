@@ -343,7 +343,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	`lldb` must *[then]* be informed of which program we intend to debug – this is the step that is referred to as ***"loading a program"*** . <br>
+-	`lldb` must *[then]* be informed of which program we intend to debug – this step is referred to as: ***"loading a program"*** . <br>
 
 	More precisely, with the technical terms, we say – we are setting `lldb` up to target a specific program, for debugging/examination-phase.
 
