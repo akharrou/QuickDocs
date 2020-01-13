@@ -390,15 +390,33 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To load a program [into `lldb`]*** ; *(i.e set `lldb` up to target a specific program [for debugging/examination, when run])*:
 
-	> ***From outside [`lldb`]** (i.e before, and at the same time as, launch *[of `lldb`]* , on the *[terminal]* command prompt):*
-	>	```shell
-	>	$> lldb --file <program-execuable-name>
-	>	$> lldb -f <program-execuable>
-	>	$> lldb <program-execuable>
-	>	```
+	- ***From outside [`lldb`]** (i.e before, and at the same time as, launch *[of `lldb`]* , on the *[terminal]* command prompt):*
 	>
+	> *Command:*
+	>
+	> ```shell
+	> lldb [-f <filename>] [<args> ...]
+	>
+	> -f, --file <filename>
+	> 	Specifies the executable file that lldb will be launching /
+	> 	attaching to.
+	> ```
+	>
+	> *Variations*:
+	> ```shell
+	> $> lldb --file <filename> [<args> ...]
+	> $> lldb -f <filename> [<args> ...]
+	> $> lldb <filename> [<args> ...]
+	> ```
+	>
+	> *Example*:
+	> ```shell
+	> $> lldb --file a.out "firstArgument" "2ndArgument" "youGetThePoint"
+	> $> lldb -f a.out "firstArgument" "2ndArgument" "youGetThePoint"
+	> $> lldb a.out "firstArgument" "2ndArgument" "youGetThePoint"
+	> ```
 
-	> ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
+	- ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
 	>	```shell
 	>	(lldb) target create <program-execuable>
 	>	(lldb) ta cr <program-execuable>
@@ -418,11 +436,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *<small>[Note:*
 >
+> -	lldb [-hvdexw] [-a arch] [-c core-file] [-l script-language] [-s lldb-commands] [-n process-name] [-p pid] [[--] <PROGRAM-ARG1> <PROGRAM-ARG2> ...]
+>
 > -	`file` is a [built-in] alias/abbreviation for `target create`, see `help file`
 >
 > -	`lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *[setup to be debugged]* as a ***"[debugger] target"*** – to avoid confusion.
 >
 > *- end note]</small>*
+
+
+<!-- ATTACHING TO A PROCESS
+
+
+
+     -n, --attach-name process-name
+             Specifies the name of a currently-running process to attach to.
+             (or the name of a process to wait for if -w is used.)
+
+     -w, --wait-for
+             When used in concert with -n process-name, indicates that lldb
+             should wait for a new process of that name to be started -- and
+             attach to it as early in the process-launch as possible.
+
+     -p, --attach-pid pid
+             Specifies a currently running process that lldb should attach to.
+
+
+
+-->
+
+
+
+
 
 
 <br>
