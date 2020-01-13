@@ -615,7 +615,7 @@ process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-
 	>
 	> 	- "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options." <br>
 	>
-	> *- end note]</small>*
+	> <br> *- end note]</small>*
 
 -	***List breakpoints:***
 
