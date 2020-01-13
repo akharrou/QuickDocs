@@ -416,13 +416,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***Demonstration:*** <br> <br>
 	![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
 
-*<small>[Note:*
-
--	`file` is a [built-in] alias/abbreviation for `target create`, see `help file`
-
--	`lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *[setup to be debugged]* as a ***"[debugger] target"*** – to avoid confusion.
-
-<br> *- end note]</small>*
+> *<small>[Note:*
+>
+> -	`file` is a [built-in] alias/abbreviation for `target create`, see `help file`
+>
+> -	`lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *[setup to be debugged]* as a ***"[debugger] target"*** – to avoid confusion.
+>
+> <br> *- end note]</small>*
 
 
 <br>
