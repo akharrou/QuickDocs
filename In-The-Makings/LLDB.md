@@ -300,7 +300,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> $> gcc source.c -g -fsanitize=address -fsanitize=undefined
 	> ```
 	>
-	> – add it *[the sanitizer's corresponding [enabler] flag]* to the compilation step. The shown above *[command]*, adds/activates the *[runtime checks of the]* *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
+	> – add it *[the sanitizer's corresponding [enabler] flag]* to the compilation step. <br>
+
+		The shown above *[command]*, adds/activates the *[runtime checks of the]* *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
 	>
 	> *<small>[Note:* It is not possible to combine the following sanitizers: *"`-fsanitize=address`"*, *"`-fsanitize=thread`"*, and *"`-fsanitize=memory`"*, at the same time. *- end note]*
 	>
