@@ -391,38 +391,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***To load a program [into `lldb`]*** ; *(i.e set `lldb` up to target a specific program [for debugging/examination, when run])*:
 
 	- ***From outside [`lldb`]** (i.e before, and at the same time as, launch *[of `lldb`]* , on the *[terminal]* command prompt):*
-	>
-	> *Command:*
-	>
-	> ```shell
-	> lldb [-f <filename>] [<args> ...]
-	>
-	> -f, --file <filename>
-	> 	Specifies the executable file that lldb will be launching /
-	> 	attaching to.
-	> ```
-	>
-	> *Variations*:
-	> ```shell
-	> $> lldb --file <filename> [<args> ...]
-	> $> lldb -f <filename> [<args> ...]
-	> $> lldb <filename> [<args> ...]
-	> ```
-	>
-	> *Example*:
-	> ```shell
-	> $> lldb --file a.out "firstArgument" "2ndArgument" "youGetThePoint"
-	> $> lldb -f a.out "firstArgument" "2ndArgument" "youGetThePoint"
-	> $> lldb a.out "firstArgument" "2ndArgument" "youGetThePoint"
-	> ```
+		>
+		> *Command:*
+		>
+		> ```shell
+		> lldb [-f <filename>] [<args> ...]
+		>
+		> -f, --file <filename>
+		> 	Specifies the executable file that lldb will be launching /
+		> 	attaching to.
+		> ```
+		>
+		> *Variations*:
+		> ```shell
+		> $> lldb --file <filename> [<args> ...]
+		> $> lldb -f <filename> [<args> ...]
+		> $> lldb <filename> [<args> ...]
+		> ```
+		>
+		> *Example*:
+		> ```shell
+		> $> lldb --file a.out "firstArgument" "2ndArgument" "youGetThePoint"
+		> $> lldb -f a.out "firstArgument" "2ndArgument" "youGetThePoint"
+		> $> lldb a.out "firstArgument" "2ndArgument" "youGetThePoint"
+		> ```
 
 	- ***From inside [`lldb`]** (i.e after launch *[of `lldb`]*, on the `lldb` prompt):*
-	>	```shell
-	>	(lldb) target create <program-execuable>
-	>	(lldb) ta cr <program-execuable>
-	>	(lldb) file <program-execuable>
-	>	```
-	>
+		>	```shell
+		>	(lldb) target create <program-execuable>
+		>	(lldb) ta cr <program-execuable>
+		>	(lldb) file <program-execuable>
+		>	```
+		>
 
 -	***To un-load a program [from `lldb`]:***
 
