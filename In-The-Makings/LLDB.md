@@ -390,12 +390,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) a.out
+		> (lldb) target create a.out
+		> (lldb) ta cr a.out
+		> (lldb) ta c a.out
+		> (lldb) file a.out
 		> ```
 		>
 		> *<small>[Note:*
 		>
 		> - "[...] from **inside** [`lldb`]"; i.e after launch *[of `lldb`]*, on the `lldb` prompt [on the [`lldb`] command prompt].
+		>
+		> -	`file` is a [built-in] alias/abbreviation for `target create`, see `help file`.
+		>
+		> -	`lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *(i.e setup to be debugged/examined)* as a ***"[debugger] target"*** – to avoid confusion.
 		>
 		> *- end note]</small>*
 
@@ -410,18 +417,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***Demonstration:*** <br> <br>
 	![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif -->
-
-> *<small>[Note:*
->
-> - For more info: `man lldb`, `help process launch`.
->
-> -	`file` is a [built-in] alias/abbreviation for `target create`, see `help file`
->
-> -	`lldb`'s lexicon refers to an ***"[executable] program"*** who is loaded *[setup to be debugged]* as a ***"[debugger] target"*** – to avoid confusion.
->
-> *- end note]</small>*
-
-process launch [-s] [-A <boolean>] [-p <plugin>] [-w <directory>] [-a <arch>] [-v <none>] [-c[<filename>]] [-i <filename>] [-o <filename>] [-e <filename>] [<run-args>]
 
 > *<small>[Note:*
 >
