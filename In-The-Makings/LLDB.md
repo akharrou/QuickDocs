@@ -359,11 +359,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ***Synopsis:***
 	>
+	> - [From] outside `lldb`:
 	> 	```shell
-	> 	$> lldb [--file|-f] <program-execuable-filename> [<run-args>]       # [from] outside lldb
+	> 	$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
 	>	```
+	> - [From] inside `lldb`:
 	> 	```shell
-	> 	(lldb) target create <program-execuable-filename>                   # [from] inside lldb
+	> 	(lldb) target create <program-execuable-filename>
 	> 	```
 	>
 	> ***Example(s):***
