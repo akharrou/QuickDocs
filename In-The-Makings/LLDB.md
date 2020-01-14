@@ -559,8 +559,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
 	> ```
 	> ```shell
-	> (lldb) breakpoint modify --condition 'my_var == 42' 3      # set this condition to the breakpoint of id: 3
-	> (lldb) br m -c 'my_var < 42' 4 2 8                         # set this condition, to these breakpoints, the breakpoint of id 4, 2 abd 8.
+	> (lldb) breakpoint modify --condition 'my_var == 42' 3      # set condition, to the breakpoint of id: 3
+	> (lldb) br m -c 'my_var < 42' 4 2 8                         # set condition, to these breakpoints [the breakpoints of id 4, 2 and 8].
 	> ```
 	> ```shell
 	> (lldb) breakpoint set -n baz -N controlFlow     # set a breakpoint, who can be identified as being a 'controlFlow' breakpoint.
