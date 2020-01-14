@@ -353,28 +353,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To load a program [into `lldb`]:***
 
-	> ***Synopsis:***
-	>
-	> - ***[From] outside `lldb`:*** <br> <br>
-	> 	```shell
-	> 	$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
-	> 	```
-	> 	```shell
-	> 	$> lldb --file a.out "arg1" "arg2" "youGetIt"
-	> 	$> lldb -f a.out "arg1" "arg2" "youGetIt"
-	> 	$> lldb a.out
-	> 	```
-	> - ***[From] inside `lldb`:*** <br> <br>
-	> 	```shell
-	> 	(lldb) target create <program-execuable-filename>
-	> 	```
-	> 	```shell
-	> 	(lldb) target create a.out
-	> 	(lldb) ta cr a.out
-	> 	(lldb) file a.out
-	> 	```
+	<!-- - *[From] outside `lldb`:* <br> <br>
+		```shell
+		$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
+		```
+		```shell
+		$> lldb --file a.out "arg1" "arg2" "youGetIt"
+		$> lldb -f a.out "arg1" "arg2" "youGetIt"
+		$> lldb a.out
+		```
+	- *[From] inside `lldb`:* <br> <br>
+		```shell
+		(lldb) target create <program-execuable-filename>
+		```
+		```shell
+		(lldb) target create a.out
+		(lldb) ta cr a.out
+		(lldb) file a.out
+		``` -->
 
-<!--
+
 	- ***From outside [`lldb`]:***
 
 		> ***Synopsis:***
@@ -404,7 +402,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		> (lldb) ta cr a.out
 		> (lldb) ta c a.out
 		> (lldb) file a.out
-		> ``` -->
+		> ```
 
 -	***To un-load a program [from `lldb`]:***
 
