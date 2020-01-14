@@ -596,9 +596,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > **Know that** *--* *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options." – [LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
 
-> **Note** *--* *I will refer to options that are not conditions or commands as: "`attributes`", e.g.: hit-count, auto-continue, etc…*
+> **Note** *--* *We'll refer to options that are neither [breakpoint] conditions or [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…*
 
--	***Set breakpoint options** (e.g. conditions, comamnds, qualifiers):*
+-	***Set breakpoint options** (e.g. conditions, comamnds, attributes):*
 
 	> ***Conditions:***
 	> ```shell
@@ -641,16 +641,31 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	Set the breakpoint on exception throW.
 	> ```
 
+-	***Set breakpoint, for multi-threaded processes:***
+	>
+	> ***Synopsis:***
 	> ```shell
-	> -T <thread-name> ( --thread-name <thread-name> )
-	>	The breakpoint stops only for the thread whose 'thread-name' matches.
+	> (lldb) breakpoint set ... --thread-name  <thread-name>
+	> (lldb)   "   "            --thread-id    <thread-id>
+	> (lldb)   "   "            --thread-index <thread-index>
+	> ```
+	> ```
+	> (lldb) br s ... -T <thread-name>
+	> (lldb)  "   "   -t <thread-id>
+	> (lldb)  "   "   -x <thread-index>
+	> ```
 	>
-	> -t <thread-id> ( --thread-id <thread-id> )
-	>	" " whose 'TID' matches.
+	>  > The breakpoint stops only for the thread whose `<name | id | index> `matches.
 	>
-	> -x <thread-index> ( --thread-index <thread-index> )
-	>	" " whose 'index' matches.
-	>```
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set
+	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
+	> ```
+	> ```shell
+	> (lldb) breakpoint modify --condition 'my_var == 42' 3
+	> (lldb) br m -c 'my_var < 42' 4 2 8
+	> ```
 
 	> ***Example(s):***
 	> ```shell
