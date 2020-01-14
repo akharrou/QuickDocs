@@ -559,13 +559,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
 	> ```
 	> ```shell
-	> (lldb) breakpoint modify --condition 'my_var == 42' 3      # set condition, to the breakpoint of id: 3
-	> (lldb) br m -c 'my_var < 42' 4 2 8                         # set condition, to these breakpoints [the breakpoints of id 4, 2 and 8].
+	> (lldb) breakpoint modify --condition 'my_var == 42' 3
+	> (lldb) br m -c 'my_var < 42' 4 2 8
 	> ```
+	>
+	> > *To clarify – in the first command we set condition, only to the breakpoint that is of breakpoint-ID: 3. In the second command we add the same condition, but to all breakpoints found in the list of breakpoint-IDs; [the breakpoints of ID: 4, 2 and 8].*
+	>
 	> ```shell
-	> (lldb) breakpoint set -n baz -N controlFlow     # set a breakpoint, who can be identified as being a 'controlFlow' breakpoint.
-	> (lldb) br m -c 'my_var > 42' -N controlFlow     # add a condition to all breakpoints that can be identified as `controlFlow` [breakpoints].
+	> (lldb) breakpoint set -n baz -N controlFlow
+	> (lldb) br m -c 'my_var > 42' -N controlFlow
 	> ```
+	>
+	> > *To clarify – we set a breakpoint, then we add to the list of names, of that breakpoint, the name: 'controlFlow'. Following that we add a condition to all the breakpoints that have the name: `controlFlow` [added to their list of names].*
 
 -	***Set a breakpoint command:***
 
