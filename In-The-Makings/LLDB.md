@@ -521,6 +521,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> br s -n <function-name>
 	> b <function-name>
 	> ```
+	> > *C++ Methods:*
+	> > ```
+	> > breakpoint set --method <method-name>
+	> > ```
 	>
 	> ***Example(s):***
 	> ```shell
@@ -545,7 +549,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) b hello.c:10
 	> ```
 
--	***Set a breakpoint condition:***
+-	***Set a breakpoint options (conditions, commands, --one-shot, --auto-continue, ...):***
 
 	> ***Synopsis:***
 	> ```shell
@@ -571,14 +575,44 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 	>
 	> > *To clarify – the first command sets a breakpoint, on the function of name `baz`, then adds to the list of names, of that breakpoint, the name: `"controlFlow"`. Following that, the second command, adds a condition to all the breakpoints that have the name: `"controlFlow"` [added to their list of names].*
+	>
+	> This suffers from the problem that when new breakpoints get added, they don’t pick up these modifications, and the options only exist in the context of actual breakpoints, so they are hard to store & reuse.
+
+	> A even better solution is to make a fully configured breakpoint name:
+	>
+	> ```shell
+	> (lldb) breakpoint name configure <breakpt-options> <breakpt-name>
+	> ```
+	>
+	> ```shell
+	> (lldb) breakpoint name configure -c "my_var > 42" -C bt --auto-continue 'controlFlow'
+	> ```
+	>
+	> Then you can apply the name to your breakpoints, and they will all pick up these options. The connection from name to breakpoints remains live, so when you change the options configured on the name, all the breakpoints pick up those changes.
 
 -	***Set a breakpoint command:***
+
+	> ```
+	> breakpoint command add <cmd-options> <breakpt-id>
+	> ```
 
 	> ***Synopsis:***
 	> ```
 	> breakpoint command add <cmd-options> <breakpt-id>
 	> ```
 	>
+	> ```shell
+	> -C <command> ( --command <command> )
+	>	A command to run when the breakpoint is hit, can be provided more than once, the commands will get run in order left to right.
+	>
+	> -G <boolean> ( --auto-continue <boolean> )
+	>	The breakpoint will auto-continue after running its commands.
+	>
+	> -o <boolean> ( --one-shot <boolean> )
+	>	The breakpoint is deleted the first time it stop causes a stop.
+	> ```
+
+
 	> ***Example(s):***
 	> ```
 	> (lldb) b main
@@ -593,12 +627,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) breakpoint set --name main
 	> (lldb) breakpoint modify -c '' TODO : adding commands to breakpoints
 	> ```
-
-	> *<small>[Note:*
-	>
-	> 	- *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options."* <br>
-	>
-	> <br> *- end note]</small>*
 
 -	***List breakpoints:***
 
@@ -635,6 +663,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```shell
 	> breakpoint set [-w <watch-type>] [-s <byte-size>] <variable-name> breakpoint set [-DHd] -l <linenum> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] [-m <boolean>] breakpoint set [-DHd] -a <address-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-N <breakpoint-name>] breakpoint set [-DHd] -n <function-name> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -F <fullname> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -S <selector> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -M <method> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -r <regular-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>]
 	> ```
+
+> *<small>[Note:*
+>
+> 	- *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options."*
+>
+> <br> *- end note]</small>*
 
 
 <br>
