@@ -578,54 +578,34 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> This suffers from the problem that when new breakpoints get added, they don’t pick up these modifications, and the options only exist in the context of actual breakpoints, so they are hard to store & reuse.
 
-	> A even better solution is to make a fully configured breakpoint name:
+	> ***Create a fully configured breakpoint name***:
 	>
+	> ***Synopsis:***
 	> ```shell
 	> (lldb) breakpoint name configure <breakpt-options> <breakpt-name>
 	> ```
 	>
+	> ***Example(s):***
 	> ```shell
 	> (lldb) breakpoint name configure -c "my_var > 42" -C bt --auto-continue 'controlFlow'
 	> ```
 	>
 	> Then you can apply the name to your breakpoints, and they will all pick up these options. The connection from name to breakpoints remains live, so when you change the options configured on the name, all the breakpoints pick up those changes.
 
--	***Set a breakpoint command:***
+-	***Breakpoint Options:***
 
-	> ```
-	> breakpoint command add <cmd-options> <breakpt-id>
-	> ```
-
-	> ***Synopsis:***
-	> ```
-	> breakpoint command add <cmd-options> <breakpt-id>
-	> ```
-	>
 	> ```shell
 	> -C <command> ( --command <command> )
 	>	A command to run when the breakpoint is hit, can be provided more than once, the commands will get run in order left to right.
+	>
+	> -c <condition-expr> ( --condition <condition-expr> )
+	>	The breakpoint stops only if this condition expression evaluates to true.
 	>
 	> -G <boolean> ( --auto-continue <boolean> )
 	>	The breakpoint will auto-continue after running its commands.
 	>
 	> -o <boolean> ( --one-shot <boolean> )
 	>	The breakpoint is deleted the first time it stop causes a stop.
-	> ```
-
-
-	> ***Example(s):***
-	> ```
-	> (lldb) b main
-	>
-	> (lldb) breakpoint list -b
-	> Current breakpoints:
-	> 1: name = 'main', locations = 1
-	>
-	> (lldb) breakpoint command add `<command>` 1
-	> ```
-	> ```
-	> (lldb) breakpoint set --name main
-	> (lldb) breakpoint modify -c '' TODO : adding commands to breakpoints
 	> ```
 
 -	***List breakpoints:***
@@ -638,9 +618,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint list -v           # --verbose
-	> (lldb) br l -f                      # --full
-	> (lldb) br l -b                      # --brief
+	> (lldb) breakpoint list -b           # --brief    (least description)
+	> (lldb) br l -f                      # --full     (default description)
+	> (lldb) br l -v                      # --verbose  (extensive description)
 	> ```
 
 -	***Delete breakpoint(s):***
