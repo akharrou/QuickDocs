@@ -429,13 +429,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *<small>[Note:*
 >
-> - "from **outside** *[`lldb`]*"; i.e before, and at the same time as, launch [of `lldb`] [, on the *[terminal]* command prompt].
+> - "from **outside** *[`lldb`]*"; i.e before, and at the same time as, launch *[of `lldb`] [, on the *[terminal]* command prompt]*.
 >
-> - "from **inside** *[`lldb`]*"; i.e after launch *[of `lldb`]* [, on the 	*[`lldb`]* command prompt].
+> - "from **inside** *[`lldb`]*"; i.e after launch *[of `lldb`]* *[, on the 	*[`lldb`]* command prompt]*.
 >
-> - `[<run-args>]` represents the argument(s) that you pass to a program.
+> - *`[<run-args>]`* represents the argument(s) that you pass to a program.
 >
-> -	`file` is an (built-in) alias/abbreviation for `target create`, see `help file`.
+> -	`file` is an *(built-in)* alias/abbreviation for `target create`, see `help file`.
 >
 > -	To load/debug Python *[scripts]*:
 >
@@ -524,6 +524,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> > *C++ Methods:*
 	> > ```
 	> > breakpoint set --method <method-name>
+	> > breakpoint set -M <method-name>
 	> > ```
 	>
 	> ***Example(s):***
@@ -549,7 +550,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) b hello.c:10
 	> ```
 
--	***Set a breakpoint options (conditions, commands, --one-shot, --auto-continue, ...):***
+-	***Set a breakpoint options (conditions, comamnds, ...):***
 
 	> ***Synopsis:***
 	> ```shell
@@ -578,7 +579,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> This suffers from the problem that when new breakpoints get added, they don’t pick up these modifications, and the options only exist in the context of actual breakpoints, so they are hard to store & reuse.
 
-	> ***Create a fully configured breakpoint name***:
+	***Create a configured breakpoint name***:
 	>
 	> ***Synopsis:***
 	> ```shell
