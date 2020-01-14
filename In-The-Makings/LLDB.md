@@ -359,7 +359,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ***Synopsis:***
 	>
-	> - [From] outside `lldb`: <br>
+	> - [From] outside `lldb`: <br> <br>
 	> 	```shell
 	> 	$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
 	> 	```
@@ -368,7 +368,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> 	$> lldb -f a.out "arg1" "arg2" "youGetIt"
 	> 	$> lldb a.out
 	> 	```
-	> - [From] inside `lldb`: <br>
+	> - [From] inside `lldb`: <br> <br>
 	> 	```shell
 	> 	(lldb) target create <program-execuable-filename>
 	> 	```
