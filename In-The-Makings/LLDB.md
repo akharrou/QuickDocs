@@ -344,7 +344,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> More pedantically, we say – we are ***loading*** *[`lldb` with]* a ***debugger target***, i.e setting `lldb` up to target a specific process *(program)*, for debugging/examination-phase.
 	>
-	> *<small>[Note: `lldb`'s lexicon for an ***"[executable] program intended for debugging"*** is a ***"[debugger] target"*** – to avoid confusion. - end note]</small>*
+	> *<small>[Note: `lldb`'s lexicon for an ***"[executable] program intended for debugging"*** is a ***"[debugger] target"***. - end note]</small>*
 
 -	***Demonstration:*** <br>
 	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif --> <br>
@@ -374,7 +374,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		``` -->
 
 
-	***From outside [`lldb`]:***
+	*From outside [`lldb`]:*
 
 	> ***Synopsis:***
 	>
@@ -389,7 +389,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> $> lldb a.out
 	> ```
 
-	***From inside [`lldb`]:***
+	*From inside [`lldb`]:*
 
 	> ***Synopsis:***
 	>
