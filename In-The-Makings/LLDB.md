@@ -379,7 +379,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> > ***Synopsis:***
 	> >
 	> > ```shell
-	> > $> lldb [--file|-f] <program-execuable-filename> [<run-args>]
+	> > $> lldb --file <program-execuable-filename> [<run-args>]
 	> > ```
 	> >
 	> > ***Example(s):***
@@ -411,7 +411,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ```shell
 	> (lldb) target delete [<target-id | target-id-list>]
-	> (lldb) target delete [--all|-a]
+	> (lldb) target delete [--all]
 	> ```
 	>
 	> ***Example(s):***
@@ -419,6 +419,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) target delete 3       # delete the target with `target-id`: #3
 	> (lldb) tar del 7 5 2         # delete the list of targets: #7 #5 #2
 	> (lldb) ta de --all           # delete all targets
+	> (lldb) ta d -a               # delete all targets
 	> ```
 
 > *<small>[Note:*
@@ -512,7 +513,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ```shell
 	> breakpoint set --name <function-name>
-	> br s -n <function-name>
 	> b <function-name>
 	> ```
 	>
@@ -528,7 +528,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	> ```shell
 	> breakpoint set --file <filename> --line <line-number>
-	> br s -f <filename> -l <line-number>
 	> b <filename>:<line-number>
 	>```
 	>
@@ -544,13 +543,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	>
 	> ```shell
-	> breakpoint list -[bfv] [<breakpt-id | breakpt-id-list>]
+	> breakpoint list -[bfv] [<breakpt-ids>]
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint list -b           # --brief    (least description)
-	> (lldb) br l -f                      # --full     (default description)
+	> (lldb) breakpoint list -b 3 2       # --brief    (minimum description)
+	> (lldb) br l -f 1                    # --full     (default description)
 	> (lldb) br l -v                      # --verbose  (extensive description)
 	> ```
 
@@ -559,16 +558,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	>
 	> ```shell
-	> breakpoint delete [<breakpt-id | breakpt-id-list>]
+	> breakpoint delete [<breakpt-ids>]
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint delete 1 2 3      # breakpt-id-list
-	> (lldb) br de 5                      # breakpt-id
+	> (lldb) breakpoint delete 5
+	> (lldb) br de 1 2 3
+	> (lldb) br d                        # delete all breakpts
 	> ```
 	>
-	> *<small>[Note: If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all. - end note]</small>*
+	> *<small>[Note:
+	>
+	> - If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all.
+	>
+	> - `lldb` deletes breakpoints of a particular target, automatically when the target is deleted.
+	>
+	> *- end note]</small>*
 
 <br>
 
@@ -583,7 +589,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ```shell
 	> breakpoint set --func-regex <regular-expression>
-	> br s -r <regular-expression>
 	> ```
 	>
 	> ***Example(s):***
@@ -603,12 +608,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Conditions:***
 	> ```shell
 	> breakpoint set ... [--condition <condition-expr>]
-	> breakpoint set ... [-c <condition-expr>]
-	> breakpoint modify  [-c <condition-expr>] [<breakpt-id-list | breakpt-name-list>]
+	> breakpoint modify  [--condition <condition-expr>] [<breakpt-ids | breakpt-name>]
 	>```
 	> ```shell
-	> ... --condition '(int)strcmp(y,"hello") == 0'
-	> ... -c '(int)strcmp(y,"hello") == 0'
+	> (lldb) breakpoint set --file main.c --line 15 --condition 'argc < 2'
+	> (lldb) br s -n bar -c 'res < 0'
+	> (lldb) b baz -c '(int) strcmp(y, "hello") == 0'
 	> ```
 	> ```shell
 	> (lldb) breakpoint modify --condition 'my_var == 42' 3
@@ -643,23 +648,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***Set breakpoint, for multi-threaded processes:***
 	>
-	>  > The breakpoint stops only for the thread whose `<name | id | index> `matches.
+	>  > The breakpoint stops only for the thread whose *`<name | id | index>`* matches.
 	>
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint set ... --thread-name  <thread-name>
-	> (lldb)   "   "            --thread-id    <thread-id>
-	> (lldb)   "   "            --thread-index <thread-index>
-	> ```
-	> ```
-	> (lldb) br s ... -T <thread-name>
-	> (lldb)  "   "   -t <thread-id>
-	> (lldb)  "   "   -x <thread-index>
+	> (lldb) breakpoint set ... [ -T or --thread-name  <thread-name>  ]
+	> (lldb)   "   "            [ -t or --thread-id    <thread-id>    ]
+	> (lldb)   "   "            [ -x or --thread-index <thread-index> ]
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint set
+	> (lldb) br s -r 'Parser.+_Response' -t
 	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
 	> ```
 	> ```shell
@@ -693,7 +693,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	> ```shell
 	> breakpoint set ... [-c <condition-expr>] [-C <lldb-command>] [-N <breakpt-name>]
-	> breakpoint modify [-c <condition-expr>] [-C <lldb-command>] [<breakpt-id | breakpt-list | breakpt-name>]
+	> breakpoint modify [-c <condition-expr>] [-C <lldb-command>] [<breakpt-ids | breakpt-name>]
 	>```
 	>
 	> ***Example(s):***
