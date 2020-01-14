@@ -384,7 +384,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Example(s):***
 	> ```shell
 	> $> lldb --file a.out "arg1" "arg2"
-	> $> lldb -f a.out "arg1" "arg2"
+	> $> lldb -f a.out
 	> $> lldb a.out
 	> ```
 
@@ -514,11 +514,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> br s -n <function-name>
 	> b <function-name>
 	> ```
-	> > *C++ Methods:*
-	> > ```
-	> > breakpoint set --method <method-name>
-	> > breakpoint set -M <method-name>
-	> > ```
 	>
 	> ***Example(s):***
 	> ```shell
@@ -641,6 +636,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > *<small>[Note:*
 >
 > 	- *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options."*
+>
+> - *C++ Methods:*
+> 	```
+> 	breakpoint set --method <method-name>
+> 	breakpoint set -M <method-name>
+> 	```
 >
 > <br> *- end note]</small>*
 
