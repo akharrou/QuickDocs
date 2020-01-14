@@ -511,7 +511,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	>
 	> ```shell
-	> breakpoint set --name <function-name>
+	> breakpoint set --name <function-name>             # finds the function
 	> br s -n <function-name>
 	> b <function-name>
 	> ```
@@ -577,8 +577,64 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 <br>
 
-> **Know that** *--* *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options." – [LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
+-	***Set a breakpoint, on a function(s)** (using regular-expressions):*
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> breakpoint set --func-regex <regular-expression>
+	> breakpoint set -r <regular-expression>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --func-regex "Parser.+_Command"
+	> (lldb) br s -r  "Parser.+_Command"
+	> ```
+
 <br>
+
+> **Know that** *--* *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options." – [LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
+
+<br>
+
+-	***Set a breakpoint options** (e.g. conditions, comamnds, qualifiers):*
+
+	> ***Conditions:***
+	> ```shell
+	> breakpoint set ... [-c <condition-expr>]
+	>```
+	>
+	> ***Commands:***
+	> ```shell
+	> breakpoint set ... [-C <lldb-command>]
+	>```
+	>
+	> ***Attributes:***
+	> ```shell
+	> breakpoint set ... [-i <lldb-command>]
+	>```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --name foo --condition '(int)strcmp(y,"hello") == 0'
+	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
+	> ```
+	> ```shell
+	> (lldb) breakpoint modify --condition 'my_var == 42' 3
+	> (lldb) br m -c 'my_var < 42' 4 2 8
+	> ```
+	>
+	> > *To clarify – the first command sets a condition to (only) the breakpoint that has the breakpoint-ID: `3`. The second command adds a condition, to all breakpoints found in the list of breakpoint-IDs [the breakpoints of ID: `4`, `2` and `8`].*
+	>
+	> ```shell
+	> (lldb) breakpoint set -n baz -N controlFlow
+	> (lldb) br m -c 'my_var > 42' -N controlFlow
+	> ```
+	>
+	> > *To clarify – the first command sets a breakpoint, on the function of name `baz`, then adds to the list of names, of that breakpoint, the name: `"controlFlow"`. Following that, the second command, adds a condition to all the breakpoints that have the name: `"controlFlow"` [added to their list of names].*
+	>
+	> This suffers from the problem that when new breakpoints get added, they don’t pick up these modifications, and the options only exist in the context of actual breakpoints, so they are hard to store & reuse.
 
 -	***Set a breakpoint options** (e.g. conditions, comamnds, ...):*
 
@@ -614,6 +670,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	> ```shell
 	> (lldb) breakpoint name configure <breakpt-options> <breakpt-name>
+	> (lldb) breakpoint name configure <breakpt-condition> <breakpt-command> <breakpt-other-options> <breakpt-name>
 	> ```
 	>
 	> ***Example(s):***
@@ -637,12 +694,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> -o <boolean> ( --one-shot <boolean> )
 	>	The breakpoint is deleted the first time it stop causes a stop.
+	>
+	> -h <boolean> ( --on-catch <boolean> )
+	>	Set the breakpoint on exception catcH.
+	>
+	> -w <boolean> ( --on-throw <boolean> )
+	>	Set the breakpoint on exception throW.
 	> ```
 
--	***Way more to discover:***
 	> ```shell
-	> breakpoint set [-w <watch-type>] [-s <byte-size>] <variable-name> breakpoint set [-DHd] -l <linenum> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] [-m <boolean>] breakpoint set [-DHd] -a <address-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-N <breakpoint-name>] breakpoint set [-DHd] -n <function-name> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -F <fullname> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -S <selector> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -M <method> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -r <regular-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>]
+	> -T <thread-name> ( --thread-name <thread-name> )
+	>	The breakpoint stops only for the thread whose thread name matches this argument.
+	>
+	> -t <thread-id> ( --thread-id <thread-id> )
+	>	The breakpoint stops only for the thread whose TID matches this argument.
+	>
+	> -x <thread-index> ( --thread-index <thread-index> )
+	>	The breakpoint stops only for the thread whose index matches this argument.
 	> ```
+
 
 > *<small>[Note:*
 >
@@ -652,7 +722,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > 	breakpoint set -M <method-name>
 > 	```
 >
-> <br> *- end note]</small>*
+> - There is way more to discover:
+> ```shell
+> breakpoint set [-w <watch-type>] [-s <byte-size>] <variable-name> breakpoint set [-DHd] -l <linenum> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] [-m <boolean>] breakpoint set [-DHd] -a <address-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-N <breakpoint-name>] breakpoint set [-DHd] -n <function-name> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -F <fullname> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -S <selector> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -M <method> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -r <regular-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>]
+> ```
+>
+> *- end note]</small>*
 
 <br>
 <br>
