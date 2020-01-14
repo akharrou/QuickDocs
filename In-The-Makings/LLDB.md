@@ -550,7 +550,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	> ```shell
 	> breakpoint set ... [-c <condition-expr>] [-N <breakpt-name>]
-	> breakpoint modify [-c <condition-expr>] [<breakpt-id | watchpt-list | breakpt-name>]
+	> breakpoint modify [-c <condition-expr>] [<breakpt-id | breakpt-list | breakpt-name>]
 	>```
 	>
 	> ***Example(s):***
@@ -559,12 +559,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
 	> ```
 	> ```shell
-	> (lldb) breakpoint modify --condition 'my_var == 42' 4 2 8          # add a condition to the breakpoint having a the id: 3.
-	> (lldb) br m -c 'my_var < 42' 3                                     # add a condition to the breakpoint having a the id: 3.
+	> (lldb) breakpoint modify --condition 'my_var == 42' 4 2 8
+	> (lldb) br m -c 'my_var < 42' 3
 	> ```
 	> ```shell
 	> (lldb) breakpoint set -n baz -N controlFlow     # set a breakpoint, who can be identified as being a 'controlFlow' breakpoint.
-	> (lldb) br m -c 'my_var > 42' -N controlFlow     # add a condition to all breakpoints being identified as `controlFlow` [breakpoints].
+	> (lldb) br m -c 'my_var > 42' -N controlFlow     # add a condition to all breakpoints that can be identified as `controlFlow` [breakpoints].
 	> ```
 
 -	***Set a breakpoint command:***
