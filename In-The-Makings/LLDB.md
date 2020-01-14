@@ -340,9 +340,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	`lldb` must *[then]* be informed of which program we intend to debug – this step is referred to as: ***"loading a program"*** or ***"setting a debugger target"*** . <br>
+-	`lldb` must *[then]* be informed of which program we intend to debug – this step is referred to as: ***"loading a program"*** . <br>
 
-	> More pedantically, we say – we are ***loading*** *[`lldb` with]* a ***debugging target***, i.e setting `lldb` up to target a specific process *(program)*, for debugging/examination-phase.
+	> More pedantically, we say – we are ***loading*** *[`lldb` with]* a ***debugger target***, i.e setting `lldb` up to target a specific process *(program)*, for debugging/examination-phase.
 	>
 	> *<small>[Note: `lldb`'s lexicon for an ***"[executable] program intended for debugging"*** is a ***"[debugger] target"*** – to avoid confusion. - end note]</small>*
 
