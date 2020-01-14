@@ -383,8 +383,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> ***Example(s):***
 		> ```shell
-		> $> lldb --file a.out "arg1" "arg2" "youGetIt"
-		> $> lldb -f a.out "arg1" "arg2" "youGetIt"
+		> $> lldb --file a.out "arg1" "arg2"
+		> $> lldb -f a.out "arg1" "arg2"
 		> $> lldb a.out
 		> ```
 
@@ -398,7 +398,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) target create a.out      # setup lldb to debug the program 'a.out'
+		> (lldb) target create a.out
 		> (lldb) ta cr a.out
 		> (lldb) ta c a.out
 		> (lldb) file a.out
@@ -418,7 +418,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) target delete 3       # delete the target with `target-id`: #3
 	> (lldb) tar del 7 5 2         # delete the list of targets: #7 #5 #2
 	> (lldb) ta de --all           # delete all targets
-	> (lldb) ta d -a               # delete all targets
 	> ```
 
 > *<small>[Note:*
