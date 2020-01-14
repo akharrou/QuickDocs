@@ -239,10 +239,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Documentation | Clang | [Compiler :: Debug Options](https://clang.llvm.org/docs/UsersManual.html#controlling-debug-information)
-> | 2 | Documentation | Clang | [Compiler :: Documentation](https://clang.llvm.org/docs/UsersManual.html)
-> | 3 | Documentation | GNU | [Compiler :: Debug Options](https://gcc.gnu.org/onlinedocs/gcc-9.2.0/gcc/Debugging-Options.html#Debugging-Options)
-> | 4 | Documentation | GNU | [Compiler :: Documentation](https://gcc.gnu.org/onlinedocs/gcc-9.2.0/gcc/Debugging-Options.html#Debugging-Options)
+> | 1 | Manual Page | Unix / Linux / MacOS | `man clang`
+> | 2 | Documentation | Clang | [Compiler :: Debug Options](https://clang.llvm.org/docs/UsersManual.html#controlling-debug-information)
+> | 3 | Documentation | Clang | [Compiler :: Documentation](https://clang.llvm.org/docs/UsersManual.html)
+> | 4 | Documentation | GNU | [Compiler :: Debug Options](https://gcc.gnu.org/onlinedocs/gcc-9.2.0/gcc/Debugging-Options.html#Debugging-Options)
+> | 5 | Documentation | GNU | [Compiler :: Documentation](https://gcc.gnu.org/onlinedocs/gcc-9.2.0/gcc/Debugging-Options.html#Debugging-Options)
 
 
 ---
@@ -258,7 +259,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
-	> *<small>[Note: Adding the `-g` flag cause better (i.e more detailed) diagnostic messages to be produced [by the sanitizers], so keep it ! - end note]</small>*
+	> *<small>[Note: Adding the `-g` flag causes better (i.e more detailed) diagnostic messages to be produced [by the sanitizers], so keep it ! - end note]</small>*
 
 	Here are the ***available sanitizers***:
 
@@ -286,7 +287,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> $> gcc source.c -g -fsanitize=address -fsanitize=undefined
 	> ```
 	>
-	> – add it *[the sanitizer's corresponding [enabler] flag]* to the compilation step. <br>
+	> – add it *[the sanitizer's corresponding [enabler] flag]* to the compilation command. <br>
 	>
 	>	The shown above *[command]*, adds/activates the *[runtime checks of the]* *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
 	>
@@ -339,9 +340,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	`lldb` must *[then]* be informed of which program we intend to debug – this step is referred to as: ***"loading a program"*** . <br>
+-	`lldb` must *[then]* be informed of which program we intend to debug – this step is referred to as: ***"loading a program"*** or ***"setting a debugger target"*** . <br>
 
-	> More precisely, we say – we are ***loading*** *[`lldb` with]* a ***debugging target***, i.e setting `lldb` up to target a specific process *(program)*, for debugging/examination-phase.
+	> More pedantically, we say – we are ***loading*** *[`lldb` with]* a ***debugging target***, i.e setting `lldb` up to target a specific process *(program)*, for debugging/examination-phase.
 	>
 	> *<small>[Note: `lldb`'s lexicon for an ***"[executable] program intended for debugging"*** is a ***"[debugger] target"*** – to avoid confusion. - end note]</small>*
 
@@ -538,12 +539,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) b hello.c:10
 	> ```
 
--	***Set a breakpoint options (conditions, comamnds, ...):***
+-	***Set a breakpoint options** (e.g. conditions, comamnds, ...):*
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint set ... [-c <condition-expr>] [-N <breakpt-name>]
-	> breakpoint modify [-c <condition-expr>] [<breakpt-id | breakpt-list | breakpt-name>]
+	> breakpoint set ... [-c <condition-expr>] [-C <lldb-command>] [-N <breakpt-name>]
+	> breakpoint modify [-c <condition-expr>] [-C <lldb-command>] [<breakpt-id | breakpt-list | breakpt-name>]
 	>```
 	>
 	> ***Example(s):***
@@ -1092,5 +1093,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		but it takes time to get there, so how can you
 		run the code till it reaches 2 then go line by
 		line from there.
+
+	VSCODE Breakpoint Types:
+
+		Expression :: Break when expression evaluates to true.
+		Hit-Count  :: Log boolean when expression evaluates to true.
+		Logpoint   :: Log <Inputed-Message> when breakpoint is hit.
 
 ------------------------------------------------------------------------------->
