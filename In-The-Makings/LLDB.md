@@ -1,4 +1,4 @@
-<!-- ﷽ -->
+<!-- ﷽ , In the name of God, the Most Gracious, the Most Merciful. -->
 
 <!-- Metadata ------------------------------------------------------------------
 
@@ -14,7 +14,8 @@
 	DESCRIPTION
 		[Beginner to Intermediate Level] Tutorial on LLDB.
 
-------------------------------------------------------------------------------->
+
+<!-- Top Matter --------------------------------------------------------------->
 
 QuickDocs \| Low Level Debugger (LLDB)
 ===
@@ -23,10 +24,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 
 ---
 
-<!--
---------------------------------------------------------------------------------
-> Table of >Contents
--->
+<!-- Table of >Contents ------------------------------------------------------->
 
 # Contents
 
@@ -52,9 +50,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 
 ---
 
-<!--
---------------------------------------------------------------------------------
-> Start
+<!-- >Start --------------------------------------------------------------------
 .
 .
 .
@@ -359,7 +355,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ***Synopsis:***
 	>
-	> - [From] outside `lldb`: <br> <br>
+	> - ***[From] outside `lldb`:*** <br> <br>
 	> 	```shell
 	> 	$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
 	> 	```
@@ -368,7 +364,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> 	$> lldb -f a.out "arg1" "arg2" "youGetIt"
 	> 	$> lldb a.out
 	> 	```
-	> - [From] inside `lldb`: <br> <br>
+	> - ***[From] inside `lldb`:*** <br> <br>
 	> 	```shell
 	> 	(lldb) target create <program-execuable-filename>
 	> 	```
@@ -1084,9 +1080,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 
-<!--
---------------------------------------------------------------------------------
-> Notes:
+<!-- Notes ---------------------------------------------------------------------
 
 	- issue with lldb is it takes time to get back to the orginal point
 
@@ -1101,4 +1095,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		run the code till it reaches 2 then go line by
 		line from there.
 
--->
+------------------------------------------------------------------------------->
