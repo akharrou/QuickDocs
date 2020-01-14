@@ -539,6 +539,43 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) b hello.c:10
 	> ```
 
+-	***List breakpoints:***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> breakpoint list -[bfv] [<breakpt-id | breakpt-id-list>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint list -b           # --brief    (least description)
+	> (lldb) br l -f                      # --full     (default description)
+	> (lldb) br l -v                      # --verbose  (extensive description)
+	> ```
+
+-	***Delete breakpoint(s):***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> breakpoint delete [<breakpt-id | breakpt-id-list>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint delete 1 2 3      # breakpt-id-list
+	> (lldb) br de 5                      # breakpt-id
+	> ```
+	>
+	> *<small>[Note: If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all. - end note]</small>*
+
+---
+> *(More) Advanced commands for operating on breakpoints: (for advanced users)*
+
+*"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options." – [LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
+
+
 -	***Set a breakpoint options** (e.g. conditions, comamnds, ...):*
 
 	> ***Synopsis:***
@@ -598,45 +635,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	The breakpoint is deleted the first time it stop causes a stop.
 	> ```
 
--	***List breakpoints:***
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> breakpoint list -[bfv] [<breakpt-id | breakpt-id-list>]
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint list -b           # --brief    (least description)
-	> (lldb) br l -f                      # --full     (default description)
-	> (lldb) br l -v                      # --verbose  (extensive description)
-	> ```
-
--	***Delete breakpoint(s):***
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> breakpoint delete [<breakpt-id | breakpt-id-list>]
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint delete 1 2 3      # breakpt-id-list
-	> (lldb) br de 5                      # breakpt-id
-	> ```
-	>
-	> *<small>[Note: If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all. - end note]</small>*
-
 -	***Way more to discover:***
 	> ```shell
 	> breakpoint set [-w <watch-type>] [-s <byte-size>] <variable-name> breakpoint set [-DHd] -l <linenum> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] [-m <boolean>] breakpoint set [-DHd] -a <address-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-N <breakpoint-name>] breakpoint set [-DHd] -n <function-name> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -F <fullname> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -S <selector> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -M <method> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -r <regular-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>]
 	> ```
 
 > *<small>[Note:*
->
-> 	- *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options."*
 >
 > - *C++ Methods:*
 > 	```
@@ -645,7 +649,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > 	```
 >
 > <br> *- end note]</small>*
-
 
 <br>
 <br>
