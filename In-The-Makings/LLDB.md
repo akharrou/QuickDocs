@@ -643,6 +643,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***Set breakpoint, for multi-threaded processes:***
 	>
+	>  > The breakpoint stops only for the thread whose `<name | id | index> `matches.
+	>
 	> ***Synopsis:***
 	> ```shell
 	> (lldb) breakpoint set ... --thread-name  <thread-name>
@@ -654,8 +656,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb)  "   "   -t <thread-id>
 	> (lldb)  "   "   -x <thread-index>
 	> ```
-	>
-	>  > The breakpoint stops only for the thread whose `<name | id | index> `matches.
 	>
 	> ***Example(s):***
 	> ```shell
