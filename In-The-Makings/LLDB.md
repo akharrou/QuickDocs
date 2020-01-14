@@ -373,36 +373,36 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		``` -->
 
 
-	- ***From outside [`lldb`]:***
+	***From outside [`lldb`]:***
 
-		> ***Synopsis:***
-		>
-		> ```shell
-		> $> lldb [--file|-f] <program-execuable-filename> [<run-args>]
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> $> lldb --file a.out "arg1" "arg2"
-		> $> lldb -f a.out "arg1" "arg2"
-		> $> lldb a.out
-		> ```
+	> ***Synopsis:***
+	>
+	> ```shell
+	> $> lldb [--file|-f] <program-execuable-filename> [<run-args>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> $> lldb --file a.out "arg1" "arg2"
+	> $> lldb -f a.out "arg1" "arg2"
+	> $> lldb a.out
+	> ```
 
-	- ***From inside [`lldb`]:***
+	***From inside [`lldb`]:***
 
-		> ***Synopsis:***
-		>
-		> ```shell
-		> (lldb) target create <program-execuable-filename>
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> (lldb) target create a.out
-		> (lldb) ta cr a.out
-		> (lldb) ta c a.out
-		> (lldb) file a.out
-		> ```
+	> ***Synopsis:***
+	>
+	> ```shell
+	> (lldb) target create <program-execuable-filename>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) target create a.out
+	> (lldb) ta cr a.out
+	> (lldb) ta c a.out
+	> (lldb) file a.out
+	> ```
 
 -	***To un-load a program [from `lldb`]:***
 
