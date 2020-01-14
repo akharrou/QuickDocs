@@ -571,7 +571,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> *<small>[Note: If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all. - end note]</small>*
 
 <br>
-<br>
 
 ---
 > *(More) Advanced commands for operating on breakpoints: (for advanced users)*
