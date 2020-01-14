@@ -563,7 +563,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) br m -c 'my_var < 42' 4 2 8
 	> ```
 	>
-	> > *To clarify – in the first command we set condition, only to the breakpoint that is of breakpoint-ID: 3. In the second command we add the same condition, but to all breakpoints found in the list of breakpoint-IDs; [the breakpoints of ID: 4, 2 and 8].*
+	> > *To clarify – in the first command we set a condition only to the breakpoint that is of breakpoint-ID: 3. In the second command we add the same condition, but to all breakpoints found in the list of breakpoint-IDs; [the breakpoints of ID: 4, 2 and 8].*
 	>
 	> ```shell
 	> (lldb) breakpoint set -n baz -N controlFlow
