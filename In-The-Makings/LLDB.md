@@ -362,23 +362,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> - [From] outside `lldb`:
 	> 	```shell
 	> 	$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
-	>	```
+	> 	```
+	> 	```shell
+	> 	$> lldb --file a.out "arg1" "arg2" "youGetIt"
+	> 	$> lldb -f a.out "arg1" "arg2" "youGetIt"
+	> 	$> lldb a.out
+	> 	```
 	> - [From] inside `lldb`:
 	> 	```shell
 	> 	(lldb) target create <program-execuable-filename>
 	> 	```
-	>
-	> ***Example(s):***
-	> ```shell
-	> $> lldb --file a.out "arg1" "arg2" "youGetIt"
-	> $> lldb -f a.out "arg1" "arg2" "youGetIt"
-	> $> lldb a.out
-	> ```
-	> ```shell
-	> (lldb) target create a.out
-	> (lldb) ta cr a.out
-	> (lldb) file a.out
-	> ```
+	> 	```shell
+	> 	(lldb) target create a.out
+	> 	(lldb) ta cr a.out
+	> 	(lldb) file a.out
+	> 	```
 
 <!--
 	- ***From outside [`lldb`]:***
