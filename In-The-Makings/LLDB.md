@@ -374,8 +374,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		``` -->
 
 
-	*From outside [`lldb`]:*
-
+	> *From outside [`lldb`]:*
+	>
 	> ***Synopsis:***
 	>
 	> ```shell
@@ -388,9 +388,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> $> lldb -f a.out
 	> $> lldb a.out
 	> ```
-
-	*From inside [`lldb`]:*
-
+	>
+	> *From inside [`lldb`]:*
+	>
 	> ***Synopsis:***
 	>
 	> ```shell
