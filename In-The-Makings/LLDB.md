@@ -1152,7 +1152,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 ---
 [🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-graphical-user-interface-gui)
 ## 3.5. Start or Attach Program
-<small>`[Search Tags: >lldb.runprocess >lldb.launchprocess >lldb.startprocess >lldb.runprogram >lldb.launchprogram >lldb.startprogram >startprogram >launchprogram >runprogram >startprocess >launchprocess >runprocess  >startexecutable >launchexecutable >runexecutable >programstart >programrun >programlaunch >debugger.runprocess >debugger.launchprocess >debugger.startprocess >debugger.runprogram >debugger.launchprogram >debugger.startprogram >processes >processlaunch >runprocess >lldb.processlaunch]`</small>
+<small>`[Search Tags: >lldb.runprocess >lldb.launchprocess >lldb.startprocess >lldb.runprogram >lldb.launchprogram >lldb.startprogram >startprogram >launchprogram >runprogram >startprocess >launchprocess >runprocess  >startexecutable >launchexecutable >runexecutable >programstart >programrun >programlaunch >debugger.runprocess >debugger.launchprocess >debugger.startprocess >debugger.runprogram >debugger.launchprogram >debugger.startprogram >processes >processlaunch >runprocess >lldb.processlaunch >lldb.attachprocess >lldb.attachprogram >attachprogram >attachprocess >attachexecutable]`</small>
 <br>
 <br>
 
@@ -1184,6 +1184,37 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> - *`run`* is an abbreviation for *'`process launch -X true --`'* , see *`h run`*.
 	>
 	> - *`r`* is an abbreviation for *`'run'`* , see *`h r`*.
+	>
+	> *- end note]</small>*
+
+- ***(Definition) – Attach:** Take over control [of execution] of a process (running program) [, in this case, for debugging], at the instruction that the process has reached.*
+
+-	***To attach to a process (running program):***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> process attach [--pid <pid>]
+	> process attach [--wait-for] [--name <process-name>]
+	> ```
+	>
+	> *****Example(s):*****
+	> ```shell
+	> (lldb) process attach --pid 123
+	> (lldb) pr a -p 123
+	>
+	> (lldb) process attach --name a.out
+	> (lldb) pr a -n a.out
+	>
+	> (lldb) process attach --waitfor --name a.out
+	> (lldb) pr a -w -n a.out
+	> ```
+	>
+	> *<small>[Note:*
+	>
+	> - *To clarify – you can attach to a process by process-ID (`pid`) or process name (e.g. `a.out`).* <br>
+	>
+	>	*When attaching to a process by name, `lldb` also supports the '`--waitfor`' option – which waits for the next process that has that name to show up, and attaches to it.*
 	>
 	> *- end note]</small>*
 
@@ -1220,81 +1251,11 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> > *To clarify [, this [last] example] –* <br>
 	> > - we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to *(i.e to be or come or be-given from or originate from)* a *[terminal [device]]* file, by the name of: `/dev/ttys001` – this is a running *[terminal]* shell *[instance]*, <br>
 	> > - we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>
-	> > - we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time the file goes by the name: "`errFile`", <br>
-	> > - we delimit *`lldb`* command options that we have given from *[, that which we will give as,]* program arguments with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>
+	> > - we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time, the file goes by the name: "`errFile`", <br>
+	> > - we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>
 	> > - we pass *[to our program]* three arguments,
 	> > <br>
 	> > respectively.
-
-
----
-<small>`[Search Tags: >lldb.attachprocess >lldb.attachprogram >attachprogram >attachprocess >attachexecutable]`</small>
-
-> *Commands for attaching to a [running] process (program):*
-
-<!-- ATTACHING TO A PROCESS from terminal prompt options
-
-
-     -n, --attach-name process-name
-             Specifies the name of a currently-running process to attach to.
-             (or the name of a process to wait for if -w is used.)
-
-     -w, --wait-for
-             When used in concert with -n process-name, indicates that lldb
-             should wait for a new process of that name to be started -- and
-             attach to it as early in the process-launch as possible.
-
-     -p, --attach-pid pid
-             Specifies a currently running process that lldb should attach to.
-
-
--->
-
--	***To attach to a process (program):***
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> process attach [-p <pid>]
-	> process attach [-w] [-n <process-name>]
-	> ```
-	>
-	> *****Option(s):*****
-	>
-	> ```shell
-	> -n <process-name> ( --name <process-name> )
-	>	The name of the process, to attach to.
-	>
-	> -p <pid> ( --pid <pid> )
-	>	The process ID, of an existing process, to attach to.
-	>
-	> -w ( --waitfor )
-	>	Wait for the process, with <process-name>, to launch.
-	>```
-	>
-	> *****Example(s):*****
-	> ```shell
-	> (lldb) process attach --pid 123
-	> (lldb) pr a -p 123
-	>
-	> (lldb) process attach --name a.out
-	> (lldb) pr a -n a.out
-	>
-	> (lldbattach (process) --name a.out --waitfor
-	> (lldb) pr a -w -n a.out
-	> ```
-	>
-	> *<small>[**Note:***
-	>
-	> - ***Attach:** Take over control [of the execution] [of a proce(s)s (program)], for debugging, at whatever point (i.e instruction) the execution [of the process (program)] has reached.*
-	>
-	> - *To clarify – you can attach to a process (program) by process-ID (`pid`) or process name (e.g. `a.out`).* <br>
-	>
-	>	*When attaching to a process by name, `lldb` also supports the '`--waitfor`' option – which waits for the next process that has that name to show up, and attaches to it.*
-	>
-	> - *To further clarify – ***processes*** (i.e running programs), can be identified either by ***name*** or by a *[unique]* ***identification/reference number***, called a process-ID, or `pid` for short. Try typing: "`top`" in your terminal, the first column contains all the process-IDs of all the processes (programs) currently running *[on your computer]*.* <br>
-	>
-	> *- end note]</small>*
 
 
 TODO: demo
@@ -1314,6 +1275,7 @@ TODO: demo
 > | 5 | Encyclopedia | Wikipedia | [Device files](https://en.wikipedia.org/wiki/Device_file)
 > | 6 | Q&A Forum | StackOverflow | [How to get the current terminal name ?](https://unix.stackexchange.com/questions/77796/how-to-get-the-current-terminal-name)
 > | 7 | Article | `opensource.com` | [Managing devices in Linux](https://opensource.com/article/16/11/managing-devices-linux)
+> | 8 | Q&A Forum | StackOverflow | [What is the difference between shell, console and terminal ?](https://superuser.com/questions/144666/what-is-the-difference-between-shell-console-and-terminal)
 
 ---
 [🏠](#contents) | [⬅️](#35-start-or-attach-program) | [➡️](#37-examine-execution)
