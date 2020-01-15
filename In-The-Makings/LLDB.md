@@ -987,11 +987,13 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> ```shell
 	> # on a variable:
+	>
 	> watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
 	> ```
 	>
 	> ```shell
 	> # on a [memory] address:
+	>
 	> watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
 	> watchpoint set expression <expr>
 	> ```
