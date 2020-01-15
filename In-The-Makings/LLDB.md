@@ -1024,7 +1024,9 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> ```
 	>
 	>
-	> *<small>[Note:* we say –
+	> *<small>[Note:*
+	>
+	> We say:
 	>
 	> - `breakpoint set variable` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte variable, `<variable-name>`.
 	>
