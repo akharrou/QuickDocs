@@ -1159,6 +1159,9 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 > *Commands for running/starting/launching [loaded] programs:*
 
+<br>
+
+
 -	***To launch/run a program:***
 
 	> ***Synopsis:***
@@ -1191,6 +1194,9 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 ---
 > *Commands for attaching to processes (i.e running programs):*
+
+<br>
+
 
 - ***(Definition) – Attach:** Take over control [of the execution] of a process (running program) [, in this case, for debugging], at the instruction that the process has reached.*
 
@@ -1227,9 +1233,12 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 <br>
 
 ---
-> *Advanced commands for process launch:*
+> *Advanced commands for process launch:* <br>
 
--	***To redirect program [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):***
+<br>
+
+
+-	***To redirect [program] [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):***
 
 	> ***Synopsis:***
 	>
