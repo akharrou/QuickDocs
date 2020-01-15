@@ -591,7 +591,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
-### 3.4.1.1 Breakpoints (for Advanced Users)
+### 3.4.1.1. Breakpoints (for Advanced Users)
 <small>`[Search Tags: >advlldb.breakpoints >advdebugger.breakpoints >advlldbbreakpoints >advdebuggerbreakpoints >advbreakpointcommands >advbreakpointcmds >advbrcmds >advbmain >advblist >advbfile >advbfunc >advsetbrpts >advbrmain >advbrsmain >advbrkpts >advbreakpts >advbpts >advbrpoints >advbapts >advbapoints]`</small>
 
 <br>
@@ -642,7 +642,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > **Know that** *--* *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options." – [LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
 
-> **Note** *--* *We'll refer to options that are neither [breakpoint] conditions or [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…*
+> **Note** *--* *We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…*
 
 -	***Set breakpoint options** (e.g. conditions, comamnds, attributes):*
 
@@ -708,9 +708,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	> ```shell
 	> (lldb) breakpoint set <breakpt-definition> [--disable]
-	>
+	> ```
+	> ```shell
 	> (lldb) breakpoint modify [--disable] [--enable] <breakpt-ids | breakpt-names>
-	>
+	> ```
+	> ```shell
 	> (lldb) breakpoint disable <breakpt-ids | breakpt-names>
 	> (lldb) breakpoint enable  <breakpt-ids | breakpt-names>
 	> ```
@@ -845,7 +847,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
-### 3.4.1.2 Breakpoints (for C++)
+### 3.4.1.2. Breakpoints (for C++)
 <small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc >setbrpts >brmain >brsmain >brkpts >breakpts >bpts >brpoints >bapts >bapoints]`</small>
 
 <br>
@@ -955,8 +957,6 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
        -h <boolean> ( --on-catch <boolean> )
             Set the breakpoint on exception catcH.
-
-
 
 
 <br>
