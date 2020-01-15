@@ -550,7 +550,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Example(s):***
 	> ```shell
 	> (lldb) breakpoint list --brief 3 2    # --brief    (minimum description)
-	> (lldb) br l -f 1                      # --full     (default description)
+	> (lldb) br l -f 1                      # --full     (full description, default
 	> (lldb) br l -v                        # --verbose  (extensive description)
 	> ```
 
@@ -1031,33 +1031,11 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> We say:
 	>
-	> - `breakpoint set variable` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte variable, `<variable-name>`.
+	> - `breakpoint set variable` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte **variable**, `<variable-name>`.
 	>
-	> - `breakpoint set expression` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte region, pointed to by the address `<expr>`.
+	> - `breakpoint set expression` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte **region, pointed to by the address** `<expr>`.
 	>
 	> *- end note]</small>*
-
--	***Set watchpoint options:***
-
-	> ***Synopsis:***
-	>
-	> > *conditions:*
-	> ```
-	> watchpoint modify [-c <expr>] [<watchpt-ids>]
-	> watchpoint command [-c <expr>] [<watchpt-ids>]
-	> ```
-	>
-	> > *commands:*
-	> ```
-	> watchpoint modify [-C <lldb-command>] [<watchpt-ids>]
-	> watchpoint command [<watchpt-ids>]
-	> ```
-	>
-	> ***Example(s):***
-	> ```
-	> (lldb) watch set var global
-	> (lldb) watchpoint modify -c '(global == 5)'
-	> ```
 
 -	***List watchpoints:***
 
@@ -1068,9 +1046,9 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) watchpoint list            # full description
-	> (lldb) wa l -b                    # brief description
-	> (lldb) w l -v                     # extensive, full description
+	> (lldb) watchpoint list -b 4 5 2       # --brief    (minimum description)
+	> (lldb) wa l -f 8                      # --full     (full description, default)
+	> (lldb) w l -v                         # --verbose  (extensive description)
 	> ```
 
 -	***Delete watchpoint(s):***
@@ -1083,18 +1061,81 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) watchpoint delete 1 2 3    # delete <watchpt-id-list>
-	> (lldb) wa de 5                    # delete <watchpt-id>
+	> (lldb) watchpoint delete 1 2 3
+	> (lldb) wa de 5
 	> ```
 	>
 	> *<small>[Note: If no watchpoints are specified, delete them all. - end note]</small>*
 
 	> *<small>[Note:*
 	>
-	> - *Trying to set watchpoints before launching a process (i.e running a program) will not work, you'll get this: `error: invalid process` (or `thread`). You have to load and launch/run the program first.*
+	> - *Trying to set watchpoints before launching a process (i.e running a program) will not work, you'll get this: "`error: invalid process` (or `thread`)". You have to load and launch/run the program first.*
 	>
 	> <br> *- end note]</small>*
 
+---
+> *Advanced commands for operating on watchpoints:*
+
+
+> **Note** *--* *We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"*, e.g.: , etc…*
+
+-	***Set watchpoint options:***
+
+	-	***Conditions:***
+
+		> ***Synopsis:***
+		> ```
+		> watchpoint modify [-c <expr>] [<watchpt-ids>]
+		> watchpoint command [-c <expr>] [<watchpt-ids>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```
+		> (lldb) watch set var global
+		> (lldb) watchpoint modify -c '(global == 5)'
+		> ```
+
+    -	***Commands:***
+
+		> ***Synopsis:***
+		> ```
+		> watchpoint modify [-C <lldb-command>] [<watchpt-ids>]
+		> watchpoint command add [<watchpt-ids>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```
+		> (lldb) watch set var global
+		> (lldb) watchpoint modify -c '(global == 5)'
+		> ```
+
+    -	***Attributes:***
+
+		> ***Synopsis:***
+		> ```
+		> watchpoint modify [-C <lldb-command>] [<watchpt-ids>]
+		> watchpoint command add [<watchpt-ids>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```
+		> (lldb) watch set var global
+		> (lldb) watchpoint modify -c '(global == 5)'
+		> ```
+
+-	***Set watchpoint scripts:***
+
+	> ***Synopsis:***
+	> ```
+	> watchpoint modify [-C <lldb-command>] [<watchpt-ids>]
+	> watchpoint command add [<watchpt-ids>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```
+	> (lldb) watch set var global
+	> (lldb) watchpoint modify -c '(global == 5)'
+	> ```
 
 <br>
 <br>
@@ -1116,7 +1157,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 <br>
 
 
-> *Commands for starting/running a program:*
+> *Commands for starting/running a processes (running programs):*
 
 -	***To launch/run a *[loaded]* program:***
 	>
@@ -1144,34 +1185,41 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> *- end note]</small>*
 
--	***To redirect standard [ in | out | err ]:***
+---
+> *Advanced commands for process control:*
+
+-	***To redirect [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):***
 	>
 	> ***Synopsis:***
 	>
 	> ```shell
-	> process launch [-i <filename>] [-o <filename>] [-e <filename>] [<run-args>]
-	> ```
-	>
-	> ***Option(s):***
-	>
-	> ```shell
-	> -i <filename> ( --stdin <filename> )
-	> 	Redirect stdin for the process to <filename>.
-	>
-	> -o <filename> ( --stdout <filename> )
-	> 	Redirect stdout for the process to <filename>.
-	>
-	> -e <filename> ( --stderr <filename> )
-	> 	Redirect stderr for the process to <filename>.
+	> process launch [--stdin <filename>] [--stdout <filename>] [--stderr <filename>] [<run-args>]
 	> ```
 	>
 	> ***Example(s):***
+	> ```shell
+	> (lldb) process launch --stdin   file-1.txt      # text file, w/ name: 'file-1.txt'
+	> (lldb) process launch --stdout  file-2.txt
+	> (lldb) process launch --stderr  file-3.txt
+	>
+	> (lldb) process launch --i       /dev/ttys001    # terminal [device] file, w/ name: '/dev/ttys001'
+	> (lldb) process launch --o       /dev/ttys002
+	> (lldb) process launch --e       /dev/ttys003
+	> ```
+	>
 	> ```shell
 	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> ```
 	>
-	> > *To clarify – we redirect *[the]* standard input *[stream]* to come/be-given/originate from [the terminal [device] [who's identifier is]] `/dev/ttys001`; we redirect the standard output *[stream]* *[of the program]* to a `.log` file; we do the same with the standard error output *[stream]*. Then we seperate the given *`lldb`* command options from the given program arguments with *[*`lldb`*'s parser delimiter]*: '` -- `'; finally we pass *[to our program]* three arguments.*
+	> > *To clarify [, this [last] example] –* <br>
+	> > - we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to be (or come or be-given from or originate from) the *[terminal device]* file *[who's name is]*: `/dev/ttys001`, <br>
+	> > - we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>
+	> > - we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time the file goes by the name: "`errFile`", <br>
+	> > - we delimit *`lldb`* command options that we have given from *[, that which we will give as,]* program arguments with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>
+	> > - we pass *[to our program]* three arguments, <br>
+	> >
+	> > respectively.
 
 
 ---
@@ -1258,7 +1306,9 @@ TODO: demo
 > | 2 | Manual Page | LLDB | `(lldb) help process attach`
 > | 3 | Manual Page | LLDB | `(lldb) help process [<command>]`
 > | 4 | Documentation | LLDB | [(Official) Tutorial :: Starting or Attaching to Your Program](https://lldb.llvm.org/use/tutorial.html#starting-or-attaching-to-your-program)
-
+> | 5 | Encyclopedia | Wikipedia | [Device files](https://en.wikipedia.org/wiki/Device_file)
+> | 6 | Q&A Forum | StackOverflow | [How to get the current terminal name ?](https://unix.stackexchange.com/questions/77796/how-to-get-the-current-terminal-name)
+> | 7 | Article | `opensource.com` | [Managing devices in Linux](https://opensource.com/article/16/11/managing-devices-linux)
 
 ---
 [🏠](#contents) | [⬅️](#35-start-or-attach-program) | [➡️](#37-examine-execution)
