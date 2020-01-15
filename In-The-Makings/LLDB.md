@@ -36,6 +36,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
 	- [3.2. Launch LLDB](#32-launch-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
+		- [3.3.1. Basic Commands](#331-basic-commands)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 			- [3.4.1.1. Basic Commands](#3411-basic-commands)
@@ -229,7 +230,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#31-compile-program) | [➡️](#312-sanitizer-flags--fsanitize-family)
 ### 3.1.1. Debug Flags: `-g` & `-O0`
-<small>`[Search Tags: >compileprogram >compileprg >programcompilation >compilation >lldb.compile.flags >lldb.compile.debugflags >lldb.debugflags >lldb.flags >debugflags]`</small>
+<small>`[Search Tags: >compileprogram >compileprg >programcompilation >compilation >lldb.compile.flags >lldb.compile.debugflags >lldb.debugflags >lldb.flags >debugflags >dbflags >deflags >bugflags >dbgflags >dbugflags]`</small>
 <br>
 <br>
 
@@ -369,10 +370,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
 > | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help target`
-> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help target create`
-> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help target delete`
-> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help target list`
-> | 6 | Manual Page | Unix / Linux / MacOS | `(lldb) help target select`
 
 
 ---
@@ -515,9 +512,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | Unix / Linux / MacOS | `man lldb`
-> | 2 | Manual Page | LLDB | `(lldb) help target create`
-> | 3 | Manual Page | LLDB | `(lldb) help target delete`
-> | 4 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help target create`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help target delete`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help target list`
+> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help target select`
+> | 6 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
 
 
 ---
