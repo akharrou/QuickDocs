@@ -1023,7 +1023,14 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> (lldb) wa s e -w read -s 4 -- 0x00007ffeefbff510
 	> ```
 	>
-	> *<small>[Note: `breakpoint set expression` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte region pointed to by the address `<expr>` . - end note]</small>*
+	>
+	> > *<small>[Note:*
+	>
+	> - `breakpoint set variable` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte variable, `<variable-name>`.
+	>
+	> - `breakpoint set expression` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte region, pointed to by the address `<expr>`.
+	>
+	> *- end note]</small>*
 
 -	***Set watchpoint options:***
 
