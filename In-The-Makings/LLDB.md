@@ -572,7 +572,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> - *If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all.*
 	>
-	> - *`lldb`, automatically, deletes breakpoints of a particular target when the target is deleted.*
+	> - *`lldb`, automatically, deletes breakpoints of a [particular] target when the target is deleted.*
 	>
 	> *- end note]</small>*
 
@@ -583,12 +583,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
 ### 3.4.1.1 (Advanced) Breakpoints
 <small>`[Search Tags: >advlldb.breakpoints >advdebugger.breakpoints >advlldbbreakpoints >advdebuggerbreakpoints >advbreakpointcommands >advbreakpointcmds >advbrcmds >advbmain >advblist >advbfile >advbfunc >advsetbrpts >advbrmain >advbrsmain >advbrkpts >advbreakpts >advbpts >advbrpoints >advbapts >advbapoints]`</small>
-<br>
-<br>
 
+> *This subsection is only advised for **more advanced users**.*
+
+<br>
+<br>
 
 > *Advanced commands for operating on breakpoints:*
-> *This subsection is only advised for **more advanced users**.*
 
 <br>
 
