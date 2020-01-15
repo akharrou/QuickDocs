@@ -1,9 +1,32 @@
+<!-- ﷽ , In the name of God, the Most Gracious, the Most Merciful. -->
+
+<!-- >Metadata -----------------------------------------------------------------
+
+	AUTHOR(S)
+		akharrou
+
+	CONTACT
+		idev.aymen@gmail.com
+
+	MOTIVATION(S)
+		Promote Markdown Language, because it is an amazing tool that can benefit in writing quick documentation, notes, repository descriptions, etc. Explain/remind what Markdown Language is and how to use it. Be a quick to search documentation for the Markdown Language.
+
+	DESCRIPTION
+		Comprehensive Markdown Documentation / Tutorial.
+
+
+<!-- >Top Matter -------------------------------------------------------------->
+
 QuickDocs \| Markdown
-====
-> _**January 2020**_
+===
 
+> ***January 2020***
 
-<!-- TOC -->
+---
+
+<!-- Table of >Contents ------------------------------------------------------->
+
+# Contents
 
 -	[1. Overview / Cheat Sheet](#1-overview--cheat-sheet)
 	-	[1.1. Basic Syntax](#11-basic-syntax)
@@ -47,12 +70,21 @@ QuickDocs \| Markdown
 -	[4. Appendices](#4-appendices)
 	-	[4.1. Resources](#41-resources)
 
-<!-- TOC -->
+
+<!-- >Start --------------------------------------------------------------------
+.
+.
+.
+-->
 
 
+---
+[🏠](#contents)
 # 1. Overview / Cheat Sheet
 <small>`[Search Tags: >overview >cheat >sheet >cheatsheet >quick >revise >revision]`</small>
 
+---
+[🏠](#contents)
 ## 1.1. Basic Syntax
 <small>`[Search Tags: >basicsyntax >syntax.basic>]`</small>
 
@@ -72,6 +104,8 @@ All Markdown applications support these elements.
 | Image | `![alt text](image.jpg)`
 
 
+---
+[🏠](#contents)
 ## 1.2. Extended Syntax
 <small>`[Search Tags: >extendedsyntax >syntax.extended>]`</small>
 
@@ -88,17 +122,24 @@ These elements extend the basic syntax by adding additional features. Not all Ma
 | Task List | `- [x] Write the press release` <br> `- [ ] Update the website` <br> `- [ ] Contact the media`
 
 
+---
+---
+[🏠](#contents)
 # 2. Block Elements
 <small>`[Search Tags: >part01 >part1 >chapter1 >chap1 >blockelements >elementsblock >elementblock >part.01 >part.1 >chapter.1 >chap.1 >block.elements >elements.block >element.block]`</small>
 
 
+---
+[🏠](#contents)
 ## 2.1. Headers
 <small>`[Search Tags: >headers >hders >hdrs >titles]`</small>
 
 Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.net/mirror/setext.html) and [atx](http://www.aaronsw.com/2002/atx/).
 
 
-### 2.1.1. atx Headers
+---
+[🏠](#contents)
+ ### 2.1.1. atxHeaders
 <small>`[Search Tags: >headers.atx >header.atx >atxheaders >atx.headers >atxhders >atxhdrs]`</small>
 
 -	Atx-style headers use 1-6 hash characters at the start of the line, corresponding to header levels 1-6.
@@ -123,6 +164,8 @@ Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.ne
 >
 > _- end note]_</small>
 
+---
+[🏠](#contents)
 ### 2.1.2. Setext Headers
 
 <small>`[Search Tags: >headers.setex >header.setex >setextheaders >setexthders >settexthdrs]`</small>
@@ -143,6 +186,8 @@ Title (Level 2)
 ------
 ```
 
+---
+[🏠](#contents)
 ### 2.1.3. Defining Heading IDs
 <small>`[Search Tags: >defineheaderids >defheadids >definitionheaderids >headers.ids >header.ids >idheaders >idsheaders >ids.headers >idhders >idhdrs >hdrids >headerids >headeridentity >hdrsids >ids >headingids >headingidentity >headids >headrids >headidentity]`</small>
 
@@ -160,6 +205,8 @@ Title (Level 2)
 	<h3 id="custom-id">My Great Heading</h3>
 	```
 
+---
+[🏠](#contents)
 ### 2.1.4. Linking to Heading IDs
 <small>`[Search Tags: >linkhdrs >linkheaders >linkheads >linkheadrs >headlinks >headlinking]`</small>
 
@@ -175,6 +222,8 @@ Markdown | HTML | Rendered Output
 	`[<linked-text>](https://www.website.com/section#<heading-ID>)`
 
 
+---
+[🏠](#contents)
 ## 2.2. Paragraphs
 <small>`[Search Tags: >paragraphs >paras >text]`</small>
 
@@ -193,6 +242,8 @@ its end as well.
 ```
 
 
+---
+[🏠](#contents)
 ## 2.3. Blockquotes
 <small>`[Search Tags: >quoteblocks >quotes >blockquotes >quotations >nestedquotes >nestquotes]`</small>
 
@@ -242,11 +293,15 @@ its end as well.
 ```
 
 
+---
+[🏠](#contents)
 ## 2.4. Lists
 <small>`[Search Tags: >lists >enums >bulletpoints >checklists >dropdownlists]`</small>
 
 -	Markdown supports **ordered (numbered)** and **unordered (bulleted)** lists.
 
+---
+[🏠](#contents)
 ### 2.4.1. Unordered Lists
 <small>`[Search Tags: >list.unorder >list.unordered >lists.unorder >lists.unordered >unorder.lists >unordered.lists >unorderedlists >unorderlists >listunordered >ulists]`</small>
 
@@ -262,6 +317,8 @@ its end as well.
 > *  Green
 > *  Blue
 
+---
+[🏠](#contents)
 ### 2.4.2. Ordered Lists
 <small>`[Search Tags: >list.order >list.ordered >lists.order >lists.ordered >order.lists >ordered.lists >orderedlists >orderlists >listordered >olists]`</small>
 
@@ -298,6 +355,8 @@ Result:
 -	You can have *words*, *sentences*, *paragraphs*, *quotes*, *code* *spans/blocks*, *images*, *etc.,* as list items.
 
 
+---
+[🏠](#contents)
 ### 2.4.3. Definition Lists
 <small>`[Search Tags: >list.defs >list.definitions >definitionlists >listdefinitions >deflists >listsdefs >deflists >listdefs]`</small>
 
@@ -336,6 +395,8 @@ Second Term
 : This is another definition of the second term.
 
 
+---
+[🏠](#contents)
 ### 2.4.4. Task Lists
 <small>`[Search Tags: >list.tasks >tasklists >listtasks >tasklists >liststasks]`</small>
 
@@ -357,6 +418,8 @@ The rendered output looks like this:
 
 
 
+---
+[🏠](#contents)
 ## 2.5. Horizontal Rules
 <small>`[Search Tags: >horizontalrules >rules >lines >straightlines >hlines >horilines >horizlines >linehorizontal >lineshorizontal >horizontals >horzis]`</small>
 
@@ -383,12 +446,16 @@ ___
 > ___
 
 
+---
+[🏠](#contents)
 ## 2.6. Code Spans & Blocks
 
 <small>`[Search Tags: >code >ttfamily >typewriter >raw]`</small>
 
 There are 2 methods to inserting code in your markdown. One is inlined, ***code spans***, the other is not, ***code blocks***.
 
+---
+[🏠](#contents)
 ### 2.6.1. Code Blocks
 <small>`[Search Tags: >codeblocks >blockscodes >blockcode]`</small>
 
@@ -416,6 +483,8 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 
 > *<small>[Note: It is also possible to create a code block by preprending each line of code with one level of indentation --- 4 spaces or a tab. Syntax highlighting is not supported with this; it is better to stick to the former way. - end note]</small>*
 
+---
+[🏠](#contents)
 ### 2.6.2. Code Spans
 
 <small>`[Search Tags: >codespans >spanscodes >spancode >codesspans]`</small>
@@ -432,6 +501,8 @@ There are 2 methods to inserting code in your markdown. One is inlined, ***code 
 ```
 --- his code span needed three backticks, on either sides, to be enclosed properly.
 
+---
+[🏠](#contents)
 ## 2.7. Inline/Embed HTML
 <small>`[Search Tags: >inlinehtml >embed.html >embedhtml >htmlemded >htmlembedding >htmlinline]`</small>
 
@@ -456,16 +527,22 @@ This is another regular paragraph.
 ```
 
 
+---
+[🏠](#contents)
 # 3. Span Elements
 <small>`[Search Tags: >part02 >part2 >chapter2 >chap2 >spanelements >elementsspans >elementspans >part.02 >part.2 >chapter.2 >chap.2 >span.elements >spans.elements >elements.spans >element.spans]`</small>
 
 
+---
+[🏠](#contents)
 ## 3.1. Links & References
 <small>`[Search Tags: >links >linking >linkage >references >refs >urls >websites >urllinks >urlslink linkurls >linkwebsites >websitelinks]`</small>
 
 -	Markdown supports two style of links: ***inline*** and ***reference***
 -	In both styles, the *link **text*** is delimited by square brackets `[]`.
 
+---
+[🏠](#contents)
 ### 3.1.1. Inline Links
 <small>`[Search Tags: >inlinelinks >inlinelinking >inlinelinkage >inlinereferences >inlinerefs >link.inline >links.inline >linking.inline >linkage.inline >references.inline >refs.inline]`</small>
 
@@ -490,6 +567,8 @@ Output:
 > 3. See my [About](/about/) page for details.
 > 4. <https://www.fakewebsite.org> or <fake@example.com>
 
+---
+[🏠](#contents)
 #### 3.1.1.1. Automatic Links
 <small>`[Search Tags: >autolinks >automaticlinks >linksautomatic >linkautomatic >emails >linkemails >emaillinks >link.emails >links.emails >emaillinkage >emailslinkage >emailreferences >referenceemails]`</small>
 
@@ -512,6 +591,8 @@ Rendered Output:
 <address@example.com>
 
 
+---
+[🏠](#contents)
 ### 3.1.2. Reference Links
 <small>`[Search Tags: >referencelinks >referencelinking >referencelinkage >references >link.references >links.references >linking.references >linkage.references >reflinks]`</small>
 
@@ -576,10 +657,14 @@ And these are implicit links: [Google][], [Yahoo][] or [MSN][].
   [msn]:    http://search.msn.com/    "MSN Search"
 
 
+---
+[🏠](#contents)
 ## 3.2. Emphasis
 <small>`[Search Tags: >fonts >fontstyles >emphasis >styles]`</small>
 
 
+---
+[🏠](#contents)
 ### 3.2.1. Bold
 <small>`[Search Tags: >bold >strong]`</small>
 
@@ -590,6 +675,8 @@ Markdown | HTML | Rendered Output
 `Love**is**bold` | Love<strong>is</strong>bold | Loveisbold
 
 
+---
+[🏠](#contents)
 ### 3.2.2. Italic
 <small>`[Search Tags: >italics]`</small>
 
@@ -600,6 +687,8 @@ Markdown | HTML | Rendered Output
 `A*cat*meow` | A<em>cat</em>meow | Acatmeow
 
 
+---
+[🏠](#contents)
 ### 3.2.3. Bold & Italic
 
 Markdown | HTML | Rendered Output
@@ -609,6 +698,8 @@ Markdown | HTML | Rendered Output
 `This text is __*really important*__.` | This text is <strong><em>really important</em></strong>. | This text is really important.
 `This text is **_really important_**.` | This text is <strong><em>really important</em></strong>. | This text is really important.
 
+---
+[🏠](#contents)
 ### 3.2.4. Strikethrough (Extended Syntax)
 <small>`[Search Tags: >strikethrough >strikes]`</small>
 
@@ -619,6 +710,8 @@ Markdown | HTML | Rendered Output
 ~~The world is flat.~~
 
 
+---
+[🏠](#contents)
 ## 3.3. Images
 <small>`[Search Tags: >images >graphics >pics >pictures >photos >pasteimage >imagepaste >imagepasting]`</small>
 
@@ -647,6 +740,8 @@ _**Rendered Output:**_
 ![Lion | King of the Animal Kingdom](Assets/lion.jpg)
 
 
+---
+[🏠](#contents)
 ## 3.4. Tables
 <small>`[Search Tags: >tabls >tebles >tables >tabs >dictionaries >charts >grids]`</small>
 
@@ -676,6 +771,8 @@ _**Rendered Output:**_
 | Paragraph   | Text        |
 
 
+---
+[🏠](#contents)
 ### 3.4.1. Alignment
 <small>`[Search Tags: >tabalignment >aligntables >aligntabs]`</small>
 
@@ -698,6 +795,8 @@ _**Rendered Output:**_
 	| Pad    | Text        | And more  |
 
 
+---
+[🏠](#contents)
 ## 3.5. Footnotes
 <small>`[Search Tags: >footnotes >notesfoot]`</small>
 
@@ -745,6 +844,8 @@ screen then your processor supports this feature, otherwise it doesn't.
 	Add as many paragraphs as you like.
 
 
+---
+[🏠](#contents)
 ## 3.6. Latex
 <small>`[Search Tags: >LaTeX]`</small>
 
@@ -781,9 +882,13 @@ $$
 $$ ``If \space I \space have \space ever \space made \space any \space valuable \space discoveries, \space it \space has \space been \space owing \space more \space to \space patient \space attention, \space than \space to \space any \space other \space talent." \\  - Isaac \space Newton $$
 
 
+---
+[🏠](#contents)
 ## 3.7. Escape Characters
 <small>`[Search Tags: >escapecharacers >escapechars >escchars >esccharacters >& >< >escapesequences >escpcharacters >escpchars >escpechars]`</small>
 
+---
+[🏠](#contents)
 ### 3.7.1. Automated Escaping
 <small>`[Search Tags: >autoescapes >autoescapechars >autoescapecharacters]`</small>
 
@@ -791,6 +896,8 @@ $$ ``If \space I \space have \space ever \space made \space any \space valuable 
 
 -	**Markdown** on the other hand allows you to use these character naturally. It takes care of all the necessary escaping for you. If you use an ampersand as part of an **HTML** entity, it remains unchanged; otherwise it will be translated into `&amp;`.
 
+---
+[🏠](#contents)
 ### 3.7.2. Backslash Escapes
 <small>`[Search Tags: >backslashcharacters >backslashescps >backslashescapecharacters >bkslhchars >backslashchars]`</small>
 
@@ -812,9 +919,13 @@ _   underscore
 !   exclamation mark
 ```
 
+---
+[🏠](#contents)
 # 4. Appendices
 <small>`[Search Tags: >appendices]`</small>
 
+---
+[🏠](#contents)
 ## 4.1. Resources
 <small>`[Search Tags: >resources >ressources >greatlinks >greatresources >guides >cheatsheets >documentation >docs]`</small>
 
@@ -835,3 +946,10 @@ _   underscore
 	"Markdownguide \| Markdown Documentation"
 [11]: https://daringfireball.net/projects/markdown/syntax
 	"Markdown Authors \| Official Documentation"
+
+
+<!--
+.
+.
+.
+<!-- >End --------------------------------------------------------------------->

@@ -57,7 +57,6 @@ QuickDocs \| Low Level Debugger (LLDB)
 - [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
 	- [3.1 Makfile]()
 
----
 
 <!-- >Start --------------------------------------------------------------------
 .
@@ -65,6 +64,8 @@ QuickDocs \| Low Level Debugger (LLDB)
 .
 -->
 
+
+---
 [🏠](#contents) | [⬅️](#contents) | [➡️](#2-what-is-it-)
 # 1. Overview / Cheat Sheet
 <small>`[Search Tags: >overview >cheatsheet >brief >review >revision >reminder >quickreminder >viewover >fastreview >quickreview]`</small>
