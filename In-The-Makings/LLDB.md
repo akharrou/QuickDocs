@@ -981,7 +981,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 > *Commands for operating on watchpoints:*
 
--	***Set watchpoint:***
+-	***Set a watchpoint:***
 
 	> ***Synopsis:***
 	>
@@ -990,7 +990,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
 	> ```
 	>
-	> > - ... on an address by supplying an expression:
+	> > - ... on an address *[by supplying an expression]*:
 	> ```shell
 	> watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
 	> watchpoint set expression <expr>
