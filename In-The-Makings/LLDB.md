@@ -1157,9 +1157,9 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 <br>
 
 
-> *Commands for starting/running a processes (running programs):*
+> *Commands for running/starting/launching [loaded] programs:*
 
--	***To launch/run a *[loaded]* program:***
+-	***To launch/run a program:***
 
 	> ***Synopsis:***
 	>
