@@ -1,6 +1,6 @@
 <!-- ﷽ , In the name of God, the Most Gracious, the Most Merciful. -->
 
-<!-- Metadata ------------------------------------------------------------------
+<!-- >Metadata -----------------------------------------------------------------
 
 	AUTHOR(S)
 		akharrou
@@ -8,14 +8,14 @@
 	CONTACT
 		idev.aymen@gmail.com
 
-	OBJECTIVE(S)
+	MOTIVATION(S)
 		Promote LLDB, because it is an amazing tool that can benefit in debugging. Explain/remind what LLDB is and how to use it.
 
 	DESCRIPTION
 		[Beginner to Intermediate Level] Tutorial on LLDB.
 
 
-<!-- Top Matter --------------------------------------------------------------->
+<!-- >Top Matter -------------------------------------------------------------->
 
 QuickDocs \| Low Level Debugger (LLDB)
 ===
@@ -38,16 +38,16 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.3. Load LLDB](#33-load-lldb)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
-			- [3.4.1.1. Basic Commands](#)
-			- [3.4.1.2. Basic (OOP) Commands](#)
-			- [3.4.1.3. Advanced Commands](#)
+			- [3.4.1.1. Basic Commands](#3411-basic-commands)
+			- [3.4.1.2. Basic (C++) Commands](#3412-basic-c-commands)
+			- [3.4.1.3. Advanced Commands](#3413-advanced-commands)
 		- [3.4.2. Watchpoints](#342-watchpoints)
-			- [3.4.2.1. Basic Commands](#)
-			- [3.4.2.2. Advanced Commands](#)
+			- [3.4.2.1. Basic Commands](#3421-basic-commands)
+			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
 	- [3.5. Begin Debugging](#35-start-or-attach-program)
-		- [3.5.1. Launch Program](#)
-		- [3.5.2. Attach to Program](#)
-		- [3.5.3. Advanced Program Configurations](#)
+		- [3.5.1. Launch Program](#351-launch-program)
+		- [3.5.2. Attach to Program](#352-attach-to-program)
+		- [3.5.3. Advanced Program Configurations](#353-advanced-program-configurations)
 	- [3.6. Graphical User Interface (GUI)](#36-graphical-user-interface-gui)
 	- [3.7. Examine Execution](#37-examine-execution)
 		- [3.7.1. Source Code](#371-source-code)
@@ -480,13 +480,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	`lldb` gives you the option to set it *[`lldb`]* up to stop *(pause/halt/break/rest)* *[during execution [of your program]]*, everytime it reaches a certain point/location *(e.g. at a particular line *[in source code]* or at a particular function)* – optionally you can add conditions, so as to only stop at that point/location when the *[added]* condition is met *(fulfilled/reached)*. <br>
-
-	*"A location at which *[`lldb`'s]* execution is setup to stop *[at]*"* is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them *[breakpoints]* as ***checkpoints***. <br>
-
--	`lldb`, also, gives you the option to set it up to stop and log activities of a certain variable *(e.g. accesses (`read`) and/or modifications (`write`)*) – `lldb` logs its *[the variable's]* *(before and after)* values – optionally you can add conditions, so as to only log when it *[the variable]* has met *(fulfilled/reached)* certain condition(s), e.g.: if it *[the variable]* has reached or has gone above or below a certain value or the value of another variable; you could also have conditions that are unrelated *[to the variable]*, e.g.: when it is 6am, or when some function was called, or some other variable reaches some value, etc, you get the point. <br>
-
-	*"A tell to *[`lldb`]* to keep a special eye and log the activity of a particular variable *(more precisely and generally, an object)*"* is what is referred to as: a ***watchpoint*** ([§3.4.2](#341-watchpoints)) – you can kind of think of them *[watchpoints]* as ***surveillance cameras pointed towards a particular objects (variables, etc)*** , *adding a watchpoint* is ***putting an object on the watchlist*** - so to speak. <br>
+-	Set your ***breakpoints** ([§ TODO ](#})) and ***watchpoints*** ([§ TODO ](#})).
 
 <!-- BREAKPOINT ANALOGY:
 
@@ -509,11 +503,41 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
+[🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#3411-basic-commands)
 ### 3.4.1. Breakpoints
 <small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc >setbrpts >brmain >brsmain >brkpts >breakpts >bpts >brpoints >bapts >bapoints]`</small>
 <br>
 <br>
+
+
+-	`lldb` gives you the option to set it *[`lldb`]* up to stop *(pause/halt/break/rest)* *[during execution [of your program]]*, everytime it reaches a certain point/location *(e.g. at a particular line *[in source code]* or at a particular function)* – optionally you can add conditions, so as to only stop at that point/location when the *[added]* condition is met *(fulfilled/reached)*. <br>
+
+	*"A location at which *[`lldb`'s]* execution is setup to stop *[at]*"* is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them *[breakpoints]* as ***checkpoints***. <br>
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint [<command>]`
+> | 3 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
+> | 4 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
+
+
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.1.1. Basic Commands
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: #### 3.4.1.1. Basic Commands
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
 
 > *Commands for operating on breakpoints:*
 
@@ -594,19 +618,150 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint [<command>]`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
-> | 3 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
-> | 4 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
-> | 5 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html#setting-watchpoints)
+> | 1 | n/a               | n/a                    | n/a
+
 
 ---
-[🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
-### 3.4.1.1. Breakpoints (Advanced)
-<small>`[Search Tags: >advlldb.breakpoints >advdebugger.breakpoints >advlldbbreakpoints >advdebuggerbreakpoints >advbreakpointcommands >advbreakpointcmds >advbrcmds >advbmain >advblist >advbfile >advbfunc >advsetbrpts >advbrmain >advbrsmain >advbrkpts >advbreakpts >advbpts >advbrpoints >advbapts >advbapoints]`</small>
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.1.2. Basic (C++) Commands
+<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc >setbrpts >brmain >brsmain >brkpts >breakpts >bpts >brpoints >bapts >bapoints]`</small>
+<br>
+<br>
+
+
+> TODO: #### 3.4.1.2. Basic (C++) Commands
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+> *Commands for operating on breakpoints, concerning C++ (only):*
+
+
+-	***Set a breakpoint, on function(s)**, by fullname:*
+
+<!-- C++ FUNCTIONS BY FULLNAME (NAMESPACES + BASENAME) -->
+
+       -F <fullname> ( --fullname <fullname> )
+            Set the breakpoint by fully qualified function names. For C++ this means namespaces and all arguments. Can be repeated multiple times to make one breakpoint for multiple names.
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+-	***Set a breakpoint, on function(s)**, by basename:*
+
+<!-- C++ FUNCTIONS BY BASENAME -->
+
+       -b <function-name> ( --basename <function-name> )
+            Set the breakpoint by function basename (C++ namespaces and arguments will be ignored). Can be repeated multiple times to make one breakpoint for multiple symbols.
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+-	***Set a breakpoint, on method(s):***
+
+<!-- C++ (OBJECT) METHODS -->
+
+       -M <method> ( --method <method> )
+            Set the breakpoint by C++ method names. Can be repeated multiple times to make one breakpoint for multiple methods.
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+
+-	***Set a breakpoint, on exception(s):***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> breakpoint set --language-exception <source-code-language>
+	> br s -E c++
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+<!-- ALL EXCEPTIONS -->
+
+	-E <source-language> ( --language-exception <source-language> )
+		Set the breakpoint on exceptions thrown by the specified language (without options, on throw
+		but not catch.)
+
+
+-	***Set a breakpoint, on catch(es):***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+-	***Exception / Catch breakpoint option(s):***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+OPTIONS FOR EXCEPTION BREAKPOINTS:
+
+       -O <type-name> ( --exception-typename <type-name> )
+            The breakpoint will only stop if an exception Object of this type is thrown. Can be repeated multiple times to stop for multiple object types. If you just specify the type's base name it will match against that type in all modules, or you can specify the full type name including modules.  Other submatches are not supported at present.Only supported for Swift at present.
+
+       -w <boolean> ( --on-throw <boolean> )
+            Set the breakpoint on exception throW.
+
+       -h <boolean> ( --on-catch <boolean> )
+            Set the breakpoint on exception catcH.
+
+
 
 <br>
 <br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.1.3. Advanced Commands
+<small>`[Search Tags: >advlldb.breakpoints >advdebugger.breakpoints >advlldbbreakpoints >advdebuggerbreakpoints >advbreakpointcommands >advbreakpointcmds >advbrcmds >advbmain >advblist >advbfile >advbfunc >advsetbrpts >advbrmain >advbrsmain >advbrkpts >advbreakpts >advbpts >advbrpoints >advbapts >advbapoints]`</small>
+<br>
+<br>
+
+
+> TODO: #### 3.4.1.3. Advanced Commands
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
 > *Advanced commands for operating on breakpoints:*
 
@@ -857,117 +1012,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
-### 3.4.1.2. Breakpoints (C++)
-<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc >setbrpts >brmain >brsmain >brkpts >breakpts >bpts >brpoints >bapts >bapoints]`</small>
-
+[🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-start-or-attach-program)
+### 3.4.2. Watchpoints
+<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds >wapts >watchpts >wpts >wpoints >wapoints >setwapts >wapts]`</small>
 <br>
 <br>
 
-> *Commands for operating on breakpoints, concerning C++ (only):*
 
+-	`lldb`, also, gives you the option to set it up to stop and log activities of a certain variable *(e.g. accesses (`read`) and/or modifications (`write`)*) – `lldb` logs its *[the variable's]* *(before and after)* values – optionally you can add conditions, so as to only log when it *[the variable]* has met *(fulfilled/reached)* certain condition(s), e.g.: if it *[the variable]* has reached or has gone above or below a certain value or the value of another variable; you could also have conditions that are unrelated *[to the variable]*, e.g.: when it is 6am, or when some function was called, or some other variable reaches some value, etc, you get the point. <br>
 
--	***Set a breakpoint, on function(s)**, by fullname:*
-
-<!-- C++ FUNCTIONS BY FULLNAME (NAMESPACES + BASENAME) -->
-
-       -F <fullname> ( --fullname <fullname> )
-            Set the breakpoint by fully qualified function names. For C++ this means namespaces and all arguments. Can be repeated multiple times to make one breakpoint for multiple names.
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> ```
-
--	***Set a breakpoint, on function(s)**, by basename:*
-
-<!-- C++ FUNCTIONS BY BASENAME -->
-
-       -b <function-name> ( --basename <function-name> )
-            Set the breakpoint by function basename (C++ namespaces and arguments will be ignored). Can be repeated multiple times to make one breakpoint for multiple symbols.
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> ```
-
--	***Set a breakpoint, on method(s):***
-
-<!-- C++ (OBJECT) METHODS -->
-
-       -M <method> ( --method <method> )
-            Set the breakpoint by C++ method names. Can be repeated multiple times to make one breakpoint for multiple methods.
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> ```
-
-
--	***Set a breakpoint, on exception(s):***
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> breakpoint set --language-exception <source-code-language>
-	> br s -E c++
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> ```
-
-<!-- ALL EXCEPTIONS -->
-
-	-E <source-language> ( --language-exception <source-language> )
-		Set the breakpoint on exceptions thrown by the specified language (without options, on throw
-		but not catch.)
-
-
--	***Set a breakpoint, on catch(es):***
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> ```
-
--	***Exception / Catch breakpoint option(s):***
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> ```
-
-OPTIONS FOR EXCEPTION BREAKPOINTS:
-
-       -O <type-name> ( --exception-typename <type-name> )
-            The breakpoint will only stop if an exception Object of this type is thrown. Can be repeated multiple times to stop for multiple object types. If you just specify the type's base name it will match against that type in all modules, or you can specify the full type name including modules.  Other submatches are not supported at present.Only supported for Swift at present.
-
-       -w <boolean> ( --on-throw <boolean> )
-            Set the breakpoint on exception throW.
-
-       -h <boolean> ( --on-catch <boolean> )
-            Set the breakpoint on exception catcH.
+	*"A tell *[to `lldb`]* to keep a special eye and log the activity of a particular variable *(more precisely and generally, an object)*"* is what is referred to as: a ***watchpoint*** ([§3.4.2](#341-watchpoints)) – you can kind of think of them *[watchpoints]* as ***surveillance cameras pointed towards a particular objects (variables, etc)*** , *adding a watchpoint* is ***putting an object on the watchlist*** - so to speak. <br>
 
 
 <br>
@@ -977,16 +1031,23 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-watchpoints)
+> | 3 | Documentation | LLDB | [GDB to LLDB Command Map](https://lldb.llvm.org/use/map.html?highlight=watchpoints#watchpoint-commands)
 
 
 ---
-[🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-start-or-attach-program)
-### 3.4.2. Watchpoints
-<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds >wapts >watchpts >wpts >wpoints >wapoints >setwapts >wapts]`</small>
+
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.2.1. Basic Commands
+<small>`[Search Tags: >]`</small>
 <br>
 <br>
 
+
+> TODO: #### 3.4.2.1. Basic Commands
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
 > *Commands for operating on watchpoints:*
 
@@ -1082,7 +1143,29 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> <br> *- end note]</small>*
 
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
+
+
 ---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.2.2. Advanced Commands
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: #### 3.4.2.2. Advanced Commands
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
 > *Advanced commands for operating on watchpoints:*
 
 
@@ -1146,6 +1229,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> (lldb) watchpoint modify -c '(global == 5)'
 	> ```
 
+
 <br>
 <br>
 
@@ -1154,17 +1238,43 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
-> | 2 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-watchpoints)
-> | 3 | Documentation | LLDB | [GDB to LLDB Command Map](https://lldb.llvm.org/use/map.html?highlight=watchpoints#watchpoint-commands)
 
 
 ---
 [🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-graphical-user-interface-gui)
-## 3.5. Start or Attach Program
-<small>`[Search Tags: >lldb.runprocess >lldb.launchprocess >lldb.startprocess >lldb.runprogram >lldb.launchprogram >lldb.startprogram >startprogram >launchprogram >runprogram >startprocess >launchprocess >runprocess  >startexecutable >launchexecutable >runexecutable >programstart >programrun >programlaunch >debugger.runprocess >debugger.launchprocess >debugger.startprocess >debugger.runprogram >debugger.launchprogram >debugger.startprogram >processes >processlaunch >runprocess >lldb.processlaunch >lldb.attachprocess >lldb.attachprogram >attachprogram >attachprocess >attachexecutable]`</small>
+## 3.5. Begin Debugging
+<small>`[Search Tags: >]`</small>
 <br>
 <br>
 
+
+> TODO: ### 3.5. Begin Debugging
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help process [<command>]`
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.5.1. Launch Program
+<small>`[Search Tags: >lldb.runprocess >lldb.launchprocess >lldb.startprocess >lldb.runprogram >lldb.launchprogram >lldb.startprogram >startprogram >launchprogram >runprogram >startprocess >launchprocess >runprocess  >startexecutable >launchexecutable >runexecutable >programstart >programrun >programlaunch >debugger.runprocess >debugger.launchprocess >debugger.startprocess >debugger.runprogram >debugger.launchprogram >debugger.startprogram >processes >processlaunch >runprocess >lldb.processlaunch]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.5.1. Launch Program
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
 > *Commands for running/starting/launching [loaded] programs:*
 
@@ -1199,9 +1309,30 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> *- end note]</small>*
 
+
+
+<br>
 <br>
 
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help process launch`
+
+
 ---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.5.2. Attach to Program
+<small>`[Search Tags: >lldb.attachprocess >lldb.attachprogram >attachprogram >attachprocess >attachexecutable]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.5.2. Attach to Program
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
 > *Commands for attaching to processes (i.e running programs):*
 
 <br>
@@ -1239,9 +1370,29 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> *- end note]</small>*
 
 
+
+<br>
 <br>
 
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help process attach`
+
+
 ---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.5.3. Advanced Program Configurations
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.5.3. Advanced Program Configurations
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
 > *Advanced commands for process launch:* <br>
 
 <br>
@@ -1281,8 +1432,6 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> > respectively.
 
 
-TODO: demo
-
 
 <br>
 <br>
@@ -1292,13 +1441,12 @@ TODO: demo
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | LLDB | `(lldb) help process launch`
-> | 2 | Manual Page | LLDB | `(lldb) help process attach`
-> | 3 | Manual Page | LLDB | `(lldb) help process [<command>]`
-> | 4 | Documentation | LLDB | [(Official) Tutorial :: Starting or Attaching to Your Program](https://lldb.llvm.org/use/tutorial.html#starting-or-attaching-to-your-program)
-> | 5 | Encyclopedia | Wikipedia | [Device files](https://en.wikipedia.org/wiki/Device_file)
-> | 6 | Q&A Forum | StackOverflow | [How to get the current terminal name ?](https://unix.stackexchange.com/questions/77796/how-to-get-the-current-terminal-name)
-> | 7 | Article | `opensource.com` | [Managing devices in Linux](https://opensource.com/article/16/11/managing-devices-linux)
-> | 8 | Q&A Forum | StackOverflow | [What is the difference between shell, console and terminal ?](https://superuser.com/questions/144666/what-is-the-difference-between-shell-console-and-terminal)
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Starting or Attaching to Your Program](https://lldb.llvm.org/use/tutorial.html#starting-or-attaching-to-your-program)
+> | 3 | Encyclopedia | Wikipedia | [Device files](https://en.wikipedia.org/wiki/Device_file)
+> | 4 | Q&A Forum | StackOverflow | [How to get the current terminal name ?](https://unix.stackexchange.com/questions/77796/how-to-get-the-current-terminal-name)
+> | 5 | Article | `opensource.com` | [Managing devices in Linux](https://opensource.com/article/16/11/managing-devices-linux)
+> | 6 | Q&A Forum | StackOverflow | [What is the difference between shell, console and terminal ?](https://superuser.com/questions/144666/what-is-the-difference-between-shell-console-and-terminal)
+
 
 ---
 [🏠](#contents) | [⬅️](#35-start-or-attach-program) | [➡️](#37-examine-execution)
@@ -1440,31 +1588,28 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 
-# 3. Tips & Shortcuts
-
-
-
-<!--
-.
-.
-.
-> End
---------------------------------------------------------------------------------
-> Footnotes:
--->
-
+<!-- # 3. Tips & Shortcuts -->
 
 
 <!--
-> Document End
---------------------------------------------------------------------------------
-> References:
--->
+.
+.
+.
+<!-- >Footnotes --------------------------------------------------------------->
+---
 
 
 
 
-<!-- Notes ---------------------------------------------------------------------
+
+<!-- >End --------------------------------------------------------------------->
+<!-- >References -------------------------------------------------------------->
+
+
+
+
+
+<!-- >Notes --------------------------------------------------------------------
 
 	- issue with lldb is it takes time to get back to the orginal point
 
