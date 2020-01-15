@@ -1164,9 +1164,9 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> ***Synopsis:***
 	>
 	> ```shell
-	> (lldb) process launch [<run-args>]
-	> (lldb) run [<run-args>]
-	> (lldb) r [<run-args>]
+	> process launch [<run-args>]
+	> run [<run-args>]
+	> r [<run-args>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1178,6 +1178,8 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> ```
 	>
 	> *<small>[***Note:****
+	>
+	> - *`<run-args>`* represent the arguments you normally pass to your program.
 	>
 	> - *`run`* is an abbreviation for *'`process launch -X true --`'* , see *`h run`*.
 	>
