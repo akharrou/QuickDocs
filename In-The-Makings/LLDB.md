@@ -1015,7 +1015,10 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> ```shell
 	> (lldb) watchpoint set expression --watch read_write --size 8 -- my_PtrToLongInt
+	> (lldb) watchpoint set variable   --watch read_write --size 8 -- my_PtrToLongInt
+	>
 	> (lldb) wa s e -w read_write -s 8 -- my_PtrToLongInt
+	> (lldb) wa s v -w read_write -s 8 -- my_PtrToLongInt
 	> ```
 	>
 	> ```shell
