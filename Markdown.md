@@ -679,6 +679,8 @@ _**Rendered Output:**_
 ### 3.4.1. Alignment
 <small>`[Search Tags: >tabalignment >aligntables >aligntabs]`</small>
 
+> *<small>[Note: Not all Markdown processors support this feature. - end note]</small>*
+
 -	You can align text in the columns to the left, right, or center by adding a colon (`:`) to the left, right, or on both side of the hyphens within the header row.
 
 	```markdown
