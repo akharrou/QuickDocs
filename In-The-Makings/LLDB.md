@@ -981,14 +981,21 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 > *Commands for operating on watchpoints:*
 
--	***Set watchpoint, on a variable or *[buffer starting]* address:***
+-	***Set watchpoint:***
 
 	> ***Synopsis:***
+	>
+	> > *on a variable:*
 	> ```shell
-	> watchpoint set variable [-w <watch-type>] [-s <byte-size>]<variable-name>
-	> watchpoint set expression [-w <watch-type>] [-s <byte-size>] -- <expr>
+	> watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
+	> ```
+	>
+	> > *on a [memory] address:*
+	> ```shell
+	> watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
 	> watchpoint set expression <expr>
 	> ```
+	>
 	>
 	> ***Option(s):***
 	> ```shell
