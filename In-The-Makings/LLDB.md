@@ -1160,7 +1160,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 > *Commands for starting/running a processes (running programs):*
 
 -	***To launch/run a *[loaded]* program:***
-	>
+
 	> ***Synopsis:***
 	>
 	> ```shell
@@ -1189,7 +1189,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 > *Advanced commands for process control:*
 
 -	***To redirect [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):***
-	>
+
 	> ***Synopsis:***
 	>
 	> ```shell
