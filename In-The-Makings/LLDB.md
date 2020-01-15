@@ -591,8 +591,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *Advanced commands for operating on breakpoints:*
 
-<br>
-
 <!-- -	***Set a breakpoint, on line(s), where regex-pattern matches [in source file(s)]:*** -->
 
 -	***Set a breakpoint, on line(s), in file(s)**, using regular-expressions:*
