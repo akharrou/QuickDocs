@@ -1190,11 +1190,11 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 <br>
 
 ---
-> *Commands for attaching to process (i.e running programs):*
+> *Commands for attaching to processes (i.e running programs):*
 
-- ***(Definition) – Attach:** Take over control [of execution] of a process (running program) [, in this case, for debugging], at the instruction that the process has reached.*
+- ***(Definition) – Attach:** Take over control [of the execution] of a process (running program) [, in this case, for debugging], at the instruction that the process has reached.*
 
--	***To attach to a process (running program):***
+-	***To attach to a process:***
 
 	> ***Synopsis:***
 	>
@@ -1229,7 +1229,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 ---
 > *Advanced commands for process launch:*
 
--	***To redirect [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):***
+-	***To redirect program [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):***
 
 	> ***Synopsis:***
 	>
@@ -1244,9 +1244,9 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> (lldb) process launch --stderr  file-3.txt
 	> ```
 	> ```shell
-	> (lldb) process launch --i       /dev/ttys001    # terminal [device] file, w/ name: '/dev/ttys001'
-	> (lldb) process launch --o       /dev/ttys002
-	> (lldb) process launch --e       /dev/ttys003
+	> (lldb) pr la -i       /dev/ttys001    # terminal shell [device] file, w/ name: '/dev/ttys001'
+	> (lldb) pr la -o       /dev/ttys002
+	> (lldb) pr la -e       /dev/ttys003
 	> ```
 	> ```shell
 	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
