@@ -1206,12 +1206,12 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> (lldb) process launch --stdin   file-1.txt      # text file, w/ name: 'file-1.txt'
 	> (lldb) process launch --stdout  file-2.txt
 	> (lldb) process launch --stderr  file-3.txt
-	>
+	> ```
+	> ```shell
 	> (lldb) process launch --i       /dev/ttys001    # terminal [device] file, w/ name: '/dev/ttys001'
 	> (lldb) process launch --o       /dev/ttys002
 	> (lldb) process launch --e       /dev/ttys003
 	> ```
-	>
 	> ```shell
 	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
