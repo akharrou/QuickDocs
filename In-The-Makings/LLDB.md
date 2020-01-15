@@ -548,9 +548,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint list -b 3 2       # --brief    (minimum description)
-	> (lldb) br l -f 1                    # --full     (default description)
-	> (lldb) br l -v                      # --verbose  (extensive description)
+	> (lldb) breakpoint list --brief 3 2    # --brief    (minimum description)
+	> (lldb) br l -f 1                      # --full     (default description)
+	> (lldb) br l -v                        # --verbose  (extensive description)
 	> ```
 
 -	***Delete breakpoint(s):***
@@ -565,7 +565,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```shell
 	> (lldb) breakpoint delete 5
 	> (lldb) br de 1 2 3
-	> (lldb) br d                        # delete all breakpts
+	> (lldb) br d                         # delete all breakpts
 	> ```
 	>
 	> *<small>[Note:*
@@ -578,10 +578,42 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 <br>
 
+
 ---
-> *(More) Advanced commands for operating on breakpoints: (for advanced users)*
+[🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
+### 3.4.1.1 (Advanced) Breakpoints
+<small>`[Search Tags: >advlldb.breakpoints >advdebugger.breakpoints >advlldbbreakpoints >advdebuggerbreakpoints >advbreakpointcommands >advbreakpointcmds >advbrcmds >advbmain >advblist >advbfile >advbfunc >advsetbrpts >advbrmain >advbrsmain >advbrkpts >advbreakpts >advbpts >advbrpoints >advbapts >advbapoints]`</small>
+<br>
+<br>
+
+
+> *Advanced commands for operating on breakpoints:*
+> *This subsection is only advised for **more advanced users**.*
 
 <br>
+
+<!-- -	***Set a breakpoint, on line(s), where regex-pattern matches [in source file(s)]:*** -->
+
+-	***Set a breakpoint, on line(s), in file(s)**, using regular-expressions:*
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> breakpoint set --all-files <regular-expression>                # Search all files
+	> breakpoint set --source-pattern-regexp <regular-expression>    # Search (only) specified files
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --all-files 'throw std::overflow_error;'
+	> (lldb) br s -A 'throw std::overflow_error;'
+	> ```
+	> ```shell
+	> (lldb) breakpoint set --source-pattern-regexp 'std::exception'
+	> (lldb) breakpoint set -p '<expr>'
+	> ```
+	>
+	>*<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
 
 -	***Set a breakpoint, on function(s)**, using regular-expressions:*
 
@@ -672,16 +704,42 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	Set the breakpoint on exception throW.
 	> ```
 
+-	***Enable / Disable breakpoints:***
+
+	> ***Synopsis:***
+	> ```shell
+	> (lldb) breakpoint set <breakpt-definition> [--disable]
+	>
+	> (lldb) breakpoint modify [--disable] [--enable] <breakpt-ids | breakpt-names>
+	>
+	> (lldb) breakpoint disable <breakpt-ids | breakpt-names>
+	> (lldb) breakpoint enable  <breakpt-ids | breakpt-names>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --name foo --disable          # set a breakpt, that is, initially, disabled
+	> (lldb) breakpoint modify --disable 'controlFlow'    # disables all breakpts with the name: 'controlFlow'
+	> (lldb) breakpoint modify --enable 4 3 2             # enables breakpts with id: 4, 3 and 2
+	> (lldb) breakpoint disable 'safetyCheck'             # disables all breakpts with the name: 'safetyCheck'
+	> (lldb) breakpoint enable 5                          # enables breakpts with id: 5
+	>
+	> (lldb) br s -n foo -d
+	> (lldb) br m -d 'controlFlow'
+	> (lldb) br m -e 4 3 2
+	> (lldb) br di 'safetyChecks'
+	> (lldb) br en 5
+	> ```
+
 -	***Set breakpoint, for multi-threaded processes:***
-	>
-	>  > The breakpoint stops only for the thread whose *`<name | id | index>`* matches.
-	>
+
 	> ***Synopsis:***
 	> ```shell
 	> (lldb) breakpoint set ... [ -T or --thread-name  <thread-name>  ]
 	> (lldb)   "   "            [ -t or --thread-id    <thread-id>    ]
 	> (lldb)   "   "            [ -x or --thread-index <thread-index> ]
 	> ```
+	>  > The breakpoint stops only for the thread whose *`<name | id | index>`* matches.
 	>
 	> ***Example(s):***
 	> ```shell
