@@ -985,12 +985,12 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 	> ***Synopsis:***
 	>
-	> - *on a variable:*
+	> - *on a variable:* <br>
 	> ```shell
 	> watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
 	> ```
 	>
-	> - *on a [memory] address:*
+	> - *on a [memory] address:* <br>
 	> ```shell
 	> watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
 	> watchpoint set expression <expr>
