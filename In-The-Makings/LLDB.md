@@ -1187,6 +1187,8 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> *- end note]</small>*
 
+<br>
+
 - ***(Definition) – Attach:** Take over control [of execution] of a process (running program) [, in this case, for debugging], at the instruction that the process has reached.*
 
 -	***To attach to a process (running program):***
@@ -1222,7 +1224,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 <br>
 
 ---
-> *Advanced commands for process control:*
+> *Advanced commands for process launch:*
 
 -	***To redirect [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):***
 
