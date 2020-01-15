@@ -985,15 +985,16 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 	> ***Synopsis:***
 	>
+	> > - ... on a variable:
 	> ```shell
 	> watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
 	> ```
 	>
+	> > - ... on an address by supplying an expression:
 	> ```shell
 	> watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
 	> watchpoint set expression <expr>
 	> ```
-	>
 	>
 	> ***Option(s):***
 	> ```shell
@@ -1008,14 +1009,21 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) watchpoint set variable my_var
-	> (lldb) wa s v my_var
+	> (lldb) watchpoint set variable --watch read_write my_var
+	> (lldb) wa s v -w read_write my_var
 	> ```
 	>
 	> ```shell
-	> (lldb) watchpoint set expression my_ptr
-	> (lldb) wa s e my_ptr
+	> (lldb) watchpoint set expression --watch read_write --size 8 -- my_PtrToLongInt
+	> (lldb) wa s e -w read_write -s 8 -- my_PtrToLongInt
 	> ```
+	>
+	> ```shell
+	> (lldb) watchpoint set expression --watch read --size 4 -- 0x00007ffeefbff510
+	> (lldb) wa s e -w read -s 4 -- 0x00007ffeefbff510
+	> ```
+	>
+	> *<small>[Note: `breakpoint set expression` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte region pointed to by the address `<expr>` . - end note]</small>*
 
 -	***Set watchpoint options:***
 
