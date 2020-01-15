@@ -504,7 +504,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-
 > *Commands for operating on breakpoints:*
 
 -	***Set a breakpoint, on a function:***
@@ -576,22 +575,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> *- end note]</small>*
 
+
+<br>
 <br>
 
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint [<command>]`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
+> | 3 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
+> | 4 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
+> | 5 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html#setting-watchpoints)
 
 ---
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
-### 3.4.1.1 (Advanced) Breakpoints
+### 3.4.1.1 Breakpoints (for Advanced Users)
 <small>`[Search Tags: >advlldb.breakpoints >advdebugger.breakpoints >advlldbbreakpoints >advdebuggerbreakpoints >advbreakpointcommands >advbreakpointcmds >advbrcmds >advbmain >advblist >advbfile >advbfunc >advsetbrpts >advbrmain >advbrsmain >advbrkpts >advbreakpts >advbpts >advbrpoints >advbapts >advbapoints]`</small>
-
-> *This subsection is only advised for **more advanced users**.*
 
 <br>
 <br>
 
 > *Advanced commands for operating on breakpoints:*
 
-<!-- -	***Set a breakpoint, on line(s), where regex-pattern matches [in source file(s)]:*** -->
 
 -	***Set a breakpoint, on line(s), in file(s)**, using regular-expressions:*
 
@@ -604,12 +611,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint set --all-files 'throw std::overflow_error;'
-	> (lldb) br s -A 'throw std::overflow_error;'
+	> (lldb) breakpoint set --all-files ''
+	> (lldb) br s -A ''
 	> ```
 	> ```shell
-	> (lldb) breakpoint set --source-pattern-regexp 'std::exception'
-	> (lldb) breakpoint set -p '<expr>'
+	> (lldb) breakpoint set --source-pattern-regexp ''
+	> (lldb) breakpoint set -p ''
 	> ```
 	>
 	>*<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
@@ -629,14 +636,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 	>
 	> > *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
-	>
-	> ```shell
-	> -A ( --all-files )
-	> 	All files are searched for source pattern matches.
-	>
-	> -p <regular-expression> ( --source-pattern-regexp <regular-expression> )
-	> 	Set the breakpoint by specifying a regular expression which is matched against the source text in a source file or files specified with the -f option.
-	> ```
+
 
 <br>
 
@@ -658,9 +658,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> >
 	> > ***Example(s):***
 	> > ```shell
-	> > (lldb) breakpoint set --file foo.c --line 15 --condition 'argc < 2'
+	> > (lldb) breakpoint set -r 'core' --condition 'argc < 2'
 	> > (lldb) br s -n bar -c 'res < 0'
-	> > (lldb) br s -n baz -c '(int) strcmp(y, "hello") == 0'	> > ```
+	> > (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
 	> > ```
 	>
 	> *Add Conditions to [Existing] Breakpoints::*
@@ -730,7 +730,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) br en 5
 	> ```
 
--	***Set breakpoint, for multi-threaded processes:***
+-	***Set breakpoint, on thread:***
 
 	> ***Synopsis:***
 	> ```shell
@@ -751,6 +751,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 	>
 	> ```shell
+
 	> -q <queue-name> ( --queue-name <queue-name> )
 	>	The breakpoint stops only for threads in the queue whose name is given by this argument.
 	> ```
@@ -820,20 +821,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> Then you can apply the name to your breakpoints, and they will all pick up these options. The connection from name to breakpoints remains live, so when you change the options configured on the name, all the breakpoints pick up those changes.
 
-> *<small>[Note:*
->
-> - *C++ Methods:*
-> 	```
-> 	breakpoint set --method <method-name>
-> 	breakpoint set -M <method-name>
-> 	```
->
-> - There is more to discover, see: *`(lldb) help breakpoint set`*
-> ```shell
-> breakpoint set [-w <watch-type>] [-s <byte-size>] <variable-name> breakpoint set [-DHd] -l <linenum> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] [-m <boolean>] breakpoint set [-DHd] -a <address-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-N <breakpoint-name>] breakpoint set [-DHd] -n <function-name> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -F <fullname> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -S <selector> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -M <method> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>] breakpoint set [-DHd] -r <regular-expression> [-i <count>] [-o <boolean>] [-x <thread-index>] [-t <thread-id>] [-T <thread-name>] [-q <queue-name>] [-c <expr>] [-G <boolean>] [-C <command>] [-s <shlib-name>] [-f <filename>] [-L <source-language>] [-K <boolean>] [-N <breakpoint-name>] [-R <address>]
-> ```
->
-> *- end note]</small>*
+	***Add a breakpoint command***:
+	>
+	> ***Synopsis:***
+	> ```shell
+	> (lldb) breakpoint command add <breakpt-ids | breakpt-name>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
 
 <br>
 <br>
@@ -842,16 +840,139 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint [<command>]`
-> | 2 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
-> | 3 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#breakpoint-names)
-> | 4 | Documentation | LLDB | [GDB to LLDB command map](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-breakpoints)
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
+### 3.4.1.2 Breakpoints (for C++)
+<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc >setbrpts >brmain >brsmain >brkpts >breakpts >bpts >brpoints >bapts >bapoints]`</small>
+
+<br>
+<br>
+
+> *Commands for operating on breakpoints, concerning C++ (only):*
+
+
+-	***Set a breakpoint, on function(s)**, by fullname:*
+
+<!-- C++ FUNCTIONS BY FULLNAME (NAMESPACES + BASENAME) -->
+
+       -F <fullname> ( --fullname <fullname> )
+            Set the breakpoint by fully qualified function names. For C++ this means namespaces and all arguments. Can be repeated multiple times to make one breakpoint for multiple names.
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+-	***Set a breakpoint, on function(s)**, by basename:*
+
+<!-- C++ FUNCTIONS BY BASENAME -->
+
+       -b <function-name> ( --basename <function-name> )
+            Set the breakpoint by function basename (C++ namespaces and arguments will be ignored). Can be repeated multiple times to make one breakpoint for multiple symbols.
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+-	***Set a breakpoint, on method(s):***
+
+<!-- C++ (OBJECT) METHODS -->
+
+       -M <method> ( --method <method> )
+            Set the breakpoint by C++ method names. Can be repeated multiple times to make one breakpoint for multiple methods.
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+
+-	***Set a breakpoint, on exception(s):***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> breakpoint set --language-exception <source-code-language>
+	> br s -E c++
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+<!-- ALL EXCEPTIONS -->
+
+	-E <source-language> ( --language-exception <source-language> )
+		Set the breakpoint on exceptions thrown by the specified language (without options, on throw
+		but not catch.)
+
+
+-	***Set a breakpoint, on catch(es):***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+-	***Exception / Catch breakpoint option(s):***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+
+OPTIONS FOR EXCEPTION BREAKPOINTS:
+
+       -O <type-name> ( --exception-typename <type-name> )
+            The breakpoint will only stop if an exception Object of this type is thrown. Can be repeated multiple times to stop for multiple object types. If you just specify the type's base name it will match against that type in all modules, or you can specify the full type name including modules.  Other submatches are not supported at present.Only supported for Swift at present.
+
+       -w <boolean> ( --on-throw <boolean> )
+            Set the breakpoint on exception throW.
+
+       -h <boolean> ( --on-catch <boolean> )
+            Set the breakpoint on exception catcH.
+
+
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
 
 
 ---
 [🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-start-or-attach-program)
 ### 3.4.2. Watchpoints
-<small>`[Search Tags:>lldb .watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds >wapts >watchpts >wpts >wpoints >wapoints >setwapts >wapts]`</small>
+<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds >wapts >watchpts >wpts >wpoints >wapoints >setwapts >wapts]`</small>
 <br>
 <br>
 
