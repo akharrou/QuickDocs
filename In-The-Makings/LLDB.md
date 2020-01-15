@@ -568,11 +568,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) br d                        # delete all breakpts
 	> ```
 	>
-	> *<small>[Note:
+	> *<small>[Note:*
 	>
-	> - If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all.
+	> - *If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all.*
 	>
-	> - `lldb` deletes breakpoints of a particular target, automatically when the target is deleted.
+	> - *`lldb`, automatically, deletes breakpoints of a particular target when the target is deleted.*
 	>
 	> *- end note]</small>*
 
@@ -583,7 +583,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 <br>
 
--	***Set a breakpoint, on function(s)** (using regular-expressions):*
+-	***Set a breakpoint, on function(s)**, using regular-expressions:*
 
 	> ***Synopsis:***
 	>
@@ -593,8 +593,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint set --func-regex "Parser.+_Command"
-	> (lldb) br s -r  "Parser.+_Command"
+	> (lldb) breakpoint set --func-regex 'Parser.{3,4,5}_Command\(\)'
+	> (lldb) br s -r "Parser.{3,4,5}_Command\(\)"
+	> ```
+	>
+	> > *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
+	>
+	> ```shell
+	> -A ( --all-files )
+	> 	All files are searched for source pattern matches.
+	>
+	> -p <regular-expression> ( --source-pattern-regexp <regular-expression> )
+	> 	Set the breakpoint by specifying a regular expression which is matched against the source text in a source file or files specified with the -f option.
 	> ```
 
 <br>
@@ -606,20 +616,36 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***Set breakpoint options** (e.g. conditions, comamnds, attributes):*
 
 	> ***Conditions:***
-	> ```shell
-	> breakpoint set ... [--condition <condition-expr>]
-	> breakpoint modify  [--condition <condition-expr>] [<breakpt-ids | breakpt-name>]
-	>```
-	> ```shell
-	> (lldb) breakpoint set --file main.c --line 15 --condition 'argc < 2'
-	> (lldb) br s -n bar -c 'res < 0'
-	> (lldb) b baz -c '(int) strcmp(y, "hello") == 0'
-	> ```
-	> ```shell
-	> (lldb) breakpoint modify --condition 'my_var == 42' 3
-	> (lldb) br m -c 'my_var < 42' 4 2 8
-	> ```
 	>
+	> *Set [New] Breakpoint w/ Conditions:*
+	>
+	> > ***Synopsis:***
+	> >
+	> > ```shell
+	> > breakpoint set <breakpt-definition> [--condition <condition-expr>]
+	> > ```
+	> >
+	> > ***Example(s):***
+	> > ```shell
+	> > (lldb) breakpoint set --file foo.c --line 15 --condition 'argc < 2'
+	> > (lldb) br s -n bar -c 'res < 0'
+	> > (lldb) br s -n baz -c '(int) strcmp(y, "hello") == 0'	> > ```
+	> > ```
+	>
+	> *Add Conditions to [Existing] Breakpoints::*
+	>
+	> > ***Synopsis:***
+	> >
+	> > ```shell
+	> > breakpoint modify [--condition <condition-expr>] [<breakpt-ids | breakpt-name>]
+	> > ```
+	> >
+	> > ***Example(s):***
+	> > ```shell
+	> > (lldb) breakpoint modify --condition 'my_var == 42' 3
+	> > (lldb) br m -c 'my_var < 42' 4 2 8
+	> > ```
+
 	> ***Commands:***
 	> ```shell
 	> ... [--command <lldb-command>]
@@ -665,6 +691,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```shell
 	> (lldb) breakpoint modify --condition 'my_var == 42' 3
 	> (lldb) br m -c 'my_var < 42' 4 2 8
+	> ```
+	>
+	> ```shell
+	> -q <queue-name> ( --queue-name <queue-name> )
+	>	The breakpoint stops only for threads in the queue whose name is given by this argument.
 	> ```
 
 	> ***Example(s):***
