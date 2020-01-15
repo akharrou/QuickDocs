@@ -320,7 +320,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#312-sanitizer-flags--fsanitize-family) | [➡️](#33-load-lldb)
 ## 3.2. Launch LLDB
-<small>`[Search Tags: >lldb.launch >debugger.launch >launchlldb >launchdebugger]`</small>
+<small>`[Search Tags: >lldb.launch >debugger.launch >lldblaunch >debuggerlaunch >launchlldb >launchdebugger]`</small>
 <br>
 <br>
 
@@ -347,44 +347,44 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#32-launch-lldb) | [➡️](#34-setup-lldb)
 ## 3.3. Load LLDB
-<small>`[Search Tags: >lldb.loadprogram >loadlldb >loaddebugger >debugger.loadprogram >db.loadprogram >programload >program.load >lldb.unloadprogram >unloadlldb >unloaddebugger >debugger.unloadprogram >db.unloadprogram >programunload >program.unload]`</small>
+<small>`[Search Tags: >loadprogram >loadprocess >loadexecutable >programload >processload >executableload >lldb.loadprogram >loadlldb >loaddebugger >debugger.loadprogram >db.loadprogram >programload >program.load >lldb.unloadprogram >unloadlldb >unloaddebugger >debugger.unloadprogram >db.unloadprogram >programunload >program.unload]`</small>
 <br>
 <br>
 
 
 -	`lldb` must *[then]* be informed of which program we intend to debug – this step is referred to as: ***"loading a program"*** . <br>
 
-	> More pedantically, we say – we are ***loading*** *[`lldb` with]* a ***debugger target***, i.e setting `lldb` up to target a specific process *(program)*, for debugging/examination-phase.
-	>
-	> *<small>[Note: `lldb`'s lexicon for an ***"[executable] program intended for debugging"*** is a ***"[debugger] target"***. - end note]</small>*
+	> To be more pedantic, we say – we are ***loading*** *[`lldb` with]* a ***debugger target***, i.e setting `lldb` up to target a specific process *(program)*, for debugging/examination-phase.
 
 -	***Demonstration:*** <br>
 	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif --> <br>
 
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help target`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help target create`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help target delete`
+> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help target list`
+> | 6 | Manual Page | Unix / Linux / MacOS | `(lldb) help target select`
+
+
 ---
-> *Commands for loading and un-loading [debugging] targets:*
+[🏠](#contents) | [⬅️](#32-launch-lldb) | [➡️](#34-setup-lldb)
+### 3.3.1. Basic Commands
+<small>`[Search Tags: >lldbloadcomands >lldb.load.commands >lldbloadcmds >lldb.load.cmds >debuggerloadcomands >debugger.load.commands >debuggerloadcmds >debugger.load.cmds >loadcomands >load.commands >loadcmds >load.cmds]`</small>
+<br>
+<br>
 
--	***To load a program [into `lldb`]:***
+> *<small>[Note: `lldb`'s lexicon for an ***"[executable] program intended for debugging"*** is a ***"[debugger] target"*** . - end note]</small>*
 
-	<!-- - *[From] outside `lldb`:* <br> <br>
-		```shell
-		$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
-		```
-		```shell
-		$> lldb --file a.out "arg1" "arg2" "youGetIt"
-		$> lldb -f a.out "arg1" "arg2" "youGetIt"
-		$> lldb a.out
-		```
-	- *[From] inside `lldb`:* <br> <br>
-		```shell
-		(lldb) target create <program-execuable-filename>
-		```
-		```shell
-		(lldb) target create a.out
-		(lldb) ta cr a.out
-		(lldb) file a.out
-		``` -->
-
+-	***To create (load) a target:***
 
 	> *From outside [`lldb`]:*
 	>
@@ -417,12 +417,59 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> > (lldb) file a.out
 	> > ```
 
--	***To un-load a program [from `lldb`]:***
+	<!-- - *[From] outside `lldb`:* <br> <br>
+		```shell
+		$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
+		```
+		```shell
+		$> lldb --file a.out "arg1" "arg2" "youGetIt"
+		$> lldb -f a.out "arg1" "arg2" "youGetIt"
+		$> lldb a.out
+		```
+	- *[From] inside `lldb`:* <br> <br>
+		```shell
+		(lldb) target create <program-execuable-filename>
+		```
+		```shell
+		(lldb) target create a.out
+		(lldb) ta cr a.out
+		(lldb) file a.out
+		``` -->
+
+-	***To list (all) targets:***
 
 	> ***Synopsis:***
 	>
 	> ```shell
-	> (lldb) target delete [<target-id | target-id-list>]
+	> (lldb) target list
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) target list
+	> (lldb) ta l
+	> ```
+
+-	***To select a [different] target as current target:***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> (lldb) target select <index>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) target select 3       # select the third target for debugging
+	> (lldb) ta se 5
+	> ```
+
+-	***To delete (un-load) a target:***
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> (lldb) target delete [<target-ids>]
 	> (lldb) target delete [--all]
 	> ```
 	>
