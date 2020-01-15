@@ -1189,6 +1189,9 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 <br>
 
+---
+> *Commands for attaching to process (i.e running programs):*
+
 - ***(Definition) – Attach:** Take over control [of execution] of a process (running program) [, in this case, for debugging], at the instruction that the process has reached.*
 
 -	***To attach to a process (running program):***
