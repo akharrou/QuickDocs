@@ -33,13 +33,21 @@ QuickDocs \| Low Level Debugger (LLDB)
 - [3. How do I use it ?](#3-how-do-i-use-it-)
 	- [3.1. Compile Program](#31-compile-program)
 		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g---o0)
-		- [3.1.2. Helpful Flags: The `fsanitize` Family](#312-helpful-flags-the-fsanitize-family)
+		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
 	- [3.2. Launch LLDB](#32-launch-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
+			- [3.4.1.1. Basic Commands](#)
+			- [3.4.1.2. Basic (OOP) Commands](#)
+			- [3.4.1.3. Advanced Commands](#)
 		- [3.4.2. Watchpoints](#342-watchpoints)
-	- [3.5. Start or Attach Program](#35-start-or-attach-program)
+			- [3.4.2.1. Basic Commands](#)
+			- [3.4.2.2. Advanced Commands](#)
+	- [3.5. Begin Debugging](#35-start-or-attach-program)
+		- [3.5.1. Launch Program](#)
+		- [3.5.2. Attach to Program](#)
+		- [3.5.3. Advanced Program Configurations](#)
 	- [3.6. Graphical User Interface (GUI)](#36-graphical-user-interface-gui)
 	- [3.7. Examine Execution](#37-examine-execution)
 		- [3.7.1. Source Code](#371-source-code)
@@ -47,6 +55,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.7.3. Thread State(s)](#373-thread-states)
 		- [3.7.4. Stack Frame State(s)](#374-stack-frame-states)
 - [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
+	- [3.1 Makfile]()
 
 ---
 
@@ -170,7 +179,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> *<small>[Note:*
 	>
-	> -	There is also a brief section on a set of *[compiler]* flags, which, basically, make up the other half of the [debugging](https://en.wikipedia.org/wiki/Debugging) tools/weapons available to you – ***the `"fsanitize"` family*** ([§3.1.2](#312-helpful-flags-the-fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br>
+	> -	There is also a brief section on a set of *[compiler]* flags, which, basically, make up the other half of the [debugging](https://en.wikipedia.org/wiki/Debugging) tools/weapons available to you – ***the `"fsanitize"` family*** ([§3.1.2](#312-sanitizer-flags--fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br>
 	>
 	> *- end note]</small>*
 
@@ -203,7 +212,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	Make sure to use *(compile with)* the debugging *[compiler]* flags ([§3.1.1](#311-debug-flags--g---o0)).
 
-	>  *And, although unrelated to *`lldb`*, make sure *[when debugging]* to always compile with the *`fsanitize`* family of *[compiler]* flags ([3.1.2](#312-helpful-flags-the-fsanitize-family)). They are tremendously helpful *[with debugging]*, they pretty much do ***half of the debugging effort*** for you !*
+	>  *And, although unrelated to *`lldb`*, make sure *[when debugging]* to always compile with the *`fsanitize`* family of *[compiler]* flags ([3.1.2](#312-sanitizer-flags--fsanitize-family)). They are tremendously helpful *[with debugging]*, they pretty much do ***half of the debugging effort*** for you !*
 
 
 <br>
@@ -217,7 +226,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#31-compile-program) | [➡️](#312-helpful-flags-the-fsanitize-family)
+[🏠](#contents) | [⬅️](#31-compile-program) | [➡️](#312-sanitizer-flags--fsanitize-family)
 ### 3.1.1. Debug Flags: `-g` & `-O0`
 <small>`[Search Tags: >compileprogram >compileprg >programcompilation >compilation >lldb.compile.flags >lldb.compile.debugflags >lldb.debugflags >lldb.flags >debugflags]`</small>
 <br>
@@ -250,7 +259,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 [🏠](#contents) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-launch-lldb)
-### 3.1.2. Helpful Flags: The `fsanitize` Family
+### 3.1.2. Sanitizer Flags: `-fsanitize` family
 <small>`[Search Tags: >fsanitize=address >fsanitize=undefined >fsanitize=memory >fsanitize=leaks >fsanitize=threads >fsanitize=dataflag >fsanitize=cfi >fsanitize=safestack >fsanitize=safe-stack >fsanitize=data-flow >sanitizers >sanitizerflags >sanitizeflags >sanitizer.flags >flags.sanitizers >debug.sanitizers >debugsanitizers >debugfsanitizers >memoryflags >leakflags >threadflags >dataflowflags >undefinedbehaviorflags >safestackflags >cfiflags >memory.flags >leak.flags >thread.flags >dataflow.flags >undefinedbehavior.flags >safestack.flags >cfi.flags] >flags.memory >flags.leak >flags.thread >flags.dataflow >flags.undefinedbehavior >flags.safestack >flags.cfi`</small>
 <br>
 <br>
@@ -308,7 +317,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > | 4 | Documentation | GNU | [Sanitizers Family (scroll down) ](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html#-fsanitize=address)
 
 ---
-[🏠](#contents) | [⬅️](#312-helpful-flags-the-fsanitize-family) | [➡️](#33-load-lldb)
+[🏠](#contents) | [⬅️](#312-sanitizer-flags--fsanitize-family) | [➡️](#33-load-lldb)
 ## 3.2. Launch LLDB
 <small>`[Search Tags: >lldb.launch >debugger.launch >launchlldb >launchdebugger]`</small>
 <br>
@@ -593,7 +602,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
-### 3.4.1.1. Breakpoints (concerning Advanced Users)
+### 3.4.1.1. Breakpoints (Advanced)
 <small>`[Search Tags: >advlldb.breakpoints >advdebugger.breakpoints >advlldbbreakpoints >advdebuggerbreakpoints >advbreakpointcommands >advbreakpointcmds >advbrcmds >advbmain >advblist >advbfile >advbfunc >advsetbrpts >advbrmain >advbrsmain >advbrkpts >advbreakpts >advbpts >advbrpoints >advbapts >advbapoints]`</small>
 
 <br>
@@ -849,7 +858,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#342-watchpoints)
-### 3.4.1.2. Breakpoints (concerning C++)
+### 3.4.1.2. Breakpoints (C++)
 <small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc >setbrpts >brmain >brsmain >brkpts >breakpts >bpts >brpoints >bapts >bapoints]`</small>
 
 <br>
