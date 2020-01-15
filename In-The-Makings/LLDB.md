@@ -985,12 +985,12 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 	> ***Synopsis:***
 	>
-	> > *on a variable:*
+	> - *on a variable:*
 	> ```shell
 	> watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
 	> ```
 	>
-	> > *on a [memory] address:*
+	> - *on a [memory] address:*
 	> ```shell
 	> watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
 	> watchpoint set expression <expr>
@@ -1019,11 +1019,20 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> (lldb) wa s e my_ptr
 	> ```
 
--	***Set a watchpoint condition:***
+-	***Set watchpoint options:***
 
 	> ***Synopsis:***
+	>
+	> > *conditions:*
 	> ```
-	> watchpoint modify [-c <expr>] [<watchpt-id | watchpt-id-list>]
+	> watchpoint modify [-c <expr>] [<watchpt-ids>]
+	> watchpoint command [-c <expr>] [<watchpt-ids>]
+	> ```
+	>
+	> > *commands:*
+	> ```
+	> watchpoint modify [-C <lldb-command>] [<watchpt-ids>]
+	> watchpoint command [<watchpt-ids>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1036,7 +1045,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 	> ***Synopsis:***
 	> ```shell
-	> watchpoint list -[bv] [<watchpt-id | watchpt-id-list>]
+	> watchpoint list -[bv] [<watchpt-ids>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1051,7 +1060,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> ***Synopsis:***
 	>
 	> ```shell
-	> watchpoint delete [<watchpt-id | watchpt-id-list>]
+	> watchpoint delete [<watchpt-ids>]
 	> ```
 	>
 	> ***Example(s):***
