@@ -1244,9 +1244,9 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> (lldb) process launch --stderr  file-3.txt
 	> ```
 	> ```shell
-	> (lldb) pr la -i       /dev/ttys001    # terminal shell [device] file, w/ name: '/dev/ttys001'
-	> (lldb) pr la -o       /dev/ttys002
-	> (lldb) pr la -e       /dev/ttys003
+	> (lldb) pr la -i  /dev/ttys001                   # terminal shell [device] file, w/ name: '/dev/ttys001'
+	> (lldb) pr la -o  /dev/ttys002
+	> (lldb) pr la -e  /dev/ttys003
 	> ```
 	> ```shell
 	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
