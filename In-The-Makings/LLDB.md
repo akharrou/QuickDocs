@@ -592,7 +592,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.1. Basic Commands
-<small>`[Search Tags: >breakpointcommands >breakpointcmds >breakptcommands >breakptcmds >brkptcommands >brkptcmds >brcommands >brcmds >bcommands >bcmds >breakpointbasiccommands >breakpointbasiccmds >breakptbasiccommands >breakptbasiccmds >brkptbasiccommands >brkptbasiccmds >brbasiccommands >brbasiccmds >bbasiccommands >bbasiccmds >breakpointbasics >breakptbasics >brkptbasics >brbasics >bbasics >brptcommands >brptcmds >brptbasiccommands >brptbasiccmds >brptbasics]`</small>
+<small>`[Search Tags: >breakpointcommands >breakpointcmds >breakptcommands >breakptcmds >brkptcommands >brkptcmds >brcommands >brcmds >bcommands >bcmds >breakpointbasiccommands >breakpointbasiccmds >breakptbasiccommands >breakptbasiccmds >brkptbasiccommands >brkptbasiccmds >brbasiccommands >brbasiccmds >bbasiccommands >bbasiccmds >breakpointbasics >breakptbasics >brkptbasics >brbasics >bbasics >brptcommands >brptcmds >brptbasiccommands >brptbasiccmds >brptbasics >breakpointcreate >createbreakpoint >crbreakpoint >breakptcreate >createbreakpt >crbreakpt >brkptcreate >createbrkpt >crbrkpt >brptcreate >createbrpt >crbrpt >brcreate >createbr >crbr]`</small>
 <br>
 <br>
 
@@ -690,7 +690,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.2. Basic (C++) Commands
-<small>`[Search Tags: >cppbreakpointcommands >cppbreakpointcmds >cppbreakptcommands >cppbreakptcmds >cppbrkptcommands >cppbrkptcmds >cppbrcommands >cppbrcmds >cppbcommands >cppbcmds >cppbreakpointbasiccommands >cppbreakpointbasiccmds >cppbreakptbasiccommands >cppbreakptbasiccmds >cppbrkptbasiccommands >cppbrkptbasiccmds >cppbrbasiccommands >cppbrbasiccmds >cppbbasiccommands >cppbbasiccmds >cppbreakpointbasics >cppbreakptbasics >cppbrkptbasics >cppbrbasics >cppbbasics >cppbrptcommands >cppbrptcmds >cppbrptbasiccommands >cppbrptbasiccmds >cppbrptbasics]`</small>
+<small>`[Search Tags: >cppbreakpointcommands >cppbreakpointcmds >cppbreakptcommands >cppbreakptcmds >cppbrkptcommands >cppbrkptcmds >cppbrcommands >cppbrcmds >cppbcommands >cppbcmds >cppbreakpointbasiccommands >cppbreakpointbasiccmds >cppbreakptbasiccommands >cppbreakptbasiccmds >cppbrkptbasiccommands >cppbrkptbasiccmds >cppbrbasiccommands >cppbrbasiccmds >cppbbasiccommands >cppbbasiccmds >cppbreakpointbasics >cppbreakptbasics >cppbrkptbasics >cppbrbasics >cppbbasics >cppbrptcommands >cppbrptcmds >cppbrptbasiccommands >cppbrptbasiccmds >cppbrptbasics >breakpointcreate >createbreakpoint >crbreakpoint >breakptcreate >createbreakpt >crbreakpt >brkptcreate >createbrkpt >crbrkpt >brptcreate >createbrpt >crbrpt >brcreate >createbr >crbr]`</small>
 <br>
 <br>
 
@@ -815,7 +815,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.3. Advanced Commands
-<small>`[Search Tags: >advlldb.breakpoints >advdebugger.breakpoints >advlldbbreakpoints >advdebuggerbreakpoints >advbreakpointcommands >advbreakpointcmds >advbrcmds >advbmain >advblist >advbfile >advbfunc >advsetbrpts >advbrmain >advbrsmain >advbrkpts >advbreakpts >advbpts >advbrpoints >advbapts >advbapoints]`</small>
+<small>`[Search Tags: >advlldb.breakpoints >advdebugger.breakpoints >advlldbbreakpoints >advdebuggerbreakpoints >advbreakpointcommands >advbreakpointcmds >advbrcmds >advbmain >advblist >advbfile >advbfunc >advsetbrpts >advbrmain >advbrsmain >advbrkpts >advbreakpts >advbpts >advbrpoints >advbapts >advbapoints >breakpointcreate >createbreakpoint >crbreakpoint >breakptcreate >createbreakpt >crbreakpt >brkptcreate >createbrkpt >crbrkpt >brptcreate >createbrpt >crbrpt >brcreate >createbr >crbr]`</small>
 <br>
 <br>
 
@@ -874,15 +874,19 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 ---
 
+<small>`[Search Tags: >breakpointoptions >optionsbreakpoint >breakptoptions >optionsbreakpt >brkptoptions >optionsbrkpt >brptoptions >optionsbrpt >broptions >optionsbr]`</small>
+
 > *Commands for adding breakpoint options (e.g. conditions, comamnds, attributes):*
 
 - ***Breakpoint conditions:***
+
+	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions]`</small>
 
 	- ***Set***
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint set <breakpt-definition> [--condition <condition-expr>]
+		> breakpoint set <breakpt-definition> [--condition <condition-expr>] <breakpt-attributes>
 		> ```
 		>
 		> ***Example(s):***
@@ -895,16 +899,58 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 		>
 		> ***Synopsis:***
 		> ```shell
+		> breakpoint modify [--condition <condition-expr>] <breakpt-attributes> [<breakpt-ids | breakpt-name>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint modify --condition 'my_var == 42' 3     # add condition to breakpt with ID: 3
+		> (lldb) br m -c 'my_var < 42' 4 2 8
+		> ```
+
+- ***Breakpoint commands:***
+
+	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands]`</small>
+
+	- ***Set***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint set <breakpt-definition> [--command <command>] <breakpt-attributes>
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint set --line 34 --command 'argc < 2'
+		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
+		> ```
+
+	- ***Add***
+		>
+		> ***Synopsis:***
+		> ```shell
 		> breakpoint modify [--condition <condition-expr>] [<breakpt-ids | breakpt-name>]
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) breakpoint modify --condition 'my_var == 42' 3
+		> (lldb) breakpoint modify --condition 'my_var == 42' 3     # add condition to breakpt with ID: 3
 		> (lldb) br m -c 'my_var < 42' 4 2 8
 		> ```
 
-	> ***Commands:***
+	- ***Configure***
+		>
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint command add [<breakpt-ids | breakpt-name>]  # 'press enter', it will prompt to enter your command(s)
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint command add 3
+		> (lldb)
+		> ```
+
 	> ```shell
 	> ... [--command <lldb-command>]
 	> ... [-C <lldb-command>]
@@ -1634,14 +1680,31 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#38-examine-execution) | [➡️](#382-variables)
 ### 3.8.1. Source Code
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >sourcecodelldb >lldb.sourcecode >lldbsourcecode]`</small>
 <br>
 <br>
 
+> *`gui` mode displays the source code that is currently executing, in one of the window panes.*
 
-> TODO: ### 3.8.1. Source Code
+-	***List source code:***
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+	> <small>`[Search Tags: >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <linenum>]
+	> source list [--show-breakpoints] [--count <count>] [--name <symbol>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) source list --count 20 --file main.c --line 5
+	> (lldb) so li -c 20 -f main.c -l 5
+	> ```
+	> ```shell
+	> (lldb) source list --count 25 --name foo
+	> (lldb) so li -c 25 -n foo
+	> ```
 
 
 <br>
@@ -1651,7 +1714,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help source list`
 
 
 ---
