@@ -1449,7 +1449,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ***Synopsis:***
 	> ```shell
-	> process launch --tty
+	> process launch --tty -- [<run-args>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1466,7 +1466,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ***Synopsis:***
 	> ```shell
-	> process launch --shell=[<filename>]
+	> process launch --shell=[<filename>] -- [<run-args>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1483,7 +1483,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ***Synopsis:***
 	> ```shell
-	> process launch --environment [<NAME=VALUE> ...]
+	> process launch --environment [<NAME=VALUE> ...] -- [<run-args>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1500,7 +1500,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	> ***Synopsis:***
 	> ```shell
-	> process launch --working-dir <directory>
+	> process launch --working-dir <directory> -- [<run-args>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1517,7 +1517,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	>
 	> ```shell
-	> process launch [--stdin <filename>] [--stdout <filename>] [--stderr <filename>] [<run-args>]
+	> process launch [--stdin <filename>] [--stdout <filename>] [--stderr <filename>] -- [<run-args>]
 	> ```
 	>
 	> ***Example(s):***
