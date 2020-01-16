@@ -50,11 +50,15 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.5.2. Attach to Program](#352-attach-to-program)
 		- [3.5.3. Advanced Program Configurations](#353-advanced-program-configurations)
 	- [3.6. Graphical User Interface (GUI)](#36-graphical-user-interface-gui)
-	- [3.7. Examine Execution](#37-examine-execution)
-		- [3.7.1. Source Code](#371-source-code)
-		- [3.7.2. Variable(s)](#372-variables)
-		- [3.7.3. Thread State(s)](#373-thread-states)
-		- [3.7.4. Stack Frame State(s)](#374-stack-frame-states)
+	- [3.8. Controlling Process Execution](#38-examine-execution)
+		- [3.8.1. G](#)
+		- [3.8.2. Step In, Out of Functions](#)
+		- [3.8.3. Continuing Execution](#)
+	- [3.8. Examine Execution](#38-examine-execution)
+		- [3.8.1. Source Code](#381-source-code)
+		- [3.8.2. Variable(s)](#382-variables)
+		- [3.8.3. Thread State(s)](#383-thread-states)
+		- [3.8.4. Stack Frame State(s)](#384-stack-frame-states)
 - [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
 	- [3.1 Makfile]()
 
@@ -155,7 +159,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	- *4.* **Setup LLDB** ([§3.4](#34-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
 	>	- *5.* **Run your program** ([§3.5](#35-start-or-attach-program)) *(within LLDB)*
 	>	- *6.* **Launch Graphical User Interface** ([3.6](#36-graphical-user-interface-gui)) mode
-	>	- *7.* **Examine the Execution** ([§3.7](#37-examine-execution)) *[of your program]*. <br> <br>
+	>	- *7.* **Examine the Execution** ([§3.7](#38-examine-execution)) *[of your program]*. <br> <br>
 	>
 	> *Annotated Command Line:*
 	>
@@ -383,6 +387,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To create a [debugger] target (i.e load a program executable):***
 
+	> <small>`[Search Tags: >trcreate >createtr >crtr >targetcreate >createtarget >trload >loadtr >ldtr >targetload >loadtarget]`</small>
+
 	> *From outside [`lldb`]:*
 	>
 	> > ***Synopsis:***
@@ -413,8 +419,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> > (lldb) file a.out
 	> > ```
 
-	> <small>`[Search Tags: >trcreate >createtr >crtr >targetcreate >createtarget]`</small>
-
 	<!-- - *[From] outside `lldb`:* <br> <br>
 		```shell
 		$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
@@ -436,6 +440,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To list (all) targets:***
 
+	> <small>`[Search Tags: >trlist >listtr >litr >targetlist >listtarget]`</small>
+
 	> ***Synopsis:***
 	>
 	> ```shell
@@ -448,9 +454,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta l
 	> ```
 
-	> <small>`[Search Tags: >trlist >listtr >litr >targetlist >listtarget]`</small>
-
 -	***To select a [different] target [as current target]:***
+
+	> <small>`[Search Tags: >trselect >targetselect >setr >selecttr >selecttarget]`</small>
 
 	> ***Synopsis:***
 	>
@@ -464,9 +470,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta se 5
 	> ```
 
-	> <small>`[Search Tags: >trselect >targetselect >setr >selecttr >selecttarget]`</small>
-
 -	***To delete a target (i.e unload an program execuable):***
+
+	> <small>`[Search Tags: >trdelete >targetdelete >detr >deletetr >deletetarge >trunload >unloadtr >uldtr >targetunload >unloadtargett]`</small>
 
 	> ***Synopsis:***
 	>
@@ -482,8 +488,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta de --all           # delete all targets
 	> (lldb) ta d -a               # delete all targets
 	> ```
-
-	> <small>`[Search Tags: >trdelete >targetdelete >detr >deletetr >deletetarget]`</small>
 
 > *<small>[Note:*
 >
@@ -534,7 +538,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	Set your ***breakpoints** ([§ TODO ](#})) and ***watchpoints*** ([§ TODO ](#})).
+-	`lldb` *[then]* gives you the possibility of setting up [*breakpoints*](https://en.wikipedia.org/wiki/Breakpoint) ([§3.4.1](#341-breakpoints)) and [*watchpoints*](https://en.wiktionary.org/wiki/watchpoint#English) ([§3.4.2](#342-watchpoints)).
+
+> *<small>[Note: Watchpoints can only be set after the launch of the program. - end note]</small>*
+
 
 <!-- BREAKPOINT ANALOGY:
 
@@ -549,10 +556,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint [<command>]`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint`
 > | 3 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
-> | 4 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
 > | 5 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html#setting-watchpoints)
 
 
@@ -564,9 +570,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
--	`lldb` gives you the option to set it *[`lldb`]* up to stop *(pause/halt/break/rest)* *[during execution [of your program]]*, everytime it reaches a certain point/location *(e.g. at a particular line *[in source code]* or at a particular function)* – optionally you can add conditions, so as to only stop at that point/location when the *[added]* condition is met *(fulfilled/reached)*. <br>
-
-	*"A location at which *[`lldb`'s]* execution is setup to stop *[at]*"* is what is referred to as: a ***breakpoint*** ([§3.4.1](#341-breakpoints)) – you can kind of think of them *[breakpoints]* as ***checkpoints***. <br>
+>	*"In software development, a breakpoint is an intentional stopping or pausing place in a program, put in place for debugging purposes. It is also sometimes simply referred to as a 'pause'.*
+>
+>	*More generally, a breakpoint is a means of acquiring knowledge about a program during its execution. During the interruption, the programmer inspects the test environment (general purpose registers, memory, logs, files, etc.) to find out whether the program is functioning as expected. In practice, a breakpoint consists of one or more conditions that determine when a program's execution should be interrupted. [...]"*
+>
+>	*-- [Wikipedia :: Breakpoints](https://en.wikipedia.org/wiki/Breakpoint)*
 
 
 <br>
@@ -576,26 +584,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint [<command>]`
-> | 3 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
-> | 4 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
+> | 1 | Encyclopedia | Wikipedia | [Breakpoints](https://en.wikipedia.org/wiki/Breakpoint)
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
+> | 3 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
+> | 4 | Manual Page | LLDB | `(lldb) help breakpoint`
 
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.1. Basic Commands
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >breakpointcommands >breakpointcmds >breakptcommands >breakptcmds >brkptcommands >brkptcmds >brcommands >brcmds >bcommands >bcmds >breakpointbasiccommands >breakpointbasiccmds >breakptbasiccommands >breakptbasiccmds >brkptbasiccommands >brkptbasiccmds >brbasiccommands >brbasiccmds >bbasiccommands >bbasiccmds >breakpointbasics >breakptbasics >brkptbasics >brbasics >bbasics >brptcommands >brptcmds >brptbasiccommands >brptbasiccmds >brptbasics]`</small>
 <br>
 <br>
 
-
-> TODO: #### 3.4.1.1. Basic Commands
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-> *Commands for operating on breakpoints:*
 
 -	***Set a breakpoint, on a function:***
+
+	> <small>`[Search Tags: >brset >setbr >sbr >sebr >breakpointset  >breakpointfunctions >breakpointfuncs >breakpointfts >breakpointfcs  >breakpointmain >setbreakpoint >brkptset >setbrkpt >breakptset >setbreakpt >brsetfunctions >brfunctions >brfuncs >brfts >brfcs >brsfunctions >brsfuncs >brsfts >brsfcs >brsmain]`</small>
 
 	> ***Synopsis:***
 	>
@@ -613,6 +617,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***Set a breakpoint, on a [source file] line:***
 
+	> <small>`[Search Tags: >brsetfiles >brfiles >brsrcs >brpages >brpgs >brsfiles >brssrcs >brspages >brspgs] >brsetlines >brlines >brlis >brpages >brls >brslines >brslis >brspages >brsls >breakpointlines >breakpointlis >breakpointls >breakpointfcs  >breakpointmainlines`</small>
+
 	> ***Synopsis:***
 	> ```shell
 	> breakpoint set --file <filename> --line <line-number>
@@ -628,6 +634,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***List breakpoints:***
 
+	> <small>`[Search Tags: >brlist >listbr >libr >breaklist >listbreak >breakptslist >breakptptlists >listbreakpts, >breakpointlist]`</small>
+
 	> ***Synopsis:***
 	>
 	> ```shell
@@ -642,6 +650,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 
 -	***Delete breakpoint(s):***
+
+	> ```shell
+	> [Search Tags: >brdelete >deletebr >deletebrpt >deletebrkpt >deletebreakpt >deletebreakpoint >brdelete >brptdelete >brkptdelete >breakptdelete >breakpointdelete >debr >deletebr >deletetarge >brunload >unloadtr >uldtr >targetunload >unloadtargett >delbr >brdel >delbrpt >brptdel >delbrkpt >brkptdel >delbreakpt >breakptdel >delbreakpoint >breakpointdel]
+	> ```
 
 	> ***Synopsis:***
 	>
@@ -1191,12 +1203,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> *<small>[Note: If no watchpoints are specified, delete them all. - end note]</small>*
 
-	> *<small>[Note:*
-	>
-	> - *Trying to set watchpoints before launching a process (i.e running a program) will not work, you'll get this: "`error: invalid process` (or `thread`)". You have to load and launch/run the program first.*
-	>
-	> <br> *- end note]</small>*
-
 
 <br>
 <br>
@@ -1503,7 +1509,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#35-start-or-attach-program) | [➡️](#37-examine-execution)
+[🏠](#contents) | [⬅️](#35-start-or-attach-program) | [➡️](#38-examine-execution)
 ## 3.6. Graphical User Interface (GUI)
 <small>`[Search Tags: >]`</small>
 <br>
@@ -1515,6 +1521,67 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
 
+-	Source Code (Pane)
+
+	| Key         | Action
+	| :---------- | :--------------------------------------------
+	| `return`    | Run to selected line with one shot breakpoint
+	| `up`        | Select previous source line
+	| `down`      | Select next source line
+	| `page-up`   | Page up
+	| `page-down` | Page down
+	| `b`         | Set breakpoint on selected source/disassembly line
+	| `c`         | Continue process
+	| `d`         | Detach and resume process
+	| `D`         | Detach with process suspended
+	| `h`         | Show help dialog
+	| `k`         | Kill process
+	| `n`         | Step over (source line)
+	| `N`         | Step over (single instruction)
+	| `o`         | Step out
+	| `s`         | Step in (source line)
+	| `S`         | Step in (single instruction)
+	| `,`         | Page up
+	| `.`         | Page down
+
+
+-	Variables & Registers (Pane)
+
+	| Key         | Action
+	| :---------- | :--------------------------------------------
+	| `up`        | Select previous item
+	| `down`      | Select next item
+	| `right`     | Expand selected item
+	| `left`      | Unexpand selected item or select parent if not expanded
+	| `page-up`   | Page up
+	| `page-down` | Page down
+	| `A`         | Format as annotated address
+	| `b`         | Format as binary
+	| `B`         | Format as hex bytes with ASCII
+	| `c`         | Format as character
+	| `d`         | Format as a signed integer
+	| `D`         | Format selected value using the default format for the type
+	| `f`         | Format as float
+	| `h`         | Show help dialog
+	| `i`         | Format as instructions
+	| `o`         | Format as octal
+
+
+-	Thread & Stack Frames (Pane)
+
+	| Key         | Action
+	| :---------- | :--------------------------------------------
+	| `up`        | Select previous item
+	| `down`      | Select next item
+	| `right`     | Expand the selected item
+	| `left`      | Unexpand the selected item or select parent if
+	| `page-up`   | Page up
+	| `page-down` | Page down
+	| `h`         | Show help dialog
+	| `space`     | Toggle item expansion
+	| `,`         | Page up
+	| `.`         | Page down
+
 <br>
 <br>
 
@@ -1526,14 +1593,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#36-graphical-user-interface-gui) | [➡️](#371-source-code)
-## 3.7. Examine Execution
+[🏠](#contents) | [⬅️](#36-graphical-user-interface-gui) | [➡️](#381-source-code)
+## 3.8. Examine Execution
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ## 3.7. Examine Execution
+> TODO: ## 3.8. Examine Execution
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -1549,14 +1616,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#37-examine-execution) | [➡️](#372-variables)
-### 3.7.1. Source Code
+[🏠](#contents) | [⬅️](#38-examine-execution) | [➡️](#382-variables)
+### 3.8.1. Source Code
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.7.1. Source Code
+> TODO: ### 3.8.1. Source Code
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -1572,14 +1639,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#371-source-code) | [➡️](#373-thread-states)
-### 3.7.2. Variable(s)
+[🏠](#contents) | [⬅️](#381-source-code) | [➡️](#383-thread-states)
+### 3.8.2. Variable(s)
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.7.2. Variable(s)
+> TODO: ### 3.8.2. Variable(s)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -1595,14 +1662,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#372-variables) | [➡️](#374-stack-frame-states)
-### 3.7.3. Thread State(s)
+[🏠](#contents) | [⬅️](#382-variables) | [➡️](#384-stack-frame-states)
+### 3.8.3. Thread State(s)
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.7.3. Thread State(s)
+> TODO: ### 3.8.3. Thread State(s)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -1618,14 +1685,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#373-thread-states) | [➡️](#39-graphical-user-interface-gui)
-### 3.7.4. Stack Frame State(s)
+[🏠](#contents) | [⬅️](#383-thread-states) | [➡️](#39-graphical-user-interface-gui)
+### 3.8.4. Stack Frame State(s)
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.7.4. Stack Frame State(s)
+> TODO: ### 3.8.4. Stack Frame State(s)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
