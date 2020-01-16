@@ -1397,18 +1397,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	>
 	> ```shell
-	> process attach [--pid <pid>]
-	> process attach [--wait-for] [--name <process-name>]
+	> process attach [--pid <pid>]                           # by pid
+	> process attach [--wait-for] [--name <process-name>]    # by name
 	> ```
 	>
 	> *****Example(s):*****
 	> ```shell
 	> (lldb) process attach --pid 123
 	> (lldb) pr a -p 123
-	>
+	> ```
+	> ```shell
 	> (lldb) process attach --name a.out
 	> (lldb) pr a -n a.out
-	>
+	> ```
+	> ```shell
 	> (lldb) process attach --waitfor --name a.out
 	> (lldb) pr a -w -n a.out
 	> ```
@@ -1524,12 +1526,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> ```
 	>
-	> *To clarify [, in this [last] example] –* <br>
-	> - we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to *(i.e to be or come or be-given from or originate from)* a *[terminal [device]]* file, by the name of: `/dev/ttys001` – this is a running *[terminal]* shell *[instance]*, <br>
-	> - we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>
-	> - we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time, the file goes by the name: "`errFile`", <br>
-	> - we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>
-	> - we pass *[to our program]* three arguments.
+	> *<small>[Note:*
+	>
+	> - *To clarify [, in this [last] example] –* <br>
+	>	- we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to *(i.e to be or come or be-given from or originate from)* a *[terminal [device]]* file, by the name of: `/dev/ttys001` – this is a running *[terminal]* shell *[instance]*, <br>
+	>	- we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>
+	>	- we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time, the file goes by the name: "`errFile`", <br>
+	>	- we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>
+	>	- we pass *[to our program]* three arguments.
+	>
+	> *- end note]</small>*
+	>
 
 
 
