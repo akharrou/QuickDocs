@@ -592,7 +592,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.1. Basic Commands
-<small>`[Search Tags: >breakpointcommands >breakpointcmds >breakptcommands >breakptcmds >brkptcommands >brkptcmds >brcommands >brcmds >bcommands >bcmds >breakpointbasiccommands >breakpointbasiccmds >breakptbasiccommands >breakptbasiccmds >brkptbasiccommands >brkptbasiccmds >brbasiccommands >brbasiccmds >bbasiccommands >bbasiccmds >breakpointbasics >breakptbasics >brkptbasics >brbasics >bbasics >brptcommands >brptcmds >brptbasiccommands >brptbasiccmds >brptbasics >breakpointcreate >createbreakpoint >crbreakpoint >breakptcreate >createbreakpt >crbreakpt >brkptcreate >createbrkpt >crbrkpt >brptcreate >createbrpt >crbrpt >brcreate >createbr >crbr]`</small>
+<small>`[Search Tags: >breakpointbasiccommands >breakpointbasiccmds >breakptbasiccommands >breakptbasiccmds >brkptbasiccommands >brkptbasiccmds >brbasiccommands >brbasiccmds >bbasiccommands >bbasiccmds >breakpointbasics >breakptbasics >brkptbasics >brbasics >bbasics >brptcommands >brptcmds >brptbasiccommands >brptbasiccmds >brptbasics >breakpointcreate >createbreakpoint >crbreakpoint >breakptcreate >createbreakpt >crbreakpt >brkptcreate >createbrkpt >crbrkpt >brptcreate >createbrpt >crbrpt >brcreate >createbr >crbr]`</small>
 <br>
 <br>
 
@@ -878,7 +878,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 > *Commands for adding breakpoint options (e.g. conditions, comamnds, attributes):*
 
-- ***Breakpoint conditions:***
+- ***Breakpoint Conditions:***
 
 	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions]`</small>
 
@@ -908,7 +908,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 		> (lldb) br m -c 'my_var < 42' 4 2 8
 		> ```
 
-- ***Breakpoint commands:***
+- ***Breakpoint Commands:***
 
 	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands]`</small>
 
@@ -926,7 +926,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 		> ```
 
 	- ***Add***
-		>
+
 		> ***Synopsis:***
 		> ```shell
 		> breakpoint modify [--condition <condition-expr>] [<breakpt-ids | breakpt-name>]
@@ -938,25 +938,48 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 		> (lldb) br m -c 'my_var < 42' 4 2 8
 		> ```
 
-	- ***Configure***
-		>
+	- ***Script***
+
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint command add [<breakpt-ids | breakpt-name>]  # 'press enter', it will prompt to enter your command(s)
+		> breakpoint command add [--script-type] [<breakpt-ids | breakpt-name>]
+		> ```
+		>
+		> ***Option(s):***
+		> ```shell
+		> -s <none> ( --script-type <none> )
+		>
+		> 	Specify the language for the commands - if none
+		>	is specified, the lldb command interpreter will
+		>	be used.
+		>
+		>	Values: command | python | default-script
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) breakpoint command add 3
-		> (lldb)
+		> (lldb) breakpoint command add 1.1
+		> Enter your debugger command(s). Type 'DONE' to end.
+		> > thread backtrace
+		> > frame variable
+		> > DONE
 		> ```
+		> ```shell
+		> (lldb) breakpoint command add -s python 4
+		> Enter your Python command(s). Type 'DONE' to end.
+		> > print "Hit this breakpoint!"
+		> > DONE
+		> ```
+		>
+		> *<small>[Note: See `(lldb) help breakpoint command add`, for more on scripts. - end note]</small>*
 
-	> ```shell
-	> ... [--command <lldb-command>]
-	> ... [-C <lldb-command>]
-	>```
-	>
-	> ***Attributes:***
+
+<!--
+- ***Breakpoint Attributes:***
+
+	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands]`</small>
+
+
 	> ```shell
 	> ... [--attribute [<boolean>]]
 	> ... [-<attribute-flag> [<boolean>]]
@@ -1002,28 +1025,12 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> -q <queue-name> ( --queue-name <queue-name> )
 	>	The breakpoint stops only for threads in the queue whose name is given by this argument.
 	> ```
+ -->
 
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint set --name foo --condition '(int)strcmp(y,"hello") == 0'
-	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
-	> ```
-	> ```shell
-	> (lldb) breakpoint modify --condition 'my_var == 42' 3
-	> (lldb) br m -c 'my_var < 42' 4 2 8
-	> ```
-	>
-	> > *To clarify – the first command sets a condition to (only) the breakpoint that has the breakpoint-ID: `3`. The second command adds a condition, to all breakpoints found in the list of breakpoint-IDs [the breakpoints of ID: `4`, `2` and `8`].*
-	>
-	> ```shell
-	> (lldb) breakpoint set -n baz -N controlFlow
-	> (lldb) br m -c 'my_var > 42' -N controlFlow
-	> ```
-	>
-	> > *To clarify – the first command sets a breakpoint, on the function of name `baz`, then adds to the list of names, of that breakpoint, the name: `"controlFlow"`. Following that, the second command, adds a condition to all the breakpoints that have the name: `"controlFlow"` [added to their list of names].*
-	>
-	> This suffers from the problem that when new breakpoints get added, they don’t pick up these modifications, and the options only exist in the context of actual breakpoints, so they are hard to store & reuse.
 
+
+
+<!--
 -	***Set a breakpoint options** (e.g. conditions, comamnds, ...):*
 
 	> ***Synopsis:***
@@ -1078,6 +1085,10 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> ***Example(s):***
 	> ```shell
 	> ```
+ -->
+
+
+
 
 
 <br>
