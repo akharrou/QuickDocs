@@ -1309,10 +1309,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	There are two main ways to start debugging a process (program):
 
-	- Launching one.
-	- Attaching to, an already running, one – (i.e joining it at whatever point in its execution it has reached).
+	- Launching one ([§3.5.1](#351-launch-program))
+	- Attaching to *[an already running]* one ([§3.5.2](#352-attach-to-program)) – (i.e joining a running one at whatever point in execution it has reached).
 
--	In these following subsections we will discuss both methods. We will also see available program configurations, e.g.: redirecting data streams,
+-	*`lldb`* also gives the possibility of configuring things like: where you want the process to be run *(terminal, shell)*, setting environment variables, setting the current working directory, redirecting `stdin`/`out`/`err`, etc.
 
 
 <br>
