@@ -383,8 +383,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To create a [debugger] target (i.e load a program executable):***
 
-	> <small>`[Search Tags: >trcreate >createtr >crtr >targetcreate >createtarget]`</small>
-
 	> *From outside [`lldb`]:*
 	>
 	> > ***Synopsis:***
@@ -415,6 +413,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> > (lldb) file a.out
 	> > ```
 
+	> <small>`[Search Tags: >trcreate >createtr >crtr >targetcreate >createtarget]`</small>
+
 	<!-- - *[From] outside `lldb`:* <br> <br>
 		```shell
 		$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
@@ -436,8 +436,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To list (all) targets:***
 
-	> <small>`[Search Tags: >trlist >listtr >litr >targetlist >listtarget]`</small>
-
 	> ***Synopsis:***
 	>
 	> ```shell
@@ -450,9 +448,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta l
 	> ```
 
--	***To select a [different] target [as current target]:***
+	> <small>`[Search Tags: >trlist >listtr >litr >targetlist >listtarget]`</small>
 
-	> <small>`[Search Tags: >trselect >targetselect >setr >selecttr >selecttarget]`</small>
+-	***To select a [different] target [as current target]:***
 
 	> ***Synopsis:***
 	>
@@ -466,9 +464,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta se 5
 	> ```
 
--	***To delete a target (i.e unload an program execuable):***
+	> <small>`[Search Tags: >trselect >targetselect >setr >selecttr >selecttarget]`</small>
 
-	> <small>`[Search Tags: >trdelete >targetdelete >detr >deletetr >deletetarget]`</small>
+-	***To delete a target (i.e unload an program execuable):***
 
 	> ***Synopsis:***
 	>
@@ -484,6 +482,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta de --all           # delete all targets
 	> (lldb) ta d -a               # delete all targets
 	> ```
+
+	> <small>`[Search Tags: >trdelete >targetdelete >detr >deletetr >deletetarget]`</small>
 
 > *<small>[Note:*
 >
