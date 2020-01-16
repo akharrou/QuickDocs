@@ -381,8 +381,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *<small>[Note: `lldb`'s lexicon for a ***"program [executable] intended for debugging"*** is a ***"[debugger] target"*** . - end note]</small>*
 
--	***To create a [debugger] target (i.e load an program executable):***
+-	***To create a [debugger] target (i.e load a program executable):***
 
+	> <small>`[Search Tags: >trcreate >createtr >crtr >targetcreate >createtarget]`</small>
 
 	> *From outside [`lldb`]:*
 	>
@@ -435,6 +436,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***To list (all) targets:***
 
+	> <small>`[Search Tags: >trlist >listtr >litr >targetlist >listtarget]`</small>
+
 	> ***Synopsis:***
 	>
 	> ```shell
@@ -447,7 +450,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta l
 	> ```
 
--	***To select a [different] target as current target:***
+-	***To select a [different] target [as current target]:***
+
+	> <small>`[Search Tags: >trselect >targetselect >setr >selecttr >selecttarget]`</small>
 
 	> ***Synopsis:***
 	>
@@ -457,11 +462,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) target select 3       # select the third target for debugging
+	> (lldb) target select 3       # select the third target, as current debugging target
 	> (lldb) ta se 5
 	> ```
 
 -	***To delete a target (i.e unload an program execuable):***
+
+	> <small>`[Search Tags: >trdelete >targetdelete >detr >deletetr >deletetarget]`</small>
 
 	> ***Synopsis:***
 	>
@@ -480,9 +487,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > *<small>[Note:*
 >
-> - "from **outside** *[`lldb`]*"; i.e before, and at the same time as, launch *[of `lldb`] [, on the *[terminal]* command prompt]*.
+> - "From **outside** *[`lldb`]*"; i.e before, and at the same time as, launch *[of `lldb`] [, on the *[terminal]* command prompt]*.
 >
-> - "from **inside** *[`lldb`]*"; i.e after launch *[of `lldb`]* *[, on the 	*[`lldb`]* command prompt]*.
+> - "From **inside** *[`lldb`]*"; i.e after launch *[of `lldb`]* *[, on the 	*[`lldb`]* command prompt]*.
 >
 > - *`[<run-args>]`* represents the argument(s) that you pass to a program.
 >
@@ -511,12 +518,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | Unix / Linux / MacOS | `man lldb`
-> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help target create`
-> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help target delete`
+> | 1 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
+> | 2 | Manual Page | Unix / Linux / MacOS | `man lldb`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help target create`
 > | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help target list`
 > | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help target select`
-> | 6 | Documentation | LLDB | [(Official) Tutorial :: Loading a Program into LLDB](https://lldb.llvm.org/use/tutorial.html#loading-a-program-into-lldb)
+> | 6 | Manual Page | Unix / Linux / MacOS | `(lldb) help target delete`
 
 
 ---
