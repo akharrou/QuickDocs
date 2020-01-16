@@ -1535,7 +1535,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	- we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>
 	>	- we pass *[to our program]* three arguments.
 	>
-	> *- end note]</small>*
+	> <br> *- end note]</small>*
 	>
 
 
