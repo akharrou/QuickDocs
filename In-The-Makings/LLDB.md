@@ -1443,13 +1443,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > TODO: ### 3.5.3. Advanced Program Configurations ; Advanced commands for process launch
 
 
--	***Run process (program) in terminal:***
+-	***Run process (program) in different terminal or shell:***
 
 	<small>`[Search Tags: > TODO ]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> process launch --tty -- [<run-args>]
+	> process launch --tty -- [<run-args>]                  # terminal
+	> process launch --shell=[<filename>] -- [<run-args>]   # shell
 	> ```
 	>
 	> ***Example(s):***
@@ -1457,19 +1458,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) process launch --tty
 	> (lldb) pr la -t
 	> ```
-	>
-	> *<small>[Note: Not supported on all platforms. - end note]</small>*
-
--	***Run process (program) in shell:***
-
-	<small>`[Search Tags: > TODO ]`</small>
-
-	> ***Synopsis:***
-	> ```shell
-	> process launch --shell=[<filename>] -- [<run-args>]
-	> ```
-	>
-	> ***Example(s):***
 	> ```shell
 	> process launch --shell=/dev/ttys002
 	> pr la -c=/dev/ttys003
