@@ -379,14 +379,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> *<small>[Note: `lldb`'s lexicon for an ***"[executable] program intended for debugging"*** is a ***"[debugger] target"*** . - end note]</small>*
+> *<small>[Note: `lldb`'s lexicon for a ***"program [executable] intended for debugging"*** is a ***"[debugger] target"*** . - end note]</small>*
 
--	***To create (load) a target:***
+-	***To create a [debugger] target (i.e load an program executable):***
+
 
 	> *From outside [`lldb`]:*
 	>
 	> > ***Synopsis:***
-	> >
 	> > ```shell
 	> > $> lldb --file <program-execuable-filename> [<run-args>]
 	> > ```
@@ -397,7 +397,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> > $> lldb -f a.out
 	> > $> lldb a.out
 	> > ```
-	>
+
 	> *From inside [`lldb`]:*
 	>
 	> > ***Synopsis:***
@@ -452,7 +452,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Synopsis:***
 	>
 	> ```shell
-	> (lldb) target select <index>
+	> (lldb) target select <target-index>
 	> ```
 	>
 	> ***Example(s):***
@@ -461,7 +461,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) ta se 5
 	> ```
 
--	***To delete (un-load) a target:***
+-	***To delete a target (i.e unload an program execuable):***
 
 	> ***Synopsis:***
 	>
