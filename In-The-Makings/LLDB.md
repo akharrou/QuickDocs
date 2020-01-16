@@ -1388,7 +1388,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 - ***(Definition) – Attach:** Take over control [of the execution] of a process (running program) [in this case, for debugging purposes], at the instruction that the process has reached.*
 
-	>	*When you are debugging, essentially the instructions of the *[executable]* program you intend to debug are sent to a debugger *[program]* before they’re executed by the CPU. The debugger becomes a middle man between the program instructions and the CPU.*
+	>	*When you are debugging, essentially, the instructions of the process you are debugging are sent to a debugger *[program]* before they’re executed by the CPU. The debugger becomes a middle man between the program instructions and the CPU.*
 	>
 	> *-- [Attaching to a Running Process Using Code :: Blocks](https://www.dummies.com/programming/cpp/attaching-to-a-running-process-using-codeblocks/)*
 
