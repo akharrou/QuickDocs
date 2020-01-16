@@ -651,9 +651,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***Delete breakpoint(s):***
 
-	> ```shell
-	> [Search Tags: >brdelete >deletebr >deletebrpt >deletebrkpt >deletebreakpt >deletebreakpoint >brdelete >brptdelete >brkptdelete >breakptdelete >breakpointdelete >debr >deletebr >deletetarge >brunload >unloadtr >uldtr >targetunload >unloadtargett >delbr >brdel >delbrpt >brptdel >delbrkpt >brkptdel >delbreakpt >breakptdel >delbreakpoint >breakpointdel]
-	> ```
+	> <small>`[Search Tags: >brdelete >deletebr >deletebrpt >deletebrkpt >deletebreakpt >deletebreakpoint >brdelete >brptdelete >brkptdelete >breakptdelete >breakpointdelete >debr >deletebr >deletetarge >brunload >unloadtr >uldtr >targetunload >unloadtargett >delbr >brdel >delbrpt >brptdel >delbrkpt >brkptdel >delbreakpt >breakptdel >delbreakpoint >breakpointdel]`</small>
 
 	> ***Synopsis:***
 	>
@@ -684,23 +682,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
+> | 2 | Manual Page | LLDB | `(lldb) help breakpoint list`
+> | 3 | Manual Page | LLDB | `(lldb) help breakpoint delete`
 
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.2. Basic (C++) Commands
-<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc >setbrpts >brmain >brsmain >brkpts >breakpts >bpts >brpoints >bapts >bapoints]`</small>
+<small>`[Search Tags: >cppbreakpointcommands >cppbreakpointcmds >cppbreakptcommands >cppbreakptcmds >cppbrkptcommands >cppbrkptcmds >cppbrcommands >cppbrcmds >cppbcommands >cppbcmds >cppbreakpointbasiccommands >cppbreakpointbasiccmds >cppbreakptbasiccommands >cppbreakptbasiccmds >cppbrkptbasiccommands >cppbrkptbasiccmds >cppbrbasiccommands >cppbrbasiccmds >cppbbasiccommands >cppbbasiccmds >cppbreakpointbasics >cppbreakptbasics >cppbrkptbasics >cppbrbasics >cppbbasics >cppbrptcommands >cppbrptcmds >cppbrptbasiccommands >cppbrptbasiccmds >cppbrptbasics]`</small>
 <br>
 <br>
 
 
 > TODO: #### 3.4.1.2. Basic (C++) Commands
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-> *Commands for operating on breakpoints, concerning C++ (only):*
 
 
 -	***Set a breakpoint, on function(s)**, by fullname:*
@@ -829,11 +824,29 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
-> *Advanced commands for operating on breakpoints:*
 
+-	***Set a breakpoint, on function(s)**, using regular-expressions:*
+
+	> <small>`[Search Tags:  >funcregex >regexfunc >functionregex >regexfunction  >ftregex >regexfts >funcrgx >rgxfunc >functionrgx >rgxfunction  >ftrgx >rgxfts]`</small>
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> breakpoint set --func-regex <regular-expression>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --func-regex 'Parser.{3,4,5}_Command\(\)'
+	> (lldb) br s -r "Parser.{3,4,5}_Command\(\)"
+	> ```
+	>
+	> > *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
 
 -	***Set a breakpoint, on line(s), in file(s)**, using regular-expressions:*
 
+	> <small>`[Search Tags: >srcregex >regexsrc >srctionregex >regexsrction  >sourceregex >regexsources >srcrgx >rgxsrc >srctionrgx >rgxsrction  >sourcergx >rgxsources >sourcepatternregex >srcpatternregex >sourcepatregex >srcpatregex]`</small>
+	
 	> ***Synopsis:***
 	>
 	> ```shell
@@ -852,22 +865,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 	>
 	>*<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
-
--	***Set a breakpoint, on function(s)**, using regular-expressions:*
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> breakpoint set --func-regex <regular-expression>
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint set --func-regex 'Parser.{3,4,5}_Command\(\)'
-	> (lldb) br s -r "Parser.{3,4,5}_Command\(\)"
-	> ```
-	>
-	> > *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
 
 
 <br>
