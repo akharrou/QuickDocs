@@ -827,7 +827,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***Set a breakpoint, on function(s)**, using regular-expressions:*
 
-	> <small>`[Search Tags: >brregexfunction >brregexfunc >brsregexfunction >brsregexfunc >brsetregexfunction >brsetregexfunc >funcregex >regexfunc >functionregex >regexfunction  >ftregex >regexfts >funcrgx >rgxfunc >functionrgx >rgxfunction  >ftrgx >rgxfts]`</small>
+	> <small>`[Search Tags: >brfunctionregex >brfuncregex >brsfunctionregex >brsfuncregex >brsetfunctionregex >brsetfuncregex >brregexfunction >brregexfunc >brsregexfunction >brsregexfunc >brsetregexfunction >brsetregexfunc >funcregex >regexfunc >functionregex >regexfunction  >ftregex >regexfts >funcrgx >rgxfunc >functionrgx >rgxfunction  >ftrgx >rgxfts]`</small>
 
 	> ***Synopsis:***
 	>
@@ -845,7 +845,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	***Set a breakpoint, on line(s), in file(s)**, using regular-expressions:*
 
-	> <small>`[Search Tags: >brregexsource >brregexsrc >brsregexsource >brsregexsrc >brsetregexsource >brsetregexsrc >srcregex >regexsrc >srctionregex >regexsrction  >sourceregex >regexsources >srcrgx >rgxsrc >srctionrgx >rgxsrction  >sourcergx >rgxsources >sourcepatternregex >srcpatternregex >sourcepatregex >srcpatregex]`</small>
+	> <small>`[Search Tags: >brsourceregex >brsrcregex >brssourceregex >brssrcregex >brsetsourceregex >brsetsrcregex >brregexsource >brregexsrc >brsregexsource >brsregexsrc >brsetregexsource >brsetregexsrc >srcregex >regexsrc >srctionregex >regexsrction  >sourceregex >regexsources >srcrgx >rgxsrc >srctionrgx >rgxsrction  >sourcergx >rgxsources >sourcepatternregex >srcpatternregex >sourcepatregex >srcpatregex]`</small>
 
 	> ***Synopsis:***
 	>
