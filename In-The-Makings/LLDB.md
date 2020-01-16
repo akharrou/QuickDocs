@@ -1312,7 +1312,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	- Launching one ([§3.5.1](#351-launch-program))
 	- Attaching to *[an already running]* one ([§3.5.2](#352-attach-to-program)) – (i.e joining a running one at whatever point in execution it has reached).
 
--	*`lldb`* also gives the possibility of configuring things like: where you want the process to be run *(terminal, shell)*, setting environment variables, setting the current working directory, redirecting `stdin`/`out`/`err`, etc.
+-	*`lldb`* also gives the possibility of configuring things like: where you want the process to be run *(terminal, shell)*, setting environment variables, setting the current working directory, redirecting `stdin`/`out`/`err`, etc. Dicussed in **Advanced Program Configurations** ([§3.5.3](#353-advanced-program-configurations)).
 
 
 <br>
