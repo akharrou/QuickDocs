@@ -1307,10 +1307,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
-> TODO: ### 3.5. Begin Debugging
+-	There are two main ways to start debugging a process (program):
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+	- Launching one.
+	- Attaching to, an already running, one – (i.e joining it at whatever point in its execution it has reached).
 
+-	In these following subsections we will discuss both methods. We will also see available program configurations, e.g.: redirecting data streams,
 
 
 <br>
@@ -1331,13 +1333,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
-> TODO: ### 3.5.1. Launch Program
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-> *Commands for running/starting/launching [loaded] programs:*
-
-<br>
+> TODO: ### 3.5.1. Launch Program ; Commands for running/starting/launching [loaded] programs:
 
 
 -	***To launch/run a program:***
@@ -1369,7 +1365,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> *- end note]</small>*
 
 
-
 <br>
 <br>
 
@@ -1388,16 +1383,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 
-> TODO: ### 3.5.2. Attach to Program
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-> *Commands for attaching to processes (i.e running programs):*
-
-<br>
+> TODO: ### 3.5.2. Attach to Program ; Commands for attaching to processes (i.e running programs):
 
 
-- ***(Definition) – Attach:** Take over control [of the execution] of a process (running program) [, in this case, for debugging], at the instruction that the process has reached.*
+- ***(Definition) – Attach:** Take over control [of the execution] of a process (running program) [in this case, for debugging purposes], at the instruction that the process has reached.*
+
+	>	*When you are debugging, essentially the instructions of the *[executable]* program you intend to debug are sent to a debugger *[program]* before they’re executed by the CPU. The debugger becomes a middle man between the program instructions and the CPU.*
+	>
+	> *-- [Attaching to a Running Process Using Code :: Blocks](https://www.dummies.com/programming/cpp/attaching-to-a-running-process-using-codeblocks/)*
 
 -	***To attach to a process:***
 
@@ -1429,7 +1422,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> *- end note]</small>*
 
 
-
 <br>
 <br>
 
@@ -1443,21 +1435,84 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.5.3. Advanced Program Configurations
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: > TODO ]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.5.3. Advanced Program Configurations
+> TODO: ### 3.5.3. Advanced Program Configurations ; Advanced commands for process launch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
-> *Advanced commands for process launch:* <br>
+-	***Run process (program) in terminal:***
 
-<br>
+	<small>`[Search Tags: > TODO ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> process launch --tty
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) process launch --tty
+	> (lldb) pr la -t
+	> ```
+	>
+	> *<small>[Note: Not supported on all platforms. - end note]</small>*
+
+-	***Run process (program) in shell:***
+
+	<small>`[Search Tags: > TODO ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> process launch --shell=[<filename>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> process launch --shell=/dev/ttys002
+	> pr la -c=/dev/ttys003
+	> ```
+	>
+	> *<small>[Note: Not supported on all platforms. - end note]</small>*
+
+-	***Set environment variables:***
+
+	<small>`[Search Tags: > TODO ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> process launch --environment [<NAME=VALUE> ...]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> process launch --environment BIG_ENDIAN=true OPTIMIZATIONS=false
+	> pr la -v YEAR=2020
+	> ```
+	>
+	> *<small>[Note: Can be specified multiple times for subsequent environment entries. - end note]</small>*
+
+-	***Set current working directory:***
+
+	<small>`[Search Tags: > TODO ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> process launch --working-dir <directory>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> process launch --working-dir /Volumes/DISK3/emails
+	> pr la -w ../
+	> ```
 
 
 -	***To redirect [program] [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):***
+
+	<small>`[Search Tags: > TODO ]`</small>
 
 	> ***Synopsis:***
 	>
@@ -1481,7 +1536,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> ```
 	>
-	> *To clarify [, this [last] example] –* <br>
+	> *To clarify [, in this [last] example] –* <br>
 	> - we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to *(i.e to be or come or be-given from or originate from)* a *[terminal [device]]* file, by the name of: `/dev/ttys001` – this is a running *[terminal]* shell *[instance]*, <br>
 	> - we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>
 	> - we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time, the file goes by the name: "`errFile`", <br>
