@@ -863,50 +863,46 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 
 ---
-<br>
 
 > **Know that** *--* *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options."*
 >
 > *-- [LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
 
+---
+
 > **Note** *--* *We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…*
 
 ---
 
-TODO :: ADVANCED COMMANDS :: BREAKPOINT OPTIONS
+> *Commands for adding breakpoint options (e.g. conditions, comamnds, attributes):*
 
--	***Set breakpoint options** (e.g. conditions, comamnds, attributes):*
+- ***Breakpoint conditions:***
 
-	> ***Conditions:***
-	>
-	> *Set [New] Breakpoint w/ Conditions:*
-	>
-	> > ***Synopsis:***
-	> >
-	> > ```shell
-	> > breakpoint set <breakpt-definition> [--condition <condition-expr>]
-	> > ```
-	> >
-	> > ***Example(s):***
-	> > ```shell
-	> > (lldb) breakpoint set -r 'core' --condition 'argc < 2'
-	> > (lldb) br s -n bar -c 'res < 0'
-	> > (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
-	> > ```
-	>
-	> *Add Conditions to [Existing] Breakpoints::*
-	>
-	> > ***Synopsis:***
-	> >
-	> > ```shell
-	> > breakpoint modify [--condition <condition-expr>] [<breakpt-ids | breakpt-name>]
-	> > ```
-	> >
-	> > ***Example(s):***
-	> > ```shell
-	> > (lldb) breakpoint modify --condition 'my_var == 42' 3
-	> > (lldb) br m -c 'my_var < 42' 4 2 8
-	> > ```
+	- ***Set***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint set <breakpt-definition> [--condition <condition-expr>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint set --line 34 --condition 'argc < 2'
+		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
+		> ```
+
+	- ***Add***
+		>
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint modify [--condition <condition-expr>] [<breakpt-ids | breakpt-name>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint modify --condition 'my_var == 42' 3
+		> (lldb) br m -c 'my_var < 42' 4 2 8
+		> ```
 
 	> ***Commands:***
 	> ```shell
@@ -934,34 +930,6 @@ TODO :: ADVANCED COMMANDS :: BREAKPOINT OPTIONS
 	>	Set the breakpoint on exception throW.
 	> ```
 
--	***Enable / Disable breakpoints:***
-
-	> ***Synopsis:***
-	> ```shell
-	> (lldb) breakpoint set <breakpt-definition> [--disable]
-	> ```
-	> ```shell
-	> (lldb) breakpoint modify [--disable] [--enable] <breakpt-ids | breakpt-names>
-	> ```
-	> ```shell
-	> (lldb) breakpoint disable <breakpt-ids | breakpt-names>
-	> (lldb) breakpoint enable  <breakpt-ids | breakpt-names>
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint set --name foo --disable          # set a breakpt, that is, initially, disabled
-	> (lldb) breakpoint modify --disable 'controlFlow'    # disables all breakpts with the name: 'controlFlow'
-	> (lldb) breakpoint modify --enable 4 3 2             # enables breakpts with id: 4, 3 and 2
-	> (lldb) breakpoint disable 'safetyCheck'             # disables all breakpts with the name: 'safetyCheck'
-	> (lldb) breakpoint enable 5                          # enables breakpts with id: 5
-	>
-	> (lldb) br s -n foo -d
-	> (lldb) br m -d 'controlFlow'
-	> (lldb) br m -e 4 3 2
-	> (lldb) br di 'safetyChecks'
-	> (lldb) br en 5
-	> ```
 
 -	***Set breakpoint, on thread:***
 
