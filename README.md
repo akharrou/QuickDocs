@@ -13,5 +13,5 @@ QuickDocs
 <br>
 
 > *May the world benefit. And may he, who shares what he has found
-> beneficial, have his share multiplied. And may we be of the most
-> beneficial to others.*
+> beneficial, have his share *[of deeds]* multiplied. And may we be
+> of the most beneficial to others.*
