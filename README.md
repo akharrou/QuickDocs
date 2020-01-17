@@ -22,8 +22,8 @@ Every search should follow the **form**:
 >topic
 ```
 
-> –– the search should be prepend with a right arrow character:
-> `>`, then followed by the full subject matter word or phrase
+> –– the search should be prepend with a right arrow character
+> `>`, followed by the full subject matter word or phrase
 > or abbreviation/acrynom thereof.
 
 ----------------------------------------------------------------------------------
