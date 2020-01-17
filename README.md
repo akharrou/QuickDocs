@@ -8,8 +8,9 @@ QuickDocs
 
 *[To the]* ***Home of QuickDocs*** – Quickly Searchable, Clickable,
 Reference-able Documentation, that keeps for each of its treated subject
-matters a list of the best references out there. "***QuickDocs***" is an
-abritrary name given to documentation having the qualities mentioned *[above]*.
+matters a list of the best references/resources out there. "***QuickDocs***"
+is an abritrary name given to documentation having the qualities mentioned
+*[above]*.
 
 ----------------------------------------------------------------------------------
 ### How to search ?
