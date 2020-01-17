@@ -20,9 +20,11 @@ Every search should follow the **form**:
 
 ```
 >topicmatterdesired
+```
 
 or
 
+```
 >topic.matter.desired
 ```
 
