@@ -27,10 +27,10 @@ or
 ```
 
 > –– the search should be prepend with a right arrow character
-> `>`, followed by the full subject matter word or phrase
+> '`>`', followed by the full subject matter word or phrase
 > or abbreviation/acrynom thereof, with no spaces in
 > between; occaisonnaly there will be search tags that may be
-> seperated with a dot/period character `.`.
+> seperated with a dot/period character '`.`'.
 >
 > Feel free to suggest other search tags for any subject matter. 
 
