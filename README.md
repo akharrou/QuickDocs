@@ -16,15 +16,15 @@ matters, a table of the best references/resources out there.
 To initiate a search, you may use your *[browser's]* `find`
 command –– for most, that command will be: ***`cmd+f`***.
 
-After initiating the search, follow the search **form**:
+Every search should follow the **form**:
 
 ```
 >topic
 ```
 
-> ... prepend any search with a right arrow character: `>`,
-> then proceed to writing the full subject matter word or
-> phrase or abbreviation/acrynom thereof.
+> –– the search should be prepend with a right arrow character:
+> `>`, then followed by the full subject matter word or phrase
+> or abbreviation/acrynom thereof.
 
 ----------------------------------------------------------------------------------
 > *May the world benefit; and may he, who shares what he
