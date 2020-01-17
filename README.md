@@ -1,19 +1,27 @@
+
+
 QuickDocs
 ===
 
----
+----------------------------------------------------------------------------------
 ### Welcome !
 
 *[To the]* ***Home of "QuickDocs***" – Quickly Searchable, Clickable,
-Reference-able Documentation, that keeps for each of its sections
-a list of the best references out there for the specific subject
-at hand. "***QuickDocs***" is an abritrary name given to
-documentation having the qualities mentioned.
+Reference-able Documentation, that keeps for each of its treated subject
+matters a list of the best references out there.
+
+----------------------------------------------------------------------------------
+### What is this repository for ?
 
 Herein resides ***QuickDocs*** for many and various topics.
 
+----------------------------------------------------------------------------------
+### Why the name ?
 
----
+"***QuickDocs***" is an abritrary name given to documentation having
+the qualities mentioned *[above]*.
+
+----------------------------------------------------------------------------------
 ### How to search ?
 
 To initiate a search, you may use your *[browser's]* `find`
@@ -30,9 +38,8 @@ After initiating the search, follow the **form**:
 > then proceed to writing the full subject matter word or
 > phrase or abbreviation/acrynom thereof.
 
-<br>
-
----
-> *May the world benefit; may he, who shares what he has found
-> beneficial, have his share *[of deeds]* multiplied; and may we be
-> of the most beneficial to others.*
+----------------------------------------------------------------------------------
+> *May the world benefit; and may he, who shares what he
+> has found beneficial, be increased in goodness and have
+> his share *[of deeds]* multiplied; and may we be of the
+> most beneficial to others.*
