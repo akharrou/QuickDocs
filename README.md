@@ -1,14 +1,14 @@
 QuickDocs
 ===
 
-> Quickly searchable, clickable, reference-able documentation, that
-> keeps for each of its sections a list of the best references out
-> there for the specific subject at hand.
-> 
-> "***QuickDocs***" is an abritrary name given to documentation
-> having the qualities mentioned above.
-> 
-> Herein resides ***QuickDocs*** for many and various topics.
+Quickly searchable, clickable, reference-able documentation, that
+keeps for each of its sections a list of the best references out
+there for the specific subject at hand.
+
+"***QuickDocs***" is an abritrary name given to documentation
+having the qualities mentioned above.
+
+Herein resides ***QuickDocs*** for many and various topics.
 
 <br>
 
