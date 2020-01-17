@@ -647,7 +647,7 @@ The following subsections dive into the commands for operating-on/using breakpoi
 
 We discuss ***basic commands*** ([§3.4.1.1](#331-basic-commands)), like for setting breakpoints on functions and source file lines, as well as listing and deleting them *[the set breakpoints]*.
 
-Furhter below, we discover together more advanced commands ([§3.4.1.3](#3413-advanced-commands)) like using *regex* to set breakpoints on functions and source code, we see how to set/add breakpoint options (e.g. conditions, commands/scripts, auto-continue, hit-count ...), we see how to enable/disable breakpoints and even discuss, among other things, the `lldb` facilities offered for setting breakpoints for multi-threaded processes.
+Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3413-advanced-commands)) like using *regex* to set breakpoints on functions and source code, we see how to set/add breakpoint options (e.g. conditions, commands/scripts, auto-continue, hit-count ...), we see how to enable/disable breakpoints and even discuss, among other things, the `lldb` facilities offered for setting breakpoints for multi-threaded processes.
 
 
 <br>
