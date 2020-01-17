@@ -24,7 +24,7 @@ Every search should follow the **form**:
 
 > –– the search should be prepend with a right arrow character
 > `>`, followed by the full subject matter word or phrase
-> or abbreviation/acrynom thereof.
+> or abbreviation/acrynom thereof, with no spaces in between.
 
 ----------------------------------------------------------------------------------
 > *May the world benefit; and may he, who shares what he
