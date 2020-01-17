@@ -6,7 +6,7 @@ QuickDocs
 ----------------------------------------------------------------------------------
 ### Welcome !
 
-*[To the]* ***Home of "QuickDocs***" – Quickly Searchable, Clickable,
+*[To the]* ***Home of QuickDocs*** – Quickly Searchable, Clickable,
 Reference-able Documentation, that keeps for each of its treated subject
 matters a list of the best references out there. "***QuickDocs***" is an
 abritrary name given to documentation having the qualities mentioned *[above]*.
