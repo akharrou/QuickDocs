@@ -28,7 +28,7 @@ or
 >topic.matter.desired
 ```
 
-> –– the search should be prepend with a right arrow character
+> –– the search should be prepended with a right arrow character
 > '`>`', followed by the full subject matter word or phrase
 > or abbreviation/acrynom thereof, with no spaces in
 > between; occaisonnaly there will be search tags that may be
