@@ -14,10 +14,9 @@ matters, a table of the best references/resources out there.
 ### How to search ?
 
 To initiate a search, you may use your *[browser's]* `find`
-command, for most that command will be: ***`cmd+f`***.
+command –– for most, that command will be: ***`cmd+f`***.
 
-
-After initiating the search, follow the **form**:
+After initiating the search, follow the search **form**:
 
 ```
 >topic
