@@ -2,7 +2,7 @@ QuickDocs
 ===
 
 ---
-### Introduction
+### Welcome !
 
 Quickly searchable, clickable, reference-able documentation, that
 keeps for each of its sections a list of the best references out
