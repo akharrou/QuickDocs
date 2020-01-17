@@ -19,7 +19,7 @@ command –– for most, that command will be: ***`cmd+f`***.
 Every search should follow the **form**:
 
 ```
->topic
+>topicmatterdesired
 ```
 
 > –– the search should be prepend with a right arrow character
