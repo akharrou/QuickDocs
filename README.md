@@ -10,7 +10,8 @@ mentioned.
 Herein resides ***QuickDocs*** for many and various topics.
 
 
-### Searcheable:
+---
+### How to search ?
 
 To initiate a search, you may use your *[browser's]* `find`
 command, for most that command will be: ***`cmd+f`***.
@@ -28,6 +29,7 @@ After initiating the search, follow the **form**:
 
 <br>
 
+---
 > *May the world benefit; may he, who shares what he has found
 > beneficial, have his share *[of deeds]* multiplied; and may we be
 > of the most beneficial to others.*
