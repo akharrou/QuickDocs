@@ -51,9 +51,9 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.5.3. Advanced Program Configurations](#353-advanced-program-configurations)
 	- [3.6. Graphical User Interface (GUI)](#36-graphical-user-interface-gui)
 	- [3.8. Controlling Process Execution](#38-examine-execution)
-		- [3.8.1. G](#)
+		- [3.8.1. Move to Line](#)
 		- [3.8.2. Step In, Out of Functions](#)
-		- [3.8.3. Continuing Execution](#)
+		- [3.8.3. Run, Stop, Continue Execution](#)
 	- [3.8. Examine Execution](#38-examine-execution)
 		- [3.8.1. Source Code](#381-source-code)
 		- [3.8.2. Variable(s)](#382-variables)
@@ -861,6 +861,43 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	>*<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
 
+-	***Enable / Disable breakpoints:***
+
+	> ***Synopsis:***
+	> ```shell
+	> (lldb) breakpoint disable <breakpt-ids | breakpt-names>
+	> (lldb) breakpoint enable  <breakpt-ids | breakpt-names>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint disable 1
+	> (lldb) br di 1
+	> ```
+	> ```shell
+	> (lldb) breakpoint disable 3.*
+	> (lldb) br di 3.*
+	> ```
+	> ```shell
+	> (lldb) breakpoint enable 2 6 3.2
+	> (lldb) br en 2 6 3.2
+	> ```
+	>
+	> > *<small>[Note:*
+	>
+	> - It is also possible to set initialy disabled breakpoints and/or add them after having set them, with the following commands, respectively:
+	>
+	> 	```shell
+	> 	(lldb) breakpoint set <breakpt-definition> [--disable]
+	> 	```
+	> 	```shell
+	> 	(lldb) breakpoint modify [--disable] [--enable] <breakpt-ids | breakpt-names>
+	> 	```
+	>
+	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.
+	>
+	> *- end note]</small>*
+
 
 ---
 
@@ -868,10 +905,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 >
 > *-- [LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
 
----
-
 > **Note** *--* *We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…*
-
 ---
 
 <small>`[Search Tags: >breakpointoptions >optionsbreakpoint >breakptoptions >optionsbreakpt >brkptoptions >optionsbrkpt >brptoptions >optionsbrpt >broptions >optionsbr]`</small>
@@ -882,24 +916,28 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions]`</small>
 
-	- ***Set***
+	- ***Set breakpoint with condition:***
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint set <breakpt-definition> [--condition <condition-expr>] <breakpt-attributes>
+		> breakpoint set <breakpt-definition> [--condition <expr>]
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) breakpoint set --line 34 --condition 'argc < 2'
+		> (lldb) breakpoint set --line 14 --condition 'argc < 2'
+		> (lldb) br s -l 14 -c 'argc < 2'
+		> ```
+		> ```shell
+		> (lldb) breakpoint set --name baz --condition '(int)strcmp(y, "hello") == 0'
 		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
 		> ```
 
-	- ***Add***
+	- ***Add condition [to an existing breakpoint]:***
 		>
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint modify [--condition <condition-expr>] <breakpt-attributes> [<breakpt-ids | breakpt-name>]
+		> breakpoint modify [--condition <expr>] [<breakpt-ids | breakpt-name>]
 		> ```
 		>
 		> ***Example(s):***
@@ -912,48 +950,11 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands]`</small>
 
-	- ***Set***
+	- ***Add command(s) [to existing breakpoint]:***
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint set <breakpt-definition> [--command <command>] <breakpt-attributes>
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> (lldb) breakpoint set --line 34 --command 'argc < 2'
-		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
-		> ```
-
-	- ***Add***
-
-		> ***Synopsis:***
-		> ```shell
-		> breakpoint modify [--condition <condition-expr>] [<breakpt-ids | breakpt-name>]
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> (lldb) breakpoint modify --condition 'my_var == 42' 3     # add condition to breakpt with ID: 3
-		> (lldb) br m -c 'my_var < 42' 4 2 8
-		> ```
-
-	- ***Script***
-
-		> ***Synopsis:***
-		> ```shell
-		> breakpoint command add [--script-type] [<breakpt-ids | breakpt-name>]
-		> ```
-		>
-		> ***Option(s):***
-		> ```shell
-		> -s <none> ( --script-type <none> )
-		>
-		> 	Specify the language for the commands - if none
-		>	is specified, the lldb command interpreter will
-		>	be used.
-		>
-		>	Values: command | python | default-script
+		> breakpoint command add [--script-type <type>] [<breakpt-ids | breakpt-name>]
 		> ```
 		>
 		> ***Example(s):***
@@ -965,14 +966,51 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 		> > DONE
 		> ```
 		> ```shell
+		> (lldb) script
+		> >>> bp_count = 0
+		> >>> quit()
+		> ...
+		> (lldb) breakpoint command add -s python 3.2
+		> Enter your Python command(s). Type 'DONE' to end.
+		> > global bp_count
+		> > bp_count = bp_count + 1
+		> > print "Hit this breakpoint " + repr(bp_count) + " times!"
+		> > DONE
+		> ```
+		>
+		> > *<small>[Note:*
+		>
+		> - In this case, since there is a reference to a global variable, `bp_count`, you will also need to make sure `bp_count` exists and is initialized:
+		>
+		> 	```python
+		> 	(lldb) script
+		> 	>>> bp_count = 0
+		> 	>>> quit()
+		>	```
+		>
+		> 	Your Python code, however organized, can optionally return a value. If the returned value is `False`, that tells LLDB not to stop at the breakpoint to which the code is associated. Returning anything other than `False`, or even returning None, or even omitting a return statement entirely, will cause `lldb` to stop.
+		>
+		> *- end note]</small>*
+
+	- ***Delete command(s):***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint command delete <breakpt-id>
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint command delete 1.1
+		> (lldb) br co de 1.1
+		> ```
+
+		<!-- > ```shell
 		> (lldb) breakpoint command add -s python 4
 		> Enter your Python command(s). Type 'DONE' to end.
 		> > print "Hit this breakpoint!"
 		> > DONE
-		> ```
-		>
-		> *<small>[Note: See `(lldb) help breakpoint command add`, for more on scripts. - end note]</small>*
-
+		> ``` -->
 
 <!--
 - ***Breakpoint Attributes:***
@@ -1098,7 +1136,11 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
+> | 2 | Manual Page | LLDB | `(lldb) help breakpoint name`
+> | 3 | Manual Page | LLDB | `(lldb) help breakpoint modify`
+> | 4 | Manual Page | LLDB | `(lldb) help breakpoint command`
+> | 5 | Manual Page | LLDB | `(lldb) help breakpoint command add`
 
 
 ---
