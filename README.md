@@ -11,6 +11,6 @@ Herein resides ***QuickDocs*** for many and various topics.
 
 <br>
 
-> *May the world benefit. And may he, who shares what he has found
-> beneficial, have his share *[of deeds]* multiplied. And may we be
+> *May the world benefit; may he, who shares what he has found
+> beneficial, have his share *[of deeds]* multiplied; and may we be
 > of the most beneficial to others.*
