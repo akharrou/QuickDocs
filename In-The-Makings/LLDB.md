@@ -78,10 +78,75 @@ QuickDocs \| Low Level Debugger (LLDB)
 <br>
 
 
-> TODO: 1. Overview / Cheat Sheet
+[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+## 1.1. Beginner Usage Overview
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ## 1.1. Beginner Usage Overview
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+## 1.2. Intermediate Usage Overview
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ## 1.2. Intermediate Usage Overview
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+## 1.3. Cheat Sheet
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ## 1.3. Cheat Sheet
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
 
 <br>
 <br>
@@ -576,6 +641,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 >	*-- [Wikipedia :: Breakpoints](https://en.wikipedia.org/wiki/Breakpoint)*
 
+---
+
+The following subsections dive into the commands for operating-on/using breakpoints.
+
+We discuss basic commands ([§3.4.1.1](#331-basic-commands)), used for setting breakpoints, on functions and source file lines, as well as listing and deleting them *[the set breakpoints]*.
+
+Furhter below, we discover together more advanced commands ([§3.4.1.3](#3413-advanced-commands)) like using *regex* to set breakpoints on functions and source code, we see how to set/add breakpoint options (e.g. conditions, commands/scripts, auto-continue, hit-count ...), we see how to enable/disable breakpoints and even discuss, among other things, the `lldb` facilities offered for setting breakpoints for multi-threaded processes.
+
 
 <br>
 <br>
@@ -885,6 +958,8 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> > *<small>[Note:*
 	>
+	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.
+	>
 	> - It is also possible to set initialy disabled breakpoints and/or add them after having set them, with the following commands, respectively:
 	>
 	> 	```shell
@@ -893,8 +968,6 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> 	```shell
 	> 	(lldb) breakpoint modify [--disable] [--enable] <breakpt-ids | breakpt-names>
 	> 	```
-	>
-	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.
 	>
 	> *- end note]</small>*
 
@@ -916,7 +989,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions]`</small>
 
-	- ***Set breakpoint with condition:***
+	- ***Set breakpoint, with condition:***
 
 		> ***Synopsis:***
 		> ```shell
@@ -933,7 +1006,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
 		> ```
 
-	- ***Add condition [to an existing breakpoint]:***
+	- ***Add breakpoint condition [to an existing breakpoint]:***
 		>
 		> ***Synopsis:***
 		> ```shell
@@ -950,7 +1023,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands]`</small>
 
-	- ***Add command(s) [to existing breakpoint]:***
+	- ***Add command(s) [to existing an breakpoint]:***
 
 		> ***Synopsis:***
 		> ```shell
