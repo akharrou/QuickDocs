@@ -10,21 +10,21 @@ mentioned.
 Herein resides ***QuickDocs*** for many and various topics.
 
 
-### To Search: `cmd+f`
+### Searcheable:
 
-##### Form:
+To initiate a search, you may use your *[browser's]* `find`
+command, for most that command will be: ***`cmd+f`***.
 
-After initiating the search; quickly find anything like this:
+
+After initiating the search, follow the **form**:
 
 ```
 >topic
 ```
 
-> To search a subject-matter/topic in one of the documentations,
-> initiate your *[browser's]* `find` command, for most that command
-> will be: `cmd+f`. Then prepend any search with a right arrow
-> character: `>`, then proceed to writing the full subject matter
-> word or phrase or an abbreviation/acrynom of it.
+> ... prepend any search with a right arrow character: `>`,
+> then proceed to writing the full subject matter word or
+> phrase or abbreviation/acrynom thereof.
 
 <br>
 
