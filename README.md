@@ -20,7 +20,9 @@ Every search should follow the **form**:
 
 ```
 >topicmatterdesired
+
 or
+
 >topic.matter.desired
 ```
 
@@ -29,6 +31,8 @@ or
 > or abbreviation/acrynom thereof, with no spaces in
 > between; occaisonnaly there will be search tags that may be
 > seperated with a dot/period character `.`.
+>
+> Feel free to suggest other search tags for any subject matter. 
 
 ----------------------------------------------------------------------------------
 > *May the world benefit; and may he, who shares what he
