@@ -20,11 +20,15 @@ Every search should follow the **form**:
 
 ```
 >topicmatterdesired
+or
+>topic.matter.desired
 ```
 
 > –– the search should be prepend with a right arrow character
 > `>`, followed by the full subject matter word or phrase
-> or abbreviation/acrynom thereof, with no spaces in between.
+> or abbreviation/acrynom thereof, with no spaces in
+> between; occaisonnaly there will be search tags that may be
+> seperated with a dot/period character `.`.
 
 ----------------------------------------------------------------------------------
 > *May the world benefit; and may he, who shares what he
