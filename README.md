@@ -29,9 +29,3 @@ Every search should follow the **form**:
 > seperated with a dot/period character '`.`'.
 >
 > Feel free to suggest other search tags for any subject matter. 
-
-----------------------------------------------------------------------------------
-> *May the world benefit; and may he, who shares what he
-> has found beneficial, be increased in goodness and have
-> his share *[of deeds]* multiplied; and may we be of the
-> most beneficial to others.*
