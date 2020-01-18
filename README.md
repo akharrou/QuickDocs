@@ -3,7 +3,6 @@
 QuickDocs
 ===
 
-----------------------------------------------------------------------------------
 ### Welcome !
 
 *[To the]* ***Home of QuickDocs*** –– Quickly Searchable, Clickable,
