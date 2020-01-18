@@ -645,9 +645,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 The following subsections dive into the commands for operating-on/using breakpoints.
 
-We discuss ***basic commands*** ([§3.4.1.1](#331-basic-commands)), like for ***setting breakpoints*** on functions and source file lines, as well as ***listing*** and ***deleting*** them *[the set breakpoints]*.
+We discuss ***basic commands*** ([§3.4.1.1](#331-basic-commands)), like for ***setting breakpoints*** on functions and source code lines, as well as ***listing*** and ***deleting*** them *[the set breakpoints]*.
 
-Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3413-advanced-commands)) like ***using *regex* to set breakpoints*** on functions and source code, we see how to set/add ***breakpoint options*** (e.g. conditions, commands/scripts, auto-continue, hit-count ...), we see how to ***enable/disable breakpoints*** and even discuss, among other things, the `lldb` facilities offered for setting ***breakpoints for debugging multi-threaded*** processes.
+Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3413-advanced-commands)) like ***using *regex* to set breakpoints*** on function(s) and source code line(s) *[that match]*, we see how to set/add ***breakpoint options*** (e.g. conditions, commands/scripts, auto-continue, hit-count...), we see how to ***enable/disable breakpoints*** and also discuss, among other things, see the `lldb` breakpoint facilities offered when it comes to ***debugging multi-threaded*** processes.
 
 
 <br>
@@ -687,8 +687,10 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) br s -n main
 	> (lldb) b main
 	> ```
+	>
+	> *<small>[Note: Only the function **itself** has a breakpoint set on it – call-sites [of the said function] are ignored. - end note]</small>*
 
--	***Set a breakpoint, on a [source file] line:***
+-	***Set a breakpoint, on a [source code] line:***
 
 	> <small>`[Search Tags: >brsrcs >brssrcs >brsetsrcs >breakpointsetsrcs  >brsources >brssources >brsetsources >breakpointsetsources >brsetfiles >brfiles >brsrcs >brpages >brpgs >brsfiles >brssrcs >brspages >brspgs] >brsetlines >brlines >brlis >brpages >brls >brslines >brslis >brspages >brsls >breakpointlines >breakpointlis >breakpointls >breakpointfcs  >breakpointmainlines`</small>
 
@@ -727,9 +729,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> <small>`[Search Tags: >brdelete >deletebr >deletebrpt >deletebrkpt >deletebreakpt >deletebreakpoint >brdelete >brptdelete >brkptdelete >breakptdelete >breakpointdelete >debr >deletebr >deletetarge >brunload >unloadtr >uldtr >targetunload >unloadtargett >delbr >brdel >delbrpt >brptdel >delbrkpt >brkptdel >delbreakpt >breakptdel >delbreakpoint >breakpointdel]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> breakpoint delete [<breakpt-ids>]
+	> breakpoint delete [<breakpt-ids | breakpt-name>]
 	> ```
 	>
 	> ***Example(s):***
@@ -741,9 +742,9 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	>
 	> *<small>[Note:*
 	>
-	> - *If no breakpoint *[id]* is specified, delete them *[the breakpoints]* all.*
+	> - *If no breakpoint *[id]* is specified, [the command will] delete them *[the current breakpoints]* all.*
 	>
-	> - *`lldb`, automatically, deletes breakpoints of a [particular] target when the target is deleted.*
+	> - *`lldb`, automatically, deletes breakpoints of targets that are deleted.*
 	>
 	> *- end note]</small>*
 
@@ -767,11 +768,27 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 <br>
 <br>
 
-
 > TODO: #### 3.4.1.2. Basic (C++) Commands
 
-
 -	***Set a breakpoint, on function(s)**, by fullname:*
+
+	> <small>`[Search Tags: >cppbrset >cppsetbr >cppsbr >cppsebr >cppbreakpointset  >cppbreakpointfunctions >cppbreakpointfuncs >cppbreakpointfts >cppbreakpointfcs  >cppbreakpointmain >cppsetbreakpoint >cppbrkptset >cppsetbrkpt >cppbreakptset >cppsetbreakpt >cppbrsetfunctions >cppbrfunctions >cppbrfuncs >cppbrfts >cppbrfcs >cppbrsfunctions >cppbrsfuncs >cppbrsfts >cppbrsfcs >cppbrsmain]`</small>
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> breakpoint set --name <function-name>
+	> b <function-name>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --name main
+	> (lldb) br s -n main
+	> (lldb) b main
+	> ```
+	>
+	> *<small>[Note: Only the function **itself** has a breakpoint set on it – call-sites [of the said function] are ignored. - end note]</small>*
 
 <!-- C++ FUNCTIONS BY FULLNAME (NAMESPACES + BASENAME) -->
 
