@@ -6,7 +6,7 @@ QuickDocs
 ### Welcome !
 
 *[To the]* ***Home of QuickDocs*** –– Quickly Searchable, Clickable,
-Reference-able Documentation, that keeps for each of its treated subject
+Reference-able Documentation, that keeps, for each of its treated subject
 matters, a table of the best references/resources out there.
 
 ----------------------------------------------------------------------------------
