@@ -641,7 +641,7 @@ TODO : ADD leak and thread sanitizer.
 ---
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#3411-basic-commands)
 ### 3.4.1. Breakpoints
-<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpointcommands >breakpointcmds >brcmds >bmain >blist >bfile >bfunc >setbrpts >brmain >brsmain >brkpts >breakpts >bpts >brpoints >bapts >bapoints]`</small>
+<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpoint >breakpt >brkpt >brpt >br]`</small>
 <br>
 <br>
 
@@ -658,7 +658,7 @@ The following subsections dive into the commands for operating-on/using breakpoi
 
 We discuss ***basic commands*** ([§3.4.1.1](#3411-basic-commands)), like for ***setting breakpoints*** on functions and source code lines, as well as ***listing*** and ***deleting*** them *[the set breakpoints]* – also, commands ***only concerning C++*** ([§3.4.1.2](#3412-basic-c-commands)).
 
-Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3413-advanced-commands)) like ***using *regex* to set breakpoints***, ***enabling/disabling breakpoints***, setting/adding ***breakpoint options*** (e.g. conditions, commands/scripts, auto-continue, hit-count...) and also discuss, breakpoint facilities offered when it comes to ***debugging multi-threaded*** programs.
+Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3413-advanced-commands)): ***using *regex* to set breakpoints***, ***enabling/disabling breakpoints***, setting/adding ***breakpoint options*** (e.g. conditions, commands/scripts, auto-continue, hit-count...) and also discuss, breakpoint facilities offered when it comes to ***debugging multi-threaded*** programs.
 
 
 <br>
@@ -703,7 +703,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 <br>
 
--	***Set a breakpoint, on a [source code] line:***
+-	***Set a breakpoint, on a** [source code] **line:***
 
 	> <small>`[Search Tags: >brsrcs >brssrcs >brsetsrcs >breakpointsetsrcs  >brsources >brssources >brsetsources >breakpointsetsources >brsetfiles >brfiles >brsrcs >brpages >brpgs >brsfiles >brssrcs >brspages >brspgs] >brsetlines >brlines >brlis >brpages >brslines >brslis >brspages >brsls >breakpointlines >breakpointlis >breakpointls >breakpointfcs  >breakpointmainlines`</small>
 
@@ -724,7 +724,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 -	***List breakpoints:***
 
-	> <small>`[Search Tags: >brlist >listbr >brlst >libr >breaklist >listbreak >breakptslist >breakptptlists >listbreakpts, >breakpointlist]`</small>
+	> <small>`[Search Tags: >breakpointlist >breakpointls >listbreakpoint >lstbreakpoint >lsbreakpoint >libreakpoint >breakptlist >breakptls >listbreakpt >lstbreakpt >lsbreakpt >libreakpt >brkptlist >brkptls >listbrkpt >lstbrkpt >lsbrkpt >librkpt >brptlist >brptls >listbrpt >lstbrpt >lsbrpt >librpt >brlist >brls >listbr >lstbr >lsbr >libr]`</small>
 
 	> ***Synopsis:***
 	>
@@ -1028,7 +1028,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 - ***Breakpoint Commands:***
 
-	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands]`</small>
+	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands >commandbreakpoint >cmdbreakpoint >cmdsbreakpoint >commandbreakpt >cmdbreakpt >cmdsbreakpt >commandbrkpt >cmdbrkpt >cmdsbrkpt >commandbrpt >cmdbrpt >cmdsbrpt >commandbr >cmdbr >cmdsbr]`</small>
 
 	<br>
 
@@ -1126,11 +1126,10 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 - ***Breakpoint Attributes:***
 
-	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands]`</small>
-
+	> <small>`[Search Tags: >attributebreakpoint >attribbreakpoint >atbbreakpoint >breakpointatbs >breakpointatts >breakpointattributes >breakpointattribs >attributebreakpt >attribbreakpt >atbbreakpt >breakptatbs >breakptatts >breakptattributes >breakptattribs >attributebrkpt >attribbrkpt >atbbrkpt >brkptatbs >brkptatts >brkptattributes >brkptattribs >attributebrpt >attribbrpt >atbbrpt >brptatbs >brptatts >brptattributes >brptattribs >attributebr >attribbr >atbbr >bratbs >bratts >brattributes >brattribs]`</small>
 
 	> ```shell
-	> breakpoint <command> [<attribute> <boolean>]
+	> breakpoint <definition> <options> [<attribute> <boolean> ...]
 	>```
 	>
 
