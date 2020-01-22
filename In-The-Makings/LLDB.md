@@ -893,7 +893,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 -	***Set a breakpoint,** on line(s), in file(s), **using regular-expressions:***
 
-	> <small>`[Search Tags: >brsourceregex >brsrcregex >brssourceregex >brssrcregex >brsetsourceregex >brsetsrcregex >brregexsource >brregexsrc >brsregexsource >brsregexsrc >brsetregexsource >brsetregexsrc >srcregex >regexsrc >srctionregex >regexsrction  >sourceregex >regexsources >srcrgx >rgxsrc >srctionrgx >rgxsrction  >sourcergx >rgxsources >sourcepatternregex >srcpatternregex >sourcepatregex >srcpatregex]`</small>
+	> <small>`[Search Tags: >brsourceregex >brsrcregex >brssourceregex >brssrcregex >brsetsourceregex >brsetsrcregex >brregexsource >brregexsrc >brsregexsource >brsregexsrc >brsetregexsource >brsetregexsrc >srcregex >regexsrc >srctionregex >regexsrc  >sourceregex >regexsources >srcrgx >rgxsrc >srcrgx >rgxsrc  >sourcergx >rgxsources >sourcepatternregex >srcpatternregex >sourcepatregex >srcpatregex]`</small>
 
 	> ***Synopsis:***
 	>
