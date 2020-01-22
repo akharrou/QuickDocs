@@ -897,6 +897,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 -	***Enable / Disable breakpoints:***
 
+	> <small>`[Search Tags: >breakpointenable >breakptenable >brkptenable >brptenable >brenable >breakpointdisable >breakptdisable >brkptdisable >brptdisable >brdisable >enablebreakpoint >enablebreakpt >enablebrkpt >enablebrpt >enablebr >disablebreakpoint >disablebreakpt >disablebrkpt >disablebrpt >disablebr]`</small>
+
 	> ***Synopsis:***
 	> ```shell
 	> (lldb) breakpoint disable <breakpt-ids | breakpt-names>
@@ -1323,7 +1325,9 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
+> | 1 | Manual Page | LLDB | `(lldb) help watchpoint set`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint list`
+> | 3 | Manual Page | LLDB | `(lldb) help watchpoint delete`
 
 
 ---
@@ -1339,6 +1343,45 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
 > *Advanced commands for operating on watchpoints:*
+
+-	***Enable / Disable watchpoints:***
+
+	> <small>`[Search Tags: >watchpointenable >watchptenable >brkptenable >brptenable >brenable >watchpointdisable >watchptdisable >brkptdisable >brptdisable >brdisable >enablewatchpoint >enablewatchpt >enablebrkpt >enablebrpt >enablebr >disablewatchpoint >disablewatchpt >disablebrkpt >disablebrpt >disablebr]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> (lldb) watchpoint disable <watchpt-ids | watchpt-names>
+	> (lldb) watchpoint enable  <watchpt-ids | watchpt-names>
+	> ```
+	> ```
+	> (lldb) watchpoint modify [--disable] [--enable] <watchpt-ids | watchpt-names>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) watchpoint disable 1
+	> (lldb) br di 1
+	> ```
+	> ```shell
+	> (lldb) watchpoint disable 3.*      # disable all watchpoints of ID 3.
+	> (lldb) br di 3.*
+	> ```
+	> ```shell
+	> (lldb) watchpoint enable 2 6 3.2   # enable watchpoints: 2, 6 and 3.2
+	> (lldb) br en 2 6 3.2
+	> ```
+	>
+	> > *<small>[Note:*
+	>
+	> - To enable only certain locations of a logical watchpoint, use the watchpoint disable command, passing the watchpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.
+	>
+	> - It is also possible to set, initialy disabled, watchpoints:
+	>
+	> 	```shell
+	> 	(lldb) watchpoint set <watchpt-definition> [--disable]
+	> 	```
+	>
+	> *- end note]</small>*
 
 
 > **Note** *--* *We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"*, e.g.: , etc…*
