@@ -374,7 +374,7 @@ TODO : ADD leak and thread sanitizer.
 	> – add it *[the sanitizer's corresponding [enabler] flag]* to the compilation command. <br>
 	>
 	>	The shown above *[command]*, adds/activates the *[runtime checks of the]* *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
-	>
+
 	> *<small>[Note:* It is not possible to have more than one the following sanitizers: *"`-fsanitize=address`"*, *"`-fsanitize=thread`"*, and *"`-fsanitize=memory`"*, at the same time. *- end note]*
 	>
 
@@ -617,7 +617,7 @@ TODO : ADD leak and thread sanitizer.
 
 -	`lldb` *[then]* gives you the possibility of setting up [*breakpoints*](https://en.wikipedia.org/wiki/Breakpoint) ([§3.4.1](#341-breakpoints)) and [*watchpoints*](https://en.wiktionary.org/wiki/watchpoint#English) ([§3.4.2](#342-watchpoints)).
 
-> *<small>[Note: Before the execution of a [targeted] program, watchpoints can only be set on global variables –– once [the [targeted] program is] launched, watchpoints can be set on any variable/memory-location. - end note]</small>*
+	> *<small>[Note: Before the execution of a [targeted] program, watchpoints can only be set on global variables –– once [the [targeted] program is] launched, watchpoints can be set on any variable/memory-location. - end note]</small>*
 
 <!-- BREAKPOINT ANALOGY:
 
@@ -698,7 +698,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) br s -n main
 	> (lldb) b main
 	> ```
-	>
+
 	> *<small>[Note: Only the function **itself** has a breakpoint set on it – call-sites [of the said function] are ignored. - end note]</small>*
 
 <br>
@@ -756,7 +756,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) br de 1 2 3
 	> (lldb) br d                         # delete all breakpts
 	> ```
-	>
+
 	> *<small>[Note:*
 	>
 	> - *If no breakpoint *[id]* is specified, [the command will] delete them *[the current breakpoints]* all.*
@@ -817,12 +817,12 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) breakpoint set --basename 'getter'
 	> (lldb) br s -b 'getter'
 	> ```
-	>
+
 	> *<small>[Note: Both, **namespace functions** and **class methods** with the given basename will have a breakpoint set on them. - end note]</small>*
 
 <br>
 
--	***Set a breakpoint, on [class] method(s):***
+-	***Set a breakpoint, on** [class] **method(s):***
 
 	> <small>`[Search Tags: >breakpointmethods >breakptmethods >brkptmethods >brptmethods >brmethods >methodsbreakpoint >methodsbreakpt >methodsbrkpt >methodsbrpt >methodsbr >breakpointclassmethods >breakptclassmethods >brkptclassmethods >brptclassmethods >brclassmethods >classmethodsbreakpoint >classmethodsbreakpt >classmethodsbrkpt >classmethodsbrpt >classmethodsbr]`</small>
 
@@ -839,22 +839,31 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 <br>
 
--	***Set a breakpoint, on (all) exceptions** [on `throw`] **:***
+-	***Set a breakpoint, on (all) exceptions** [on `catch` and/or `throws`] **:***
 
 	> <small>`[Search Tags: >breakpointexceptions >breakptexceptions >brkptexceptions >brptexceptions >brexceptions >exceptionsbreakpoint >exceptionsbreakpt >exceptionsbrkpt >exceptionsbrpt >exceptionsbr]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint set --language-exception <source-code-language>
+	> breakpoint set --language-exception <source-code-language> [--on-catch <true | false>] [--on-throw <true | false>]
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> breakpoint set --language-exception c++
+	> breakpoint set --language-exception c++                                        # on default setting
 	> br s -E c++
 	> ```
+	> ```shell
+	> breakpoint set --language-exception c++ --on-catch true --on-throw true        # on throws
+	> br s -E c++ -h true -w true
+	> ```
 	>
-	> *<small>[Note: To set a breakpoint on specific exception objects, there exists the `--exception-typename <type-name>` option, but it is unfortunately only supported for **Swift**, at the moment (22/01/2020). - end note]</small>*
+	> ```shell
+	> breakpoint set --language-exception c++ --on-catch True --on-throw False       # on catches
+	> br s -E c++ -h True -w False
+	> ```
+
+	> *<small>[Note:* To set a breakpoint on specific exception objects, there exists the `--exception-typename` (`-O`) option, but it is unfortunately only supported for **Swift**, at the moment (22/01/2020). *- end note]</small>*
 
 
 <br>
@@ -908,12 +917,12 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint set --all-files ''
-	> (lldb) br s -A ''
+	> (lldb) breakpoint set --all-files 'return (FAILURE);'
+	> (lldb) br s -A 'return (FAILURE);'
 	> ```
 	> ```shell
-	> (lldb) breakpoint set --source-pattern-regexp ''
-	> (lldb) breakpoint set -p ''
+	> (lldb) breakpoint set --source-pattern-regexp 'free(buckets);' --file 'core.c' --file 'cleanup.c'
+	> (lldb) breakpoint set -p 'free(buckets);' -f core.c -f cleanup.c
 	> ```
 
 	> *<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
@@ -1002,7 +1011,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 	<br>
 
-	- ***Add breakpoint condition [to an existing breakpoint]:***
+	- ***Add breakpoint condition** [on an existing breakpoint] **:***
 
 		> ***Synopsis:***
 		> ```shell
@@ -1023,9 +1032,9 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 	<br>
 
-	- ***Add** [breakpoint] **command(s)** [to an existing breakpoint] **:***
+	- ***Set** [breakpoint] **command(s)** (or script) [on an existing breakpoint] **:***
 
-		> <small>`[Search Tags: >breakpointaddcommand >breakpointaddcmd >breakpointacmd >breakptaddcommand >breakptaddcmd >breakptacmd >brkptaddcommand >brkptaddcmd >brkptacmd >brptaddcommand >brptaddcmd >brptacmd >braddcommand >braddcmd >bracmd >breakpointaddscript >breakpointaddscrpt >breakpointascrpt >breakptaddscript >breakptaddscrpt >breakptascrpt >brkptaddscript >brkptaddscrpt >brkptascrpt >brptaddscript >brptaddscrpt >brptascrpt >braddscript >braddscrpt >brascrpt]`</small>
+		> <small>`[Search Tags: >breakpointaddcommand >breakpointaddcmd >breakpointacmd >breakptaddcommand >breakptaddcmd >breakptadcmd >brkptaddcommand >brkptaddcmd >brkptadcmd >brptaddcommand >brptaddcmd >brptadcmd >braddcommand >braddcmd >bradcmd >breakpointaddscript >breakpointaddscrpt >breakpointadscrpt >breakptaddscript >breakptaddscrpt >breakptadscrpt >brkptaddscript >brkptaddscrpt >brkptadscrpt >brptaddscript >brptaddscrpt >brptadscrpt >braddscript >braddscrpt >bradscrpt >breakpointsetcommand >breakpointsetcmd >breakpointacmd >breakptsetcommand >breakptsetcmd >breakptsecmd >brkptsetcommand >brkptsetcmd >brkptsecmd >brptsetcommand >brptsetcmd >brptsecmd >brsetcommand >brsetcmd >brsecmd >breakpointsetscript >breakpointsetscrpt >breakpointsescrpt >breakptsetscript >breakptsetscrpt >breakptsescrpt >brkptsetscript >brkptsetscrpt >brkptsescrpt >brptsetscript >brptsetscrpt >brptsescrpt >brsetscript >brsetscrpt >brsescrpt]`</small>
 
 		> ***Synopsis:***
 		> ```shell
@@ -1067,6 +1076,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 		> *<small>[Note:*
 		>
+		> - You can, alternatively, specify one-liner commands with the: `-o / --one-liner` option, follow by the desired `<command>`.
+		>
 		> - In this case, since there is a reference to a global variable, `bp_count`, you will also need to make sure `bp_count` exists and is initialized:
 		>
 		> 	```python
@@ -1078,6 +1089,23 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		> 	Your Python code, however organized, can optionally return a value. If the returned value is `False`, that tells LLDB not to stop at the breakpoint to which the code is associated. Returning anything other than `False`, or even returning None, or even omitting a return statement entirely, will cause `lldb` to stop.
 		>
 		> *- end note]</small>*
+
+	<br>
+
+	- ***List** [breakpoint] **command(s):***
+
+		> <small>`[Search Tags: >breakpointlistcommand >breakpointlistcmd >breakpointlscmd >breakptlistcommand >breakptlistcmd >breakptlscmd >brkptlistcommand >brkptlistcmd >brkptlscmd >brptlistcommand >brptlistcmd >brptlscmd >brlistcommand >brlistcmd >brlscmd >breakpointlicmd >breakptlicmd >brkptlicmd >brptlicmd >brlicmd]`</small>
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint command list <breakpt-id>
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint command list 1.1
+		> (lldb) br co li 1.1
+		> ```
 
 	<br>
 
@@ -1096,32 +1124,23 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		> (lldb) br co de 1.1
 		> ```
 
-<!--
 - ***Breakpoint Attributes:***
 
 	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands]`</small>
 
 
 	> ```shell
-	> ... [--attribute [<boolean>]]
-	> ... [-<attribute-flag> [<boolean>]]
+	> breakpoint <command> [<attribute> <boolean>]
 	>```
 	>
-	> ```shell
-	> -G <boolean> ( --auto-continue <boolean> )
-	>	The breakpoint will auto-continue after running its commands.
-	>
-	> -o <boolean> ( --one-shot <boolean> )
-	>	The breakpoint is deleted the first time it stop causes a stop.
-	>
-	> -h <boolean> ( --on-catch <boolean> )
-	>	Set the breakpoint on exception catcH.
-	>
-	> -w <boolean> ( --on-throw <boolean> )
-	>	Set the breakpoint on exception throW.
-	> ```
+
+    |Attribute|Description|
+    |:----|:----|
+    | ` --auto-continue` ( `-G` )  | The breakpoint will auto-continue after running its commands. |
+    | ` --one-shot` ( `-o` )       | The breakpoint is deleted the first time it stop causes a stop. |
 
 
+<!--
 -	***Set breakpoint, on thread:***
 
 	> ***Synopsis:***
@@ -1225,7 +1244,10 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 > | 3 | Manual Page | LLDB | `(lldb) help breakpoint modify`
 > | 4 | Manual Page | LLDB | `(lldb) help breakpoint command`
 > | 5 | Manual Page | LLDB | `(lldb) help breakpoint command add`
-> | 6 | Manual Page | LLDB | `(lldb) help breakpoint command delete`
+> | 6 | Manual Page | LLDB | `(lldb) help breakpoint command list`
+> | 7 | Manual Page | LLDB | `(lldb) help breakpoint command delete`
+> | 8 | Manual Page | LLDB | `(lldb) help breakpoint name`
+> | 9 | Manual Page | LLDB | `(lldb) help breakpoint name configure`
 
 
 ---
@@ -1313,7 +1335,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) watchpoint set expression --watch read --size 4 -- 0x00007ffeefbff510
 	> (lldb) wa s e -w read -s 4 -- 0x00007ffeefbff510
 	> ```
-	>
+
 	> *<small>[Note:*
 	>
 	> We say:
@@ -1355,7 +1377,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) watchpoint delete 1 2 3
 	> (lldb) wa de 5
 	> ```
-	>
+
 	> *<small>[Note: If no watchpoints are specified, delete them all. - end note]</small>*
 
 
@@ -1411,7 +1433,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) watchpoint enable 2 6 3.2   # enable watchpoints: 2, 6 and 3.2
 	> (lldb) br en 2 6 3.2
 	> ```
-	>
+
 	> *<small>[Note:*
 	>
 	> - To enable only certain locations of a logical watchpoint, use the watchpoint disable command, passing the watchpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.
@@ -1612,7 +1634,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) process attach --waitfor --name a.out
 	> (lldb) pr a -w -n a.out
 	> ```
-	>
+
 	> *<small>[Note:*
 	>
 	> - *To clarify – you can attach to a process by process-ID (`pid`) or process name (e.g. `a.out`).* <br>
@@ -1662,7 +1684,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> process launch --shell=/dev/ttys002
 	> pr la -c=/dev/ttys003
 	> ```
-	>
+
 	> *<small>[Note: Not supported on all platforms. - end note]</small>*
 
 -	***Set environment variables:***
@@ -1679,7 +1701,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> process launch --environment BIG_ENDIAN=true OPTIMIZATIONS=false
 	> pr la -v YEAR=2020
 	> ```
-	>
+
 	> *<small>[Note: Can be specified multiple times for subsequent environment entries. - end note]</small>*
 
 -	***Set current working directory:***
@@ -1723,7 +1745,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> ```
-	>
+
 	> *<small>[Note:*
 	>
 	> - *To clarify [, in this [last] example] –* <br>
