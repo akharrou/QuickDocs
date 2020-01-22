@@ -1055,7 +1055,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		> > print "Hit this breakpoint " + repr(bp_count) + " times!"
 		> > DONE
 		> ```
-		>
+
 		> *<small>[Note:*
 		>
 		> - In this case, since there is a reference to a global variable, `bp_count`, you will also need to make sure `bp_count` exists and is initialized:
