@@ -963,6 +963,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 >
 >	*––	[LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
 
+---
+
 >	*(**Note**) –– We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…* <br>
 
 ---
