@@ -1124,12 +1124,12 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		> (lldb) br co de 1.1
 		> ```
 
-- ***Breakpoint Attributes:***
+- ***Breakpoint Set Attributes:***
 
 	> <small>`[Search Tags: >attributebreakpoint >attribbreakpoint >atbbreakpoint >breakpointatbs >breakpointatts >breakpointattributes >breakpointattribs >attributebreakpt >attribbreakpt >atbbreakpt >breakptatbs >breakptatts >breakptattributes >breakptattribs >attributebrkpt >attribbrkpt >atbbrkpt >brkptatbs >brkptatts >brkptattributes >brkptattribs >attributebrpt >attribbrpt >atbbrpt >brptatbs >brptatts >brptattributes >brptattribs >attributebr >attribbr >atbbr >bratbs >bratts >brattributes >brattribs]`</small>
 
 	> ```shell
-	> breakpoint <definition> <options> [<attribute> <boolean> ...]
+	> breakpoint set <definition> <options> [<attribute> <boolean> ...]
 	>```
 	>
 
