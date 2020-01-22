@@ -452,7 +452,7 @@ TODO : ADD leak and thread sanitizer.
 
 > *<small>[Note: `lldb`'s lexicon for a ***"program [executable] intended for debugging"*** is a ***"[debugger] target"*** . - end note]</small>*
 
--	***Create [a debugger] target (i.e load a program executable):***
+-	***Create** [a debugger] **target** (i.e load a program executable) **:***
 
 	> <small>`[Search Tags: >crtarget >crttarget >createtarget >targetcreate >ldtarget >lodtarget >loadtarget >targetload >crtargt >crttargt >createtargt >targtcreate >ldtargt >lodtargt >loadtargt >targtload >crtrgt >crttrgt >createtrgt >trgtcreate >ldtrgt >lodtrgt >loadtrgt >trgtload >crtr >crttr >createtr >trcreate >ldtr >lodtr >loadtr >trload]`</small>
 
@@ -507,7 +507,7 @@ TODO : ADD leak and thread sanitizer.
 
 <br>
 
--	***List (all) targets:***
+-	***List** (all) **targets:***
 
 	> <small>`[Search Tags: >lsttarget >listtarget >lstarget >targetlst >targetlist >targetls >lsttargt >listtargt >lstargt >targtlst >targtlist >targtls >lsttrgt >listtrgt >lstrgt >trgtlst >trgtlist >trgtls >lsttr >listtr >lstr >trlst >trlist >trls >litarget >targetli >litargt >targtli >litrgt >trgtli >litr >trli]`</small>
 
@@ -525,7 +525,7 @@ TODO : ADD leak and thread sanitizer.
 
 <br>
 
--	***Select [a different] target [as current target]:***
+-	***Select** [a different] **target** [as current target] **:***
 
 	> <small>`[Search Tags: >selcttarget >setarget >selecttarget >targetselect >selcttargt >setargt >selecttargt >targtselect >selcttrgt >setrgt >selecttrgt >trgtselect >selcttr >setr >selecttr >trselect]`</small>
 
@@ -543,7 +543,7 @@ TODO : ADD leak and thread sanitizer.
 
 <br>
 
--	***Delete target (i.e unload an program execuable):***
+-	***Delete target** (i.e unload an program execuable) **:***
 
 	> <small>`[Search Tags: >detarget >deltarget >deletetarget >targetdelete >detargt >deltargt >deletetargt >targtdelete >detrgt >deltrgt >deletetrgt >trgtdelete >detr >deltr >deletetr >trdelete >ultarget >unltarget >unletetarget >targetunload >ultargt >unltargt >unloadtargt >targtunload >ultrgt >unltrgt >unloadtrgt >trgtunload >ultr >unltr >unloadtr >trunload]`</small>
 
@@ -613,8 +613,7 @@ TODO : ADD leak and thread sanitizer.
 
 -	`lldb` *[then]* gives you the possibility of setting up [*breakpoints*](https://en.wikipedia.org/wiki/Breakpoint) ([§3.4.1](#341-breakpoints)) and [*watchpoints*](https://en.wiktionary.org/wiki/watchpoint#English) ([§3.4.2](#342-watchpoints)).
 
-> *<small>[Note: Watchpoints can only be set after the launch of the program. - end note]</small>*
-
+> *<small>[Note: Before the execution of a [targeted] program, watchpoints can only be set on global variables –– once [the [targeted] program is] launched, watchpoints can be set on any variable/memory-location. - end note]</small>*
 
 <!-- BREAKPOINT ANALOGY:
 
@@ -698,6 +697,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	>
 	> *<small>[Note: Only the function **itself** has a breakpoint set on it – call-sites [of the said function] are ignored. - end note]</small>*
 
+<br>
+
 -	***Set a breakpoint, on a [source code] line:***
 
 	> <small>`[Search Tags: >brsrcs >brssrcs >brsetsrcs >breakpointsetsrcs  >brsources >brssources >brsetsources >breakpointsetsources >brsetfiles >brfiles >brsrcs >brpages >brpgs >brsfiles >brssrcs >brspages >brspgs] >brsetlines >brlines >brlis >brpages >brslines >brslis >brspages >brsls >breakpointlines >breakpointlis >breakpointls >breakpointfcs  >breakpointmainlines`</small>
@@ -715,6 +716,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) b hello.c:10
 	> ```
 
+<br>
+
 -	***List breakpoints:***
 
 	> <small>`[Search Tags: >brlist >listbr >brlst >libr >breaklist >listbreak >breakptslist >breakptptlists >listbreakpts, >breakpointlist]`</small>
@@ -731,6 +734,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) br l -f 1                      # --full     (full description, default
 	> (lldb) br l -v                        # --verbose  (extensive description)
 	> ```
+
+<br>
 
 -	***Delete breakpoint(s):***
 
@@ -881,8 +886,10 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) breakpoint set --func-regex 'Parser.{3,4,5}_Command\(\)'
 	> (lldb) br s -r "Parser.{3,4,5}_Command\(\)"
 	> ```
-	>
+
 	> *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
+
+<br>
 
 -	***Set a breakpoint,** on line(s), in file(s), **using regular-expressions:***
 
@@ -904,8 +911,10 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) breakpoint set --source-pattern-regexp ''
 	> (lldb) breakpoint set -p ''
 	> ```
-	>
-	>*<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
+
+	> *<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
+
+<br>
 
 -	***Enable / Disable breakpoints:***
 
@@ -933,7 +942,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) breakpoint enable 2 6 3.2   # enable breakpoints: 2, 6 and 3.2
 	> (lldb) br en 2 6 3.2
 	> ```
-	>
+
 	> *<small>[Note:*
 	>
 	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (`*`), e.g.: `1.*` or `3.*`.
@@ -959,9 +968,13 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 <small>`[Search Tags: >breakpointoptions >optionsbreakpoint >breakptoptions >optionsbreakpt >brkptoptions >optionsbrkpt >brptoptions >optionsbrpt >broptions >optionsbr]`</small>
 
+<br>
+
 - ***Breakpoint Conditions:***
 
 	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions]`</small>
+
+	<br>
 
 	- ***Set breakpoint, with condition:***
 
@@ -980,6 +993,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
 		> ```
 
+	<br>
+
 	- ***Add breakpoint condition [to an existing breakpoint]:***
 		>
 		> ***Synopsis:***
@@ -992,6 +1007,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		> (lldb) breakpoint modify --condition 'my_var == 42' 3     # add condition to breakpt with ID: 3
 		> (lldb) br m -c 'my_var < 42' 4 2 8
 		> ```
+
+<br>
 
 - ***Breakpoint Commands:***
 
@@ -1052,6 +1069,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		> 	Your Python code, however organized, can optionally return a value. If the returned value is `False`, that tells LLDB not to stop at the breakpoint to which the code is associated. Returning anything other than `False`, or even returning None, or even omitting a return statement entirely, will cause `lldb` to stop.
 		>
 		> *- end note]</small>*
+
+	<br>
 
 	- ***Delete [breakpoint] command(s):***
 
