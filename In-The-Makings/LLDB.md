@@ -1193,7 +1193,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 <br>
 
 
->	*(**Definition**) Watchpoint: is a debugging mechanism whereby execution is suspended every time a specified variable or memory-location is accessed for reading and/or writing.*
+>	*(**Definition**) Watchpoint: is a (special) kind of breakpoint (debugging mechanism) whereby execution is suspended every time a specified variable or memory-location is accessed for reading and/or writing.*
 >
 >	*–– [Wikitionary :: Watchpoint](https://en.wiktionary.org/wiki/watchpoint)*
 
