@@ -870,7 +870,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) br s -r "Parser.{3,4,5}_Command\(\)"
 	> ```
 	>
-	> > *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
+	> *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
 
 -	***Set a breakpoint,** on line(s), in file(s), **using regular-expressions:***
 
@@ -922,7 +922,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) br en 2 6 3.2
 	> ```
 	>
-	> > *<small>[Note:*
+	> *<small>[Note:*
 	>
 	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (`*`), e.g.: `1.*` or `3.*`.
 	>
@@ -1372,7 +1372,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) br en 2 6 3.2
 	> ```
 	>
-	> > *<small>[Note:*
+	> *<small>[Note:*
 	>
 	> - To enable only certain locations of a logical watchpoint, use the watchpoint disable command, passing the watchpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.
 	>
