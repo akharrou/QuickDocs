@@ -647,9 +647,9 @@ TODO : ADD leak and thread sanitizer.
 
 The following subsections dive into the commands for operating-on/using breakpoints.
 
-We discuss ***basic commands*** ([§3.4.1.1](#331-basic-commands)), like for ***setting breakpoints*** on functions and source code lines, as well as ***listing*** and ***deleting*** them *[the set breakpoints]*.
+We discuss ***basic commands*** ([§3.4.1.1](#3411-basic-commands)), like for ***setting breakpoints*** on functions and source code lines, as well as ***listing*** and ***deleting*** them *[the set breakpoints]* – also, commands ***only concerning C++*** ([§3.4.1.2](#3412-basic-c-commands)).
 
-Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3413-advanced-commands)) like ***using *regex* to set breakpoints*** on function(s) and source code line(s) *[that match]*, we see how to set/add ***breakpoint options*** (e.g. conditions, commands/scripts, auto-continue, hit-count...), we see how to ***enable/disable breakpoints*** and also discuss, among other things, see the `lldb` breakpoint facilities offered when it comes to ***debugging multi-threaded*** processes.
+Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3413-advanced-commands)) like ***using *regex* to set breakpoints*** on function(s) and source code line(s) *[that match]*, we see how to set/add ***breakpoint options*** (e.g. conditions, commands/scripts, auto-continue, hit-count...), we see how to ***enable/disable breakpoints*** and also discuss, among other things, the breakpoint facilities offered *[by `lldb`]* when it comes to ***debugging multi-threaded*** processes.
 
 
 <br>
@@ -960,6 +960,9 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> (lldb) breakpoint disable <breakpt-ids | breakpt-names>
 	> (lldb) breakpoint enable  <breakpt-ids | breakpt-names>
 	> ```
+	> ```
+	> (lldb) breakpoint modify [--disable] [--enable] <breakpt-ids | breakpt-names>
+	> ```
 	>
 	> ***Example(s):***
 	> ```shell
@@ -967,11 +970,11 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	> (lldb) br di 1
 	> ```
 	> ```shell
-	> (lldb) breakpoint disable 3.*
+	> (lldb) breakpoint disable 3.*      # disable all breakpoints of ID 3.
 	> (lldb) br di 3.*
 	> ```
 	> ```shell
-	> (lldb) breakpoint enable 2 6 3.2
+	> (lldb) breakpoint enable 2 6 3.2   # enable breakpoints: 2, 6 and 3.2
 	> (lldb) br en 2 6 3.2
 	> ```
 	>
@@ -979,13 +982,10 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 	>
 	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.
 	>
-	> - It is also possible to set initialy disabled breakpoints and/or add them after having set them, with the following commands, respectively:
+	> - It is also possible to set, initialy disabled, breakpoints:
 	>
 	> 	```shell
 	> 	(lldb) breakpoint set <breakpt-definition> [--disable]
-	> 	```
-	> 	```shell
-	> 	(lldb) breakpoint modify [--disable] [--enable] <breakpt-ids | breakpt-names>
 	> 	```
 	>
 	> *- end note]</small>*
@@ -1001,8 +1001,6 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 ---
 
 <small>`[Search Tags: >breakpointoptions >optionsbreakpoint >breakptoptions >optionsbreakpt >brkptoptions >optionsbrkpt >brptoptions >optionsbrpt >broptions >optionsbr]`</small>
-
-> *Commands for adding breakpoint options (e.g. conditions, comamnds, attributes):*
 
 - ***Breakpoint Conditions:***
 
@@ -1042,11 +1040,17 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands]`</small>
 
-	- ***Add command(s) [to existing an breakpoint]:***
+	- ***Add command(s) [to an existing breakpoint]:***
 
 		> ***Synopsis:***
 		> ```shell
 		> breakpoint command add [--script-type <type>] [<breakpt-ids | breakpt-name>]
+		> ```
+		> ```
+		> > Enter your debugger command(s). Type 'DONE' to end.
+		> > <lldb-commands> ...
+		> > ...
+		> > DONE
 		> ```
 		>
 		> ***Example(s):***
