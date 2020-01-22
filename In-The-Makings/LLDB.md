@@ -658,7 +658,7 @@ The following subsections dive into the commands for operating-on/using breakpoi
 
 We discuss ***basic commands*** ([§3.4.1.1](#3411-basic-commands)), like for ***setting breakpoints*** on functions and source code lines, as well as ***listing*** and ***deleting*** them *[the set breakpoints]* – also, commands ***only concerning C++*** ([§3.4.1.2](#3412-basic-c-commands)).
 
-Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3413-advanced-commands)) like ***using *regex* to set breakpoints*** on function(s) and source code line(s) *[that match]*, we see how to set/add ***breakpoint options*** (e.g. conditions, commands/scripts, auto-continue, hit-count...), we see how to ***enable/disable breakpoints*** and also discuss, among other things, the breakpoint facilities offered *[by `lldb`]* when it comes to ***debugging multi-threaded*** processes.
+Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3413-advanced-commands)) like ***using *regex* to set breakpoints***, ***enabling/disabling breakpoints***, setting/adding ***breakpoint options*** (e.g. conditions, commands/scripts, auto-continue, hit-count...) and also discuss, breakpoint facilities offered when it comes to ***debugging multi-threaded*** programs.
 
 
 <br>
