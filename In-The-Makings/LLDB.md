@@ -971,6 +971,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 <small>`[Search Tags: >breakpointoptions >optionsbreakpoint >breakptoptions >optionsbreakpt >brkptoptions >optionsbrkpt >brptoptions >optionsbrpt >broptions >optionsbr]`</small>
 
+<br>
+
 - ***Breakpoint Conditions:***
 
 	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions]`</small>
