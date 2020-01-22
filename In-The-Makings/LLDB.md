@@ -566,7 +566,7 @@ TODO : ADD leak and thread sanitizer.
 
 ---
 
-> *<small>[Notes:*
+> *<small>[Note:*
 >
 > - "From **outside** *[`lldb`]*"; i.e before, and at the same time as, launch *[of `lldb`] [, on the *[terminal]* command prompt]*.
 >
