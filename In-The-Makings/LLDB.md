@@ -641,7 +641,7 @@ TODO : ADD leak and thread sanitizer.
 >
 >	*More generally, a breakpoint is a means of acquiring knowledge about a program during its execution. During the interruption, the programmer inspects the test environment (general purpose registers, memory, logs, files, etc.) to find out whether the program is functioning as expected. In practice, a breakpoint consists of one or more conditions that determine when a program's execution should be interrupted. [...]"*
 >
->	*-- [Wikipedia :: Breakpoints](https://en.wikipedia.org/wiki/Breakpoint)*
+>	*––  [Wikipedia :: Breakpoints](https://en.wikipedia.org/wiki/Breakpoint)*
 
 ---
 
@@ -694,7 +694,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 -	***Set a breakpoint, on a [source code] line:***
 
-	> <small>`[Search Tags: >brsrcs >brssrcs >brsetsrcs >breakpointsetsrcs  >brsources >brssources >brsetsources >breakpointsetsources >brsetfiles >brfiles >brsrcs >brpages >brpgs >brsfiles >brssrcs >brspages >brspgs] >brsetlines >brlines >brlis >brpages >brls >brslines >brslis >brspages >brsls >breakpointlines >breakpointlis >breakpointls >breakpointfcs  >breakpointmainlines`</small>
+	> <small>`[Search Tags: >brsrcs >brssrcs >brsetsrcs >breakpointsetsrcs  >brsources >brssources >brsetsources >breakpointsetsources >brsetfiles >brfiles >brsrcs >brpages >brpgs >brsfiles >brssrcs >brspages >brspgs] >brsetlines >brlines >brlis >brpages >brslines >brslis >brspages >brsls >breakpointlines >breakpointlis >breakpointls >breakpointfcs  >breakpointmainlines`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -711,7 +711,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 -	***List breakpoints:***
 
-	> <small>`[Search Tags: >brlist >listbr >libr >breaklist >listbreak >breakptslist >breakptptlists >listbreakpts, >breakpointlist]`</small>
+	> <small>`[Search Tags: >brlist >listbr >brlst >libr >breaklist >listbreak >breakptslist >breakptptlists >listbreakpts, >breakpointlist]`</small>
 
 	> ***Synopsis:***
 	>
@@ -770,128 +770,70 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 <br>
 <br>
 
-> TODO: #### 3.4.1.2. Basic (C++) Commands
 
--	***Set a breakpoint, on function(s)**, by fullname:*
+-	***Set a breakpoint**, on function(s), **by fullname:***
 
-	> <small>`[Search Tags: >cppbrset >cppsetbr >cppsbr >cppsebr >cppbreakpointset  >cppbreakpointfunctions >cppbreakpointfuncs >cppbreakpointfts >cppbreakpointfcs  >cppbreakpointmain >cppsetbreakpoint >cppbrkptset >cppsetbrkpt >cppbreakptset >cppsetbreakpt >cppbrsetfunctions >cppbrfunctions >cppbrfuncs >cppbrfts >cppbrfcs >cppbrsfunctions >cppbrsfuncs >cppbrsfts >cppbrsfcs >cppbrsmain]`</small>
+	> <small>`[Search Tags: >breakpointfullname >breakptfullname >brkptfullname >brptfullname >brfullname >fullnamebreakpoint >fullnamebreakpt >fullnamebrkpt >fullnamebrpt >fullnamebr]`</small>
 
 	> ***Synopsis:***
 	>
 	> ```shell
-	> breakpoint set --name <function-name>
-	> b <function-name>
+	> (lldb) breakpoint set --fullname <full-function-name>
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint set --name main
-	> (lldb) br s -n main
-	> (lldb) b main
+	> (lldb) breakpoint set --fullname 'Temperature::getter'
+	> (lldb) br s -F 'Temperature::getter'
 	> ```
-	>
-	> *<small>[Note: Only the function **itself** has a breakpoint set on it – call-sites [of the said function] are ignored. - end note]</small>*
 
-<!-- C++ FUNCTIONS BY FULLNAME (NAMESPACES + BASENAME) -->
+-	***Set a breakpoint**, on function(s), **by basename:***
 
-       -F <fullname> ( --fullname <fullname> )
-            Set the breakpoint by fully qualified function names. For C++ this means namespaces and all arguments. Can be repeated multiple times to make one breakpoint for multiple names.
+	> <small>`[Search Tags: >breakpointbasename >breakptbasename >brkptbasename >brptbasename >brbasename >basenamebreakpoint >basenamebreakpt >basenamebrkpt >basenamebrpt >basenamebr]`</small>
 
 	> ***Synopsis:***
 	>
 	> ```shell
+	> (lldb) breakpoint set --basename <base-function-name>
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
+	> (lldb) breakpoint set --basename 'getter'
+	> (lldb) br s -b 'getter'
 	> ```
 
--	***Set a breakpoint, on function(s)**, by basename:*
+-	***Set a breakpoint, on [class] method(s):***
 
-<!-- C++ FUNCTIONS BY BASENAME -->
-
-       -b <function-name> ( --basename <function-name> )
-            Set the breakpoint by function basename (C++ namespaces and arguments will be ignored). Can be repeated multiple times to make one breakpoint for multiple symbols.
+	> <small>`[Search Tags: >breakpointmethods >breakptmethods >brkptmethods >brptmethods >brmethods >methodsbreakpoint >methodsbreakpt >methodsbrkpt >methodsbrpt >methodsbr >breakpointclassmethods >breakptclassmethods >brkptclassmethods >brptclassmethods >brclassmethods >classmethodsbreakpoint >classmethodsbreakpt >classmethodsbrkpt >classmethodsbrpt >classmethodsbr]`</small>
 
 	> ***Synopsis:***
 	>
 	> ```shell
+	> (lldb) breakpoint set --method <method>
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
+	> (lldb) breakpoint set --method 'getter'
+	> (lldb) br s -M 'getter'
 	> ```
 
--	***Set a breakpoint, on method(s):***
-
-<!-- C++ (OBJECT) METHODS -->
-
-       -M <method> ( --method <method> )
-            Set the breakpoint by C++ method names. Can be repeated multiple times to make one breakpoint for multiple methods.
+-	***Set a breakpoint, on (all) exception throws:***
 
 	> ***Synopsis:***
 	>
 	> ```shell
+	> breakpoint set --language-exception <source-code-language>    # set a breakpoint on all exception throws
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> ```
-
-
--	***Set a breakpoint, on exception(s):***
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> breakpoint set --language-exception <source-code-language>
+	> breakpoint set --language-exception c++
 	> br s -E c++
 	> ```
 	>
-	> ***Example(s):***
-	> ```shell
-	> ```
-
-<!-- ALL EXCEPTIONS -->
-
-	-E <source-language> ( --language-exception <source-language> )
-		Set the breakpoint on exceptions thrown by the specified language (without options, on throw
-		but not catch.)
-
-
--	***Set a breakpoint, on catch(es):***
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> ```
-
--	***Exception / Catch breakpoint option(s):***
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> ```
-
-OPTIONS FOR EXCEPTION BREAKPOINTS:
-
-       -O <type-name> ( --exception-typename <type-name> )
-            The breakpoint will only stop if an exception Object of this type is thrown. Can be repeated multiple times to stop for multiple object types. If you just specify the type's base name it will match against that type in all modules, or you can specify the full type name including modules.  Other submatches are not supported at present.Only supported for Swift at present.
-
-       -w <boolean> ( --on-throw <boolean> )
-            Set the breakpoint on exception throW.
-
-       -h <boolean> ( --on-catch <boolean> )
-            Set the breakpoint on exception catcH.
-
+	> *<small>[Note: To set a breakpoint on specific exception objects, there exists the `--exception-typename <type-name>` option... but it is unfortunately only supported for Swift, at the moment. - end note]</small>*
 
 
 <br>
@@ -1040,7 +982,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands]`</small>
 
-	- ***Add command(s) [to an existing breakpoint]:***
+	- ***Add [breakpoint] command(s) [to an existing breakpoint]:***
 
 		> ***Synopsis:***
 		> ```shell
@@ -1062,6 +1004,12 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 		> > DONE
 		> ```
 		> ```shell
+		> (lldb) breakpoint command add -s python 4
+		> Enter your Python command(s). Type 'DONE' to end.
+		> > print "Hit this breakpoint!"
+		> > DONE
+		> ```
+		> ```shell
 		> (lldb) script
 		> >>> bp_count = 0
 		> >>> quit()
@@ -1074,7 +1022,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 		> > DONE
 		> ```
 		>
-		> > *<small>[Note:*
+		> *<small>[Note:*
 		>
 		> - In this case, since there is a reference to a global variable, `bp_count`, you will also need to make sure `bp_count` exists and is initialized:
 		>
@@ -1088,7 +1036,7 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 		>
 		> *- end note]</small>*
 
-	- ***Delete command(s):***
+	- ***Delete [breakpoint] command(s):***
 
 		> ***Synopsis:***
 		> ```shell
@@ -1100,13 +1048,6 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 		> (lldb) breakpoint command delete 1.1
 		> (lldb) br co de 1.1
 		> ```
-
-		<!-- > ```shell
-		> (lldb) breakpoint command add -s python 4
-		> Enter your Python command(s). Type 'DONE' to end.
-		> > print "Hit this breakpoint!"
-		> > DONE
-		> ``` -->
 
 <!--
 - ***Breakpoint Attributes:***
@@ -1242,15 +1183,20 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 ---
 [🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-start-or-attach-program)
 ### 3.4.2. Watchpoints
-<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >watchpointcommands >watchpointcmds >wacmds >wapts >watchpts >wpts >wpoints >wapoints >setwapts >wapts]`</small>
+<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints]`</small>
 <br>
 <br>
 
 
--	`lldb`, also, gives you the option to set it up to stop and log activities of a certain variable *(e.g. accesses (`read`) and/or modifications (`write`)*) – `lldb` logs its *[the variable's]* *(before and after)* values – optionally you can add conditions, so as to only log when it *[the variable]* has met *(fulfilled/reached)* certain condition(s), e.g.: if it *[the variable]* has reached or has gone above or below a certain value or the value of another variable; you could also have conditions that are unrelated *[to the variable]*, e.g.: when it is 6am, or when some function was called, or some other variable reaches some value, etc, you get the point. <br>
+>	*(**Definition**) Watchpoint: is a debugging mechanism whereby execution is suspended every time a specified variable or memory-location is accessed for reading and/or writing.*
+>
+>	*–– [Wikitionary :: Watchpoint](https://en.wiktionary.org/wiki/watchpoint)*
 
-	*"A tell *[to `lldb`]* to keep a special eye and log the activity of a particular variable *(more precisely and generally, an object)*"* is what is referred to as: a ***watchpoint*** ([§3.4.2](#341-watchpoints)) – you can kind of think of them *[watchpoints]* as ***surveillance cameras pointed towards a particular objects (variables, etc)*** , *adding a watchpoint* is ***putting an object on the watchlist*** - so to speak. <br>
+---
 
+-	Down below, we explore basic commands for operating on watchpoints ([§3.4.2.1](#3421-basic-commands)) – setting, listing and deleting watchpoints.
+
+-	Further below we go into more advanced commands ([§3.4.2.2](#3422-advanced-commands)) – setting watchpoint options.
 
 <br>
 <br>
@@ -1268,31 +1214,27 @@ OPTIONS FOR EXCEPTION BREAKPOINTS:
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.2.1. Basic Commands
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >watchpointbasiccommands >watchpointbasiccmds >watchptbasiccommands >watchptbasiccmds >wakptbasiccommands >wakptbasiccmds >wabasiccommands >wabasiccmds >bbasiccommands >bbasiccmds >watchpointbasics >watchptbasics >wakptbasics >wabasics >bbasics >waptcommands >waptcmds >waptbasiccommands >waptbasiccmds >waptbasics >watchpointcreate >createwatchpoint >crwatchpoint >watchptcreate >createwatchpt >crwatchpt >wakptcreate >createwakpt >crwakpt >waptcreate >createwapt >crwapt >wacreate >createwa >crwa]`</small>
 <br>
 <br>
 
-
-> TODO: #### 3.4.2.1. Basic Commands
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-> *Commands for operating on watchpoints:*
 
 -	***Set a watchpoint:***
 
+	> <small>`[Search Tags: >waset >setwa >swa >sewa >watchpointset  >watchpointfunctions >watchpointfuncs >watchpointfts >watchpointfcs  >watchpointmain >setwatchpoint >wakptset >setwakpt >watchptset >setwatchpt >wasetvariables >wavariables >wavars >wavrs >wavas >wasvariables >wasvars >wasvrs >wasvas >wasvs]`</small>
+
 	> ***Synopsis:***
 	>
-	> > - ... on a variable:
-	> ```shell
-	> watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
-	> ```
+	> *on a variable:*
+	> > ```shell
+	> > watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
+	> > ```
 	>
-	> > - ... on an address *[by supplying an expression]*:
-	> ```shell
-	> watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
-	> watchpoint set expression <expr>
-	> ```
+	> *on an address *[by supplying an expression]*:*
+	> > ```shell
+	> > watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
+	> > watchpoint set expression <expr>
+	> > ```
 	>
 	> ***Option(s):***
 	> ```shell
@@ -1312,11 +1254,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 	>
 	> ```shell
-	> (lldb) watchpoint set expression --watch read_write --size 8 -- my_PtrToLongInt
-	> (lldb) watchpoint set variable   --watch read_write --size 8 -- my_PtrToLongInt
+	> (lldb) watchpoint set variable   --watch write --size 8 -- my_PtrToLongInt
+	> (lldb) watchpoint set expression --watch write --size 8 -- my_PtrToLongInt
 	>
-	> (lldb) wa s e -w read_write -s 8 -- my_PtrToLongInt
-	> (lldb) wa s v -w read_write -s 8 -- my_PtrToLongInt
+	> (lldb) wa s v -w write -s 8 -- my_PtrToLongInt
+	> (lldb) wa s e -w write -s 8 -- my_PtrToLongInt
 	> ```
 	>
 	> ```shell
@@ -1324,18 +1266,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) wa s e -w read -s 4 -- 0x00007ffeefbff510
 	> ```
 	>
-	>
 	> *<small>[Note:*
 	>
 	> We say:
 	>
-	> - `breakpoint set variable` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte **variable**, `<variable-name>`.
+	> - `breakpoint set variable` – sets watctpoints to watch for `<watch-type>` accesses on the `<size>`-byte **variable**, `<variable-name>`.
 	>
-	> - `breakpoint set expression` – sets watctpoints to watch for `<watch-type>` accesses for the `<size>`-byte **region, pointed to by the address** `<expr>`.
+	> - `breakpoint set expression` – sets watctpoints to watch for `<watch-type>` accesses on the `<size>`-byte **region, pointed to by the address** `<expr>`.
 	>
 	> *- end note]</small>*
 
 -	***List watchpoints:***
+
+	> <small>`[Search Tags: >walst >walist >listwa >liwa >watchlist >listwatch >watchptslist >watchptptlists >listwatchpts, >watchpointlist]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -1350,6 +1293,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ```
 
 -	***Delete watchpoint(s):***
+
+	> <small>`[Search Tags: >wadelete >dewatchpoint >brdelete >deletebr >deletebrpt >deletebrkpt >deletebreakpt >deletebreakpoint >brdelete >brptdelete >brkptdelete >breakptdelete >breakpointdelete >debr >deletebr >deletetarge >brunload >unloadtr >uldtr >targetunload >unloadtargett >delbr >brdel >delbrpt >brptdel >delbrkpt >brkptdel >delbreakpt >breakptdel >delbreakpoint >breakpointdel]`</small>
 
 	> ***Synopsis:***
 	>
