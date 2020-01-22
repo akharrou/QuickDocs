@@ -977,6 +977,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions]`</small>
 
+	<br>
+
 	- ***Set breakpoint, with condition:***
 
 		> ***Synopsis:***
@@ -997,7 +999,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	<br>
 
 	- ***Add breakpoint condition [to an existing breakpoint]:***
-		>
+
 		> ***Synopsis:***
 		> ```shell
 		> breakpoint modify [--condition <expr>] [<breakpt-ids | breakpt-name>]
