@@ -1182,6 +1182,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 > | 3 | Manual Page | LLDB | `(lldb) help breakpoint modify`
 > | 4 | Manual Page | LLDB | `(lldb) help breakpoint command`
 > | 5 | Manual Page | LLDB | `(lldb) help breakpoint command add`
+> | 5 | Manual Page | LLDB | `(lldb) help breakpoint command delete`
 
 
 ---
