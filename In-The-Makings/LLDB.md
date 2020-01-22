@@ -452,9 +452,9 @@ TODO : ADD leak and thread sanitizer.
 
 > *<small>[Note: `lldb`'s lexicon for a ***"program [executable] intended for debugging"*** is a ***"[debugger] target"*** . - end note]</small>*
 
--	***To create a [debugger] target (i.e load a program executable):***
+-	***Create [a debugger] target (i.e load a program executable):***
 
-	> <small>`[Search Tags: >trcreate >createtr >crtr >targetcreate >createtarget >trload >loadtr >ldtr >targetload >loadtarget]`</small>
+	> <small>`[Search Tags: >crtarget >crttarget >createtarget >targetcreate >ldtarget >lodtarget >loadtarget >targetload >crtargt >crttargt >createtargt >targtcreate >ldtargt >lodtargt >loadtargt >targtload >crtrgt >crttrgt >createtrgt >trgtcreate >ldtrgt >lodtrgt >loadtrgt >trgtload >crtr >crttr >createtr >trcreate >ldtr >lodtr >loadtr >trload]`</small>
 
 	> *From outside [`lldb`]:*
 	>
@@ -505,9 +505,11 @@ TODO : ADD leak and thread sanitizer.
 		(lldb) file a.out
 		``` -->
 
--	***To list (all) targets:***
+<br>
 
-	> <small>`[Search Tags: >trlist >listtr >litr >targetlist >listtarget]`</small>
+-	***List (all) targets:***
+
+	> <small>`[Search Tags: >lsttarget >listtarget >lstarget >targetlst >targetlist >targetls >lsttargt >listtargt >lstargt >targtlst >targtlist >targtls >lsttrgt >listtrgt >lstrgt >trgtlst >trgtlist >trgtls >lsttr >listtr >lstr >trlst >trlist >trls >litarget >targetli >litargt >targtli >litrgt >trgtli >litr >trli]`</small>
 
 	> ***Synopsis:***
 	>
@@ -521,9 +523,11 @@ TODO : ADD leak and thread sanitizer.
 	> (lldb) ta l
 	> ```
 
--	***To select a [different] target [as current target]:***
+<br>
 
-	> <small>`[Search Tags: >trselect >targetselect >setr >selecttr >selecttarget]`</small>
+-	***Select [a different] target [as current target]:***
+
+	> <small>`[Search Tags: >selcttarget >setarget >selecttarget >targetselect >selcttargt >setargt >selecttargt >targtselect >selcttrgt >setrgt >selecttrgt >trgtselect >selcttr >setr >selecttr >trselect]`</small>
 
 	> ***Synopsis:***
 	>
@@ -537,9 +541,11 @@ TODO : ADD leak and thread sanitizer.
 	> (lldb) ta se 5
 	> ```
 
--	***To delete a target (i.e unload an program execuable):***
+<br>
 
-	> <small>`[Search Tags: >trdelete >targetdelete >detr >deletetr >deletetarge >trunload >unloadtr >uldtr >targetunload >unloadtargett]`</small>
+-	***Delete target (i.e unload an program execuable):***
+
+	> <small>`[Search Tags: >detarget >deltarget >deletetarget >targetdelete >detargt >deltargt >deletetargt >targtdelete >detrgt >deltrgt >deletetrgt >trgtdelete >detr >deltr >deletetr >trdelete >ultarget >unltarget >unletetarget >targetunload >ultargt >unltargt >unloadtargt >targtunload >ultrgt >unltrgt >unloadtrgt >trgtunload >ultr >unltr >unloadtr >trunload]`</small>
 
 	> ***Synopsis:***
 	>
