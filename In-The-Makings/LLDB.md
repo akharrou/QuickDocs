@@ -955,6 +955,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	>
 	> *- end note]</small>*
 
+<br>
 
 ---
 
@@ -964,11 +965,9 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 >	*(**Note**) –– We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…* <br>
 
-<br>
+---
 
 <small>`[Search Tags: >breakpointoptions >optionsbreakpoint >breakptoptions >optionsbreakpt >brkptoptions >optionsbrkpt >brptoptions >optionsbrpt >broptions >optionsbr]`</small>
-
-<br>
 
 - ***Breakpoint Conditions:***
 
