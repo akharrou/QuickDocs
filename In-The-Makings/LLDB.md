@@ -786,6 +786,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) br s -F 'Temperature::getter'
 	> ```
 
+<br>
+
 -	***Set a breakpoint**, on function(s), **by basename:***
 
 	> <small>`[Search Tags: >breakpointbasename >breakptbasename >brkptbasename >brptbasename >brbasename >basenamebreakpoint >basenamebreakpt >basenamebrkpt >basenamebrpt >basenamebr]`</small>
@@ -803,6 +805,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	>
 	> *<small>[Note: Both, **namespace functions** and **class methods** with the given basename will have a breakpoint set on them. - end note]</small>*
 
+<br>
+
 -	***Set a breakpoint, on [class] method(s):***
 
 	> <small>`[Search Tags: >breakpointmethods >breakptmethods >brkptmethods >brptmethods >brmethods >methodsbreakpoint >methodsbreakpt >methodsbrkpt >methodsbrpt >methodsbr >breakpointclassmethods >breakptclassmethods >brkptclassmethods >brptclassmethods >brclassmethods >classmethodsbreakpoint >classmethodsbreakpt >classmethodsbrkpt >classmethodsbrpt >classmethodsbr]`</small>
@@ -817,6 +821,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) breakpoint set --method 'getter'
 	> (lldb) br s -M 'getter'
 	> ```
+
+<br>
 
 -	***Set a breakpoint, on (all) exceptions** [on `throw`] **:***
 
