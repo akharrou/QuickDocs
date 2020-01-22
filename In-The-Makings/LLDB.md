@@ -641,7 +641,7 @@ TODO : ADD leak and thread sanitizer.
 >
 >	*More generally, a breakpoint is a means of acquiring knowledge about a program during its execution. During the interruption, the programmer inspects the test environment (general purpose registers, memory, logs, files, etc.) to find out whether the program is functioning as expected. In practice, a breakpoint consists of one or more conditions that determine when a program's execution should be interrupted. [...]"*
 >
->	*––  [Wikipedia :: Breakpoints](https://en.wikipedia.org/wiki/Breakpoint)*
+>	*––	[Wikipedia :: Breakpoints](https://en.wikipedia.org/wiki/Breakpoint)*
 
 ---
 
@@ -776,7 +776,6 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> <small>`[Search Tags: >breakpointfullname >breakptfullname >brkptfullname >brptfullname >brfullname >fullnamebreakpoint >fullnamebreakpt >fullnamebrkpt >fullnamebrpt >fullnamebr]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
 	> (lldb) breakpoint set --fullname <full-function-name>
 	> ```
@@ -792,7 +791,6 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> <small>`[Search Tags: >breakpointbasename >breakptbasename >brkptbasename >brptbasename >brbasename >basenamebreakpoint >basenamebreakpt >basenamebrkpt >basenamebrpt >basenamebr]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
 	> (lldb) breakpoint set --basename <base-function-name>
 	> ```
@@ -802,13 +800,14 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) breakpoint set --basename 'getter'
 	> (lldb) br s -b 'getter'
 	> ```
+	>
+	> *<small>[Note: Both, **namespace functions** and **class methods** with the given basename will have a breakpoint set on them. - end note]</small>*
 
 -	***Set a breakpoint, on [class] method(s):***
 
 	> <small>`[Search Tags: >breakpointmethods >breakptmethods >brkptmethods >brptmethods >brmethods >methodsbreakpoint >methodsbreakpt >methodsbrkpt >methodsbrpt >methodsbr >breakpointclassmethods >breakptclassmethods >brkptclassmethods >brptclassmethods >brclassmethods >classmethodsbreakpoint >classmethodsbreakpt >classmethodsbrkpt >classmethodsbrpt >classmethodsbr]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
 	> (lldb) breakpoint set --method <method>
 	> ```
@@ -819,12 +818,13 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) br s -M 'getter'
 	> ```
 
--	***Set a breakpoint, on (all) exception throws:***
+-	***Set a breakpoint, on (all) exceptions** [on `throw`] **:***
+
+	> <small>`[Search Tags: >breakpointexceptions >breakptexceptions >brkptexceptions >brptexceptions >brexceptions >exceptionsbreakpoint >exceptionsbreakpt >exceptionsbrkpt >exceptionsbrpt >exceptionsbr]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> breakpoint set --language-exception <source-code-language>    # set a breakpoint on all exception throws
+	> breakpoint set --language-exception <source-code-language>
 	> ```
 	>
 	> ***Example(s):***
@@ -833,7 +833,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> br s -E c++
 	> ```
 	>
-	> *<small>[Note: To set a breakpoint on specific exception objects, there exists the `--exception-typename <type-name>` option... but it is unfortunately only supported for Swift, at the moment. - end note]</small>*
+	> *<small>[Note: To set a breakpoint on specific exception objects, there exists the `--exception-typename <type-name>` option, but it is unfortunately only supported for **Swift**, at the moment (22/01/2020). - end note]</small>*
 
 
 <br>
@@ -854,7 +854,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 <br>
 
 
--	***Set a breakpoint, on function(s)**, using regular-expressions:*
+-	***Set a breakpoint,** on function(s), **using regular-expressions:***
 
 	> <small>`[Search Tags: >brfunctionregex >brfuncregex >brsfunctionregex >brsfuncregex >brsetfunctionregex >brsetfuncregex >brregexfunction >brregexfunc >brsregexfunction >brsregexfunc >brsetregexfunction >brsetregexfunc >funcregex >regexfunc >functionregex >regexfunction  >ftregex >regexfts >funcrgx >rgxfunc >functionrgx >rgxfunction  >ftrgx >rgxfts]`</small>
 
@@ -872,7 +872,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	>
 	> > *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
 
--	***Set a breakpoint, on line(s), in file(s)**, using regular-expressions:*
+-	***Set a breakpoint,** on line(s), in file(s), **using regular-expressions:***
 
 	> <small>`[Search Tags: >brsourceregex >brsrcregex >brssourceregex >brssrcregex >brsetsourceregex >brsetsrcregex >brregexsource >brregexsrc >brsregexsource >brsregexsrc >brsetregexsource >brsetregexsrc >srcregex >regexsrc >srctionregex >regexsrction  >sourceregex >regexsources >srcrgx >rgxsrc >srctionrgx >rgxsrction  >sourcergx >rgxsources >sourcepatternregex >srcpatternregex >sourcepatregex >srcpatregex]`</small>
 
@@ -924,7 +924,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	>
 	> > *<small>[Note:*
 	>
-	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.
+	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (`*`), e.g.: `1.*` or `3.*`.
 	>
 	> - It is also possible to set, initialy disabled, breakpoints:
 	>
@@ -937,12 +937,13 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 ---
 
-> **Know that** *--* *"Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions, hit-count, auto-continue…) we call breakpoint options."*
+>	*(**Know that**) –– "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions hit-count, auto-continue…) we call breakpoint options."*
 >
-> *-- [LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
+>	*––	[LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
 
-> **Note** *--* *We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…*
----
+>	*(**Note**) –– We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…* <br>
+
+<br>
 
 <small>`[Search Tags: >breakpointoptions >optionsbreakpoint >breakptoptions >optionsbreakpt >brkptoptions >optionsbrkpt >brptoptions >optionsbrpt >broptions >optionsbr]`</small>
 
@@ -1197,7 +1198,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 >	*(**Definition**) Watchpoint: is a (special) kind of breakpoint (debugging mechanism) whereby execution is suspended every time a specified variable or memory-location is accessed for reading and/or writing.*
 >
->	*–– [Wikitionary :: Watchpoint](https://en.wiktionary.org/wiki/watchpoint)*
+>	*––  [Wikitionary :: Watchpoint](https://en.wiktionary.org/wiki/watchpoint)*
 
 ---
 
@@ -1541,12 +1542,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > TODO: ### 3.5.2. Attach to Program ; Commands for attaching to processes (i.e running programs):
 
+> *(**Definition**) –– Attach: Take over control [of the execution] of a process (running program) [in this case, for debugging purposes], at the instruction that the process has reached.*
+>
+> *––	[Attaching to a Running Process Using Code :: Blocks](https://www.dummies.com/programming/cpp/attaching-to-a-running-process-using-codeblocks/)*
+>
+> *(**Commentary**) –– When you are debugging, essentially, the instructions of the process you are debugging are sent to a debugger *[program]* before they’re executed by the CPU. The debugger becomes a middle man between the program instructions and the CPU.*
 
-- ***(Definition) – Attach:** Take over control [of the execution] of a process (running program) [in this case, for debugging purposes], at the instruction that the process has reached.*
-
-	>	*When you are debugging, essentially, the instructions of the process you are debugging are sent to a debugger *[program]* before they’re executed by the CPU. The debugger becomes a middle man between the program instructions and the CPU.*
-	>
-	> *-- [Attaching to a Running Process Using Code :: Blocks](https://www.dummies.com/programming/cpp/attaching-to-a-running-process-using-codeblocks/)*
+<br>
 
 -	***To attach to a process:***
 
