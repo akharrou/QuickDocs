@@ -984,6 +984,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 	- ***Add [breakpoint] command(s) [to an existing breakpoint]:***
 
+		> <small>`[Search Tags: >breakpointaddcommand >breakpointaddcmd >breakpointacmd >breakptaddcommand >breakptaddcmd >breakptacmd >brkptaddcommand >brkptaddcmd >brkptacmd >brptaddcommand >brptaddcmd >brptacmd >braddcommand >braddcmd >bracmd >breakpointaddscript >breakpointaddscrpt >breakpointascrpt >breakptaddscript >breakptaddscrpt >breakptascrpt >brkptaddscript >brkptaddscrpt >brkptascrpt >brptaddscript >brptaddscrpt >brptascrpt >braddscript >braddscrpt >brascrpt]`</small>
+
 		> ***Synopsis:***
 		> ```shell
 		> breakpoint command add [--script-type <type>] [<breakpt-ids | breakpt-name>]
@@ -1037,6 +1039,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		> *- end note]</small>*
 
 	- ***Delete [breakpoint] command(s):***
+
+		> <small>`[Search Tags: >breakpointdeletecommand >breakpointdeletecmd >breakpointdecmd >breakptdeletecommand >breakptdeletecmd >breakptdecmd >brkptdeletecommand >brkptdeletecmd >brkptdecmd >brptdeletecommand >brptdeletecmd >brptdecmd >brdeletecommand >brdeletecmd >brdecmd]`</small>
 
 		> ***Synopsis:***
 		> ```shell
