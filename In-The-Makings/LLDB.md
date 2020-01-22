@@ -562,7 +562,10 @@ TODO : ADD leak and thread sanitizer.
 	> (lldb) ta d -a               # delete all targets
 	> ```
 
-> *<small>[Note:*
+<br>
+---
+
+> *<small>[Notes:*
 >
 > - "From **outside** *[`lldb`]*"; i.e before, and at the same time as, launch *[of `lldb`] [, on the *[terminal]* command prompt]*.
 >
@@ -1019,7 +1022,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 	<br>
 
-	- ***Add [breakpoint] command(s) [to an existing breakpoint]:***
+	- ***Add** [breakpoint] **command(s)** [to an existing breakpoint] **:***
 
 		> <small>`[Search Tags: >breakpointaddcommand >breakpointaddcmd >breakpointacmd >breakptaddcommand >breakptaddcmd >breakptacmd >brkptaddcommand >brkptaddcmd >brkptacmd >brptaddcommand >brptaddcmd >brptacmd >braddcommand >braddcmd >bracmd >breakpointaddscript >breakpointaddscrpt >breakpointascrpt >breakptaddscript >breakptaddscrpt >breakptascrpt >brkptaddscript >brkptaddscrpt >brkptascrpt >brptaddscript >brptaddscrpt >brptascrpt >braddscript >braddscrpt >brascrpt]`</small>
 
@@ -1077,7 +1080,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 	<br>
 
-	- ***Delete [breakpoint] command(s):***
+	- ***Delete** [breakpoint] **command(s):***
 
 		> <small>`[Search Tags: >breakpointdeletecommand >breakpointdeletecmd >breakpointdecmd >breakptdeletecommand >breakptdeletecmd >breakptdecmd >brkptdeletecommand >brkptdeletecmd >brkptdecmd >brptdeletecommand >brptdeletecmd >brptdecmd >brdeletecommand >brdeletecmd >brdecmd]`</small>
 
@@ -1221,7 +1224,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 > | 3 | Manual Page | LLDB | `(lldb) help breakpoint modify`
 > | 4 | Manual Page | LLDB | `(lldb) help breakpoint command`
 > | 5 | Manual Page | LLDB | `(lldb) help breakpoint command add`
-> | 5 | Manual Page | LLDB | `(lldb) help breakpoint command delete`
+> | 6 | Manual Page | LLDB | `(lldb) help breakpoint command delete`
 
 
 ---
