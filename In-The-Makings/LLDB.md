@@ -844,7 +844,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> ```
 	> ```shell
 	> (lldb) breakpoint set --source-pattern-regexp 'free(buckets);' --file 'core.c' --file 'cleanup.c'
-	> (lldb) breakpoint set -p 'free(buckets);' -f core.c -f cleanup.c
+	> (lldb) br s -p 'free(buckets);' -f core.c -f cleanup.c
 	> ```
 
 	> *<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
