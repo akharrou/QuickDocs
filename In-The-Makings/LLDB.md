@@ -42,8 +42,8 @@ QuickDocs \| Low Level Debugger (LLDB)
 			- [3.4.1.1. Basics](#3411-basics)
 			- [3.4.1.2. Options](#3412-options)
 			- [3.4.1.3. Names](#3413-names)
-			- [3.4.1.4. C++ Programs](#3414-c-programs)
-			- [3.4.1.5. Multi-Threaded Programs](#3415-multi-threaded-programs)
+			- [3.4.1.4. Multi-Threaded Programs](#3414-multi-threaded-programs)
+			- [3.4.1.5. C++ Programs](#3415-c-programs)
 		- [3.4.2. Watchpoints](#342-watchpoints)
 			- [3.4.2.1. Basic Commands](#3421-basic-commands)
 			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
@@ -1165,7 +1165,49 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.4. C++ Programs
+#### 3.4.1.4. Multi-Threaded Programs
+<small>`[Search Tags: >breakpointthreads >threadbreakpoint >multithreadedbreakpoint >multithreadbreakpoint >breakptthreads >threadbreakpt >multithreadedbreakpt >multithreadbreakpt >brkptthreads >threadbrkpt >multithreadedbrkpt >multithreadbrkpt >brptthreads >threadbrpt >multithreadedbrpt >multithreadbrpt >brthreads >threadbr >multithreadedbr >multithreadbr]`</small>
+<br>
+<br>
+
+
+-	***Set breakpoint, on** [an identified] **thread:***
+
+	> ***Synopsis:***
+	> ```shell
+	> (lldb) breakpoint set <definition> [ --thread-index <index> ]
+	> (lldb) breakpoint set <definition> [ --thread-name <name> ]
+	> (lldb) breakpoint set <definition> [ --thread-id <tid> ]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --name baz --thread-index 3
+	> (lldb) br s -n baz -x 3
+	> ```
+	> ```shell
+	> (lldb) breakpoint set --name foo --thread-name 'centralServer'
+	> (lldb) br s -n foo -T 'centralServer'
+	> ```
+	> ```shell
+	> (lldb) breakpoint set --name bar --thread-id 483413
+	> (lldb) br s -bar -t 483413
+	> ```
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.1.5. C++ Programs
 <small>`[Search Tags: >breakpointcpp >cppbreakpoint >breakptcpp >cppbreakpt >brkptcpp >cppbrkpt >brptcpp >cppbrpt >brcpp >cppbr >breakpointc++ >c++breakpoint >breakptc++ >c++breakpt >brkptc++ >c++brkpt >brptc++ >c++brpt >brc++ >c++br]`</small>
 <br>
 <br>
@@ -1249,48 +1291,6 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> ```
 
 	> *<small>[Note:* To set a breakpoint on specific exception objects, there exists the `--exception-typename` (`-O`) option, but it is unfortunately only supported for **Swift**, at the moment (22/01/2020). *- end note]</small>*
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
-
-
----
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.5. Multi-Threaded Programs
-<small>`[Search Tags: >breakpointthreads >threadbreakpoint >multithreadedbreakpoint >multithreadbreakpoint >breakptthreads >threadbreakpt >multithreadedbreakpt >multithreadbreakpt >brkptthreads >threadbrkpt >multithreadedbrkpt >multithreadbrkpt >brptthreads >threadbrpt >multithreadedbrpt >multithreadbrpt >brthreads >threadbr >multithreadedbr >multithreadbr]`</small>
-<br>
-<br>
-
-
--	***Set breakpoint, on** [an identified] **thread:***
-
-	> ***Synopsis:***
-	> ```shell
-	> (lldb) breakpoint set <definition> [ --thread-index <index> ]
-	> (lldb) breakpoint set <definition> [ --thread-name <name> ]
-	> (lldb) breakpoint set <definition> [ --thread-id <tid> ]
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint set --name baz --thread-index 3
-	> (lldb) br s -n baz -x 3
-	> ```
-	> ```shell
-	> (lldb) breakpoint set --name foo --thread-name 'centralServer'
-	> (lldb) br s -n foo -T 'centralServer'
-	> ```
-	> ```shell
-	> (lldb) breakpoint set --name bar --thread-id 483413
-	> (lldb) br s -bar -t 483413
-	> ```
 
 
 <br>
