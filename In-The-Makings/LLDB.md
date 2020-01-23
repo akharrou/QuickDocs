@@ -250,11 +250,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> $> # 7. Examine Code
 	> ```
 
-	> *<small>[Note:*
+	> *<small>[**Note**:*
 	>
 	> -	There is also a brief section on a set of *[compiler]* flags, which, basically, make up the other half of the [debugging](https://en.wikipedia.org/wiki/Debugging) tools/weapons available to you – ***the `"fsanitize"` family*** ([§3.1.2](#312-sanitizer-flags--fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br>
 	>
-	> *- end note]</small>*
+	> *- **end note**]</small>*
 
 
 <br>
@@ -281,7 +281,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 -	***Demonstration:*** <br>
 	> ![Demo: compile-with-debug-and-fsanitize-flags](https://media.giphy.com/media/JRPUPdiP8Awj39A6A0/giphy.gif) <!-- ../Assets/LLDB/compile-with-debug-and-fsanitize-flags.gif -->
 
-	> *<small>[Note: These [compiler] flags work with both `gcc` and `clang` [compilers]. - end note]</small>*
+	> *<small>[**Note**: These [compiler] flags work with both `gcc` and `clang` [compilers]. - **end note**]</small>*
 
 -	Make sure to use *(compile with)* the debugging *[compiler]* flags ([§3.1.1](#311-debug-flags--g---o0)).
 
@@ -343,7 +343,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
-	> *<small>[Note: Adding the `-g` flag causes better (i.e more detailed) diagnostic messages to be produced [by the sanitizers], so keep it ! - end note]</small>*
+	> *<small>[**Note**: Adding the `-g` flag causes better (i.e more detailed) diagnostic messages to be produced [by the sanitizers], so keep it ! - **end note**]</small>*
 
 	Here are the ***available sanitizers***:
 
@@ -376,7 +376,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	>	The shown above *[command]*, adds/activates the *[runtime checks of the]* *AddressSanitizer* and the *UndefinedBehaviorSanitizer*, respectively.
 
-	> *<small>[Note:* It is not possible to have more than one the following sanitizers: *"`-fsanitize=address`"*, *"`-fsanitize=thread`"*, and *"`-fsanitize=memory`"*, at the same time. *- end note]*
+	> *<small>[**Note**:* It is not possible to have more than one the following sanitizers: *"`-fsanitize=address`"*, *"`-fsanitize=thread`"*, and *"`-fsanitize=memory`"*, at the same time. *- **end note**]*
 	>
 
 <br>
@@ -453,7 +453,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 <br>
 
-> *<small>[Note: `lldb`'s lexicon for a ***"program [executable] intended for debugging"*** is a ***"[debugger] target"*** . - end note]</small>*
+> *<small>[**Note**: `lldb`'s lexicon for a ***"program [executable] intended for debugging"*** is a ***"[debugger] target"*** . - **end note**]</small>*
 
 -	***Create** [a debugger] **target** (i.e load a program executable) **:***
 
@@ -569,7 +569,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 
-> *<small>[Note:*
+> *<small>[**Note**:*
 >
 > - "From **outside** *[`lldb`]*"; i.e before, and at the same time as, launch *[of `lldb`] [, on the *[terminal]* command prompt]*.
 >
@@ -592,7 +592,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 >	> *This also works for other scripting language interpreters and their *[type of]* scripts.*
 >
-> *- end note]</small>*
+> *- **end note**]</small>*
 
 
 <br>
@@ -620,7 +620,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	`lldb` *[then]* gives you the possibility of setting up [*breakpoints*](https://en.wikipedia.org/wiki/Breakpoint) ([§3.4.1](#341-breakpoints)) and [*watchpoints*](https://en.wiktionary.org/wiki/watchpoint#English) ([§3.4.2](#342-watchpoints)).
 
-	> *<small>[Note: Before the execution of a [targeted] program, watchpoints can only be set on global variables –– once [the [targeted] program is] launched, watchpoints can be set on any variable/memory-location. - end note]</small>*
+	> *<small>[**Note**: Before the execution of a [targeted] program, watchpoints can only be set on global variables –– once [the [targeted] program is] launched, watchpoints can be set on any variable/memory-location. - **end note**]</small>*
 
 <!-- BREAKPOINT ANALOGY:
 
@@ -701,7 +701,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> (lldb) b main
 	> ```
 
-	> *<small>[Note: Only the function **itself** has a breakpoint set on it – call-sites [of the said function] are ignored. - end note]</small>*
+	> *<small>[**Note**: Only the function **itself** has a breakpoint set on it – call-sites [of the said function] are ignored. - **end note**]</small>*
 
 <br>
 
@@ -759,13 +759,13 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> (lldb) br d                           # delete all breakpts
 	> ```
 
-	> *<small>[Note:*
+	> *<small>[**Note**:*
 	>
 	> - *If no breakpoint *[id]* is specified, [the command will] delete them *[the current breakpoints]* all.*
 	>
 	> - *`lldb`, automatically, deletes breakpoints of targets that are deleted.*
 	>
-	> *- end note]</small>*
+	> *- **end note**]</small>*
 
 ---
 
@@ -800,7 +800,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> (lldb) br en 2 6 3.2
 	> ```
 
-	> *<small>[Note:*
+	> *<small>[**Note**:*
 	>
 	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (`*`), e.g.: `1.*` or `3.*`.
 	>
@@ -810,7 +810,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> 	(lldb) breakpoint set <breakpt-definition> [--disable]
 	> 	```
 	>
-	> *- end note]</small>*
+	> *- **end note**]</small>*
 
 <br>
 
@@ -830,7 +830,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> (lldb) br s -r "Parser.{3,4,5}_Command\(\)"
 	> ```
 
-	> *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
+	> *<small>[**Note**: Function call-sites also count as matches, and get a breakpoint. - **end note**]</small>*
 
 <br>
 
@@ -855,7 +855,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> (lldb) br s -p 'free(buckets);' -f core.c -f cleanup.c
 	> ```
 
-	> *<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
+	> *<small>[**Note**: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - **end note**]</small>*
 
 
 <br>
@@ -884,7 +884,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 ---
 
->	*<small>[Note: We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc… - end note]</small>* <br>
+>	*<small>[**Note**: We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc… - **end note**]</small>* <br>
 
 ---
 
@@ -979,7 +979,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 		> > DONE
 		> ```
 
-		> *<small>[Note:*
+		> *<small>[**Note**:*
 		>
 		> - In this case, since there is a reference to a global variable, `bp_count`, you will also need to make sure `bp_count` exists and is initialized:
 		>
@@ -993,7 +993,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 		>
 		> - You can, alternatively, specify one-liner commands with the: `--one-liner` or `-o` option, followed by the desired `<command>`.
 		>
-		> *- end note]</small>*
+		> *- **end note**]</small>*
 
 	<br>
 
@@ -1252,7 +1252,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> (lldb) br s -b 'getter'
 	> ```
 
-	> *<small>[Note: Both, **namespace functions** and **class methods** with the given basename will have a breakpoint set on them. - end note]</small>*
+	> *<small>[**Note**: Both, **namespace functions** and **class methods** with the given basename will have a breakpoint set on them. - **end note**]</small>*
 
 <br>
 
@@ -1297,7 +1297,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> br s -E c++ -h True -w False
 	> ```
 
-	> *<small>[Note:* To set a breakpoint on specific exception objects, there exists the `--exception-typename` (`-O`) option, but it is unfortunately only supported for **Swift**, at the moment (22/01/2020). *- end note]</small>*
+	> *<small>[**Note**:* To set a breakpoint on specific exception objects, there exists the `--exception-typename` (`-O`) option, but it is unfortunately only supported for **Swift**, at the moment (22/01/2020). *- **end note**]</small>*
 
 
 <br>
@@ -1397,7 +1397,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> (lldb) wa s e -w read -s 4 -- 0x00007ffeefbff510
 	> ```
 
-	> *<small>[Note:*
+	> *<small>[**Note**:*
 	>
 	> We say:
 	>
@@ -1405,7 +1405,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	>
 	> - `breakpoint set expression` – sets watctpoints to watch for `<watch-type>` accesses on the `<size>`-byte **region, pointed to by the address** `<expr>`.
 	>
-	> *- end note]</small>*
+	> *- **end note**]</small>*
 
 -	***List watchpoints:***
 
@@ -1439,7 +1439,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> (lldb) wa de 5
 	> ```
 
-	> *<small>[Note: If no watchpoints are specified, delete them all. - end note]</small>*
+	> *<small>[**Note**: If no watchpoints are specified, delete them all. - **end note**]</small>*
 
 
 <br>
@@ -1495,7 +1495,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) br en 2 6 3.2
 	> ```
 
-	> *<small>[Note:*
+	> *<small>[**Note**:*
 	>
 	> - To enable only certain locations of a logical watchpoint, use the watchpoint disable command, passing the watchpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.
 	>
@@ -1505,7 +1505,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> 	(lldb) watchpoint set <watchpt-definition> [--disable]
 	> 	```
 	>
-	> *- end note]</small>*
+	> *- **end note**]</small>*
 
 
 > **Note** *--* *We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"*, e.g.: , etc…*
@@ -1642,7 +1642,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> - *`r`* is an abbreviation for *`'run'`* , see *`h r`*.
 	>
-	> *- end note]</small>*
+	> *- **end note**]</small>*
 
 
 <br>
@@ -1696,13 +1696,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) pr a -w -n a.out
 	> ```
 
-	> *<small>[Note:*
+	> *<small>[**Note**:*
 	>
 	> - *To clarify – you can attach to a process by process-ID (`pid`) or process name (e.g. `a.out`).* <br>
 	>
 	>	*When attaching to a process by name, `lldb` also supports the '`--waitfor`' option – which waits for the next process that has that name to show up, and attaches to it.*
 	>
-	> *- end note]</small>*
+	> *- **end note**]</small>*
 
 
 <br>
@@ -1746,7 +1746,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> pr la -c=/dev/ttys003
 	> ```
 
-	> *<small>[Note: Not supported on all platforms. - end note]</small>*
+	> *<small>[**Note**: Not supported on all platforms. - **end note**]</small>*
 
 -	***Set environment variables:***
 
@@ -1763,7 +1763,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> pr la -v YEAR=2020
 	> ```
 
-	> *<small>[Note: Can be specified multiple times for subsequent environment entries. - end note]</small>*
+	> *<small>[**Note**: Can be specified multiple times for subsequent environment entries. - **end note**]</small>*
 
 -	***Set current working directory:***
 
@@ -1807,7 +1807,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
 	> ```
 
-	> *<small>[Note:*
+	> *<small>[**Note**:*
 	>
 	> - *To clarify [, in this [last] example] –* <br>
 	>
@@ -1817,7 +1817,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>	- we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>
 	>	- we pass *[to our program]* three arguments.
 	>
-	> <br> *- end note]</small>*
+	> <br> *- **end note**]</small>*
 	>
 
 
