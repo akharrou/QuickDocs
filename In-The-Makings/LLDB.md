@@ -656,11 +656,7 @@ TODO : ADD leak and thread sanitizer.
 
 ---
 
-The following subsections dive into the commands for operating-on/using breakpoints.
-
-We discuss ***basic commands*** ([§3.4.1.1](#3411-basic-commands)), like for ***setting breakpoints*** on functions and source code lines, as well as ***listing*** and ***deleting*** them *[the set breakpoints]* – also, commands ***only concerning C++*** ([§3.4.1.2](#3412-basic-c-commands)).
-
-Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3413-advanced-commands)): ***using *regex* to set breakpoints***, ***enabling/disabling breakpoints***, setting/adding ***breakpoint options*** (e.g. conditions, commands/scripts, auto-continue, hit-count...) and also discuss, breakpoint facilities offered when it comes to ***debugging multi-threaded*** programs.
+The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411-basics)) for operating on breakpoints, discover what ***breakpoint options*** ([§3.1.4.2](#3412-options)) are and how to use them, see the usefulness of ***breakpoint names*** ([§3.1.4.3](#3413-names)), touch on breakpoints for multi-threaded programs ([§3.1.4.4](#3414-multi-threaded-programs)) and end off with a few ***C++ specific breakpoint commands*** ([§3.1.4.5](#3415-c-programs)).
 
 
 <br>
@@ -812,7 +808,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 -	***Set a breakpoint,** on function(s), **using regular-expressions:***
 
-	> <small>`[Search Tags: >brfunctionregex >brfuncregex >brsfunctionregex >brsfuncregex >brsetfunctionregex >brsetfuncregex >brregexfunction >brregexfunc >brsregexfunction >brsregexfunc >brsetregexfunction >brsetregexfunc >funcregex >regexfunc >functionregex >regexfunction  >ftregex >regexfts >funcrgx >rgxfunc >functionrgx >rgxfunction  >ftrgx >rgxfts]`</small>
+	> <small>`[Search Tags: >regexftbreakpoint >regexfcbreakpoint >regexfuncbreakpoint >regexfunctionbreakpoint >regexftbreakpt >regexfcbreakpt >regexfuncbreakpt >regexfunctionbreakpt >regexftbrkpt >regexfcbrkpt >regexfuncbrkpt >regexfunctionbrkpt >regexftbrpt >regexfcbrpt >regexfuncbrpt >regexfunctionbrpt >regexftbr >regexfcbr >regexfuncbr >regexfunctionbr >breakpointregexfts >breakpointregexfcs >breakpointregexfuncs >breakpointregexfunctions >breakptregexfts >breakptregexfcs >breakptregexfuncs >breakptregexfunctions >brkptregexfts >brkptregexfcs >brkptregexfuncs >brkptregexfunctions >brptregexfts >brptregexfcs >brptregexfuncs >brptregexfunctions >brregexfts >brregexfcs >brregexfuncs >brregexfunctions]`</small>
 
 	> ***Synopsis:***
 	>
@@ -832,7 +828,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 -	***Set a breakpoint,** on line(s), in file(s), **using regular-expressions:***
 
-	> <small>`[Search Tags: >brsourceregex >brsrcregex >brssourceregex >brssrcregex >brsetsourceregex >brsetsrcregex >brregexsource >brregexsrc >brsregexsource >brsregexsrc >brsetregexsource >brsetregexsrc >srcregex >regexsrc >srctionregex >regexsrc  >sourceregex >regexsources >srcrgx >rgxsrc >srcrgx >rgxsrc  >sourcergx >rgxsources >sourcepatternregex >srcpatternregex >sourcepatregex >srcpatregex]`</small>
+	> <small>`[Search Tags: >regexsrcbreakpoint >regexsrcebreakpoint >regexsourcebreakpoint >regexsrcbreakpt >regexsrcebreakpt >regexsourcebreakpt >regexsrcbrkpt >regexsrcebrkpt >regexsourcebrkpt >regexsrcbrpt >regexsrcebrpt >regexsourcebrpt >regexsrcbr >regexsrcebr >regexsourcebr >breakpointregexsrcs >breakpointregexsrces >breakpointregexsources >breakptregexsrcs >breakptregexsrces >breakptregexsources >brkptregexsrcs >brkptregexsrces >brkptregexsources >brptregexsrcs >brptregexsrces >brptregexsources >brregexsrcs >brregexsrces >brregexsources]`</small>
 
 	> ***Synopsis:***
 	>
