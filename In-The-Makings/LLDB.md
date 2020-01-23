@@ -36,7 +36,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
 	- [3.2. Launch LLDB](#32-launch-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
-		- [3.3.1. Basic Commands](#331-basic-commands)
+		- [3.3.1. Basics](#331-basics)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 			- [3.4.1.1. Basics](#3411-basics)
@@ -45,7 +45,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 			- [3.4.1.4. Multi-Threaded Programs](#3414-multi-threaded-programs)
 			- [3.4.1.5. C++ Programs](#3415-c-programs)
 		- [3.4.2. Watchpoints](#342-watchpoints)
-			- [3.4.2.1. Basic Commands](#3421-basic-commands)
+			- [3.4.2.1. Basics](#3421-basics)
 			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
 	- [3.5. Begin Debugging](#35-start-or-attach-program)
 		- [3.5.1. Launch Program](#351-launch-program)
@@ -347,19 +347,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	Here are the ***available sanitizers***:
 
-    | Sanitizer                                                                                                             | Enabling Flag           | Description                                                    |
-    | :-------------------------------------------------------------------------------------------------------------------- | ----------------------- | -------------------------------------------------------------- |
-    | [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)                      | `-fsanitize=address`    | A fast ***memory error*** detector.                            |
-    | [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)                        | `-fsanitize=thread`     | A ***data-race detector***.                                    |
-    | [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)                                                   | `-fsanitize=memory`     | A detector of ***uninitialized reads***.                       |
-    | [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer) | `-fsanitize=undefined`  | A fast ***undefined behavior*** detector.                      |
-    | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `-fsanitize=dataflow`   | A general ***data flow analysis***.                            |
-    | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `-fsanitize=cfi`        | ***Control flow*** checks.                                     |
-    | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `-fsanitize=safe-stack` | Protection against ***stack-based memory*** corruption errors. |
+    | Sanitizer                                                                                                             | Enabling Flag           | Description                                                         |
+    | :-------------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------- |
+    | [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer) | `-fsanitize=undefined`  | A detector for ***undefined behavior***.                            |
+    | [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)                      | `-fsanitize=address`    | A detector for ***memory errors*** (e.g. segmentation faults).      |
+    | [LeakSanitizer](https://clang.llvm.org/docs/LeakSanitizer.html)                                                     | `-fsanitize=leak`         | A detector for ***memory leakage***.                                |
+    | [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)                                                   | `-fsanitize=memory`     | A detector for ***uninitialized reads***.                           |
+    | [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)                        | `-fsanitize=thread`     | A detector for ***data-race***.                                     |
+    | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `-fsanitize=dataflow`   | A general ***data flow analysis***.                                 |
+    | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `-fsanitize=cfi`        | ***Control flow*** checks.                                          |
+    | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `-fsanitize=safe-stack` | Protection against ***stack-based memory*** corruption errors.      |
 
 	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer* – enabled by *[the sanitizer enabler flag:]* *`-fsanitize=undefined`* – performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks), just another good resource).
-
-TODO : ADD leak and thread sanitizer.
 
 -	***To enable a sanitizer***:
 
@@ -430,6 +429,8 @@ TODO : ADD leak and thread sanitizer.
 
 	> To be more pedantic, we say – we are ***loading*** *[`lldb` with]* a ***debugger target***, i.e setting `lldb` up to target a specific process *(program)*, for debugging/examination-phase.
 
+-	The following subsection explores the basic commands ([§3.3.1](#331-basics)) of loading programs.
+
 -	***Demonstration:*** <br>
 	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif --> <br>
 
@@ -447,7 +448,7 @@ TODO : ADD leak and thread sanitizer.
 
 ---
 [🏠](#contents) | [⬅️](#32-launch-lldb) | [➡️](#34-setup-lldb)
-### 3.3.1. Basic Commands
+### 3.3.1. Basics
 <small>`[Search Tags: >lldbloadcomands >lldb.load.commands >lldbloadcmds >lldb.load.cmds >debuggerloadcomands >debugger.load.commands >debuggerloadcmds >debugger.load.cmds >loadcomands >load.commands >loadcmds >load.cmds]`</small>
 <br>
 <br>
@@ -643,7 +644,7 @@ TODO : ADD leak and thread sanitizer.
 ---
 [🏠](#contents) | [⬅️](#34-setup-lldb) | [➡️](#3411-basic-commands)
 ### 3.4.1. Breakpoints
-<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >breakpoint >breakpt >brkpt >brpt >br]`</small>
+<small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >sectionbreakpoint >breakpointsections >sectionbreakpt >breakptsections >sectionbrkpt >brkptsections >sectionbrpt >brptsections >sectionbr >brsections]`</small>
 <br>
 <br>
 
@@ -678,6 +679,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 <br>
 <br>
 
+> *(Basic) Commands for operating on breakpoints.*
 
 -	***Set a breakpoint, on a function:***
 
@@ -762,6 +764,10 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> - *`lldb`, automatically, deletes breakpoints of targets that are deleted.*
 	>
 	> *- end note]</small>*
+
+---
+
+> *[A lil' more] Advanced commands for operating on breakpoints.*
 
 <br>
 
@@ -868,6 +874,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 <br>
 <br>
 
+---
 
 >	*(**Know that**) –– "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions hit-count, auto-continue…) we call breakpoint options."*
 >
@@ -1156,8 +1163,9 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint name`
-> | 2 | Manual Page | LLDB | `(lldb) help breakpoint name configure`
+> | 1 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
+> | 2 | Manual Page | LLDB | `(lldb) help breakpoint name`
+> | 3 | Manual Page | LLDB | `(lldb) help breakpoint name configure`
 
 
 ---
@@ -1333,11 +1341,12 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 ---
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.2.1. Basic Commands
+#### 3.4.2.1. Basics
 <small>`[Search Tags: >watchpointbasiccommands >watchpointbasiccmds >watchptbasiccommands >watchptbasiccmds >wakptbasiccommands >wakptbasiccmds >wabasiccommands >wabasiccmds >bbasiccommands >bbasiccmds >watchpointbasics >watchptbasics >wakptbasics >wabasics >bbasics >waptcommands >waptcmds >waptbasiccommands >waptbasiccmds >waptbasics >watchpointcreate >createwatchpoint >crwatchpoint >watchptcreate >createwatchpt >crwatchpt >wakptcreate >createwakpt >crwakpt >waptcreate >createwapt >crwapt >wacreate >createwa >crwa]`</small>
 <br>
 <br>
 
+> *(Basic) Commands for operating on watchpoints.*
 
 -	***Set a watchpoint:***
 
