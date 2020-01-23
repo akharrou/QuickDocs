@@ -1269,31 +1269,27 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 <br>
 
 
--	***Set breakpoint, on thread:***
+-	***Set breakpoint, on** [an identified] **thread:***
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint set <definition> [ --thread-name <thread-name> ]
-	> ```
-	> ```
-	> (lldb) breakpoint set <definition> [ --thread-id <thread-id> ]
-	> ```
-	> ```
-	> (lldb) breakpoint set <definition> [ --thread-index <thread-index> ]
+	> (lldb) breakpoint set <definition> [ --thread-index <index> ]
+	> (lldb) breakpoint set <definition> [ --thread-name <name> ]
+	> (lldb) breakpoint set <definition> [ --thread-id <tid> ]
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint set --name foo --thread-name ''
-	> (lldb) br s -n foo -T ''
+	> (lldb) breakpoint set --name baz --thread-index 3
+	> (lldb) br s -n baz -x 3
 	> ```
 	> ```shell
-	> (lldb) breakpoint set --name bar --thread-id ''
-	> (lldb) br s -bar -t ''
+	> (lldb) breakpoint set --name foo --thread-name 'centralServer'
+	> (lldb) br s -n foo -T 'centralServer'
 	> ```
 	> ```shell
-	> (lldb) breakpoint set --name baz --thread-index ''
-	> (lldb) br s -n baz -x ''
+	> (lldb) breakpoint set --name bar --thread-id 483413
+	> (lldb) br s -bar -t 483413
 	> ```
 
 
@@ -1304,7 +1300,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 2 | Manual Page | LLDB | `(lldb) help breakpoint set`
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
 
 
 ---
