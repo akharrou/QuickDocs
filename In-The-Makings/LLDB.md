@@ -36,16 +36,16 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
 	- [3.2. Launch LLDB](#32-launch-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
-		- [3.3.1. Basics](#331-basics)
+		- [3.3.1. Basic Commands](#331-basic-commands)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
-			- [3.4.1.1. Basics](#3411-basics)
+			- [3.4.1.1. Basic Commands](#3411-basic-commands)
 			- [3.4.1.2. Options](#3412-options)
 			- [3.4.1.3. Names](#3413-names)
 			- [3.4.1.4. Multi-Threaded Programs](#3414-multi-threaded-programs)
 			- [3.4.1.5. C++ Programs](#3415-c-programs)
 		- [3.4.2. Watchpoints](#342-watchpoints)
-			- [3.4.2.1. Basics](#3421-basics)
+			- [3.4.2.1. Basic Commands](#3421-basic-commands)
 			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
 	- [3.5. Begin Debugging](#35-start-or-attach-program)
 		- [3.5.1. Launch Program](#351-launch-program)
@@ -448,7 +448,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 [🏠](#contents) | [⬅️](#32-launch-lldb) | [➡️](#34-setup-lldb)
-### 3.3.1. Basics
+### 3.3.1. Basic Commands
 <small>`[Search Tags: >lldbloadcomands >lldb.load.commands >lldbloadcmds >lldb.load.cmds >debuggerloadcomands >debugger.load.commands >debuggerloadcmds >debugger.load.cmds >loadcomands >load.commands >loadcmds >load.cmds]`</small>
 <br>
 <br>
@@ -674,7 +674,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.1. Basics
+#### 3.4.1.1. Basic Commands
 <small>`[Search Tags: >basicbreakpoint >basicsbreakpoint >breakpointbasics >basicbreakpt >basicsbreakpt >breakptbasics >basicbrkpt >basicsbrkpt >brkptbasics >basicbrpt >basicsbrpt >brptbasics >basicbr >basicsbr >brbasics]`</small>
 <br>
 <br>
@@ -1341,7 +1341,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 ---
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.2.1. Basics
+#### 3.4.2.1. Basic Commands
 <small>`[Search Tags: >watchpointbasiccommands >watchpointbasiccmds >watchptbasiccommands >watchptbasiccmds >wakptbasiccommands >wakptbasiccmds >wabasiccommands >wabasiccmds >bbasiccommands >bbasiccmds >watchpointbasics >watchptbasics >wakptbasics >wabasics >bbasics >waptcommands >waptcmds >waptbasiccommands >waptbasiccmds >waptbasics >watchpointcreate >createwatchpoint >crwatchpoint >watchptcreate >createwatchpt >crwatchpt >wakptcreate >createwakpt >crwakpt >waptcreate >createwapt >crwapt >wacreate >createwa >crwa]`</small>
 <br>
 <br>
