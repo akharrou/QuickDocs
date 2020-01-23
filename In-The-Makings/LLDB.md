@@ -986,7 +986,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		>
 		> 	Your Python code, however organized, can optionally return a value. If the returned value is `False`, that tells LLDB not to stop at the breakpoint to which the code is associated. Returning anything other than `False`, or even returning None, or even omitting a return statement entirely, will cause `lldb` to stop.
 		>
-		> - You can, alternatively, specify one-liner commands with the: `-o / --one-liner` option, follow by the desired `<command>`.
+		> - You can, alternatively, specify one-liner commands with the: `--one-liner` or `-o` option, followed by the desired `<command>`.
 		>
 		> *- end note]</small>*
 
