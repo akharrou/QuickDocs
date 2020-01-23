@@ -1171,7 +1171,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 <br>
 
 
--	***Set breakpoint, on** [an identified] **thread:***
+-	***Set breakpoint, on** [a specific] **thread:***
 
 	> ***Synopsis:***
 	> ```shell
