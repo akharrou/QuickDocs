@@ -681,6 +681,8 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 > *(Basic) Commands for operating on breakpoints.*
 
+<br>
+
 -	***Set a breakpoint, on a function:***
 
 	> <small>`[Search Tags: >brset >setbr >sbr >sebr >breakpointset  >breakpointfunctions >breakpointfuncs >breakpointfts >breakpointfcs  >breakpointmain >setbreakpoint >brkptset >setbrkpt >breakptset >setbreakpt >brsetfunctions >brfunctions >brfuncs >brfts >brfcs >brsfunctions >brsfuncs >brsfts >brsfcs >brsmain]`</small>
