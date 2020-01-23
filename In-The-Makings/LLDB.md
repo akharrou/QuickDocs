@@ -39,9 +39,11 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.3.1. Basic Commands](#331-basic-commands)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
-			- [3.4.1.1. Basic Commands](#3411-basic-commands)
-			- [3.4.1.2. Basic (C++) Commands](#3412-basic-c-commands)
-			- [3.4.1.3. Advanced Commands](#3413-advanced-commands)
+			- [3.4.1.1. Basics](#3411-basic-commands)
+			- [3.4.1.2. Options](#3412-breakpoint-options)
+			- [3.4.1.3. Names](#3413-breakpoint-names)
+			- [3.4.1.4. Concerning C++ Programs](#)
+			- [3.4.1.5. Concerning Multi-Thread Programs](#)
 		- [3.4.2. Watchpoints](#342-watchpoints)
 			- [3.4.2.1. Basic Commands](#3421-basic-commands)
 			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
@@ -345,15 +347,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 	Here are the ***available sanitizers***:
 
-    | Sanitizer                     | Enabling Flag | Description
-    | :---------------------------- |----------------------|-------------
-    |  [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)             |`-fsanitize=address`    | A fast ***memory error*** detector.
-    |  [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)              |`-fsanitize=thread`     | A ***data-race detector***.
-    |  [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)              |`-fsanitize=memory`     | A detector of ***uninitialized reads***.
-    |  [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer)   |`-fsanitize=undefined`  | A fast ***undefined behavior*** detector.
-    |  [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)            |`-fsanitize=dataflow`   | A general ***data flow analysis***.
-    |  [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)            |`-fsanitize=cfi`   | ***Control flow*** checks.
-    |  [SafeStack](https://clang.llvm.org/docs/SafeStack.html)            |`-fsanitize=safe-stack`   | Protection against ***stack-based memory*** corruption errors.
+    | Sanitizer                                                                                                             | Enabling Flag           | Description                                                    |
+    | :-------------------------------------------------------------------------------------------------------------------- | ----------------------- | -------------------------------------------------------------- |
+    | [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)                      | `-fsanitize=address`    | A fast ***memory error*** detector.                            |
+    | [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)                        | `-fsanitize=thread`     | A ***data-race detector***.                                    |
+    | [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)                                                   | `-fsanitize=memory`     | A detector of ***uninitialized reads***.                       |
+    | [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer) | `-fsanitize=undefined`  | A fast ***undefined behavior*** detector.                      |
+    | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `-fsanitize=dataflow`   | A general ***data flow analysis***.                            |
+    | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `-fsanitize=cfi`        | ***Control flow*** checks.                                     |
+    | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `-fsanitize=safe-stack` | Protection against ***stack-based memory*** corruption errors. |
 
 	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer* – enabled by *[the sanitizer enabler flag:]* *`-fsanitize=undefined`* – performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks), just another good resource).
 
@@ -675,8 +677,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.1. Basic Commands
-<small>`[Search Tags: >breakpointbasiccommands >breakpointbasiccmds >breakptbasiccommands >breakptbasiccmds >brkptbasiccommands >brkptbasiccmds >brbasiccommands >brbasiccmds >bbasiccommands >bbasiccmds >breakpointbasics >breakptbasics >brkptbasics >brbasics >bbasics >brptcommands >brptcmds >brptbasiccommands >brptbasiccmds >brptbasics >breakpointcreate >createbreakpoint >crbreakpoint >breakptcreate >createbreakpt >crbreakpt >brkptcreate >createbrkpt >crbrkpt >brptcreate >createbrpt >crbrpt >brcreate >createbr >crbr]`</small>
+#### 3.4.1.1. Basics
+<small>`[Search Tags: >basicbreakpoint >basicsbreakpoint >breakpointbasics >basicbreakpt >basicsbreakpt >breakptbasics >basicbrkpt >basicsbrkpt >brkptbasics >basicbrpt >basicsbrpt >brptbasics >basicbr >basicsbr >brbasics]`</small>
 <br>
 <br>
 
@@ -754,7 +756,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> ```shell
 	> (lldb) breakpoint delete 5
 	> (lldb) br de 1 2 3
-	> (lldb) br d                         # delete all breakpts
+	> (lldb) br d                           # delete all breakpts
 	> ```
 
 	> *<small>[Note:*
@@ -765,6 +767,92 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	>
 	> *- end note]</small>*
 
+<br>
+
+-	***Enable / Disable breakpoints:***
+
+	> <small>`[Search Tags: >breakpointenable >breakptenable >brkptenable >brptenable >brenable >breakpointdisable >breakptdisable >brkptdisable >brptdisable >brdisable >enablebreakpoint >enablebreakpt >enablebrkpt >enablebrpt >enablebr >disablebreakpoint >disablebreakpt >disablebrkpt >disablebrpt >disablebr]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> (lldb) breakpoint disable <breakpt-ids | breakpt-names>
+	> (lldb) breakpoint enable  <breakpt-ids | breakpt-names>
+	> ```
+	> ```
+	> (lldb) breakpoint modify [--disable] [--enable] <breakpt-ids | breakpt-names>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint disable 1
+	> (lldb) br di 1
+	> ```
+	> ```shell
+	> (lldb) breakpoint disable 3.*      # disable all breakpoints of ID 3.
+	> (lldb) br di 3.*
+	> ```
+	> ```shell
+	> (lldb) breakpoint enable 2 6 3.2   # enable breakpoints: 2, 6 and 3.2
+	> (lldb) br en 2 6 3.2
+	> ```
+
+	> *<small>[Note:*
+	>
+	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (`*`), e.g.: `1.*` or `3.*`.
+	>
+	> - It is also possible to set, initialy disabled, breakpoints:
+	>
+	> 	```shell
+	> 	(lldb) breakpoint set <breakpt-definition> [--disable]
+	> 	```
+	>
+	> *- end note]</small>*
+
+<br>
+
+-	***Set a breakpoint,** on function(s), **using regular-expressions:***
+
+	> <small>`[Search Tags: >brfunctionregex >brfuncregex >brsfunctionregex >brsfuncregex >brsetfunctionregex >brsetfuncregex >brregexfunction >brregexfunc >brsregexfunction >brsregexfunc >brsetregexfunction >brsetregexfunc >funcregex >regexfunc >functionregex >regexfunction  >ftregex >regexfts >funcrgx >rgxfunc >functionrgx >rgxfunction  >ftrgx >rgxfts]`</small>
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> breakpoint set --func-regex <regular-expression>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --func-regex 'Parser.{3,4,5}_Command\(\)'
+	> (lldb) br s -r "Parser.{3,4,5}_Command\(\)"
+	> ```
+
+	> *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
+
+<br>
+
+-	***Set a breakpoint,** on line(s), in file(s), **using regular-expressions:***
+
+	> <small>`[Search Tags: >brsourceregex >brsrcregex >brssourceregex >brssrcregex >brsetsourceregex >brsetsrcregex >brregexsource >brregexsrc >brsregexsource >brsregexsrc >brsetregexsource >brsetregexsrc >srcregex >regexsrc >srctionregex >regexsrc  >sourceregex >regexsources >srcrgx >rgxsrc >srcrgx >rgxsrc  >sourcergx >rgxsources >sourcepatternregex >srcpatternregex >sourcepatregex >srcpatregex]`</small>
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> breakpoint set --all-files <regular-expression>                # Search all files
+	> breakpoint set --source-pattern-regexp <regular-expression>    # Search (only) specified files
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --all-files 'return (FAILURE);'
+	> (lldb) br s -A 'return (FAILURE);'
+	> ```
+	> ```shell
+	> (lldb) breakpoint set --source-pattern-regexp 'free(buckets);' --file 'core.c' --file 'cleanup.c'
+	> (lldb) breakpoint set -p 'free(buckets);' -f core.c -f cleanup.c
+	> ```
+
+	> *<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
+
 
 <br>
 <br>
@@ -774,14 +862,312 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
-> | 2 | Manual Page | LLDB | `(lldb) help breakpoint list`
-> | 3 | Manual Page | LLDB | `(lldb) help breakpoint delete`
+> | 2 | Manual Page | LLDB | `(lldb) help breakpoint modify`
 
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.2. Basic (C++) Commands
-<small>`[Search Tags: >cppbreakpointcommands >cppbreakpointcmds >cppbreakptcommands >cppbreakptcmds >cppbrkptcommands >cppbrkptcmds >cppbrcommands >cppbrcmds >cppbcommands >cppbcmds >cppbreakpointbasiccommands >cppbreakpointbasiccmds >cppbreakptbasiccommands >cppbreakptbasiccmds >cppbrkptbasiccommands >cppbrkptbasiccmds >cppbrbasiccommands >cppbrbasiccmds >cppbbasiccommands >cppbbasiccmds >cppbreakpointbasics >cppbreakptbasics >cppbrkptbasics >cppbrbasics >cppbbasics >cppbrptcommands >cppbrptcmds >cppbrptbasiccommands >cppbrptbasiccmds >cppbrptbasics >breakpointcreate >createbreakpoint >crbreakpoint >breakptcreate >createbreakpt >crbreakpt >brkptcreate >createbrkpt >crbrkpt >brptcreate >createbrpt >crbrpt >brcreate >createbr >crbr]`</small>
+#### 3.4.1.2. Options
+<small>`[Search Tags: >optsbreakpoint >breakpointopts >breakpointops >opsbreakpoint >optionsbreakpoint >breakpointoptions >optsbreakpt >breakptopts >breakptops >opsbreakpt >optionsbreakpt >breakptoptions >optsbrkpt >brkptopts >brkptops >opsbrkpt >optionsbrkpt >brkptoptions >optsbrpt >brptopts >brptops >opsbrpt >optionsbrpt >brptoptions >optsbr >bropts >brops >opsbr >optionsbr >broptions]`</small>
+<br>
+<br>
+
+
+>	*(**Know that**) –– "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions hit-count, auto-continue…) we call breakpoint options."*
+>
+>	*––	[LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
+
+---
+
+>	*(**Note**) –– We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…* <br>
+
+---
+
+<br>
+
+- ***Breakpoint Conditions:***
+
+	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions]`</small>
+
+	<br>
+
+	- ***Set breakpoint, with condition:***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint set <breakpt-definition> [--condition <expr>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint set --line 14 --condition 'argc < 2'
+		> (lldb) br s -l 14 -c 'argc < 2'
+		> ```
+		> ```shell
+		> (lldb) breakpoint set --name baz --condition '(int)strcmp(y, "hello") == 0'
+		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
+		> ```
+
+	<br>
+
+	- ***Add breakpoint condition** [on an existing breakpoint] **:***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint modify [--condition <expr>] [<breakpt-ids | breakpt-name>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint modify --condition 'my_var == 42' 3     # add condition to breakpt with ID: 3
+		> (lldb) br m -c 'my_var < 42' 4 2 8
+		> ```
+
+<br>
+
+- ***Breakpoint Commands:***
+
+	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands >commandbreakpoint >cmdbreakpoint >cmdsbreakpoint >commandbreakpt >cmdbreakpt >cmdsbreakpt >commandbrkpt >cmdbrkpt >cmdsbrkpt >commandbrpt >cmdbrpt >cmdsbrpt >commandbr >cmdbr >cmdsbr]`</small>
+
+	<br>
+
+	- ***Set** [breakpoint] **command(s)** (or script) [on an existing breakpoint] **:***
+
+		> <small>`[Search Tags: >breakpointaddcommand >breakpointaddcmd >breakpointacmd >breakptaddcommand >breakptaddcmd >breakptadcmd >brkptaddcommand >brkptaddcmd >brkptadcmd >brptaddcommand >brptaddcmd >brptadcmd >braddcommand >braddcmd >bradcmd >breakpointaddscript >breakpointaddscrpt >breakpointadscrpt >breakptaddscript >breakptaddscrpt >breakptadscrpt >brkptaddscript >brkptaddscrpt >brkptadscrpt >brptaddscript >brptaddscrpt >brptadscrpt >braddscript >braddscrpt >bradscrpt >breakpointsetcommand >breakpointsetcmd >breakpointacmd >breakptsetcommand >breakptsetcmd >breakptsecmd >brkptsetcommand >brkptsetcmd >brkptsecmd >brptsetcommand >brptsetcmd >brptsecmd >brsetcommand >brsetcmd >brsecmd >breakpointsetscript >breakpointsetscrpt >breakpointsescrpt >breakptsetscript >breakptsetscrpt >breakptsescrpt >brkptsetscript >brkptsetscrpt >brkptsescrpt >brptsetscript >brptsetscrpt >brptsescrpt >brsetscript >brsetscrpt >brsescrpt]`</small>
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint command add [--script-type <type>] [<breakpt-ids | breakpt-name>]
+		> ```
+		> ```
+		> > Enter your debugger command(s). Type 'DONE' to end.
+		> > <lldb-commands> ...
+		> > ...
+		> > DONE
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint command add 1.1
+		> Enter your debugger command(s). Type 'DONE' to end.
+		> > thread backtrace
+		> > frame variable
+		> > DONE
+		> ```
+		> ```shell
+		> (lldb) breakpoint command add --script-type python 4
+		> Enter your Python command(s). Type 'DONE' to end.
+		> > print "Hit this breakpoint!"
+		> > DONE
+		> ```
+		> ```shell
+		> (lldb) script
+		> >>> bp_count = 0
+		> >>> quit()
+		> ...
+		> (lldb) br co add -s python 3.2
+		> Enter your Python command(s). Type 'DONE' to end.
+		> > global bp_count
+		> > bp_count = bp_count + 1
+		> > print "Hit this breakpoint " + repr(bp_count) + " times!"
+		> > DONE
+		> ```
+
+		> *<small>[Note:*
+		>
+		> - In this case, since there is a reference to a global variable, `bp_count`, you will also need to make sure `bp_count` exists and is initialized:
+		>
+		> 	```python
+		> 	(lldb) script
+		> 	>>> bp_count = 0
+		> 	>>> quit()
+		>	```
+		>
+		> 	Your Python code, however organized, can optionally return a value. If the returned value is `False`, that tells LLDB not to stop at the breakpoint to which the code is associated. Returning anything other than `False`, or even returning None, or even omitting a return statement entirely, will cause `lldb` to stop.
+		>
+		> - You can, alternatively, specify one-liner commands with the: `-o / --one-liner` option, follow by the desired `<command>`.
+		>
+		> *- end note]</small>*
+
+	<br>
+
+	- ***List** [breakpoint] **command(s):***
+
+		> <small>`[Search Tags: >breakpointlistcommand >breakpointlistcmd >breakpointlscmd >breakptlistcommand >breakptlistcmd >breakptlscmd >brkptlistcommand >brkptlistcmd >brkptlscmd >brptlistcommand >brptlistcmd >brptlscmd >brlistcommand >brlistcmd >brlscmd >breakpointlicmd >breakptlicmd >brkptlicmd >brptlicmd >brlicmd]`</small>
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint command list <breakpt-id>
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint command list 1.1
+		> (lldb) br co li 1.1
+		> ```
+
+	<br>
+
+	- ***Delete** [breakpoint] **command(s):***
+
+		> <small>`[Search Tags: >breakpointdeletecommand >breakpointdeletecmd >breakpointdecmd >breakptdeletecommand >breakptdeletecmd >breakptdecmd >brkptdeletecommand >brkptdeletecmd >brkptdecmd >brptdeletecommand >brptdeletecmd >brptdecmd >brdeletecommand >brdeletecmd >brdecmd]`</small>
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint command delete <breakpt-id>
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint command delete 1.1
+		> (lldb) br co de 1.1
+		> ```
+
+<br>
+
+- ***Breakpoint** [`set`] **Attributes:***
+
+	> <small>`[Search Tags: >attributebreakpoint >attribbreakpoint >atbbreakpoint >breakpointatbs >breakpointatts >breakpointattributes >breakpointattribs >attributebreakpt >attribbreakpt >atbbreakpt >breakptatbs >breakptatts >breakptattributes >breakptattribs >attributebrkpt >attribbrkpt >atbbrkpt >brkptatbs >brkptatts >brkptattributes >brkptattribs >attributebrpt >attribbrpt >atbbrpt >brptatbs >brptatts >brptattributes >brptattribs >attributebr >attribbr >atbbr >bratbs >bratts >brattributes >brattribs]`</small>
+
+	> ```shell
+	> breakpoint set <definition> <conditions> <commands> [<attribute> <boolean> ...]
+	>```
+	>
+
+    | Attribute                   | Description                                                         |
+    | :-------------------------- | :------------------------------------------------------------------ |
+    | `-i`, `--ignore-count <count>`     | Set the number of times this breakpoint is skipped before stopping; this is what is referred to as the *hit-count* option. |
+    | `-G`, `--auto-continue <boolean>` | The breakpoint will auto-continue after running its commands.       |
+    | `-o`, `--one-shot <boolean>`      | The breakpoint is deleted the first time it stops causes a stop.     |
+    | `-m`, `--move-to-nearest-code <boolean>`     | Move breakpoints to nearest code. |
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
+> | 2 | Manual Page | LLDB | `(lldb) help breakpoint command`
+> | 3 | Manual Page | LLDB | `(lldb) help breakpoint command add`
+> | 4 | Manual Page | LLDB | `(lldb) help breakpoint command list`
+> | 5 | Manual Page | LLDB | `(lldb) help breakpoint command delete`
+
+
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.1.3. Names
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: 3.4.1.3. Names
+
+
+TODO: BREAKPOINT NAMES
+
+- ***Breakpoint Names:***
+
+	> <small>`[Search Tags: >namedbreakpoint >nbreakpoint >namesbreakpoint >breakpointnames >namedbreakpt >nbreakpt >namesbreakpt >breakptnames >namedbrkpt >nbrkpt >namesbrkpt >brkptnames >namedbrpt >nbrpt >namesbrpt >brptnames >namedbr >nbr >namesbr >brnames]`</small>
+
+	<br>
+
+	- ***Set breakpoint, with condition:***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint set <breakpt-definition> [--condition <expr>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint set --line 14 --condition 'argc < 2'
+		> (lldb) br s -l 14 -c 'argc < 2'
+		> ```
+		> ```shell
+		> (lldb) breakpoint set --name baz --condition '(int)strcmp(y, "hello") == 0'
+		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
+		> ```
+
+
+
+
+
+<!--
+-	***Set a breakpoint options** (e.g. conditions, comamnds, ...):*
+
+	> ***Synopsis:***
+	> ```shell
+	> breakpoint set ... [-c <condition-expr>] [-C <lldb-command>] [-N <breakpt-name>]
+	> breakpoint modify [-c <condition-expr>] [-C <lldb-command>] [<breakpt-ids | breakpt-name>]
+	>```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --name foo --condition '(int)strcmp(y,"hello") == 0'
+	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
+	> ```
+	> ```shell
+	> (lldb) breakpoint modify --condition 'my_var == 42' 3
+	> (lldb) br m -c 'my_var < 42' 4 2 8
+	> ```
+	>
+	> > *To clarify – the first command sets a condition to (only) the breakpoint that has the breakpoint-ID: `3`. The second command adds a condition, to all breakpoints found in the list of breakpoint-IDs [the breakpoints of ID: `4`, `2` and `8`].*
+	>
+	> ```shell
+	> (lldb) breakpoint set -n baz -N controlFlow
+	> (lldb) br m -c 'my_var > 42' -N controlFlow
+	> ```
+	>
+	> > *To clarify – the first command sets a breakpoint, on the function of name `baz`, then adds to the list of names, of that breakpoint, the name: `"controlFlow"`. Following that, the second command, adds a condition to all the breakpoints that have the name: `"controlFlow"` [added to their list of names].*
+	>
+	> This suffers from the problem that when new breakpoints get added, they don’t pick up these modifications, and the options only exist in the context of actual breakpoints, so they are hard to store & reuse.
+
+	***Create a configured breakpoint name***:
+	>
+	> ***Synopsis:***
+	> ```shell
+	> (lldb) breakpoint name configure <breakpt-options> <breakpt-name>
+	> (lldb) breakpoint name configure <breakpt-condition> <breakpt-command> <breakpt-other-options> <breakpt-name>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint name configure -c "my_var > 42" -C bt --auto-continue 'controlFlow'
+	> ```
+	>
+	> Then you can apply the name to your breakpoints, and they will all pick up these options. The connection from name to breakpoints remains live, so when you change the options configured on the name, all the breakpoints pick up those changes.
+
+	***Add a breakpoint command***:
+	>
+	> ***Synopsis:***
+	> ```shell
+	> (lldb) breakpoint command add <breakpt-ids | breakpt-name>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> ```
+ -->
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint name`
+> | 2 | Manual Page | LLDB | `(lldb) help breakpoint name configure`
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.1.4. Concerning C++ Programs
+<small>`[Search Tags: >breakpointcpp >cppbreakpoint >breakptcpp >cppbreakpt >brkptcpp >cppbrkpt >brptcpp >cppbrpt >brcpp >cppbr >breakpointc++ >c++breakpoint >breakptc++ >c++breakpt >brkptc++ >c++brkpt >brptc++ >c++brpt >brc++ >c++br]`</small>
 <br>
 <br>
 
@@ -878,117 +1264,18 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.3. Advanced Commands
-<small>`[Search Tags: >advlldb.breakpoints >advdebugger.breakpoints >advlldbbreakpoints >advdebuggerbreakpoints >advbreakpointcommands >advbreakpointcmds >advbrcmds >advbmain >advblist >advbfile >advbfunc >advsetbrpts >advbrmain >advbrsmain >advbrkpts >advbreakpts >advbpts >advbrpoints >advbapts >advbapoints >breakpointcreate >createbreakpoint >crbreakpoint >breakptcreate >createbreakpt >crbreakpt >brkptcreate >createbrkpt >crbrkpt >brptcreate >createbrpt >crbrpt >brcreate >createbr >crbr]`</small>
+#### 3.4.1.5. Concerning Multi-Thread Programs
+<small>`[Search Tags: ]`</small>
 <br>
 <br>
 
-
--	***Set a breakpoint,** on function(s), **using regular-expressions:***
-
-	> <small>`[Search Tags: >brfunctionregex >brfuncregex >brsfunctionregex >brsfuncregex >brsetfunctionregex >brsetfuncregex >brregexfunction >brregexfunc >brsregexfunction >brsregexfunc >brsetregexfunction >brsetregexfunc >funcregex >regexfunc >functionregex >regexfunction  >ftregex >regexfts >funcrgx >rgxfunc >functionrgx >rgxfunction  >ftrgx >rgxfts]`</small>
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> breakpoint set --func-regex <regular-expression>
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint set --func-regex 'Parser.{3,4,5}_Command\(\)'
-	> (lldb) br s -r "Parser.{3,4,5}_Command\(\)"
-	> ```
-
-	> *<small>[Note: Function call-sites also count as matches, and get a breakpoint. - end note]</small>*
+TODO: 3.4.1.5. Concerning Multi-Thread Programs
 
 <br>
 
--	***Set a breakpoint,** on line(s), in file(s), **using regular-expressions:***
+- ***Breakpoints for Multi-Threaded Processes:***
 
-	> <small>`[Search Tags: >brsourceregex >brsrcregex >brssourceregex >brssrcregex >brsetsourceregex >brsetsrcregex >brregexsource >brregexsrc >brsregexsource >brsregexsrc >brsetregexsource >brsetregexsrc >srcregex >regexsrc >srctionregex >regexsrc  >sourceregex >regexsources >srcrgx >rgxsrc >srcrgx >rgxsrc  >sourcergx >rgxsources >sourcepatternregex >srcpatternregex >sourcepatregex >srcpatregex]`</small>
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> breakpoint set --all-files <regular-expression>                # Search all files
-	> breakpoint set --source-pattern-regexp <regular-expression>    # Search (only) specified files
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint set --all-files 'return (FAILURE);'
-	> (lldb) br s -A 'return (FAILURE);'
-	> ```
-	> ```shell
-	> (lldb) breakpoint set --source-pattern-regexp 'free(buckets);' --file 'core.c' --file 'cleanup.c'
-	> (lldb) breakpoint set -p 'free(buckets);' -f core.c -f cleanup.c
-	> ```
-
-	> *<small>[Note: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - end note]</small>*
-
-<br>
-
--	***Enable / Disable breakpoints:***
-
-	> <small>`[Search Tags: >breakpointenable >breakptenable >brkptenable >brptenable >brenable >breakpointdisable >breakptdisable >brkptdisable >brptdisable >brdisable >enablebreakpoint >enablebreakpt >enablebrkpt >enablebrpt >enablebr >disablebreakpoint >disablebreakpt >disablebrkpt >disablebrpt >disablebr]`</small>
-
-	> ***Synopsis:***
-	> ```shell
-	> (lldb) breakpoint disable <breakpt-ids | breakpt-names>
-	> (lldb) breakpoint enable  <breakpt-ids | breakpt-names>
-	> ```
-	> ```
-	> (lldb) breakpoint modify [--disable] [--enable] <breakpt-ids | breakpt-names>
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint disable 1
-	> (lldb) br di 1
-	> ```
-	> ```shell
-	> (lldb) breakpoint disable 3.*      # disable all breakpoints of ID 3.
-	> (lldb) br di 3.*
-	> ```
-	> ```shell
-	> (lldb) breakpoint enable 2 6 3.2   # enable breakpoints: 2, 6 and 3.2
-	> (lldb) br en 2 6 3.2
-	> ```
-
-	> *<small>[Note:*
-	>
-	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (`*`), e.g.: `1.*` or `3.*`.
-	>
-	> - It is also possible to set, initialy disabled, breakpoints:
-	>
-	> 	```shell
-	> 	(lldb) breakpoint set <breakpt-definition> [--disable]
-	> 	```
-	>
-	> *- end note]</small>*
-
-<br>
-
----
-
->	*(**Know that**) –– "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions hit-count, auto-continue…) we call breakpoint options."*
->
->	*––	[LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
-
----
-
->	*(**Note**) –– We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…* <br>
-
----
-
-<small>`[Search Tags: >breakpointoptions >optionsbreakpoint >breakptoptions >optionsbreakpt >brkptoptions >optionsbrkpt >brptoptions >optionsbrpt >broptions >optionsbr]`</small>
-
-<br>
-
-- ***Breakpoint Conditions:***
-
-	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions]`</small>
+	> <small>`[Search Tags: >breakpointthreads >threadbreakpoint >multithreadedbreakpoint >multithreadbreakpoint >breakptthreads >threadbreakpt >multithreadedbreakpt >multithreadbreakpt >brkptthreads >threadbrkpt >multithreadedbrkpt >multithreadbrkpt >brptthreads >threadbrpt >multithreadedbrpt >multithreadbrpt >brthreads >threadbr >multithreadedbr >multithreadbr]`</small>
 
 	<br>
 
@@ -1009,134 +1296,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
 		> ```
 
-	<br>
 
-	- ***Add breakpoint condition** [on an existing breakpoint] **:***
-
-		> ***Synopsis:***
-		> ```shell
-		> breakpoint modify [--condition <expr>] [<breakpt-ids | breakpt-name>]
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> (lldb) breakpoint modify --condition 'my_var == 42' 3     # add condition to breakpt with ID: 3
-		> (lldb) br m -c 'my_var < 42' 4 2 8
-		> ```
-
-<br>
-
-- ***Breakpoint Commands:***
-
-	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands >commandbreakpoint >cmdbreakpoint >cmdsbreakpoint >commandbreakpt >cmdbreakpt >cmdsbreakpt >commandbrkpt >cmdbrkpt >cmdsbrkpt >commandbrpt >cmdbrpt >cmdsbrpt >commandbr >cmdbr >cmdsbr]`</small>
-
-	<br>
-
-	- ***Set** [breakpoint] **command(s)** (or script) [on an existing breakpoint] **:***
-
-		> <small>`[Search Tags: >breakpointaddcommand >breakpointaddcmd >breakpointacmd >breakptaddcommand >breakptaddcmd >breakptadcmd >brkptaddcommand >brkptaddcmd >brkptadcmd >brptaddcommand >brptaddcmd >brptadcmd >braddcommand >braddcmd >bradcmd >breakpointaddscript >breakpointaddscrpt >breakpointadscrpt >breakptaddscript >breakptaddscrpt >breakptadscrpt >brkptaddscript >brkptaddscrpt >brkptadscrpt >brptaddscript >brptaddscrpt >brptadscrpt >braddscript >braddscrpt >bradscrpt >breakpointsetcommand >breakpointsetcmd >breakpointacmd >breakptsetcommand >breakptsetcmd >breakptsecmd >brkptsetcommand >brkptsetcmd >brkptsecmd >brptsetcommand >brptsetcmd >brptsecmd >brsetcommand >brsetcmd >brsecmd >breakpointsetscript >breakpointsetscrpt >breakpointsescrpt >breakptsetscript >breakptsetscrpt >breakptsescrpt >brkptsetscript >brkptsetscrpt >brkptsescrpt >brptsetscript >brptsetscrpt >brptsescrpt >brsetscript >brsetscrpt >brsescrpt]`</small>
-
-		> ***Synopsis:***
-		> ```shell
-		> breakpoint command add [--script-type <type>] [<breakpt-ids | breakpt-name>]
-		> ```
-		> ```
-		> > Enter your debugger command(s). Type 'DONE' to end.
-		> > <lldb-commands> ...
-		> > ...
-		> > DONE
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> (lldb) breakpoint command add 1.1
-		> Enter your debugger command(s). Type 'DONE' to end.
-		> > thread backtrace
-		> > frame variable
-		> > DONE
-		> ```
-		> ```shell
-		> (lldb) breakpoint command add -s python 4
-		> Enter your Python command(s). Type 'DONE' to end.
-		> > print "Hit this breakpoint!"
-		> > DONE
-		> ```
-		> ```shell
-		> (lldb) script
-		> >>> bp_count = 0
-		> >>> quit()
-		> ...
-		> (lldb) breakpoint command add -s python 3.2
-		> Enter your Python command(s). Type 'DONE' to end.
-		> > global bp_count
-		> > bp_count = bp_count + 1
-		> > print "Hit this breakpoint " + repr(bp_count) + " times!"
-		> > DONE
-		> ```
-
-		> *<small>[Note:*
-		>
-		> - You can, alternatively, specify one-liner commands with the: `-o / --one-liner` option, follow by the desired `<command>`.
-		>
-		> - In this case, since there is a reference to a global variable, `bp_count`, you will also need to make sure `bp_count` exists and is initialized:
-		>
-		> 	```python
-		> 	(lldb) script
-		> 	>>> bp_count = 0
-		> 	>>> quit()
-		>	```
-		>
-		> 	Your Python code, however organized, can optionally return a value. If the returned value is `False`, that tells LLDB not to stop at the breakpoint to which the code is associated. Returning anything other than `False`, or even returning None, or even omitting a return statement entirely, will cause `lldb` to stop.
-		>
-		> *- end note]</small>*
-
-	<br>
-
-	- ***List** [breakpoint] **command(s):***
-
-		> <small>`[Search Tags: >breakpointlistcommand >breakpointlistcmd >breakpointlscmd >breakptlistcommand >breakptlistcmd >breakptlscmd >brkptlistcommand >brkptlistcmd >brkptlscmd >brptlistcommand >brptlistcmd >brptlscmd >brlistcommand >brlistcmd >brlscmd >breakpointlicmd >breakptlicmd >brkptlicmd >brptlicmd >brlicmd]`</small>
-
-		> ***Synopsis:***
-		> ```shell
-		> breakpoint command list <breakpt-id>
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> (lldb) breakpoint command list 1.1
-		> (lldb) br co li 1.1
-		> ```
-
-	<br>
-
-	- ***Delete** [breakpoint] **command(s):***
-
-		> <small>`[Search Tags: >breakpointdeletecommand >breakpointdeletecmd >breakpointdecmd >breakptdeletecommand >breakptdeletecmd >breakptdecmd >brkptdeletecommand >brkptdeletecmd >brkptdecmd >brptdeletecommand >brptdeletecmd >brptdecmd >brdeletecommand >brdeletecmd >brdecmd]`</small>
-
-		> ***Synopsis:***
-		> ```shell
-		> breakpoint command delete <breakpt-id>
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> (lldb) breakpoint command delete 1.1
-		> (lldb) br co de 1.1
-		> ```
-
-- ***Breakpoint Set Attributes:***
-
-	> <small>`[Search Tags: >attributebreakpoint >attribbreakpoint >atbbreakpoint >breakpointatbs >breakpointatts >breakpointattributes >breakpointattribs >attributebreakpt >attribbreakpt >atbbreakpt >breakptatbs >breakptatts >breakptattributes >breakptattribs >attributebrkpt >attribbrkpt >atbbrkpt >brkptatbs >brkptatts >brkptattributes >brkptattribs >attributebrpt >attribbrpt >atbbrpt >brptatbs >brptatts >brptattributes >brptattribs >attributebr >attribbr >atbbr >bratbs >bratts >brattributes >brattribs]`</small>
-
-	> ```shell
-	> breakpoint set <definition> <options> [<attribute> <boolean> ...]
-	>```
-	>
-
-    |Attribute|Description|
-    |:----|:----|
-    | ` --auto-continue` ( `-G` )  | The breakpoint will auto-continue after running its commands. |
-    | ` --one-shot` ( `-o` )       | The breakpoint is deleted the first time it stop causes a stop. |
+---
 
 
 <!--
@@ -1168,69 +1329,6 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
  -->
 
 
-
-
-<!--
--	***Set a breakpoint options** (e.g. conditions, comamnds, ...):*
-
-	> ***Synopsis:***
-	> ```shell
-	> breakpoint set ... [-c <condition-expr>] [-C <lldb-command>] [-N <breakpt-name>]
-	> breakpoint modify [-c <condition-expr>] [-C <lldb-command>] [<breakpt-ids | breakpt-name>]
-	>```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint set --name foo --condition '(int)strcmp(y,"hello") == 0'
-	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
-	> ```
-	> ```shell
-	> (lldb) breakpoint modify --condition 'my_var == 42' 3
-	> (lldb) br m -c 'my_var < 42' 4 2 8
-	> ```
-	>
-	> > *To clarify – the first command sets a condition to (only) the breakpoint that has the breakpoint-ID: `3`. The second command adds a condition, to all breakpoints found in the list of breakpoint-IDs [the breakpoints of ID: `4`, `2` and `8`].*
-	>
-	> ```shell
-	> (lldb) breakpoint set -n baz -N controlFlow
-	> (lldb) br m -c 'my_var > 42' -N controlFlow
-	> ```
-	>
-	> > *To clarify – the first command sets a breakpoint, on the function of name `baz`, then adds to the list of names, of that breakpoint, the name: `"controlFlow"`. Following that, the second command, adds a condition to all the breakpoints that have the name: `"controlFlow"` [added to their list of names].*
-	>
-	> This suffers from the problem that when new breakpoints get added, they don’t pick up these modifications, and the options only exist in the context of actual breakpoints, so they are hard to store & reuse.
-
-	***Create a configured breakpoint name***:
-	>
-	> ***Synopsis:***
-	> ```shell
-	> (lldb) breakpoint name configure <breakpt-options> <breakpt-name>
-	> (lldb) breakpoint name configure <breakpt-condition> <breakpt-command> <breakpt-other-options> <breakpt-name>
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint name configure -c "my_var > 42" -C bt --auto-continue 'controlFlow'
-	> ```
-	>
-	> Then you can apply the name to your breakpoints, and they will all pick up these options. The connection from name to breakpoints remains live, so when you change the options configured on the name, all the breakpoints pick up those changes.
-
-	***Add a breakpoint command***:
-	>
-	> ***Synopsis:***
-	> ```shell
-	> (lldb) breakpoint command add <breakpt-ids | breakpt-name>
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> ```
- -->
-
-
-
-
-
 <br>
 <br>
 
@@ -1238,15 +1336,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
-> | 2 | Manual Page | LLDB | `(lldb) help breakpoint name`
-> | 3 | Manual Page | LLDB | `(lldb) help breakpoint modify`
-> | 4 | Manual Page | LLDB | `(lldb) help breakpoint command`
-> | 5 | Manual Page | LLDB | `(lldb) help breakpoint command add`
-> | 6 | Manual Page | LLDB | `(lldb) help breakpoint command list`
-> | 7 | Manual Page | LLDB | `(lldb) help breakpoint command delete`
-> | 8 | Manual Page | LLDB | `(lldb) help breakpoint name`
-> | 9 | Manual Page | LLDB | `(lldb) help breakpoint name configure`
+> | 2 | Manual Page | LLDB | `(lldb) help breakpoint set`
 
 
 ---
@@ -1790,64 +1880,64 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -	Source Code (Pane)
 
-	| Key         | Action
-	| :---------- | :--------------------------------------------
-	| `return`    | Run to selected line with one shot breakpoint
-	| `up`        | Select previous source line
-	| `down`      | Select next source line
-	| `page-up`   | Page up
-	| `page-down` | Page down
-	| `b`         | Set breakpoint on selected source/disassembly line
-	| `c`         | Continue process
-	| `d`         | Detach and resume process
-	| `D`         | Detach with process suspended
-	| `h`         | Show help dialog
-	| `k`         | Kill process
-	| `n`         | Step over (source line)
-	| `N`         | Step over (single instruction)
-	| `o`         | Step out
-	| `s`         | Step in (source line)
-	| `S`         | Step in (single instruction)
-	| `,`         | Page up
-	| `.`         | Page down
+ | Key         | Action                                             |
+ | :---------- | :------------------------------------------------- |
+ | `return`    | Run to selected line with one shot breakpoint      |
+ | `up`        | Select previous source line                        |
+ | `down`      | Select next source line                            |
+ | `page-up`   | Page up                                            |
+ | `page-down` | Page down                                          |
+ | `b`         | Set breakpoint on selected source/disassembly line |
+ | `c`         | Continue process                                   |
+ | `d`         | Detach and resume process                          |
+ | `D`         | Detach with process suspended                      |
+ | `h`         | Show help dialog                                   |
+ | `k`         | Kill process                                       |
+ | `n`         | Step over (source line)                            |
+ | `N`         | Step over (single instruction)                     |
+ | `o`         | Step out                                           |
+ | `s`         | Step in (source line)                              |
+ | `S`         | Step in (single instruction)                       |
+ | `,`         | Page up                                            |
+ | `.`         | Page down                                          |
 
 
 -	Variables & Registers (Pane)
 
-	| Key         | Action
-	| :---------- | :--------------------------------------------
-	| `up`        | Select previous item
-	| `down`      | Select next item
-	| `right`     | Expand selected item
-	| `left`      | Unexpand selected item or select parent if not expanded
-	| `page-up`   | Page up
-	| `page-down` | Page down
-	| `A`         | Format as annotated address
-	| `b`         | Format as binary
-	| `B`         | Format as hex bytes with ASCII
-	| `c`         | Format as character
-	| `d`         | Format as a signed integer
-	| `D`         | Format selected value using the default format for the type
-	| `f`         | Format as float
-	| `h`         | Show help dialog
-	| `i`         | Format as instructions
-	| `o`         | Format as octal
+ | Key         | Action                                                      |
+ | :---------- | :---------------------------------------------------------- |
+ | `up`        | Select previous item                                        |
+ | `down`      | Select next item                                            |
+ | `right`     | Expand selected item                                        |
+ | `left`      | Unexpand selected item or select parent if not expanded     |
+ | `page-up`   | Page up                                                     |
+ | `page-down` | Page down                                                   |
+ | `A`         | Format as annotated address                                 |
+ | `b`         | Format as binary                                            |
+ | `B`         | Format as hex bytes with ASCII                              |
+ | `c`         | Format as character                                         |
+ | `d`         | Format as a signed integer                                  |
+ | `D`         | Format selected value using the default format for the type |
+ | `f`         | Format as float                                             |
+ | `h`         | Show help dialog                                            |
+ | `i`         | Format as instructions                                      |
+ | `o`         | Format as octal                                             |
 
 
 -	Thread & Stack Frames (Pane)
 
-	| Key         | Action
-	| :---------- | :--------------------------------------------
-	| `up`        | Select previous item
-	| `down`      | Select next item
-	| `right`     | Expand the selected item
-	| `left`      | Unexpand the selected item or select parent if
-	| `page-up`   | Page up
-	| `page-down` | Page down
-	| `h`         | Show help dialog
-	| `space`     | Toggle item expansion
-	| `,`         | Page up
-	| `.`         | Page down
+ | Key         | Action                                         |
+ | :---------- | :--------------------------------------------- |
+ | `up`        | Select previous item                           |
+ | `down`      | Select next item                               |
+ | `right`     | Expand the selected item                       |
+ | `left`      | Unexpand the selected item or select parent if |
+ | `page-up`   | Page up                                        |
+ | `page-down` | Page down                                      |
+ | `h`         | Show help dialog                               |
+ | `space`     | Toggle item expansion                          |
+ | `,`         | Page up                                        |
+ | `.`         | Page down                                      |
 
 <br>
 <br>
