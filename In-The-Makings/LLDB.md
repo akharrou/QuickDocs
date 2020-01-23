@@ -685,7 +685,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 -	***Set a breakpoint, on a function:***
 
-	> <small>`[Search Tags: >brset >setbr >sbr >sebr >breakpointset  >breakpointfunctions >breakpointfuncs >breakpointfts >breakpointfcs  >breakpointmain >setbreakpoint >brkptset >setbrkpt >breakptset >setbreakpt >brsetfunctions >brfunctions >brfuncs >brfts >brfcs >brsfunctions >brsfuncs >brsfts >brsfcs >brsmain]`</small>
+	> <small>`[Search Tags: >brset >setbr >sbr >sebr >breakpointset  >breakpointfunctions >breakpointfuncs >breakpointfts >breakpointfcs >breakpointmain >setbreakpoint >brkptset >setbrkpt >breakptset >setbreakpt >brsetfunctions >brfunctions >brfuncs >brfts >brfcs >brsfunctions >brsfuncs >brsfts >brsfcs >brsmain]`</small>
 
 	> ***Synopsis:***
 	>
@@ -932,13 +932,13 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 - ***Breakpoint Commands:***
 
-	> <small>`[Search Tags: >commandbreakpoint >commandsbreakpoint >breakpointcommands >commandbreakpt >commandsbreakpt >breakptcommands >commandbrkpt >commandsbrkpt >brkptcommands >commandbrpt >commandsbrpt >brptcommands >commandbr >commandsbr >brcommands >cmdbreakpoint >cmdsbreakpoint >breakpointcmds >cmdbreakpt >cmdsbreakpt >breakptcmds >cmdbrkpt >cmdsbrkpt >brkptcmds >cmdbrpt >cmdsbrpt >brptcmds >cmdbr >cmdsbr >brcmds >breakpointscrpt >scrptbreakpoint >scriptbreakpoint >breakpointscript >breakptscrpt >scrptbreakpt >scriptbreakpt >breakptscript >brkptscrpt >scrptbrkpt >scriptbrkpt >brkptscript >brptscrpt >scrptbrpt >scriptbrpt >brptscript >brscrpt >scrptbr >scriptbr >brscript]`</small>
+	> <small>`[Search Tags: >commandbreakpoint >commandsbreakpoint >breakpointcommands >commandbreakpt >commandsbreakpt >breakptcommands >commandbrkpt >commandsbrkpt >brkptcommands >commandbrpt >commandsbrpt >brptcommands >commandbr >commandsbr >brcommands >cmdbreakpoint >cmdsbreakpoint >breakpointcmds >cmdbreakpt >cmdsbreakpt >breakptcmds >cmdbrkpt >cmdsbrkpt >brkptcmds >cmdbrpt >cmdsbrpt >brptcmds >cmdbr >cmdsbr >brcmds >breakpointscrpt >scrptbreakpoint >scriptbreakpoint >breakpointscripts >breakptscrpts >scrptbreakpts >scriptbreakpts >breakptscripts >brkptscrpts >scrptbrkpts >scriptbrkpts >brkptscripts >brptscrpts >scrptbrpts >scriptbrpts >brptscripts >brscrpts >scrptbr >scriptbr >brscript]`</small>
 
 	<br>
 
 	- ***Set** [breakpoint] **command(s)** [to an existing breakpoint] **:***
 
-		> <small>`[Search Tags: >breakpointaddcommand >breakpointaddcmd >breakpointacmd >breakptaddcommand >breakptaddcmd >breakptadcmd >brkptaddcommand >brkptaddcmd >brkptadcmd >brptaddcommand >brptaddcmd >brptadcmd >braddcommand >braddcmd >bradcmd >breakpointaddscript >breakpointaddscrpt >breakpointadscrpt >breakptaddscript >breakptaddscrpt >breakptadscrpt >brkptaddscript >brkptaddscrpt >brkptadscrpt >brptaddscript >brptaddscrpt >brptadscrpt >braddscript >braddscrpt >bradscrpt >breakpointsetcommand >breakpointsetcmd >breakpointacmd >breakptsetcommand >breakptsetcmd >breakptsecmd >brkptsetcommand >brkptsetcmd >brkptsecmd >brptsetcommand >brptsetcmd >brptsecmd >brsetcommand >brsetcmd >brsecmd >breakpointsetscript >breakpointsetscrpt >breakpointsescrpt >breakptsetscript >breakptsetscrpt >breakptsescrpt >brkptsetscript >brkptsetscrpt >brkptsescrpt >brptsetscript >brptsetscrpt >brptsescrpt >brsetscript >brsetscrpt >brsescrpt]`</small>
+		> <small>`[Search Tags: >breakpointaddcommands >breakpointaddcmds >breakpointacmds >breakptaddcommands >breakptaddcmds >breakptadcmds >brkptaddcommands >brkptaddcmds >brkptadcmds >brptaddcommands >brptaddcmds >brptadcmds >braddcommands >braddcmds >bradcmds >breakpointaddscripts >breakpointaddscrpts >breakpointadscrpts >breakptaddscripts >breakptaddscrpts >breakptadscrpts >brkptaddscripts >brkptaddscrpts >brkptadscrpts >brptaddscripts >brptaddscrpts >brptadscrpts >braddscripts >braddscrpts >bradscrpts >breakpointsetcommands >breakpointsetcmds >breakpointacmds >breakptsetcommands >breakptsetcmds >breakptsecmds >brkptsetcommands >brkptsetcmds >brkptsecmds >brptsetcommands >brptsetcmds >brptsecmds >brsetcommands >brsetcmds >brsecmds >breakpointsetscripts >breakpointsetscrpts >breakpointsescrpts >breakptsetscripts >breakptssetscrpts >breakptssescrpts >brkptssetscripts >brkptssetscrpts >brkptssescrpts >brptssetscripts >brptssetscrpts >brptssescrpts >brsetscripts >brsetscrpts >brsescrpts]`</small>
 
 		> ***Synopsis:***
 		> ```shell
@@ -999,7 +999,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 	- ***List** [breakpoint] **command(s):***
 
-		> <small>`[Search Tags: >breakpointlistcommand >breakpointlistcmd >breakpointlscmd >breakptlistcommand >breakptlistcmd >breakptlscmd >brkptlistcommand >brkptlistcmd >brkptlscmd >brptlistcommand >brptlistcmd >brptlscmd >brlistcommand >brlistcmd >brlscmd >breakpointlicmd >breakptlicmd >brkptlicmd >brptlicmd >brlicmd]`</small>
+		> <small>`[Search Tags: >breakpointlistcommands >breakpointlistcmds >breakpointlscmds >breakptlistcommands >breakptlistcmds >breakptlscmds >brkptlistcommands >brkptlistcmds >brkptlscmds >brptlistcommands >brptlistcmds >brptlscmds >brlistcommands >brlistcmds >brlscmds >breakpointlicmds >breakptlicmds >brkptlicmds >brptlicmds >brlicmds]`</small>
 
 		> ***Synopsis:***
 		> ```shell
@@ -1016,7 +1016,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 	- ***Delete** [breakpoint] **command(s):***
 
-		> <small>`[Search Tags: >breakpointdeletecommand >breakpointdeletecmd >breakpointdecmd >breakptdeletecommand >breakptdeletecmd >breakptdecmd >brkptdeletecommand >brkptdeletecmd >brkptdecmd >brptdeletecommand >brptdeletecmd >brptdecmd >brdeletecommand >brdeletecmd >brdecmd]`</small>
+		> <small>`[Search Tags: >breakpointdeletecommands >breakpointdeletecmds >breakpointdecmds >breakptdeletecommands >breakptdeletecmds >breakptdecmds >brkptdeletecommands >brkptdeletecmds >brkptdecmds >brptdeletecommands >brptdeletecmds >brptdecmds >brdeletecommands >brdeletecmds >brdecmds]`</small>
 
 		> ***Synopsis:***
 		> ```shell
@@ -1082,23 +1082,179 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 > TODO: 3.4.1.3. Names
 
--	***Set breakpoint, with condition:***
+-	***Add** [breakpoint] **name(s):***
+
+	> <small>`[Search Tags: >namebreakpoints >addbreakpointnames >breakpointaddnames >breakpointanames >namebreakpts >addbreakptnames >breakptaddnames >breakptanames >namebrkpts >addbrkptnames >brkptaddnames >brkptanames >namebrpts >addbrptnames >brptaddnames >brptanames >namebrs >addbrnames >braddnames >branames  >createbreakpointnames >setbreakpointnames >breakpointcreatenames >breakpointsetnames >createbreakptnames >setbreakptnames >breakptcreatenames >breakptsetnames >createbrkptnames >setbrkptnames >brkptcreatenames >brkptsetnames >createbrptnames >setbrptnames >brptcreatenames >brptsetnames >createbrnames >setbrnames >brcreatenames >brsetnames]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint set <breakpt-definition> [--condition <expr>]
+	> breakpoint name add --name <breakpoint-name> [<breakpt-ids>]
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint set --line 14 --condition 'argc < 2'
-	> (lldb) br s -l 14 -c 'argc < 2'
+	> (lldb) breakpoint name add --name 'controlFlow' 1
+	> (lldb) br n a -N 'controlFlow' 1
 	> ```
 	> ```shell
-	> (lldb) breakpoint set --name baz --condition '(int)strcmp(y, "hello") == 0'
-	> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
+	> (lldb) breakpoint name add --name 'funcs' 3 2 7
+	> (lldb) br n a -N 'funcs' 3 2 7
+	> ```
+	>
+	> *<small>[**Note:** Alternatively, you can give breakpoints names at creation (i.e when `set`'ing them), ex: `(lldb) breakpoint set <definition> -N <breakpt-name>` - **end note**]</small>*
+
+<br>
+
+-	***List** [breakpoint] **names:***
+
+	> <small>`[Search Tags: >libreakpointnames >lsbreakpointnames >listbreakpointnames >breakpointlinames >breakpointlsnames >breakpointlistnames >libreakptnames >lsbreakptnames >listbreakptnames >breakptlinames >breakptlsnames >breakptlistnames >librkptnames >lsbrkptnames >listbrkptnames >brkptlinames >brkptlsnames >brkptlistnames >librptnames >lsbrptnames >listbrptnames >brptlinames >brptlsnames >brptlistnames >librnames >lsbrnames >listbrnames >brlinames >brlsnames >brlistnames]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> breakpoint name list
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint name list
+	> (lldb) br n l
 	> ```
 
+<br>
+
+-	***Un-name breakpoint(s):***
+
+	> <small>`[Search Tags: >debreakpointnames >delbreakpointnames >deletebreakpointnames >breakpointlinames >breakpointlsnames >breakpointdeletenames >debreakptnames >delbreakptnames >deletebreakptnames >breakptlinames >breakptlsnames >breakptdeletenames >debrkptnames >delbrkptnames >deletebrkptnames >brkptlinames >brkptlsnames >brkptdeletenames >debrptnames >delbrptnames >deletebrptnames >brptlinames >brptlsnames >brptdeletenames >debrnames >delbrnames >deletebrnames >brlinames >brlsnames >brdeletenames >breakpointunname >breakptunname >brkptunname >brptunname >brunname >unnamebreakpoints >unnamebreakpts >unnamebrkpts >unnamebrpts >unnamebrs >removebreakpointnames >breakpointremovenames >removebreakptnames >breakptremovenames >removebrkptnames >brkptremovenames >removebrptnames >brptremovenames >removebrnames >brremovenames >breakpointremvenames >breakpointremvnames >breakpointrmvnames >breakpointrmnames >breakptremvenames >breakptremvnames >breakptrmvnames >breakptrmnames >brkptremvenames >brkptremvnames >brkptrmvnames >brkptrmnames >brptremvenames >brptremvnames >brptrmvnames >brptrmnames >brremvenames >brremvnames >brrmvnames >brrmnames]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> breakpoint name delete [--name <breakpoint-name>] [<breakpt-id>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint name delete --name 'funcs' 3 2     # remove 'funcs' name from breakpoints 3 and 2
+	> (lldb) br n d -N 'funcs' 3 2
+	> ```
+
+<br>
+
+-	***Configure** [breakpoint] **names:***
+
+	> <small>`[Search Tags: >confbreakpointnames >configbreakpointnames >confbreakpointnames >configbreakpointnames >configurebreakpointnames >breakpointconfnames >breakpointconfignames >breakpointconfigurenames >confbreakptnames >configbreakptnames >confbreakptnames >configbreakptnames >configurebreakptnames >breakptconfnames >breakptconfignames >breakptconfigurenames >confbrkptnames >configbrkptnames >confbrkptnames >configbrkptnames >configurebrkptnames >brkptconfnames >brkptconfignames >brkptconfigurenames >confbrptnames >configbrptnames >confbrptnames >configbrptnames >configurebrptnames >brptconfnames >brptconfignames >brptconfigurenames >confbrnames >configbrnames >confbrnames >configbrnames >configurebrnames >brconfnames >brconfignames >brconfigurenames >breakpointnconfnames >breakpointnameconfnames >breakpointnconfignames >breakpointnameconfignames >breakpointnconfigurenames >breakpointnameconfigurenames >breakptnconfnames >breakptnameconfnames >breakptnconfignames >breakptnameconfignames >breakptnconfigurenames >breakptnameconfigurenames >brkptnconfnames >brkptnameconfnames >brkptnconfignames >brkptnameconfignames >brkptnconfigurenames >brkptnameconfigurenames >brptnconfnames >brptnameconfnames >brptnconfignames >brptnameconfignames >brptnconfigurenames >brptnameconfigurenames >brnconfnames >brnameconfnames >brnconfignames >brnameconfignames >brnconfigurenames >brnameconfigurenames]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> breakpoint name configure <cmd-options> [<breakpoint-names>]
+	> ```
+	>
+	> *<small>[**Note:***
+	>
+	> - *To clarify –– `breakpoint name configure` allows us to configure the options of breakpoints named as any of the `<breakpoint-names>` provided.*
+	>
+	> - *If you provide a breakpoint id, with the `--breakpoint-id` or `-B` option *[followed by `<breakpt-ids>`]*, the options will be copied from
+     the breakpoint, otherwise only the options specified will be set on the name.*
+	>
+	> *- **end note**]</small>*
+
+	<br>
+
+	-	***Disbale / Enable** [named breakpoints] **:***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint name configure [--disable] [--enable]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint name configure --disable 'funcs'
+		> (lldb) br n c -d 'funcs'
+		> ```
+		> ```shell
+		> (lldb) breakpoint name configure --enable 'controlFlow'
+		> (lldb) br n c -e 'controlFlow'
+		> ```
+
+	<br>
+
+	-	***Conditions:***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint name configure --condition <condition-epxr>
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint name configure
+		> (lldb) br n c
+		> ```
+
+	<br>
+
+	-	***Command:***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint name configure --command <command> <breakpoint-names>
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint name configure
+		> (lldb) br n c
+		> ```
+
+	<br>
+
+	-	***Attribute(s):***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint name configure [-i <boolean>] [-G <boolean>] [-o <boolean>] <breakpoint-names>
+		> ```
+		>
+		> ***Options:***
+		>
+    	> | Attribute                          | Abrv. | Description
+    	> | ---------------------------------- | ----- | ------------------------------------
+    	> | `--ignore-count <count>`           | `-i`  | Set the number of times this breakpoint is skipped before stopping; this is what is referred to as the *hit-count* option.
+    	> | `--auto-continue <boolean>`        | `-G`  | The breakpoint will auto-continue after running its commands.
+    	> | `--one-shot <boolean>`             | `-o`  | The breakpoint is deleted the first time it stops causes a stop.
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint name configure <breakpoint-name>
+		> (lldb) br n c
+		> ```
+
+	<br>
+
+	-	***Assign [to specific] thread(s):***
+
+		> ***Synopsis:***
+		> ```shell
+		> (lldb) breakpoint name configure [ --thread-index <index> ] <breakpoint-names>
+		> (lldb) breakpoint name configure [ --thread-name <name> ]   <breakpoint-names>
+		> (lldb) breakpoint name configure [ --thread-id <tid> ]      <breakpoint-names>
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint name configure --thread-index 3 'funcs'
+		> (lldb) br n c -x 3 'funcs'
+		> ```
+		> ```shell
+		> (lldb) breakpoint name configure --thread-name 'centralServer' 'controlFlow'
+		> (lldb) br n c -T 'centralServer' 'controlFlow'
+		> ```
+		> ```shell
+		> (lldb) breakpoint name configure --thread-id 483413 'others'
+		> (lldb) br n c -t 483413 'others'
+		> ```
+
+<br>
 
 <!--
 -	***Set a breakpoint options** (e.g. conditions, comamnds, ...):*
@@ -1167,7 +1323,10 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
 > | 2 | Manual Page | LLDB | `(lldb) help breakpoint name`
+> | 3 | Manual Page | LLDB | `(lldb) help breakpoint name add`
+> | 3 | Manual Page | LLDB | `(lldb) help breakpoint name list`
 > | 3 | Manual Page | LLDB | `(lldb) help breakpoint name configure`
+> | 3 | Manual Page | LLDB | `(lldb) help breakpoint name delete`
 
 
 ---
@@ -1182,9 +1341,9 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint set <definition> [ --thread-index <index> ]      # by index (in the process)
-	> (lldb) breakpoint set <definition> [ --thread-name <name> ]        # by name
-	> (lldb) breakpoint set <definition> [ --thread-id <tid> ]           # by tid (in the computer)
+	> (lldb) breakpoint set <definition> [ --thread-index <index> ]     # by index (in the process)
+	> (lldb) breakpoint set <definition> [ --thread-name <name> ]       # by name
+	> (lldb) breakpoint set <definition> [ --thread-id <tid> ]          # by tid (in the computer)
 	> ```
 	>
 	> ***Example(s):***
@@ -1198,7 +1357,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> ```
 	> ```shell
 	> (lldb) breakpoint set --name bar --thread-id 483413
-	> (lldb) br s -bar -t 483413
+	> (lldb) br s -n bar -t 483413
 	> ```
 
 
