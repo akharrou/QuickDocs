@@ -1036,12 +1036,12 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	>```
 	>
 	> ***Options:***
-    > | Abrv.                   | Attribute                   | Description
-    > | -------------------------- | --------------------------------------------|---------------------- |
-    > | `-i` | `--ignore-count <count>`     | Set the number of times this breakpoint is skipped before stopping; this is what is referred to as the *hit-count* option. |
-    > | `-G` | `--auto-continue <boolean>` | The breakpoint will auto-continue after running its commands.       |
-    > | `-o` | `--one-shot <boolean>`      | The breakpoint is deleted the first time it stops causes a stop.     |
-    > | `-m` | `--move-to-nearest-code <boolean>`     | Move breakpoints to nearest code. |
+    > | Abrv. | Attribute                          | Description
+    > | ----- | ---------------------------------- |------------------------------------
+    > | `-i`  | `--ignore-count <count>`           | Set the number of times this breakpoint is skipped before stopping; this is what is referred to as the *hit-count* option.
+    > | `-G`  | `--auto-continue <boolean>`        | The breakpoint will auto-continue after running its commands.
+    > | `-o`  | `--one-shot <boolean>`             | The breakpoint is deleted the first time it stops causes a stop.
+    > | `-m`  | `--move-to-nearest-code <boolean>` | Move breakpoints to nearest code.
 	>
 	> ***Example(s):***
 	> ```shell
