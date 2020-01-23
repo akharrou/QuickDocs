@@ -1176,9 +1176,9 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint set <definition> [ --thread-index <index> ]
-	> (lldb) breakpoint set <definition> [ --thread-name <name> ]
-	> (lldb) breakpoint set <definition> [ --thread-id <tid> ]
+	> (lldb) breakpoint set <definition> [ --thread-index <index> ]      # by index (in the process)
+	> (lldb) breakpoint set <definition> [ --thread-name <name> ]        # by name
+	> (lldb) breakpoint set <definition> [ --thread-id <tid> ]           # by tid (in the computer)
 	> ```
 	>
 	> ***Example(s):***
