@@ -39,11 +39,11 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.3.1. Basic Commands](#331-basic-commands)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
-			- [3.4.1.1. Basics](#3411-basic-commands)
-			- [3.4.1.2. Options](#3412-breakpoint-options)
-			- [3.4.1.3. Names](#3413-breakpoint-names)
-			- [3.4.1.4. Concerning C++ Programs](#)
-			- [3.4.1.5. Concerning Multi-Thread Programs](#)
+			- [3.4.1.1. Basics](#3411-basics)
+			- [3.4.1.2. Options](#3412-options)
+			- [3.4.1.3. Names](#3413-names)
+			- [3.4.1.4. Concerning C++ Programs](#3414-concerning-c-programs)
+			- [3.4.1.5. Concerning Multi-Thread Programs](#3415-concerning-multi-thread-programs)
 		- [3.4.2. Watchpoints](#342-watchpoints)
 			- [3.4.2.1. Basic Commands](#3421-basic-commands)
 			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
@@ -887,7 +887,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 - ***Breakpoint Conditions:***
 
-	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions]`</small>
+	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions >breakpointconds >breakptconds >brkptconds >brptconds >brconds]`</small>
 
 	<br>
 
@@ -910,7 +910,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 	<br>
 
-	- ***Add breakpoint condition** [on an existing breakpoint] **:***
+	- ***Add breakpoint condition** [to an existing breakpoint] **:***
 
 		> ***Synopsis:***
 		> ```shell
@@ -927,11 +927,11 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 - ***Breakpoint Commands:***
 
-	> <small>`[Search Tags: >breakpointsetcommands >breakptsetcommands >brkptsetcommands >brptsetcommands >brsetcommands >breakpointaddcommands >breakptaddcommands >brkptaddcommands >brptaddcommands >braddcommands >commandbreakpoint >commandbreakpt >commandbrkpt >commandbrpt >commandbr >breakpointcommands >breakptcommands >brkptcommands >brptcommands >brcommands >breakpointconfigcommands >breakpointconfigurecommands >breakptconfigcommands >breakptconfigurecommands >brkptconfigcommands >brkptconfigurecommands >brptconfigcommands >brptconfigurecommands >brconfigcommands >brconfigurecommands >commandbreakpoint >cmdbreakpoint >cmdsbreakpoint >commandbreakpt >cmdbreakpt >cmdsbreakpt >commandbrkpt >cmdbrkpt >cmdsbrkpt >commandbrpt >cmdbrpt >cmdsbrpt >commandbr >cmdbr >cmdsbr]`</small>
+	> <small>`[Search Tags: >commandbreakpoint >commandsbreakpoint >breakpointcommands >commandbreakpt >commandsbreakpt >breakptcommands >commandbrkpt >commandsbrkpt >brkptcommands >commandbrpt >commandsbrpt >brptcommands >commandbr >commandsbr >brcommands >cmdbreakpoint >cmdsbreakpoint >breakpointcmds >cmdbreakpt >cmdsbreakpt >breakptcmds >cmdbrkpt >cmdsbrkpt >brkptcmds >cmdbrpt >cmdsbrpt >brptcmds >cmdbr >cmdsbr >brcmds]`</small>
 
 	<br>
 
-	- ***Set** [breakpoint] **command(s)** (or script) [on an existing breakpoint] **:***
+	- ***Set** [breakpoint] **command(s)** [to an existing breakpoint] **:***
 
 		> <small>`[Search Tags: >breakpointaddcommand >breakpointaddcmd >breakpointacmd >breakptaddcommand >breakptaddcmd >breakptadcmd >brkptaddcommand >brkptaddcmd >brkptadcmd >brptaddcommand >brptaddcmd >brptadcmd >braddcommand >braddcmd >bradcmd >breakpointaddscript >breakpointaddscrpt >breakpointadscrpt >breakptaddscript >breakptaddscrpt >breakptadscrpt >brkptaddscript >brkptaddscrpt >brkptadscrpt >brptaddscript >brptaddscrpt >brptadscrpt >braddscript >braddscrpt >bradscrpt >breakpointsetcommand >breakpointsetcmd >breakpointacmd >breakptsetcommand >breakptsetcmd >breakptsecmd >brkptsetcommand >brkptsetcmd >brkptsecmd >brptsetcommand >brptsetcmd >brptsecmd >brsetcommand >brsetcmd >brsecmd >breakpointsetscript >breakpointsetscrpt >breakpointsescrpt >breakptsetscript >breakptsetscrpt >breakptsescrpt >brkptsetscript >brkptsetscrpt >brkptsescrpt >brptsetscript >brptsetscrpt >brptsescrpt >brsetscript >brsetscrpt >brsescrpt]`</small>
 
@@ -939,9 +939,10 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 		> ```shell
 		> breakpoint command add [--script-type <type>] [<breakpt-ids | breakpt-name>]
 		> ```
+		> Then you are prompted:
 		> ```
 		> > Enter your debugger command(s). Type 'DONE' to end.
-		> > <lldb-commands> ...
+		> > <lldb-commands>
 		> > ...
 		> > DONE
 		> ```
@@ -1029,17 +1030,28 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 	> <small>`[Search Tags: >attributebreakpoint >attribbreakpoint >atbbreakpoint >breakpointatbs >breakpointatts >breakpointattributes >breakpointattribs >attributebreakpt >attribbreakpt >atbbreakpt >breakptatbs >breakptatts >breakptattributes >breakptattribs >attributebrkpt >attribbrkpt >atbbrkpt >brkptatbs >brkptatts >brkptattributes >brkptattribs >attributebrpt >attribbrpt >atbbrpt >brptatbs >brptatts >brptattributes >brptattribs >attributebr >attribbr >atbbr >bratbs >bratts >brattributes >brattribs]`</small>
 
+	> ***Synopsis:***
 	> ```shell
-	> breakpoint set <definition> <conditions> <commands> [<attribute> <boolean> ...]
+	> breakpoint set <definition> <conditions> [<attribute> <boolean> ...]
 	>```
 	>
-
-    | Attribute                   | Description                                                         |
-    | :-------------------------- | :------------------------------------------------------------------ |
-    | `-i`, `--ignore-count <count>`     | Set the number of times this breakpoint is skipped before stopping; this is what is referred to as the *hit-count* option. |
-    | `-G`, `--auto-continue <boolean>` | The breakpoint will auto-continue after running its commands.       |
-    | `-o`, `--one-shot <boolean>`      | The breakpoint is deleted the first time it stops causes a stop.     |
-    | `-m`, `--move-to-nearest-code <boolean>`     | Move breakpoints to nearest code. |
+	> ***Options:***
+    > | Abrv.                   | Attribute                   | Description                                                         |
+    > | :-------------------------- | :--------------------------------------------|---------------------- |
+    > | `-i` | `--ignore-count <count>`     | Set the number of times this breakpoint is skipped before stopping; this is what is referred to as the *hit-count* option. |
+    > | `-G` | `--auto-continue <boolean>` | The breakpoint will auto-continue after running its commands.       |
+    > | `-o` | `--one-shot <boolean>`      | The breakpoint is deleted the first time it stops causes a stop.     |
+    > | `-m` | `--move-to-nearest-code <boolean>`     | Move breakpoints to nearest code. |
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --name foo --ignore-count 5 --one-shot true
+	> (lldb) breakpoint set -n foo -i 5 -o true
+	> ```
+	> ```shell
+	> (lldb) breakpoint set --name bar --condition 'argc > 3' --auto-continue
+	> (lldb) breakpoint set -n bar -c 'argc > 3' -G
+	> ```
 
 
 <br>
@@ -1058,41 +1070,28 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.3. Names
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >namedbreakpoint >nbreakpoint >namesbreakpoint >breakpointnames >namedbreakpt >nbreakpt >namesbreakpt >breakptnames >namedbrkpt >nbrkpt >namesbrkpt >brkptnames >namedbrpt >nbrpt >namesbrpt >brptnames >namedbr >nbr >namesbr >brnames]`</small>
 <br>
 <br>
-
 
 > TODO: 3.4.1.3. Names
 
+-	***Set breakpoint, with condition:***
 
-TODO: BREAKPOINT NAMES
-
-- ***Breakpoint Names:***
-
-	> <small>`[Search Tags: >namedbreakpoint >nbreakpoint >namesbreakpoint >breakpointnames >namedbreakpt >nbreakpt >namesbreakpt >breakptnames >namedbrkpt >nbrkpt >namesbrkpt >brkptnames >namedbrpt >nbrpt >namesbrpt >brptnames >namedbr >nbr >namesbr >brnames]`</small>
-
-	<br>
-
-	- ***Set breakpoint, with condition:***
-
-		> ***Synopsis:***
-		> ```shell
-		> breakpoint set <breakpt-definition> [--condition <expr>]
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> (lldb) breakpoint set --line 14 --condition 'argc < 2'
-		> (lldb) br s -l 14 -c 'argc < 2'
-		> ```
-		> ```shell
-		> (lldb) breakpoint set --name baz --condition '(int)strcmp(y, "hello") == 0'
-		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
-		> ```
-
-
-
+	> ***Synopsis:***
+	> ```shell
+	> breakpoint set <breakpt-definition> [--condition <expr>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --line 14 --condition 'argc < 2'
+	> (lldb) br s -l 14 -c 'argc < 2'
+	> ```
+	> ```shell
+	> (lldb) breakpoint set --name baz --condition '(int)strcmp(y, "hello") == 0'
+	> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
+	> ```
 
 
 <!--
@@ -1277,30 +1276,6 @@ TODO: 3.4.1.5. Concerning Multi-Thread Programs
 
 	> <small>`[Search Tags: >breakpointthreads >threadbreakpoint >multithreadedbreakpoint >multithreadbreakpoint >breakptthreads >threadbreakpt >multithreadedbreakpt >multithreadbreakpt >brkptthreads >threadbrkpt >multithreadedbrkpt >multithreadbrkpt >brptthreads >threadbrpt >multithreadedbrpt >multithreadbrpt >brthreads >threadbr >multithreadedbr >multithreadbr]`</small>
 
-	<br>
-
-	- ***Set breakpoint, with condition:***
-
-		> ***Synopsis:***
-		> ```shell
-		> breakpoint set <breakpt-definition> [--condition <expr>]
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> (lldb) breakpoint set --line 14 --condition 'argc < 2'
-		> (lldb) br s -l 14 -c 'argc < 2'
-		> ```
-		> ```shell
-		> (lldb) breakpoint set --name baz --condition '(int)strcmp(y, "hello") == 0'
-		> (lldb) br s -n baz -c '(int)strcmp(y, "hello") == 0'
-		> ```
-
-
----
-
-
-<!--
 -	***Set breakpoint, on thread:***
 
 	> ***Synopsis:***
@@ -1320,13 +1295,9 @@ TODO: 3.4.1.5. Concerning Multi-Thread Programs
 	> (lldb) breakpoint modify --condition 'my_var == 42' 3
 	> (lldb) br m -c 'my_var < 42' 4 2 8
 	> ```
-	>
-	> ```shell
 
-	> -q <queue-name> ( --queue-name <queue-name> )
-	>	The breakpoint stops only for threads in the queue whose name is given by this argument.
-	> ```
- -->
+	<!-- > -q <queue-name> ( --queue-name <queue-name> )
+	>	The breakpoint stops only for threads in the queue whose name is given by this argument. -->
 
 
 <br>
