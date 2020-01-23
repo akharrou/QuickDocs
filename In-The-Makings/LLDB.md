@@ -42,8 +42,8 @@ QuickDocs \| Low Level Debugger (LLDB)
 			- [3.4.1.1. Basics](#3411-basics)
 			- [3.4.1.2. Options](#3412-options)
 			- [3.4.1.3. Names](#3413-names)
-			- [3.4.1.4. Concerning C++ Programs](#3414-concerning-c-programs)
-			- [3.4.1.5. Concerning Multi-Thread Programs](#3415-concerning-multi-thread-programs)
+			- [3.4.1.4. C++ Programs](#3414-c-programs)
+			- [3.4.1.5. Multi-Threaded Programs](#3415-multi-threaded-programs)
 		- [3.4.2. Watchpoints](#342-watchpoints)
 			- [3.4.2.1. Basic Commands](#3421-basic-commands)
 			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
@@ -1049,8 +1049,8 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 	> (lldb) breakpoint set -n foo -i 5 -o true
 	> ```
 	> ```shell
-	> (lldb) breakpoint set --name bar --condition 'argc > 3' --auto-continue
-	> (lldb) breakpoint set -n bar -c 'argc > 3' -G
+	> (lldb) breakpoint set --name bar --condition 'argc > 3' --auto-continue true
+	> (lldb) breakpoint set -n bar -c 'argc > 3' -G true
 	> ```
 
 
@@ -1165,7 +1165,7 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.4. Concerning C++ Programs
+#### 3.4.1.4. C++ Programs
 <small>`[Search Tags: >breakpointcpp >cppbreakpoint >breakptcpp >cppbreakpt >brkptcpp >cppbrkpt >brptcpp >cppbrpt >brcpp >cppbr >breakpointc++ >c++breakpoint >breakptc++ >c++breakpt >brkptc++ >c++brkpt >brptc++ >c++brpt >brc++ >c++br]`</small>
 <br>
 <br>
@@ -1263,41 +1263,38 @@ Furhter below, we discover together more ***advanced commands*** ([§3.4.1.3](#3
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.5. Concerning Multi-Thread Programs
-<small>`[Search Tags: ]`</small>
+#### 3.4.1.5. Multi-Threaded Programs
+<small>`[Search Tags: >breakpointthreads >threadbreakpoint >multithreadedbreakpoint >multithreadbreakpoint >breakptthreads >threadbreakpt >multithreadedbreakpt >multithreadbreakpt >brkptthreads >threadbrkpt >multithreadedbrkpt >multithreadbrkpt >brptthreads >threadbrpt >multithreadedbrpt >multithreadbrpt >brthreads >threadbr >multithreadedbr >multithreadbr]`</small>
 <br>
 <br>
 
-TODO: 3.4.1.5. Concerning Multi-Thread Programs
-
-<br>
-
-- ***Breakpoints for Multi-Threaded Processes:***
-
-	> <small>`[Search Tags: >breakpointthreads >threadbreakpoint >multithreadedbreakpoint >multithreadbreakpoint >breakptthreads >threadbreakpt >multithreadedbreakpt >multithreadbreakpt >brkptthreads >threadbrkpt >multithreadedbrkpt >multithreadbrkpt >brptthreads >threadbrpt >multithreadedbrpt >multithreadbrpt >brthreads >threadbr >multithreadedbr >multithreadbr]`</small>
 
 -	***Set breakpoint, on thread:***
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint set ... [ -T or --thread-name  <thread-name>  ]
-	> (lldb)   "   "            [ -t or --thread-id    <thread-id>    ]
-	> (lldb)   "   "            [ -x or --thread-index <thread-index> ]
+	> (lldb) breakpoint set <definition> [ --thread-name <thread-name> ]
 	> ```
-	>  > The breakpoint stops only for the thread whose *`<name | id | index>`* matches.
+	> ```
+	> (lldb) breakpoint set <definition> [ --thread-id <thread-id> ]
+	> ```
+	> ```
+	> (lldb) breakpoint set <definition> [ --thread-index <thread-index> ]
+	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) br s -r 'Parser.+_Response' -t
-	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
+	> (lldb) breakpoint set --name foo --thread-name ''
+	> (lldb) br s -n foo -T ''
 	> ```
 	> ```shell
-	> (lldb) breakpoint modify --condition 'my_var == 42' 3
-	> (lldb) br m -c 'my_var < 42' 4 2 8
+	> (lldb) breakpoint set --name bar --thread-id ''
+	> (lldb) br s -bar -t ''
 	> ```
-
-	<!-- > -q <queue-name> ( --queue-name <queue-name> )
-	>	The breakpoint stops only for threads in the queue whose name is given by this argument. -->
+	> ```shell
+	> (lldb) breakpoint set --name baz --thread-index ''
+	> (lldb) br s -n baz -x ''
+	> ```
 
 
 <br>
