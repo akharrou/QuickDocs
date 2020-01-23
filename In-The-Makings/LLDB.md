@@ -884,7 +884,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 ---
 
->	*(**Note**) –– We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc…* <br>
+>	*<small>[Note: We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc… - end note]</small>* <br>
 
 ---
 
