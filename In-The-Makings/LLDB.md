@@ -1086,8 +1086,6 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 <br>
 <br>
 
-> TODO: 3.4.1.3. Names
-
 -	***Add** [breakpoint] **name(s):***
 
 	> <small>`[Search Tags: >namebreakpoints >addbreakpointnames >breakpointaddnames >breakpointanames >namebreakpts >addbreakptnames >breakptaddnames >breakptanames >namebrkpts >addbrkptnames >brkptaddnames >brkptanames >namebrpts >addbrptnames >brptaddnames >brptanames >namebrs >addbrnames >braddnames >branames  >createbreakpointnames >setbreakpointnames >breakpointcreatenames >breakpointsetnames >createbreakptnames >setbreakptnames >breakptcreatenames >breakptsetnames >createbrkptnames >setbrkptnames >brkptcreatenames >brkptsetnames >createbrptnames >setbrptnames >brptcreatenames >brptsetnames >createbrnames >setbrnames >brcreatenames >brsetnames]`</small>
@@ -1128,7 +1126,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> > (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
 	> > (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
 	> > ```
-	> > ***Breakpoint names** and their **configurations** live even after the breakpoints [themselves] are deleted.*
+	> > ***Breakpoint names** and their **configurations** live on even after the breakpoints [themselves] are deleted.*
 	> > *All set breakpoints that have the created breakpoint names are affected by their *[set]* configurations.*
 	>
 	> *<small>[**Note:** We can give breakpoints, when we create/`set` [them], (new or existing) names, like so: `(lldb) breakpoint set <definition> -N <breakpt-name>` - **end note**]</small>*
