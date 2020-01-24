@@ -40,10 +40,11 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 			- [3.4.1.1. Basic Commands](#3411-basic-commands)
-			- [3.4.1.2. Options](#3412-options)
-			- [3.4.1.3. Names](#3413-names)
-			- [3.4.1.4. Multi-Threaded Programs](#3414-multi-threaded-programs)
-			- [3.4.1.5. C++ Programs](#3415-c-programs)
+			- [3.4.1.2. Advanced Commands](#3412-advanced-commands)
+			- [3.4.1.3. Options](#3413-options)
+			- [3.4.1.4. Names](#3414-names)
+			- [3.4.1.5. Multi-Threaded Programs](#3415-multi-threaded-programs)
+			- [3.4.1.6. C++ Programs](#3416-c-programs)
 		- [3.4.2. Watchpoints](#342-watchpoints)
 			- [3.4.2.1. Basic Commands](#3421-basic-commands)
 			- [3.4.2.2. Options](#3422-options)
@@ -253,7 +254,7 @@ TODO : # 3. How do I use it ?
 
 	> *<small>[**Note**:*
 	>
-	> -	There is also a brief section on a set of *[compiler]* flags, which, basically, make up the other half of the [debugging](https://en.wikipedia.org/wiki/Debugging) tools/weapons available to you – ***the `"fsanitize"` family*** ([§3.1.2](#312-sanitizer-flags--fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br>
+	> -	*There is also a brief section on a set of *[compiler]* flags, which, basically, make up the other half of the [debugging](https://en.wikipedia.org/wiki/Debugging) tools/weapons available to you – ***the `"fsanitize"` family*** ([§3.1.2](#312-sanitizer-flags--fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br>*
 	>
 	> *- **end note**]</small>*
 
@@ -340,7 +341,7 @@ TODO : # 3. How do I use it ?
 
 	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer* –– enabled by *`-fsanitize=undefined`* –– performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks) (just another good resource)).
 
-	> *<small>[**Note:** For the better (more detailed and readable) diagnostic messages, compile with the `-g` [compiler] flag; the `-O0` [compiler] flag comes naturally along as well, to disable [compiler] optimizations. - **end note**]</small>*
+	> *<small>[**Note:** For the better diagnostic messages, compile with the `-g` [compiler] flag; the `-O0` [compiler] flag comes naturally along as well, to disable [compiler] optimizations. - **end note**]</small>*
 
 -	***Enable sanitizer** [checks] **:***
 
@@ -371,9 +372,7 @@ TODO : # 3. How do I use it ?
 	>
 	> - *It is not possible to have more than one the following sanitizers: *`-fsanitize=address`*, *`-fsanitize=thread`*, and *`-fsanitize=memory`*, at the same time.*
 	>
-	> - *Not all sanitizers are always supported on all machines.*
-	>
-	> - *Adding `-g` [compiler flag] causes better (i.e more detailed and readable) diagnostic messages to be produced [by the sanitizers], so keep it ! ... and don't ever forget: `-O0` [compiler flag] (to disable [compiler] optimizations).*
+	> - *Not all sanitizers are, always, supported, on all machines. Just try them.*
 	>
 	> *- **end note**]</small>*
 
@@ -653,7 +652,7 @@ TODO : # 3. How do I use it ?
 
 ---
 
-The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411-basics)) *[for operating on breakpoints]*, the ***breakpoint options*** ([§3.1.4.2](#3412-options)) available and how to utilise them, the usefulness and power of ***breakpoint names*** ([§3.1.4.3](#3413-names)) and that of configuring their options, breakpoints for multi-threaded programs ([§3.1.4.4](#3414-multi-threaded-programs)) and, finally, a few ***C++ specific breakpoint commands*** ([§3.1.4.5](#3415-c-programs)).
+The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411-basics)) *[for operating on breakpoints]*, the ***breakpoint options*** ([§3.1.4.2](#3413-options)) available and how to utilise them, the usefulness and power of ***breakpoint names*** ([§3.1.4.3](#3414-names)) and that of configuring their options, breakpoints for multi-threaded programs ([§3.1.4.4](#3415-multi-threaded-programs)) and, finally, a few ***C++ specific breakpoint commands*** ([§3.1.4.5](#3416-c-programs)).
 
 
 <br>
@@ -763,7 +762,24 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	>
 	> *- **end note**]</small>*
 
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
+> | 2 | Manual Page | LLDB | `(lldb) help breakpoint modify`
+
+
 ---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.1.2. Advanced Commands
+<small>`[Search Tags: >advancedbreakpoint >breakpointadvanceds >advancedbreakpt >breakptadvanceds >advancedbrkpt >brkptadvanceds >advancedbrpt >brptadvanceds >advancedbr >bradvanceds >advbreakpoint >breakpointadvs >advbreakpt >breakptadvs >advbrkpt >brkptadvs >advbrpt >brptadvs >advbr >bradvs]`</small>
+<br>
+<br>
 
 > *[A lil' more] Advanced commands for operating on breakpoints.*
 
@@ -798,9 +814,9 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 	> *<small>[**Note**:*
 	>
-	> - To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (`*`), e.g.: `1.*` or `3.*`.
+	> - *To enable only certain locations of a logical breakpoint, use the breakpoint disable command, passing the breakpoint ID followed by a dot-separated wildcard character (`*`), e.g.: `1.*` or `3.*`.*
 	>
-	> - It is also possible to set, initialy disabled, breakpoints:
+	> - *It is also possible to set, initialy disabled, breakpoints:*
 	>
 	> 	```shell
 	> 	(lldb) breakpoint set <breakpt-definition> [--disable]
@@ -873,7 +889,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.2. Options
+#### 3.4.1.3. Options
 <small>`[Search Tags: >optsbreakpoint >breakpointopts >breakpointops >opsbreakpoint >optionsbreakpoint >breakpointoptions >optsbreakpt >breakptopts >breakptops >opsbreakpt >optionsbreakpt >breakptoptions >optsbrkpt >brkptopts >brkptops >opsbrkpt >optionsbrkpt >brkptoptions >optsbrpt >brptopts >brptops >opsbrpt >optionsbrpt >brptoptions >optsbr >bropts >brops >opsbr >optionsbr >broptions]`</small>
 <br>
 <br>
@@ -1088,7 +1104,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.3. Names
+#### 3.4.1.4. Names
 <small>`[Search Tags: >namedbreakpoint >nbreakpoint >namesbreakpoint >breakpointnames >namedbreakpt >nbreakpt >namesbreakpt >breakptnames >namedbrkpt >nbrkpt >namesbrkpt >brkptnames >namedbrpt >nbrpt >namesbrpt >brptnames >namedbr >nbr >namesbr >brnames]`</small>
 <br>
 <br>
@@ -1337,7 +1353,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.4. Multi-Threaded Programs
+#### 3.4.1.5. Multi-Threaded Programs
 <small>`[Search Tags: >breakpointthreads >threadbreakpoint >multithreadedbreakpoint >multithreadbreakpoint >breakptthreads >threadbreakpt >multithreadedbreakpt >multithreadbreakpt >brkptthreads >threadbrkpt >multithreadedbrkpt >multithreadbrkpt >brptthreads >threadbrpt >multithreadedbrpt >multithreadbrpt >brthreads >threadbr >multithreadedbr >multithreadbr]`</small>
 <br>
 <br>
@@ -1379,7 +1395,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.1.5. C++ Programs
+#### 3.4.1.6. C++ Programs
 <small>`[Search Tags: >breakpointcpp >cppbreakpoint >breakptcpp >cppbreakpt >brkptcpp >cppbrkpt >brptcpp >cppbrpt >brcpp >cppbr >breakpointc++ >c++breakpoint >breakptc++ >c++breakpt >brkptc++ >c++brkpt >brptc++ >c++brpt >brc++ >c++br]`</small>
 <br>
 <br>
@@ -1491,7 +1507,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 TODO : WATCHPOINT SECTION
 
-The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421-basic-commands)) *[for operating on watchpoints]*, the ***watchpoint options*** ([§3.1.4.2](#3412-options)) available and how to utilise them, the usefulness and power of ***watchpoint names*** ([§3.1.4.3](#3413-names)) and that of configuring their options, watchpoints for multi-threaded programs ([§3.1.4.4](#3414-multi-threaded-programs)) and, finally, a few ***C++ specific watchpoint commands*** ([§3.1.4.5](#3415-c-programs)).
+The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421-basic-commands)) *[for operating on watchpoints]*, the ***watchpoint options*** ([§3.1.4.2](#3413-options)) available and how to utilise them, the usefulness and power of ***watchpoint names*** ([§3.1.4.3](#3414-names)) and that of configuring their options, watchpoints for multi-threaded programs ([§3.1.4.4](#3415-multi-threaded-programs)) and, finally, a few ***C++ specific watchpoint commands*** ([§3.1.4.5](#3416-c-programs)).
 -	Down below, we explore basic commands for operating on watchpoints ([§3.4.2.1](#3421-basic-commands)) – setting, listing and deleting watchpoints.
 
 -	Further below we go into more advanced commands ([§3.4.2.2](#3422-advanced-commands)) – setting watchpoint options.
@@ -1569,11 +1585,11 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 	> *<small>[**Note**:*
 	>
-	> We say:
+	> *We say:*
 	>
-	> - `breakpoint set variable` – sets watctpoints to watch for `<watch-type>` accesses on the `<size>`-byte **variable**, `<variable-name>`.
+	> - *`breakpoint set variable` – sets watctpoints to watch for `<watch-type>` accesses on the `<size>`-byte **variable**, `<variable-name>`.*
 	>
-	> - `breakpoint set expression` – sets watctpoints to watch for `<watch-type>` accesses on the `<size>`-byte **region, pointed to by the address** `<expr>`.
+	> - *`breakpoint set expression` – sets watctpoints to watch for `<watch-type>` accesses on the `<size>`-byte **region, pointed to by the address** `<expr>`.*
 	>
 	> *- **end note**]</small>*
 
@@ -1616,6 +1632,8 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 > *[A lil' more] Advanced commands for operating on watchpoints.*
 
+> <small>`[Search Tags: >advancedwatchpoint >watchpointadvanceds >advancedwatchpt >watchptadvanceds >advancedwapt >waptadvanceds >advancedwa >waadvanceds >advwatchpoint >watchpointadvs >advwatchpt >breakptadvs >advwapt >waptadvs >advwa >waadvs]`</small>
+
 <br>
 
 -	***Enable / Disable watchpoints:***
@@ -1647,9 +1665,9 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 	> *<small>[**Note**:*
 	>
-	> - To enable only certain locations of a logical watchpoint, use the watchpoint disable command, passing the watchpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.
+	> - *To enable only certain locations of a logical watchpoint, use the watchpoint disable command, passing the watchpoint ID followed by a dot-separated wildcard character (*), e.g. `1.*` or `3.*`.*
 	>
-	> - It is also possible to set, initialy disabled, watchpoints:
+	> - *It is also possible to set, initialy disabled, watchpoints:*
 	>
 	> 	```shell
 	> 	(lldb) watchpoint set <watchpt-definition> [--disable]
@@ -1981,13 +1999,13 @@ Command Options Usage:
 
 	> *<small>[**Note**:*
 	>
-	> - *To clarify [, in this [last] example] –* <br>
+	> - **To clarify [, this [last] example] ––* <br>*
 	>
-	>	- we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to *(i.e to be or come or be-given from or originate from)* a *[terminal [device]]* file, by the name of: `/dev/ttys001` – this is a running *[terminal]* shell *[instance]*, <br>
-	>	- we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>
-	>	- we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time, the file goes by the name: "`errFile`", <br>
-	>	- we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>
-	>	- we pass *[to our program]* three arguments.
+	>	- *we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to *(i.e to be or come or be-given from or originate from)* a *[terminal [device]]* file, by the name of: `/dev/ttys001` – this is a running *[terminal]* shell *[instance]*, <br>*
+	>	- *we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>*
+	>	- *we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time, the file goes by the name: "`errFile`", <br>*
+	>	- *we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>*
+	>	- *we pass *[to our program]* three arguments.*
 	>
 	> <br> *- **end note**]</small>*
 	>
