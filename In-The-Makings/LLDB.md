@@ -841,21 +841,27 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> ***Synopsis:***
 	>
 	> ```shell
-	> breakpoint set --all-files <regular-expression>                # Search all files
-	> breakpoint set --source-pattern-regexp <regular-expression>    # Search (only) specified files
+	> breakpoint set --all-files --source-pattern-regexp <regular-expression>                # Search in all files
+	> breakpoint set [--file <files> ...] --source-pattern-regexp <regular-expression>       # Search (only) in specified files
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) breakpoint set --all-files 'return (FAILURE);'
-	> (lldb) br s -A 'return (FAILURE);'
+	> (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);'
+	> (lldb) br s -A -p 'return \(FAILURE\);'
 	> ```
 	> ```shell
-	> (lldb) breakpoint set --source-pattern-regexp 'free(buckets);' --file 'core.c' --file 'cleanup.c'
-	> (lldb) br s -p 'free(buckets);' -f core.c -f cleanup.c
+	> (lldb) breakpoint set --file 'core.c' --file 'cleanup.c' --source-pattern-regexp 'if \('
+	> (lldb) br s -f core.c -f cleanup.c -p 'if \('
 	> ```
 
-	> *<small>[**Note**: Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file". - **end note**]</small>*
+	> *<small>[**Note:***
+	>
+	> - *Source file(s) are specified with the `-f` option. The `-f` option can be specified more than once. If no source files are specified, uses the current "default source file".*
+	>
+	> - *You cannot specific multiple regex-patterns at the same time; i.e you cannot do the following : `... -p <pattern> -p <pattern>`. It [`lldb`] will only search for the last pattern.*
+	>
+	> *- **end note**]</small>*
 
 
 <br>
@@ -1088,20 +1094,44 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint name add --name <breakpoint-name> [<breakpt-ids>]
+	> breakpoint name add --name <breakpt-name> [<breakpt-ids>]
 	> ```
 	>
 	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint name add --name 'controlFlow' 1
-	> (lldb) br n a -N 'controlFlow' 1
-	> ```
-	> ```shell
-	> (lldb) breakpoint name add --name 'funcs' 3 2 7
-	> (lldb) br n a -N 'funcs' 3 2 7
-	> ```
 	>
-	> *<small>[**Note:** Alternatively, you can give breakpoints names at creation (i.e when `set`'ing them), ex: `(lldb) breakpoint set <definition> -N <breakpt-name>` - **end note**]</small>*
+	> >```shell
+	> >(lldb) breakpoint name add --name 'controlFlow' 1
+	> >(lldb) br n a -N 'controlFlow' 1
+	> >```
+	> > *To clarify –– we are adding to the list of names of the breakpoint [of id] 1, the name 'controlFlow'.*
+	>
+	> > ```shell
+	> > (lldb) breakpoint name add --name 'funcs' 3 2 7
+	> > (lldb) br n a -N 'funcs' 3 2 7
+	> > ```
+	> > *To clarify –– we are adding to the list of names of the breakpoints [of id] 3, 2 and 7, the name 'funcs'.*
+	>
+	> ***Tip(s):***
+	> > *It is possible to create all the breakpoint names [we think we will need] at the beginning, configure them [the breakpoint names], and [only once configured,] start creating/`set`'ing our breakpoints.*
+	> > ```shell
+	> > (lldb) breakpoint name add --name 'func'
+	> > (lldb) breakpoint name add --name 'return'
+	> > (lldb) breakpoint name add --name 'controlFlow'
+	> > (lldb) breakpoint name add --name 'failure'
+	> > ```
+	> > *As we create/`set` them [the breakpoints], we can give them those [`add`'ed] names, using: `--breakpoint-name` or `-N` for short.*
+	> > ```shell
+	> > (lldb) breakpoint set --name foo --breakpoint-name 'func'
+	> > (lldb) br s -n foo -N 'func'
+	> > ```
+	> > ```shell
+	> > (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
+	> > (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
+	> > ```
+	> > ***Breakpoint names** and their **configurations** live even after the breakpoints [themselves] are deleted.*
+	> > *All set breakpoints that have the created breakpoint names are affected by their *[set]* configurations.*
+	>
+	> *<small>[**Note:** We can give breakpoints, when we create/`set` [them], (new or existing) names, like so: `(lldb) breakpoint set <definition> -N <breakpt-name>` - **end note**]</small>*
 
 <br>
 
@@ -1128,7 +1158,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint name delete [--name <breakpoint-name>] [<breakpt-id>]
+	> breakpoint name delete [--name <breakpt-name>] [<breakpt-id>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1143,14 +1173,27 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 	> <small>`[Search Tags: >confbreakpointnames >configbreakpointnames >confbreakpointnames >configbreakpointnames >configurebreakpointnames >breakpointconfnames >breakpointconfignames >breakpointconfigurenames >confbreakptnames >configbreakptnames >confbreakptnames >configbreakptnames >configurebreakptnames >breakptconfnames >breakptconfignames >breakptconfigurenames >confbrkptnames >configbrkptnames >confbrkptnames >configbrkptnames >configurebrkptnames >brkptconfnames >brkptconfignames >brkptconfigurenames >confbrptnames >configbrptnames >confbrptnames >configbrptnames >configurebrptnames >brptconfnames >brptconfignames >brptconfigurenames >confbrnames >configbrnames >confbrnames >configbrnames >configurebrnames >brconfnames >brconfignames >brconfigurenames >breakpointnconfnames >breakpointnameconfnames >breakpointnconfignames >breakpointnameconfignames >breakpointnconfigurenames >breakpointnameconfigurenames >breakptnconfnames >breakptnameconfnames >breakptnconfignames >breakptnameconfignames >breakptnconfigurenames >breakptnameconfigurenames >brkptnconfnames >brkptnameconfnames >brkptnconfignames >brkptnameconfignames >brkptnconfigurenames >brkptnameconfigurenames >brptnconfnames >brptnameconfnames >brptnconfignames >brptnameconfignames >brptnconfigurenames >brptnameconfigurenames >brnconfnames >brnameconfnames >brnconfignames >brnameconfignames >brnconfigurenames >brnameconfigurenames]`</small>
 
+	> ***Brief:***
+	>
+	> *`breakpoint name configure` allows to configure the options of breakpoints who have in their list of names anyone of the `<breakpoint-names>` provided.*
+	>
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint name configure <cmd-options> [<breakpoint-names>]
+	> breakpoint name configure <cmd-options> [<breakpt-name> ...]       # i.e, expanded below
+	> breakpoint name configure <condition> [<command> ...] [<attribute> ...] [<breakpt-name> ...]
 	> ```
 	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint name configure --condition '2 <= ac && ac <= 10' --command bt --command 'fr v' --auto-continue true controlFlow
+	> (lldb) br n c -c '2 <= ac && ac <= 10' -C bt -C 'fr v' -G controlFlow
+	> ```
+	>
+	> > *To clarify –– we are asking `lldb` to configure all breakpoints, named `controlFlow`, to break (only) when: `2 <= ac <= 10`, and following a break, to run the following [`lldb`] commands: `bt` and `fr v`, and to then `continue` execution [of the program] automatically.*
+
 	> *<small>[**Note:***
 	>
-	> - *To clarify –– `breakpoint name configure` allows us to configure the options of breakpoints named as any of the `<breakpoint-names>` provided.*
+	> - *For a better understanding with regards to the wisdom behind **breakpoint name configurations** (the most powerful and modular way of using breakpoints [in my opinion]), see: [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names).*
 	>
 	> - *If you provide a breakpoint id, with the `--breakpoint-id` or `-B` option *[followed by `<breakpt-ids>`]*, the options will be copied from
      the breakpoint, otherwise only the options specified will be set on the name.*
@@ -1159,60 +1202,75 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 	<br>
 
+	> *Deeper Look at Breakpoint Configuration Commands:*
+	---
+
 	-	***Disbale / Enable** [named breakpoints] **:***
+
+		> <small>`[Search Tags: >breakpointconfigureenable >breakpointconfiguredisable >configurebreakpointenable >configurebreakpointdisable >breakpointconfigenable >breakpointconfigdisable >configbreakpointenable >configbreakpointdisable >breakpointconfenable >breakpointconfdisable >confbreakpointenable >confbreakpointdisable >breakptconfigureenable >breakptconfiguredisable >configurebreakptenable >configurebreakptdisable >breakptconfigenable >breakptconfigdisable >configbreakptenable >configbreakptdisable >breakptconfenable >breakptconfdisable >confbreakptenable >confbreakptdisable >brkptconfigureenable >brkptconfiguredisable >configurebrkptenable >configurebrkptdisable >brkptconfigenable >brkptconfigdisable >configbrkptenable >configbrkptdisable >brkptconfenable >brkptconfdisable >confbrkptenable >confbrkptdisable >brptconfigureenable >brptconfiguredisable >configurebrptenable >configurebrptdisable >brptconfigenable >brptconfigdisable >configbrptenable >configbrptdisable >brptconfenable >brptconfdisable >confbrptenable >confbrptdisable >brconfigureenable >brconfiguredisable >configurebrenable >configurebrdisable >brconfigenable >brconfigdisable >configbrenable >configbrdisable >brconfenable >brconfdisable >confbrenable >confbrdisable]`</small>
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint name configure [--disable] [--enable]
+		> breakpoint name configure [--disable] [--enable] [<breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) breakpoint name configure --disable 'funcs'
+		> (lldb) breakpoint name configure --disable 'funcs'         # disable all breakpoints named: 'funcs'
 		> (lldb) br n c -d 'funcs'
 		> ```
 		> ```shell
-		> (lldb) breakpoint name configure --enable 'controlFlow'
+		> (lldb) breakpoint name configure --enable 'controlFlow'    # enable all breakpoints named: 'controlFlow'
 		> (lldb) br n c -e 'controlFlow'
 		> ```
 
 	<br>
 
-	-	***Conditions:***
+	-	***Configure condition:***
+
+		> <small>`[Search Tags: >breakpointconfigureconditions >breakpointconfigureconds >configurebreakpointconditions >configurebreakpointconds >breakpointconfigconditions >breakpointconfigconds >configbreakpointconditions >configbreakpointconds >breakpointconfconditions >breakpointconfconds >confbreakpointconditions >confbreakpointconds >breakptconfigureconditions >breakptconfigureconds >configurebreakptconditions >configurebreakptconds >breakptconfigconditions >breakptconfigconds >configbreakptconditions >configbreakptconds >breakptconfconditions >breakptconfconds >confbreakptconditions >confbreakptconds >brkptconfigureconditions >brkptconfigureconds >configurebrkptconditions >configurebrkptconds >brkptconfigconditions >brkptconfigconds >configbrkptconditions >configbrkptconds >brkptconfconditions >brkptconfconds >confbrkptconditions >confbrkptconds >brptconfigureconditions >brptconfigureconds >configurebrptconditions >configurebrptconds >brptconfigconditions >brptconfigconds >configbrptconditions >configbrptconds >brptconfconditions >brptconfconds >confbrptconditions >confbrptconds >brconfigureconditions >brconfigureconds >configurebrconditions >configurebrconds >brconfigconditions >brconfigconds >configbrconditions >configbrconds >brconfconditions >brconfconds >confbrconditions >confbrconds]`</small>
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint name configure --condition <condition-epxr>
+		> breakpoint name configure --condition <condition-epxr> [<breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) breakpoint name configure
+		> (lldb) breakpoint name configure --condition 'argc > 2'
+		> (lldb) br n c -c 'argc > 2'
+		> ```
+
+	<br>
+
+	-	***Configure command(s):***
+
+		> <small>`[Search Tags: >breakpointconfigurecommands >breakpointconfigurecmds >configurebreakpointcommands >configurebreakpointcmds >breakpointconfigcommands >breakpointconfigcmds >configbreakpointcommands >configbreakpointcmds >breakpointconfcommands >breakpointconfcmds >confbreakpointcommands >confbreakpointcmds >breakptconfigurecommands >breakptconfigurecmds >configurebreakptcommands >configurebreakptcmds >breakptconfigcommands >breakptconfigcmds >configbreakptcommands >configbreakptcmds >breakptconfcommands >breakptconfcmds >confbreakptcommands >confbreakptcmds >brkptconfigurecommands >brkptconfigurecmds >configurebrkptcommands >configurebrkptcmds >brkptconfigcommands >brkptconfigcmds >configbrkptcommands >configbrkptcmds >brkptconfcommands >brkptconfcmds >confbrkptcommands >confbrkptcmds >brptconfigurecommands >brptconfigurecmds >configurebrptcommands >configurebrptcmds >brptconfigcommands >brptconfigcmds >configbrptcommands >configbrptcmds >brptconfcommands >brptconfcmds >confbrptcommands >confbrptcmds >brconfigurecommands >brconfigurecmds >configurebrcommands >configurebrcmds >brconfigcommands >brconfigcmds >configbrcommands >configbrcmds >brconfcommands >brconfcmds >confbrcommands >confbrcmds]`</small>
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint name configure --command <command> [<breakpt-name> ...]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint name configure --command 'bt'
+		> (lldb) br n c
+		> ```
+		> ```shell
+		> (lldb) breakpoint name configure --command 'bt' --command 'frame view'
 		> (lldb) br n c
 		> ```
 
 	<br>
 
-	-	***Command:***
+	-	***Configure attribute(s):***
+
+		> <small>`[Search Tags: >breakpointconfigureattributes >breakpointconfigureattribs >configurebreakpointattributes >configurebreakpointattribs >breakpointconfigattributes >breakpointconfigattribs >configbreakpointattributes >configbreakpointattribs >breakpointconfattributes >breakpointconfattribs >confbreakpointattributes >confbreakpointattribs >breakptconfigureattributes >breakptconfigureattribs >configurebreakptattributes >configurebreakptattribs >breakptconfigattributes >breakptconfigattribs >configbreakptattributes >configbreakptattribs >breakptconfattributes >breakptconfattribs >confbreakptattributes >confbreakptattribs >brkptconfigureattributes >brkptconfigureattribs >configurebrkptattributes >configurebrkptattribs >brkptconfigattributes >brkptconfigattribs >configbrkptattributes >configbrkptattribs >brkptconfattributes >brkptconfattribs >confbrkptattributes >confbrkptattribs >brptconfigureattributes >brptconfigureattribs >configurebrptattributes >configurebrptattribs >brptconfigattributes >brptconfigattribs >configbrptattributes >configbrptattribs >brptconfattributes >brptconfattribs >confbrptattributes >confbrptattribs >brconfigureattributes >brconfigureattribs >configurebrattributes >configurebrattribs >brconfigattributes >brconfigattribs >configbrattributes >configbrattribs >brconfattributes >brconfattribs >confbrattributes >confbrattribs]`</small>
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint name configure --command <command> <breakpoint-names>
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> (lldb) breakpoint name configure
-		> (lldb) br n c
-		> ```
-
-	<br>
-
-	-	***Attribute(s):***
-
-		> ***Synopsis:***
-		> ```shell
-		> breakpoint name configure [-i <boolean>] [-G <boolean>] [-o <boolean>] <breakpoint-names>
+		> breakpoint name configure [-i <boolean>] [-G <boolean>] [-o <boolean>] [<breakpt-name> ...]
 		> ```
 		>
 		> ***Options:***
@@ -1225,19 +1283,21 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) breakpoint name configure <breakpoint-name>
-		> (lldb) br n c
+		> (lldb) breakpoint name configure --one-shot true 'funcs'
+		> (lldb) br n c -o true 'funcs'
 		> ```
 
 	<br>
 
-	-	***Assign [to specific] thread(s):***
+	-	***Configure thread(s):***
+
+		> <small>`[Search Tags: >breakpointconfigurethrds >breakpointconfigurethreads >configurebreakpointthrds >configurebreakpointthreads >breakpointconfigthrds >breakpointconfigthreads >configbreakpointthrds >configbreakpointthreads >breakpointconfthrds >breakpointconfthreads >confbreakpointthrds >confbreakpointthreads >breakptconfigurethrds >breakptconfigurethreads >configurebreakptthrds >configurebreakptthreads >breakptconfigthrds >breakptconfigthreads >configbreakptthrds >configbreakptthreads >breakptconfthrds >breakptconfthreads >confbreakptthrds >confbreakptthreads >brkptconfigurethrds >brkptconfigurethreads >configurebrkptthrds >configurebrkptthreads >brkptconfigthrds >brkptconfigthreads >configbrkptthrds >configbrkptthreads >brkptconfthrds >brkptconfthreads >confbrkptthrds >confbrkptthreads >brptconfigurethrds >brptconfigurethreads >configurebrptthrds >configurebrptthreads >brptconfigthrds >brptconfigthreads >configbrptthrds >configbrptthreads >brptconfthrds >brptconfthreads >confbrptthrds >confbrptthreads >brconfigurethrds >brconfigurethreads >configurebrthrds >configurebrthreads >brconfigthrds >brconfigthreads >configbrthrds >configbrthreads >brconfthrds >brconfthreads >confbrthrds >confbrthreads]`</small>
 
 		> ***Synopsis:***
 		> ```shell
-		> (lldb) breakpoint name configure [ --thread-index <index> ] <breakpoint-names>
-		> (lldb) breakpoint name configure [ --thread-name <name> ]   <breakpoint-names>
-		> (lldb) breakpoint name configure [ --thread-id <tid> ]      <breakpoint-names>
+		> (lldb) breakpoint name configure [ --thread-index <index> ] [<breakpt-name> ...]
+		> (lldb) breakpoint name configure [ --thread-name <name> ]   [<breakpt-name> ...]
+		> (lldb) breakpoint name configure [ --thread-id <tid> ]      [<breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -1250,68 +1310,9 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 		> (lldb) br n c -T 'centralServer' 'controlFlow'
 		> ```
 		> ```shell
-		> (lldb) breakpoint name configure --thread-id 483413 'others'
-		> (lldb) br n c -t 483413 'others'
+		> (lldb) breakpoint name configure --thread-id 483413 'returns'
+		> (lldb) br n c -t 483413 'returns'
 		> ```
-
-<br>
-
-<!--
--	***Set a breakpoint options** (e.g. conditions, comamnds, ...):*
-
-	> ***Synopsis:***
-	> ```shell
-	> breakpoint set ... [-c <condition-expr>] [-C <lldb-command>] [-N <breakpt-name>]
-	> breakpoint modify [-c <condition-expr>] [-C <lldb-command>] [<breakpt-ids | breakpt-name>]
-	>```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint set --name foo --condition '(int)strcmp(y,"hello") == 0'
-	> (lldb) br s -n foo -c '(int)strcmp(y,"hello") == 0'
-	> ```
-	> ```shell
-	> (lldb) breakpoint modify --condition 'my_var == 42' 3
-	> (lldb) br m -c 'my_var < 42' 4 2 8
-	> ```
-	>
-	> > *To clarify – the first command sets a condition to (only) the breakpoint that has the breakpoint-ID: `3`. The second command adds a condition, to all breakpoints found in the list of breakpoint-IDs [the breakpoints of ID: `4`, `2` and `8`].*
-	>
-	> ```shell
-	> (lldb) breakpoint set -n baz -N controlFlow
-	> (lldb) br m -c 'my_var > 42' -N controlFlow
-	> ```
-	>
-	> > *To clarify – the first command sets a breakpoint, on the function of name `baz`, then adds to the list of names, of that breakpoint, the name: `"controlFlow"`. Following that, the second command, adds a condition to all the breakpoints that have the name: `"controlFlow"` [added to their list of names].*
-	>
-	> This suffers from the problem that when new breakpoints get added, they don’t pick up these modifications, and the options only exist in the context of actual breakpoints, so they are hard to store & reuse.
-
-	***Create a configured breakpoint name***:
-	>
-	> ***Synopsis:***
-	> ```shell
-	> (lldb) breakpoint name configure <breakpt-options> <breakpt-name>
-	> (lldb) breakpoint name configure <breakpt-condition> <breakpt-command> <breakpt-other-options> <breakpt-name>
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint name configure -c "my_var > 42" -C bt --auto-continue 'controlFlow'
-	> ```
-	>
-	> Then you can apply the name to your breakpoints, and they will all pick up these options. The connection from name to breakpoints remains live, so when you change the options configured on the name, all the breakpoints pick up those changes.
-
-	***Add a breakpoint command***:
-	>
-	> ***Synopsis:***
-	> ```shell
-	> (lldb) breakpoint command add <breakpt-ids | breakpt-name>
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> ```
- -->
 
 
 <br>
