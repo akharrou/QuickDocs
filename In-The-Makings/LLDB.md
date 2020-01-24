@@ -1111,25 +1111,25 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> > ```
 	> > *To clarify –– we are adding to the list of names of the breakpoints [of id] 3, 2 and 7, the name 'funcs'.*
 	>
-	> ***Tip(s):***
-	> > *It is possible to create all the breakpoint names [we think we will need] at the beginning, configure them [the breakpoint names], and [only once configured,] start creating/`set`'ing our breakpoints.*
-	> > ```shell
-	> > (lldb) breakpoint name add --name 'func'
-	> > (lldb) breakpoint name add --name 'return'
-	> > (lldb) breakpoint name add --name 'controlFlow'
-	> > (lldb) breakpoint name add --name 'failure'
-	> > ```
-	> > *As we create/`set` them [the breakpoints], we can give them those [`add`'ed] names, using: `--breakpoint-name` or `-N` for short.*
-	> > ```shell
-	> > (lldb) breakpoint set --name foo --breakpoint-name 'func'
-	> > (lldb) br s -n foo -N 'func'
-	> > ```
-	> > ```shell
-	> > (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
-	> > (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
-	> > ```
-	> > ***Breakpoint names** and their **configurations** live even after the breakpoints [themselves] are deleted.*
-	> > *All set breakpoints that have the created breakpoint names are affected by their *[set]* configurations.*
+	> ***Tip(s):*** <br>
+	> *It is possible to create all the breakpoint names [we think we will need] at the beginning, configure them [the breakpoint names], and [only once configured,] start creating/`set`'ing our breakpoints.*
+	> ```shell
+	> (lldb) breakpoint name add --name 'func'
+	> (lldb) breakpoint name add --name 'return'
+	> (lldb) breakpoint name add --name 'controlFlow'
+	> (lldb) breakpoint name add --name 'failure'
+	> ```
+	> *As we create/`set` them [the breakpoints], we can give them those [`add`'ed] names, using: `--breakpoint-name` or `-N` for short.*
+	> ```shell
+	> (lldb) breakpoint set --name foo --breakpoint-name 'func'
+	> (lldb) br s -n foo -N 'func'
+	> ```
+	> ```shell
+	> (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
+	> (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
+	> ```
+	> ***Breakpoint names** and their **configurations** live even after the breakpoints [themselves] are deleted.*
+	> *All set breakpoints that have the created breakpoint names are affected by their *[set]* configurations.*
 	>
 	> *<small>[**Note:** We can give breakpoints, when we create/`set` [them], (new or existing) names, like so: `(lldb) breakpoint set <definition> -N <breakpt-name>` - **end note**]</small>*
 
