@@ -46,7 +46,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 			- [3.4.1.5. C++ Programs](#3415-c-programs)
 		- [3.4.2. Watchpoints](#342-watchpoints)
 			- [3.4.2.1. Basic Commands](#3421-basic-commands)
-			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
+			- [3.4.2.2. Options](#3422-options)
 	- [3.5. Begin Debugging](#35-start-or-attach-program)
 		- [3.5.1. Launch Program](#351-launch-program)
 		- [3.5.2. Attach to Program](#352-attach-to-program)
@@ -310,7 +310,7 @@ TODO : # 3. How do I use it ?
 -	***To make sure that no source code is not optimized away*** *(i.e modified by the compiler in order to optimize the [speed and efficiency of a] program)*, you'll have to add *[in the compilation step]* the *[compiler]* flag *(specific to the compiler used)* that ***turns off optimizations***; if you don't do this, then during *"examination phase"*, `lldb` might appear to be excuting *[the source code]* in a non-linear manner *(i.e it will (seem to) jump (skip) over some lines and loops, etc)*.
 
 	> For `clang` and `gcc` *[compilers]*, the flag is: `-O0`
-	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ '0'.
+	> <br> Uppercase letter /Oh/ `O`, followed by, the digit /zero/ `0`.
 
 
 <br>
@@ -336,30 +336,29 @@ TODO : # 3. How do I use it ?
 
 > *This section is unrelated to LLDB, but related to debugging.*
 
--	The `fsanitize` family of *[compiler]* flags, is an extraordinarily helpful set of *[compiler]* flags, with regards to debugging. They enable *[compiler]* *[runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase))* checks – *which are disabled by default* – that detect and help avoid bugs. If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
+-	The `fsanitize` family of *[compiler]* flags, is an extraordinarily helpful set of *[compiler]* flags, with regards to debugging. They enable *[compiler]* *[runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase))* checks –– *which are disabled by default* –– that detect and help avoid bugs. If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
-	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer* –– enabled by *`-fsanitize=undefined`* –– performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks), just another good resource).
+	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer* –– enabled by *`-fsanitize=undefined`* –– performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks) (just another good resource)).
 
 -	***Enable sanitizer** [checks] **:***
 
 	> ***Synopsis:***
 	> ```shell
-	> $> <compile-command> [-g -O0] [-fsanitize=<sanitizer-flag> ...]
+	> $> <compile-command> [-fsanitize=<sanitizer-flag> ...]
 	> ```
 	>
 	> ***Option(s):***
     >
     > | Sanitizer                                                                                                             | Flag                    | Description                                                         |
     > | :-------------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------- |
-    > | [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer) | `undefined`             | A detector for ***undefined behavior***.                            |
-    > | [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)                      | `address`               | A detector for ***memory errors*** (e.g. segmentation faults).      |
-    > | [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)                                                   | `memory`                | A detector for ***uninitialized reads***.                           |
-    > | [LeakSanitizer](https://clang.llvm.org/docs/LeakSanitizer.html)                                                       | `leak`                  | A detector for ***memory leakage***.                                |
-    > | [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)                        | `thread`                | A detector for ***data-race***.                                     |
-    > ||||
-    > | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `dataflow`              | A general ***data flow analysis***.                                 |
-    > | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `cfi`                   | ***Control flow*** checks.                                          |
-    > | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `safe-stack`            | Protection against ***stack-based memory*** corruption errors.      |
+    > | [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer) | `undefined`             | *A detector for ***undefined behavior***.*                            |
+    > | [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)                      | `address`               | *A detector for ***memory errors*** (e.g. segmentation faults).*      |
+    > | [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)                                                   | `memory`                | *A detector for ***uninitialized reads***.*                           |
+    > | [LeakSanitizer](https://clang.llvm.org/docs/LeakSanitizer.html)                                                       | `leak`                  | *A detector for ***memory leakage***.*                                |
+    > | [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)                        | `thread`                | *A detector for ***data-race***.*                                     |
+    > | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `dataflow`              | *A general ***data flow analysis***.*                                 |
+    > | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `cfi`                   | ****Control flow*** checks.*                                          |
+    > | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `safe-stack`            | *Protection against ***stack-based memory*** corruption errors.*      |
 	>
 	> ***Example:***
 	> ```shell
@@ -368,9 +367,9 @@ TODO : # 3. How do I use it ?
 
 	> *<small>[**Note:***
 	>
-	> - *Adding `-g` [compiler flag] causes better (i.e more detailed and readable) diagnostic messages to be produced [by the sanitizers], so keep it ! ... and the `-O0` [compiler flag] to disable [compiler] optimizations for a better debugging experience [to say the least]...*
-	>
 	> - *It is not possible to have more than one the following sanitizers: *`-fsanitize=address`*, *`-fsanitize=thread`*, and *`-fsanitize=memory`*, at the same time.*
+	>
+	> - *Adding `-g` [compiler flag] causes better (i.e more detailed and readable) diagnostic messages to be produced [by the sanitizers], so keep it ! ... and don't ever forget: `-O0` [compiler flag] (to disable [compiler] optimizations).*
 	>
 	> *- **end note**]</small>*
 
@@ -650,7 +649,7 @@ TODO : # 3. How do I use it ?
 
 ---
 
-The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411-basics)) for operating on breakpoints, discover what ***breakpoint options*** ([§3.1.4.2](#3412-options)) are and how to use them, see the usefulness of ***breakpoint names*** ([§3.1.4.3](#3413-names)), touch on breakpoints for multi-threaded programs ([§3.1.4.4](#3414-multi-threaded-programs)) and end off with a few ***C++ specific breakpoint commands*** ([§3.1.4.5](#3415-c-programs)).
+The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411-basics)) *[for operating on breakpoints]*, the ***breakpoint options*** ([§3.1.4.2](#3412-options)) available and how to utilise them, the usefulness and power of ***breakpoint names*** ([§3.1.4.3](#3413-names)) and that of configuring their options, breakpoints for multi-threaded programs ([§3.1.4.4](#3414-multi-threaded-programs)) and, finally, a few ***C++ specific breakpoint commands*** ([§3.1.4.5](#3415-c-programs)).
 
 
 <br>
@@ -737,8 +736,8 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 <br>
 
 -	***Delete breakpoint(s):***
+	> <small>`[Search Tags: >brdelete >deletebr >deletebrpt >deletebrkpt >deletebreakpt >deletebreakpoint >brdelete >brptdelete >brkptdelete >breakptdelete >breakpointdelete >debr >deletebr >deletebreakpoint >brunload >uldbr >breakpointunload >unloadbreakpoint >delbr >brdel >delbrpt >brptdel >delbrkpt >brkptdel >delbreakpt >breakptdel >delbreakpoint >breakpointdel]`</small>
 
-	> <small>`[Search Tags: >brdelete >deletebr >deletebrpt >deletebrkpt >deletebreakpt >deletebreakpoint >brdelete >brptdelete >brkptdelete >breakptdelete >breakpointdelete >debr >deletebr >deletetarge >brunload >unloadtr >uldtr >targetunload >unloadtargett >delbr >brdel >delbrpt >brptdel >delbrkpt >brkptdel >delbreakpt >breakptdel >delbreakpoint >breakpointdel]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -1054,8 +1053,19 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> (lldb) br s -n foo -i 5 -o true
 	> ```
 	> ```shell
-	> (lldb) breakpoint set --name bar --condition 'argc > 3' --auto-continue true
+	> (lldb) breakpoint set --name bar --condition 'argc > 3' --auto-continue true     # breakpoint-ID = 2
+	> (lldb) breakpoint command add 2                                                  # used here.
+	> Enter your debugger command(s).  Type 'DONE' to end.
+	> > frame variable
+	> > thread backtrace
+	> > DONE
+	>
 	> (lldb) br s -n bar -c 'argc > 3' -G true
+	> (lldb) br co a 2
+	> Enter your debugger command(s).  Type 'DONE' to end.
+	> > fr v
+	> > bt
+	> > DONE
 	> ```
 
 
@@ -1477,7 +1487,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 TODO : WATCHPOINT SECTION
 
-The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421-basic-commands)) for operating on watchpoints, discover what ***watchpoint options*** ([§3.1.4.2](#3412-options)) are and how to use them, see the usefulness of ***breakpoint names*** ([§3.1.4.3](#3413-names)), touch on breakpoints for multi-threaded programs ([§3.1.4.4](#3414-multi-threaded-programs)) and end off with a few ***C++ specific breakpoint commands*** ([§3.1.4.5](#3415-c-programs)).
+The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421-basic-commands)) *[for operating on watchpoints]*, the ***watchpoint options*** ([§3.1.4.2](#3412-options)) available and how to utilise them, the usefulness and power of ***watchpoint names*** ([§3.1.4.3](#3413-names)) and that of configuring their options, watchpoints for multi-threaded programs ([§3.1.4.4](#3414-multi-threaded-programs)) and, finally, a few ***C++ specific watchpoint commands*** ([§3.1.4.5](#3415-c-programs)).
 -	Down below, we explore basic commands for operating on watchpoints ([§3.4.2.1](#3421-basic-commands)) – setting, listing and deleting watchpoints.
 
 -	Further below we go into more advanced commands ([§3.4.2.2](#3422-advanced-commands)) – setting watchpoint options.
@@ -1498,26 +1508,25 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.2.1. Basic Commands
-<small>`[Search Tags: >watchpointbasiccommands >watchpointbasiccmds >watchptbasiccommands >watchptbasiccmds >wakptbasiccommands >wakptbasiccmds >wabasiccommands >wabasiccmds >bbasiccommands >bbasiccmds >watchpointbasics >watchptbasics >wakptbasics >wabasics >bbasics >waptcommands >waptcmds >waptbasiccommands >waptbasiccmds >waptbasics >watchpointcreate >createwatchpoint >crwatchpoint >watchptcreate >createwatchpt >crwatchpt >wakptcreate >createwakpt >crwakpt >waptcreate >createwapt >crwapt >wacreate >createwa >crwa]`</small>
+<small>`[Search Tags: >basicwatchpoint >basicswatchpoint >watchpointbasics >basicwatchpt >basicswatchpt >watchptbasics >basicwapt >basicswapt >waptbasics >basicwapt >basicswapt >waptbasics >basicwa >basicswa >wabasics]`</small>
 <br>
 <br>
 
-TODO : REVIEW WATCHPOINT BASICS
 
 > *(Basic) Commands for operating on watchpoints.*
 
 -	***Set a watchpoint:***
 
-	> <small>`[Search Tags: >waset >setwa >swa >sewa >watchpointset  >watchpointfunctions >watchpointfuncs >watchpointfts >watchpointfcs  >watchpointmain >setwatchpoint >wakptset >setwakpt >watchptset >setwatchpt >wasetvariables >wavariables >wavars >wavrs >wavas >wasvariables >wasvars >wasvrs >wasvas >wasvs]`</small>
+	> <small>`[Search Tags: >createwatchpoint >crwatchpoint >sewatchpoint >swatchpoint >watchpointcreates >setwatchpoint >watchpointsets >createwatchpt >crwatchpt >sewatchpt >swatchpt >watchptcreates >setwatchpt >watchptsets >createwapt >crwapt >sewapt >swapt >waptcreates >setwapt >waptsets >createwa >crwa >sewa >swa >wacreates >setwa >wasets]`</small>
 
 	> ***Synopsis:***
 	>
-	> *on a variable:*
+	> > *on a variable:*
 	> > ```shell
 	> > watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
 	> > ```
 	>
-	> *on an address *[by supplying an expression]*:*
+	> > *on an address *[by supplying an expression]*:*
 	> > ```shell
 	> > watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
 	> > watchpoint set expression <expr>
@@ -1525,13 +1534,14 @@ TODO : REVIEW WATCHPOINT BASICS
 	>
 	> ***Option(s):***
 	> ```shell
-	> -s <byte-size> ( --size <byte-size> )
-	> 		Number of bytes to use to watch a region.
-	> 		Values: 1 | 2 | 4 | 8
-	>
-	> -w <watch-type> ( --watch <watch-type> )
-	> 		Specify the type of watching to perform.
-	> 		Values: read | write | read_write
+	>  -s <byte-size> ( --size <byte-size> )
+	>		Number of bytes to use to watch a region.
+	>		Values: 1 | 2 | 4 | 8
+	> ```
+	> ```shell
+	>  -w <watch-type> ( --watch <watch-type> )
+	>		Specify the type of watching to perform.
+	>		Values: read | write | read_write
 	> ```
 	>
 	> ***Example(s):***
@@ -1542,12 +1552,12 @@ TODO : REVIEW WATCHPOINT BASICS
 	>
 	> ```shell
 	> (lldb) watchpoint set variable   --watch write --size 8 -- my_PtrToLongInt
-	> (lldb) watchpoint set expression --watch write --size 8 -- my_PtrToLongInt
-	>
 	> (lldb) wa s v -w write -s 8 -- my_PtrToLongInt
+	> ```
+	> ```shell
+	> (lldb) watchpoint set expression --watch write --size 8 -- my_PtrToLongInt
 	> (lldb) wa s e -w write -s 8 -- my_PtrToLongInt
 	> ```
-	>
 	> ```shell
 	> (lldb) watchpoint set expression --watch read --size 4 -- 0x00007ffeefbff510
 	> (lldb) wa s e -w read -s 4 -- 0x00007ffeefbff510
@@ -1565,11 +1575,11 @@ TODO : REVIEW WATCHPOINT BASICS
 
 -	***List watchpoints:***
 
-	> <small>`[Search Tags: >walst >walist >listwa >liwa >watchlist >listwatch >watchptslist >watchptptlists >listwatchpts, >watchpointlist]`</small>
+	> <small>`[Search Tags: >watchpointlist >watchpointls >listwatchpoint >lstwatchpoint >lswatchpoint >liwatchpoint >watchptlist >watchptls >listwatchpt >lstwatchpt >lswatchpt >liwatchpt >waptlist >waptls >listwapt >lstwapt >lswapt >liwapt >walist >wals >listwa >lstwa >lswa >liwa]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> watchpoint list -[bv] [<watchpt-ids>]
+	> watchpoint list -[bfv] [<watchpt-ids>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1581,7 +1591,7 @@ TODO : REVIEW WATCHPOINT BASICS
 
 -	***Delete watchpoint(s):***
 
-	> <small>`[Search Tags: >wadelete >dewatchpoint >brdelete >deletebr >deletebrpt >deletebrkpt >deletebreakpt >deletebreakpoint >brdelete >brptdelete >brkptdelete >breakptdelete >breakpointdelete >debr >deletebr >deletetarge >brunload >unloadtr >uldtr >targetunload >unloadtargett >delbr >brdel >delbrpt >brptdel >delbrkpt >brkptdel >delbreakpt >breakptdel >delbreakpoint >breakpointdel]`</small>
+	> <small>`[Search Tags: >wadelete >deletewa >deletewapt >deletewatchpt >deletewatchpoint >wadelete >waptdelete >watchptdelete >watchpointdelete >dewa >deletewa >deletetarge >waunload >unloadwatchpoints >uldwatchpoints >watchpointunload >unloadwatchpoint >delwa >wadel >delwapt >waptdel >delwatchpt >watchptdel >delwatchpoint >watchpointdel]`</small>
 
 	> ***Synopsis:***
 	>
@@ -1598,20 +1608,15 @@ TODO : REVIEW WATCHPOINT BASICS
 	> *<small>[**Note**: If no watchpoints are specified, delete them all. - **end note**]</small>*
 
 
-TODO : WATCHPOINT ADVANCED COMMANDS
-
 ---
 
-> *[A lil' more] Advanced commands for operating on breakpoints.*
+> *[A lil' more] Advanced commands for operating on watchpoints.*
 
 <br>
 
-
-> *Advanced commands for operating on watchpoints:*
-
 -	***Enable / Disable watchpoints:***
 
-	> <small>`[Search Tags: >watchpointenable >watchptenable >brkptenable >brptenable >brenable >watchpointdisable >watchptdisable >brkptdisable >brptdisable >brdisable >enablewatchpoint >enablewatchpt >enablebrkpt >enablebrpt >enablebr >disablewatchpoint >disablewatchpt >disablebrkpt >disablebrpt >disablebr]`</small>
+	> <small>`[Search Tags: >watchpointenable >watchptenable >waptenable >waenable >watchpointdisable >watchptdisable >waptdisable >wadisable >enablewatchpoint >enablewatchpt >enablewapt >enablewa >disablewatchpoint >disablewatchpt >disablewapt >disablewa]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -1632,7 +1637,7 @@ TODO : WATCHPOINT ADVANCED COMMANDS
 	> (lldb) br di 3.*
 	> ```
 	> ```shell
-	> (lldb) watchpoint enable 2 6 3.2   # enable watchpoints: 2, 6 and 3.2
+	> (lldb) watchpoint enable 2 6 3.2    # enable watchpoints: 2, 6 and 3.2
 	> (lldb) br en 2 6 3.2
 	> ```
 
@@ -1648,12 +1653,37 @@ TODO : WATCHPOINT ADVANCED COMMANDS
 	>
 	> *- **end note**]</small>*
 
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help watchpoint modify`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint command`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint command add`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint command list`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint command delete`
+
+
 ---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.2.2 Options
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: #### 3.4.2.2 Options
+
 
 >	*<small>[**Note**: We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"* - **end note**]</small>* <br>
 
 ---
-
+<!--
 -	***Set watchpoint options:***
 
 	-	***Conditions:***
@@ -1669,6 +1699,10 @@ TODO : WATCHPOINT ADVANCED COMMANDS
 		> (lldb) watch set var global
 		> (lldb) watchpoint modify -c '(global == 5)'
 		> ```
+  watchpoint modify [-c <expr>] [<watchpt-id | watchpt-id-list>]
+
+       -c <expr> ( --condition <expr> )
+            The watchpoint stops only if this condition expression evaluates to true.
 
     -	***Commands:***
 
@@ -1684,33 +1718,19 @@ TODO : WATCHPOINT ADVANCED COMMANDS
 		> (lldb) watchpoint modify -c '(global == 5)'
 		> ```
 
-    -	***Attributes:***
+		add    -- Add a set of LLDB commands to a watchpoint, to be executed whenever the watchpoint is hit.
+		delete -- Delete the set of commands from a watchpoint.
+		list -->
 
-		> ***Synopsis:***
-		> ```
-		> watchpoint modify [-C <lldb-command>] [<watchpt-ids>]
-		> watchpoint command add [<watchpt-ids>]
-		> ```
-		>
-		> ***Example(s):***
-		> ```
-		> (lldb) watch set var global
-		> (lldb) watchpoint modify -c '(global == 5)'
-		> ```
+Set ignore count on the specified watchpoint(s).  If no watchpoints are specified, set them all.
 
--	***Set watchpoint scripts:***
+Syntax:
 
-	> ***Synopsis:***
-	> ```
-	> watchpoint modify [-C <lldb-command>] [<watchpt-ids>]
-	> watchpoint command add [<watchpt-ids>]
-	> ```
-	>
-	> ***Example(s):***
-	> ```
-	> (lldb) watch set var global
-	> (lldb) watchpoint modify -c '(global == 5)'
-	> ```
+Command Options Usage:
+  watchpoint ignore -i <count> [<watchpt-id | watchpt-id-list>]
+
+       -i <count> ( --ignore-count <count> )
+            Set the number of times this watchpoint is skipped before stopping.
 
 
 <br>
@@ -1720,11 +1740,11 @@ TODO : WATCHPOINT ADVANCED COMMANDS
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help watchpoint set`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint list`
-> | 3 | Manual Page | LLDB | `(lldb) help watchpoint delete`
-> | 3 | Manual Page | LLDB | `(lldb) help watchpoint enable`
-> | 3 | Manual Page | LLDB | `(lldb) help watchpoint disable`
+> | 1 | Manual Page | LLDB | `(lldb) help watchpoint modify`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint command`
+> | 3 | Manual Page | LLDB | `(lldb) help watchpoint command add`
+> | 4 | Manual Page | LLDB | `(lldb) help watchpoint command list`
+> | 5 | Manual Page | LLDB | `(lldb) help watchpoint command delete`
 
 
 ---
