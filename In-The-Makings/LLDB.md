@@ -338,6 +338,8 @@ TODO : # 3. How do I use it ?
 
 -	The `fsanitize` family of *[compiler]* flags, is an extraordinarily helpful set of *[compiler]* flags, with regards to debugging. They enable *[compiler]* *[runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase))* checks –– *which are disabled by default* –– that detect and help avoid bugs. If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
+	> *<small>[**Note:** For the better (more detailed and readable) diagnostic messages, compile with the `-g` [compiler] flag. - **end note**]</small>*
+
 	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer* –– enabled by *`-fsanitize=undefined`* –– performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks) (just another good resource)).
 
 -	***Enable sanitizer** [checks] **:***
@@ -368,6 +370,8 @@ TODO : # 3. How do I use it ?
 	> *<small>[**Note:***
 	>
 	> - *It is not possible to have more than one the following sanitizers: *`-fsanitize=address`*, *`-fsanitize=thread`*, and *`-fsanitize=memory`*, at the same time.*
+	>
+	> - *Not all sanitizers are always supported on all machines.*
 	>
 	> - *Adding `-g` [compiler flag] causes better (i.e more detailed and readable) diagnostic messages to be produced [by the sanitizers], so keep it ! ... and don't ever forget: `-O0` [compiler flag] (to disable [compiler] optimizations).*
 	>
