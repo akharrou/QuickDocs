@@ -1111,7 +1111,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> > ```
 	> > *To clarify –– we are adding to the list of names of the breakpoints [of id] 3, 2 and 7, the name 'funcs'.*
 	>
-	> ***Tip(s):*** <br>
+	> ***Tip(s):*** <br> <br>
 	> *It is possible to create all the breakpoint names [we think we will need] at the beginning, configure them [the breakpoint names], and [only once configured,] start creating/`set`'ing our breakpoints.*
 	> ```shell
 	> (lldb) breakpoint name add --name 'func'
