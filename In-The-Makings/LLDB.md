@@ -336,41 +336,41 @@ TODO : # 3. How do I use it ?
 
 > *This section is unrelated to LLDB, but related to debugging.*
 
--	The `fsanitize` family of *[compiler]* flags, is an extraordinarily helpful set of *[compiler]* flags, with regards to debugging. They enable *[compiler]* *[runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase))* checks – *which are disabled by default* – that detect and help avoid bugs. <br>
+-	The `fsanitize` family of *[compiler]* flags, is an extraordinarily helpful set of *[compiler]* flags, with regards to debugging. They enable *[compiler]* *[runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase))* checks – *which are disabled by default* – that detect and help avoid bugs. If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
-	If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
+	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer* –– enabled by *`-fsanitize=undefined`* –– performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks), just another good resource).
 
-	> *<small>[**Note**: Adding the `-g` flag causes better (i.e more detailed) diagnostic messages to be produced [by the sanitizers], so keep it ! - **end note**]</small>*
-
-	Here are the ***available sanitizers***:
-
-    | Sanitizer                                                                                                             | Flag                    | Description                                                         |
-    | :-------------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------- |
-    | [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer) | `undefined`             | A detector for ***undefined behavior***.                            |
-    | [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)                      | `address`               | A detector for ***memory errors*** (e.g. segmentation faults).      |
-    | [LeakSanitizer](https://clang.llvm.org/docs/LeakSanitizer.html)                                                       | `leak`                  | A detector for ***memory leakage***.                                |
-    | [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)                                                   | `memory`                | A detector for ***uninitialized reads***.                           |
-    | [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)                        | `thread`                | A detector for ***data-race***.                                     |
-    | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `dataflow`              | A general ***data flow analysis***.                                 |
-    | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `cfi`                   | ***Control flow*** checks.                                          |
-    | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `safe-stack`            | Protection against ***stack-based memory*** corruption errors.      |
-
-	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer* –– enabled by *[the sanitizer flag:]* *`-fsanitize=undefined`* –– performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks), just another good resource).
-
--	***Enable sanitizer checks***:
+-	***Enable sanitizer** [checks] **:***
 
 	> ***Synopsis:***
 	> ```shell
 	> $> <compile-command> [-g] [-fsanitize=<sanitizer-flag> ...]
 	> ```
 	>
+	> ***Option(s):***
+    > | Sanitizer                                                                                                             | Flag                    | Description                                                         |
+    > | :-------------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------- |
+    > | [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer) | `undefined`             | A detector for ***undefined behavior***.                            |
+    > | [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)                      | `address`               | A detector for ***memory errors*** (e.g. segmentation faults).      |
+    > | [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)                                                   | `memory`                | A detector for ***uninitialized reads***.                           |
+    > | [LeakSanitizer](https://clang.llvm.org/docs/LeakSanitizer.html)                                                       | `leak`                  | A detector for ***memory leakage***.                                |
+    > | [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)                        | `thread`                | A detector for ***data-race***.                                     |
+    > | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `dataflow`              | A general ***data flow analysis***.                                 |
+    > | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `cfi`                   | ***Control flow*** checks.                                          |
+    > | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `safe-stack`            | Protection against ***stack-based memory*** corruption errors.      |
 	> ***Example:***
 	> ```shell
 	> $> gcc source.c -g -fsanitize=address -fsanitize=undefined
 	> ```
 
-	> *<small>[**Note**:* It is not possible to have more than one the following sanitizers: *"`-fsanitize=address`"*, *"`-fsanitize=thread`"*, and *"`-fsanitize=memory`"*, at the same time. *- **end note**]*
+	> *<small>[**Note:***
 	>
+	> - *Adding the `-g` flag causes better (i.e more detailed) diagnostic messages to be produced [by the sanitizers], so keep it !*
+	>
+	> - *It is not possible to have more than one the following sanitizers: *"`-fsanitize=address`"*, *"`-fsanitize=thread`"*, and *"`-fsanitize=memory`"*, at the same time.*
+	>
+	> *- **end note**]</small>*
+
 
 <br>
 <br>
