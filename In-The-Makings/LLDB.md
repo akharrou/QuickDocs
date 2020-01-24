@@ -47,7 +47,8 @@ QuickDocs \| Low Level Debugger (LLDB)
 			- [3.4.1.6. C++ Programs](#3416-c-programs)
 		- [3.4.2. Watchpoints](#342-watchpoints)
 			- [3.4.2.1. Basic Commands](#3421-basic-commands)
-			- [3.4.2.2. Options](#3422-options)
+			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
+			- [3.4.2.3. Options](#3423-options)
 	- [3.5. Begin Debugging](#35-start-or-attach-program)
 		- [3.5.1. Launch Program](#351-launch-program)
 		- [3.5.2. Attach to Program](#352-attach-to-program)
@@ -771,7 +772,8 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
-> | 2 | Manual Page | LLDB | `(lldb) help breakpoint modify`
+> | 2 | Manual Page | LLDB | `(lldb) help breakpoint list`
+> | 3 | Manual Page | LLDB | `(lldb) help breakpoint delete`
 
 
 ---
@@ -962,7 +964,9 @@ TODO :	-	***Modify assigned** [breakpoint] **thread:***
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
-> | 2 | Manual Page | LLDB | `(lldb) help breakpoint modify`
+> | 2 | Manual Page | LLDB | `(lldb) help breakpoint enable`
+> | 3 | Manual Page | LLDB | `(lldb) help breakpoint disable`
+> | 4 | Manual Page | LLDB | `(lldb) help breakpoint modify`
 
 
 ---
@@ -1706,11 +1710,26 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 	> *<small>[**Note**: If no watchpoints are specified, delete them all. - **end note**]</small>*
 
 
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help watchpoint set`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint list`
+> | 3 | Manual Page | LLDB | `(lldb) help watchpoint delete`
+
+
 ---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+#### 3.4.2.2. Advanced Commands
+<small>`[Search Tags: >advancedwatchpoint >watchpointadvanceds >advancedwatchpt >watchptadvanceds >advancedwapt >waptadvanceds >advancedwa >waadvanceds >advwatchpoint >watchpointadvs >advwatchpt >breakptadvs >advwapt >waptadvs >advwa >waadvs]`</small>
+<br>
+<br>
 
 > *[A lil' more] Advanced commands for operating on watchpoints.*
-
-> <small>`[Search Tags: >advancedwatchpoint >watchpointadvanceds >advancedwatchpt >watchptadvanceds >advancedwapt >waptadvanceds >advancedwa >waadvanceds >advwatchpoint >watchpointadvs >advwatchpt >breakptadvs >advwapt >waptadvs >advwa >waadvs]`</small>
 
 <br>
 
@@ -1763,21 +1782,19 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | LLDB | `(lldb) help watchpoint modify`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint command`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint command add`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint command list`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint command delete`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint enable`
+> | 3 | Manual Page | LLDB | `(lldb) help watchpoint disable`
 
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.2.2 Options
-<small>`[Search Tags: >]`</small>
+#### 3.4.2.3 Options
+<small>`[Search Tags: >waops]`</small>
 <br>
 <br>
 
 
-> TODO: #### 3.4.2.2 Options
+> TODO: #### 3.4.2.3 Options
 
 
 >	*<small>[**Note**: We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"* - **end note**]</small>* <br>
