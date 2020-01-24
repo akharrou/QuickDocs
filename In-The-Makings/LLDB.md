@@ -356,6 +356,7 @@ TODO : # 3. How do I use it ?
     > | [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)                                                   | `memory`                | A detector for ***uninitialized reads***.                           |
     > | [LeakSanitizer](https://clang.llvm.org/docs/LeakSanitizer.html)                                                       | `leak`                  | A detector for ***memory leakage***.                                |
     > | [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)                        | `thread`                | A detector for ***data-race***.                                     |
+    > ||||
     > | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `dataflow`              | A general ***data flow analysis***.                                 |
     > | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `cfi`                   | ***Control flow*** checks.                                          |
     > | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `safe-stack`            | Protection against ***stack-based memory*** corruption errors.      |
