@@ -344,7 +344,7 @@ TODO : # 3. How do I use it ?
 
 	> ***Synopsis:***
 	> ```shell
-	> $> <compile-command> [-g] [-fsanitize=<sanitizer-flag> ...]
+	> $> <compile-command> [-g -O0] [-fsanitize=<sanitizer-flag> ...]
 	> ```
 	>
 	> ***Option(s):***
@@ -363,12 +363,12 @@ TODO : # 3. How do I use it ?
 	>
 	> ***Example:***
 	> ```shell
-	> $> gcc source.c -g -fsanitize=address -fsanitize=undefined
+	> $> gcc source.c -g -O0 -fsanitize=address -fsanitize=undefined
 	> ```
 
 	> *<small>[**Note:***
 	>
-	> - *Adding the `-g` flag causes better (i.e more detailed) diagnostic messages to be produced [by the sanitizers], so keep it !*
+	> - *Adding `-g` [compiler flag] causes better (i.e more detailed) diagnostic messages to be produced [by the sanitizers], so keep it ! ... and the `-O0` [compiler flag] to disable [compiler] optimizations for a better debugging experience [to say the least]...*
 	>
 	> - *It is not possible to have more than one the following sanitizers: *"`-fsanitize=address`"*, *"`-fsanitize=thread`"*, and *"`-fsanitize=memory`"*, at the same time.*
 	>
