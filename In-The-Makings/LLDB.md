@@ -652,7 +652,7 @@ TODO : # 3. How do I use it ?
 
 ---
 
-The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411-basics)) *[for operating on breakpoints]*, the ***breakpoint options*** ([§3.1.4.2](#3413-options)) available and how to utilise them, the usefulness and power of ***breakpoint names*** ([§3.1.4.3](#3414-names)) and that of configuring their options, breakpoints for multi-threaded programs ([§3.1.4.4](#3415-multi-threaded-programs)) and, finally, a few ***C++ specific breakpoint commands*** ([§3.1.4.5](#3416-c-programs)).
+The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) as well as [slightly] more ***advanced commands*** ([§3.4.1.2](#3412-advanced-commands)) *[for operating on breakpoints]*, then into the available ***breakpoint options*** ([§3.4.1.3](#3413-options)) and how to utilise them, also, we discover the [amazing] usefulness and power of ***breakpoint names*** ([§3.4.1.4](#3414-names)) and that of configuring their options, additionally we briefly see the breakpoint facilites for multi-threaded programs ([§3.4.1.5](#3415-multi-threaded-programs)) and, finally, a few ***C++** ([§3.4.1.6](#3416-c-programs)) [specific] **breakpoint commands***.
 
 
 <br>
@@ -874,6 +874,84 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> - *You cannot specific multiple regex-patterns at the same time; i.e you cannot do the following : `... -p <pattern> -p <pattern>`. It [`lldb`] will only search for the last pattern.*
 	>
 	> *- **end note**]</small>*
+
+<br>
+
+-	***Modify** [existant] **breakpoint(s)** [option(s)] **:***
+
+	> <small>`[Search Tags: >modbreakpoint >modifbreakpoint >mobreakpoint >mbreakpoint >modifybreakpoint >breakpointmodify >modbreakpt >modifbreakpt >mobreakpt >mbreakpt >modifybreakpt >breakptmodify >modbrkpt >modifbrkpt >mobrkpt >mbrkpt >modifybrkpt >brkptmodify >modbrpt >modifbrpt >mobrpt >mbrpt >modifybrpt >brptmodify >modbr >modifbr >mobr >mbr >modifybr >brmodify]`</small>
+
+	<br>
+
+	> **Description** –– *<small>`breakpoint modify` allows to **modify** the options on [existant] breakpoint(s) [in the executable]. With the exception of --enable (`-e`), --disable (`-d`) and --count (`-i`) [flags], passing an empty
+                 argument clears the modification.</small>*
+	>
+	> *<small>[**Note:***
+	>
+	> -	*With the exception of `--enable` (`-e`), `--disable` (`-d`) and `--ignore-count` (`-i`) [flags], passing an empty
+                 argument clears the modification.*
+	>
+	> -	*If no breakpoint is specified, acts on the last created breakpoint.*
+	>
+	> *- **end note**]</small>*
+
+	<br>
+
+TODO :	-	***Modify** [breakpoint] **condition:***
+
+		> ***Synopsis:***
+		>
+		> ```shell
+		> breakpoint modify
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> ```
+		> ```shell
+		> ```
+
+TODO :	-	***Modify** [breakpoint] **command(s):***
+
+		> ***Synopsis:***
+		>
+		> ```shell
+		> breakpoint modify
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> ```
+		> ```shell
+		> ```
+
+TODO :	-	***Modify** [breakpoint] **attribute(s):***
+
+		> ***Synopsis:***
+		>
+		> ```shell
+		> breakpoint modify
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> ```
+		> ```shell
+		> ```
+
+TODO :	-	***Modify assigned** [breakpoint] **thread:***
+
+		> ***Synopsis:***
+		>
+		> ```shell
+		> breakpoint modify
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> ```
+		> ```shell
+		> ```
 
 
 <br>
