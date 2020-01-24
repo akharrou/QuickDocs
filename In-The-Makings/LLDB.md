@@ -1448,7 +1448,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> br s -E c++ -h True -w False
 	> ```
 
-	> *<small>[**Note**:* To set a breakpoint on specific exception objects, there exists the `--exception-typename` (`-O`) option, but it is unfortunately only supported for **Swift**, at the moment (22/01/2020). *- **end note**]</small>*
+	> *<small>[**Note**:* *To set a breakpoint on specific exception objects, there exists the `--exception-typename` (`-O`) option, but it is unfortunately only supported for **Swift**, at the moment (22/01/2020).* *- **end note**]</small>*
 
 
 <br>
@@ -1464,17 +1464,18 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 ---
 [🏠](#contents) | [⬅️](#341-breakpoints) | [➡️](#35-start-or-attach-program)
 ### 3.4.2. Watchpoints
-<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints]`</small>
+<small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >secwatchpoint >sectwatchpoint >sectionwatchpoint >watchpointsection >secwatchpt >sectwatchpt >sectionwatchpt >watchptsection >secwapt >sectwapt >sectionwapt >waptsection >secwa >sectwa >sectionwa >wasection]`</small>
 <br>
 <br>
 
 
->	*(**Definition**) Watchpoint: is a (special) kind of breakpoint (debugging mechanism) whereby execution is suspended every time a specified variable or memory-location is accessed for reading and/or writing.*
+>	*(**Definition**) Watchpoint: a (special) kind of breakpoint (debugging mechanism) whereby execution is suspended every time a specified variable or memory-location is accessed for reading and/or writing.*
 >
 >	*––  [Wikitionary :: Watchpoint](https://en.wiktionary.org/wiki/watchpoint)*
 
 ---
 
+The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421-basic-commands)) for operating on watchpoints, discover what ***watchpoint options*** ([§3.1.4.2](#3412-options)) are and how to use them, see the usefulness of ***breakpoint names*** ([§3.1.4.3](#3413-names)), touch on breakpoints for multi-threaded programs ([§3.1.4.4](#3414-multi-threaded-programs)) and end off with a few ***C++ specific breakpoint commands*** ([§3.1.4.5](#3415-c-programs)).
 -	Down below, we explore basic commands for operating on watchpoints ([§3.4.2.1](#3421-basic-commands)) – setting, listing and deleting watchpoints.
 
 -	Further below we go into more advanced commands ([§3.4.2.2](#3422-advanced-commands)) – setting watchpoint options.
@@ -1593,29 +1594,6 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 	> *<small>[**Note**: If no watchpoints are specified, delete them all. - **end note**]</small>*
 
 
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help watchpoint set`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint list`
-> | 3 | Manual Page | LLDB | `(lldb) help watchpoint delete`
-
-
----
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-#### 3.4.2.2. Advanced Commands
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: #### 3.4.2.2. Advanced Commands
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
 > *Advanced commands for operating on watchpoints:*
 
@@ -1658,6 +1636,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 	> *- **end note**]</small>*
 
+TODO : WATCHPOINT ADVANCED COMMANDS
 
 > **Note** *--* *We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"*, e.g.: , etc…*
 
@@ -1727,7 +1706,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
+> | 1 | Manual Page | LLDB | `(lldb) help watchpoint set`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint list`
+> | 3 | Manual Page | LLDB | `(lldb) help watchpoint delete`
+> | 3 | Manual Page | LLDB | `(lldb) help watchpoint enable`
+> | 3 | Manual Page | LLDB | `(lldb) help watchpoint disable`
 
 
 ---
