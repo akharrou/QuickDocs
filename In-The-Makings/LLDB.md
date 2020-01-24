@@ -348,6 +348,7 @@ TODO : # 3. How do I use it ?
 	> ```
 	>
 	> ***Option(s):***
+    >
     > | Sanitizer                                                                                                             | Flag                    | Description                                                         |
     > | :-------------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------- |
     > | [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer) | `undefined`             | A detector for ***undefined behavior***.                            |
@@ -358,6 +359,7 @@ TODO : # 3. How do I use it ?
     > | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `dataflow`              | A general ***data flow analysis***.                                 |
     > | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `cfi`                   | ***Control flow*** checks.                                          |
     > | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `safe-stack`            | Protection against ***stack-based memory*** corruption errors.      |
+	>
 	> ***Example:***
 	> ```shell
 	> $> gcc source.c -g -fsanitize=address -fsanitize=undefined
