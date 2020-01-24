@@ -1475,6 +1475,8 @@ The following subsections dive into: the ***basic commands*** ([§3.4.1.1](#3411
 
 ---
 
+TODO : WATCHPOINT SECTION
+
 The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421-basic-commands)) for operating on watchpoints, discover what ***watchpoint options*** ([§3.1.4.2](#3412-options)) are and how to use them, see the usefulness of ***breakpoint names*** ([§3.1.4.3](#3413-names)), touch on breakpoints for multi-threaded programs ([§3.1.4.4](#3414-multi-threaded-programs)) and end off with a few ***C++ specific breakpoint commands*** ([§3.1.4.5](#3415-c-programs)).
 -	Down below, we explore basic commands for operating on watchpoints ([§3.4.2.1](#3421-basic-commands)) – setting, listing and deleting watchpoints.
 
@@ -1499,6 +1501,8 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 <small>`[Search Tags: >watchpointbasiccommands >watchpointbasiccmds >watchptbasiccommands >watchptbasiccmds >wakptbasiccommands >wakptbasiccmds >wabasiccommands >wabasiccmds >bbasiccommands >bbasiccmds >watchpointbasics >watchptbasics >wakptbasics >wabasics >bbasics >waptcommands >waptcmds >waptbasiccommands >waptbasiccmds >waptbasics >watchpointcreate >createwatchpoint >crwatchpoint >watchptcreate >createwatchpt >crwatchpt >wakptcreate >createwakpt >crwakpt >waptcreate >createwapt >crwapt >wacreate >createwa >crwa]`</small>
 <br>
 <br>
+
+TODO : REVIEW WATCHPOINT BASICS
 
 > *(Basic) Commands for operating on watchpoints.*
 
@@ -1594,6 +1598,14 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 	> *<small>[**Note**: If no watchpoints are specified, delete them all. - **end note**]</small>*
 
 
+TODO : WATCHPOINT ADVANCED COMMANDS
+
+---
+
+> *[A lil' more] Advanced commands for operating on breakpoints.*
+
+<br>
+
 
 > *Advanced commands for operating on watchpoints:*
 
@@ -1636,9 +1648,11 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 	>
 	> *- **end note**]</small>*
 
-TODO : WATCHPOINT ADVANCED COMMANDS
+---
 
-> **Note** *--* *We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"*, e.g.: , etc…*
+>	*<small>[**Note**: We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"* - **end note**]</small>* <br>
+
+---
 
 -	***Set watchpoint options:***
 
