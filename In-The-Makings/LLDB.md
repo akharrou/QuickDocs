@@ -880,7 +880,6 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
-
 -	***Modify** [existant] **breakpoint(s)** [option(s)] **:***
 
 	> <small>`[Search Tags: >modbreakpoint >modifbreakpoint >mobreakpoint >mbreakpoint >modifybreakpoint >breakpointmodify >modbreakpt >modifbreakpt >mobreakpt >mbreakpt >modifybreakpt >breakptmodify >modbrkpt >modifbrkpt >mobrkpt >mbrkpt >modifybrkpt >brkptmodify >modbrpt >modifbrpt >mobrpt >mbrpt >modifybrpt >brptmodify >modbr >modifbr >mobr >mbr >modifybr >brmodify]`</small>
@@ -938,80 +937,10 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	>
 	> -	*If no breakpoint is specified, acts on the last created breakpoint.*
 	>
-	> -	*To set/modify breakpoint commands, see `breakpoint command`, search "`>brcommands`".*
+	> -	*To set/modify breakpoint commands, see `help breakpoint command`, or search "`>brcommands`".*
 	>
 	> *- **end note**]</small>*
 
-
-<!--
--	***Modify** [existant] **breakpoint(s)** [option(s)] **:***
-
-	> <small>`[Search Tags: >modbreakpoint >modifbreakpoint >mobreakpoint >mbreakpoint >modifybreakpoint >breakpointmodify >modbreakpt >modifbreakpt >mobreakpt >mbreakpt >modifybreakpt >breakptmodify >modbrkpt >modifbrkpt >mobrkpt >mbrkpt >modifybrkpt >brkptmodify >modbrpt >modifbrpt >mobrpt >mbrpt >modifybrpt >brptmodify >modbr >modifbr >mobr >mbr >modifybr >brmodify]`</small>
-
-	<br>
-
-	> **Brief**
-	>
-	> *`breakpoint modify` allows to **modify** the options on [existant] breakpoint(s) [in the executable]. With the exception of --enable (`-e`), --disable (`-d`) and --count (`-i`) [flags], passing an empty argument clears the modification.*
-	>
-	> ***Synopsis:***
-	> ```shell
-	> breakpoint modify <cmd-options> [<breakpt-id> ...]
-	> ```
-
-	> ***Command Options:***
-
-	> |  **Enablement** | Abrv. | Description
-	> | ------------------------------- | ----- | ---------------------------
-	> | `--disable`                     | `-d`  | Disable the breakpoint.
-	> | `--enable`                      | `-e`  | Enable the breakpoint.
-	>
-	> ```shell
-	> (lldb) breakpoint modify --disable 3
-	> (lldb) br m -d 3
-	> ```
-
-	> | **Options** | Abrv. | Description
-	> | ------------------------------- | ----- | ---------------------------
-	> | `--condition <condition-expr>`  | `-c`  | The breakpoint stops only if this condition expression evaluates to true.
-	> |||
-	> | `--ignore-count <count>`        | `-i`  | Set the number of times this breakpoint is skipped before stopping.
-	> | `--auto-continue <boolean>`     | `-G`  | The breakpoint will auto-continue after running its commands.
-	> | `--one-shot <boolean>`          | `-o`  | The breakpoint is deleted the first time it stop causes a stop.
-	>
-	> ```shell
-	> (lldb) breakpoint modify --condition 'ac < 2' --one-shot true 4 2 7
-	> (lldb) br m -c 'ac < 2' -o true 4 2 7
-	> ```
-
-	> | **Thread** | Abrv. | Description
-	> | ------------------------------- | ----- | ---------------------------
-	> | `--thread-index <thread-index>` | `-x`  | The breakpoint stops only for the thread whose index matches this argument.
-	> | `--thread-id <thread-id>`       | `-t`  | The breakpoint stops only for the thread whose TID matches this argument.
-	> | `--thread-name <thread-name>`   | `-T`  | The breakpoint stops only for the thread whose thread name matches this argument.
-	>
-	> ```shell
-	> (lldb) breakpoint modify --thread-id 6
-	> (lldb) br m -t 6
-	> ```
-	>
-	> *<small>[**Note:***
-	>
-	> -	*With the exception of `--enable` (`-e`), `--disable` (`-d`) and `--ignore-count` (`-i`) [flags], passing an empty
-                 argument clears the modification.*
-	>
-	> -	*If no breakpoint is specified, acts on the last created breakpoint.*
-	>
-	> *- **end note**]</small>*
- -->
-<!--
-	> <small>`[Search Tags: >breakpointmodifyconditions >breakpointmodifconditions >breakpointmodconditions >breakpointmconditions >breakpointmoconditions >breakptmodifyconditions >breakptmodifconditions >breakptmodconditions >breakptmconditions >breakptmoconditions >brkptmodifyconditions >brkptmodifconditions >brkptmodconditions >brkptmconditions >brkptmoconditions >brptmodifyconditions >brptmodifconditions >brptmodconditions >brptmconditions >brptmoconditions >brmodifyconditions >brmodifconditions >brmodconditions >brmconditions >brmoconditions >modifybreakpointconditions >modifbreakpointconditions >modbreakpointconditions >mbreakpointconditions >mobreakpointconditions >modifybreakptconditions >modifbreakptconditions >modbreakptconditions >mbreakptconditions >mobreakptconditions >modifybrkptconditions >modifbrkptconditions >modbrkptconditions >mbrkptconditions >mobrkptconditions >modifybrptconditions >modifbrptconditions >modbrptconditions >mbrptconditions >mobrptconditions >modifybrconditions >modifbrconditions >modbrconditions >mbrconditions >mobrconditions]`</small>
-
-	> <small>`[Search Tags: >breakpointmodifycommands >breakpointmodifycmds >breakpointmodifcommands >breakpointmodifcmds >breakpointmodcommands >breakpointmodcmds >breakpointmcommands >breakpointmcmds >breakpointmocommands >breakpointmocmds >breakptmodifycommands >breakptmodifycmds >breakptmodifcommands >breakptmodifcmds >breakptmodcommands >breakptmodcmds >breakptmcommands >breakptmcmds >breakptmocommands >breakptmocmds >brkptmodifycommands >brkptmodifycmds >brkptmodifcommands >brkptmodifcmds >brkptmodcommands >brkptmodcmds >brkptmcommands >brkptmcmds >brkptmocommands >brkptmocmds >brptmodifycommands >brptmodifycmds >brptmodifcommands >brptmodifcmds >brptmodcommands >brptmodcmds >brptmcommands >brptmcmds >brptmocommands >brptmocmds >brmodifycommands >brmodifycmds >brmodifcommands >brmodifcmds >brmodcommands >brmodcmds >brmcommands >brmcmds >brmocommands >brmocmds >modifybreakpointcommands >modifybreakpointcmds >modifbreakpointcommands >modifbreakpointcmds >modbreakpointcommands >modbreakpointcmds >mbreakpointcommands >mbreakpointcmds >mobreakpointcommands >mobreakpointcmds >modifybreakptcommands >modifybreakptcmds >modifbreakptcommands >modifbreakptcmds >modbreakptcommands >modbreakptcmds >mbreakptcommands >mbreakptcmds >mobreakptcommands >mobreakptcmds >modifybrkptcommands >modifybrkptcmds >modifbrkptcommands >modifbrkptcmds >modbrkptcommands >modbrkptcmds >mbrkptcommands >mbrkptcmds >mobrkptcommands >mobrkptcmds >modifybrptcommands >modifybrptcmds >modifbrptcommands >modifbrptcmds >modbrptcommands >modbrptcmds >mbrptcommands >mbrptcmds >mobrptcommands >mobrptcmds >modifybrcommands >modifybrcmds >modifbrcommands >modifbrcmds >modbrcommands >modbrcmds >mbrcommands >mbrcmds >mobrcommands >mobrcmds]`</small>
-
-	> <small>`[Search Tags: >breakpointmodifyattributes >breakpointmodifyattribs >breakpointmodifattributes >breakpointmodifattribs >breakpointmodattributes >breakpointmodattribs >breakpointmattributes >breakpointmattribs >breakpointmoattributes >breakpointmoattribs >breakptmodifyattributes >breakptmodifyattribs >breakptmodifattributes >breakptmodifattribs >breakptmodattributes >breakptmodattribs >breakptmattributes >breakptmattribs >breakptmoattributes >breakptmoattribs >brkptmodifyattributes >brkptmodifyattribs >brkptmodifattributes >brkptmodifattribs >brkptmodattributes >brkptmodattribs >brkptmattributes >brkptmattribs >brkptmoattributes >brkptmoattribs >brptmodifyattributes >brptmodifyattribs >brptmodifattributes >brptmodifattribs >brptmodattributes >brptmodattribs >brptmattributes >brptmattribs >brptmoattributes >brptmoattribs >brmodifyattributes >brmodifyattribs >brmodifattributes >brmodifattribs >brmodattributes >brmodattribs >brmattributes >brmattribs >brmoattributes >brmoattribs >modifybreakpointattributes >modifybreakpointattribs >modifbreakpointattributes >modifbreakpointattribs >modbreakpointattributes >modbreakpointattribs >mbreakpointattributes >mbreakpointattribs >mobreakpointattributes >mobreakpointattribs >modifybreakptattributes >modifybreakptattribs >modifbreakptattributes >modifbreakptattribs >modbreakptattributes >modbreakptattribs >mbreakptattributes >mbreakptattribs >mobreakptattributes >mobreakptattribs >modifybrkptattributes >modifybrkptattribs >modifbrkptattributes >modifbrkptattribs >modbrkptattributes >modbrkptattribs >mbrkptattributes >mbrkptattribs >mobrkptattributes >mobrkptattribs >modifybrptattributes >modifybrptattribs >modifbrptattributes >modifbrptattribs >modbrptattributes >modbrptattribs >mbrptattributes >mbrptattribs >mobrptattributes >mobrptattribs >modifybrattributes >modifybrattribs >modifbrattributes >modifbrattribs >modbrattributes >modbrattribs >mbrattributes >mbrattribs >mobrattributes >mobrattribs]`</small>
-
-	> <small>`[Search Tags: >breakpointmodifythreads >breakpointmodifythrds >breakpointmodifthreads >breakpointmodifthrds >breakpointmodthreads >breakpointmodthrds >breakpointmthreads >breakpointmthrds >breakpointmothreads >breakpointmothrds >breakptmodifythreads >breakptmodifythrds >breakptmodifthreads >breakptmodifthrds >breakptmodthreads >breakptmodthrds >breakptmthreads >breakptmthrds >breakptmothreads >breakptmothrds >brkptmodifythreads >brkptmodifythrds >brkptmodifthreads >brkptmodifthrds >brkptmodthreads >brkptmodthrds >brkptmthreads >brkptmthrds >brkptmothreads >brkptmothrds >brptmodifythreads >brptmodifythrds >brptmodifthreads >brptmodifthrds >brptmodthreads >brptmodthrds >brptmthreads >brptmthrds >brptmothreads >brptmothrds >brmodifythreads >brmodifythrds >brmodifthreads >brmodifthrds >brmodthreads >brmodthrds >brmthreads >brmthrds >brmothreads >brmothrds >modifybreakpointthreads >modifybreakpointthrds >modifbreakpointthreads >modifbreakpointthrds >modbreakpointthreads >modbreakpointthrds >mbreakpointthreads >mbreakpointthrds >mobreakpointthreads >mobreakpointthrds >modifybreakptthreads >modifybreakptthrds >modifbreakptthreads >modifbreakptthrds >modbreakptthreads >modbreakptthrds >mbreakptthreads >mbreakptthrds >mobreakptthreads >mobreakptthrds >modifybrkptthreads >modifybrkptthrds >modifbrkptthreads >modifbrkptthrds >modbrkptthreads >modbrkptthrds >mbrkptthreads >mbrkptthrds >mobrkptthreads >mobrkptthrds >modifybrptthreads >modifybrptthrds >modifbrptthreads >modifbrptthrds >modbrptthreads >modbrptthrds >mbrptthreads >mbrptthrds >mobrptthreads >mobrptthrds >modifybrthreads >modifybrthrds >modifbrthreads >modifbrthrds >modbrthreads >modbrthrds >mbrthreads >mbrthrds >mobrthreads >mobrthrds]`</small> -->
 
 <br>
 <br>
@@ -1188,7 +1117,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
-- ***Breakpoint** [`set`] **Attributes:***
+- ***Breakpoint Attributes:***
 
 	> <small>`[Search Tags: >attributebreakpoint >attribbreakpoint >atbbreakpoint >breakpointatbs >breakpointatts >breakpointattributes >breakpointattribs >attributebreakpt >attribbreakpt >atbbreakpt >breakptatbs >breakptatts >breakptattributes >breakptattribs >attributebrkpt >attribbrkpt >atbbrkpt >brkptatbs >brkptatts >brkptattributes >brkptattribs >attributebrpt >attribbrpt >atbbrpt >brptatbs >brptatts >brptattributes >brptattribs >attributebr >attribbr >atbbr >bratbs >bratts >brattributes >brattribs]`</small>
 
