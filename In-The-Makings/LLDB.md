@@ -934,7 +934,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	>
 	> *<small>[**Note:***
 	>
-	> -	*Passing an empty argument [to flags] clears the modification(s) –– except for `--enable` (`-e`), `--disable` (`-d`) and `--ignore-count` (`-i`) [flags], .*
+	> -	*Passing an empty argument (i.e: `''`) [to flags] clears the modification(s) –– except for `--enable` (`-e`), `--disable` (`-d`) and `--ignore-count` (`-i`) [flags], .*
 	>
 	> -	*If no breakpoint is specified, acts on the last created breakpoint.*
 	>
