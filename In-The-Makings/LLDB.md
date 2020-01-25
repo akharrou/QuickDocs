@@ -927,8 +927,8 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> (lldb) br m -c '' 8 12 5
 	> ```
 	> ```shell
-	> (lldb) breakpoint modify --thread-id 6
-	> (lldb) br m -t 6
+	> (lldb) breakpoint modify --thread-id 6 8           # change the thread assigned for the breakpoint of id: 8
+	> (lldb) br m -t 6 8
 	> ```
 	>
 	> *<small>[**Note:***
