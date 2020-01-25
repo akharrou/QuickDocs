@@ -1177,22 +1177,23 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 <br>
 <br>
 
--	***Add** [breakpoint] **name(s):***
+-	***Add** [breakpoint] **name(s)** `||` **Name breakpoints:***
 
 	> <small>`[Search Tags: >namebreakpoints >addbreakpointnames >breakpointaddnames >breakpointanames >namebreakpts >addbreakptnames >breakptaddnames >breakptanames >namebrkpts >addbrkptnames >brkptaddnames >brkptanames >namebrpts >addbrptnames >brptaddnames >brptanames >namebrs >addbrnames >braddnames >branames  >createbreakpointnames >setbreakpointnames >breakpointcreatenames >breakpointsetnames >createbreakptnames >setbreakptnames >breakptcreatenames >breakptsetnames >createbrkptnames >setbrkptnames >brkptcreatenames >brkptsetnames >createbrptnames >setbrptnames >brptcreatenames >brptsetnames >createbrnames >setbrnames >brcreatenames >brsetnames]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint name add --name <breakpt-name> [<breakpt-id> ...]
+	> breakpoint name add --name <breakpt-name>                       # Create a breakpoint name (implicitly adds to last created breakpoint, if there is one)
+	> breakpoint name add --name <breakpt-name> [<breakpt-id> ...]    # Add breakpoint name to the list of names of breakpoints with id: <breakpt-id>
 	> ```
 	>
 	> ***Example(s):***
 	>
 	> >```shell
-	> >(lldb) breakpoint name add --name 'controlFlow' 1
-	> >(lldb) br n a -N 'controlFlow' 1
+	> >(lldb) breakpoint name add --name 'controlFlow'
+	> >(lldb) br n a -N 'controlFlow'
 	> >```
-	> > *To clarify –– we are adding to the list of names of the breakpoint [of id] 1, the name 'controlFlow'.*
+	> > *To clarify –– we are just creating a breakpoint name (`controlFlow`) which we can then name breakpoints that we `set` [with `br set ... -N <breakpt-name>` ]; this name is implicitly added to the last `set` breakpoint, if there is one.*
 	>
 	> > ```shell
 	> > (lldb) breakpoint name add --name 'funcs' 3 2 7
@@ -1241,7 +1242,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
--	***Un-name breakpoint(s):***
+-	***Delete breakpoint(s):***
 
 	> <small>`[Search Tags: >debreakpointnames >delbreakpointnames >deletebreakpointnames >breakpointlinames >breakpointlsnames >breakpointdeletenames >debreakptnames >delbreakptnames >deletebreakptnames >breakptlinames >breakptlsnames >breakptdeletenames >debrkptnames >delbrkptnames >deletebrkptnames >brkptlinames >brkptlsnames >brkptdeletenames >debrptnames >delbrptnames >deletebrptnames >brptlinames >brptlsnames >brptdeletenames >debrnames >delbrnames >deletebrnames >brlinames >brlsnames >brdeletenames >breakpointunname >breakptunname >brkptunname >brptunname >brunname >unnamebreakpoints >unnamebreakpts >unnamebrkpts >unnamebrpts >unnamebrs >removebreakpointnames >breakpointremovenames >removebreakptnames >breakptremovenames >removebrkptnames >brkptremovenames >removebrptnames >brptremovenames >removebrnames >brremovenames >breakpointremvenames >breakpointremvnames >breakpointrmvnames >breakpointrmnames >breakptremvenames >breakptremvnames >breakptrmvnames >breakptrmnames >brkptremvenames >brkptremvnames >brkptrmvnames >brkptrmnames >brptremvenames >brptremvnames >brptrmvnames >brptrmnames >brremvenames >brremvnames >brrmvnames >brrmnames]`</small>
 
