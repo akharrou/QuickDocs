@@ -923,14 +923,17 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> (lldb) br m -c 'ac < 2' -o true 4 2 7
 	> ```
 	> ```shell
+	> (lldb) breakpoint modify --condition '' 8 12 5     # clears any existant condition
+	> (lldb) br m -c '' 8 12 5
+	> ```
+	> ```shell
 	> (lldb) breakpoint modify --thread-id 6
 	> (lldb) br m -t 6
 	> ```
 	>
 	> *<small>[**Note:***
 	>
-	> -	*With the exception of `--enable` (`-e`), `--disable` (`-d`) and `--ignore-count` (`-i`) [flags], passing an empty
-                 argument clears the modification.*
+	> -	*Passing an empty argument [to flags] clears the modification(s) –– except for `--enable` (`-e`), `--disable` (`-d`) and `--ignore-count` (`-i`) [flags], .*
 	>
 	> -	*If no breakpoint is specified, acts on the last created breakpoint.*
 	>
