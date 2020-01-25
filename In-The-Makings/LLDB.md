@@ -900,19 +900,15 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> | Command Options                 | Abrv. | Description
 	> | ------------------------------- | ----- | ---------------------------
 	> |||
-	> | **Enablement** ||
 	> | `--disable`                     | `-d`  | Disable the breakpoint.
 	> | `--enable`                      | `-e`  | Enable the breakpoint.
 	> |||
-	> | **Condition** ||
 	> | `--condition <condition-expr>`  | `-c`  | The breakpoint stops only if this condition expression evaluates to true.
 	> |||
-	> | **Attributes** ||
 	> | `--ignore-count <count>`        | `-i`  | Set the number of times this breakpoint is skipped before stopping.
 	> | `--auto-continue <boolean>`     | `-G`  | The breakpoint will auto-continue after running its commands.
 	> | `--one-shot <boolean>`          | `-o`  | The breakpoint is deleted the first time it stop causes a stop.
 	> |||
-	> | **Thread** ||
 	> | `--thread-index <thread-index>` | `-x`  | The breakpoint stops only for the thread whose index matches this argument.
 	> | `--thread-id <thread-id>`       | `-t`  | The breakpoint stops only for the thread whose TID matches this argument.
 	> | `--thread-name <thread-name>`   | `-T`  | The breakpoint stops only for the thread whose thread name matches this argument.
