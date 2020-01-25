@@ -889,7 +889,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 	> **Brief**
 	>
-	> *`modify` offers the possibility of modifying previously `set` [breakpoint] options (except `command`s, search "`>brcommands`" for that) [on [existant] breakpoint(s)].*
+	> *`modify` lets one modify previously `set` [breakpoint] options [on [existant] breakpoint(s)].*
 	>
 	> ***Synopsis:***
 	> ```shell
@@ -937,6 +937,8 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> -	*Passing an empty argument (i.e: `''`) [to flags] clears the modification(s) –– except for `--enable` (`-e`), `--disable` (`-d`) and `--ignore-count` (`-i`) [flags], .*
 	>
 	> -	*If no breakpoint is specified, acts on the last created breakpoint.*
+	>
+	> -	*To set/modify breakpoint commands, see `breakpoint command`, search "`>brcommands`".*
 	>
 	> *- **end note**]</small>*
 
