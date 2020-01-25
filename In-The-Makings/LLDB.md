@@ -793,11 +793,8 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint disable <breakpt-ids | breakpt-names>
-	> (lldb) breakpoint enable  <breakpt-ids | breakpt-names>
-	> ```
-	> ```
-	> (lldb) breakpoint modify [--disable] [--enable] <breakpt-ids | breakpt-names>
+	> (lldb) breakpoint disable [<breakpt-id | breakpt-name> ...]
+	> (lldb) breakpoint enable  [<breakpt-id | breakpt-name> ...]
 	> ```
 	>
 	> ***Example(s):***
@@ -812,6 +809,10 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> ```shell
 	> (lldb) breakpoint enable 2 6 3.2   # enable breakpoints: 2, 6 and 3.2
 	> (lldb) br en 2 6 3.2
+	> ```
+	> ```shell
+	> (lldb) breakpoint enable 'funcs'   # enable breakpoints who have 'funcs' in their list of names
+	> (lldb) br en 'funcs'
 	> ```
 
 	> *<small>[**Note**:*
@@ -892,7 +893,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	>
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint modify <cmd-options> [<breakpt-id> ...]
+	> breakpoint modify <cmd-options> [<breakpt-id | breakpt-name> ...]
 	> ```
 	>
 	> ***Command Options:***
@@ -923,8 +924,8 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> (lldb) br m -c 'ac < 2' -o true 4 2 7
 	> ```
 	> ```shell
-	> (lldb) breakpoint modify --condition '' 8 12 5     # clears any existant condition
-	> (lldb) br m -c '' 8 12 5
+	> (lldb) breakpoint modify --condition '' 'controlFlow'     # clears any existant condition, for all breakpoints who have 'controlFlow' in their list of names
+	> (lldb) br m -c '' 'controlFlow'
 	> ```
 	> ```shell
 	> (lldb) breakpoint modify --thread-id 6 8           # change the thread assigned for the breakpoint of id: 8
