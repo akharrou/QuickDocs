@@ -1177,6 +1177,18 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 <br>
 <br>
 
+
+TODO : summarize breakpoint name wisdom
+
+*Breakpoint names are extremely powerful, in that they allow you to create a sort of class/type/predefined-kind of breakpoint and refer to that class with a name. This class persists after breakpoints being of it are deleted and can be configured (i.e modified) at any moment and all breakpoints of that class are effected.*
+<br>
+
+*For more with regards to the wisdom behind **breakpoint name configurations**, see: [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names).*
+
+---
+
+<br>
+
 -	***Add** [breakpoint] **name(s)** `||` **Name breakpoints:***
 
 	> <small>`[Search Tags: >namebreakpoints >addbreakpointnames >breakpointaddnames >breakpointanames >namebreakpts >addbreakptnames >breakptaddnames >breakptanames >namebrkpts >addbrkptnames >brkptaddnames >brkptanames >namebrpts >addbrptnames >brptaddnames >brptanames >namebrs >addbrnames >braddnames >branames  >createbreakpointnames >setbreakpointnames >breakpointcreatenames >breakpointsetnames >createbreakptnames >setbreakptnames >breakptcreatenames >breakptsetnames >createbrkptnames >setbrkptnames >brkptcreatenames >brkptsetnames >createbrptnames >setbrptnames >brptcreatenames >brptsetnames >createbrnames >setbrnames >brcreatenames >brsetnames]`</small>
@@ -1282,8 +1294,6 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> > *To clarify –– we are asking `lldb` to configure all breakpoints, named `controlFlow`, to break (only) when: `2 <= ac <= 10`, and following a break, to run the following [`lldb`] commands: `bt` and `fr v`, and to then `continue` execution [of the program] automatically.*
 
 	> *<small>[**Note:***
-	>
-	> - *For a better understanding with regards to the wisdom behind **breakpoint name configurations** (the most powerful and modular way of using breakpoints [in my opinion]), see: [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names).*
 	>
 	> - *If you provide a breakpoint id, with the `--breakpoint-id` or `-B` option *[followed by `<breakpt-ids>`]*, the options will be copied from
      the breakpoint, otherwise only the options specified will be set on the name.*
