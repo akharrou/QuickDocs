@@ -727,7 +727,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> ***Synopsis:***
 	>
 	> ```shell
-	> breakpoint list -[bfv] [<breakpt-ids>]
+	> breakpoint list -[bfv] [<breakpt-id> ...]
 	> ```
 	>
 	> ***Example(s):***
@@ -899,7 +899,31 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 	<br>
 
-TODO :	-	***Modify** [breakpoint] **condition:***
+	-	***Modify** [breakpoint] **condition:***
+
+		<small>`[Search Tags: >breakpointmodifyconditions >breakpointmodifconditions >breakpointmodconditions >breakpointmconditions >breakpointmoconditions >breakptmodifyconditions >breakptmodifconditions >breakptmodconditions >breakptmconditions >breakptmoconditions >brkptmodifyconditions >brkptmodifconditions >brkptmodconditions >brkptmconditions >brkptmoconditions >brptmodifyconditions >brptmodifconditions >brptmodconditions >brptmconditions >brptmoconditions >brmodifyconditions >brmodifconditions >brmodconditions >brmconditions >brmoconditions >modifybreakpointconditions >modifbreakpointconditions >modbreakpointconditions >mbreakpointconditions >mobreakpointconditions >modifybreakptconditions >modifbreakptconditions >modbreakptconditions >mbreakptconditions >mobreakptconditions >modifybrkptconditions >modifbrkptconditions >modbrkptconditions >mbrkptconditions >mobrkptconditions >modifybrptconditions >modifbrptconditions >modbrptconditions >mbrptconditions >mobrptconditions >modifybrconditions >modifbrconditions >modbrconditions >mbrconditions >mobrconditions]`</small>
+
+		> ***Synopsis:***
+		>
+		> ```shell
+		> breakpoint modify --condition <condition-expr> [<breakpt-id> ...]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint modify --condition 'ac < 2' 3
+		> (lldb) br m -c 'ac < 2' 3
+		> ```
+		> ```shell
+		> (lldb) breakpoint modify --condition 'ac > 2' 4 2 7
+		> (lldb) br m -c 'ac > 2' 4 2 7
+		> ```
+
+	<br>
+
+	-	***Modify** [breakpoint] **command(s):***
+
+		> <small>`[Search Tags: >breakpointmodifycommands >breakpointmodifycmds >breakpointmodifcommands >breakpointmodifcmds >breakpointmodcommands >breakpointmodcmds >breakpointmcommands >breakpointmcmds >breakpointmocommands >breakpointmocmds >breakptmodifycommands >breakptmodifycmds >breakptmodifcommands >breakptmodifcmds >breakptmodcommands >breakptmodcmds >breakptmcommands >breakptmcmds >breakptmocommands >breakptmocmds >brkptmodifycommands >brkptmodifycmds >brkptmodifcommands >brkptmodifcmds >brkptmodcommands >brkptmodcmds >brkptmcommands >brkptmcmds >brkptmocommands >brkptmocmds >brptmodifycommands >brptmodifycmds >brptmodifcommands >brptmodifcmds >brptmodcommands >brptmodcmds >brptmcommands >brptmcmds >brptmocommands >brptmocmds >brmodifycommands >brmodifycmds >brmodifcommands >brmodifcmds >brmodcommands >brmodcmds >brmcommands >brmcmds >brmocommands >brmocmds >modifybreakpointcommands >modifybreakpointcmds >modifbreakpointcommands >modifbreakpointcmds >modbreakpointcommands >modbreakpointcmds >mbreakpointcommands >mbreakpointcmds >mobreakpointcommands >mobreakpointcmds >modifybreakptcommands >modifybreakptcmds >modifbreakptcommands >modifbreakptcmds >modbreakptcommands >modbreakptcmds >mbreakptcommands >mbreakptcmds >mobreakptcommands >mobreakptcmds >modifybrkptcommands >modifybrkptcmds >modifbrkptcommands >modifbrkptcmds >modbrkptcommands >modbrkptcmds >mbrkptcommands >mbrkptcmds >mobrkptcommands >mobrkptcmds >modifybrptcommands >modifybrptcmds >modifbrptcommands >modifbrptcmds >modbrptcommands >modbrptcmds >mbrptcommands >mbrptcmds >mobrptcommands >mobrptcmds >modifybrcommands >modifybrcmds >modifbrcommands >modifbrcmds >modbrcommands >modbrcmds >mbrcommands >mbrcmds >mobrcommands >mobrcmds]`</small>
 
 		> ***Synopsis:***
 		>
@@ -913,7 +937,11 @@ TODO :	-	***Modify** [breakpoint] **condition:***
 		> ```shell
 		> ```
 
-TODO :	-	***Modify** [breakpoint] **command(s):***
+		<br>
+
+	-	***Modify** [breakpoint] **attribute(s):***
+
+		> <small>`[Search Tags: >breakpointmodifyattributes >breakpointmodifyattribs >breakpointmodifattributes >breakpointmodifattribs >breakpointmodattributes >breakpointmodattribs >breakpointmattributes >breakpointmattribs >breakpointmoattributes >breakpointmoattribs >breakptmodifyattributes >breakptmodifyattribs >breakptmodifattributes >breakptmodifattribs >breakptmodattributes >breakptmodattribs >breakptmattributes >breakptmattribs >breakptmoattributes >breakptmoattribs >brkptmodifyattributes >brkptmodifyattribs >brkptmodifattributes >brkptmodifattribs >brkptmodattributes >brkptmodattribs >brkptmattributes >brkptmattribs >brkptmoattributes >brkptmoattribs >brptmodifyattributes >brptmodifyattribs >brptmodifattributes >brptmodifattribs >brptmodattributes >brptmodattribs >brptmattributes >brptmattribs >brptmoattributes >brptmoattribs >brmodifyattributes >brmodifyattribs >brmodifattributes >brmodifattribs >brmodattributes >brmodattribs >brmattributes >brmattribs >brmoattributes >brmoattribs >modifybreakpointattributes >modifybreakpointattribs >modifbreakpointattributes >modifbreakpointattribs >modbreakpointattributes >modbreakpointattribs >mbreakpointattributes >mbreakpointattribs >mobreakpointattributes >mobreakpointattribs >modifybreakptattributes >modifybreakptattribs >modifbreakptattributes >modifbreakptattribs >modbreakptattributes >modbreakptattribs >mbreakptattributes >mbreakptattribs >mobreakptattributes >mobreakptattribs >modifybrkptattributes >modifybrkptattribs >modifbrkptattributes >modifbrkptattribs >modbrkptattributes >modbrkptattribs >mbrkptattributes >mbrkptattribs >mobrkptattributes >mobrkptattribs >modifybrptattributes >modifybrptattribs >modifbrptattributes >modifbrptattribs >modbrptattributes >modbrptattribs >mbrptattributes >mbrptattribs >mobrptattributes >mobrptattribs >modifybrattributes >modifybrattribs >modifbrattributes >modifbrattribs >modbrattributes >modbrattribs >mbrattributes >mbrattribs >mobrattributes >mobrattribs]`</small>
 
 		> ***Synopsis:***
 		>
@@ -927,21 +955,13 @@ TODO :	-	***Modify** [breakpoint] **command(s):***
 		> ```shell
 		> ```
 
-TODO :	-	***Modify** [breakpoint] **attribute(s):***
+		<br>
 
-		> ***Synopsis:***
-		>
-		> ```shell
-		> breakpoint modify
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> ```
-		> ```shell
-		> ```
+	-	***Modify assigned** [breakpoint] **thread:***
 
-TODO :	-	***Modify assigned** [breakpoint] **thread:***
+		<p style="display: none;">
+			`[Search Tags: >breakpointmodifythreads >breakpointmodifythrds >breakpointmodifthreads >breakpointmodifthrds >breakpointmodthreads >breakpointmodthrds >breakpointmthreads >breakpointmthrds >breakpointmothreads >breakpointmothrds >breakptmodifythreads >breakptmodifythrds >breakptmodifthreads >breakptmodifthrds >breakptmodthreads >breakptmodthrds >breakptmthreads >breakptmthrds >breakptmothreads >breakptmothrds >brkptmodifythreads >brkptmodifythrds >brkptmodifthreads >brkptmodifthrds >brkptmodthreads >brkptmodthrds >brkptmthreads >brkptmthrds >brkptmothreads >brkptmothrds >brptmodifythreads >brptmodifythrds >brptmodifthreads >brptmodifthrds >brptmodthreads >brptmodthrds >brptmthreads >brptmthrds >brptmothreads >brptmothrds >brmodifythreads >brmodifythrds >brmodifthreads >brmodifthrds >brmodthreads >brmodthrds >brmthreads >brmthrds >brmothreads >brmothrds >modifybreakpointthreads >modifybreakpointthrds >modifbreakpointthreads >modifbreakpointthrds >modbreakpointthreads >modbreakpointthrds >mbreakpointthreads >mbreakpointthrds >mobreakpointthreads >mobreakpointthrds >modifybreakptthreads >modifybreakptthrds >modifbreakptthreads >modifbreakptthrds >modbreakptthreads >modbreakptthrds >mbreakptthreads >mbreakptthrds >mobreakptthreads >mobreakptthrds >modifybrkptthreads >modifybrkptthrds >modifbrkptthreads >modifbrkptthrds >modbrkptthreads >modbrkptthrds >mbrkptthreads >mbrkptthrds >mobrkptthreads >mobrkptthrds >modifybrptthreads >modifybrptthrds >modifbrptthreads >modifbrptthrds >modbrptthreads >modbrptthrds >mbrptthreads >mbrptthrds >mobrptthreads >mobrptthrds >modifybrthreads >modifybrthrds >modifbrthreads >modifbrthrds >modbrthreads >modbrthrds >mbrthreads >mbrthrds >mobrthreads >mobrthrds]`
+		</p>
 
 		> ***Synopsis:***
 		>
@@ -1197,7 +1217,7 @@ TODO :	-	***Modify assigned** [breakpoint] **thread:***
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint name add --name <breakpt-name> [<breakpt-ids>]
+	> breakpoint name add --name <breakpt-name> [<breakpt-id> ...]
 	> ```
 	>
 	> ***Example(s):***
@@ -1392,7 +1412,7 @@ TODO :	-	***Modify assigned** [breakpoint] **thread:***
 
 	<br>
 
-	-	***Configure thread(s):***
+	-	***Configure** [assigned] **thread(s):***
 
 		> <small>`[Search Tags: >breakpointconfigurethrds >breakpointconfigurethreads >configurebreakpointthrds >configurebreakpointthreads >breakpointconfigthrds >breakpointconfigthreads >configbreakpointthrds >configbreakpointthreads >breakpointconfthrds >breakpointconfthreads >confbreakpointthrds >confbreakpointthreads >breakptconfigurethrds >breakptconfigurethreads >configurebreakptthrds >configurebreakptthreads >breakptconfigthrds >breakptconfigthreads >configbreakptthrds >configbreakptthreads >breakptconfthrds >breakptconfthreads >confbreakptthrds >confbreakptthreads >brkptconfigurethrds >brkptconfigurethreads >configurebrkptthrds >configurebrkptthreads >brkptconfigthrds >brkptconfigthreads >configbrkptthrds >configbrkptthreads >brkptconfthrds >brkptconfthreads >confbrkptthrds >confbrkptthreads >brptconfigurethrds >brptconfigurethreads >configurebrptthrds >configurebrptthreads >brptconfigthrds >brptconfigthreads >configbrptthrds >configbrptthreads >brptconfthrds >brptconfthreads >confbrptthrds >confbrptthreads >brconfigurethrds >brconfigurethreads >configurebrthrds >configurebrthreads >brconfigthrds >brconfigthreads >configbrthrds >configbrthreads >brconfthrds >brconfthreads >confbrthrds >confbrthreads]`</small>
 
@@ -1773,7 +1793,6 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 	> *- **end note**]</small>*
 
 
-
 <br>
 <br>
 
@@ -1781,9 +1800,8 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help watchpoint modify`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint enable`
-> | 3 | Manual Page | LLDB | `(lldb) help watchpoint disable`
+> | 1 | Manual Page | LLDB | `(lldb) help watchpoint enable`
+> | 2 | Manual Page | LLDB | `(lldb) help watchpoint disable`
 
 
 ---
@@ -1798,6 +1816,68 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 
 >	*<small>[**Note**: We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"* - **end note**]</small>* <br>
+
+-	***Modify** [existant] **breakpoint(s)** [option(s)] **:***
+
+	> <small>`[Search Tags: >modbreakpoint >modifbreakpoint >mobreakpoint >mbreakpoint >modifybreakpoint >breakpointmodify >modbreakpt >modifbreakpt >mobreakpt >mbreakpt >modifybreakpt >breakptmodify >modbrkpt >modifbrkpt >mobrkpt >mbrkpt >modifybrkpt >brkptmodify >modbrpt >modifbrpt >mobrpt >mbrpt >modifybrpt >brptmodify >modbr >modifbr >mobr >mbr >modifybr >brmodify]`</small>
+
+	<br>
+
+	> **Description** –– *<small>`breakpoint modify` allows to **modify** the options on [existant] breakpoint(s) [in the executable]. With the exception of --enable (`-e`), --disable (`-d`) and --count (`-i`) [flags], passing an empty
+                 argument clears the modification.</small>*
+	>
+	> *<small>[**Note:***
+	>
+	> -	*With the exception of `--enable` (`-e`), `--disable` (`-d`) and `--ignore-count` (`-i`) [flags], passing an empty
+                 argument clears the modification.*
+	>
+	> -	*If no breakpoint is specified, acts on the last created breakpoint.*
+	>
+	> *- **end note**]</small>*
+
+	<br>
+
+TODO :	-	***Add/modify** [watchpoint] **condition:***
+
+		> ***Synopsis:***
+		>
+		> ```shell
+		> breakpoint modify
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> ```
+		> ```shell
+		> ```
+
+TODO :	-	***Add/modify** [watchpoint] **command(s):***
+
+		> ***Synopsis:***
+		>
+		> ```shell
+		> breakpoint modify
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> ```
+		> ```shell
+		> ```
+
+TODO :	-	***Add/modify** [watchpoint] **attribute(s):***
+
+		> ***Synopsis:***
+		>
+		> ```shell
+		> breakpoint modify
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> ```
+		> ```shell
+		> ```
 
 ---
 <!--
@@ -1816,10 +1896,6 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 		> (lldb) watch set var global
 		> (lldb) watchpoint modify -c '(global == 5)'
 		> ```
-  watchpoint modify [-c <expr>] [<watchpt-id | watchpt-id-list>]
-
-       -c <expr> ( --condition <expr> )
-            The watchpoint stops only if this condition expression evaluates to true.
 
     -	***Commands:***
 
@@ -1862,6 +1938,7 @@ Command Options Usage:
 > | 3 | Manual Page | LLDB | `(lldb) help watchpoint command add`
 > | 4 | Manual Page | LLDB | `(lldb) help watchpoint command list`
 > | 5 | Manual Page | LLDB | `(lldb) help watchpoint command delete`
+> | 1 | Manual Page | LLDB | `(lldb) help watchpoint ignore`
 
 
 ---
