@@ -889,7 +889,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 	> **Brief**
 	>
-	> *`breakpoint modify` allows to **modify** the options on [existant] breakpoint(s) [in the executable].
+	> *`modify` offers the possibility of modifying previously `set` [breakpoint] options (except `command`s, search "`>brcommands`" for that) [on [existant] breakpoint(s)].*
 	>
 	> ***Synopsis:***
 	> ```shell
