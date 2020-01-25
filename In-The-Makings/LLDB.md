@@ -889,7 +889,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 	> **Brief**
 	>
-	> *`breakpoint modify` allows to **modify** the options on [existant] breakpoint(s) [in the executable]. With the exception of --enable (`-e`), --disable (`-d`) and --count (`-i`) [flags], passing an empty argument clears the modification.*
+	> *`breakpoint modify` allows to **modify** the options on [existant] breakpoint(s) [in the executable].
 	>
 	> ***Synopsis:***
 	> ```shell
