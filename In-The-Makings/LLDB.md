@@ -928,7 +928,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> (lldb) br m -c '' 'controlFlow'
 	> ```
 	> ```shell
-	> (lldb) breakpoint modify --thread-id 6 8           # change the thread assigned for the breakpoint of id: 8
+	> (lldb) breakpoint modify --thread-id 6 8                   # change the thread assigned for the breakpoint of id: 8
 	> (lldb) br m -t 6 8
 	> ```
 	>
