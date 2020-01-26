@@ -139,7 +139,7 @@ Markdown supports two styles of headers, [Setext](http://docutils.sourceforge.ne
 
 ---
 [🏠](#contents)
- ### 2.1.1. atxHeaders
+ ### 2.1.1. atx Headers
 <small>`[Search Tags: >headers.atx >header.atx >atxheaders >atx.headers >atxhders >atxhdrs]`</small>
 
 -	Atx-style headers use 1-6 hash characters at the start of the line, corresponding to header levels 1-6.
