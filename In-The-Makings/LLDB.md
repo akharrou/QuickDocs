@@ -1250,6 +1250,7 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 	> (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
 	> (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
 	> ```
+	> ---
 	> > *To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoint we are currently creating (`set`'ing).*
 	> ```shell
 	> (lldb) breakpoint name add --name 'funcs' 3 2 7
