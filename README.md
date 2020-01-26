@@ -29,11 +29,9 @@ QuickDoc follow the **form**:
 >topic.matter.desired
 ```
 
-> –– so every search should follow that form.
-> It should be prepended with a right arrow character
-> '`>`', followed by the full subject matter word or phrase
-> or abbreviation/acrynom thereof, with no spaces in
-> between; occaisonnaly there will be additionally search tags that may be
-> seperated with a dot/period character '`.`'.
->
+> –– a right arrow character '`>`', followed by the full subject matter word/phrase
+> or abbreviation/acronyms thereof or combination thereof of word/phrase/abrv./acronyms,
+> with no spaces in between; occaisonnaly there will be additionally search tags that may
+> be seperated with a dot/period character '`.`'.
+
 > Feel free to suggest other search tags for any subject matter [as a pull request] and they will promptly be added !
