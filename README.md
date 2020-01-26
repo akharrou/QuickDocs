@@ -10,11 +10,11 @@ Reference-able Documentation, that keeps, for each of its treated subject
 matters, a table of the best references/resources out there.
 
 ----------------------------------------------------------------------------------
-### How to search ?
+### How to quickly find anything ?
 
-To initiate a search, you may use your *[browser's]* `find`
-command –– for most, that command will be: ***`cmd+f`***.
-Every search should follow the **form**:
+You can initiate a search. To do so, you may use your *[browser's]* `find`
+command –– for most, that command will be: ***`cmd+f`***. Every search should
+follow the **form**:
 
 ```
 >topicmatterdesired
