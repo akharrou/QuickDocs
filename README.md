@@ -13,10 +13,15 @@ matters, a table of the best references/resources out there.
 ### How to quickly find anything ?
 
 In every QuickDoc there are search tags under each section title that were designed
-to hopefully make anything quickly findable. To find then a particular subject matter,
-you can initiate an [in document] search. Your browser command usually has that under
-mapped to the key combination: ***`cmd+f`***. The search tags within each QuickDoc
-follow the **form**:
+to make anything quick and easy to find.
+
+```
+[Search Tags: >fulltagname >tagname >tag >tname >fulltname ...]
+```
+
+These search tags are meant to be searched with the help of your browser's `find`
+bar. To bring out the `find` bar, press ***`cmd+f`***. The search tags within each
+QuickDoc follow the **form**:
 
 ```
 >topicmatterdesired
