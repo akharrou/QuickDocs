@@ -1123,7 +1123,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint set <definition> <conditions> [<attribute> <boolean> ...]
+	> breakpoint set <breakpt-definition> <conditions> [<attribute> <boolean> ...]
 	>```
 	>
 	> ***Command Options:***
@@ -1251,7 +1251,6 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 	> (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
 	> ```
 	> > *To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoint we are currently creating (`set`'ing).*
-	> ---
 	> ```shell
 	> (lldb) breakpoint name add --name 'funcs' 3 2 7
 	> (lldb) br n a -N 'funcs' 3 2 7
@@ -1282,7 +1281,7 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 
 <br>
 
--	***Delete** [breakpoint] **name** [from breakpoint name list] **:***
+-	***Delete** [breakpoint] **name** [from breakpoint name list [of a breakpoint]] **:***
 
 	> <small>`[Search Tags: >debreakpointnames >delbreakpointnames >deletebreakpointnames >breakpointlinames >breakpointlsnames >breakpointdeletenames >debreakptnames >delbreakptnames >deletebreakptnames >breakptlinames >breakptlsnames >breakptdeletenames >debrkptnames >delbrkptnames >deletebrkptnames >brkptlinames >brkptlsnames >brkptdeletenames >debrptnames >delbrptnames >deletebrptnames >brptlinames >brptlsnames >brptdeletenames >debrnames >delbrnames >deletebrnames >brlinames >brlsnames >brdeletenames >breakpointunname >breakptunname >brkptunname >brptunname >brunname >unnamebreakpoints >unnamebreakpts >unnamebrkpts >unnamebrpts >unnamebrs >removebreakpointnames >breakpointremovenames >removebreakptnames >breakptremovenames >removebrkptnames >brkptremovenames >removebrptnames >brptremovenames >removebrnames >brremovenames >breakpointremvenames >breakpointremvnames >breakpointrmvnames >breakpointrmnames >breakptremvenames >breakptremvnames >breakptrmvnames >breakptrmnames >brkptremvenames >brkptremvnames >brkptrmvnames >brkptrmnames >brptremvenames >brptremvnames >brptrmvnames >brptrmnames >brremvenames >brremvnames >brrmvnames >brrmnames]`</small>
 
@@ -1426,8 +1425,8 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 		> ***Synopsis:***
 		> ```shell
 		> (lldb) breakpoint name configure [ --thread-index <index> ] [<breakpt-name> ...]
-		> (lldb) breakpoint name configure [ --thread-name <name> ]   [<breakpt-name> ...]
-		> (lldb) breakpoint name configure [ --thread-id <tid> ]      [<breakpt-name> ...]
+		>                                  [ --thread-name <name> ]   [<breakpt-name> ...]
+		>                                  [ --thread-id <tid> ]      [<breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -1472,9 +1471,9 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint set <definition> [ --thread-index <index> ]     # by index (in the process)
-	> (lldb) breakpoint set <definition> [ --thread-name <name> ]       # by name
-	> (lldb) breakpoint set <definition> [ --thread-id <tid> ]          # by tid (in the computer)
+	> (lldb) breakpoint set <breakpt-definition> [ --thread-index <index> ]     # by index (in the process)
+	> (lldb) breakpoint set <breakpt-definition> [ --thread-name <name> ]       # by name
+	> (lldb) breakpoint set <breakpt-definition> [ --thread-id <tid> ]          # by tid (in the computer)
 	> ```
 	>
 	> ***Example(s):***
