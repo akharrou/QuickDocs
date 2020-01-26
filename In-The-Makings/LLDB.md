@@ -1177,63 +1177,89 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 <br>
 <br>
 
+***Breakpoint name*** is an extremely powerful `lldb` feature. It allows us to create a breakpoint "profile", so to speak –– by this we mean, a set, of breakpoint options –– , referrable by `name`.
+Later on, when we create *(`set`)* breakpoints, we can choose to have them *[the breakpoints we are creating (`set`'ing)]* inherit *(have added to their list of `names`)* one or more *[profile]* `names`, i.e one or more of these *[pre-defined]* sets of options.
+Any modification to a *[breakpoint]* profile immediately applies to all breakpoints that inherit that profile *(have that [profile] `name` in their list of [profile] `names`)*.
 
-TODO : summarize breakpoint name wisdom
+Breakpoint profiles live independantly of the breakpoints that inherit them, therefore persist even after all breakpoints are deleted.
+Down below are discussed the breakpoint commands used to **create** / **list** / **delete** / **configure** breakpoint `names` *(profiles)*.
 
-*Breakpoint names are extremely powerful, in that they allow you to create a sort of class/type/predefined-kind of breakpoint and refer to that class with a name. This class persists after breakpoints being of it are deleted and can be configured (i.e modified) at any moment and all breakpoints of that class are effected.*
-<br>
-
-*For more with regards to the wisdom behind **breakpoint name configurations**, see: [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names).*
+> *For more on **breakpoint names**, see: [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names).*
 
 ---
 
 <br>
 
--	***Add** [breakpoint] **name(s)** `||` **Name breakpoints:***
+-	***Create** [breakpoint] **name(s):***
 
-	> <small>`[Search Tags: >namebreakpoints >addbreakpointnames >breakpointaddnames >breakpointanames >namebreakpts >addbreakptnames >breakptaddnames >breakptanames >namebrkpts >addbrkptnames >brkptaddnames >brkptanames >namebrpts >addbrptnames >brptaddnames >brptanames >namebrs >addbrnames >braddnames >branames  >createbreakpointnames >setbreakpointnames >breakpointcreatenames >breakpointsetnames >createbreakptnames >setbreakptnames >breakptcreatenames >breakptsetnames >createbrkptnames >setbrkptnames >brkptcreatenames >brkptsetnames >createbrptnames >setbrptnames >brptcreatenames >brptsetnames >createbrnames >setbrnames >brcreatenames >brsetnames]`</small>
+	> <small>`[Search Tags: >addbreakpointnames >breakpointaddnames >breakpointanames >addbreakptnames >breakptaddnames >breakptanames >addbrkptnames >brkptaddnames >brkptanames >addbrptnames >brptaddnames >brptanames >addbrnames >braddnames >branames >createbreakpointnames >breakpointcreatenames >createbreakptnames >breakptcreatenames >createbrkptnames >brkptcreatenames >createbrptnames >brptcreatenames >createbrnames >brcreatenames]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint name add --name <breakpt-name>                       # Create a breakpoint name (implicitly adds to last created breakpoint, if there is one)
-	> breakpoint name add --name <breakpt-name> [<breakpt-id> ...]    # Add breakpoint name to the list of names of breakpoints with id: <breakpt-id>
+	> breakpoint name add --name <breakpt-name>       # Create a breakpoint name (implicitly adds to last created breakpoint, if there is one)
 	> ```
 	>
 	> ***Example(s):***
 	>
-	> >```shell
-	> >(lldb) breakpoint name add --name 'controlFlow'
-	> >(lldb) br n a -N 'controlFlow'
-	> >```
-	> > *To clarify –– we are just creating a breakpoint name (`controlFlow`) which we can then name breakpoints that we `set` [with `br set ... -N <breakpt-name>` ]; this name is implicitly added to the last `set` breakpoint, if there is one.*
-	>
-	> > ```shell
-	> > (lldb) breakpoint name add --name 'funcs' 3 2 7
-	> > (lldb) br n a -N 'funcs' 3 2 7
-	> > ```
-	> > *To clarify –– we are adding to the list of names of the breakpoints [of id] 3, 2 and 7, the name 'funcs'.*
+	> ```shell
+	> (lldb) breakpoint name add --name 'controlFlow'
+	> (lldb) br n a -N 'controlFlow'
+	> ```
+	> > *To clarify –– we are just creating an [un-configured] breakpoint `name` (profile), namely: "`controlFlow`".*
 	>
 	> ***Tip(s):***
-	> > *It is possible to create all the breakpoint names [we think we will need] at the beginning, configure them [the breakpoint names], and [only once configured,] start creating/`set`'ing our breakpoints.*
+	> > *Idealy we would create all the breakpoint `names` (profiles) [we think we will need] at the beginning [of our debugging session]; then configure them [the breakpoint `names` (profiles)]; and only then start creating (`set`'ing) our breakpoints.*
+	> ```shell
+	> (lldb) breakpoint name add --name 'func'
+	> (lldb) breakpoint name add --name 'return'
+	> (lldb) breakpoint name add --name 'controlFlow'
+	> (lldb) breakpoint name add --name 'failure'
+	> ```
+	> > *As we create *(`set`)* them [the breakpoints], we can make them [the breakpoints] inherit (have added to their list of `names` (profiles)) those created (`add`'ed) `names` (profiles), using: `--breakpoint-name` or `-N` for short, followed by the `name` [of the profile].*
+	> ```shell
+	> (lldb) breakpoint set <breakpt-definition> --breakpoint-name <breakpt-name>
+	> (lldb) br s <breakpt-definition> -N <breakpt-name>
+	> ```
+	> > Concrete example(s):
+	> ```shell
+	> (lldb) breakpoint set --name foo --breakpoint-name 'func'
+	> (lldb) br s -n foo -N 'func'
+	> ```
+	> ```shell
+	> (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
+	> (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
+	> ```
+
+-	***Name breakpoints:***
+
+	> <small>`[Search Tags: >breakpointsetnames >breakptsetnames >brkptsetnames >brptsetnames >brsetnames >setbreakpointnames >setbreakptnames >setbrkptnames >setbrptnames >setbrnames >namebreakpoints >namebreakpts >namebrkpts >namebrpts >namebrs]`</small>
+
+	> ***Synopsis:***
+	> > *At creation:*
 	> > ```shell
-	> > (lldb) breakpoint name add --name 'func'
-	> > (lldb) breakpoint name add --name 'return'
-	> > (lldb) breakpoint name add --name 'controlFlow'
-	> > (lldb) breakpoint name add --name 'failure'
+	> > breakpoint set <breakpt-definition> --breakpoint-name <breakpt-name>
 	> > ```
-	> > *As we create/`set` them [the breakpoints], we can give them those [`add`'ed] names, using: `--breakpoint-name` or `-N` for short.*
-	> > ```shell
-	> > (lldb) breakpoint set --name foo --breakpoint-name 'func'
-	> > (lldb) br s -n foo -N 'func'
-	> > ```
-	> > ```shell
-	> > (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
-	> > (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
-	> > ```
-	> > ***Breakpoint names** and their **configurations** live on even after the breakpoints [themselves] are deleted.*
-	> > *All set breakpoints that have the created breakpoint names are affected by their *[set]* configurations.*
 	>
-	> *<small>[**Note:** We can give breakpoints, when we create/`set` [them], (new or existing) names, like so: `(lldb) breakpoint set <definition> -N <breakpt-name>` - **end note**]</small>*
+	> > *After creation:*
+	> > ```shell
+	> > breakpoint name add --name <breakpt-name> [<breakpt-id> ...]
+	> > ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) breakpoint set --name foo --breakpoint-name 'funcs'
+	> (lldb) br s -n foo -N 'funcs'
+	> ```
+	> ```shell
+	> (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
+	> (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
+	> ```
+	> > To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoint we are currently creating (`set`'ing).
+	> ```shell
+	> (lldb) breakpoint name add --name 'funcs' 3 2 7
+	> (lldb) br n a -N 'funcs' 3 2 7
+	> ```
+	> > To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoints [of id]: 3, 2 and 7.
 
 <br>
 
