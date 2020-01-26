@@ -12,7 +12,7 @@ matters, a table of the best references/resources out there.
 ----------------------------------------------------------------------------------
 ### How to quickly find anything ?
 
-You can initiate a search. To do so, you may use your *[browser's]* `find`
+You can initiate a search. To do so, you can use your *[browser's]* `find`
 command –– for most, that command will be: ***`cmd+f`***. Every search should
 follow the **form**:
 
