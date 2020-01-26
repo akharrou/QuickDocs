@@ -16,6 +16,7 @@ In every QuickDoc there are search tags under each section title that were desig
 to make anything quick and easy to find.
 
 ```
+### Section Title
 [Search Tags: >fulltagname >tagname >tag >tname >fulltname ...]
 ```
 
