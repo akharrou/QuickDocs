@@ -930,7 +930,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> (lldb) breakpoint modify --thread-id 6 8                   # change the thread assigned for the breakpoint of id: 8
 	> (lldb) br m -t 6 8
 	> ```
-	>
+
 	> *<small>[**Note:***
 	>
 	> -	*Passing an empty argument (i.e: `''`) [to flags] clears the modification(s) –– except for `--enable` (`-e`), `--disable` (`-d`) and `--ignore-count` (`-i`) [flags], .*
@@ -1207,7 +1207,6 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 	> ***Tip(s):***
 	> > *Idealy we would create all the breakpoint `names` (profiles) [we think we will need] at the beginning [of our debugging session]; then configure them [the breakpoint `names` (profiles)]; and only then start creating (`set`'ing) our breakpoints.*
 	> ```shell
-	> (lldb) breakpoint name add --name 'func'
 	> (lldb) breakpoint name add --name 'func'
 	> (lldb) breakpoint name add --name 'return'
 	> (lldb) breakpoint name add --name 'controlFlow'
