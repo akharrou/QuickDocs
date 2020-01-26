@@ -1215,7 +1215,7 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 	> (lldb) breakpoint name add --name 'failure'
 	> ```
 	> > *Then as we create *(`set`)* them [the breakpoints], we can make them [the breakpoints] inherit/be-named (have added to their list of `names` (profiles)) those created (`add`'ed) `names` (profiles), using: `--breakpoint-name` or `-N` for short, followed by the `name` [of the profile].*
-	>
+
 	> *<small>[**Note:***
 	>
 	> -	*You must have at least one [existent] breakpoint before creating (`add`'ing) breakpoint `names`.*
@@ -1238,7 +1238,7 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 	>
 	> > *After creation:*
 	> > ```shell
-	> > breakpoint name add --name <breakpt-name> [<breakpt-id> ...]
+	> > breakpoint name add --name <breakpt-name> [<breakpt-id> ...]  [<breakpt-name> ...]
 	> > ```
 	>
 	> ***Example(s):***
@@ -1250,12 +1250,17 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 	> (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
 	> (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
 	> ```
-	> > To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoint we are currently creating (`set`'ing).
+	> > *To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoint we are currently creating (`set`'ing).*
 	> ```shell
 	> (lldb) breakpoint name add --name 'funcs' 3 2 7
 	> (lldb) br n a -N 'funcs' 3 2 7
 	> ```
-	> > To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoints [of id]: 3, 2 and 7.
+	> > *To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoints [of id]: 3, 2 and 7.*
+	> ```shell
+	> (lldb) breakpoint name add --name 'important' 'funcs' 'controlFlow'
+	> (lldb) br n a -N 'important' 'funcs' 'controlFlow'
+	> ```
+	> > *To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoints that have in their list of `names` the `name`: `'funcs'` and/or `'controlFlow'`.*
 
 <br>
 
