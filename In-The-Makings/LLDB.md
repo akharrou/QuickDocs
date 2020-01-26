@@ -1177,9 +1177,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 <br>
 <br>
 
-***Breakpoint names*** are an extremely powerful *[`lldb`]* feature. It allows us to create a breakpoint "profile", so to speak, –– a set, of breakpoint options –– referrable by `name`.
-Later on, when we create *(`set`)* breakpoints, we can choose to have them *[the breakpoints we are creating (`set`'ing)]* inherit *(have added to their list of `names`)* one or more *[profile]* `names`, i.e one or more of these *[pre-defined]* sets of options.
-Any modification to a *[breakpoint]* profile immediately applies to all breakpoints that inherit that profile *(have that [profile] `name` in their list of [profile] `names`)*.
+***Breakpoint name*** is an extremely powerful *[`lldb`]* feature. It allows us to create a breakpoint "profile", so to speak, –– a set, of breakpoint options –– referrable by `name`. Later on, when we create *(`set`)* breakpoints, we can choose to have them *[the breakpoints we are creating (`set`'ing)]* inherit *(have added to their list of `names`)* one or more *[profile]* `names`, i.e one or more of these *[pre-defined]* sets of options. Any modification to a *[breakpoint]* profile immediately applies to all breakpoints that inherit that profile *(have that [profile] `name` in their list of [profile] `names`)*.
 
 Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit them, and *[existent]* breakpoints all together, allowing them to persist even after all breakpoints are deleted.
 Down below are discussed the breakpoint commands used to **create** / **list** / **delete** / **configure** breakpoint `names` *(profiles)* and how to make your breakpoint(s) inherit/be-named *(have added to their list of `names` *(profiles)*)* a `name` *(profile)*.
@@ -1196,7 +1194,7 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint name add --name <breakpt-name>       # Create a breakpoint name (implicitly adds to last created breakpoint, if there is one)
+	> breakpoint name add --name <breakpt-name>
 	> ```
 	>
 	> ***Example(s):***
@@ -1211,11 +1209,20 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 	> > *Idealy we would create all the breakpoint `names` (profiles) [we think we will need] at the beginning [of our debugging session]; then configure them [the breakpoint `names` (profiles)]; and only then start creating (`set`'ing) our breakpoints.*
 	> ```shell
 	> (lldb) breakpoint name add --name 'func'
+	> (lldb) breakpoint name add --name 'func'
 	> (lldb) breakpoint name add --name 'return'
 	> (lldb) breakpoint name add --name 'controlFlow'
 	> (lldb) breakpoint name add --name 'failure'
 	> ```
 	> > *Then as we create *(`set`)* them [the breakpoints], we can make them [the breakpoints] inherit/be-named (have added to their list of `names` (profiles)) those created (`add`'ed) `names` (profiles), using: `--breakpoint-name` or `-N` for short, followed by the `name` [of the profile].*
+	>
+	> *<small>[**Note:***
+	>
+	> -	*You must have at least one [existent] breakpoint before creating (`add`'ing) breakpoint `names`.*
+	>
+	> -	*Every created (`add`'ed) `name` will implicitly be added to [the list of names of] the last created breakpoint.*
+	>
+	> *- **end note**]</small>*
 
 <br>
 
