@@ -1177,7 +1177,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 <br>
 <br>
 
-***Breakpoint names*** are an extremely powerful *[`lldb`]* feature. It allows us to create a breakpoint "profile", so to speak –– by this we mean, a set, of breakpoint options –– , referrable by `name`.
+***Breakpoint names*** are an extremely powerful *[`lldb`]* feature. It allows us to create a breakpoint "profile", so to speak, –– a set, of breakpoint options –– referrable by `name`.
 Later on, when we create *(`set`)* breakpoints, we can choose to have them *[the breakpoints we are creating (`set`'ing)]* inherit *(have added to their list of `names`)* one or more *[profile]* `names`, i.e one or more of these *[pre-defined]* sets of options.
 Any modification to a *[breakpoint]* profile immediately applies to all breakpoints that inherit that profile *(have that [profile] `name` in their list of [profile] `names`)*.
 
