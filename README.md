@@ -34,4 +34,4 @@ QuickDoc follow the **form**:
 > with no spaces in between; occaisonnaly there will be additionally search tags that may
 > be seperated with a dot/period character '`.`'.
 
-> Feel free to suggest other search tags for any subject matter [as a pull request] and they will promptly be added !
+> Feel free to suggest other search tags for any subject matter *[as a pull request]* and they will promptly be added !
