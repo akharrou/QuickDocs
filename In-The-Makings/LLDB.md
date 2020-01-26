@@ -880,7 +880,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
--	***Modify** [existant] **breakpoint(s)** [option(s)] **:***
+-	***Modify** [existent] **breakpoint(s)** [option(s)] **:***
 
 	> <small>`[Search Tags: >modbreakpoint >modifbreakpoint >mobreakpoint >mbreakpoint >modifybreakpoint >breakpointmodify >modbreakpt >modifbreakpt >mobreakpt >mbreakpt >modifybreakpt >breakptmodify >modbrkpt >modifbrkpt >mobrkpt >mbrkpt >modifybrkpt >brkptmodify >modbrpt >modifbrpt >mobrpt >mbrpt >modifybrpt >brptmodify >modbr >modifbr >mobr >mbr >modifybr >brmodify]`</small>
 
@@ -888,7 +888,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 	> **Brief**
 	>
-	> *`modify` lets one modify previously `set` [breakpoint] options [on [existant] breakpoint(s)].*
+	> *`modify` lets one modify previously `set` [breakpoint] options [on [existent] breakpoint(s)].*
 	>
 	> ***Synopsis:***
 	> ```shell
@@ -923,7 +923,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	> (lldb) br m -c 'ac < 2' -o true 4 2 7
 	> ```
 	> ```shell
-	> (lldb) breakpoint modify --condition '' 'controlFlow'     # clears any existant condition, for all breakpoints who have 'controlFlow' in their list of names
+	> (lldb) breakpoint modify --condition '' 'controlFlow'     # clears any existent condition, for all breakpoints who have 'controlFlow' in their list of names
 	> (lldb) br m -c '' 'controlFlow'
 	> ```
 	> ```shell
@@ -1181,7 +1181,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 Later on, when we create *(`set`)* breakpoints, we can choose to have them *[the breakpoints we are creating (`set`'ing)]* inherit *(have added to their list of `names`)* one or more *[profile]* `names`, i.e one or more of these *[pre-defined]* sets of options.
 Any modification to a *[breakpoint]* profile immediately applies to all breakpoints that inherit that profile *(have that [profile] `name` in their list of [profile] `names`)*.
 
-Breakpoint `names` *(profiles)* live independantly of the breakpoints that inherit them, therefore persist even after all breakpoints are deleted.
+Breakpoint `names` *(profiles)* live independantly of the breakpoints that inherit them, and *[existent]* breakpoints all together, therefore persist even after all breakpoints are deleted.
 Down below are discussed the breakpoint commands used to **create** / **list** / **delete** / **configure** breakpoint `names` *(profiles)*.
 
 > *For more on **breakpoint names**, see: [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names).*
@@ -1809,7 +1809,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 >	*<small>[**Note**: We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"* - **end note**]</small>* <br>
 
--	***Modify** [existant] **breakpoint(s)** [option(s)] **:***
+-	***Modify** [existent] **breakpoint(s)** [option(s)] **:***
 
 	> <small>`[Search Tags: >modbreakpoint >modifbreakpoint >mobreakpoint >mbreakpoint >modifybreakpoint >breakpointmodify >modbreakpt >modifbreakpt >mobreakpt >mbreakpt >modifybreakpt >breakptmodify >modbrkpt >modifbrkpt >mobrkpt >mbrkpt >modifybrkpt >brkptmodify >modbrpt >modifbrpt >mobrpt >mbrpt >modifybrpt >brptmodify >modbr >modifbr >mobr >mbr >modifybr >brmodify]`</small>
 
@@ -1817,7 +1817,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 	> ***Brief:***
 	>
-	> *`breakpoint modify` allows to **modify** the options on [existant] breakpoint(s) [in the executable]. With the exception of --enable (`-e`), --disable (`-d`) and --count (`-i`) [flags], passing an empty
+	> *`breakpoint modify` allows to **modify** the options on [existent] breakpoint(s) [in the executable]. With the exception of --enable (`-e`), --disable (`-d`) and --count (`-i`) [flags], passing an empty
                  argument clears the modification.</small>*
 	>
 	> *<small>[**Note:***
