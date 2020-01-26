@@ -1215,8 +1215,9 @@ Down below are discussed the breakpoint commands used to **create** / **list** /
 	> (lldb) breakpoint name add --name 'controlFlow'
 	> (lldb) breakpoint name add --name 'failure'
 	> ```
-	> > *Then as we create *(`set`)* them [the breakpoints], we can make them [the breakpoints] inherit (have added to their list of `names` (profiles)) those created (`add`'ed) `names` (profiles), using: `--breakpoint-name` or `-N` for short, followed by the `name` [of the profile].*
+	> > *Then as we create *(`set`)* them [the breakpoints], we can make them [the breakpoints] inherit/be-named (have added to their list of `names` (profiles)) those created (`add`'ed) `names` (profiles), using: `--breakpoint-name` or `-N` for short, followed by the `name` [of the profile].*
 
+<br>
 
 -	***Name breakpoints:***
 
