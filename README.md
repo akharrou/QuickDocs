@@ -12,16 +12,17 @@ matters, a table of the best references/resources out there.
 ----------------------------------------------------------------------------------
 ### How to quickly find anything ?
 
-You can initiate a search. To do so, you can use your *[browser's]* `find`
-command –– for most, that command will be: ***`cmd+f`***. Every search should
-follow the **form**:
+You can initiate a search. To do so, you can use your *[browser's]* command that
+brings out the [in document] search bar –– for most, that command will be:
+***`cmd+f`***. In every QuickDoc there are search tags under each section
+title they follow the **form**:
 
 ```
 >topicmatterdesired
 >topic.matter.desired
 ```
 
-> –– the search should be prepended with a right arrow character
+> –– every search should then be prepended with a right arrow character
 > '`>`', followed by the full subject matter word or phrase
 > or abbreviation/acrynom thereof, with no spaces in
 > between; occaisonnaly there will be search tags that may be
