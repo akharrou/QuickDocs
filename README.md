@@ -12,8 +12,8 @@ matters, a table of the best references/resources out there.
 ----------------------------------------------------------------------------------
 ### How to quickly find anything ?
 
-In every QuickDoc there are search tags under each section title that were designed
-to make anything quick and easy to find.
+In every QuickDoc there are search tags under each section title. These search tags
+were designed with the idea of making anything quick and easy to find.
 
 ```
 ### Section Title
