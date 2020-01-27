@@ -1016,7 +1016,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
-- ***Breakpoint Commands:***
+- #### ***Breakpoint Commands:***
 
 	> <small>`[Search Tags: >commandbreakpoint >commandsbreakpoint >breakpointcommands >commandbreakpt >commandsbreakpt >breakptcommands >commandbrkpt >commandsbrkpt >brkptcommands >commandbrpt >commandsbrpt >brptcommands >commandbr >commandsbr >brcommands >cmdbreakpoint >cmdsbreakpoint >breakpointcmds >cmdbreakpt >cmdsbreakpt >breakptcmds >cmdbrkpt >cmdsbrkpt >brkptcmds >cmdbrpt >cmdsbrpt >brptcmds >cmdbr >cmdsbr >brcmds >breakpointscrpt >scrptbreakpoint >scriptbreakpoint >breakpointscripts >breakptscrpts >scrptbreakpts >scriptbreakpts >breakptscripts >brkptscrpts >scrptbrkpts >scriptbrkpts >brkptscripts >brptscrpts >scrptbrpts >scriptbrpts >brptscripts >brscrpts >scrptbr >scriptbr >brscript]`</small>
 
@@ -1130,7 +1130,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 	>
     > | Attribute                          | Abrv. | Description
     > | ---------------------------------- | ----- | ------------------------------------
-    > | `--ignore-count <count>`           | `-i`  | Set the number of times this breakpoint is skipped before stopping; this is what is referred to as the *hit-count* option.
+    > | `--ignore-count <count>`           | `-i`  | Set the number of times this breakpoint is skipped before stopping.
     > | `--auto-continue <boolean>`        | `-G`  | The breakpoint will auto-continue after running its commands.
     > | `--one-shot <boolean>`             | `-o`  | The breakpoint is deleted the first time it stops causes a stop.
     > | `--move-to-nearest-code <boolean>` | `-m`  | Move breakpoints to nearest code.
@@ -1818,119 +1818,43 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 > TODO: #### 3.4.2.3 (Watchpoint) Options
 
-
 >	*<small>[**Note**: We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"* - **end note**]</small>* <br>
 
-<!--
--	***Modify** [existent] **breakpoint(s)** [option(s)] **:***
+-	***Add/modify** [watchpoint] **condition:***
 
-	> <small>`[Search Tags: >modbreakpoint >modifbreakpoint >mobreakpoint >mbreakpoint >modifybreakpoint >breakpointmodify >modbreakpt >modifbreakpt >mobreakpt >mbreakpt >modifybreakpt >breakptmodify >modbrkpt >modifbrkpt >mobrkpt >mbrkpt >modifybrkpt >brkptmodify >modbrpt >modifbrpt >mobrpt >mbrpt >modifybrpt >brptmodify >modbr >modifbr >mobr >mbr >modifybr >brmodify]`</small>
-
-	<br>
-
-	> ***Brief:***
+	> ***Synopsis:***
+	> ```shell
+	> watchpoint modify --condition <condition-expr> [<watch-id> ...]
+	> ```
 	>
-	> *`breakpoint modify` allows to **modify** the options on [existent] breakpoint(s) [in the executable]. With the exception of --enable (`-e`), --disable (`-d`) and --count (`-i`) [flags], passing an empty
-                 argument clears the modification.</small>*
+	> ***Example(s):***
+	> ```shell
+	> watchpoint modify --condition 'my_var > 10' 1
+	> wa mo -c 'my_var > 10' 1
+	> ```
+	> ```shell
+	> watchpoint modify --condition 'my_ptr == NULL' 2
+	> wa mo -c 'my_ptr == NULL' 2
+	> ```
+
+-	***Add/modify** [watchpoint] **command(s):***
+
+	> `breakpoint command` works identically to `watchpoint command`. Search `>breakpointcommands` –– or see ([§3.4.1.3](#3413-options)) and scroll down till you find ***"Breakpoint commands"***.
+
+-	***Add/modify** [watchpoint] **attribute(s):***
+
+	> *Watchpoints can only have an ignore-count.*
+
+	> ***Synopsis:***
+	> ```shell
+	> watchpoint ignore --ignore-count <count> [<watchpt-id> ...]
+	> ```
 	>
-	> *<small>[**Note:***
-	>
-	> -	*With the exception of `--enable` (`-e`), `--disable` (`-d`) and `--ignore-count` (`-i`) [flags], passing an empty
-                 argument clears the modification.*
-	>
-	> -	*If no breakpoint is specified, acts on the last created breakpoint.*
-	>
-	> *- **end note**]</small>*
-
-	<br> -->
-
-TODO :	-	***Add/modify** [watchpoint] **condition:***
-
-		> ***Synopsis:***
-		>
-		> ```shell
-		> breakpoint modify
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> ```
-		> ```shell
-		> ```
-
-TODO :	-	***Add/modify** [watchpoint] **command(s):***
-
-		> ***Synopsis:***
-		>
-		> ```shell
-		> breakpoint modify
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> ```
-		> ```shell
-		> ```
-
-TODO :	-	***Add/modify** [watchpoint] **attribute(s):***
-
-		> ***Synopsis:***
-		>
-		> ```shell
-		> breakpoint modify
-		> ```
-		>
-		> ***Example(s):***
-		> ```shell
-		> ```
-		> ```shell
-		> ```
-
----
-<!--
--	***Set watchpoint options:***
-
-	-	***Conditions:***
-
-		> ***Synopsis:***
-		> ```
-		> watchpoint modify [-c <expr>] [<watchpt-ids>]
-		> watchpoint command [-c <expr>] [<watchpt-ids>]
-		> ```
-		>
-		> ***Example(s):***
-		> ```
-		> (lldb) watch set var global
-		> (lldb) watchpoint modify -c '(global == 5)'
-		> ```
-
-    -	***Commands:***
-
-		> ***Synopsis:***
-		> ```
-		> watchpoint modify [-C <lldb-command>] [<watchpt-ids>]
-		> watchpoint command add [<watchpt-ids>]
-		> ```
-		>
-		> ***Example(s):***
-		> ```
-		> (lldb) watch set var global
-		> (lldb) watchpoint modify -c '(global == 5)'
-		> ```
-
-		add    -- Add a set of LLDB commands to a watchpoint, to be executed whenever the watchpoint is hit.
-		delete -- Delete the set of commands from a watchpoint.
-		list -->
-
-Set ignore count on the specified watchpoint(s).  If no watchpoints are specified, set them all.
-
-Syntax:
-
-Command Options Usage:
-  watchpoint ignore -i <count> [<watchpt-id | watchpt-id-list>]
-
-       -i <count> ( --ignore-count <count> )
-            Set the number of times this watchpoint is skipped before stopping.
+	> ***Example(s):***
+	> ```shell
+	> watchpoint ignore --ignore-count 10 3 7 6
+	> wa i -i 10 3 7 6
+	> ```
 
 
 <br>
