@@ -297,7 +297,7 @@ Contents
 
 
 ---
-[🏠](#31-compile-program) | [⬅️](#31-compile-program) | [➡️](#312-sanitizer-flags--fsanitize-family)
+[🏠](#contents) | [⬅️](#31-compile-program) | [➡️](#312-sanitizer-flags--fsanitize-family)
 ### 3.1.1. Debug Flags: `-g` & `-O0`
 <small>`[Search Tags: >compileprogram >compileprg >programcompilation >compilation >lldb.compile.flags >lldb.compile.debugflags >lldb.debugflags >lldb.flags >debugflags >dbflags >deflags >bugflags >dbgflags >dbugflags]`</small>
 <br>
@@ -329,7 +329,7 @@ Contents
 
 
 ---
-[🏠](#31-compile-program) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-launch-lldb)
+[🏠](#contents) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-launch-lldb)
 ### 3.1.2. Sanitizer Flags: `-fsanitize` family
 <small>`[Search Tags: >fsanitize=address >fsanitize=undefined >fsanitize=memory >fsanitize=leaks >fsanitize=threads >fsanitize=dataflag >fsanitize=cfi >fsanitize=safestack >fsanitize=safe-stack >fsanitize=data-flow >sanitizers >sanitizerflags >sanitizeflags >sanitizer.flags >flags.sanitizers >debug.sanitizers >debugsanitizers >debugfsanitizers >memoryflags >leakflags >leaksflags >threadflags >dataflowflags >undefinedbehaviorflags >safestackflags >cfiflags >memory.flags >leaks.flags >leak.flags >thread.flags >dataflow.flags >undefinedbehavior.flags >safestack.flags >cfi.flags] >flags.memory >flags.leak >flags.thread >flags.dataflow >flags.undefinedbehavior >flags.safestack >flags.cfi`</small>
 <br>
@@ -396,13 +396,13 @@ Contents
 <br>
 
 
--	***To launch/start LLDB:***
+Start the `lldb` debugger *[program]* by typing *[in your command prompt]*:
 
-	>
-	> ```shell
-	> $> lldb
-	> (lldb)
-	> ```
+>
+> ```shell
+> $> lldb
+> (lldb)
+> ```
 
 
 <br>
@@ -487,25 +487,6 @@ Contents
 	> > (lldb) ta c a.out
 	> > (lldb) file a.out
 	> > ```
-
-	<!-- - *[From] outside `lldb`:* <br> <br>
-		```shell
-		$> lldb [--file|-f] <program-execuable-filename> [<run-args>]
-		```
-		```shell
-		$> lldb --file a.out "arg1" "arg2" "youGetIt"
-		$> lldb -f a.out "arg1" "arg2" "youGetIt"
-		$> lldb a.out
-		```
-	- *[From] inside `lldb`:* <br> <br>
-		```shell
-		(lldb) target create <program-execuable-filename>
-		```
-		```shell
-		(lldb) target create a.out
-		(lldb) ta cr a.out
-		(lldb) file a.out
-		``` -->
 
 <br>
 
