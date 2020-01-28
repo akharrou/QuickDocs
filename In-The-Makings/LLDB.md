@@ -39,9 +39,6 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 		- [3.4.2. Watchpoints](#342-watchpoints)
-			- [3.4.2.1. Basic Commands](#3421-basic-commands)
-			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
-			- [3.4.2.3. Options](#3423-options)
 	- [3.5. Begin Debugging](#35-start-or-attach-program)
 		- [3.5.1. Launch Program](#351-launch-program)
 		- [3.5.2. Attach to Program](#352-attach-to-program)
@@ -1545,7 +1542,7 @@ Contents
 
 ---
 
--	#### Set a breakpoint**, on function(s), **by fullname:***
+-	#### Set a breakpoint, on function(s), using fullname:***
 
 	> <small>`[Search Tags: >breakpointfullname >breakptfullname >brkptfullname >brptfullname >brfullname >fullnamebreakpoint >fullnamebreakpt >fullnamebrkpt >fullnamebrpt >fullnamebr >breakpointfullnamefunc >breakpointfullnamefunction >breakpointfuncfullname >breakpointfunctionfullname >breakptfullnamefunc >breakptfullnamefunction >breakptfuncfullname >breakptfunctionfullname >brkptfullnamefunc >brkptfullnamefunction >brkptfuncfullname >brkptfunctionfullname >brptfullnamefunc >brptfullnamefunction >brptfuncfullname >brptfunctionfullname >brfullnamefunc >brfullnamefunction >brfuncfullname >brfunctionfullname]`</small>
 
@@ -1562,7 +1559,7 @@ Contents
 
 <br>
 
--	#### ***Set a breakpoint**, on function(s), **by basename:***
+-	#### ***Set a breakpoint, on function(s), using basename:***
 
 	> <small>`[Search Tags: >breakpointbasename >breakptbasename >brkptbasename >brptbasename >brbasename >basenamebreakpoint >basenamebreakpt >basenamebrkpt >basenamebrpt >basenamebr]`</small>
 
@@ -1643,8 +1640,10 @@ Contents
 
 Contents
 ---
-- [X Title](#tag)
-
+- [3.4.2.1. Basic Commands](#3421-basic-commands)
+- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
+- [3.4.2.3. Options](#3423-options)
+---
 
 >	*(**Definition**) Watchpoint: a (special) kind of breakpoint (debugging mechanism) whereby execution is suspended every time a specified variable or memory-location is accessed for reading and/or writing.*
 >
@@ -1652,14 +1651,11 @@ Contents
 
 ---
 
-TODO : WATCHPOINT SECTION
-
 > *<small>[**Note**: Before the execution of a [targeted] program, watchpoints can only be set on global variables –– once [the [targeted] program is] launched, watchpoints can be set on any variable/memory-location. - **end note**]</small>*
 
-The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421-basic-commands)) *[for operating on watchpoints]*, the ***watchpoint options*** ([§3.1.4.2](#3413-options)) available and how to utilise them, the usefulness and power of ***watchpoint names*** ([§3.1.4.3](#3414-names)) and that of configuring their options, watchpoints for multi-threaded programs ([§3.1.4.4](#3415-multi-threaded-programs)) and, finally, a few ***C++ specific watchpoint commands*** ([§3.1.4.5](#3416-c-programs)).
--	Down below, we explore basic commands for operating on watchpoints ([§3.4.2.1](#3421-basic-commands)) – setting, listing and deleting watchpoints.
+---
 
--	Further below we go into more advanced commands ([§3.4.2.2](#3422-advanced-commands)) – setting watchpoint options.
+The following subsections dive into the ***basic*** ([§3.4.2.1](#3421-basic-commands)) as well as [slightly] more ***advanced commands*** ([§3.4.2.2](#3422-advanced-commands)) *[for operating on watchpoints]*, then into the available ***watchpoint options*** ([§3.4.2.3](#3423-options)) and how to utilise them.
 
 <br>
 <br>
@@ -1675,16 +1671,21 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 ---
 
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#342-watchpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.2.1. Basic Commands
 <small>`[Search Tags: >basicwatchpoint >basicswatchpoint >watchpointbasics >basicwatchpt >basicswatchpt >watchptbasics >basicwapt >basicswapt >waptbasics >basicwapt >basicswapt >waptbasics >basicwa >basicswa >wabasics]`</small>
 <br>
-<br>
 
+Contents
+---
+- [1 Set on Variable or Memory Region](#set-a-watchpoint)
+- [2 List](#list-watchpoints)
+- [3 Delete](#delete-watchpoints)
+---
 
 > *(Basic) Commands for operating on watchpoints.*
 
--	***Set a watchpoint:***
+-	#### ***Set a watchpoint:***
 
 	> <small>`[Search Tags: >createwatchpoint >crwatchpoint >sewatchpoint >swatchpoint >watchpointcreates >setwatchpoint >watchpointsets >createwatchpt >crwatchpt >sewatchpt >swatchpt >watchptcreates >setwatchpt >watchptsets >createwapt >crwapt >sewapt >swapt >waptcreates >setwapt >waptsets >createwa >crwa >sewa >swa >wacreates >setwa >wasets]`</small>
 
@@ -1742,7 +1743,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 	>
 	> *- **end note**]</small>*
 
--	***List watchpoints:***
+-	#### ***List watchpoints:***
 
 	> <small>`[Search Tags: >watchpointlist >watchpointls >listwatchpoint >lstwatchpoint >lswatchpoint >liwatchpoint >watchptlist >watchptls >listwatchpt >lstwatchpt >lswatchpt >liwatchpt >waptlist >waptls >listwapt >lstwapt >lswapt >liwapt >walist >wals >listwa >lstwa >lswa >liwa]`</small>
 
@@ -1758,7 +1759,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 	> (lldb) w l -v                         # --verbose  (extensive description)
 	> ```
 
--	***Delete watchpoint(s):***
+-	#### ***Delete watchpoint(s):***
 
 	> <small>`[Search Tags: >wadelete >deletewa >deletewapt >deletewatchpt >deletewatchpoint >wadelete >waptdelete >watchptdelete >watchpointdelete >dewa >deletewa >deletetarge >waunload >unloadwatchpoints >uldwatchpoints >watchpointunload >unloadwatchpoint >delwa >wadel >delwapt >waptdel >delwatchpt >watchptdel >delwatchpoint >watchpointdel]`</small>
 
@@ -1790,7 +1791,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 
 ---
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#342-watchpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.2.2. Advanced Commands
 <small>`[Search Tags: >advancedwatchpoint >watchpointadvanceds >advancedwatchpt >watchptadvanceds >advancedwapt >waptadvanceds >advancedwa >waadvanceds >advwatchpoint >watchpointadvs >advwatchpt >breakptadvs >advwapt >waptadvs >advwa >waadvs]`</small>
 <br>
@@ -1852,7 +1853,7 @@ The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421
 
 
 ---
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#342-watchpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.2.3 Options
 <small>`[Search Tags: >optswatchpoint >watchpointopts >watchpointops >opswatchpoint >optionswatchpoint >watchpointoptions >optswatchpt >watchptopts >watchptops >opswatchpt >optionswatchpt >watchptoptions >optswapt >waptopts >waptops >opswapt >optionswapt >waptoptions >optswa >waopts >waops >opswa >optionswa >waoptions]`</small>
 <br>
