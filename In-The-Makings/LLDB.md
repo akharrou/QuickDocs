@@ -1684,6 +1684,8 @@ Contents
 
 > *(Basic) Commands for operating on watchpoints.*
 
+<br>
+
 -	#### ***Set a watchpoint:***
 
 	> <small>`[Search Tags: >createwatchpoint >crwatchpoint >sewatchpoint >swatchpoint >watchpointcreates >setwatchpoint >watchpointsets >createwatchpt >crwatchpt >sewatchpt >swatchpt >watchptcreates >setwatchpt >watchptsets >createwapt >crwapt >sewapt >swapt >waptcreates >setwapt >waptsets >createwa >crwa >sewa >swa >wacreates >setwa >wasets]`</small>
@@ -1742,6 +1744,8 @@ Contents
 	>
 	> *- **end note**]</small>*
 
+<br>
+
 -	#### ***List watchpoints:***
 
 	> <small>`[Search Tags: >watchpointlist >watchpointls >listwatchpoint >lstwatchpoint >lswatchpoint >liwatchpoint >watchptlist >watchptls >listwatchpt >lstwatchpt >lswatchpt >liwatchpt >waptlist >waptls >listwapt >lstwapt >lswapt >liwapt >walist >wals >listwa >lstwa >lswa >liwa]`</small>
@@ -1757,6 +1761,8 @@ Contents
 	> (lldb) wa l -f 8                      # --full     (full description, default)
 	> (lldb) w l -v                         # --verbose  (extensive description)
 	> ```
+
+<br>
 
 -	#### ***Delete watchpoint(s):***
 
@@ -1867,6 +1873,8 @@ Contents
 >	*<small>[**Note**: We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"* - **end note**]</small>* <br>
 
 ---
+
+<br>
 
 -	#### Add/modify [watchpoint] condition:
 
