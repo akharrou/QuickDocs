@@ -960,7 +960,15 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 #### 3.4.1.3. Options
 <small>`[Search Tags: >optsbreakpoint >breakpointopts >breakpointops >opsbreakpoint >optionsbreakpoint >breakpointoptions >optsbreakpt >breakptopts >breakptops >opsbreakpt >optionsbreakpt >breakptoptions >optsbrkpt >brkptopts >brkptops >opsbrkpt >optionsbrkpt >brkptoptions >optsbrpt >brptopts >brptops >opsbrpt >optionsbrpt >brptoptions >optsbr >bropts >brops >opsbr >optionsbr >broptions]`</small>
 <br>
-<br>
+
+Contents
+---
+- [1 Conditions](#breakpoint-conditions)
+- [2 Commands](#breakpoint-commands)
+  - [2.1 Set](#set-breakpoint-commands)
+  - [2.2 List](##list-breakpoint-commands)
+  - [2.3 Delete](##delete-breakpoint-commands)
+- [3 Attributes](#breakpoint-attributes)
 
 ---
 
@@ -971,14 +979,6 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 ---
 
 >	*<small>[**Note**: We'll refer to options that are neither [breakpoint] conditions nor [breakpoint] commands as: *"[breakpoint] attributes"*, e.g.: hit-count, auto-continue, etc… - **end note**]</small>* <br>
-
----
-
-##### We cover:
-
-- [Conditions](#breakpoint-conditions)
-- [Commands](#breakpoint-commands)
-- [Attributes](#breakpoint-attributes)
 
 ---
 
@@ -1030,7 +1030,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 	<br>
 
-	- ***Set** [breakpoint] **command(s)** [to an existing breakpoint] **:***
+	- #### ***Set** [breakpoint] **command(s):***
 
 		> <small>`[Search Tags: >breakpointaddcommands >breakpointaddcmds >breakpointacmds >breakptaddcommands >breakptaddcmds >breakptadcmds >brkptaddcommands >brkptaddcmds >brkptadcmds >brptaddcommands >brptaddcmds >brptadcmds >braddcommands >braddcmds >bradcmds >breakpointaddscripts >breakpointaddscrpts >breakpointadscrpts >breakptaddscripts >breakptaddscrpts >breakptadscrpts >brkptaddscripts >brkptaddscrpts >brkptadscrpts >brptaddscripts >brptaddscrpts >brptadscrpts >braddscripts >braddscrpts >bradscrpts >breakpointsetcommands >breakpointsetcmds >breakpointacmds >breakptsetcommands >breakptsetcmds >breakptsecmds >brkptsetcommands >brkptsetcmds >brkptsecmds >brptsetcommands >brptsetcmds >brptsecmds >brsetcommands >brsetcmds >brsecmds >breakpointsetscripts >breakpointsetscrpts >breakpointsescrpts >breakptsetscripts >breakptssetscrpts >breakptssescrpts >brkptssetscripts >brkptssetscrpts >brkptssescrpts >brptssetscripts >brptssetscrpts >brptssescrpts >brsetscripts >brsetscrpts >brsescrpts]`</small>
 
@@ -1091,7 +1091,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 	<br>
 
-	- ***List** [breakpoint] **command(s):***
+	- #### ***List** [breakpoint] **command(s):***
 
 		> <small>`[Search Tags: >breakpointlistcommands >breakpointlistcmds >breakpointlscmds >breakptlistcommands >breakptlistcmds >breakptlscmds >brkptlistcommands >brkptlistcmds >brkptlscmds >brptlistcommands >brptlistcmds >brptlscmds >brlistcommands >brlistcmds >brlscmds >breakpointlicmds >breakptlicmds >brkptlicmds >brptlicmds >brlicmds]`</small>
 
@@ -1108,7 +1108,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 	<br>
 
-	- ***Delete** [breakpoint] **command(s):***
+	- #### ***Delete** [breakpoint] **command(s):***
 
 		> <small>`[Search Tags: >breakpointdeletecommands >breakpointdeletecmds >breakpointdecmds >breakptdeletecommands >breakptdeletecmds >breakptdecmds >brkptdeletecommands >brkptdeletecmds >brkptdecmds >brptdeletecommands >brptdeletecmds >brptdecmds >brdeletecommands >brdeletecmds >brdecmds]`</small>
 
@@ -1185,7 +1185,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 <br>
 
 Contents
-------
+---
 - [1 Create](#create-breakpoint-names)
 - [2 Name](#name-breakpoints)
 - [3 List](#list-breakpoint-names)
