@@ -1535,14 +1535,13 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 Contents
 ---
-- [1 Set on Function (using Fullname)](#set-a-breakpoint-on-functions-by-fullname)
-- [2 Set on Function (using Basename)](#set-a-breakpoint-on-functions-by-basename)
+- [1 Set on Function (using Fullname)](#set-a-breakpoint-on-functions-using-fullname)
+- [2 Set on Function (using Basename)](#set-a-breakpoint-on-functions-using-basename)
 - [3 Set on Method](#set-a-breakpoint-on-class-methods)
 - [4 Set on Exceptions](#set-a-breakpoint-on-all-exceptions-on-catch-and-or-throws)
-
 ---
 
--	#### Set a breakpoint, on function(s), using fullname:***
+-	#### Set a breakpoint, on function(s), using fullname:
 
 	> <small>`[Search Tags: >breakpointfullname >breakptfullname >brkptfullname >brptfullname >brfullname >fullnamebreakpoint >fullnamebreakpt >fullnamebrkpt >fullnamebrpt >fullnamebr >breakpointfullnamefunc >breakpointfullnamefunction >breakpointfuncfullname >breakpointfunctionfullname >breakptfullnamefunc >breakptfullnamefunction >breakptfuncfullname >breakptfunctionfullname >brkptfullnamefunc >brkptfullnamefunction >brkptfuncfullname >brkptfunctionfullname >brptfullnamefunc >brptfullnamefunction >brptfuncfullname >brptfunctionfullname >brfullnamefunc >brfullnamefunction >brfuncfullname >brfunctionfullname]`</small>
 
@@ -1559,7 +1558,7 @@ Contents
 
 <br>
 
--	#### ***Set a breakpoint, on function(s), using basename:***
+-	#### Set a breakpoint, on function(s), using basename:
 
 	> <small>`[Search Tags: >breakpointbasename >breakptbasename >brkptbasename >brptbasename >brbasename >basenamebreakpoint >basenamebreakpt >basenamebrkpt >basenamebrpt >basenamebr]`</small>
 
@@ -1578,7 +1577,7 @@ Contents
 
 <br>
 
--	#### ***Set a breakpoint, on** [class] **method(s):***
+-	#### Set a breakpoint, on** [class] **method(s):
 
 	> <small>`[Search Tags: >breakpointmethods >breakptmethods >brkptmethods >brptmethods >brmethods >methodsbreakpoint >methodsbreakpt >methodsbrkpt >methodsbrpt >methodsbr >breakpointclassmethods >breakptclassmethods >brkptclassmethods >brptclassmethods >brclassmethods >classmethodsbreakpoint >classmethodsbreakpt >classmethodsbrkpt >classmethodsbrpt >classmethodsbr]`</small>
 
@@ -1595,7 +1594,7 @@ Contents
 
 <br>
 
--	#### ***Set a breakpoint, on (all) exceptions** [on `catch` and/or `throws`] **:***
+-	#### Set a breakpoint, on (all) exceptions [on `catch` and/or `throws`]:
 
 	> <small>`[Search Tags: >breakpointexceptions >breakptexceptions >brkptexceptions >brptexceptions >brexceptions >exceptionsbreakpoint >exceptionsbreakpt >exceptionsbrkpt >exceptionsbrpt >exceptionsbr]`</small>
 
