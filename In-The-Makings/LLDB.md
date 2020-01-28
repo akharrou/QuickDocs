@@ -42,7 +42,6 @@ QuickDocs \| Low Level Debugger (LLDB)
 			- [3.4.1.1. Basic Commands](#3411-basic-commands)
 			- [3.4.1.2. Advanced Commands](#3412-advanced-commands)
 			- [3.4.1.3. Options](#3413-options)
-				- [Breakpoint Commands](#breakpoint-commands)
 			- [3.4.1.4. Names](#3414-names)
 			- [3.4.1.5. Multi-Threaded Programs](#3415-multi-threaded-programs)
 			- [3.4.1.6. C++ Programs](#3416-c-programs)
@@ -975,9 +974,17 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 ---
 
+##### We cover:
+
+- [Conditions](#breakpoint-conditions)
+- [Commands](#breakpoint-commands)
+- [Attributes](#breakpoint-attributes)
+
+---
+
 <br>
 
-- ***Breakpoint Conditions:***
+- #### ***Breakpoint Conditions:***
 
 	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions >breakpointconds >breakptconds >brkptconds >brptconds >brconds]`</small>
 
@@ -1118,7 +1125,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
-- ***Breakpoint Attributes:***
+- #### ***Breakpoint Attributes:***
 
 	> <small>`[Search Tags: >attributebreakpoint >attribbreakpoint >atbbreakpoint >breakpointatbs >breakpointatts >breakpointattributes >breakpointattribs >attributebreakpt >attribbreakpt >atbbreakpt >breakptatbs >breakptatts >breakptattributes >breakptattribs >attributebrkpt >attribbrkpt >atbbrkpt >brkptatbs >brkptatts >brkptattributes >brkptattribs >attributebrpt >attribbrpt >atbbrpt >brptatbs >brptatts >brptattributes >brptattribs >attributebr >attribbr >atbbr >bratbs >bratts >brattributes >brattribs]`</small>
 
@@ -1186,9 +1193,24 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 ---
 
+Contents
+------
+- [1 Create](#create-breakpoint-names)
+- [2 Name](#name-breakpoints)
+- [3 List](#list-breakpoint-names)
+- [4 Delete](#delete-breakpoint-name-from-breakpoint-name-list-of-a-breakpoint)
+- [5 Configure](#configure-breakpoint-names) <br>
+	- [5.1 Disable / Enable](#disbale-enable-named-breakpoints) <br>
+	- [5.2 Condition](#configure-condition) <br>
+	- [5.3 Commands](#configure-commands) <br>
+	- [5.4 Attributes](#configure-attributes) <br>
+	- [5.5 Threads](#configure-assigned-threads)
+
+---
+
 <br>
 
--	***Create** [breakpoint] **name(s):***
+-	#### ***Create** [breakpoint] **name(s):***
 
 	> <small>`[Search Tags: >addbreakpointnames >breakpointaddnames >breakpointanames >addbreakptnames >breakptaddnames >breakptanames >addbrkptnames >brkptaddnames >brkptanames >addbrptnames >brptaddnames >brptanames >addbrnames >braddnames >branames >createbreakpointnames >breakpointcreatenames >createbreakptnames >breakptcreatenames >createbrkptnames >brkptcreatenames >createbrptnames >brptcreatenames >createbrnames >brcreatenames]`</small>
 
@@ -1225,7 +1247,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 <br>
 
--	***Name breakpoints:***
+-	#### ***Name breakpoints:***
 
 	> <small>`[Search Tags: >breakpointsetnames >breakptsetnames >brkptsetnames >brptsetnames >brsetnames >setbreakpointnames >setbreakptnames >setbrkptnames >setbrptnames >setbrnames >namebreakpoints >namebreakpts >namebrkpts >namebrpts >namebrs]`</small>
 
@@ -1263,9 +1285,9 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 <br>
 
--	***List** [breakpoint] **names:***
+-	#### ***List** [breakpoint] **names:***
 
-	> <small>`[Search Tags: >libreakpointnames >lsbreakpointnames >listbreakpointnames >breakpointlinames >breakpointlsnames >breakpointlistnames >libreakptnames >lsbreakptnames >listbreakptnames >breakptlinames >breakptlsnames >breakptlistnames >librkptnames >lsbrkptnames >listbrkptnames >brkptlinames >brkptlsnames >brkptlistnames >librptnames >lsbrptnames >listbrptnames >brptlinames >brptlsnames >brptlistnames >librnames >lsbrnames >listbrnames >brlinames >brlsnames >brlistnames]`</small>
+	> <small>`[Search Tags: >libreakpointnames >lsbreakpointnames >listbreakpointnames >breakpointlinames >breakpointlsnames >breakpointlistnames >libreakptnames >lsbreakptnames >listbreakptnames >breakptlinames >breakptlsnames >breakptlistnames >librkptnames >lsbrkptnames >listbrkptnames >brkptlinames >brkptlsnames >brkptlistnames >librptnames >lsbrptnames >listbrptnames >brptlinames >brptlsnames >brptlistnames >librnames >lsbrnames >listbrnames >brlinames >brlsnames >brlistnames >breakpointnamels >breakpointnameli >breakpointnamelist >breakptnamels >breakptnameli >breakptnamelist >brkptnamels >brkptnameli >brkptnamelist >brptnamels >brptnameli >brptnamelist >brnamels >brnameli >brnamelist >breakpointnals >breakpointnls >breakpointnali >breakpointnli >breakpointnalist >breakpointnlist >breakptnals >breakptnls >breakptnali >breakptnli >breakptnalist >breakptnlist >brkptnals >brkptnls >brkptnali >brkptnli >brkptnalist >brkptnlist >brptnals >brptnls >brptnali >brptnli >brptnalist >brptnlist >brnals >brnls >brnali >brnli >brnalist >brnlist]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -1282,7 +1304,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 -	***Delete** [breakpoint] **name** [from breakpoint name list [of a breakpoint]] **:***
 
-	> <small>`[Search Tags: >debreakpointnames >delbreakpointnames >deletebreakpointnames >breakpointlinames >breakpointlsnames >breakpointdeletenames >debreakptnames >delbreakptnames >deletebreakptnames >breakptlinames >breakptlsnames >breakptdeletenames >debrkptnames >delbrkptnames >deletebrkptnames >brkptlinames >brkptlsnames >brkptdeletenames >debrptnames >delbrptnames >deletebrptnames >brptlinames >brptlsnames >brptdeletenames >debrnames >delbrnames >deletebrnames >brlinames >brlsnames >brdeletenames >breakpointunname >breakptunname >brkptunname >brptunname >brunname >unnamebreakpoints >unnamebreakpts >unnamebrkpts >unnamebrpts >unnamebrs >removebreakpointnames >breakpointremovenames >removebreakptnames >breakptremovenames >removebrkptnames >brkptremovenames >removebrptnames >brptremovenames >removebrnames >brremovenames >breakpointremvenames >breakpointremvnames >breakpointrmvnames >breakpointrmnames >breakptremvenames >breakptremvnames >breakptrmvnames >breakptrmnames >brkptremvenames >brkptremvnames >brkptrmvnames >brkptrmnames >brptremvenames >brptremvnames >brptrmvnames >brptrmnames >brremvenames >brremvnames >brrmvnames >brrmnames]`</small>
+	> <small>`[Search Tags: >debreakpointnames >delbreakpointnames >deletebreakpointnames >breakpointlinames >breakpointlsnames >breakpointdeletenames >debreakptnames >delbreakptnames >deletebreakptnames >breakptlinames >breakptlsnames >breakptdeletenames >debrkptnames >delbrkptnames >deletebrkptnames >brkptlinames >brkptlsnames >brkptdeletenames >debrptnames >delbrptnames >deletebrptnames >brptlinames >brptlsnames >brptdeletenames >debrnames >delbrnames >deletebrnames >brlinames >brlsnames >brdeletenames >breakpointunname >breakptunname >brkptunname >brptunname >brunname >unnamebreakpoints >unnamebreakpts >unnamebrkpts >unnamebrpts >unnamebrs >removebreakpointnames >breakpointremovenames >removebreakptnames >breakptremovenames >removebrkptnames >brkptremovenames >removebrptnames >brptremovenames >removebrnames >brremovenames >breakpointremvenames >breakpointremvnames >breakpointrmvnames >breakpointrmnames >breakptremvenames >breakptremvnames >breakptrmvnames >breakptrmnames >brkptremvenames >brkptremvnames >brkptrmvnames >brkptrmnames >brptremvenames >brptremvnames >brptrmvnames >brptrmnames >brremvenames >brremvnames >brrmvnames >brrmnames >breakpointnamedelete >breakpointnadelete >breakpointndelete >breakptnamedelete >breakptnadelete >breakptndelete >brkptnamedelete >brkptnadelete >brkptndelete >brptnamedelete >brptnadelete >brptndelete >brnamedelete >brnadelete >brndelete]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -1333,7 +1355,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 	> *Deeper Look at Breakpoint Configuration Commands:*
 	---
 
-	-	***Disbale / Enable** [named breakpoints] **:***
+	-	#### ***Disbale / Enable** [named breakpoints] **:***
 
 		> <small>`[Search Tags: >breakpointconfigureenable >breakpointconfiguredisable >configurebreakpointenable >configurebreakpointdisable >breakpointconfigenable >breakpointconfigdisable >configbreakpointenable >configbreakpointdisable >breakpointconfenable >breakpointconfdisable >confbreakpointenable >confbreakpointdisable >breakptconfigureenable >breakptconfiguredisable >configurebreakptenable >configurebreakptdisable >breakptconfigenable >breakptconfigdisable >configbreakptenable >configbreakptdisable >breakptconfenable >breakptconfdisable >confbreakptenable >confbreakptdisable >brkptconfigureenable >brkptconfiguredisable >configurebrkptenable >configurebrkptdisable >brkptconfigenable >brkptconfigdisable >configbrkptenable >configbrkptdisable >brkptconfenable >brkptconfdisable >confbrkptenable >confbrkptdisable >brptconfigureenable >brptconfiguredisable >configurebrptenable >configurebrptdisable >brptconfigenable >brptconfigdisable >configbrptenable >configbrptdisable >brptconfenable >brptconfdisable >confbrptenable >confbrptdisable >brconfigureenable >brconfiguredisable >configurebrenable >configurebrdisable >brconfigenable >brconfigdisable >configbrenable >configbrdisable >brconfenable >brconfdisable >confbrenable >confbrdisable]`</small>
 
