@@ -1538,7 +1538,7 @@ Contents
 - [1 Set on Function (using Fullname)](#set-a-breakpoint-on-functions-using-fullname)
 - [2 Set on Function (using Basename)](#set-a-breakpoint-on-functions-using-basename)
 - [3 Set on Method](#set-a-breakpoint-on-class-methods)
-- [4 Set on Exceptions](#set-a-breakpoint-on-all-exceptions-on-catch-and-or-throws)
+- [4 Set on Exceptions](#set-a-breakpoint-on-all-exceptions-on-catch-andor-throws)
 ---
 
 -	#### Set a breakpoint, on function(s), using fullname:
@@ -1577,7 +1577,7 @@ Contents
 
 <br>
 
--	#### Set a breakpoint, on** [class] **method(s):
+-	#### Set a breakpoint, on [class] method(s):
 
 	> <small>`[Search Tags: >breakpointmethods >breakptmethods >brkptmethods >brptmethods >brmethods >methodsbreakpoint >methodsbreakpt >methodsbrkpt >methodsbrpt >methodsbr >breakpointclassmethods >breakptclassmethods >brkptclassmethods >brptclassmethods >brclassmethods >classmethodsbreakpoint >classmethodsbreakpt >classmethodsbrkpt >classmethodsbrpt >classmethodsbr]`</small>
 
