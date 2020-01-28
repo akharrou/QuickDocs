@@ -673,7 +673,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 > | 4 | Manual Page | LLDB | `(lldb) help breakpoint`
 
 
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#341-breakpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.1. Basic Commands
 <small>`[Search Tags: >basicbreakpoint >basicsbreakpoint >breakpointbasics >basicbreakpt >basicsbreakpt >breakptbasics >basicbrkpt >basicsbrkpt >brkptbasics >basicbrpt >basicsbrpt >brptbasics >basicbr >basicsbr >brbasics]`</small>
 <br>
@@ -789,7 +789,7 @@ Contents
 
 
 ---
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#341-breakpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.2. Advanced Commands
 <small>`[Search Tags: >advancedbreakpoint >breakpointadvanceds >advancedbreakpt >breakptadvanceds >advancedbrkpt >brkptadvanceds >advancedbrpt >brptadvanceds >advancedbr >bradvanceds >advbreakpoint >breakpointadvs >advbreakpt >breakptadvs >advbrkpt >brkptadvs >advbrpt >brptadvs >advbr >bradvs]`</small>
 <br>
@@ -977,7 +977,7 @@ Contents
 
 
 ---
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#341-breakpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.3. Options
 <small>`[Search Tags: >optsbreakpoint >breakpointopts >breakpointops >opsbreakpoint >optionsbreakpoint >breakpointoptions >optsbreakpt >breakptopts >breakptops >opsbreakpt >optionsbreakpt >breakptoptions >optsbrkpt >brkptopts >brkptops >opsbrkpt >optionsbrkpt >brkptoptions >optsbrpt >brptopts >brptops >opsbrpt >optionsbrpt >brptoptions >optsbr >bropts >brops >opsbr >optionsbr >broptions]`</small>
 <br>
@@ -1200,7 +1200,7 @@ Contents
 > | 5 | Manual Page | LLDB | `(lldb) help breakpoint command delete`
 
 
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#341-breakpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.4. Names
 <small>`[Search Tags: >namedbreakpoint >nbreakpoint >namesbreakpoint >breakpointnames >namedbreakpt >nbreakpt >namesbreakpt >breakptnames >namedbrkpt >nbrkpt >namesbrkpt >brkptnames >namedbrpt >nbrpt >namesbrpt >brptnames >namedbr >nbr >namesbr >brnames]`</small>
 <br>
@@ -1501,7 +1501,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 
 ---
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#341-breakpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.5. Multi-Threaded Programs
 <small>`[Search Tags: >breakpointthreads >threadbreakpoint >multithreadedbreakpoint >multithreadbreakpoint >breakptthreads >threadbreakpt >multithreadedbreakpt >multithreadbreakpt >brkptthreads >threadbrkpt >multithreadedbrkpt >multithreadbrkpt >brptthreads >threadbrpt >multithreadedbrpt >multithreadbrpt >brthreads >threadbr >multithreadedbr >multithreadbr]`</small>
 <br>
@@ -1543,7 +1543,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 
 ---
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#341-breakpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 #### 3.4.1.6. C++ Programs
 <small>`[Search Tags: >breakpointcpp >cppbreakpoint >breakptcpp >cppbreakpt >brkptcpp >cppbrkpt >brptcpp >cppbrpt >brcpp >cppbr >breakpointc++ >c++breakpoint >breakptc++ >c++breakpt >brkptc++ >c++brkpt >brptc++ >c++brpt >brc++ >c++br]`</small>
 <br>
