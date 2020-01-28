@@ -1190,11 +1190,11 @@ Contents
 - [2 Name](#name-breakpoints)
 - [3 List](#list-breakpoint-names)
 - [4 Delete](#delete-breakpoint-name)
-- [5 Configure](#configure-breakpoint-names) <br>
-	- [5.1 Disable / Enable](#disbale-enable-named-breakpoints-) <br>
-	- [5.2 Condition](#configure-condition) <br>
-	- [5.3 Commands](#configure-commands) <br>
-	- [5.4 Attributes](#configure-attributes) <br>
+- [5 Configure](#configure-breakpoint-names)
+	- [5.1 Disable / Enable](#disbale--enable-named-breakpoints-)
+	- [5.2 Condition](#configure-condition)
+	- [5.3 Commands](#configure-commands)
+	- [5.4 Attributes](#configure-attributes)
 	- [5.5 Threads](#configure-assigned-threads)
 
 ---
