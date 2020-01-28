@@ -1971,165 +1971,144 @@ Contents
 
 Contents
 ---
-- [1 Launch *[a Program]*](#launch-a-program)
+- [1 Launch Command](#launch-a-program)
 - [2 Launch Configurations](#launch-configurations)
+  - [2.1 Run *[program]* in *[different]* Shell or Terminal](#run-program-in-different-shell-or-terminal)
+  - [2.2 Set Environment Variables](#set-environment-variables)
+  - [2.3 Set Current Working Directory *(`cwd`)*](#set-current-working-directory-cwd)
+  - [2.4 Redirect Standard Data Streams (`in`/`out`/`err`)](#redirect-program-standard-inouterr-streams)
 ---
-
-> TODO: ### 3.5.1. Launch
-
-> *Commands for running/starting/launching [loaded] programs:*
-
 
 -	#### Launch *[a program]*:
 
 	> ***Synopsis:***
 	>
 	> ```shell
-	> process launch [<run-args>]
-	> run [<run-args>]
-	> r [<run-args>]
+	> process launch -- [<arg> ...]
+	> run [<arg> ...]                                   # alias
+	> r [<arg> ...]                                     # alias
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
 	> (lldb) process launch                              # without arguments
-	> (lldb) pr la "arg1" "arg2" "youGetThePoint"        # with arguments
+	> (lldb) pr la -- "arg1" "arg2" "youGetThePoint"     # with arguments
 	> (lldb) run "arg1" "arg2" "youGetThePoint"          # with arguments
 	> (lldb) r                                           # without arguments
 	> ```
 
 	> *<small>[***Note:****
 	>
-	> - *`<run-args>`* represent the arguments you normally pass to your program.
+	> - *`run`* is an alias for *'`process launch --shell-expand-args true --`'* , see *`h run`*.
 	>
-	> - *`run`* is an abbreviation for *'`process launch -X true --`'* , see *`h run`*.
-	>
-	> - *`r`* is an abbreviation for *`'run'`* , see *`h r`*.
+	> - *`r`* is an alias for *`'run'`* , see *`h r`*.
 	>
 	> *- **end note**]</small>*
 
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help process launch`
-
-
----
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.5.1.1. Launch Configurations
-<small>`[Search Tags: > TODO ]`</small>
-<br>
-
-Contents
----
-- [1 Run *[program]* in *[different]* Shell or Terminal](#run-program-in-different-shell-or-terminal)
-- [2 Set Environment](#set-environment-variables)
-- [2 Set Current Working Directory *(`cwd`)*](#set-current-working-directory-cwd)
-- [2 Set Environment](#redirect-program-standard-inouterr-streams)
 ---
 
-> *Commands for configuration the launch of programs:*
+-	#### *Launch configurations:*
 
+	<br>
 
--	#### Run *[program]* in *[different]* Shell or Terminal:
+	-	#### Run *[program]* in *[different]* Shell or Terminal:
 
-	> <small>`[Search Tags: > TODO ]`</small>
+		> <small>`[Search Tags: > TODO ]`</small>
 
-	> ***Synopsis:***
-	> ```shell
-	> process launch --tty -- [<run-args>]                  # terminal
-	> process launch --shell=[<filename>] -- [<run-args>]   # shell
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) process launch --tty
-	> (lldb) pr la -t
-	> ```
-	> ```shell
-	> process launch --shell=/dev/ttys002
-	> pr la -c=/dev/ttys003
-	> ```
+		> ***Synopsis:***
+		> ```shell
+		> process launch --tty -- [<run-args>]                  # terminal
+		> process launch --shell=[<filename>] -- [<run-args>]   # shell
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) process launch --tty
+		> (lldb) pr la -t
+		> ```
+		> ```shell
+		> process launch --shell=/dev/ttys002
+		> pr la -c=/dev/ttys003
+		> ```
 
-	> *<small>[**Note**: Not supported on all platforms. - **end note**]</small>*
+		> *<small>[**Note**: Not supported on all platforms. - **end note**]</small>*
 
--	#### Set environment variables:
+	<br>
 
-	> <small>`[Search Tags: > TODO ]`</small>
+	-	#### Set environment variables:
 
-	> ***Synopsis:***
-	> ```shell
-	> process launch --environment [<NAME=VALUE> ...] -- [<run-args>]
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> process launch --environment BIG_ENDIAN=true OPTIMIZATIONS=false
-	> pr la -v YEAR=2020
-	> ```
+		> <small>`[Search Tags: > TODO ]`</small>
 
-	> *<small>[**Note**: Can be specified multiple times for subsequent environment entries. - **end note**]</small>*
+		> ***Synopsis:***
+		> ```shell
+		> process launch --environment [<NAME=VALUE> ...] -- [<run-args>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> process launch --environment BIG_ENDIAN=true OPTIMIZATIONS=false
+		> pr la -v YEAR=2020
+		> ```
 
--	#### Set current working directory *(`cwd`)*:
+		> *<small>[**Note**: Can be specified multiple times for subsequent environment entries. - **end note**]</small>*
 
-	> <small>`[Search Tags: > TODO ]`</small>
+	<br>
 
-	> ***Synopsis:***
-	> ```shell
-	> process launch --working-dir <directory> -- [<run-args>]
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> process launch --working-dir /Volumes/DISK3/emails
-	> pr la -w ../
-	> ```
+	-	#### Set current working directory *(`cwd`)*:
 
+		> <small>`[Search Tags: > TODO ]`</small>
 
--	#### Redirect [program] [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):
+		> ***Synopsis:***
+		> ```shell
+		> process launch --working-dir <directory> -- [<run-args>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> process launch --working-dir /Volumes/DISK3/emails
+		> pr la -w ../
+		> ```
 
-	> <small>`[Search Tags: > TODO ]`</small>
+	<br>
 
-	> ***Synopsis:***
-	>
-	> ```shell
-	> process launch [--stdin <filename>] [--stdout <filename>] [--stderr <filename>] -- [<run-args>]
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) process launch --stdin   file-1.txt  # text file, w/ name: 'file-1.txt'
-	> (lldb) process launch --stdout  file-2.txt
-	> (lldb) process launch --stderr  file-3.txt
-	> ```
-	> ```shell
-	> (lldb) pr la -i  /dev/ttys001               # terminal shell [device] file, w/ name: '/dev/ttys001'
-	> (lldb) pr la -o  /dev/ttys002
-	> (lldb) pr la -e  /dev/ttys003
-	> ```
-	> ```shell
-	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
-	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
-	> ```
+	-	#### Redirect *[program]* [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):
 
-	> *<small>[**Note**:*
-	>
-	> - **To clarify [, this [last] example] ––* <br>*
-	>
-	>	- *we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to *(i.e to be or come or be-given from or originate from)* a *[terminal [device]]* file, by the name of: `/dev/ttys001` – this is a running *[terminal]* shell *[instance]*, <br>*
-	>	- *we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>*
-	>	- *we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time, the file goes by the name: "`errFile`", <br>*
-	>	- *we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>*
-	>	- *we pass *[to our program]* three arguments.*
-	>
-	> <br> *- **end note**]</small>*
-	>
+		> <small>`[Search Tags: > TODO ]`</small>
 
+		> ***Synopsis:***
+		>
+		> ```shell
+		> process launch [--stdin <filename>] [--stdout <filename>] [--stderr <filename>] -- [<run-args>]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) process launch --stdin   file-1.txt  # text file, w/ name: 'file-1.txt'
+		> (lldb) process launch --stdout  file-2.txt
+		> (lldb) process launch --stderr  file-3.txt
+		> ```
+		> ```shell
+		> (lldb) pr la -i  /dev/ttys001               # terminal shell [device] file, w/ name: '/dev/ttys001'
+		> (lldb) pr la -o  /dev/ttys002
+		> (lldb) pr la -e  /dev/ttys003
+		> ```
+		> ```shell
+		> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
+		> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
+		> ```
+
+		> *<small>[**Note**:*
+		>
+		> - **To clarify [, this [last] example] ––* <br>*
+		>
+		>	- *we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to *(i.e to be or come or be-given from or originate from)* a *[terminal [device]]* file, by the name of: `/dev/ttys001` – this is a running *[terminal]* shell *[instance]*, <br>*
+		>	- *we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>*
+		>	- *we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time, the file goes by the name: "`errFile`", <br>*
+		>	- *we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>*
+		>	- *we pass *[to our program]* three arguments.*
+		>
+		> <br> *- **end note**]</small>*
+		>
 
 
 <br>
