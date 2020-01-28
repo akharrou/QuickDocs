@@ -598,7 +598,7 @@ Contents
 <br>
 
 
--	`lldb` *[then]* gives you the possibility of setting up [*breakpoints*](https://en.wikipedia.org/wiki/Breakpoint) ([§3.4.1](#341-breakpoints)) –– locations in your program to pause execution at –– and [*watchpoints*](https://en.wiktionary.org/wiki/watchpoint#English) ([§3.4.2](#342-watchpoints)) –– a special eye lent to certain variables/memory-regions for operations (reads & writes).
+-	`lldb` *[then]* gives you the possibility of setting up [*breakpoints*](https://en.wikipedia.org/wiki/Breakpoint) ([§3.4.1](#341-breakpoints)) –– locations in your program to pause execution at *[and examine the current state of things]* –– and [*watchpoints*](https://en.wiktionary.org/wiki/watchpoint#English) ([§3.4.2](#342-watchpoints)) –– a special eye lent to certain variables/memory-regions for operations (reads & writes).
 
 <!-- BREAKPOINT ANALOGY:
 
@@ -608,6 +608,7 @@ Contents
 
 <br>
 <br>
+
 
 > ***Further Reading:***
 >
