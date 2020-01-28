@@ -1856,14 +1856,19 @@ Contents
 #### 3.4.2.3 Options
 <small>`[Search Tags: >optswatchpoint >watchpointopts >watchpointops >opswatchpoint >optionswatchpoint >watchpointoptions >optswatchpt >watchptopts >watchptops >opswatchpt >optionswatchpt >watchptoptions >optswapt >waptopts >waptops >opswapt >optionswapt >waptoptions >optswa >waopts >waops >opswa >optionswa >waoptions]`</small>
 <br>
-<br>
 
-
-> TODO: #### 3.4.2.3 (Watchpoint) Options
+Contents
+---
+- [1 Conditions](#addmodify-watchpoint-condition)
+- [2 Commands](#addmodify-watchpoint-commands)
+- [3 Attributes](#addmodify-watchpoint-attributes)
+---
 
 >	*<small>[**Note**: We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"* - **end note**]</small>* <br>
 
--	***Add/modify** [watchpoint] **condition:***
+---
+
+-	#### Add/modify [watchpoint] condition:
 
 	> ***Synopsis:***
 	> ```shell
@@ -1880,13 +1885,17 @@ Contents
 	> wa mo -c 'my_ptr == NULL' 2
 	> ```
 
--	***Add/modify** [watchpoint] **command(s):***
+<br>
 
-	> `breakpoint command` works identically to `watchpoint command`. Search `>breakpointcommands` –– or see ([§3.4.1.3](#3413-options)) and scroll down till you find ***"Breakpoint commands"***.
+-	#### Add/modify [watchpoint] command(s):
 
--	***Add/modify** [watchpoint] **attribute(s):***
+	> `watchpoint command` is identical to [`breakpoint command`](#breakpoint-commands).
 
-	> *Watchpoints can only have an ignore-count.*
+<br>
+
+-	#### Add/modify [watchpoint] attribute(s):
+
+	> *Watchpoints can only have add the `ignore-count` attribute.*
 
 	> ***Synopsis:***
 	> ```shell
