@@ -1183,8 +1183,6 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 #### 3.4.1.4. Names
 <small>`[Search Tags: >namedbreakpoint >nbreakpoint >namesbreakpoint >breakpointnames >namedbreakpt >nbreakpt >namesbreakpt >breakptnames >namedbrkpt >nbrkpt >namesbrkpt >brkptnames >namedbrpt >nbrpt >namesbrpt >brptnames >namedbr >nbr >namesbr >brnames]`</small>
 <br>
-<br>
-
 
 Contents
 ------
