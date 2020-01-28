@@ -34,25 +34,24 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.1. Compile Program](#31-compile-program)
 		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g---o0)
 		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
-	- [3.2. Launch LLDB](#32-launch-lldb)
+	- [3.2. Run LLDB](#32-launch-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 		- [3.4.2. Watchpoints](#342-watchpoints)
-	- [3.5. Begin Debugging](#35-start-or-attach-program)
-		- [3.5.1. Launch Program](#351-launch-program)
-		- [3.5.2. Attach to Program](#352-attach-to-program)
-		- [3.5.3. Advanced Program Configurations](#353-advanced-program-configurations)
-	- [3.6. Graphical User Interface (GUI)](#36-graphical-user-interface-gui)
-	- [3.8. Controlling Process Execution](#38-examine-execution)
-		- [3.8.1. Move to Line](#)
-		- [3.8.2. Step In, Out of Functions](#)
-		- [3.8.3. Run, Stop, Continue Execution](#)
+	- [3.5. Start Debugging](#35-start-debugging)
+		- [3.5.1. Launch](#351-launch-program)
+		- [3.5.2. Attach](#352-attach-to-program)
+	- [3.6. Graphical User Interface (`gui`)](#)
+	- [3.7. Controlling Process Execution](#37-examine-execution)
+		- [3.7.1. Move Lines](#)
+		- [3.7.2. Step In/Out of Functions](#)
+		- [3.7.3. Continue & Pause Execution](#)
 	- [3.8. Examine Execution](#38-examine-execution)
 		- [3.8.1. Source Code](#381-source-code)
 		- [3.8.2. Variable(s)](#382-variables)
-		- [3.8.3. Thread State(s)](#383-thread-states)
-		- [3.8.4. Stack Frame State(s)](#384-stack-frame-states)
+		- [3.8.3. Thread(s)](#383-thread-states)
+		- [3.8.4. Stack Frame(s)](#384-stack-frame-states)
 - [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
 	- [3.1 Makfile]()
 
@@ -387,13 +386,13 @@ Contents
 
 ---
 [🏠](#contents) | [⬅️](#312-sanitizer-flags--fsanitize-family) | [➡️](#33-load-lldb)
-## 3.2. Launch LLDB
-<small>`[Search Tags: >lldb.launch >debugger.launch >lldblaunch >debuggerlaunch >launchlldb >launchdebugger]`</small>
+## 3.2. Run LLDB
+<small>`[Search Tags: >lldb.run >debugger.run >lldbrun >debuggerrun >run.lldb >run.debugger >runlldb >rundebugger]`</small>
 <br>
 <br>
 
 
-Start the `lldb` debugger *[program]* by typing *[in your command prompt]*:
+Run the `lldb` debugger *[program]* by typing *[in your command prompt]*:
 
 >
 > ```shell
@@ -1940,13 +1939,13 @@ Contents
 
 ---
 [🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-graphical-user-interface-gui)
-## 3.5. Begin Debugging
+## 3.5. Start Debugging
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
--	There are two main ways to start debugging a process (program):
+-	There are two ways to start debugging a process (program):
 
 	- Launching one ([§3.5.1](#351-launch-program))
 	- Attaching to *[an already running]* one ([§3.5.2](#352-attach-to-program)) – (i.e joining a running one at whatever point in execution it has reached).
@@ -1966,16 +1965,22 @@ Contents
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.5.1. Launch Program
+### 3.5.1. Launch
 <small>`[Search Tags: >lldb.runprocess >lldb.launchprocess >lldb.startprocess >lldb.runprogram >lldb.launchprogram >lldb.startprogram >startprogram >launchprogram >runprogram >startprocess >launchprocess >runprocess  >startexecutable >launchexecutable >runexecutable >programstart >programrun >programlaunch >debugger.runprocess >debugger.launchprocess >debugger.startprocess >debugger.runprogram >debugger.launchprogram >debugger.startprogram >processes >processlaunch >runprocess >lldb.processlaunch]`</small>
 <br>
-<br>
+
+Contents
+---
+- [1 Launch *[a Program]*](#launch-a-program)
+- [2 Launch Configurations](#launch-configurations)
+---
+
+> TODO: ### 3.5.1. Launch
+
+> *Commands for running/starting/launching [loaded] programs:*
 
 
-> TODO: ### 3.5.1. Launch Program ; Commands for running/starting/launching [loaded] programs:
-
-
--	***To launch/run a program:***
+-	#### Launch *[a program]*:
 
 	> ***Synopsis:***
 	>
@@ -1992,7 +1997,7 @@ Contents
 	> (lldb) run "arg1" "arg2" "youGetThePoint"          # with arguments
 	> (lldb) r                                           # without arguments
 	> ```
-	>
+
 	> *<small>[***Note:****
 	>
 	> - *`<run-args>`* represent the arguments you normally pass to your program.
@@ -2016,7 +2021,135 @@ Contents
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.5.2. Attach to Program
+### 3.5.1.1. Launch Configurations
+<small>`[Search Tags: > TODO ]`</small>
+<br>
+
+Contents
+---
+- [1 Run in Shell or Terminal](#run-program-in-different-shell-or-terminal)
+- [2 Set Environment](#ulli2-set-environment-variables)
+- [2 Set Current Working Directory *(`cwd`)*](#set-current-working-directory-cwd)
+- [2 Set Environment](#ulli2-set-environment-variables)
+---
+
+> TODO: ### 3.5.3. Advanced Program Configurations ; Advanced commands for process launch
+
+
+-	#### Run *[program]* in *[different]* Shell or Terminal:
+
+	> <small>`[Search Tags: > TODO ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> process launch --tty -- [<run-args>]                  # terminal
+	> process launch --shell=[<filename>] -- [<run-args>]   # shell
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) process launch --tty
+	> (lldb) pr la -t
+	> ```
+	> ```shell
+	> process launch --shell=/dev/ttys002
+	> pr la -c=/dev/ttys003
+	> ```
+
+	> *<small>[**Note**: Not supported on all platforms. - **end note**]</small>*
+
+-	#### Set environment variables:
+
+	> <small>`[Search Tags: > TODO ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> process launch --environment [<NAME=VALUE> ...] -- [<run-args>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> process launch --environment BIG_ENDIAN=true OPTIMIZATIONS=false
+	> pr la -v YEAR=2020
+	> ```
+
+	> *<small>[**Note**: Can be specified multiple times for subsequent environment entries. - **end note**]</small>*
+
+-	#### Set current working directory *(`cwd`)*:
+
+	> <small>`[Search Tags: > TODO ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> process launch --working-dir <directory> -- [<run-args>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> process launch --working-dir /Volumes/DISK3/emails
+	> pr la -w ../
+	> ```
+
+
+-	#### Redirect [program] [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):
+
+	> <small>`[Search Tags: > TODO ]`</small>
+
+	> ***Synopsis:***
+	>
+	> ```shell
+	> process launch [--stdin <filename>] [--stdout <filename>] [--stderr <filename>] -- [<run-args>]
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) process launch --stdin   file-1.txt  # text file, w/ name: 'file-1.txt'
+	> (lldb) process launch --stdout  file-2.txt
+	> (lldb) process launch --stderr  file-3.txt
+	> ```
+	> ```shell
+	> (lldb) pr la -i  /dev/ttys001               # terminal shell [device] file, w/ name: '/dev/ttys001'
+	> (lldb) pr la -o  /dev/ttys002
+	> (lldb) pr la -e  /dev/ttys003
+	> ```
+	> ```shell
+	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
+	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
+	> ```
+
+	> *<small>[**Note**:*
+	>
+	> - **To clarify [, this [last] example] ––* <br>*
+	>
+	>	- *we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to *(i.e to be or come or be-given from or originate from)* a *[terminal [device]]* file, by the name of: `/dev/ttys001` – this is a running *[terminal]* shell *[instance]*, <br>*
+	>	- *we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>*
+	>	- *we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time, the file goes by the name: "`errFile`", <br>*
+	>	- *we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>*
+	>	- *we pass *[to our program]* three arguments.*
+	>
+	> <br> *- **end note**]</small>*
+	>
+
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | LLDB | `(lldb) help process launch`
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Starting or Attaching to Your Program](https://lldb.llvm.org/use/tutorial.html#starting-or-attaching-to-your-program)
+> | 3 | Encyclopedia | Wikipedia | [Device files](https://en.wikipedia.org/wiki/Device_file)
+> | 4 | Q&A Forum | StackOverflow | [How to get the current terminal name ?](https://unix.stackexchange.com/questions/77796/how-to-get-the-current-terminal-name)
+> | 5 | Article | `opensource.com` | [Managing devices in Linux](https://opensource.com/article/16/11/managing-devices-linux)
+> | 6 | Q&A Forum | StackOverflow | [What is the difference between shell, console and terminal ?](https://superuser.com/questions/144666/what-is-the-difference-between-shell-console-and-terminal)
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.5.2. Attach
 <small>`[Search Tags: >lldb.attachprocess >lldb.attachprogram >attachprogram >attachprocess >attachexecutable]`</small>
 <br>
 <br>
@@ -2072,129 +2205,6 @@ Contents
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | LLDB | `(lldb) help process attach`
-
-
----
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.5.3. Advanced Program Configurations
-<small>`[Search Tags: > TODO ]`</small>
-<br>
-<br>
-
-
-> TODO: ### 3.5.3. Advanced Program Configurations ; Advanced commands for process launch
-
-
--	***Run process (program) in different terminal or shell:***
-
-	> <small>`[Search Tags: > TODO ]`</small>
-
-	> ***Synopsis:***
-	> ```shell
-	> process launch --tty -- [<run-args>]                  # terminal
-	> process launch --shell=[<filename>] -- [<run-args>]   # shell
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) process launch --tty
-	> (lldb) pr la -t
-	> ```
-	> ```shell
-	> process launch --shell=/dev/ttys002
-	> pr la -c=/dev/ttys003
-	> ```
-
-	> *<small>[**Note**: Not supported on all platforms. - **end note**]</small>*
-
--	***Set environment variables:***
-
-	> <small>`[Search Tags: > TODO ]`</small>
-
-	> ***Synopsis:***
-	> ```shell
-	> process launch --environment [<NAME=VALUE> ...] -- [<run-args>]
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> process launch --environment BIG_ENDIAN=true OPTIMIZATIONS=false
-	> pr la -v YEAR=2020
-	> ```
-
-	> *<small>[**Note**: Can be specified multiple times for subsequent environment entries. - **end note**]</small>*
-
--	***Set current working directory:***
-
-	> <small>`[Search Tags: > TODO ]`</small>
-
-	> ***Synopsis:***
-	> ```shell
-	> process launch --working-dir <directory> -- [<run-args>]
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> process launch --working-dir /Volumes/DISK3/emails
-	> pr la -w ../
-	> ```
-
-
--	***To redirect [program] [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):***
-
-	> <small>`[Search Tags: > TODO ]`</small>
-
-	> ***Synopsis:***
-	>
-	> ```shell
-	> process launch [--stdin <filename>] [--stdout <filename>] [--stderr <filename>] -- [<run-args>]
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) process launch --stdin   file-1.txt  # text file, w/ name: 'file-1.txt'
-	> (lldb) process launch --stdout  file-2.txt
-	> (lldb) process launch --stderr  file-3.txt
-	> ```
-	> ```shell
-	> (lldb) pr la -i  /dev/ttys001               # terminal shell [device] file, w/ name: '/dev/ttys001'
-	> (lldb) pr la -o  /dev/ttys002
-	> (lldb) pr la -e  /dev/ttys003
-	> ```
-	> ```shell
-	> (lldb) process launch -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
-	> (lldb) pr la -i /dev/ttys001 -o outFile.log -e errFile.log -- "arg1" "arg2" "youGetThePoint"
-	> ```
-
-	> *<small>[**Note**:*
-	>
-	> - **To clarify [, this [last] example] ––* <br>*
-	>
-	>	- *we redirect *[the]* standard input *[stream]* (`stdin`) *[of the program]* to *(i.e to be or come or be-given from or originate from)* a *[terminal [device]]* file, by the name of: `/dev/ttys001` – this is a running *[terminal]* shell *[instance]*, <br>*
-	>	- *we redirect the standard output (`stdout`) to *[be written/printed to]* a `.log` file, by the name of: "`outFile`", <br>*
-	>	- *we do the same *[, as `stdout`,]* with the standard error (`stderr`), this time, the file goes by the name: "`errFile`", <br>*
-	>	- *we delimit the *`lldb`* command options that we have given, from *[, that which we will give as,]* program arguments, with: "` -- `" *[,  `lldb`*'s parser delimiter], <br>*
-	>	- *we pass *[to our program]* three arguments.*
-	>
-	> <br> *- **end note**]</small>*
-	>
-
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help process launch`
-> | 2 | Documentation | LLDB | [(Official) Tutorial :: Starting or Attaching to Your Program](https://lldb.llvm.org/use/tutorial.html#starting-or-attaching-to-your-program)
-> | 3 | Encyclopedia | Wikipedia | [Device files](https://en.wikipedia.org/wiki/Device_file)
-> | 4 | Q&A Forum | StackOverflow | [How to get the current terminal name ?](https://unix.stackexchange.com/questions/77796/how-to-get-the-current-terminal-name)
-> | 5 | Article | `opensource.com` | [Managing devices in Linux](https://opensource.com/article/16/11/managing-devices-linux)
-> | 6 | Q&A Forum | StackOverflow | [What is the difference between shell, console and terminal ?](https://superuser.com/questions/144666/what-is-the-difference-between-shell-console-and-terminal)
-
 
 ---
 [🏠](#contents) | [⬅️](#35-start-or-attach-program) | [➡️](#38-examine-execution)
