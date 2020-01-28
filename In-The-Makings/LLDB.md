@@ -36,7 +36,6 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
 	- [3.2. Launch LLDB](#32-launch-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
-		- [3.3.1. Basic Commands](#331-basic-commands)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 		- [3.4.2. Watchpoints](#342-watchpoints)
@@ -270,7 +269,13 @@ TODO : # 3. How do I use it ?
 ## 3.1. Compile Program
 <small>`[Search Tags: >lldb.compileprogram >compileprogram >db.compileprogram >compilationstep >compilestep >compprogram]`</small>
 <br>
-<br>
+
+Contents
+---
+- [1 Debug Flags: `-g` & `-O0`](#311-debug-flags--g---o0)
+- [2 Sanitize Flags: `fsanitize` family](#312-sanitizer-flags--fsanitize-family)
+
+---
 
 
 -	***LLDB works by loading it with*** *(i.e setting it up to run)* ***an execuable*** *[file]*.
@@ -292,7 +297,7 @@ TODO : # 3. How do I use it ?
 
 
 ---
-[🏠](#contents) | [⬅️](#31-compile-program) | [➡️](#312-sanitizer-flags--fsanitize-family)
+[🏠](#31-compile-program) | [⬅️](#31-compile-program) | [➡️](#312-sanitizer-flags--fsanitize-family)
 ### 3.1.1. Debug Flags: `-g` & `-O0`
 <small>`[Search Tags: >compileprogram >compileprg >programcompilation >compilation >lldb.compile.flags >lldb.compile.debugflags >lldb.debugflags >lldb.flags >debugflags >dbflags >deflags >bugflags >dbgflags >dbugflags]`</small>
 <br>
@@ -324,7 +329,7 @@ TODO : # 3. How do I use it ?
 
 
 ---
-[🏠](#contents) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-launch-lldb)
+[🏠](#31-compile-program) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-launch-lldb)
 ### 3.1.2. Sanitizer Flags: `-fsanitize` family
 <small>`[Search Tags: >fsanitize=address >fsanitize=undefined >fsanitize=memory >fsanitize=leaks >fsanitize=threads >fsanitize=dataflag >fsanitize=cfi >fsanitize=safestack >fsanitize=safe-stack >fsanitize=data-flow >sanitizers >sanitizerflags >sanitizeflags >sanitizer.flags >flags.sanitizers >debug.sanitizers >debugsanitizers >debugfsanitizers >memoryflags >leakflags >leaksflags >threadflags >dataflowflags >undefinedbehaviorflags >safestackflags >cfiflags >memory.flags >leaks.flags >leak.flags >thread.flags >dataflow.flags >undefinedbehavior.flags >safestack.flags >cfi.flags] >flags.memory >flags.leak >flags.thread >flags.dataflow >flags.undefinedbehavior >flags.safestack >flags.cfi`</small>
 <br>
@@ -415,8 +420,12 @@ TODO : # 3. How do I use it ?
 ## 3.3. Load LLDB
 <small>`[Search Tags: >loadprogram >loadprocess >loadexecutable >programload >processload >executableload >lldb.loadprogram >loadlldb >loaddebugger >debugger.loadprogram >db.loadprogram >programload >program.load >lldb.unloadprogram >unloadlldb >unloaddebugger >debugger.unloadprogram >db.unloadprogram >programunload >program.unload]`</small>
 <br>
-<br>
 
+Contents
+---
+- [1 Basic Commands](#331-basic-commands)
+
+---
 
 -	`lldb` must *[then]* be informed of which program we intend to debug – this step is referred to as: ***"loading a program"*** . The following subsection explores the basic commands ([§3.3.1](#331-basics)) of loading programs. <br>
 	> Being pedantic, one says –– we are ***loading*** *[`lldb` with]* a ***debugger target***; i.e setting *[`lldb`]* up to target a specific process *(program)*, for debugging/examination-phase.
@@ -637,7 +646,6 @@ TODO : # 3. How do I use it ?
 <small>`[Search Tags: >lldb.breakpoints >debugger.breakpoints >lldbbreakpoints >debuggerbreakpoints >sectionbreakpoint >breakpointsections >sectionbreakpt >breakptsections >sectionbrkpt >brkptsections >sectionbrpt >brptsections >sectionbr >brsections]`</small>
 <br>
 
-
 Contents
 ---
 - [3.4.1.1. Basic Commands](#3411-basic-commands)
@@ -680,10 +688,10 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 Contents
 ---
-- [1 Set on Function](##set-a-breakpoint-on-a-function)
-- [2 Set on Source](##set-a-breakpoint-on-a-source-code-line)
-- [3 List](##list-breakpoints)
-- [4 Delete](##delete-breakpoints)
+- [1 Set on Function](#set-a-breakpoint-on-a-function)
+- [2 Set on Source](#set-a-breakpoint-on-a-source-code-line)
+- [3 List](#list-breakpoints)
+- [4 Delete](#delete-breakpoints)
 
 ---
 
@@ -1652,7 +1660,10 @@ Contents
 ### 3.4.2. Watchpoints
 <small>`[Search Tags: >lldb.watchpoints >debugger.watchpoints >lldbwatchpoints >debuggerwatchpoints >secwatchpoint >sectwatchpoint >sectionwatchpoint >watchpointsection >secwatchpt >sectwatchpt >sectionwatchpt >watchptsection >secwapt >sectwapt >sectionwapt >waptsection >secwa >sectwa >sectionwa >wasection]`</small>
 <br>
-<br>
+
+Contents
+---
+- [X Title](#tag)
 
 
 >	*(**Definition**) Watchpoint: a (special) kind of breakpoint (debugging mechanism) whereby execution is suspended every time a specified variable or memory-location is accessed for reading and/or writing.*
