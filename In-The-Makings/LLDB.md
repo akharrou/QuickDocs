@@ -39,12 +39,6 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.3.1. Basic Commands](#331-basic-commands)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
-			- [3.4.1.1. Basic Commands](#3411-basic-commands)
-			- [3.4.1.2. Advanced Commands](#3412-advanced-commands)
-			- [3.4.1.3. Options](#3413-options)
-			- [3.4.1.4. Names](#3414-names)
-			- [3.4.1.5. Multi-Threaded Programs](#3415-multi-threaded-programs)
-			- [3.4.1.6. C++ Programs](#3416-c-programs)
 		- [3.4.2. Watchpoints](#342-watchpoints)
 			- [3.4.2.1. Basic Commands](#3421-basic-commands)
 			- [3.4.2.2. Advanced Commands](#3422-advanced-commands)
@@ -653,6 +647,17 @@ TODO : # 3. How do I use it ?
 
 ---
 
+Contents
+---
+- [3.4.1.1. Basic Commands](#3411-basic-commands)
+- [3.4.1.2. Advanced Commands](#3412-advanced-commands)
+- [3.4.1.3. Options](#3413-options)
+- [3.4.1.4. Names](#3414-names)
+- [3.4.1.5. Multi-Threaded Programs](#3415-multi-threaded-programs)
+- [3.4.1.6. C++ Programs](#3416-c-programs)
+
+---
+
 The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) as well as [slightly] more ***advanced commands*** ([§3.4.1.2](#3412-advanced-commands)) *[for operating on breakpoints]*, then into the available ***breakpoint options*** ([§3.4.1.3](#3413-options)) and how to utilise them, also, we discover the [amazing] usefulness and power of ***breakpoint names*** ([§3.4.1.4](#3414-names)) and that of configuring their options, additionally we briefly see the breakpoint facilites for multi-threaded programs ([§3.4.1.5](#3415-multi-threaded-programs)) and, finally, a few ***C++** ([§3.4.1.6](#3416-c-programs)) [specific] **breakpoint commands***.
 
 
@@ -673,13 +678,21 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 #### 3.4.1.1. Basic Commands
 <small>`[Search Tags: >basicbreakpoint >basicsbreakpoint >breakpointbasics >basicbreakpt >basicsbreakpt >breakptbasics >basicbrkpt >basicsbrkpt >brkptbasics >basicbrpt >basicsbrpt >brptbasics >basicbr >basicsbr >brbasics]`</small>
 <br>
-<br>
+
+Contents
+---
+- [1 Set on Function](##set-a-breakpoint-on-a-function)
+- [2 Set on Source](##set-a-breakpoint-on-a-source-code-line)
+- [3 List](##list-breakpoints)
+- [4 Delete](##delete-breakpoints)
+
+---
 
 > *(Basic) Commands for operating on breakpoints.*
 
 <br>
 
--	***Set a breakpoint, on a function:***
+-	#### ***Set a breakpoint, on a function:***
 
 	> <small>`[Search Tags: >brset >setbr >sbr >sebr >breakpointset  >breakpointfunctions >breakpointfuncs >breakpointfts >breakpointfcs >breakpointmain >setbreakpoint >brkptset >setbrkpt >breakptset >setbreakpt >brsetfunctions >brfunctions >brfuncs >brfts >brfcs >brsfunctions >brsfuncs >brsfts >brsfcs >brsmain]`</small>
 
@@ -701,7 +714,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
--	***Set a breakpoint, on a** [source code] **line:***
+-	#### ***Set a breakpoint, on a** [source code] **line:***
 
 	> <small>`[Search Tags: >brsrcs >brssrcs >brsetsrcs >breakpointsetsrcs  >brsources >brssources >brsetsources >breakpointsetsources >brsetfiles >brfiles >brsrcs >brpages >brpgs >brsfiles >brssrcs >brspages >brspgs] >brsetlines >brlines >brlis >brpages >brslines >brslis >brspages >brsls >breakpointlines >breakpointlis >breakpointls >breakpointfcs  >breakpointmainlines`</small>
 
@@ -720,7 +733,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
--	***List breakpoints:***
+-	#### ***List breakpoints:***
 
 	> <small>`[Search Tags: >breakpointlist >breakpointls >listbreakpoint >lstbreakpoint >lsbreakpoint >libreakpoint >breakptlist >breakptls >listbreakpt >lstbreakpt >lsbreakpt >libreakpt >brkptlist >brkptls >listbrkpt >lstbrkpt >lsbrkpt >librkpt >brptlist >brptls >listbrpt >lstbrpt >lsbrpt >librpt >brlist >brls >listbr >lstbr >lsbr >libr]`</small>
 
@@ -739,7 +752,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
--	***Delete breakpoint(s):***
+-	#### ***Delete breakpoint(s):***
 	> <small>`[Search Tags: >brdelete >deletebr >deletebrpt >deletebrkpt >deletebreakpt >deletebreakpoint >brdelete >brptdelete >brkptdelete >breakptdelete >breakpointdelete >debr >deletebr >deletebreakpoint >brunload >uldbr >breakpointunload >unloadbreakpoint >delbr >brdel >delbrpt >brptdel >delbrkpt >brkptdel >delbreakpt >breakptdel >delbreakpoint >breakpointdel]`</small>
 
 
@@ -785,8 +798,8 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 Contents
 ---
 - [1 Enable / Disable](#enable--disable-breakpoints)
-- [2 Function (using Regex)](#set-a-breakpoint-on-functions-using-regular-expressions)
-- [3 Source (using Regex)](#set-a-breakpoint-on-lines-in-files-using-regular-expressions)
+- [2 Set on Function (using Regex)](#set-a-breakpoint-on-functions-using-regular-expressions)
+- [3 Set on Source (using Regex)](#set-a-breakpoint-on-lines-in-files-using-regular-expressions)
 - [4 Modify](#modify-existent-breakpoints-options-)
 
 ---
@@ -1356,7 +1369,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 	> - *If you provide a breakpoint id, with the `--breakpoint-id` or `-B` option *[followed by `<breakpt-ids>`]*, the options will be copied from
      the breakpoint, otherwise only the options specified will be set on the name.*
 	>
-	> *- **end note**]</small>*
+	> <br> *- **end note**]</small>*
 
 	<br>
 
@@ -1535,10 +1548,17 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 #### 3.4.1.6. C++ Programs
 <small>`[Search Tags: >breakpointcpp >cppbreakpoint >breakptcpp >cppbreakpt >brkptcpp >cppbrkpt >brptcpp >cppbrpt >brcpp >cppbr >breakpointc++ >c++breakpoint >breakptc++ >c++breakpt >brkptc++ >c++brkpt >brptc++ >c++brpt >brc++ >c++br]`</small>
 <br>
-<br>
 
+Contents
+---
+- [1 Set on Function (using Fullname)](#set-a-breakpoint-on-functions-by-fullname)
+- [2 Set on Function (using Basename)](#set-a-breakpoint-on-functions-by-basename)
+- [3 Set on Method](#set-a-breakpoint-on-class-methods)
+- [4 Set on Exceptions](#set-a-breakpoint-on-all-exceptions-on-catch-and-or-throws)
 
--	***Set a breakpoint**, on function(s), **by fullname:***
+---
+
+-	#### Set a breakpoint**, on function(s), **by fullname:***
 
 	> <small>`[Search Tags: >breakpointfullname >breakptfullname >brkptfullname >brptfullname >brfullname >fullnamebreakpoint >fullnamebreakpt >fullnamebrkpt >fullnamebrpt >fullnamebr >breakpointfullnamefunc >breakpointfullnamefunction >breakpointfuncfullname >breakpointfunctionfullname >breakptfullnamefunc >breakptfullnamefunction >breakptfuncfullname >breakptfunctionfullname >brkptfullnamefunc >brkptfullnamefunction >brkptfuncfullname >brkptfunctionfullname >brptfullnamefunc >brptfullnamefunction >brptfuncfullname >brptfunctionfullname >brfullnamefunc >brfullnamefunction >brfuncfullname >brfunctionfullname]`</small>
 
@@ -1555,7 +1575,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 <br>
 
--	***Set a breakpoint**, on function(s), **by basename:***
+-	#### ***Set a breakpoint**, on function(s), **by basename:***
 
 	> <small>`[Search Tags: >breakpointbasename >breakptbasename >brkptbasename >brptbasename >brbasename >basenamebreakpoint >basenamebreakpt >basenamebrkpt >basenamebrpt >basenamebr]`</small>
 
@@ -1574,7 +1594,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 <br>
 
--	***Set a breakpoint, on** [class] **method(s):***
+-	#### ***Set a breakpoint, on** [class] **method(s):***
 
 	> <small>`[Search Tags: >breakpointmethods >breakptmethods >brkptmethods >brptmethods >brmethods >methodsbreakpoint >methodsbreakpt >methodsbrkpt >methodsbrpt >methodsbr >breakpointclassmethods >breakptclassmethods >brkptclassmethods >brptclassmethods >brclassmethods >classmethodsbreakpoint >classmethodsbreakpt >classmethodsbrkpt >classmethodsbrpt >classmethodsbr]`</small>
 
@@ -1591,7 +1611,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 <br>
 
--	***Set a breakpoint, on (all) exceptions** [on `catch` and/or `throws`] **:***
+-	#### ***Set a breakpoint, on (all) exceptions** [on `catch` and/or `throws`] **:***
 
 	> <small>`[Search Tags: >breakpointexceptions >breakptexceptions >brkptexceptions >brptexceptions >brexceptions >exceptionsbreakpoint >exceptionsbreakpt >exceptionsbrkpt >exceptionsbrpt >exceptionsbr]`</small>
 
