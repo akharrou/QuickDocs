@@ -1892,6 +1892,10 @@ Contents
 	> watchpoint modify --condition 'my_ptr == NULL' 2
 	> wa mo -c 'my_ptr == NULL' 2
 	> ```
+	> ```shell
+	> watchpoint modify --condition '' 1        # clear watchpoint condition
+	> wa mo -c '' 1
+	> ```
 
 <br>
 
@@ -1903,7 +1907,7 @@ Contents
 
 -	#### Add/modify [watchpoint] attribute(s):
 
-	> *Watchpoints can only have add the `ignore-count` attribute.*
+	> *Watchpoints can only add the `ignore-count` attribute; i.e the number of times this watchpoint is skipped before stopping.*
 
 	> ***Synopsis:***
 	> ```shell
@@ -1915,6 +1919,8 @@ Contents
 	> watchpoint ignore --ignore-count 10 3 7 6
 	> wa i -i 10 3 7 6
 	> ```
+	>
+	> *<small>[**Note:** If no watchpoints are specified, set them all. - **end note**]</small>*
 
 
 <br>
