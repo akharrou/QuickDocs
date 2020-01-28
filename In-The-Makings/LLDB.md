@@ -1966,7 +1966,7 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.5.1. Launch
-<small>`[Search Tags: >launchprocess >launchprcs >lprocess >lnchprcs >launchprograms >launchprogs >lprograms >lnchprgs >lapr >programlaunch >progrmlaunch >proglaunch >programlnch >progrmlnch >proglnch >programla >progrmla >progla >processlaunch >prcslaunch >processlnch >prcslnch >processla >prcsla >prlaunch >prlnch >prla]`</small>
+<small>`[Search Tags: >launchprocess >launchprcs >lprocess >lnchprcs >launchprograms >launchprogs >lprograms >lnchprgs >laprogs >laprs >laprs >programlaunch >progrmlaunch >proglaunch >programlnch >progrmlnch >proglnch >programla >progrmla >progla >processlaunch >prcslaunch >processlnch >prcslnch >processla >prcsla >prlaunch >prlnch >prla]`</small>
 <br>
 
 Contents
@@ -1985,8 +1985,8 @@ Contents
 	>
 	> ```shell
 	> process launch -- [<arg> ...]
-	> run [<arg> ...]                                   # alias
-	> r [<arg> ...]                                     # alias
+	> run [<arg> ...]                                    # alias
+	> r [<arg> ...]                                      # alias
 	> ```
 	>
 	> ***Example(s):***
@@ -2007,13 +2007,15 @@ Contents
 
 ---
 
--	#### *Launch configurations:*
+-	#### Launch configurations:
+
+	> <small>`[Search Tags: >configlaunchprocess >launchprocessconfigurations >configlaunchprcs >launchprcsconfigurations >configlprocess >lprocessconfigurations >configlnchprcs >lnchprcsconfigurations >configlaunchprograms >launchprogramsconfigurations >configlaunchprogs >launchprogsconfigurations >configlprograms >lprogramsconfigurations >configlnchprgs >lnchprgsconfigurations >configlaprogs >laprogsconfigurations >configlaprs >laprsconfigurations >configlaprs >laprsconfigurations >configprogramlaunch >programlaunchconfigurations >configprogrmlaunch >progrmlaunchconfigurations >configproglaunch >proglaunchconfigurations >configprogramlnch >programlnchconfigurations >configprogrmlnch >progrmlnchconfigurations >configproglnch >proglnchconfigurations >configprogramla >programlaconfigurations >configprogrmla >progrmlaconfigurations >configprogla >proglaconfigurations >configprocesslaunch >processlaunchconfigurations >configprcslaunch >prcslaunchconfigurations >configprocesslnch >processlnchconfigurations >configprcslnch >prcslnchconfigurations >configprocessla >processlaconfigurations >configprcsla >prcslaconfigurations >configprlaunch >prlaunchconfigurations >configprlnch >prlnchconfigurations >configprla >prlaconfig >launchconfigurations >launchconfigs >lnchconfigurations >lnchconfigs >laconfigurations >laconfigs]`</small>
 
 	<br>
 
-	-	#### Run *[program]* in *[different]* Shell or Terminal:
+	-	#### Run *[program]* in *[different]* shell or terminal:
 
-		> <small>`[Search Tags: > TODO ]`</small>
+		> <small>`[Search Tags: >termlaunchprocesses >termlaunchprograms >terminallaunchprocesses >terminallaunchprograms >shelllaunchprocesses >shelllaunchprograms >launchshell >shelllaunch >launchshll >shlllaunch >launchterminal >terminallaunch >lnchshell >shelllnch >lnchshll >shlllnch >lnchterminal >terminallnch >lashell >shellla >lashll >shllla >laterminal >terminalla >launchconfigshell >shellconfiglaunch >launchconfigshll >shllconfiglaunch >launchconfigterminal >terminalconfiglaunch >lnchconfigshell >shellconfiglnch >lnchconfigshll >shllconfiglnch >lnchconfigterminal >terminalconfiglnch >laconfigshell >shellconfigla >laconfigshll >shllconfigla >laconfigterminal >terminalconfigla >termlaunch >termlnch >termla >termconfiglaunch >termconfiglnch >termconfigla]`</small>
 
 		> ***Synopsis:***
 		> ```shell
@@ -2023,11 +2025,11 @@ Contents
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) process launch --tty
+		> (lldb) process launch --tty -- "arg1" "arg2"
 		> (lldb) pr la -t
 		> ```
 		> ```shell
-		> process launch --shell=/dev/ttys002
+		> process launch --shell=/dev/ttys002 -- "arg1" "arg2"
 		> pr la -c=/dev/ttys003
 		> ```
 
@@ -2037,7 +2039,7 @@ Contents
 
 	-	#### Set environment variables:
 
-		> <small>`[Search Tags: > TODO ]`</small>
+		> <small>`[Search Tags: >envlaunchprocesses >envlaunchprograms >environmentlaunchprocesses >environmentlaunchprograms >launchenvironment >environmentlaunch >lnchenvironment >environmentlnch >laenvironment >environmentla >launchconfigenvironment >environmentconfiglaunch >lnchconfigenvironment >environmentconfiglnch >laconfigenvironment >environmentconfigla >envlaunch >envlnch >envla >envconfiglaunch >envconfiglnch >envconfigla >configenvironment >configureenvironment]`</small>
 
 		> ***Synopsis:***
 		> ```shell
@@ -2046,7 +2048,7 @@ Contents
 		>
 		> ***Example(s):***
 		> ```shell
-		> process launch --environment BIG_ENDIAN=true OPTIMIZATIONS=false
+		> process launch --environment BIG_ENDIAN=true OPTIMIZATIONS=false -- "arg1" "arg2"
 		> pr la -v YEAR=2020
 		> ```
 
@@ -2056,7 +2058,7 @@ Contents
 
 	-	#### Set current working directory *(`cwd`)*:
 
-		> <small>`[Search Tags: > TODO ]`</small>
+		> <small>`[Search Tags: >cwdlaunchprocesses >cwdlaunchprograms >cwdlaunch >cwdlnch >cwdla >cwdlaunchprocesses >cwdlaunchprograms >cwdconfiglaunch >cwdconfiglnch >cwdconfigla >launchcwd >lnchcwd >lacwd >launchconfigcwd >lnchconfigcwd >laconfigcwd >configcwd >configurecwd]`</small>
 
 		> ***Synopsis:***
 		> ```shell
@@ -2065,8 +2067,8 @@ Contents
 		>
 		> ***Example(s):***
 		> ```shell
-		> process launch --working-dir /Volumes/DISK3/emails
-		> pr la -w ../
+		> process launch --working-dir /Volumes/DISK3/emails -- "arg1" "arg2"
+		> pr la -w ../ -- "arg1" "arg2"
 		> ```
 
 	<br>
