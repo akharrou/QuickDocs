@@ -600,8 +600,6 @@ Contents
 
 -	`lldb` *[then]* gives you the possibility of setting up [*breakpoints*](https://en.wikipedia.org/wiki/Breakpoint) ([§3.4.1](#341-breakpoints)) and [*watchpoints*](https://en.wiktionary.org/wiki/watchpoint#English) ([§3.4.2](#342-watchpoints)).
 
-	> *<small>[**Note**: Before the execution of a [targeted] program, watchpoints can only be set on global variables –– once [the [targeted] program is] launched, watchpoints can be set on any variable/memory-location. - **end note**]</small>*
-
 <!-- BREAKPOINT ANALOGY:
 
 -	An analogy *(a situation/narrative same, or resembling, in essence)* *[for the above concepts]* would be that of city *metros or buses*. The *bus* *(**`lldb`**)* stops at designated *bus stops* *(**breakpoints**)*. The *bus stops* are known by *address or reference number* *(**a particular line, in a *[source code]* file**)*, they may also be known by *(a significant) structure/building, junction or area* *(**a particular function [in your code]**)*. Sometimes the *bus* doesn't stop at a particular *bus stop*, because conditions have been tied to it; the *bus* only stops at the *bus stop* at certain hours and/or certain days of the week; i.e the bus stopping at that station is conditional, i.e relies on certain ***condition(s)*** being met, e.g: *"in the morning hours (6am-11am), if it is a weekday"* *(`if (morning == true && (week_day >= 0 && week_day <= 5))`)*.
@@ -1654,6 +1652,8 @@ Contents
 ---
 
 TODO : WATCHPOINT SECTION
+
+> *<small>[**Note**: Before the execution of a [targeted] program, watchpoints can only be set on global variables –– once [the [targeted] program is] launched, watchpoints can be set on any variable/memory-location. - **end note**]</small>*
 
 The following subsections dive into: the ***basic commands*** ([§3.4.2.1](#3421-basic-commands)) *[for operating on watchpoints]*, the ***watchpoint options*** ([§3.1.4.2](#3413-options)) available and how to utilise them, the usefulness and power of ***watchpoint names*** ([§3.1.4.3](#3414-names)) and that of configuring their options, watchpoints for multi-threaded programs ([§3.1.4.4](#3415-multi-threaded-programs)) and, finally, a few ***C++ specific watchpoint commands*** ([§3.1.4.5](#3416-c-programs)).
 -	Down below, we explore basic commands for operating on watchpoints ([§3.4.2.1](#3421-basic-commands)) – setting, listing and deleting watchpoints.
