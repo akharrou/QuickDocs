@@ -2027,13 +2027,13 @@ Contents
 
 Contents
 ---
-- [1 Run in Shell or Terminal](#run-program-in-different-shell-or-terminal)
+- [1 Run *[program]* in *[different]* Shell or Terminal](#run-program-in-different-shell-or-terminal)
 - [2 Set Environment](#set-environment-variables)
 - [2 Set Current Working Directory *(`cwd`)*](#set-current-working-directory-cwd)
 - [2 Set Environment](#redirect-program-standard-inouterr-streams)
 ---
 
-> TODO: ### 3.5.3. Advanced Program Configurations ; Advanced commands for process launch
+> *Commands for configuration the launch of programs:*
 
 
 -	#### Run *[program]* in *[different]* Shell or Terminal:
