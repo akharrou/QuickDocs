@@ -966,8 +966,8 @@ Contents
 - [1 Conditions](#breakpoint-conditions)
 - [2 Commands](#breakpoint-commands)
   - [2.1 Set](#set-breakpoint-commands)
-  - [2.2 List](##list-breakpoint-commands)
-  - [2.3 Delete](##delete-breakpoint-commands)
+  - [2.2 List](#list-breakpoint-commands)
+  - [2.3 Delete](#delete-breakpoint-commands)
 - [3 Attributes](#breakpoint-attributes)
 
 ---
