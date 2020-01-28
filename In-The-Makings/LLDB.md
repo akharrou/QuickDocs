@@ -781,13 +781,22 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 #### 3.4.1.2. Advanced Commands
 <small>`[Search Tags: >advancedbreakpoint >breakpointadvanceds >advancedbreakpt >breakptadvanceds >advancedbrkpt >brkptadvanceds >advancedbrpt >brptadvanceds >advancedbr >bradvanceds >advbreakpoint >breakpointadvs >advbreakpt >breakptadvs >advbrkpt >brkptadvs >advbrpt >brptadvs >advbr >bradvs]`</small>
 <br>
-<br>
+
+Contents
+---
+- [1 Enable / Disable](#enable--disable-breakpoints)
+- [2 Function (using Regex)](#set-a-breakpoint-on-functions-using-regular-expressions)
+- [3 Source (using Regex)](#set-a-breakpoint-on-lines-in-files-using-regular-expressions)
+- [4 Modify](#modify-existent-breakpoints-options-)
+
+---
+
 
 > *[A lil' more] Advanced commands for operating on breakpoints.*
 
 <br>
 
--	***Enable / Disable breakpoints:***
+-	#### ***Enable / Disable breakpoints:***
 
 	> <small>`[Search Tags: >breakpointenable >breakptenable >brkptenable >brptenable >brenable >breakpointdisable >breakptdisable >brkptdisable >brptdisable >brdisable >enablebreakpoint >enablebreakpt >enablebrkpt >enablebrpt >enablebr >disablebreakpoint >disablebreakpt >disablebrkpt >disablebrpt >disablebr]`</small>
 
@@ -829,7 +838,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
--	***Set a breakpoint,** on function(s), **using regular-expressions:***
+-	#### ***Set a breakpoint,** on function(s), **using regular-expressions:***
 
 	> <small>`[Search Tags: >regexftbreakpoint >regexfcbreakpoint >regexfuncbreakpoint >regexfunctionbreakpoint >regexftbreakpt >regexfcbreakpt >regexfuncbreakpt >regexfunctionbreakpt >regexftbrkpt >regexfcbrkpt >regexfuncbrkpt >regexfunctionbrkpt >regexftbrpt >regexfcbrpt >regexfuncbrpt >regexfunctionbrpt >regexftbr >regexfcbr >regexfuncbr >regexfunctionbr >breakpointregexfts >breakpointregexfcs >breakpointregexfuncs >breakpointregexfunctions >breakptregexfts >breakptregexfcs >breakptregexfuncs >breakptregexfunctions >brkptregexfts >brkptregexfcs >brkptregexfuncs >brkptregexfunctions >brptregexfts >brptregexfcs >brptregexfuncs >brptregexfunctions >brregexfts >brregexfcs >brregexfuncs >brregexfunctions]`</small>
 
@@ -849,7 +858,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
--	***Set a breakpoint,** on line(s), in file(s), **using regular-expressions:***
+-	#### ***Set a breakpoint,** on line(s), in file(s), **using regular-expressions:***
 
 	> <small>`[Search Tags: >regexsrcbreakpoint >regexsrcebreakpoint >regexsourcebreakpoint >regexsrcbreakpt >regexsrcebreakpt >regexsourcebreakpt >regexsrcbrkpt >regexsrcebrkpt >regexsourcebrkpt >regexsrcbrpt >regexsrcebrpt >regexsourcebrpt >regexsrcbr >regexsrcebr >regexsourcebr >breakpointregexsrcs >breakpointregexsrces >breakpointregexsources >breakptregexsrcs >breakptregexsrces >breakptregexsources >brkptregexsrcs >brkptregexsrces >brkptregexsources >brptregexsrcs >brptregexsrces >brptregexsources >brregexsrcs >brregexsrces >brregexsources]`</small>
 
@@ -880,7 +889,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 <br>
 
--	***Modify** [existent] **breakpoint(s)** [option(s)] **:***
+-	#### ***Modify** [existent] **breakpoint(s)** [option(s)] **:***
 
 	> <small>`[Search Tags: >modbreakpoint >modifbreakpoint >mobreakpoint >mbreakpoint >modifybreakpoint >breakpointmodify >modbreakpt >modifbreakpt >mobreakpt >mbreakpt >modifybreakpt >breakptmodify >modbrkpt >modifbrkpt >mobrkpt >mbrkpt >modifybrkpt >brkptmodify >modbrpt >modifbrpt >mobrpt >mbrpt >modifybrpt >brptmodify >modbr >modifbr >mobr >mbr >modifybr >brmodify]`</small>
 
