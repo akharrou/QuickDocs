@@ -893,7 +893,7 @@ Contents
 
 	> **Brief**
 	>
-	> *`modify` lets one modify previously `set` [breakpoint] options [on [existent] breakpoint(s)].*
+	> *`modify` lets one modify previously `set` [breakpoint] options [of [existent] breakpoint(s)].*
 	>
 	> ***Synopsis:***
 	> ```shell
@@ -942,7 +942,7 @@ Contents
 	>
 	> -	*If no breakpoint is specified, acts on the last created breakpoint.*
 	>
-	> -	*To set/modify breakpoint commands, see `help breakpoint command`, or search "`>brcommands`".*
+	> -	*To set/modify breakpoint commands, see [`breakpoint command`](#breakpoint-commands).*
 	>
 	> *- **end note**]</small>*
 
