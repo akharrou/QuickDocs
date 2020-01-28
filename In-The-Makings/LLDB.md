@@ -1189,9 +1189,9 @@ Contents
 - [1 Create](#create-breakpoint-names)
 - [2 Name](#name-breakpoints)
 - [3 List](#list-breakpoint-names)
-- [4 Delete](#delete-breakpoint-name-from-breakpoint-name-list-of-a-breakpoint)
+- [4 Delete](#delete-breakpoint-name)
 - [5 Configure](#configure-breakpoint-names) <br>
-	- [5.1 Disable / Enable](#disbale-enable-named-breakpoints) <br>
+	- [5.1 Disable / Enable](#disbale-enable-named-breakpoints-) <br>
 	- [5.2 Condition](#configure-condition) <br>
 	- [5.3 Commands](#configure-commands) <br>
 	- [5.4 Attributes](#configure-attributes) <br>
@@ -1301,7 +1301,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 <br>
 
--	#### ***Delete** [breakpoint] **name** [from breakpoint name list [of a breakpoint]] **:***
+-	#### ***Delete** [breakpoint] **name:***
 
 	> <small>`[Search Tags: >debreakpointnames >delbreakpointnames >deletebreakpointnames >breakpointlinames >breakpointlsnames >breakpointdeletenames >debreakptnames >delbreakptnames >deletebreakptnames >breakptlinames >breakptlsnames >breakptdeletenames >debrkptnames >delbrkptnames >deletebrkptnames >brkptlinames >brkptlsnames >brkptdeletenames >debrptnames >delbrptnames >deletebrptnames >brptlinames >brptlsnames >brptdeletenames >debrnames >delbrnames >deletebrnames >brlinames >brlsnames >brdeletenames >breakpointunname >breakptunname >brkptunname >brptunname >brunname >unnamebreakpoints >unnamebreakpts >unnamebrkpts >unnamebrpts >unnamebrs >removebreakpointnames >breakpointremovenames >removebreakptnames >breakptremovenames >removebrkptnames >brkptremovenames >removebrptnames >brptremovenames >removebrnames >brremovenames >breakpointremvenames >breakpointremvnames >breakpointrmvnames >breakpointrmnames >breakptremvenames >breakptremvnames >breakptrmvnames >breakptrmnames >brkptremvenames >brkptremvnames >brkptrmvnames >brkptrmnames >brptremvenames >brptremvnames >brptrmvnames >brptrmnames >brremvenames >brremvnames >brrmvnames >brrmnames >breakpointnamedelete >breakpointnadelete >breakpointndelete >breakptnamedelete >breakptnadelete >breakptndelete >brkptnamedelete >brkptnadelete >brkptndelete >brptnamedelete >brptnadelete >brptndelete >brnamedelete >brnadelete >brndelete]`</small>
 
