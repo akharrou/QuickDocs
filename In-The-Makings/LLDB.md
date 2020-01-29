@@ -886,7 +886,7 @@ Commands to:
 
 -	#### ***Modify** [existent] **breakpoint(s)** [option(s)] **:***
 
-	> <small>`[Search Tags: >modbreakpoint >modifbreakpoint >mobreakpoint >mbreakpoint >modifybreakpoint >breakpointmodify >modbreakpt >modifbreakpt >mobreakpt >mbreakpt >modifybreakpt >breakptmodify >modbrkpt >modifbrkpt >mobrkpt >mbrkpt >modifybrkpt >brkptmodify >modbrpt >modifbrpt >mobrpt >mbrpt >modifybrpt >brptmodify >modbr >modifbr >mobr >mbr >modifybr >brmodify]`</small>
+	> <small>`[Search Tags: >modbreakpoint >modifbreakpoint >mobreakpoint >mbreakpoint >modifybreakpoint >breakpointmodify >modbreakpt >modifbreakpt >mobreakpt >mbreakpt >modifybreakpt >breakptmodify >modbrkpt >modifbrkpt >mobrkpt >mbrkpt >modifybrkpt >brkptmodify >modbrpt >modifbrpt >mobrpt >mbrpt >modifybrpt >brptmodify >modbr >modifbr >mobr >mbr >modifybr >brmodify >brmoattributes >brmoattribs >brmoconditions >brmoconds >brmodifyattributes >brmodifyattribs >brmodifyconditions >brmodifyconds]`</small>
 
 	<br>
 
@@ -969,11 +969,10 @@ Commands for:
 ---
 - [1 Breakpoint Conditions](#breakpoint-conditions)
 - [2 Breakpoint Commands](#breakpoint-commands)
-	- [2.1 Set Commands](#set-breakpoint-commands)
+	- [2.1 Add/Modify Commands](#add-modify-breakpoint-commands)
 	- [2.2 List Commands](#list-breakpoint-commands)
 	- [2.3 Delete Commands](#delete-breakpoint-commands)
 - [3 Breakpoint Attributes](#breakpoint-attributes)
-
 ---
 
 >	*(**Know that**) –– "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions hit-count, auto-continue…) we call breakpoint options."*
@@ -988,13 +987,13 @@ Commands for:
 
 <br>
 
-- #### ***Breakpoint Conditions:***
+- #### Breakpoint Conditions:
 
 	> <small>`[Search Tags: >breakpointsetcondition >breakptsetcondition >brkptsetcondition >brptsetcondition >brsetcondition >breakpointaddcondition >breakptaddcondition >brkptaddcondition >brptaddcondition >braddcondition >conditionbreakpoint >conditionbreakpt >conditionbrkpt >conditionbrpt >conditionbr >breakpointconditions >breakptconditions >brkptconditions >brptconditions >brconditions >breakpointconds >breakptconds >brkptconds >brptconds >brconds]`</small>
 
 	<br>
 
-	- ***Set breakpoint, with condition:***
+	- ***Set a breakpoint, with a condition:***
 
 		> ***Synopsis:***
 		> ```shell
@@ -1013,11 +1012,11 @@ Commands for:
 
 	<br>
 
-	- ***Add breakpoint condition** [to an existing breakpoint] **:***
+	- ***Add/Modify breakpoint condition *[of an existing breakpoint]*:***
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint modify [--condition <expr>] [<breakpt-ids | breakpt-name>]
+		> breakpoint modify [--condition <expr>] [<breakpt-id | breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -1028,34 +1027,41 @@ Commands for:
 
 <br>
 
-- #### ***Breakpoint Commands:***
+- #### Breakpoint Commands:
 
 	> <small>`[Search Tags: >commandbreakpoint >commandsbreakpoint >breakpointcommands >commandbreakpt >commandsbreakpt >breakptcommands >commandbrkpt >commandsbrkpt >brkptcommands >commandbrpt >commandsbrpt >brptcommands >commandbr >commandsbr >brcommands >cmdbreakpoint >cmdsbreakpoint >breakpointcmds >cmdbreakpt >cmdsbreakpt >breakptcmds >cmdbrkpt >cmdsbrkpt >brkptcmds >cmdbrpt >cmdsbrpt >brptcmds >cmdbr >cmdsbr >brcmds >breakpointscrpt >scrptbreakpoint >scriptbreakpoint >breakpointscripts >breakptscrpts >scrptbreakpts >scriptbreakpts >breakptscripts >brkptscrpts >scrptbrkpts >scriptbrkpts >brkptscripts >brptscrpts >scrptbrpts >scriptbrpts >brptscripts >brscrpts >scrptbr >scriptbr >brscript]`</small>
 
 	<br>
 
-	- #### ***Set** [breakpoint] **command(s):***
+	- #### Add/Modify *[breakpoint]* command(s):
 
 		> <small>`[Search Tags: >breakpointaddcommands >breakpointaddcmds >breakpointacmds >breakptaddcommands >breakptaddcmds >breakptadcmds >brkptaddcommands >brkptaddcmds >brkptadcmds >brptaddcommands >brptaddcmds >brptadcmds >braddcommands >braddcmds >bradcmds >breakpointaddscripts >breakpointaddscrpts >breakpointadscrpts >breakptaddscripts >breakptaddscrpts >breakptadscrpts >brkptaddscripts >brkptaddscrpts >brkptadscrpts >brptaddscripts >brptaddscrpts >brptadscrpts >braddscripts >braddscrpts >bradscrpts >breakpointsetcommands >breakpointsetcmds >breakpointacmds >breakptsetcommands >breakptsetcmds >breakptsecmds >brkptsetcommands >brkptsetcmds >brkptsecmds >brptsetcommands >brptsetcmds >brptsecmds >brsetcommands >brsetcmds >brsecmds >breakpointsetscripts >breakpointsetscrpts >breakpointsescrpts >breakptsetscripts >breakptssetscrpts >breakptssescrpts >brkptssetscripts >brkptssetscrpts >brkptssescrpts >brptssetscripts >brptssetscrpts >brptssescrpts >brsetscripts >brsetscrpts >brsescrpts]`</small>
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint command add [--script-type <type>] [<breakpt-ids | breakpt-name>]
+		> breakpoint command add [--script-type <type>] [<breakpt-id | breakpt-name> ...]
 		> ```
 		> Then you are prompted:
 		> ```
 		> > Enter your debugger command(s). Type 'DONE' to end.
-		> > <lldb-commands>
+		> > <lldb-command>
+		> > <lldb-command>       # one command per line
 		> > ...
 		> > DONE
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) breakpoint command add 1.1
+		> (lldb) breakpoint command add 2 4 1                    # add command to breakpoints [of ID]: 2, 4 and 1
 		> Enter your debugger command(s). Type 'DONE' to end.
 		> > thread backtrace
 		> > frame variable
+		> > DONE
+		>
+		> (lldb) br co a 2 4 1
+		> Enter your debugger command(s). Type 'DONE' to end.
+		> > bt               # alias, see: help bt
+		> > fr v             # shorthand, for "frame variable"
 		> > DONE
 		> ```
 		> ```shell
@@ -1069,7 +1075,7 @@ Commands for:
 		> >>> bp_count = 0
 		> >>> quit()
 		> ...
-		> (lldb) br co add -s python 3.2
+		> (lldb) br co add -s python 1.1
 		> Enter your Python command(s). Type 'DONE' to end.
 		> > global bp_count
 		> > bp_count = bp_count + 1
@@ -1095,7 +1101,7 @@ Commands for:
 
 	<br>
 
-	- #### ***List** [breakpoint] **command(s):***
+	- #### List *[breakpoint]* command(s):
 
 		> <small>`[Search Tags: >breakpointlistcommands >breakpointlistcmds >breakpointlscmds >breakptlistcommands >breakptlistcmds >breakptlscmds >brkptlistcommands >brkptlistcmds >brkptlscmds >brptlistcommands >brptlistcmds >brptlscmds >brlistcommands >brlistcmds >brlscmds >breakpointlicmds >breakptlicmds >brkptlicmds >brptlicmds >brlicmds]`</small>
 
@@ -1112,7 +1118,7 @@ Commands for:
 
 	<br>
 
-	- #### ***Delete** [breakpoint] **command(s):***
+	- #### Delete *[breakpoint]* command(s):
 
 		> <small>`[Search Tags: >breakpointdeletecommands >breakpointdeletecmds >breakpointdecmds >breakptdeletecommands >breakptdeletecmds >breakptdecmds >brkptdeletecommands >brkptdeletecmds >brkptdecmds >brptdeletecommands >brptdeletecmds >brptdecmds >brdeletecommands >brdeletecmds >brdecmds]`</small>
 
@@ -1129,44 +1135,65 @@ Commands for:
 
 <br>
 
-- #### ***Breakpoint Attributes:***
+- #### Breakpoint Attributes:
 
 	> <small>`[Search Tags: >attributebreakpoint >attribbreakpoint >atbbreakpoint >breakpointatbs >breakpointatts >breakpointattributes >breakpointattribs >attributebreakpt >attribbreakpt >atbbreakpt >breakptatbs >breakptatts >breakptattributes >breakptattribs >attributebrkpt >attribbrkpt >atbbrkpt >brkptatbs >brkptatts >brkptattributes >brkptattribs >attributebrpt >attribbrpt >atbbrpt >brptatbs >brptatts >brptattributes >brptattribs >attributebr >attribbr >atbbr >bratbs >bratts >brattributes >brattribs]`</small>
 
-	> ***Synopsis:***
-	> ```shell
-	> breakpoint set <breakpt-definition> <conditions> [<attribute> <boolean> ...]
-	>```
-	>
-	> ***Command Options:***
-	>
-    > | Attribute                          | Abrv. | Description
-    > | ---------------------------------- | ----- | ------------------------------------
-    > | `--ignore-count <count>`           | `-i`  | Set the number of times this breakpoint is skipped before stopping.
-    > | `--auto-continue <boolean>`        | `-G`  | The breakpoint will auto-continue after running its commands.
-    > | `--one-shot <boolean>`             | `-o`  | The breakpoint is deleted the first time it stops causes a stop.
-    > | `--move-to-nearest-code <boolean>` | `-m`  | Move breakpoints to nearest code.
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint set --name foo --ignore-count 5 --one-shot true
-	> (lldb) br s -n foo -i 5 -o true
-	> ```
-	> ```shell
-	> (lldb) breakpoint set --name bar --condition 'argc > 3' --auto-continue true     # breakpoint-ID = 2
-	> (lldb) breakpoint command add 2                                                  # used here.
-	> Enter your debugger command(s).  Type 'DONE' to end.
-	> > frame variable
-	> > thread backtrace
-	> > DONE
-	>
-	> (lldb) br s -n bar -c 'argc > 3' -G true
-	> (lldb) br co a 2
-	> Enter your debugger command(s).  Type 'DONE' to end.
-	> > fr v
-	> > bt
-	> > DONE
-	> ```
+	- ***Set a breakpoint, with attribute(s):***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint set <breakpt-definition> <conditions> [<attribute> <boolean> ...]
+		>```
+		>
+		> ***Command Options:***
+		>
+		> | Attribute                          | Abrv. | Description
+		> | ---------------------------------- | ----- | ------------------------------------
+		> | `--ignore-count <count>`           | `-i`  | Set the number of times this breakpoint is skipped before stopping.
+		> | `--auto-continue <boolean>`        | `-G`  | The breakpoint will auto-continue after running its commands.
+		> | `--one-shot <boolean>`             | `-o`  | The breakpoint is deleted the first time it stops causes a stop.
+		> | `--move-to-nearest-code <boolean>` | `-m`  | Move breakpoints to nearest code.
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint set --name foo --ignore-count 5 --one-shot true
+		> (lldb) br s -n foo -i 5 -o true
+		> ```
+		> ```shell
+		> (lldb) breakpoint set --name bar --condition 'argc > 3' --auto-continue true     # breakpoint-ID = 2
+		> (lldb) breakpoint command add 2                                                  # used here.
+		> Enter your debugger command(s).  Type 'DONE' to end.
+		> > frame variable
+		> > thread backtrace
+		> > DONE
+		>
+		> (lldb) br s -n bar -c 'argc > 3' -G true
+		> (lldb) br co a 2
+		> Enter your debugger command(s).  Type 'DONE' to end.
+		> > fr v
+		> > bt
+		> > DONE
+		> ```
+
+	<br>
+
+	- ***Add/Modify breakpoint attributes:***
+
+		> ***Synopsis:***
+		> ```shell
+		> breakpoint modify <attributes> [<breakpt-id | breakpt-name> ...]
+		> ```
+		>
+		> ***Example(s):***
+		> ```shell
+		> (lldb) breakpoint modify --auto-continue true 1.1
+		> (lldb) br m -G true 1.1
+		> ```
+		> ```shell
+		> (lldb) breakpoint modify --one-shot true 4 2 7
+		> (lldb) br m -o true 4 2 7
+		> ```
 
 
 <br>
@@ -1849,11 +1876,11 @@ Commands to:
 <small>`[Search Tags: >optswatchpoint >watchpointopts >watchpointops >opswatchpoint >optionswatchpoint >watchpointoptions >optswatchpt >watchptopts >watchptops >opswatchpt >optionswatchpt >watchptoptions >optswapt >waptopts >waptops >opswapt >optionswapt >waptoptions >optswa >waopts >waops >opswa >optionswa >waoptions]`</small>
 <br>
 
-Contents
+Commands to:
 ---
-- [1 Conditions](#addmodify-watchpoint-condition)
-- [2 Commands](#addmodify-watchpoint-commands)
-- [3 Attributes](#addmodify-watchpoint-attributes)
+- [1 Add/Modify Watchpoint Conditions](#addmodify-watchpoint-condition)
+- [2 Add/Modify Watchpoint Commands](#addmodify-watchpoint-commands)
+- [3 Add/Modify Watchpoint Attributes](#addmodify-watchpoint-attributes)
 ---
 
 >	*<small>[**Note**: We'll refer to options that are neither [watchpoint] conditions nor [watchpoint] commands as: *"[watchpoint] attributes"* - **end note**]</small>* <br>
