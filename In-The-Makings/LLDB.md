@@ -458,7 +458,7 @@ Contents
 	>
 	> > ***Synopsis:***
 	> > ```shell
-	> > $> lldb --file <program-execuable-filename> [<run-args>]
+	> > $> lldb --file <program-execuable-filename> [<arg> ...]
 	> > ```
 	> >
 	> > ***Example(s):***
@@ -551,7 +551,7 @@ Contents
 >
 > - "From **inside** *[`lldb`]*"; i.e after launch *[of `lldb`]* *[, on the 	*[`lldb`]* command prompt]*.
 >
-> - *`[<run-args>]`* represents the argument(s) that you pass to a program.
+> - *`[<arg> ...]`* represents the argument(s) that you pass to a program.
 >
 > -	`file` is an *(built-in)* alias/abbreviation for `target create`, see `help file`.
 >
@@ -1940,10 +1940,12 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-graphical-user-interface-gui)
 ## 3.5. Start Debugging
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: ]`</small>
 <br>
 <br>
 
+>lldb.
+>debugger.
 
 -	There are two ways to start debugging a process (program):
 
@@ -2019,18 +2021,18 @@ Contents
 
 		> ***Synopsis:***
 		> ```shell
-		> process launch --tty -- [<run-args>]                  # terminal
-		> process launch --shell=[<filename>] -- [<run-args>]   # shell
+		> process launch --shell=[<filename>] -- [<arg> ...]   # shell
+		> process launch --tty -- [<arg> ...]                  # terminal
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> (lldb) process launch --tty -- "arg1" "arg2"
-		> (lldb) pr la -t
-		> ```
-		> ```shell
 		> process launch --shell=/dev/ttys002 -- "arg1" "arg2"
 		> pr la -c=/dev/ttys003
+		> ```
+		> ```shell
+		> (lldb) process launch --tty -- "arg1" "arg2"
+		> (lldb) pr la -t
 		> ```
 
 		> *<small>[**Note**: Not supported on all platforms. - **end note**]</small>*
@@ -2043,16 +2045,18 @@ Contents
 
 		> ***Synopsis:***
 		> ```shell
-		> process launch --environment [<NAME=VALUE> ...] -- [<run-args>]
+		> process launch --environment <NAME>=<VALUE> -- [<arg> ...]
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> process launch --environment BIG_ENDIAN=true OPTIMIZATIONS=false -- "arg1" "arg2"
-		> pr la -v YEAR=2020
+		> process launch --environment BIG_ENDIAN=true -- "arg1"
+		> pr la -v BIG_ENDIAN=true -- "arg1"
 		> ```
-
-		> *<small>[**Note**: Can be specified multiple times for subsequent environment entries. - **end note**]</small>*
+		> ```shell
+		> process launch --environment GREET="hello" --environment FAREWELL="bye" -- "arg1" "arg2"
+		> pr la -v GREET="hello" -v FAREWELL="bye" -- "arg1" "arg2"
+		> ```
 
 	<br>
 
@@ -2062,25 +2066,25 @@ Contents
 
 		> ***Synopsis:***
 		> ```shell
-		> process launch --working-dir <directory> -- [<run-args>]
+		> process launch --working-dir <directory> -- [<arg> ...]
 		> ```
 		>
 		> ***Example(s):***
 		> ```shell
-		> process launch --working-dir /Volumes/DISK3/emails -- "arg1" "arg2"
-		> pr la -w ../ -- "arg1" "arg2"
+		> process launch --working-dir /Volumes/Driver/Core/ -- "arg1" "arg2"
+		> pr la -w /Volumes/Driver/Core/ -- "arg1" "arg2"
 		> ```
 
 	<br>
 
 	-	#### Redirect *[program]* [standard in/out/err streams](https://en.wikipedia.org/wiki/Standard_streams):
 
-		> <small>`[Search Tags: > TODO ]`</small>
+		> <small>`[Search Tags: >redirstreams >redirstdstreams >redirectprstdstreams >redirectprogstreams >redirectprogstdstreams >redirprcsstreams >redirprcsstdstreams >redirprogramstdstreams >redirprogramstreams >redirectprogramstdstreams >redirectprogramstreams redirectprocessstreams >redirectprocessstdstreams redirstreams >redirectstreams >redirlaunchprocesses >redirectlaunchprocesses >redirlaunchprograms >redirectlaunchprograms >redirlaunch >redirectlaunch >redirlnch >redirectlnch >redirla >redirectla >redirlaunchprocesses >redirectlaunchprocesses >redirlaunchprograms >redirectlaunchprograms >redirconfiglaunch >redirectconfiglaunch >redirconfiglnch >redirectconfiglnch >redirconfigla >redirectconfigla >launchredirectstreams >launchredirectstdstreams >lnchredirectstreams >lnchredirectstdstreams >laredirectstreams >laredirectstdstreams >launchconfigredirectstreams >launchconfigredirectstdstreams >lnchconfigredirectstreams >lnchconfigredirectstdstreams >laconfigredirectstreams >laconfigredirectstdstreams >configredirectstreams >configredirectstdstreams >configureredirectstreams >configureredirectstdstreams >processlaunchredirectstdstreams >processlaunchredirectstreams >prcslaunchredirectstdstreams >prcslaredirectstdstreams >prlaredirectstdstreams >prlaredirstdstreams >prlaredirstdstdstreams >prcslnchredirectstdstreams >prcslaunchredirectstreams >prcslaredirectstreams >prlaredirectstreams >prlaredirstreams >prlaredirstdstreams >prcslnchredirectstreams]`</small>
 
 		> ***Synopsis:***
 		>
 		> ```shell
-		> process launch [--stdin <filename>] [--stdout <filename>] [--stderr <filename>] -- [<run-args>]
+		> process launch [--stdin <filename>] [--stdout <filename>] [--stderr <filename>] -- [<arg> ...]
 		> ```
 		>
 		> ***Example(s):***
