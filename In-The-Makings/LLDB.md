@@ -969,14 +969,14 @@ Commands for:
 ---
 - [1 Breakpoint Conditions](#breakpoint-conditions)
 	- [1.1 Set a Conditional Breakpoint](#set-a-conditional-breakpoint)
-	- [1.2 Add/Modify Breakpoint Condition](#add-modify-breakpoint-condition-of-an-existing-breakpoint)
+	- [1.2 Add/Modify Breakpoint Condition](#addmodify-breakpoint-condition-of-an-existing-breakpoint)
 - [2 Breakpoint Commands](#breakpoint-commands)
 	- [2.1 Add/Modify Commands](#add-modify-breakpoint-commands)
 	- [2.2 List Commands](#list-breakpoint-commands)
 	- [2.3 Delete Commands](#delete-breakpoint-commands)
 - [3 Breakpoint Attributes](#breakpoint-attributes)
-	- [3.1 Add/Modify Commands](#add-modify-breakpoint-commands)
-	- [3.2 List Commands](#list-breakpoint-commands)
+	- [3.1 Set a Breakpoint with Attributes](#set-a-breakpoint-with-attributes)
+	- [3.2 Add/Modify Breakpoint Attributes](#add-modify-breakpoint-attributes)
 ---
 
 
@@ -1027,7 +1027,11 @@ Commands for:
 		> ***Example(s):***
 		> ```shell
 		> (lldb) breakpoint modify --condition 'my_var == 42' 3     # add condition to breakpt with ID: 3
-		> (lldb) br m -c 'my_var < 42' 4 2 8
+		> (lldb) br m -c 'my_var == 42' 4 2 8
+		> ```
+		> ```shell
+		> (lldb) breakpoint modify --condition '' 'controlFlow'     # clears any existent condition, for all breakpoints who have 'controlFlow' in their list of names
+		> (lldb) br m -c '' 'controlFlow'
 		> ```
 
 <br>
@@ -1144,7 +1148,7 @@ Commands for:
 
 	> <small>`[Search Tags: >attributebreakpoint >attribbreakpoint >atbbreakpoint >breakpointatbs >breakpointatts >breakpointattributes >breakpointattribs >attributebreakpt >attribbreakpt >atbbreakpt >breakptatbs >breakptatts >breakptattributes >breakptattribs >attributebrkpt >attribbrkpt >atbbrkpt >brkptatbs >brkptatts >brkptattributes >brkptattribs >attributebrpt >attribbrpt >atbbrpt >brptatbs >brptatts >brptattributes >brptattribs >attributebr >attribbr >atbbr >bratbs >bratts >brattributes >brattribs]`</small>
 
-	- ***Set a breakpoint, with attribute(s):***
+	- #### Set a breakpoint, with attribute(s):
 
 		> ***Synopsis:***
 		> ```shell
@@ -1183,7 +1187,7 @@ Commands for:
 
 	<br>
 
-	- ***Add/Modify breakpoint attributes:***
+	- #### Add/Modify breakpoint attributes:
 
 		> ***Synopsis:***
 		> ```shell
