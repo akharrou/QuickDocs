@@ -1170,19 +1170,8 @@ Commands for:
 		> (lldb) br s -n foo -i 5 -o true
 		> ```
 		> ```shell
-		> (lldb) breakpoint set --name bar --condition 'argc > 3' --auto-continue true     # breakpoint-ID = 2
-		> (lldb) breakpoint command add 2                                                  # used here.
-		> Enter your debugger command(s).  Type 'DONE' to end.
-		> > frame variable
-		> > thread backtrace
-		> > DONE
-		>
-		> (lldb) br s -n bar -c 'argc > 3' -G true
-		> (lldb) br co a 2
-		> Enter your debugger command(s).  Type 'DONE' to end.
-		> > fr v
-		> > bt
-		> > DONE
+		> (lldb) breakpoint set --name bar --condition 'argc > 3' --auto-continue true --ignore-count 5
+		> (lldb) br s -n bar -c 'argc > 3' -G true -i 5
 		> ```
 
 	<br>
