@@ -664,11 +664,10 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 
 Contents
 ---
-- [1 Set on Function](#set-a-breakpoint-on-a-function)
-- [2 Set on Source](#set-a-breakpoint-on-a-source-code-line)
-- [3 List](#list-breakpoints)
-- [4 Delete](#delete-breakpoints)
-
+- [1 Set Breakpoint on a Function](#set-a-breakpoint-on-a-function)
+- [2 Set Breakpoint on Source](#set-a-breakpoint-on-a-source-code-line)
+- [3 List Breakpoints](#list-breakpoints)
+- [4 Delete Breakpoint(s)](#delete-breakpoints)
 ---
 
 > *(Basic) Commands for operating on breakpoints.*
@@ -778,12 +777,12 @@ Contents
 <small>`[Search Tags: >advancedbreakpoint >breakpointadvanceds >advancedbreakpt >breakptadvanceds >advancedbrkpt >brkptadvanceds >advancedbrpt >brptadvanceds >advancedbr >bradvanceds >advbreakpoint >breakpointadvs >advbreakpt >breakptadvs >advbrkpt >brkptadvs >advbrpt >brptadvs >advbr >bradvs]`</small>
 <br>
 
-Contents
+Commands to:
 ---
-- [1 Enable / Disable](#enable--disable-breakpoints)
-- [2 Set on Function (using Regex)](#set-a-breakpoint-on-functions-using-regular-expressions)
-- [3 Set on Source (using Regex)](#set-a-breakpoint-on-lines-in-files-using-regular-expressions)
-- [4 Modify](#modify-existent-breakpoints-options-)
+- [1 Enable / Disable Breakpoints](#enable--disable-breakpoints)
+- [2 Set Breakpoint on Function(s) (using Regex)](#set-a-breakpoint-on-functions-using-regular-expressions)
+- [3 Set Breakpoint on Source (using Regex)](#set-a-breakpoint-on-lines-in-files-using-regular-expressions)
+- [4 Modify Breakpoint(s)](#modify-existent-breakpoints-options-)
 
 ---
 
@@ -966,14 +965,14 @@ Contents
 <small>`[Search Tags: >optsbreakpoint >breakpointopts >breakpointops >opsbreakpoint >optionsbreakpoint >breakpointoptions >optsbreakpt >breakptopts >breakptops >opsbreakpt >optionsbreakpt >breakptoptions >optsbrkpt >brkptopts >brkptops >opsbrkpt >optionsbrkpt >brkptoptions >optsbrpt >brptopts >brptops >opsbrpt >optionsbrpt >brptoptions >optsbr >bropts >brops >opsbr >optionsbr >broptions]`</small>
 <br>
 
-Contents
+Commands for:
 ---
-- [1 Conditions](#breakpoint-conditions)
-- [2 Commands](#breakpoint-commands)
-  - [2.1 Set](#set-breakpoint-commands)
-  - [2.2 List](#list-breakpoint-commands)
-  - [2.3 Delete](#delete-breakpoint-commands)
-- [3 Attributes](#breakpoint-attributes)
+- [1 Breakpoint Conditions](#breakpoint-conditions)
+- [2 Breakpoint Commands](#breakpoint-commands)
+	- [2.1 Set Commands](#set-breakpoint-commands)
+	- [2.2 List Commands](#list-breakpoint-commands)
+	- [2.3 Delete Commands](#delete-breakpoint-commands)
+- [3 Breakpoint Attributes](#breakpoint-attributes)
 
 ---
 
@@ -1189,19 +1188,17 @@ Contents
 <small>`[Search Tags: >namedbreakpoint >nbreakpoint >namesbreakpoint >breakpointnames >namedbreakpt >nbreakpt >namesbreakpt >breakptnames >namedbrkpt >nbrkpt >namesbrkpt >brkptnames >namedbrpt >nbrpt >namesbrpt >brptnames >namedbr >nbr >namesbr >brnames]`</small>
 <br>
 
-Contents
+Commands to:
 ---
-- [1 Create Breakpoint Names](#create-breakpoint-names)
-- [2 Add Breakpoint Names](#name-breakpoints)
-- [3 List Breakpoint Names](#list-breakpoint-names)
-- [4 Delete Breakpoint Names](#delete-breakpoint-name)
-- [5 Configure Breakpoint Names](#configure-breakpoint-names)
-	- [5.1 Disable / Enable](#disbale--enable-named-breakpoints-)
-	- [5.2 Condition](#configure-condition)
-	- [5.3 Commands](#configure-commands)
-	- [5.4 Attributes](#configure-attributes)
-	- [5.5 Threads](#configure-assigned-threads)
-
+- [1 Add Breakpoint Names](#add-breakpoint-names)
+- [2 List Breakpoint Names](#list-breakpoint-names)
+- [3 Delete Breakpoint Names](#delete-breakpoint-name)
+- [4 Configure Breakpoint Names](#configure-breakpoint-names)
+	- [4.1 Disable / Enable](#disbale--enable-named-breakpoints-)
+	- [4.2 Condition](#configure-condition)
+	- [4.3 Commands](#configure-commands)
+	- [4.4 Attributes](#configure-attributes)
+	- [4.5 Threads](#configure-assigned-threads)
 ---
 
 ***Breakpoint name*** is an extremely powerful *[`lldb`]* feature. It allows us to create a breakpoint "profile", so to speak, –– a set, of breakpoint options –– referrable by `name`. Later on, when we create *(`set`)* breakpoints, we can choose to have them *[the breakpoints we are creating (`set`'ing)]* inherit *(have added to their list of `names`)* one or more *[profile]* `names`, i.e one or more of these *[pre-defined]* sets of options. Any modification to a *[breakpoint]* profile immediately applies to all breakpoints that inherit that profile *(have that [profile] `name` in their list of [profile] `names`)*.
@@ -1214,11 +1211,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 <br>
 
--	#### ***Create** [breakpoint] **name(s):***
-
-<br>
-
--	#### ***Name breakpoints:***
+-	#### Add breakpoint name(s):
 
 	> <small>`[Search Tags: >breakpointsetnames >breakptsetnames >brkptsetnames >brptsetnames >brsetnames >setbreakpointnames >setbreakptnames >setbrkptnames >setbrptnames >setbrnames >namebreakpoints >namebreakpts >namebrkpts >namebrpts >namebrs >addbreakpointnames >breakpointaddnames >breakpointanames >addbreakptnames >breakptaddnames >breakptanames >addbrkptnames >brkptaddnames >brkptanames >addbrptnames >brptaddnames >brptanames >addbrnames >braddnames >branames >createbreakpointnames >breakpointcreatenames >createbreakptnames >breakptcreatenames >createbrkptnames >brkptcreatenames >createbrptnames >brptcreatenames >createbrnames >brcreatenames]`</small>
 
@@ -1524,10 +1517,10 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 Contents
 ---
-- [1 Set on Function (using Fullname)](#set-a-breakpoint-on-functions-using-fullname)
-- [2 Set on Function (using Basename)](#set-a-breakpoint-on-functions-using-basename)
-- [3 Set on Method](#set-a-breakpoint-on-class-methods)
-- [4 Set on Exceptions](#set-a-breakpoint-on-all-exceptions-on-catch-andor-throws)
+- [1 Set Breakpoint on Function (using Fullname)](#set-a-breakpoint-on-functions-using-fullname)
+- [2 Set Breakpoint on Function(s) (using Basename)](#set-a-breakpoint-on-functions-using-basename)
+- [3 Set Breakpoint on Method(s)](#set-a-breakpoint-on-class-methods)
+- [4 Set Breakpoint on *[all]* Exceptions](#set-a-breakpoint-on-all-exceptions-on-catch-andor-throws)
 ---
 
 -	#### Set a breakpoint, on function(s), using fullname:
@@ -1664,18 +1657,18 @@ The following subsections dive into the ***basic*** ([§3.4.2.1](#3421-basic-com
 <small>`[Search Tags: >basicwatchpoint >basicswatchpoint >watchpointbasics >basicwatchpt >basicswatchpt >watchptbasics >basicwapt >basicswapt >waptbasics >basicwapt >basicswapt >waptbasics >basicwa >basicswa >wabasics]`</small>
 <br>
 
-Contents
+Commands to:
 ---
-- [1 Set on Variable or Memory Region](#set-a-watchpoint)
-- [2 List](#list-watchpoints)
-- [3 Delete](#delete-watchpoints)
+- [1 Set Watchpoint on Variable or Memory-Region](#set-a-watchpoint)
+- [2 List Watchpoints](#list-watchpoints)
+- [3 Delete Watchpoint(s)](#delete-watchpoints)
 ---
 
 > *(Basic) Commands for operating on watchpoints.*
 
 <br>
 
--	#### ***Set a watchpoint:***
+-	#### Set a watchpoint:
 
 	> <small>`[Search Tags: >createwatchpoint >crwatchpoint >sewatchpoint >swatchpoint >watchpointcreates >setwatchpoint >watchpointsets >createwatchpt >crwatchpt >sewatchpt >swatchpt >watchptcreates >setwatchpt >watchptsets >createwapt >crwapt >sewapt >swapt >waptcreates >setwapt >waptsets >createwa >crwa >sewa >swa >wacreates >setwa >wasets]`</small>
 
@@ -1735,7 +1728,7 @@ Contents
 
 <br>
 
--	#### ***List watchpoints:***
+-	#### List watchpoints:
 
 	> <small>`[Search Tags: >watchpointlist >watchpointls >listwatchpoint >lstwatchpoint >lswatchpoint >liwatchpoint >watchptlist >watchptls >listwatchpt >lstwatchpt >lswatchpt >liwatchpt >waptlist >waptls >listwapt >lstwapt >lswapt >liwapt >walist >wals >listwa >lstwa >lswa >liwa]`</small>
 
@@ -1753,7 +1746,7 @@ Contents
 
 <br>
 
--	#### ***Delete watchpoint(s):***
+-	#### Delete watchpoint(s):
 
 	> <small>`[Search Tags: >wadelete >deletewa >deletewapt >deletewatchpt >deletewatchpoint >wadelete >waptdelete >watchptdelete >watchpointdelete >dewa >deletewa >deletetarge >waunload >unloadwatchpoints >uldwatchpoints >watchpointunload >unloadwatchpoint >delwa >wadel >delwapt >waptdel >delwatchpt >watchptdel >delwatchpoint >watchpointdel]`</small>
 
@@ -1789,13 +1782,17 @@ Contents
 #### 3.4.2.2. Advanced Commands
 <small>`[Search Tags: >advancedwatchpoint >watchpointadvanceds >advancedwatchpt >watchptadvanceds >advancedwapt >waptadvanceds >advancedwa >waadvanceds >advwatchpoint >watchpointadvs >advwatchpt >breakptadvs >advwapt >waptadvs >advwa >waadvs]`</small>
 <br>
-<br>
+
+Commands to:
+---
+- [1 Enable / Disable Watchpoints](#enable--disable-watchpoints)
+---
 
 > *[A lil' more] Advanced commands for operating on watchpoints.*
 
 <br>
 
--	***Enable / Disable watchpoints:***
+-	### Enable / Disable watchpoints:
 
 	> <small>`[Search Tags: >watchpointenable >watchptenable >waptenable >waenable >watchpointdisable >watchptdisable >waptdisable >wadisable >enablewatchpoint >enablewatchpt >enablewapt >enablewa >disablewatchpoint >disablewatchpt >disablewapt >disablewa]`</small>
 
