@@ -968,12 +968,17 @@ Commands to:
 Commands for:
 ---
 - [1 Breakpoint Conditions](#breakpoint-conditions)
+	- [1.1 Set a Conditional Breakpoint](#set-a-conditional-breakpoint)
+	- [1.2 Add/Modify Breakpoint Condition](#add-modify-breakpoint-condition-of-an-existing-breakpoint)
 - [2 Breakpoint Commands](#breakpoint-commands)
 	- [2.1 Add/Modify Commands](#add-modify-breakpoint-commands)
 	- [2.2 List Commands](#list-breakpoint-commands)
 	- [2.3 Delete Commands](#delete-breakpoint-commands)
 - [3 Breakpoint Attributes](#breakpoint-attributes)
+	- [3.1 Add/Modify Commands](#add-modify-breakpoint-commands)
+	- [3.2 List Commands](#list-breakpoint-commands)
 ---
+
 
 >	*(**Know that**) –– "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions hit-count, auto-continue…) we call breakpoint options."*
 >
@@ -993,7 +998,7 @@ Commands for:
 
 	<br>
 
-	- ***Set a breakpoint, with a condition:***
+	- #### Set a conditional breakpoint:
 
 		> ***Synopsis:***
 		> ```shell
@@ -1012,7 +1017,7 @@ Commands for:
 
 	<br>
 
-	- ***Add/Modify breakpoint condition *[of an existing breakpoint]*:***
+	- #### Add/Modify breakpoint condition *[of an existing breakpoint]*:
 
 		> ***Synopsis:***
 		> ```shell
@@ -1914,7 +1919,7 @@ Commands to:
 
 -	#### Add/modify [watchpoint] command(s):
 
-	> `watchpoint command` is identical to [`breakpoint command`](#breakpoint-commands).
+	> `watchpoint command` is identical to [`breakpoint command`](#breakpoint-commands) –– it goes without saying, simply replace `breakpoint` with `watchpoint`.
 
 <br>
 
