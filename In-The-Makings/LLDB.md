@@ -1940,12 +1940,10 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#342-watchpoints) | [➡️](#36-graphical-user-interface-gui)
 ## 3.5. Start Debugging
-<small>`[Search Tags: ]`</small>
+<small>`[Search Tags: >lldb.startdebug >lldb.debug >debugger.startdebug >debugger.debug >lldbstartdebug >lldbdebug >debuggerstartdebug >debuggerdebug >startdebugging >strtdebugging >startlldbdebuggings >startprogram >startprocess >startprogdebugging >startprcsdebugging]`</small>
 <br>
 <br>
 
->lldb.
->debugger.
 
 -	There are two ways to start debugging a process (program):
 
