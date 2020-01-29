@@ -1191,11 +1191,11 @@ Contents
 
 Contents
 ---
-- [1 Create](#create-breakpoint-names)
-- [2 Name](#name-breakpoints)
-- [3 List](#list-breakpoint-names)
-- [4 Delete](#delete-breakpoint-name)
-- [5 Configure](#configure-breakpoint-names)
+- [1 Create Breakpoint Names](#create-breakpoint-names)
+- [2 Add Breakpoint Names](#name-breakpoints)
+- [3 List Breakpoint Names](#list-breakpoint-names)
+- [4 Delete Breakpoint Names](#delete-breakpoint-name)
+- [5 Configure Breakpoint Names](#configure-breakpoint-names)
 	- [5.1 Disable / Enable](#disbale--enable-named-breakpoints-)
 	- [5.2 Condition](#configure-condition)
 	- [5.3 Commands](#configure-commands)
@@ -1216,76 +1216,66 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 -	#### ***Create** [breakpoint] **name(s):***
 
-	> <small>`[Search Tags: >addbreakpointnames >breakpointaddnames >breakpointanames >addbreakptnames >breakptaddnames >breakptanames >addbrkptnames >brkptaddnames >brkptanames >addbrptnames >brptaddnames >brptanames >addbrnames >braddnames >branames >createbreakpointnames >breakpointcreatenames >createbreakptnames >breakptcreatenames >createbrkptnames >brkptcreatenames >createbrptnames >brptcreatenames >createbrnames >brcreatenames]`</small>
+<br>
+
+-	#### ***Name breakpoints:***
+
+	> <small>`[Search Tags: >breakpointsetnames >breakptsetnames >brkptsetnames >brptsetnames >brsetnames >setbreakpointnames >setbreakptnames >setbrkptnames >setbrptnames >setbrnames >namebreakpoints >namebreakpts >namebrkpts >namebrpts >namebrs >addbreakpointnames >breakpointaddnames >breakpointanames >addbreakptnames >breakptaddnames >breakptanames >addbrkptnames >brkptaddnames >brkptanames >addbrptnames >brptaddnames >brptanames >addbrnames >braddnames >branames >createbreakpointnames >breakpointcreatenames >createbreakptnames >breakptcreatenames >createbrkptnames >brkptcreatenames >createbrptnames >brptcreatenames >createbrnames >brcreatenames]`</small>
 
 	> ***Synopsis:***
-	> ```shell
-	> breakpoint name add --name <breakpt-name>
-	> ```
+	> > *At creation (`set`ing) [of breakpoint]:*
+	> > ```shell
+	> > breakpoint set <breakpt-definition> --breakpoint-name <breakpt-name>
+	> > ```
+	>
+	> > *After creation (`set`ing) [of breakpoint]:*
+	> > ```shell
+	> > breakpoint name add --name <breakpt-name> [<breakpt-id | breakpt-name> ...]
+	> > ```
 	>
 	> ***Example(s):***
-	>
 	> ```shell
 	> (lldb) breakpoint name add --name 'controlFlow'
 	> (lldb) br n a -N 'controlFlow'
 	> ```
-	> > *To clarify –– we are just creating an [un-configured] breakpoint `name` (profile), namely: "`controlFlow`".*
+	> > *To clarify –– we are just creating an [un-configured] breakpoint name (profile), namely: "`controlFlow`" –– it is (implicitly) `add`ed to the last created (i.e `set`) breakpoint.*
 	>
-	> ***Tip(s):***
-	> > *Idealy we would create all the breakpoint `names` (profiles) [we think we will need] at the beginning [of our debugging session]; then configure them [the breakpoint `names` (profiles)]; and only then start creating (`set`'ing) our breakpoints.*
+	> ```shell
+	> (lldb) breakpoint set --name foo --breakpoint-name 'funcs'
+	> (lldb) br s -n foo -N 'funcs'
+	> ```
+	> > *To clarify –– we are adding a breakpoint name –– namely `'funcs`' –– to the list of names of the breakpoint [as we `set` it].*
+	> ```shell
+	> (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
+	> (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
+	> ```
+	> > *To clarify –– we are adding a breakpoint name to the list of names of the breakpoint(s) [as we `set` it/them].*
+	> ```shell
+	> (lldb) breakpoint name add --name 'funcs' 3 2 7
+	> (lldb) br n a -N 'funcs' 3 2 7
+	> ```
+	> > *To clarify –– we are `add`ing a breakpoint name to the list of names of the breakpoints [of id]: 3, 2 and 7.*
+	> ```shell
+	> (lldb) breakpoint name add --name 'important' 'funcs' 'controlFlow'
+	> (lldb) br n a -N 'important' 'funcs' 'controlFlow'
+	> ```
+	> > *To clarify –– we are adding a breakpoint name to the list of names of the breakpoints that have in their list of names the name: `'funcs'` and/or `'controlFlow'`.*
+	>
+	> *<small>[**Note:***
+	>
+	> -	*Every created (`add`'ed) `name`, if not given any `<breakpt-id | breakpt-name>` will (implicitly) be added to [the list of names of] the last created breakpoint –– evidently you must have at least one [existent] breakpoint before creating (`add`'ing) breakpoint `names`.*
+	>
+	> <br> *- **end note**]</small>*
+
+<!-- 	> ***Tip(s):***
+	> > *Idealy (imo), you might create all the breakpoint names (profiles) [you think you will need] at the beginning [of your debugging session]; then configure them [the breakpoint names (profiles)]; and only then start creating (`set`'ing) your breakpoints.*
 	> ```shell
 	> (lldb) breakpoint name add --name 'func'
 	> (lldb) breakpoint name add --name 'return'
 	> (lldb) breakpoint name add --name 'controlFlow'
 	> (lldb) breakpoint name add --name 'failure'
 	> ```
-	> > *Then as we create *(`set`)* them [the breakpoints], we can make them [the breakpoints] inherit/be-named (have added to their list of `names` (profiles)) those created (`add`'ed) `names` (profiles), using: `--breakpoint-name` or `-N` for short, followed by the `name` [of the profile].*
-
-	> *<small>[**Note:***
-	>
-	> -	*You must have at least one [existent] breakpoint before creating (`add`'ing) breakpoint `names`.*
-	>
-	> -	*Every created (`add`'ed) `name` will implicitly be added to [the list of names of] the last created breakpoint.*
-	>
-	> *- **end note**]</small>*
-
-<br>
-
--	#### ***Name breakpoints:***
-
-	> <small>`[Search Tags: >breakpointsetnames >breakptsetnames >brkptsetnames >brptsetnames >brsetnames >setbreakpointnames >setbreakptnames >setbrkptnames >setbrptnames >setbrnames >namebreakpoints >namebreakpts >namebrkpts >namebrpts >namebrs]`</small>
-
-	> ***Synopsis:***
-	> > *At creation:*
-	> > ```shell
-	> > breakpoint set <breakpt-definition> --breakpoint-name <breakpt-name>
-	> > ```
-	>
-	> > *After creation:*
-	> > ```shell
-	> > breakpoint name add --name <breakpt-name> [<breakpt-id> ...]  [<breakpt-name> ...]
-	> > ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> (lldb) breakpoint set --name foo --breakpoint-name 'funcs'
-	> (lldb) br s -n foo -N 'funcs'
-	> ```
-	> ```shell
-	> (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
-	> (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
-	> ```
-	> > *To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoint we are currently creating (`set`'ing).*
-	> ```shell
-	> (lldb) breakpoint name add --name 'funcs' 3 2 7
-	> (lldb) br n a -N 'funcs' 3 2 7
-	> ```
-	> > *To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoints [of id]: 3, 2 and 7.*
-	> ```shell
-	> (lldb) breakpoint name add --name 'important' 'funcs' 'controlFlow'
-	> (lldb) br n a -N 'important' 'funcs' 'controlFlow'
-	> ```
-	> > *To clarify –– we are adding a breakpoint `name` to the list of `names` of the breakpoints that have in their list of `names` the `name`: `'funcs'` and/or `'controlFlow'`.*
+	> > *Then as you create *(`set`)* them [the breakpoints], you can make them [the breakpoints] inherit/be-named (have `add`'ed to their list of `names` (profiles)) those created (`add`'ed) `names` (profiles), using: `--breakpoint-name` or `-N` for short, followed by the `name` [of the profile].* -->
 
 <br>
 
@@ -1966,7 +1956,7 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.5.1. Launch
-<small>`[Search Tags: >launchprocess >launchprcs >lprocess >lnchprcs >launchprograms >launchprogs >lprograms >lnchprgs >laprogs >laprs >laprs >programlaunch >progrmlaunch >proglaunch >programlnch >progrmlnch >proglnch >programla >progrmla >progla >processlaunch >prcslaunch >processlnch >prcslnch >processla >prcsla >prlaunch >prlnch >prla]`</small>
+<small>`[Search Tags: >prlasection >prsection >processsection >prcssection lasection >lnchsection >lchsection >launchsection >launchprocess >launchprcs >lprocess >lnchprcs >launchprograms >launchprogs >lprograms >lnchprgs >laprogs >laprs >laprs >programlaunch >progrmlaunch >proglaunch >programlnch >progrmlnch >proglnch >programla >progrmla >progla >processlaunch >prcslaunch >processlnch >prcslnch >processla >prcsla >prlaunch >prlnch >prla]`</small>
 <br>
 
 Contents
@@ -2133,12 +2123,13 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.5.2. Attach
-<small>`[Search Tags: >lldb.attachprocess >lldb.attachprogram >attachprogram >attachprocess >attachexecutable]`</small>
+<small>`[Search Tags: >atsection >atchsection >achsection >attchsection >attachsection >attchprocess >attachprocess >attchprcs >attachprcs >aprocess >atchprcs >attchprograms >attachprograms >attchprogs >attachprogs >aprograms >atchprgs >atprogs >attchprs >attachprs >programattch >programattach >progrmattch >progrmattach >progattch >progattach >programatch >progrmatch >progatch >programat >progrmat >progat >processattch >processattach >prcsattch >prcsattach >processatch >prcsatch >processat >prcsat >prattch >prattach >pratch >prat]`</small>
 <br>
 <br>
 
+> TODO: ### 3.5.2. Attach to Program
 
-> TODO: ### 3.5.2. Attach to Program ; Commands for attaching to processes (i.e running programs):
+> *Commands for attaching to processes (i.e running programs):*
 
 > *(**Definition**) –– Attach: Take over control [of the execution] of a process (running program) [in this case, for debugging purposes], at the instruction that the process has reached.*
 >
