@@ -2147,50 +2147,52 @@ Contents
 ### 3.5.2. Attach
 <small>`[Search Tags: >atsection >atchsection >achsection >attchsection >attachsection >attchprocess >attachprocess >attchprcs >attachprcs >aprocess >atchprcs >attchprograms >attachprograms >attchprogs >attachprogs >aprograms >atchprgs >atprogs >attchprs >attachprs >programattch >programattach >progrmattch >progrmattach >progattch >progattach >programatch >progrmatch >progatch >programat >progrmat >progat >processattch >processattach >prcsattch >prcsattach >processatch >prcsatch >processat >prcsat >prattch >prattach >pratch >prat]`</small>
 <br>
+
+Contents
+---
+- [1 Attach Command](#attach-to-a-process)
+---
+
+> ***TL;DR:*** <br>
+> *"Attach" means, take over control of a process (running program), at the instruction that the process has reached.*
+
+---
+
+> ***FULL:*** <br>
+> *Every time you start a new application, you create one or more processes. A process is simply executable code that is loaded into memory. The CPU reads and executes the instructions to perform the tasks you ask the application to do. When the CPU loads your application into memory, it assigns each process the application creates a Process IDentifier (PID), which is pronounced pid (think of lid with a p instead of an l). The PID is simply a number associated with the process for easy identification.*
+
+>	*In most cases, you debug an application by running it in the IDE in debug mode. However, there are some situations where you must debug the application in a different way — by attaching to its process. ***Attaching to the process means telling the CPU to send the instructions in the executable code to a debugger before they’re executed by the CPU.*** In other words, you place the debugger between the executable code and the CPU.*
+>
+> *––	[Attaching to a Running Process Using CodeBlocks](https://www.dummies.com/programming/cpp/attaching-to-a-running-process-using-codeblocks/)*
+
+---
+
 <br>
 
-> TODO: ### 3.5.2. Attach to Program
+> *Command for attaching to processes:*
 
-> *Commands for attaching to processes (i.e running programs):*
-
-> *(**Definition**) –– Attach: Take over control [of the execution] of a process (running program) [in this case, for debugging purposes], at the instruction that the process has reached.*
->
-> *––	[Attaching to a Running Process Using Code :: Blocks](https://www.dummies.com/programming/cpp/attaching-to-a-running-process-using-codeblocks/)*
->
-> *(**Commentary**) –– When you are debugging, essentially, the instructions of the process you are debugging are sent to a debugger *[program]* before they’re executed by the CPU. The debugger becomes a middle man between the program instructions and the CPU.*
-
-<br>
-
--	***To attach to a process:***
+-	#### Attach to a process:
 
 	> ***Synopsis:***
 	>
 	> ```shell
-	> process attach [--pid <pid>]                           # by pid
-	> process attach [--wait-for] [--name <process-name>]    # by name
+	> process attach [--pid <pid>]                           # by process identifier (pid)
+	> process attach [--wait-for] [--name <program-name>]    # by program name
 	> ```
 	>
 	> *****Example(s):*****
 	> ```shell
-	> (lldb) process attach --pid 123
-	> (lldb) pr a -p 123
+	> (lldb) process attach --pid 2432                   # attach to currently running process by identifier (pid)
+	> (lldb) pr a -p 2432
 	> ```
 	> ```shell
-	> (lldb) process attach --name a.out
+	> (lldb) process attach --name a.out                 # attach to currently running process by program name
 	> (lldb) pr a -n a.out
 	> ```
 	> ```shell
-	> (lldb) process attach --waitfor --name a.out
+	> (lldb) process attach --waitfor --name a.out       # wait for, and, attach to, the [first] process that has 'a.out' as program name
 	> (lldb) pr a -w -n a.out
 	> ```
-
-	> *<small>[**Note**:*
-	>
-	> - *To clarify – you can attach to a process by process-ID (`pid`) or process name (e.g. `a.out`).* <br>
-	>
-	>	*When attaching to a process by name, `lldb` also supports the '`--waitfor`' option – which waits for the next process that has that name to show up, and attaches to it.*
-	>
-	> *- **end note**]</small>*
 
 
 <br>
