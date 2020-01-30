@@ -420,11 +420,12 @@ Run the `lldb` debugger *[program]* by typing *[in your command prompt]*:
 Contents
 ---
 - [1 Basic Commands](#331-basic-commands)
-
 ---
 
 -	`lldb` must *[then]* be informed of which program we intend to debug – this step is referred to as: ***"loading a program"*** . The following subsection explores the basic commands ([§3.3.1](#331-basics)) of loading programs. <br>
 	> Being pedantic, one says –– we are ***loading*** *[`lldb` with]* a ***debugger target***; i.e setting *[`lldb`]* up to target a specific process *(program)*, for debugging/examination-phase.
+	>
+	> *<small>[**Note**: In `lldb`'s lexicon, a ***"program [executable] intended for debugging"*** is a referred to as a ***"[debugger] target"*** . - **end note**]</small>*
 
 -	***Demonstration:*** <br>
 	> ![Demo: lldb-load](https://media.giphy.com/media/Ur15mVAN0o0QcyuMQY/giphy.gif) <!-- ../Assets/LLDB/lldb-load.gif --> <br>
@@ -444,17 +445,24 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#32-launch-lldb) | [➡️](#34-setup-lldb)
 ### 3.3.1. Basic Commands
-<small>`[Search Tags: >lldbloadcomands >lldb.load.commands >lldbloadcmds >lldb.load.cmds >debuggerloadcomands >debugger.load.commands >debuggerloadcmds >debugger.load.cmds >loadcomands >load.commands >loadcmds >load.cmds]`</small>
-<br>
+<small>`[Search Tags: >lldbloadcomands >lldb.load.commands >lldbloadcmds >lldb.load.cmds >debuggerloadcomands >debugger.load.commands >debuggerloadcmds >debugger.load.cmds >loadcomands >load.commands >loadcmds >load.cmds >loadbasiccommands >loadbasics >ldbasiccommands >ldbasics >basiccommandsload >basicsload >basiccommandsld >basicsld >loadbasiccmds >loadbasics >ldbasiccmds >ldbasics >basiccmdsload >basicsload >basiccmdsld >basicsld >loadbsccommands >loadbscs >ldbsccommands >ldbscs >bsccommandsload >bscsload >bsccommandsld >bscsld]`</small>
 <br>
 
-> *<small>[**Note**: `lldb`'s lexicon for a ***"program [executable] intended for debugging"*** is a ***"[debugger] target"*** . - **end note**]</small>*
+Commands to:
+---
+- [1 Create a Target](#create-a-target-ie-load-a-program-executable)
+	- [1.1 From outside *\[`lldb`\]*](#from-outside-lldb)
+	- [1.2 From inside *\[`lldb`\]*](#from-inside-lldb)
+- [2 List Targets](#list-all-targets)
+- [3 Select a *[different]* Target](#select-a-different-target-as-current-target)
+- [4 Delete a Target](#delete-target-ie-unload-an-program-execuable)
+---
 
--	***Create** [a debugger] **target** (i.e load a program executable) **:***
+-	#### Create a target *(i.e load a program executable)*:
 
 	> <small>`[Search Tags: >crtarget >crttarget >createtarget >targetcreate >ldtarget >lodtarget >loadtarget >targetload >crtargt >crttargt >createtargt >targtcreate >ldtargt >lodtargt >loadtargt >targtload >crtrgt >crttrgt >createtrgt >trgtcreate >ldtrgt >lodtrgt >loadtrgt >trgtload >crtr >crttr >createtr >trcreate >ldtr >lodtr >loadtr >trload]`</small>
 
-	> *From outside [`lldb`]:*
+	> ##### *From outside [`lldb`]:*
 	>
 	> > ***Synopsis:***
 	> > ```shell
@@ -468,7 +476,7 @@ Contents
 	> > $> lldb a.out
 	> > ```
 
-	> *From inside [`lldb`]:*
+	> ##### *From inside [`lldb`]:*
 	>
 	> > ***Synopsis:***
 	> >
@@ -486,7 +494,7 @@ Contents
 
 <br>
 
--	***List** (all) **targets:***
+-	#### List *(all)* targets:
 
 	> <small>`[Search Tags: >lsttarget >listtarget >lstarget >targetlst >targetlist >targetls >lsttargt >listtargt >lstargt >targtlst >targtlist >targtls >lsttrgt >listtrgt >lstrgt >trgtlst >trgtlist >trgtls >lsttr >listtr >lstr >trlst >trlist >trls >litarget >targetli >litargt >targtli >litrgt >trgtli >litr >trli]`</small>
 
@@ -504,7 +512,7 @@ Contents
 
 <br>
 
--	***Select** [a different] **target** [as current target] **:***
+-	#### Select *[a different]* target *[as current target]*:
 
 	> <small>`[Search Tags: >selcttarget >setarget >selecttarget >targetselect >selcttargt >setargt >selecttargt >targtselect >selcttrgt >setrgt >selecttrgt >trgtselect >selcttr >setr >selecttr >trselect]`</small>
 
@@ -522,7 +530,7 @@ Contents
 
 <br>
 
--	***Delete target** (i.e unload an program execuable) **:***
+-	#### Delete target *(i.e unload an program execuable)*:
 
 	> <small>`[Search Tags: >detarget >deltarget >deletetarget >targetdelete >detargt >deltargt >deletetargt >targtdelete >detrgt >deltrgt >deletetrgt >trgtdelete >detr >deltr >deletetr >trdelete >ultarget >unltarget >unletetarget >targetunload >ultargt >unltargt >unloadtargt >targtunload >ultrgt >unltrgt >unloadtrgt >trgtunload >ultr >unltr >unloadtr >trunload]`</small>
 
@@ -545,7 +553,7 @@ Contents
 
 ---
 
-> *<small>[**Note**:*
+> *<small>[**Section Notes**:*
 >
 > - "From **outside** *[`lldb`]*"; i.e before, and at the same time as, launch *[of `lldb`] [, on the *[terminal]* command prompt]*.
 >
@@ -568,7 +576,7 @@ Contents
 >
 >	> *This also works for other scripting language interpreters and their *[type of]* scripts.*
 >
-> *- **end note**]</small>*
+> *- **end section notes**]</small>*
 
 
 <br>
@@ -2190,7 +2198,7 @@ Contents
 	> (lldb) pr a -n a.out
 	> ```
 	> ```shell
-	> (lldb) process attach --waitfor --name a.out       # wait for, and, attach to, the [first] process that has 'a.out' as program name
+	> (lldb) process attach --waitfor --name a.out       # wait for, and, attach to, the next process, whose program name is: 'a.out'
 	> (lldb) pr a -w -n a.out
 	> ```
 
