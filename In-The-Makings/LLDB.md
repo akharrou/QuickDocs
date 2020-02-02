@@ -44,7 +44,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.5.2. Attach](#352-attach)
 	- [3.6. Graphical User Interface (`GUI`)](#36-graphical-user-interface-gui)
 		- [3.6.1 About](#about)
-		- [3.6.2 Usage *[Commands & Help Menus]*](#usage)
+		- [3.6.2 Usage Commands *[Help Menus]*](#usage-commands)
 	- [3.7. Controlling Process Execution](#37-examine-execution)
 		- [3.7.1. Move Lines](#)
 		- [3.7.2. Step In/Out of Functions](#)
@@ -2225,11 +2225,11 @@ Contents
 Contents
 ---
 - [1 About](#about)
-- [2 Usage *[Commands & Help Menus]*](#usage)
-	- [2.1 Global](#global-help-menu)
-	- [2.2 Source](#source-code-help-menu)
-	- [2.3 Variables & Registers](#variables--registers-help-menu)
-	- [2.4 Backtrace](#backtrace-help-menu)
+- [2 Usage Commands *[Help Menus]*](#usage-commands)
+	- [2.1 Global Commands *[Help Menu]*](#global-help-menu)
+	- [2.2 Source Commands *[Help Menu]*](#source-code-help-menu)
+	- [2.3 Variables & Registers Commands *[Help Menu]*](#variables--registers-help-menu)
+	- [2.4 Backtrace Commands *[Help Menu]*](#backtrace-help-menu)
 ---
 
 ## About
@@ -2272,7 +2272,7 @@ Contents
 
 ---
 
-## Usage
+## Usage Commands
 
 
 -	#### Enter & Exit `GUI` *[mode]*:
