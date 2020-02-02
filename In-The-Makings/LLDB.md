@@ -45,10 +45,10 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.6. Graphical User Interface (`GUI`)](#36-graphical-user-interface-gui)
 		- [3.6.1 About](#about)
 		- [3.6.2 Usage Commands *[Help Menus]*](#usage-commands)
-	- [3.7. Controlling Process Execution](#37-examine-execution)
-		- [3.7.1. Move Lines](#)
-		- [3.7.2. Step In/Out of Functions](#)
-		- [3.7.3. Continue & Pause Execution](#)
+	- [3.7. Controlling Process Execution](#37-controlling-process-execution)
+		- [3.7.1. Move Lines](#371-move-lines)
+		- [3.7.2. Step In/Out of Functions](#372-step-inout-of-functions)
+		- [3.7.3. Continue & Pause Execution](#373-continue--pause-execution)
 	- [3.8. Examine Execution](#38-examine-execution)
 		- [3.8.1. Source Code](#381-source-code)
 		- [3.8.2. Variable(s)](#382-variables)
@@ -73,7 +73,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 <br>
 
 
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ## 1.1. Beginner Usage Overview
 <small>`[Search Tags: >]`</small>
 <br>
@@ -96,7 +96,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ## 1.2. Intermediate Usage Overview
 <small>`[Search Tags: >]`</small>
 <br>
@@ -119,7 +119,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ## 1.3. Cheat Sheet
 <small>`[Search Tags: >]`</small>
 <br>
@@ -2423,6 +2423,104 @@ Contents
 > | 3 | Manual Page        | LLDB             | `(lldb-gui-variables-view) h`
 > | 4 | Manual Page        | LLDB             | `(lldb-gui-registers-view) h`
 > | 5 | Manual Page        | LLDB             | `(lldb-gui-backtrace-view) h`
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+## 3.7. Controlling Process Execution
+<small>`[Search Tags: >]`</small>
+<br>
+
+Contents
+---
+-	[3.7.1. Navigate Source Code](#371-move-lines)
+-	[3.7.2. Step In/Out of Functions](#372-step-inout-of-functions)
+-	[3.7.3. Continue & Pause Execution](#373-continue--pause-execution)
+---
+
+> TODO: ## 3.7. Controlling Process Execution
+
+The execution of your program is completely left to you. `lldb` provides commands with which to control *[the program's execution]*.
+
+The currently line to be executed is known by a line highlighting.
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.7.1. Move Lines
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.7.1. Move Lines
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.7.2. Step In/Out of Functions
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.7.2. Step In/Out of Functions
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.7.3. Continue & Pause Execution
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.7.3. Continue & Pause Execution
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
 
 
 ---
