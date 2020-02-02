@@ -2223,8 +2223,12 @@ Contents
 
 Contents
 ---
-- [1 About](#tag)
+- [1 About](#about)
 - [2 Commands to Operate](#tag)
+	- [2.1 Global *[Help Menu]*](#tag)
+	- [2.2 Source *[Help Menu]*](#tag)
+	- [2.3 Variables & Registers *[Help Menu]*](#tag)
+	- [2.4 Backtrace *[Help Menu]*](#tag)
 ---
 
 
@@ -2299,11 +2303,9 @@ Commands to operate `gui`:
 
 <br>
 
--	#### `GUI` & View Help Menus:
+-	#### Global *[Help Menu]*:
 
-	> <small>`[Search Tags: >guihelppage >guipagehelp >guihelpmenupage >guimenuhelppage >guicommands >guigeneralcommands]`</small>
-
-	> The, `lldb` `GUI` mode, *[global]* keyboard shortcuts are:
+	> <small>`[Search Tags: >guihelppage >guipagehelp >guihelpmenupage >guimenuhelppage >guicommands >guigeneralcommands >guiglobalhelpmenu >guiglobalmenu >globalmenu >globalhelpmenu]`</small>
 
 	> | Key        | Action                                             |
 	> | :--------- | :------------------------------------------------- |
@@ -2327,7 +2329,7 @@ Commands to operate `gui`:
 	> 	1. [Variables & Registers View](#variables--registers-help-menu)
 	> 	1. [Backtrace View](#backtrace-help-menu)
 	>
-	> *- **end note**]</small>*
+	> <br> *- **end note**]</small>*
 
 
 <br>
