@@ -2241,7 +2241,7 @@ About
 
 	> ![`gui` Demo (Big Screen)](https://media.giphy.com/media/jQUmfQ8eXuWE0L2tMB/giphy.gif)
 
--	It *[the `gui`]* has up to 4 screen subdivisions, we call them window panes:
+-	It *[the `gui`]* has 3 *[by default, but up to 4]* screen subdivisions, called views (or window panes):
 
     | Window Pane            | Description
     | :--------------------- | :-----------------
@@ -2263,122 +2263,143 @@ About
 Commands to operate `gui`:
 ---
 
--	#### Enter `gui` mode:
+-	#### Enter & Exit `GUI` *[mode]*:
 
-	> <small>`[Search Tags: >entergui >entergraphicaluserinterface]`</small>
+	> <small>`[Search Tags: >entergui >entergraphicaluserinterface >quitgui >closegui >leavegui exitgui >quitgraphicaluserinterface >closegraphicaluserinterface >leavegraphicaluserinterface >exitgraphicaluserinterface]`</small>
 
+	To enter `GUI` *[mode]*, type *[in the `lldb` command prompt]* –– *don't forget to start you program before trying to enter `GUI` mode, otherwise you'll only see a black screen* –– like so;
+
+	>
+	> ```shell
+	> (lldb) run [<arg> ...]
+	> .
+	> .
+	> .
+	> (lldb) gui
+	> ```
+
+	To leave `GUI` *[mode]*, press *[the]* `esc` *(escape) [key] –– from anywhere, and any window pane*.
+
+	> ```shell
+	> Press, 'esc'.
+	> ```
+
+<!--
 	To enter to the graphical user interface (`gui`) mode, type *[in the `lldb` command prompt]*: `gui` –– like so:
 
 	>
 	> ```shell
 	> (lldb) gui
 	> ```
+ -->
 
-<br>
-
--	#### Exit `gui` mode:
-
-	> <small>`[Search Tags: >quitgui >closegui >leavegui exitgui >quitgraphicaluserinterface >closegraphicaluserinterface >leavegraphicaluserinterface exitgraphicaluserinterface]`</small>
-
+<!--
 	To exit *[when in `gui` mode]*, ***press "`esc`"*** *(escape)* –– then wait about a second, it will automatically bring you back to the textual mode, to the *[`lldb`]* command prompt.
+ -->
 
 <br>
 
--	#### `gui` Panes:
+-	#### `GUI` & View Help Menus:
 
-	> <small>`[Search Tags: >panesgui >panegui >guipanes >graphicaluserinterfacepanes]`</small>
+	> <small>`[Search Tags: >guihelppage >guipagehelp >guihelpmenupage >guimenuhelppage >guicommands >guigeneralcommands]`</small>
 
-	The `gui` mode has multiple window panes, i.e *screen subdivisions*. There are 3 window panes, straight out of the box, one displaying the currently executing source code, one displaying variable and the values they hold, that includes pointers to memory-regions, and finally a window pane for threads and stack frames.
+	> The, `lldb` `GUI` mode, *[global]* keyboard shortcuts are:
 
-	<br>
+	> | Key        | Action                                             |
+	> | :--------- | :------------------------------------------------- |
+	> |        tab | Select next view                                   |
+	> |          h | Show help dialog with view specific key bindings   |
+	> |          , | Page up                                            |
+	> |          . | Page down                                          |
+	> |         up | Select previous                                    |
+	> |       down | Select next                                        |
+	> |       left | Unexpand or select parent                          |
+	> |      right | Expand                                             |
+	> |    page-up | Page up                                            |
+	> |  page-down | Page down                                          |
+	> |        esc | Quit `gui` mode                                    |
 
-	-	#### `GUI` Help:
+	> *<small>[**Note:** Each view has its own keyboard shortcuts, press `h` to open a dialog to display them.*
+	>
+	>	See the following for the rest of the help menus:
+	>
+	> 	1. [Source View](#source-code-help-menu)
+	> 	1. [Variables & Registers View](#variables--registers-help-menu)
+	> 	1. [Backtrace View](#backtrace-help-menu)
+	>
+	> *- **end note**]</small>*
 
-		> <small>`[Search Tags: >guihelppage >guipagehelp >guihelpmenupage >guimenuhelppage >guicommands >guigeneralcommands]`</small>
 
-		> | Key        | Action                                             |
-		> | :--------- | :------------------------------------------------- |
-		> |        tab | Select next view                                   |
-		> |          h | Show help dialog with view specific key bindings   |
-		> |          , | Page up                                            |
-		> |          . | Page down                                          |
-		> |         up | Select previous                                    |
-		> |       down | Select next                                        |
-		> |       left | Unexpand or select parent                          |
-		> |      right | Expand                                             |
-		> |    page-up | Page up                                            |
-		> |  page-down | Page down                                          |
+<br>
 
-		> *<small>[**Note:** Each view has its own keyboard shortcuts, press `h` to open a dialog to display them. - **end note**]</small>*
+-	#### Source Code *[Help Menu]*:
 
-	-	#### Source Code Pane:
+	> <small>`[Search Tags: >guipanesourcecode >guicode >guisourcecodes >guisourcepanes >guisrcpanes >guisrccodepanes]`</small>
 
-		> <small>`[Search Tags: >guipanesourcecode >guicode >guisourcecodes >guisourcepanes >guisrcpanes >guisrccodepanes]`</small>
+	> | Key         | Action                                             |
+	> | :---------- | :------------------------------------------------- |
+	> | `return`    | Run to selected line with one shot breakpoint      |
+	> | `up`        | Select previous source line                        |
+	> | `down`      | Select next source line                            |
+	> | `page-up`   | Page up                                            |
+	> | `page-down` | Page down                                          |
+	> | `b`         | Set breakpoint on selected source/disassembly line |
+	> | `c`         | Continue process                                   |
+	> | `d`         | Detach and resume process                          |
+	> | `D`         | Detach with process suspended                      |
+	> | `h`         | Show help dialog                                   |
+	> | `k`         | Kill process                                       |
+	> | `n`         | Step over (source line)                            |
+	> | `N`         | Step over (single instruction)                     |
+	> | `o`         | Step out                                           |
+	> | `s`         | Step in (source line)                              |
+	> | `S`         | Step in (single instruction)                       |
+	> | `,`         | Page up                                            |
+	> | `.`         | Page down                                          |
 
-		> | Key         | Action                                             |
-		> | :---------- | :------------------------------------------------- |
-		> | `return`    | Run to selected line with one shot breakpoint      |
-		> | `up`        | Select previous source line                        |
-		> | `down`      | Select next source line                            |
-		> | `page-up`   | Page up                                            |
-		> | `page-down` | Page down                                          |
-		> | `b`         | Set breakpoint on selected source/disassembly line |
-		> | `c`         | Continue process                                   |
-		> | `d`         | Detach and resume process                          |
-		> | `D`         | Detach with process suspended                      |
-		> | `h`         | Show help dialog                                   |
-		> | `k`         | Kill process                                       |
-		> | `n`         | Step over (source line)                            |
-		> | `N`         | Step over (single instruction)                     |
-		> | `o`         | Step out                                           |
-		> | `s`         | Step in (source line)                              |
-		> | `S`         | Step in (single instruction)                       |
-		> | `,`         | Page up                                            |
-		> | `.`         | Page down                                          |
+<br>
 
-	<br>
+-	#### Variables & Registers *[Help Menu]*:
 
-	-	#### Variables & Registers Pane:
+	> <small>`[Search Tags: >guipanevariables >guipanevars >guipanevs >guipanevs >guivariables >guivars >guivs >guipaneregisters >guipaneregs >guipanergs >guiregisters >guiregs >guirgs]`</small>
 
-		> <small>`[Search Tags: >guipanevariables >guipanevars >guipanevs >guipanevs >guivariables >guivars >guivs >guipaneregisters >guipaneregs >guipanergs >guiregisters >guiregs >guirgs]`</small>
+	> | Key         | Action                                                      |
+	> | :---------- | :---------------------------------------------------------- |
+	> | `up`        | Select previous item                                        |
+	> | `down`      | Select next item                                            |
+	> | `right`     | Expand selected item                                        |
+	> | `left`      | Unexpand selected item or select parent if not expanded     |
+	> | `page-up`   | Page up                                                     |
+	> | `page-down` | Page down                                                   |
+	> | `A`         | Format as annotated address                                 |
+	> | `b`         | Format as binary                                            |
+	> | `B`         | Format as hex bytes with ASCII                              |
+	> | `c`         | Format as character                                         |
+	> | `d`         | Format as a signed integer                                  |
+	> | `D`         | Format selected value using the default format for the type |
+	> | `f`         | Format as float                                             |
+	> | `h`         | Show help dialog                                            |
+	> | `i`         | Format as instructions                                      |
+	> | `o`         | Format as octal                                             |
 
-		> | Key         | Action                                                      |
-		> | :---------- | :---------------------------------------------------------- |
-		> | `up`        | Select previous item                                        |
-		> | `down`      | Select next item                                            |
-		> | `right`     | Expand selected item                                        |
-		> | `left`      | Unexpand selected item or select parent if not expanded     |
-		> | `page-up`   | Page up                                                     |
-		> | `page-down` | Page down                                                   |
-		> | `A`         | Format as annotated address                                 |
-		> | `b`         | Format as binary                                            |
-		> | `B`         | Format as hex bytes with ASCII                              |
-		> | `c`         | Format as character                                         |
-		> | `d`         | Format as a signed integer                                  |
-		> | `D`         | Format selected value using the default format for the type |
-		> | `f`         | Format as float                                             |
-		> | `h`         | Show help dialog                                            |
-		> | `i`         | Format as instructions                                      |
-		> | `o`         | Format as octal                                             |
+<br>
 
-	<br>
+-	#### Backtrace *[Help Menu]*:
 
-	-	Thread & Stack Frames (Pane)
+	> <small>`[Search Tags: >guipanesthreads >guipanesthrds >guipanesthreads >guipanesthrds >guipanethreads >guipanethrds >guipanethreads >guipanethrds >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guipanesstackframes >guipanesstckframes >guipanestackframes >guipanestckframes >guipanesframes >guipaneframes >guistackframes >guistckframes >guiframes >guiframes >guibacktracehelp >helpbacktrace >hbracktrace >hbt >guibt >helpbt]`</small>
 
-		> <small>`[Search Tags: >guipanesthreads >guipanesthrds >guipanesthreads >guipanesthrds >guipanethreads >guipanethrds >guipanethreads >guipanethrds >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guipanesstackframes >guipanesstckframes >guipanestackframes >guipanestckframes >guipanesframes >guipaneframes >guistackframes >guistckframes >guiframes >guiframes]`</small>
-
-		> | Key         | Action                                         |
-		> | :---------- | :--------------------------------------------- |
-		> | `up`        | Select previous item                           |
-		> | `down`      | Select next item                               |
-		> | `right`     | Expand the selected item                       |
-		> | `left`      | Unexpand the selected item or select parent if |
-		> | `page-up`   | Page up                                        |
-		> | `page-down` | Page down                                      |
-		> | `h`         | Show help dialog                               |
-		> | `space`     | Toggle item expansion                          |
-		> | `,`         | Page up                                        |
-		> | `.`         | Page down                                      |
+	> | Key         | Action                                         |
+	> | :---------- | :--------------------------------------------- |
+	> | `up`        | Select previous item                           |
+	> | `down`      | Select next item                               |
+	> | `right`     | Expand the selected item                       |
+	> | `left`      | Unexpand the selected item or select parent if |
+	> | `page-up`   | Page up                                        |
+	> | `page-down` | Page down                                      |
+	> | `h`         | Show help dialog                               |
+	> | `space`     | Toggle item expansion                          |
+	> | `,`         | Page up                                        |
+	> | `.`         | Page down                                      |
 
 
 <br>
