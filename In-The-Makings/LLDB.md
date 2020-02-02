@@ -2224,7 +2224,7 @@ Contents
 Contents
 ---
 - [1 About](#about)
-- [2 Usage *[Help Menus]*](#commands--help-menus)
+- [2 Usage *[Help Menus]*](#usage)
 	- [2.1 Global](#global-help-menu)
 	- [2.2 Source](#source-code-help-menu)
 	- [2.3 Variables & Registers](#variables--registers-help-menu)
