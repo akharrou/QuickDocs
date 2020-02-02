@@ -2279,7 +2279,7 @@ Contents
 
 	> <small>`[Search Tags: >entergui >entergraphicaluserinterface >quitgui >closegui >leavegui exitgui >quitgraphicaluserinterface >closegraphicaluserinterface >leavegraphicaluserinterface >exitgraphicaluserinterface]`</small>
 
-	*[After starting your program,]* to enter `GUI` *[mode]*, type *[in the `lldb` command prompt]* –– like so:
+	*[After starting your program,]* to enter `GUI` *[mode]*, type "`gui`" *[in the `lldb` command prompt]* –– like so:
 
 	>
 	> ```shell
