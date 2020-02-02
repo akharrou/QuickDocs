@@ -46,7 +46,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.6.1 About](#about)
 		- [3.6.2 Usage Commands *[Help Menus]*](#usage-commands)
 	- [3.7. Controlling Process Execution](#37-controlling-process-execution)
-		- [3.7.1. Move Lines](#371-move-lines)
+		- [3.7.1. Navigate Source Code](#371-navigate-source-code)
 		- [3.7.2. Step In/Out of Functions](#372-step-inout-of-functions)
 		- [3.7.3. Continue & Pause Execution](#373-continue--pause-execution)
 	- [3.8. Examine Execution](#38-examine-execution)
@@ -55,7 +55,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.3. Thread(s)](#383-thread-states)
 		- [3.8.4. Stack Frame(s)](#384-stack-frame-states)
 - [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
-	- [3.1 Makfile]()
+	- [3.1 Makfile](#)
 
 
 <!-- >Start --------------------------------------------------------------------
@@ -2433,7 +2433,7 @@ Contents
 
 Contents
 ---
--	[3.7.1. Navigate Source Code](#371-move-lines)
+-	[3.7.1. Navigate Source Code](#371-navigate-source-code)
 -	[3.7.2. Step In/Out of Functions](#372-step-inout-of-functions)
 -	[3.7.3. Continue & Pause Execution](#373-continue--pause-execution)
 ---
@@ -2456,7 +2456,7 @@ The currently line to be executed is known by a line highlighting.
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.7.1. Move Lines
+### 3.7.1. Navigate Source Code
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
