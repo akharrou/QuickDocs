@@ -2223,15 +2223,44 @@ Contents
 
 Contents
 ---
-- [1 What is it ?](#tag)
-- [2 How to use it ?](#tag)
-	- [2.1 Source Code](#tag)
-	- [2.2 Variables & Registers](#tag)
-	- [2.3 Threads, Stack Frames](#tag)
+- [1 About](#tag)
+- [2 Commands to Operate](#tag)
 ---
 
-> The graphical user interface mode, or `gui` for short, is what it says it is, namely a user interface for `lldb` that is **graphical** –– rather than more textual, as is with the *command prompt*.
 
+About
+---
+
+-	The graphical user interface *[mode of `lldb`]*, or `gui` for short, is what it says it is –– namely, a user interface for `lldb` that is **graphical**, rather than textual (**command prompt**).
+
+-	Here's what it looks like:
+
+	> ![`gui` Demo (Small Screen)](https://media.giphy.com/media/jTlQ2YG0RWDUrNteFM/giphy.gif)
+
+	> *This is a small terminal window only in order to be able to make `gif` who's text is discernable. Realistically, on a bigger terminal screen, it'll look like this:*
+
+	> ![`gui` Demo (Big Screen)](https://media.giphy.com/media/jQUmfQ8eXuWE0L2tMB/giphy.gif)
+
+-	It *[the `gui`]* has up to 4 screen subdivisions, we call them window panes:
+
+    | Window Pane            | Description
+    | :--------------------- | :-----------------
+    | Source                 | Displays *[currently executing]* source code.
+    | Variables              | Displays variables *[, belonging to the current stack frame, ]* and their currently held values.
+    | Registers              | Displays registers *[, belonging to the current stack frame, ]* and their currently held values.
+    | Backtrace *(Threads & Stack Frames)* | Displays the process's current threads and their stack frames.
+
+	> *<small>[**Note:***
+	>
+	> -	*The "registers" window pane is not visible on entry of the `gui`, you must toggle it on, from the source code window pane, top menu; <!--(§ SECTION )-->.*
+	>
+	> -	*The **variable** and **register** window panes are toggleable, i.e you can choose to have them displayed or not.*
+	>
+	> *- **end note**]</small>*
+
+---
+
+Commands to operate `gui`:
 ---
 
 -	#### Enter `gui` mode:
@@ -2262,6 +2291,25 @@ Contents
 	The `gui` mode has multiple window panes, i.e *screen subdivisions*. There are 3 window panes, straight out of the box, one displaying the currently executing source code, one displaying variable and the values they hold, that includes pointers to memory-regions, and finally a window pane for threads and stack frames.
 
 	<br>
+
+	-	#### `GUI` Help:
+
+		> <small>`[Search Tags: >guihelppage >guipagehelp >guihelpmenupage >guimenuhelppage >guicommands >guigeneralcommands]`</small>
+
+		> | Key        | Action                                             |
+		> | :--------- | :------------------------------------------------- |
+		> |        tab | Select next view                                   |
+		> |          h | Show help dialog with view specific key bindings   |
+		> |          , | Page up                                            |
+		> |          . | Page down                                          |
+		> |         up | Select previous                                    |
+		> |       down | Select next                                        |
+		> |       left | Unexpand or select parent                          |
+		> |      right | Expand                                             |
+		> |    page-up | Page up                                            |
+		> |  page-down | Page down                                          |
+
+		> *<small>[**Note:** Each view has its own keyboard shortcuts, press `h` to open a dialog to display them. - **end note**]</small>*
 
 	-	#### Source Code Pane:
 
