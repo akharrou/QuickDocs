@@ -42,7 +42,9 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.5. Start Debugging](#35-start-debugging)
 		- [3.5.1. Launch](#351-launch)
 		- [3.5.2. Attach](#352-attach)
-	- [3.6. Graphical User Interface (`gui`)](#)
+	- [3.6. Graphical User Interface (`GUI`)](#graphical-user-interface-gui)
+		- [3.6.1 About](#about)
+		- [3.6.2 Usage *[Commands & Help Menus]*](#usage)
 	- [3.7. Controlling Process Execution](#37-examine-execution)
 		- [3.7.1. Move Lines](#)
 		- [3.7.2. Step In/Out of Functions](#)
@@ -2219,12 +2221,11 @@ Contents
 <small>`[Search Tags: >lldbgui >lldbgraphicalui >lldbgraphicaluserinterface >lldb.gui >lldb.graphicalui >lldb.graphicaluserinterface >debuggergui >debuggergraphicalui >debuggergraphicaluserinterface >debugger.gui >debugger.graphicalui >debugger.graphicaluserinterface >graphicaluserinterface >graphicalui >userinterface >interface >gmode >graphicalmode >gumode >guimodes >modegui >modegraphicaluserinterface >graphicaluserinterfacemodes]`</small>
 <br>
 
-> TODO: ## 3.6. Graphical User Interface (GUI)
 
 Contents
 ---
 - [1 About](#about)
-- [2 Usage *[Help Menus]*](#usage)
+- [2 Usage *[Commands & Help Menus]*](#usage)
 	- [2.1 Global](#global-help-menu)
 	- [2.2 Source](#source-code-help-menu)
 	- [2.3 Variables & Registers](#variables--registers-help-menu)
@@ -2278,7 +2279,7 @@ Contents
 
 	> <small>`[Search Tags: >entergui >entergraphicaluserinterface >quitgui >closegui >leavegui exitgui >quitgraphicaluserinterface >closegraphicaluserinterface >leavegraphicaluserinterface >exitgraphicaluserinterface]`</small>
 
-	To enter `GUI` *[mode]*, type *[in the `lldb` command prompt]* –– *don't forget to start you program before trying to enter `GUI` mode, otherwise you'll only see a black screen* –– like so;
+	*[After starting your program,]* to enter `GUI` *[mode]*, type *[in the `lldb` command prompt]* –– like so:
 
 	>
 	> ```shell
@@ -2312,7 +2313,7 @@ Contents
 
 -	#### Global *[Help Menu]*:
 
-	> <small>`[Search Tags: >globalgui >generalgui >guigeneralhelpmenupage >guigeneralmenuhelppage >guigeneralmenuhelppage >helpmenupageguigeneral >menuhelppageguigeneral >menuhelppageguigeneral >helpmenupagegeneral >menuhelppagegeneral >menuhelppagegeneral >helpmenugeneral >menuhelpgeneral >menuhelpgeneral >helpgeneral >menugeneral >generalhelpmenupage >generalmenuhelppage >generalmenuhelppag >guigeneralcommands >guigeneralcmds >commandsguigeneral >cmdsguigeneral >commandsgeneral >cmdsgeneral >generalcommands >generalcmds >generalpage >generalpage >pagegeneral >pagegeneral >guiglobalhelpmenupage >guiglobalmenuhelppage >guiglobalmenuhelppage >helpmenupageguiglobal >menuhelppageguiglobal >menuhelppageguiglobal >helpmenupageglobal >menuhelppageglobal >menuhelppageglobal >helpmenuglobal >menuhelpglobal >menuhelpglobal >helpglobal >menuglobal >globalhelpmenupage >globalmenuhelppage >globalmenuhelppag >guiglobalcommands >guiglobalcmds >commandsguiglobal >cmdsguiglobal >commandsglobal >cmdsglobal >globalcommands >globalcmds >globalpage >globalpage >pageglobal >pageglobal]`</small>
+	> <small>`[Search Tags: >globalguihelpmenu >globalguimenu >globalguipage >globalhelpmenu >globalmenu >globalpage >generalguihelpmenu >generalguimenu >generalguipage >generalhelpmenu >generalmenu >generalpage >guigeneralhelpmenupage >guigeneralmenuhelppage >guigeneralmenuhelppage >helpmenupageguigeneral >menuhelppageguigeneral >menuhelppageguigeneral >helpmenupagegeneral >menuhelppagegeneral >menuhelppagegeneral >helpmenugeneral >menuhelpgeneral >menuhelpgeneral >helpgeneral >menugeneral >generalhelpmenupage >generalmenuhelppage >generalmenuhelppag >guigeneralcommands >guigeneralcmds >commandsguigeneral >cmdsguigeneral >commandsgeneral >cmdsgeneral >generalcommands >generalcmds >generalpage >generalpage >pagegeneral >pagegeneral >guiglobalhelpmenupage >guiglobalmenuhelppage >guiglobalmenuhelppage >helpmenupageguiglobal >menuhelppageguiglobal >menuhelppageguiglobal >helpmenupageglobal >menuhelppageglobal >menuhelppageglobal >helpmenuglobal >menuhelpglobal >menuhelpglobal >helpglobal >menuglobal >globalhelpmenupage >globalmenuhelppage >globalmenuhelppag >guiglobalcommands >guiglobalcmds >commandsguiglobal >cmdsguiglobal >commandsglobal >cmdsglobal >globalcommands >globalcmds >globalpage >globalpage >pageglobal >pageglobal]`</small>
 
 	> | Key        | Action                                             |
 	> | :--------- | :------------------------------------------------- |
@@ -2342,7 +2343,7 @@ Contents
 
 -	#### Source Code *[Help Menu]*:
 
-	> <small>`[Search Tags: >sourcecode >srcgui >sourcegui >guisourcecodehelpmenupage >guisourcecodemenuhelppage >guisourcecodemenuhelppage >helpmenupageguisourcecode >menuhelppageguisourcecode >menuhelppageguisourcecode >helpmenupagesourcecode >menuhelppagesourcecode >menuhelppagesourcecode >helpmenusourcecode >menuhelpsourcecode >menuhelpsourcecode >helpsourcecode >menusourcecode >sourcecodehelpmenupage >sourcecodemenuhelppage >sourcecodemenuhelppag >guisourcecodecommands >guisourcecodecmds >commandsguisourcecode >cmdsguisourcecode >commandssourcecode >cmdssourcecode >sourcecodecommands >sourcecodecmds >sourcecodepage >sourcecodepage >pagesourcecode >pagesourcecode >guisourcehelpmenupage >guisourcemenuhelppage >guisourcemenuhelppage >helpmenupageguisource >menuhelppageguisource >menuhelppageguisource >helpmenupagesource >menuhelppagesource >menuhelppagesource >helpmenusource >menuhelpsource >menuhelpsource >helpsource >menusource >sourcehelpmenupage >sourcemenuhelppage >sourcemenuhelppag >guisourcecommands >guisourcecmds >commandsguisource >cmdsguisource >commandssource >cmdssource >sourcecommands >sourcecmds >sourcepage >sourcepage >pagesource >pagesource]`</small>
+	> <small>`[Search Tags: >srcguihelpmenu >srcguimenu >srcguipage >srchelpmenu >srcmenu >srcpage >sourceguihelpmenu >sourceguimenu >sourceguipage >sourcehelpmenu >sourcemenu >sourcepage>sourcecodeguihelpmenu >sourcecodeguimenu >sourcecodeguipage >sourcecodehelpmenu >sourcecodemenu >sourcecodepage>guisourcecodehelpmenupage >guisourcecodemenuhelppage >guisourcecodemenuhelppage >helpmenupageguisourcecode >menuhelppageguisourcecode >menuhelppageguisourcecode >helpmenupagesourcecode >menuhelppagesourcecode >menuhelppagesourcecode >helpmenusourcecode >menuhelpsourcecode >menuhelpsourcecode >helpsourcecode >menusourcecode >sourcecodehelpmenupage >sourcecodemenuhelppage >sourcecodemenuhelppag >guisourcecodecommands >guisourcecodecmds >commandsguisourcecode >cmdsguisourcecode >commandssourcecode >cmdssourcecode >sourcecodecommands >sourcecodecmds >sourcecodepage >sourcecodepage >pagesourcecode >pagesourcecode >guisourcehelpmenupage >guisourcemenuhelppage >guisourcemenuhelppage >helpmenupageguisource >menuhelppageguisource >menuhelppageguisource >helpmenupagesource >menuhelppagesource >menuhelppagesource >helpmenusource >menuhelpsource >menuhelpsource >helpsource >menusource >sourcehelpmenupage >sourcemenuhelppage >sourcemenuhelppag >guisourcecommands >guisourcecmds >commandsguisource >cmdsguisource >commandssource >cmdssource >sourcecommands >sourcecmds >sourcepage >sourcepage >pagesource >pagesource]`</small>
 
 	> | Key         | Action                                             |
 	> | :---------- | :------------------------------------------------- |
@@ -2369,7 +2370,7 @@ Contents
 
 -	#### Variables & Registers *[Help Menu]*:
 
-	> <small>`[Search Tags: >registersgui >registergui >vargui >varsgui >guivariablehelpmenupage >guivariablemenuhelppage >guivariablemenuhelppage >helpmenupageguivariable >menuhelppageguivariable >menuhelppageguivariable >helpmenupagevariable >menuhelppagevariable >menuhelppagevariable >helpmenuvariable >menuhelpvariable >menuhelpvariable >helpvariable >menuvariable >variablehelpmenupage >variablemenuhelppage >variablemenuhelppag >guivariablecommands >guivariablecmds >commandsguivariable >cmdsguivariable >commandsvariable >cmdsvariable >variablecommands >variablecmds >variablepage >variablepage >pagevariable >pagevariable >guiregistershelpmenupage >guiregistersmenuhelppage >guiregistersmenuhelppage >helpmenupageguiregisters >menuhelppageguiregisters >menuhelppageguiregisters >helpmenupageregisters >menuhelppageregisters >menuhelppageregisters >helpmenuregisters >menuhelpregisters >menuhelpregisters >helpregisters >menuregisters >registershelpmenupage >registersmenuhelppage >registersmenuhelppag >guiregisterscommands >guiregisterscmds >commandsguiregisters >cmdsguiregisters >commandsregisters >cmdsregisters >registerscommands >registerscmds >registerspage >registerspage >pageregisters >pageregisters >guivarhelpmenupage >guivarmenuhelppage >guivarmenuhelppage >helpmenupageguivar >menuhelppageguivar >menuhelppageguivar >helpmenupagevar >menuhelppagevar >menuhelppagevar >helpmenuvar >menuhelpvar >menuhelpvar >helpvar >menuvar >varhelpmenupage >varmenuhelppage >varmenuhelppag >guivarcommands >guivarcmds >commandsguivar >cmdsguivar >commandsvar >cmdsvar >varcommands >varcmds >varpage >varpage >pagevar >pagevar]`</small>
+	> <small>`[Search Tags: >variablesguihelpmenu >variableguihelpmenu >variablesguimenu >variableguimenu >variablesguipage >variableguipage >variableshelpmenu >variablehelpmenu >variablesmenu >variablemenu >variablespage >variablepage >varguihelpmenu >varguimenu >varguipage >varhelpmenu >varmenu >varpage >varsguihelpmenu >varsguimenu >varsguipage >varshelpmenu >varsmenu >varspage >registerguihelpmenu >registerguimenu >registerguipage >registerhelpmenu >registermenu >registerpage >regguihelpmenu >regsguihelpmenu >regguimenu >regsguimenu >regguipage >regsguipage >reghelpmenu >regshelpmenu >regmenu >regsmenu >regpage >regspage >guivariablehelpmenupage >guivariablemenuhelppage >guivariablemenuhelppage >helpmenupageguivariable >menuhelppageguivariable >menuhelppageguivariable >helpmenupagevariable >menuhelppagevariable >menuhelppagevariable >helpmenuvariable >menuhelpvariable >menuhelpvariable >helpvariable >menuvariable >variablehelpmenupage >variablemenuhelppage >variablemenuhelppag >guivariablecommands >guivariablecmds >commandsguivariable >cmdsguivariable >commandsvariable >cmdsvariable >variablecommands >variablecmds >variablepage >variablepage >pagevariable >pagevariable >guiregistershelpmenupage >guiregistersmenuhelppage >guiregistersmenuhelppage >helpmenupageguiregisters >menuhelppageguiregisters >menuhelppageguiregisters >helpmenupageregisters >menuhelppageregisters >menuhelppageregisters >helpmenuregisters >menuhelpregisters >menuhelpregisters >helpregisters >menuregisters >registershelpmenupage >registersmenuhelppage >registersmenuhelppag >guiregisterscommands >guiregisterscmds >commandsguiregisters >cmdsguiregisters >commandsregisters >cmdsregisters >registerscommands >registerscmds >registerspage >registerspage >pageregisters >pageregisters >guivarhelpmenupage >guivarmenuhelppage >guivarmenuhelppage >helpmenupageguivar >menuhelppageguivar >menuhelppageguivar >helpmenupagevar >menuhelppagevar >menuhelppagevar >helpmenuvar >menuhelpvar >menuhelpvar >helpvar >menuvar >varhelpmenupage >varmenuhelppage >varmenuhelppag >guivarcommands >guivarcmds >commandsguivar >cmdsguivar >commandsvar >cmdsvar >varcommands >varcmds >varpage >varpage >pagevar >pagevar]`</small>
 
 	> | Key        | Action|
 	> | :--------- | :--------------------------------------------
@@ -2394,7 +2395,7 @@ Contents
 
 -	#### Backtrace *[Help Menu]*:
 
-	> <small>`[Search Tags: >guipanesthreads >guipanesthrds >guipanesthreads >guipanesthrds >guipanethreads >guipanethrds >guipanethreads >guipanethrds >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guipanesstackframes >guipanesstckframes >guipanestackframes >guipanestckframes >guipanesframes >guipaneframes >guistackframes >guistckframes >guiframes >guiframes >guibacktracehelp >helpbacktrace >hbracktrace >hbt >guibt >helpbt]`</small>
+	> <small>`[Search Tags: >backtraceguihelpmenu >backtraceguimenu >backtraceguipage >backtracehelpmenu >backtracemenu >backtracepage >btguihelpmenu >btguimenu >btguipage >bthelpmenu >btmenu btpage >guipanesthreads >guipanesthrds >guipanesthreads >guipanesthrds >guipanethreads >guipanethrds >guipanethreads >guipanethrds >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guipanesstackframes >guipanesstckframes >guipanestackframes >guipanestckframes >guipanesframes >guipaneframes >guistackframes >guistckframes >guiframes >guiframes >guibacktracehelp >helpbacktrace >hbracktrace >hbt >guibt >helpbt]`</small>
 
 	> | Key         | Action                                         |
 	> | :---------- | :--------------------------------------------- |
@@ -2415,10 +2416,13 @@ Contents
 
 > ***Further Reading:***
 >
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help gui`
-> | 2 | Manual Page | LLDB | `(lldb-gui-mode) 'h'`
+> | # | Type               | Author           | Link
+> | - | :----------------- | :--------------- | :-------------------------
+> | 1 | Manual Page        | LLDB             | `(lldb) help gui`
+> | 2 | Manual Page        | LLDB             | `(lldb-gui-source-view) h`
+> | 3 | Manual Page        | LLDB             | `(lldb-gui-variables-view) h`
+> | 4 | Manual Page        | LLDB             | `(lldb-gui-registers-view) h`
+> | 5 | Manual Page        | LLDB             | `(lldb-gui-backtrace-view) h`
 
 
 ---
