@@ -2312,7 +2312,7 @@ Contents
 
 -	#### Global *[Help Menu]*:
 
-	> <small>`[Search Tags: >guihelppage >guipagehelp >guihelpmenupage >guimenuhelppage >guicommands >guigeneralcommands >guiglobalhelpmenu >guiglobalmenu >globalmenu >globalhelpmenu]`</small>
+	> <small>`[Search Tags: >globalgui >generalgui >guigeneralhelpmenupage >guigeneralmenuhelppage >guigeneralmenuhelppage >helpmenupageguigeneral >menuhelppageguigeneral >menuhelppageguigeneral >helpmenupagegeneral >menuhelppagegeneral >menuhelppagegeneral >helpmenugeneral >menuhelpgeneral >menuhelpgeneral >helpgeneral >menugeneral >generalhelpmenupage >generalmenuhelppage >generalmenuhelppag >guigeneralcommands >guigeneralcmds >commandsguigeneral >cmdsguigeneral >commandsgeneral >cmdsgeneral >generalcommands >generalcmds >generalpage >generalpage >pagegeneral >pagegeneral >guiglobalhelpmenupage >guiglobalmenuhelppage >guiglobalmenuhelppage >helpmenupageguiglobal >menuhelppageguiglobal >menuhelppageguiglobal >helpmenupageglobal >menuhelppageglobal >menuhelppageglobal >helpmenuglobal >menuhelpglobal >menuhelpglobal >helpglobal >menuglobal >globalhelpmenupage >globalmenuhelppage >globalmenuhelppag >guiglobalcommands >guiglobalcmds >commandsguiglobal >cmdsguiglobal >commandsglobal >cmdsglobal >globalcommands >globalcmds >globalpage >globalpage >pageglobal >pageglobal]`</small>
 
 	> | Key        | Action                                             |
 	> | :--------- | :------------------------------------------------- |
@@ -2342,7 +2342,7 @@ Contents
 
 -	#### Source Code *[Help Menu]*:
 
-	> <small>`[Search Tags: >guipanesourcecode >guicode >guisourcecodes >guisourcepanes >guisrcpanes >guisrccodepanes]`</small>
+	> <small>`[Search Tags: >sourcecode >srcgui >sourcegui >guisourcecodehelpmenupage >guisourcecodemenuhelppage >guisourcecodemenuhelppage >helpmenupageguisourcecode >menuhelppageguisourcecode >menuhelppageguisourcecode >helpmenupagesourcecode >menuhelppagesourcecode >menuhelppagesourcecode >helpmenusourcecode >menuhelpsourcecode >menuhelpsourcecode >helpsourcecode >menusourcecode >sourcecodehelpmenupage >sourcecodemenuhelppage >sourcecodemenuhelppag >guisourcecodecommands >guisourcecodecmds >commandsguisourcecode >cmdsguisourcecode >commandssourcecode >cmdssourcecode >sourcecodecommands >sourcecodecmds >sourcecodepage >sourcecodepage >pagesourcecode >pagesourcecode >guisourcehelpmenupage >guisourcemenuhelppage >guisourcemenuhelppage >helpmenupageguisource >menuhelppageguisource >menuhelppageguisource >helpmenupagesource >menuhelppagesource >menuhelppagesource >helpmenusource >menuhelpsource >menuhelpsource >helpsource >menusource >sourcehelpmenupage >sourcemenuhelppage >sourcemenuhelppag >guisourcecommands >guisourcecmds >commandsguisource >cmdsguisource >commandssource >cmdssource >sourcecommands >sourcecmds >sourcepage >sourcepage >pagesource >pagesource]`</small>
 
 	> | Key         | Action                                             |
 	> | :---------- | :------------------------------------------------- |
@@ -2369,7 +2369,7 @@ Contents
 
 -	#### Variables & Registers *[Help Menu]*:
 
-	> <small>`[Search Tags: >guipanevariables >guipanevars >guipanevs >guipanevs >guivariables >guivars >guivs >guipaneregisters >guipaneregs >guipanergs >guiregisters >guiregs >guirgs]`</small>
+	> <small>`[Search Tags: >registersgui >registergui >vargui >varsgui >guivariablehelpmenupage >guivariablemenuhelppage >guivariablemenuhelppage >helpmenupageguivariable >menuhelppageguivariable >menuhelppageguivariable >helpmenupagevariable >menuhelppagevariable >menuhelppagevariable >helpmenuvariable >menuhelpvariable >menuhelpvariable >helpvariable >menuvariable >variablehelpmenupage >variablemenuhelppage >variablemenuhelppag >guivariablecommands >guivariablecmds >commandsguivariable >cmdsguivariable >commandsvariable >cmdsvariable >variablecommands >variablecmds >variablepage >variablepage >pagevariable >pagevariable >guiregistershelpmenupage >guiregistersmenuhelppage >guiregistersmenuhelppage >helpmenupageguiregisters >menuhelppageguiregisters >menuhelppageguiregisters >helpmenupageregisters >menuhelppageregisters >menuhelppageregisters >helpmenuregisters >menuhelpregisters >menuhelpregisters >helpregisters >menuregisters >registershelpmenupage >registersmenuhelppage >registersmenuhelppag >guiregisterscommands >guiregisterscmds >commandsguiregisters >cmdsguiregisters >commandsregisters >cmdsregisters >registerscommands >registerscmds >registerspage >registerspage >pageregisters >pageregisters >guivarhelpmenupage >guivarmenuhelppage >guivarmenuhelppage >helpmenupageguivar >menuhelppageguivar >menuhelppageguivar >helpmenupagevar >menuhelppagevar >menuhelppagevar >helpmenuvar >menuhelpvar >menuhelpvar >helpvar >menuvar >varhelpmenupage >varmenuhelppage >varmenuhelppag >guivarcommands >guivarcmds >commandsguivar >cmdsguivar >commandsvar >cmdsvar >varcommands >varcmds >varpage >varpage >pagevar >pagevar]`</small>
 
 	> | Key        | Action|
 	> | :--------- | :--------------------------------------------
