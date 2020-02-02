@@ -2224,24 +2224,31 @@ Contents
 Contents
 ---
 - [1 About](#about)
-- [2 Commands to Operate](#tag)
-	- [2.1 Global *[Help Menu]*](#tag)
-	- [2.2 Source *[Help Menu]*](#tag)
-	- [2.3 Variables & Registers *[Help Menu]*](#tag)
-	- [2.4 Backtrace *[Help Menu]*](#tag)
+- [2 Usage *[Help Menus]*](#commands--help-menus)
+	- [2.1 Global](#global-help-menu)
+	- [2.2 Source](#source-code-help-menu)
+	- [2.3 Variables & Registers](#variables--registers-help-menu)
+	- [2.4 Backtrace](#backtrace-help-menu)
 ---
 
-
-About
----
+## About
 
 -	The graphical user interface *[mode of `lldb`]*, or `gui` for short, is what it says it is –– namely, a user interface for `lldb` that is **graphical**, rather than textual (**command prompt**).
 
--	Here's what it looks like:
+-	Its advantages are **MASSIVE**. Here are a few:
+
+	- You no longer have to constantly auto/man-ually print the source code, value of variables/registers and backtrace, after every instruction/line executed.
+	- You can quickly & with little to no effort navigate through code, variables/registers, threads, stack frames.
+	- You can see the value of variables/registers in different formats: from decimal, to hex, to binary, etc...
+	- You can enjoy a graphical layout, who doesn't rather have that ? –– *Yeah, cause you're weird.*
+
+	There are more... but this should suffice.
+
+-	*[Anyways]* Here's what it looks like:
 
 	> ![`gui` Demo (Small Screen)](https://media.giphy.com/media/jTlQ2YG0RWDUrNteFM/giphy.gif)
 
-	> *This is a small terminal window only in order to be able to make `gif` who's text is discernable. Realistically, on a bigger terminal screen, it'll look like this:*
+	> *This is a small terminal window only in order to be able to make a `gif` who's text is discernable. Realistically, on a bigger terminal screen, it'll look like this:*
 
 	> ![`gui` Demo (Big Screen)](https://media.giphy.com/media/jQUmfQ8eXuWE0L2tMB/giphy.gif)
 
@@ -2249,9 +2256,9 @@ About
 
     | Window Pane            | Description
     | :--------------------- | :-----------------
-    | Source                 | Displays *[currently executing]* source code.
+    | Source                 | Displays, *[currently executing]* and surrounding, *[assembly]* instructions, or if the `-g` flag was used, source code.
     | Variables              | Displays variables *[, belonging to the current stack frame, ]* and their currently held values.
-    | Registers              | Displays registers *[, belonging to the current stack frame, ]* and their currently held values.
+    | Registers              | Displays registers *[, belonging to the current stack frame, ]* and their currently held values. <!-- POTENTIAL-MISTAKE: Do stack frames have different registers ? -->
     | Backtrace *(Threads & Stack Frames)* | Displays the process's current threads and their stack frames.
 
 	> *<small>[**Note:***
@@ -2264,8 +2271,8 @@ About
 
 ---
 
-Commands to operate `gui`:
----
+## Usage
+
 
 -	#### Enter & Exit `GUI` *[mode]*:
 
@@ -2323,14 +2330,13 @@ Commands to operate `gui`:
 
 	> *<small>[**Note:** Each view has its own keyboard shortcuts, press `h` to open a dialog to display them.*
 	>
-	>	See the following for the rest of the help menus:
+	>	- Remaining *[view]* help menus:
 	>
-	> 	1. [Source View](#source-code-help-menu)
-	> 	1. [Variables & Registers View](#variables--registers-help-menu)
-	> 	1. [Backtrace View](#backtrace-help-menu)
+	> 		1. [Source Help Menu](#source-code-help-menu)
+	> 		1. [Variables & Registers Help Menu](#variables--registers-help-menu)
+	> 		1. [Backtrace Help Menu](#backtrace-help-menu)
 	>
 	> <br> *- **end note**]</small>*
-
 
 <br>
 
@@ -2365,24 +2371,24 @@ Commands to operate `gui`:
 
 	> <small>`[Search Tags: >guipanevariables >guipanevars >guipanevs >guipanevs >guivariables >guivars >guivs >guipaneregisters >guipaneregs >guipanergs >guiregisters >guiregs >guirgs]`</small>
 
-	> | Key         | Action                                                      |
-	> | :---------- | :---------------------------------------------------------- |
-	> | `up`        | Select previous item                                        |
-	> | `down`      | Select next item                                            |
-	> | `right`     | Expand selected item                                        |
-	> | `left`      | Unexpand selected item or select parent if not expanded     |
-	> | `page-up`   | Page up                                                     |
-	> | `page-down` | Page down                                                   |
-	> | `A`         | Format as annotated address                                 |
-	> | `b`         | Format as binary                                            |
-	> | `B`         | Format as hex bytes with ASCII                              |
-	> | `c`         | Format as character                                         |
-	> | `d`         | Format as a signed integer                                  |
-	> | `D`         | Format selected value using the default format for the type |
-	> | `f`         | Format as float                                             |
-	> | `h`         | Show help dialog                                            |
-	> | `i`         | Format as instructions                                      |
-	> | `o`         | Format as octal                                             |
+	> | Key        | Action|
+	> | :--------- | :--------------------------------------------
+	> | `up`       | Select previous item
+	> | `down`     | Select next item
+	> | `right`    | Expand selected item
+	> | `left`     | Unexpand selected item or select parent if not expanded
+	> | `page-up`  | Page up
+	> | `page-down`| Page down
+	> | `A`        | Format as annotated address
+	> | `b`        | Format as binary
+	> | `B`        | Format as hex bytes with ASCII
+	> | `c`        | Format as character
+	> | `d`        | Format as a signed integer
+	> | `D`        | Format selected value using the default format for the type
+	> | `f`        | Format as float
+	> | `h`        | Show help dialog
+	> | `i`        | Format as instructions
+	> | `o`        | Format as octal
 
 <br>
 
@@ -2411,7 +2417,8 @@ Commands to operate `gui`:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | LLDB | `(lldb) help gui`
+> | 2 | Manual Page | LLDB | `(lldb-gui-mode) 'h'`
 
 
 ---
