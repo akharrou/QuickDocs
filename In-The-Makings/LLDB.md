@@ -15,7 +15,7 @@
 		[Beginner to Intermediate Level] Tutorial on LLDB.
 
 
-<!-- >Top Matter -------------------------------------------------------------->
+<!-- >Top Matter --------------------------------------------------------------
 
 QuickDocs \| Low Level Debugger (LLDB)
 ===
@@ -2216,76 +2216,122 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#35-start-or-attach-program) | [➡️](#38-examine-execution)
 ## 3.6. Graphical User Interface (GUI)
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >lldbgui >lldbgraphicalui >lldbgraphicaluserinterface >lldb.gui >lldb.graphicalui >lldb.graphicaluserinterface >debuggergui >debuggergraphicalui >debuggergraphicaluserinterface >debugger.gui >debugger.graphicalui >debugger.graphicaluserinterface >graphicaluserinterface >graphicalui >userinterface >interface >gmode >graphicalmode >gumode >guimodes >modegui >modegraphicaluserinterface >graphicaluserinterfacemodes]`</small>
 <br>
-<br>
-
 
 > TODO: ## 3.6. Graphical User Interface (GUI)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+Contents
+---
+- [1 What is it ?](#tag)
+- [2 How to use it ?](#tag)
+	- [2.1 Source Code](#tag)
+	- [2.2 Variables & Registers](#tag)
+	- [2.3 Threads, Stack Frames](#tag)
+---
 
+> The graphical user interface mode, or `gui` for short, is what it says it is, namely a user interface for `lldb` that is **graphical** –– rather than more textual, as is with the *command prompt*.
 
--	Source Code (Pane)
+---
 
- | Key         | Action                                             |
- | :---------- | :------------------------------------------------- |
- | `return`    | Run to selected line with one shot breakpoint      |
- | `up`        | Select previous source line                        |
- | `down`      | Select next source line                            |
- | `page-up`   | Page up                                            |
- | `page-down` | Page down                                          |
- | `b`         | Set breakpoint on selected source/disassembly line |
- | `c`         | Continue process                                   |
- | `d`         | Detach and resume process                          |
- | `D`         | Detach with process suspended                      |
- | `h`         | Show help dialog                                   |
- | `k`         | Kill process                                       |
- | `n`         | Step over (source line)                            |
- | `N`         | Step over (single instruction)                     |
- | `o`         | Step out                                           |
- | `s`         | Step in (source line)                              |
- | `S`         | Step in (single instruction)                       |
- | `,`         | Page up                                            |
- | `.`         | Page down                                          |
+-	#### Enter `gui` mode:
 
+	> <small>`[Search Tags: >entergui >entergraphicaluserinterface]`</small>
 
--	Variables & Registers (Pane)
+	To enter to the graphical user interface (`gui`) mode, type *[in the `lldb` command prompt]*: `gui` –– like so:
 
- | Key         | Action                                                      |
- | :---------- | :---------------------------------------------------------- |
- | `up`        | Select previous item                                        |
- | `down`      | Select next item                                            |
- | `right`     | Expand selected item                                        |
- | `left`      | Unexpand selected item or select parent if not expanded     |
- | `page-up`   | Page up                                                     |
- | `page-down` | Page down                                                   |
- | `A`         | Format as annotated address                                 |
- | `b`         | Format as binary                                            |
- | `B`         | Format as hex bytes with ASCII                              |
- | `c`         | Format as character                                         |
- | `d`         | Format as a signed integer                                  |
- | `D`         | Format selected value using the default format for the type |
- | `f`         | Format as float                                             |
- | `h`         | Show help dialog                                            |
- | `i`         | Format as instructions                                      |
- | `o`         | Format as octal                                             |
+	>
+	> ```shell
+	> (lldb) gui
+	> ```
 
+<br>
 
--	Thread & Stack Frames (Pane)
+-	#### Exit `gui` mode:
 
- | Key         | Action                                         |
- | :---------- | :--------------------------------------------- |
- | `up`        | Select previous item                           |
- | `down`      | Select next item                               |
- | `right`     | Expand the selected item                       |
- | `left`      | Unexpand the selected item or select parent if |
- | `page-up`   | Page up                                        |
- | `page-down` | Page down                                      |
- | `h`         | Show help dialog                               |
- | `space`     | Toggle item expansion                          |
- | `,`         | Page up                                        |
- | `.`         | Page down                                      |
+	> <small>`[Search Tags: >quitgui >closegui >leavegui exitgui >quitgraphicaluserinterface >closegraphicaluserinterface >leavegraphicaluserinterface exitgraphicaluserinterface]`</small>
+
+	To exit *[when in `gui` mode]*, ***press "`esc`"*** *(escape)* –– then wait about a second, it will automatically bring you back to the textual mode, to the *[`lldb`]* command prompt.
+
+<br>
+
+-	#### `gui` Panes:
+
+	> <small>`[Search Tags: >panesgui >panegui >guipanes >graphicaluserinterfacepanes]`</small>
+
+	The `gui` mode has multiple window panes, i.e *screen subdivisions*. There are 3 window panes, straight out of the box, one displaying the currently executing source code, one displaying variable and the values they hold, that includes pointers to memory-regions, and finally a window pane for threads and stack frames.
+
+	<br>
+
+	-	#### Source Code Pane:
+
+		> <small>`[Search Tags: >guipanesourcecode >guicode >guisourcecodes >guisourcepanes >guisrcpanes >guisrccodepanes]`</small>
+
+		> | Key         | Action                                             |
+		> | :---------- | :------------------------------------------------- |
+		> | `return`    | Run to selected line with one shot breakpoint      |
+		> | `up`        | Select previous source line                        |
+		> | `down`      | Select next source line                            |
+		> | `page-up`   | Page up                                            |
+		> | `page-down` | Page down                                          |
+		> | `b`         | Set breakpoint on selected source/disassembly line |
+		> | `c`         | Continue process                                   |
+		> | `d`         | Detach and resume process                          |
+		> | `D`         | Detach with process suspended                      |
+		> | `h`         | Show help dialog                                   |
+		> | `k`         | Kill process                                       |
+		> | `n`         | Step over (source line)                            |
+		> | `N`         | Step over (single instruction)                     |
+		> | `o`         | Step out                                           |
+		> | `s`         | Step in (source line)                              |
+		> | `S`         | Step in (single instruction)                       |
+		> | `,`         | Page up                                            |
+		> | `.`         | Page down                                          |
+
+	<br>
+
+	-	#### Variables & Registers Pane:
+
+		> <small>`[Search Tags: >guipanevariables >guipanevars >guipanevs >guipanevs >guivariables >guivars >guivs >guipaneregisters >guipaneregs >guipanergs >guiregisters >guiregs >guirgs]`</small>
+
+		> | Key         | Action                                                      |
+		> | :---------- | :---------------------------------------------------------- |
+		> | `up`        | Select previous item                                        |
+		> | `down`      | Select next item                                            |
+		> | `right`     | Expand selected item                                        |
+		> | `left`      | Unexpand selected item or select parent if not expanded     |
+		> | `page-up`   | Page up                                                     |
+		> | `page-down` | Page down                                                   |
+		> | `A`         | Format as annotated address                                 |
+		> | `b`         | Format as binary                                            |
+		> | `B`         | Format as hex bytes with ASCII                              |
+		> | `c`         | Format as character                                         |
+		> | `d`         | Format as a signed integer                                  |
+		> | `D`         | Format selected value using the default format for the type |
+		> | `f`         | Format as float                                             |
+		> | `h`         | Show help dialog                                            |
+		> | `i`         | Format as instructions                                      |
+		> | `o`         | Format as octal                                             |
+
+	<br>
+
+	-	Thread & Stack Frames (Pane)
+
+		> <small>`[Search Tags: >guipanesthreads >guipanesthrds >guipanesthreads >guipanesthrds >guipanethreads >guipanethrds >guipanethreads >guipanethrds >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guipanesstackframes >guipanesstckframes >guipanestackframes >guipanestckframes >guipanesframes >guipaneframes >guistackframes >guistckframes >guiframes >guiframes]`</small>
+
+		> | Key         | Action                                         |
+		> | :---------- | :--------------------------------------------- |
+		> | `up`        | Select previous item                           |
+		> | `down`      | Select next item                               |
+		> | `right`     | Expand the selected item                       |
+		> | `left`      | Unexpand the selected item or select parent if |
+		> | `page-up`   | Page up                                        |
+		> | `page-down` | Page down                                      |
+		> | `h`         | Show help dialog                               |
+		> | `space`     | Toggle item expansion                          |
+		> | `,`         | Page up                                        |
+		> | `.`         | Page down                                      |
+
 
 <br>
 <br>
