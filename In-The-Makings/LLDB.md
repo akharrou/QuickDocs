@@ -2440,18 +2440,39 @@ Contents
 
 > TODO: ## 3.7. Controlling Process Execution
 
-The execution of your program is completely left to you. `lldb` provides commands with which to control *[the program's execution]*.
+After process `launch` / `attach`, `lldb` completely hands over the control of the execution of the process (i.e running program) to you, and it *[`lldb`]* gives you commands with which to control it.
 
-The currently line to be executed is known by a line highlighting.
+The following subsections will layout the **`lldb` prompt commands** offered to control the program –– not the **graphical user interface commands**, those are laid out in section ([§3.6.2 @ Source Code](#source-code-help-menu)).
+
+| Command | Description
+| :------ | :---------------------------------------------------------
+||
+| ***(Source Level)*** |
+| `(lldb) next` <br> `(lldb) n` | Do a single **step over** *[, in the currently selected thread]*.
+| `(lldb) step` <br> `(lldb) s` | Do a single **step in** *[, in the currently selected thread]*.
+||
+| ***(Instruction Level)*** |
+| `(lldb) ni` | Do a single **step over** *[, in the currently selected thread]*.
+| `(lldb) si` | Do a single **step in** *[, in the currently selected thread]*.
+||
+| ***(Both Levels)*** |
+| `(lldb) thread step-out` <br> `(lldb) finish` | **Step out** of the currently selected frame (i.e function).
+||
+| `(lldb) continue`  | Continue execution of all threads in the current process *[till a breakpoint is hit or termination of the process]*.
+| `(lldb) thread until <line>` | Run until line `<line>` or control leaves the current function.
+||
+| `(lldb) kill`      | Terminate the current target process.
+| `(lldb) detach`    | Detach from the current target process.
+
 
 <br>
 <br>
 
 > ***Further Reading:***
 >
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | # | Type               | Author           | Link
+> | - | ------------------ | ---------------- | --------------------------
+> | 1 | Manual Page        | LLDB             | `(lldb) help step`
 
 
 ---
