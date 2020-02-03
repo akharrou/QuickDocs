@@ -46,9 +46,6 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.6.1 About](#about)
 		- [3.6.2 Usage Commands *[Help Menus]*](#usage-commands)
 	- [3.7. Controlling Process Execution](#37-controlling-process-execution)
-		- [3.7.1. Navigate Source Code](#371-navigate-source-code)
-		- [3.7.2. Step In/Out of Functions](#372-step-inout-of-functions)
-		- [3.7.3. Continue & Pause Execution](#373-continue--pause-execution)
 	- [3.8. Examine Execution](#38-examine-execution)
 		- [3.8.1. Source Code](#381-source-code)
 		- [3.8.2. Variable(s)](#382-variables)
@@ -138,7 +135,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | PDF                | nesono                 | [`lldb` Cheat Sheet](https://www.nesono.com/sites/default/files/lldb%20cheat%20sheet.pdf)
 
 
 ---
@@ -2144,10 +2141,12 @@ Contents
 ### 3.5.2. Attach
 <small>`[Search Tags: >atsection >atchsection >achsection >attchsection >attachsection >attchprocess >attachprocess >attchprcs >attachprcs >aprocess >atchprcs >attchprograms >attachprograms >attchprogs >attachprogs >aprograms >atchprgs >atprogs >attchprs >attachprs >programattch >programattach >progrmattch >progrmattach >progattch >progattach >programatch >progrmatch >progatch >programat >progrmat >progat >processattch >processattach >prcsattch >prcsattach >processatch >prcsatch >processat >prcsat >prattch >prattach >pratch >prat]`</small>
 <br>
+>lldbattachprocess >lldbattachprogram >lldbattachtoprocess >lldbattachtoprogram >lldb.attachprocess >lldb.attachprogram >lldb.attachtoprocess >lldb.attachtoprogram >debuggerattachprocess >debuggerattachprogram >debuggerattachtoprocess >debuggerattachtoprogram >debugger.attachprocess >debugger.attachprogram >debugger.attachtoprocess >debugger.attachtoprogram
 
 Contents
 ---
-- [1 Attach Command](#attach-to-a-process)
+- [1 Attach to Process](#attach-to-process)
+- [2 Attach to Remote Process](#attach-to-remote-process)
 ---
 
 > ***TL;DR:*** <br>
@@ -2168,7 +2167,7 @@ Contents
 
 > *Command for attaching to processes:*
 
--	#### Attach to a process:
+-	#### Attach to process:
 
 	> ***Synopsis:***
 	>
@@ -2191,6 +2190,35 @@ Contents
 	> (lldb) pr a -w -n a.out
 	> ```
 
+<br>
+
+-	#### Attach to remote process:
+
+	> ***Brief:***
+	>
+	> *Connect to a process via remote GDB server. If no host is specifed, localhost is assumed.*
+	>
+	> ***Synopsis:***
+	>
+	> ```shell
+	> gdb-remote <host>:<port>
+	> ```
+	>
+	> *****Example(s):*****
+	> ```shell
+	> (lldb) gdb-remote 8000
+	> ```
+	> > *To clarify –– we attach to a remote GDB protocol server running on the **local system** (i.e `localhost`), port `8000`.*
+	>
+	> ```shell
+	> (lldb) gdb-remote eorgadd:8000
+	> ```
+	> > *To clarify –– Attach to a remote GDB protocol server running on the system **`eorgadd`**, port `8000`.*
+	>
+	> ```shell
+	> (lldb) gdb-remote 216.3.128.12:8000
+	> ```
+
 
 <br>
 <br>
@@ -2200,6 +2228,11 @@ Contents
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | LLDB | `(lldb) help process attach`
+> | 2 | Manual Page | LLDB | `(lldb) help gdb-remote`
+> | 3 | Documentation | Apple | [GDB and LLDB Command Examples](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html)
+> | 4 | Encyclopedia | Wikipedia | [`gdbserver`](https://en.wikipedia.org/wiki/Gdbserver)
+> | 5 | Documentation | `sourceware.org/gdb` | [Using the `gdbserver` Program](https://sourceware.org/gdb/current/onlinedocs/gdb/Server.html)
+> | 6 | Tutorial | TheGeekStuff | [How to Debug Programs on Remote Server using GDBServer Example](https://www.thegeekstuff.com/2014/04/gdbserver-example/)
 
 ---
 [🏠](#contents) | [⬅️](#35-start-or-attach-program) | [➡️](#38-examine-execution)
@@ -2417,6 +2450,12 @@ Contents
 <small>`[Search Tags: >lldb.controlprocessexecution >lldbcontrolprocessexecution >debugger.controlprocessexecution >debuggercontrolprocessexecution >controlprocessexecution >contrlprocessexecution >cntrlprocessexecution >ctrlprocessexecution >controlprcsexecution >contrlprcsexecution >cntrlprcsexecution >ctrlprcsexecution >controlprcsexecs >contrlprcsexecs >cntrlprcsexecs >ctrlprcsexecs >controlsection >ctrlsection >processcontrolsection >prcsctrlsection >prcscontrolsection >processcontrolsection >lldb.controlprogramexecution >lldbcontrolprogramexecution >debugger.controlprogramexecution >debuggercontrolprogramexecution >controlprogramexecution >contrlprogramexecution >cntrlprogramexecution >ctrlprogramexecution >controlprogexecution >controlprogsexecution >contrlprogexecution >contrlprogsexecution >cntrlprogexecution >cntrlprogsexecution >ctrlprogexecution >ctrlprogsexecution >controlprogexecs >controlprogsexecs >contrlprogexecs >contrlprogsexecs >cntrlprogexecs >cntrlprogsexecs >ctrlprogexecs >ctrlprogsexecs >controlsection >ctrlsection >programcontrolsection >progctrlsection >progsctrlsection >progcontrolsection >progscontrolsection >programcontrolsection]`</small>
 <br>
 
+Contents
+---
+- [1 About](#about-1)
+- [2 Control Commands](#control-commands)
+---
+
 About
 ---
 
@@ -2424,7 +2463,9 @@ After process `launch` / `attach`, `lldb` completely hands over the control of t
 
 The following subsections will layout the **`lldb` prompt commands** offered to control the program –– not the **graphical user interface commands**, those are laid out in section ([§3.6.2 @ Source Code *[Commands Help Menu]*](#source-code-help-menu)).
 
-Commands
+---
+
+Control Commands
 ---
 
 | Command | Description
@@ -2469,7 +2510,7 @@ Commands
 > | 5 | Manual Page        | LLDB             | `(lldb) help thread step-inst`
 > | 6 | Manual Page        | LLDB             | `(lldb) help thread stepi-inst-over`
 > |||
-> | 6 | Manual Page        | LLDB             | `(lldb) help thread until`
+> | 7 | Manual Page        | LLDB             | `(lldb) help thread until`
 
 
 ---
