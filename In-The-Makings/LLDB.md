@@ -2469,15 +2469,15 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 | Command | Description
 | :------ | :---------------------------------------------------------
 ||
-| `continue`  | **Continue execution** *[of all threads in the current process] <br>* *[till a breakpoint is hit or termination of the process is met]*.
-| `thread until <line>` | **Run until line** `<line>` or control leaves the current function.
+| `(lldb) continue`  | **Continue execution** *[of all threads in the current process] <br>* *[till a breakpoint is hit or termination of the process is met]*.
+| `(lldb) thread until <line>` | **Run until line** `<line>` or control leaves the current function.
 ||
-|  `thread step-over` <br> `next` <br> `n` | **Step over** *[function call]* lines *[, if any]*, executing the current <br> line and stepping, thereafter, over it, to the next one. Defaults to <br> current thread unless specified.
-| `thread step-in` <br> `step` <br> `s` | **Step into** *[function]* calls. Defaults to current thread unless <br> specified.
-| `thread step-out` <br> `finish` | **Step out** of the currently selected frame *(i.e function call)*.
+|  `(lldb) thread step-over` <br> `(lldb) next` <br> `(lldb) n` | **Step over** *[function call]* lines *[, if any]*, executing the current <br> line and stepping, thereafter, over it, to the next one. Defaults to <br> current thread unless specified.
+| `(lldb) thread step-in` <br> `(lldb) step` <br> `(lldb) s` | **Step into** *[function]* calls. Defaults to current thread unless <br> specified.
+| `(lldb) thread step-out` <br> `(lldb) finish` | **Step out** of the currently selected frame *(i.e function call)*.
 ||
-| `kill`      | **Terminate** the current target process.
-| `detach`    | **Detach** from the current target process.
+| `(lldb) kill`      | **Terminate** the current target process.
+| `(lldb) detach`    | **Detach** from the current target process.
 
 > *<small>[**Note:***
 >
