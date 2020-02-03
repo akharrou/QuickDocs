@@ -2245,7 +2245,7 @@ Contents
 ---
 - [1 About](#about)
 - [2 Usage Commands *[Help Menus]*](#usage-commands)
-	- [2.1 Global Commands *[Help Menu]*](#global-help-menu)
+	- [2.1 Common Commands *[Help Menu]*](#common-help-menu)
 	- [2.2 Source Commands *[Help Menu]*](#source-code-help-menu)
 	- [2.3 Variables & Registers Commands *[Help Menu]*](#variables--registers-help-menu)
 	- [2.4 Backtrace Commands *[Help Menu]*](#backtrace-help-menu)
@@ -2330,9 +2330,9 @@ Contents
 
 <br>
 
--	#### Global *[Help Menu]*:
+-	#### Common *[Help Menu]*:
 
-	> <small>`[Search Tags: >globalguihelpmenu >globalguimenu >globalguipage >globalhelpmenu >globalmenu >globalpage >generalguihelpmenu >generalguimenu >generalguipage >generalhelpmenu >generalmenu >generalpage >guigeneralhelpmenupage >guigeneralmenuhelppage >guigeneralmenuhelppage >helpmenupageguigeneral >menuhelppageguigeneral >menuhelppageguigeneral >helpmenupagegeneral >menuhelppagegeneral >menuhelppagegeneral >helpmenugeneral >menuhelpgeneral >menuhelpgeneral >helpgeneral >menugeneral >generalhelpmenupage >generalmenuhelppage >generalmenuhelppag >guigeneralcommands >guigeneralcmds >commandsguigeneral >cmdsguigeneral >commandsgeneral >cmdsgeneral >generalcommands >generalcmds >generalpage >generalpage >pagegeneral >pagegeneral >guiglobalhelpmenupage >guiglobalmenuhelppage >guiglobalmenuhelppage >helpmenupageguiglobal >menuhelppageguiglobal >menuhelppageguiglobal >helpmenupageglobal >menuhelppageglobal >menuhelppageglobal >helpmenuglobal >menuhelpglobal >menuhelpglobal >helpglobal >menuglobal >globalhelpmenupage >globalmenuhelppage >globalmenuhelppag >guiglobalcommands >guiglobalcmds >commandsguiglobal >cmdsguiglobal >commandsglobal >cmdsglobal >globalcommands >globalcmds >globalpage >globalpage >pageglobal >pageglobal]`</small>
+	> <small>`[Search Tags: >commonguihelpmenu >commonguimenu >commonguipage >commonhelpmenu >commonmenu >commonpage >generalguihelpmenu >generalguimenu >generalguipage >generalhelpmenu >generalmenu >generalpage >guigeneralhelpmenupage >guigeneralmenuhelppage >guigeneralmenuhelppage >helpmenupageguigeneral >menuhelppageguigeneral >menuhelppageguigeneral >helpmenupagegeneral >menuhelppagegeneral >menuhelppagegeneral >helpmenugeneral >menuhelpgeneral >menuhelpgeneral >helpgeneral >menugeneral >generalhelpmenupage >generalmenuhelppage >generalmenuhelppag >guigeneralcommands >guigeneralcmds >commandsguigeneral >cmdsguigeneral >commandsgeneral >cmdsgeneral >generalcommands >generalcmds >generalpage >generalpage >pagegeneral >pagegeneral >commonhelpmenupage >commonmenuhelppage >commonmenuhelppage >common >common >common >common >common >common >common >common >common >common >common >commonhelpmenupage >commonmenuhelppage >commonmenuhelppag >commoncommands >commoncmds >common >common >common >common >commoncommands >commoncmds >commonpage >commonpage >common >common]`</small>
 
 	> | Key        | Action                                             |
 	> | :--------- | :------------------------------------------------- |
@@ -2348,9 +2348,9 @@ Contents
 	> |  page-down | Page down                                          |
 	> |        esc | Quit `gui` mode                                    |
 
-	> *<small>[**Note:** Each view has its own keyboard shortcuts, press `h` to open a dialog to display them.*
+	> *<small>[**Note:** Aside from these common keyboard shortcut commands, views also have specific keyboard shortcut commands of their own, press `h` to open a dialog to display them.*
 	>
-	>	- Remaining *[view]* help menus:
+	>	- Here are the remaining *[view]* help menus:
 	>
 	> 		1. [Source Help Menu](#source-code-help-menu)
 	> 		1. [Variables & Registers Help Menu](#variables--registers-help-menu)
