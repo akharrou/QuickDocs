@@ -113,9 +113,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 > ***Further Reading:***
 >
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | # | Type                  | Author                 | Link
+> | - | --------------------- | ---------------------- | --------------------
+> | 1 | Documentation Archive | Apple                  | [GDB and LLDB Command Examples](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html#//apple_ref/doc/uid/TP40012917-CH3-SW1)
 
 
 ---
@@ -142,20 +142,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-
-<br>
-<br>
-
-> ***Ressources:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-
-
 [🏠](#contents) | [⬅️](#contents) | [➡️](#3-how-do-i-use-it-)
 # 2. What is it ?
 <small>`[Search Tags: >lldb.what? >lldbwhat? >lldb.who? >lldb.why? >lldb.whocares? >lldb.whycare? >lldb.? >lldb? >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro >lldb.whatisit >lldb.whycare? >lldb.whyshouldicare?]`</small>
@@ -2428,42 +2414,42 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ## 3.7. Controlling Process Execution
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >lldb.controlprocessexecution >lldbcontrolprocessexecution >debugger.controlprocessexecution >debuggercontrolprocessexecution >controlprocessexecution >contrlprocessexecution >cntrlprocessexecution >ctrlprocessexecution >controlprcsexecution >contrlprcsexecution >cntrlprcsexecution >ctrlprcsexecution >controlprcsexecs >contrlprcsexecs >cntrlprcsexecs >ctrlprcsexecs >controlsection >ctrlsection >processcontrolsection >prcsctrlsection >prcscontrolsection >processcontrolsection >lldb.controlprogramexecution >lldbcontrolprogramexecution >debugger.controlprogramexecution >debuggercontrolprogramexecution >controlprogramexecution >contrlprogramexecution >cntrlprogramexecution >ctrlprogramexecution >controlprogexecution >controlprogsexecution >contrlprogexecution >contrlprogsexecution >cntrlprogexecution >cntrlprogsexecution >ctrlprogexecution >ctrlprogsexecution >controlprogexecs >controlprogsexecs >contrlprogexecs >contrlprogsexecs >cntrlprogexecs >cntrlprogsexecs >ctrlprogexecs >ctrlprogsexecs >controlsection >ctrlsection >programcontrolsection >progctrlsection >progsctrlsection >progcontrolsection >progscontrolsection >programcontrolsection]`</small>
 <br>
 
-Contents
+About
 ---
--	[3.7.1. Navigate Source Code](#371-navigate-source-code)
--	[3.7.2. Step In/Out of Functions](#372-step-inout-of-functions)
--	[3.7.3. Continue & Pause Execution](#373-continue--pause-execution)
----
-
-> TODO: ## 3.7. Controlling Process Execution
 
 After process `launch` / `attach`, `lldb` completely hands over the control of the execution of the process (i.e running program) to you, and it *[`lldb`]* gives you commands with which to control it.
 
-The following subsections will layout the **`lldb` prompt commands** offered to control the program –– not the **graphical user interface commands**, those are laid out in section ([§3.6.2 @ Source Code](#source-code-help-menu)).
+The following subsections will layout the **`lldb` prompt commands** offered to control the program –– not the **graphical user interface commands**, those are laid out in section ([§3.6.2 @ Source Code *[Commands Help Menu]*](#source-code-help-menu)).
+
+Commands
+---
 
 | Command | Description
 | :------ | :---------------------------------------------------------
 ||
-| ***(Source Level)*** |
-| `(lldb) next` <br> `(lldb) n` | Do a single **step over** *[, in the currently selected thread]*.
-| `(lldb) step` <br> `(lldb) s` | Do a single **step in** *[, in the currently selected thread]*.
+| `(lldb) continue`  | **Continue execution** *[of all threads in the current process]* *[till a breakpoint is hit or termination of the process is met]*.
+| `(lldb) thread until <line>` | **Run until line** `<line>` or control leaves the current function.
 ||
-| ***(Instruction Level)*** |
-| `(lldb) ni` | Do a single **step over** *[, in the currently selected thread]*.
-| `(lldb) si` | Do a single **step in** *[, in the currently selected thread]*.
+|  `(lldb) thread step-over` <br> `(lldb) next` <br> `(lldb) n` | **Step over** *[function call]* lines *[, if any]*, executing the current line and stepping, thereafter, over it, to the next one. Defaults to current thread unless specified.
+| `(lldb) thread step-in` <br> `(lldb) step` <br> `(lldb) s` | **Step into** *[function]* calls. Defaults to current thread unless specified.
+| `(lldb) thread step-out` <br> `(lldb) finish` | **Step out** of the currently selected frame *(i.e function call)*.
 ||
-| ***(Both Levels)*** |
-| `(lldb) thread step-out` <br> `(lldb) finish` | **Step out** of the currently selected frame (i.e function).
-||
-| `(lldb) continue`  | Continue execution of all threads in the current process *[till a breakpoint is hit or termination of the process]*.
-| `(lldb) thread until <line>` | Run until line `<line>` or control leaves the current function.
-||
-| `(lldb) kill`      | Terminate the current target process.
-| `(lldb) detach`    | Detach from the current target process.
+| `(lldb) kill`      | **Terminate** the current target process.
+| `(lldb) detach`    | **Detach** from the current target process.
 
+> *<small>[**Note:***
+>
+> -	For debugging *[assembly]* **instructions**, the commands are slightly different;
+>
+> 	||||
+> 	| :------ | :---------------------------------------------------------
+> 	| `(lldb) thread step-inst-over` <br> `(lldb) ni` | Do a single *[instruction0]* **step over**.
+> 	| `(lldb) thread step-inst` <br> `(lldb) si` | Do a single *[instruction0]* **step in**.
+>
+> *- **end note**]</small>*
 
 <br>
 <br>
@@ -2472,76 +2458,18 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 >
 > | # | Type               | Author           | Link
 > | - | ------------------ | ---------------- | --------------------------
-> | 1 | Manual Page        | LLDB             | `(lldb) help step`
-
-
----
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.7.1. Navigate Source Code
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: ### 3.7.1. Move Lines
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.7.2. Step In/Out of Functions
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: ### 3.7.2. Step In/Out of Functions
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.7.3. Continue & Pause Execution
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: ### 3.7.3. Continue & Pause Execution
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Documentation | LLDB | [(Official) Tutorial \| GDB to LLDB command map](https://lldb.llvm.org/use/map.html)
+> |||
+> | 2 | Manual Page        | LLDB             | `(lldb) help thread`
+> |||
+> | 2 | Manual Page        | LLDB             | `(lldb) help thread step-in`
+> | 3 | Manual Page        | LLDB             | `(lldb) help thread step-out`
+> | 4 | Manual Page        | LLDB             | `(lldb) help thread step-over`
+> |||
+> | 5 | Manual Page        | LLDB             | `(lldb) help thread step-inst`
+> | 6 | Manual Page        | LLDB             | `(lldb) help thread stepi-inst-over`
+> |||
+> | 6 | Manual Page        | LLDB             | `(lldb) help thread until`
 
 
 ---
