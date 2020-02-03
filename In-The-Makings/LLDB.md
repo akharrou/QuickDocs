@@ -2466,6 +2466,8 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 
 ## Control commands:
 
+<small>`[Search Tags: >ctrlcommands >controlcommands >cntrlcommands >ctrlcmds >controlcmds >cntrlcmds >commandsctrl >commandscontrol >commandscntrl >cmdsctrl >cmdscontrol >cmdscntrl]`</small>
+
 | Command | Description
 | :------ | :---------------------------------------------------------
 ||
