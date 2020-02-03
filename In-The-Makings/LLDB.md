@@ -2483,7 +2483,7 @@ Control Commands
 
 > *<small>[**Note:***
 >
-> -	For debugging *[assembly]* **instructions**, the commands are slightly different;
+> -	For *[assembly]* **instructions**, the step in/out commands are slightly different;
 >
 > 	| Command | Description
 > 	| ------- | ---------------------------------------------------------
