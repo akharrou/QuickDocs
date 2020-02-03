@@ -2502,14 +2502,18 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 > |||
 > | 2 | Manual Page        | LLDB             | `(lldb) help thread`
 > |||
-> | 2 | Manual Page        | LLDB             | `(lldb) help thread step-in`
-> | 3 | Manual Page        | LLDB             | `(lldb) help thread step-out`
-> | 4 | Manual Page        | LLDB             | `(lldb) help thread step-over`
+> | 3 | Manual Page        | LLDB             | `(lldb) help continue`
+> | 4 | Manual Page        | LLDB             | `(lldb) help thread until`
 > |||
-> | 5 | Manual Page        | LLDB             | `(lldb) help thread step-inst`
-> | 6 | Manual Page        | LLDB             | `(lldb) help thread stepi-inst-over`
+> | 5 | Manual Page        | LLDB             | `(lldb) help thread step-in`
+> | 6 | Manual Page        | LLDB             | `(lldb) help thread step-out`
+> | 7 | Manual Page        | LLDB             | `(lldb) help thread step-over`
 > |||
-> | 7 | Manual Page        | LLDB             | `(lldb) help thread until`
+> | 8 | Manual Page        | LLDB             | `(lldb) help thread step-inst`
+> | 9 | Manual Page        | LLDB             | `(lldb) help thread stepi-inst-over`
+> |||
+> | 10 | Manual Page        | LLDB             | `(lldb) help kill`
+> | 11 | Manual Page        | LLDB             | `(lldb) help detach`
 
 
 ---
