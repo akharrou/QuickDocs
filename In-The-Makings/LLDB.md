@@ -2486,7 +2486,7 @@ Control Commands
 > -	For debugging *[assembly]* **instructions**, the commands are slightly different;
 >
 > 	||||
-> 	| :------ | :---------------------------------------------------------
+> 	| ------ | ---------------------------------------------------------
 > 	| `(lldb) thread step-inst-over` <br> `(lldb) ni` | Do a single *[instruction0]* **step over**.
 > 	| `(lldb) thread step-inst` <br> `(lldb) si` | Do a single *[instruction0]* **step in**.
 >
