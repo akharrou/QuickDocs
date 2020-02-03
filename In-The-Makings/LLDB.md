@@ -2466,14 +2466,14 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 
 ## Control commands:
 
-| LLDB Command | Description
+| Command | Description
 | :------ | :---------------------------------------------------------
 ||
-| `continue`  | **Continue execution** *[of all threads in the current process]* *[till a breakpoint is hit or termination of the process is met]*.
+| `continue`  | **Continue execution** *[of all threads in the current process] <br>* *[till a breakpoint is hit or termination of the process is met]*.
 | `thread until <line>` | **Run until line** `<line>` or control leaves the current function.
 ||
-|  `thread step-over` <br> `next` <br> `n` | **Step over** *[function call]* lines *[, if any]*, executing the current line and stepping, thereafter, over it, to the next one. Defaults to current thread unless specified.
-| `thread step-in` <br> `step` <br> `s` | **Step into** *[function]* calls. Defaults to current thread unless specified.
+|  `thread step-over` <br> `next` <br> `n` | **Step over** *[function call]* lines *[, if any]*, executing the current <br> line and stepping, thereafter, over it, to the next one. Defaults to <br> current thread unless specified.
+| `thread step-in` <br> `step` <br> `s` | **Step into** *[function]* calls. Defaults to current thread unless <br> specified.
 | `thread step-out` <br> `finish` | **Step out** of the currently selected frame *(i.e function call)*.
 ||
 | `kill`      | **Terminate** the current target process.
