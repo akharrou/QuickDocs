@@ -1,0 +1,29 @@
+
+| *[Transliteral Arabic]* Term | *[Translation in]* Meaning
+| :--------------------------- | :------------------------------------------------
+| Allah                        | (Capital 'G' God); The *[one and only true]* God; <br> <br> Lord and Creator of the worlds, the All-Merciful, All-Compassionate, Master of the day of Judgement, the One and only Eternal, Ever-Living, he is neither begotten, nor does He beget, and there is nothing equivalent  or similar to Him. <br> <br> God refers to Himself with 99 *[different]* names (attributes) throughout the Qur'an.
+| Islam                        | *[Belief in and]* submission *[to God]* –– *God's religion*.
+| Mu'min                       | *(Literal standalone word meaning);* A **believer**. <br> <br> *[Generally, implicitly, refers to]*: –– one who believes *[in God]*; a believer *[in God]*.
+| Muslim                       | *(Literal standalone word meaning);* A **submitter**. <br> <br> *[Generally, implicitly, refers to]*: –– one who *[believes in and]* submits *[to God]*; a *[believer-in and]* submitter *[to God]* –– *one who follows God's religion [, after having believed in Him]*.
+| Ummah                        | *[Entire]* **community** of –– *believeing persons who submit to God* –– ***muslims***.
+| Qur'an                       | *(literally meaning "the recitation");* is the Word of God *(Divine Scripture)* revealed *("sent down")* by God to the prophet Muhammed *(peace and blesssings be upon him)*, via the archangel *(an angel of high rank)* Gabriel *(Jibril)*, around 1400 years ago. <br> <br> It *[the Qur'an]* is the culmination of a series of divine messages starting with those revealed to Adam *(peace and blesssings be upon him)* *[and then those [the prophets] after him]*, including the **Psalms** *(Zabur)*, the **Torah** *(Tawrah)*, and the **Gospel** *(Injil)*.
+| Sura, Surah or Surat         | **Section *(or chapter)*** of a writing (e.g. a book) –– *can be said with regards to the Qur'an*.
+| Aya, Ayah or Ayat            | **A verse** *(or phrase or line or delimitied-passage)* of a text –– *can be said with regards to the Qur'an*. <br> <br> (In the Qur'anic context, i.e when cited in the Qur'an); *[God]* refers to a **miracle** or **sign** or **evidence** *[supporting a claim, statement or conclusion]*.
+| Sunna or Sunnah              | **Customary-practices** *(or traditions or patterns)*, *in saying(s) and/or action(s)*, of a subject. <br> <br> The **subject** can be: God *(e.g. His ways of/in creation)*, anyone of His *[of God's]* prophets *(e.g. Adam, Noah, Abraham, Moses, Jesus, Muhammed, ...) (peace and blessings be upon them)*, and more broadly any person. <br> When **muslims** mention it *[the word "sunnah"]* alone, they generally, implicitly, are reffering to the the customary practices of the prophet Muhammad (peace and blessings be upon him).
+| Sahaba or Sahabah            | A **companion (or disciple)** of a subject. <br> <br> The subject can be any person, e.g. *[and notably]* the prophets *[of God]* (peace and blessings be upon them).
+| Hadith                       | *[A related (or transmitted [through a sound chain])]* **narration** *(or account)* of an event or saying(s) and/or action(s) with regards to *[one or more]* subject(s). <br> <br> The **subject** can be any person, e.g. *[and notably]* God's prophets *(e.g. Adam, Noah, Abraham, Moses, Jesus, Muhammed, ...) (peace and blessings be upon them)*, or a companion *(or disciple)* thereof *[of God's prophets]*.
+| Dua                          | **Supplication** *[to God]*.
+| Salah or Salat               | **Prayer** –– *prescribed by God*.
+| Zakah or Zakat               | *[The mandatory part of]* **alms-giving** –– *prescribed by God*.
+| Shirk                        | The *[act of]* association of parnters with and/or the deification or worship of anyone *[or anything]* besides, *[the one and only true]* God. <br> <br> This *[the association of partners with God]* can be in regards to God's creation, His complete and absolute power, control/maintainence of the universe *[and everything therein]*, etc ... –– crediting other than Him *[God]* or other alongside Him, in what can only be attributed and credited to Him. <br> <br> It can also be in regards to *[a person's]* worship being intended to other *[dieties]* than or alongside God.
+||
+| Mushrik                      | *(plural: mushrikūn)*; ***One who commits "shirk"*** –– , e.g. an idolator, polytheist, etc.
+| Fasiq                        | *(plural: fasiqūn)*; An **open sinner**, a **corrupt** *[**person**]*.
+| Fajir                        | *(plural: fūjar)*; A **sinner** *(by action)*.
+| Kafir                        | *(plural: kufirūn)*; A **disbeliever**.
+| Munafiq                      | *(plural: munafiqūn)*; A **hypocrite**. **Hypocrisy** itself is **nifāq**. <br> <br> *(In the Qur'anic context)*; refers to a **false muslim**, so to speak –– a person that outwardly portrays himself as one who believes-in and submits-to God, but who inwardly conceals disbelief *[in his heart]* and actively seeks to undermine and bring down the religion of God and its *"real"* followers.
+| Ahl al-Kitâb                 | *(literally)* *[the]* "**People of the Book**"; i.e the followers of the prophets who received other divine scriptures –– refers to *[those who have been named as]*: *Sabians* *([received the] Psalms)*, *Jews* *([received the] Torah)*, and *Christians* *([received the] Gospel)*.
+| Caliph                       | *[Primary]* **leader**, **steward** of the entire community of **muslims** ***(ummah)***.
+| Caliphate                    | **State** wherein is followed the religion of God, *[primarily]* led by the ***caliph***.
+
+[99 Names *(Attributes)* of God](https://simple.wikipedia.org/wiki/Names_of_God_in_Islam)

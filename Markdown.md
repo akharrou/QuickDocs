@@ -1,4 +1,4 @@
-<!-- ﷽ , In the name of God, the Most Gracious, the Most Merciful. -->
+<!-- ﷽ , In the name of God, the All-Merciful, the All-Compassionate. -->
 
 <!-- >Metadata -----------------------------------------------------------------
 
