@@ -1,7 +1,7 @@
 
 | *[Transliteral Arabic]* Term | *[Translation in]* Meaning
 | :--------------------------- | :------------------------------------------------
-| Allah                        | (Capital 'G' God); The *[one and only true]* God; <br> <br> Lord and Creator of the worlds, the All-Merciful, All-Compassionate, Master of the day of Judgement, the One and only Eternal, Ever-Living, he is neither begotten, nor does He beget, and there is nothing equivalent  or similar to Him. <br> <br> God refers to Himself with 99 *[different]* names (attributes) throughout the Qur'an.
+| Allah                        | (Capital 'G' God); The *[one and only true]* God; <br> <br> Lord and Creator of the worlds, the All-Merciful, All-Compassionate, Master of the day of Judgement, the One and only Eternal, Ever-Living, he is neither begotten, nor does He beget, and there is nothing equivalent  or similar to Him. <br> <br> God refers to Himself with 99 *[different]* names (attributes) throughout the Qur'an; see [Wikipedia :: 99 Names *(Attributes)* of God](https://simple.wikipedia.org/wiki/Names_of_God_in_Islam) for a list of them.
 | Islam                        | *[Belief in and]* submission *[to God]* –– *God's religion*.
 | Mu'min                       | *(Literal standalone word meaning);* A **believer**. <br> <br> *[Generally, implicitly, refers to]*: –– one who believes *[in God]*; a believer *[in God]*.
 | Muslim                       | *(Literal standalone word meaning);* A **submitter**. <br> <br> *[Generally, implicitly, refers to]*: –– one who *[believes in and]* submits *[to God]*; a *[believer-in and]* submitter *[to God]* –– *one who follows God's religion [, after having believed in Him]*.
@@ -25,5 +25,3 @@
 | Ahl al-Kitâb                 | *(literally)* *[the]* "**People of the Book**"; i.e the followers of the prophets who received other divine scriptures –– refers to *[those who have been named as]*: *Sabians* *([received the] Psalms)*, *Jews* *([received the] Torah)*, and *Christians* *([received the] Gospel)*.
 | Caliph                       | *[Primary]* **leader**, **steward** of the entire community of **muslims** ***(ummah)***.
 | Caliphate                    | **State** wherein is followed the religion of God, *[primarily]* led by the ***caliph***.
-
-[99 Names *(Attributes)* of God](https://simple.wikipedia.org/wiki/Names_of_God_in_Islam)
