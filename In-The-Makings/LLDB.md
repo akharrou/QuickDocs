@@ -2466,7 +2466,7 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 
 ## Control commands:
 
-<small>`[Search Tags: >ctrlcommands >controlcommands >cntrlcommands >ctrlcmds >controlcmds >cntrlcmds >commandsctrl >commandscontrol >commandscntrl >cmdsctrl >cmdscontrol >cmdscntrl]`</small>
+<small>`[Search Tags: >ctrlcommands >controlcommands >cntrlcommands >ctrlcmds >controlcmds >cntrlcmds >commandsctrl >commandscontrol >commandscntrl >cmdsctrl >cmdscontrol >cmdscntrl >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >until >cmduntil >untilcmd >commanduntil >untilcommand >step >cmdstep >stepcmd >commandstep >stepcommand >stepin >stepout >stepover >cmdstepin >cmdstepout >cmdstepover >stepincmd >stepoutcmd >stepovercmd >commandstepin >commandstepout >commandstepover >stepincommand >stepoutcommand >stepovercommand >kill >cmdkill >killcmd >commandkill >killcommand >detach >cmddetach >detachcmd >commanddetach >detachcommand]`</small>
 
 | Command | Description
 | :------ | :---------------------------------------------------------
@@ -2487,8 +2487,8 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 >
 > 	| Command | Description
 > 	| ------- | ---------------------------------------------------------
-> 	| `(lldb) thread step-inst-over` <br> `(lldb) ni` | Do a single *[instruction0]* **step over**.
-> 	| `(lldb) thread step-inst` <br> `(lldb) si` | Do a single *[instruction0]* **step in**.
+> 	| `(lldb) thread step-inst-over` <br> `(lldb) ni` | Do a single *[instruction]* **step over**.
+> 	| `(lldb) thread step-inst` <br> `(lldb) si` | Do a single *[instruction]* **step in**.
 >
 > *- **end note**]</small>*
 
