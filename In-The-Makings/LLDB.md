@@ -2242,13 +2242,15 @@ Contents
 
 Contents
 ---
-- [3.8.1 Usage Commands *[Help Menus]*](#usage-commands)
-	- [Common Commands *[Help Menu]*](#common-help-menu)
-	- [Source Commands *[Help Menu]*](#source-code-help-menu)
-	- [Variables & Registers Commands *[Help Menu]*](#variables--registers-help-menu)
-	- [Backtrace Commands *[Help Menu]*](#backtrace-help-menu)
+- [About](#about)
+- [Usage Commands *[Help Menus]*](#usage-commands-help-menu)
+	- [Common Commands](#common-help-menu)
+	- [Source Commands](#source-code-help-menu)
+	- [Variables & Registers Commands](#variables--registers-help-menu)
+	- [Backtrace Commands](#backtrace-help-menu)
 ---
 
+## About
 
 -	The graphical user interface *[mode of `lldb`]*, or `gui` for short, is what it says it is –– namely, a user interface for `lldb` that is **graphical** *[, rather than textual (**command prompt**)]*.
 
