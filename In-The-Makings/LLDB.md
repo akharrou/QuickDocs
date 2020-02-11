@@ -2521,7 +2521,7 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 
 ---
 [🏠](#contents) | [⬅️](#36-graphical-user-interface-gui) | [➡️](#381-source-code)
-## 3.8. Examination
+## 3.8. Examine
 <small>`[Search Tags: >lldb.examine >lldbexamine >debuggerexamine >debugger.examine >lldb.examination >lldbexamination >debuggerexamination >debugger.examination >lldb.examinating >lldbexaminating >debuggerexaminating >debugger.examinating >examine >examination >examinating]`</small>
 <br>
 <br>
@@ -2562,7 +2562,7 @@ Aspects of the process that may be examined:
 >
 > ---
 
--	***List source code:***
+-	#### List source code:
 
 	> <small>`[Search Tags: >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
 
@@ -2602,6 +2602,108 @@ Aspects of the process that may be examined:
 
 
 To inspect the current state of your process, you can start with the threads:
+
+---
+
+-	#### List threads:
+
+	> <small>`[Search Tags: >listthreads >lstthreads >lsthreads >threadslist >threadlist >threadslst >threadlst >threadsls >threadls >listthrds >lstthrds >lsthrds >thrdslist >thrdlist >thrdslst >thrdlst >thrdsls >thrdls]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> thread list
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) thread list
+	> (lldb) th l
+	> ```
+	>
+	> ***Output:***
+	> ```shell
+	> * thread #1: tid = 0x2c03, 0x00007fff85cac76a, where = libSystem.B.dylib`__getdirentries64 + 10, stop reason = signal = SIGSTOP, queue = com.apple.main-thread
+	> thread #2: tid = 0x2e03, 0x00007fff85cbb08a, where = libSystem.B.dylib`kevent + 10, queue = com.apple.libdispatch-manager
+	> thread #3: tid = 0x2f03, 0x00007fff85cbbeaa, where = libSystem.B.dylib`__workq_kernreturn + 10 -->
+	> ```
+
+	> *<small>[**Note:** The `*` indicates that `thread #1` is the current thread. - **end note**]</small>*
+
+<br>
+
+-	#### Select *[current]* thread:
+
+	> <small>`[Search Tags: >selectthreads >selctthreads >selcthreads >threadsselect >threadselect >threadsselct >threadselct >threadsslct >threadslct >slctthreads >slctthread >selectthrds >selctthrds >selcthrds >thrdsselect >thrdlist >thrdsselct >thrdselct >thrdsslct >thrdslct >slctthrds >slctthrd]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> thread select <thread-index>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) thread select 2
+	> (lldb) th se 2
+	> ```
+
+	> *<small>[**Note:***
+	>
+	> -	*The `select`'ed thread will be used by default in all the commands in the next section.*
+	>
+	> -	*Thread index is just the one shown in the “thread list” listing.*
+	>
+	> *- **end note**]</small>*
+
+<br>
+
+-	#### Thread backtrace:
+
+	> <small>`[Search Tags: >selectthreads >selctthreads >selcthreads >threadsselect >threadselect >threadsselct >threadselct >threadsslct >threadslct >slctthreads >slctthread >selectthrds >selctthrds >selcthrds >thrdsselect >thrdlist >thrdsselct >thrdselct >thrdsslct >thrdslct >slctthrds >slctthrd]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> thread backtrace [--start <frame-index>] [--count <count>]    # show <count> frames in backtrace, starting from frame #<frame-index>
+	> thread backtrace [all]                                        # show all frames
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) thread backtrace
+	> (lldb) th b
+	> (lldb) bt
+	> ```
+	>
+	> ```shell
+	> (lldb) thread backtrace --count 2 --start 4
+	> (lldb) th b -c 2 -s 4
+	> ```
+	>
+	> ```shell
+	> (lldb) thread backtrace all
+	> (lldb) th b all
+	> ```
+	>
+	> ***Output:***
+	> ```shell
+	> thread #1: tid = 0x2c03, stop reason = breakpoint 1.1, queue = com.apple.main-thread
+	> frame #0: 0x0000000100010d5b, where = Sketch`-[SKTGraphicView alignLeftEdges:] + 33 at /Projects/Sketch/SKTGraphicView.m:1405
+	> frame #1: 0x00007fff8602d152, where = AppKit`-[NSApplication sendAction:to:from:] + 95
+	> frame #2: 0x00007fff860516be, where = AppKit`-[NSMenuItem _corePerformAction] + 365
+	> frame #3: 0x00007fff86051428, where = AppKit`-[NSCarbonMenuImpl performActionWithHighlightingForItemAtIndex:] + 121
+	> frame #4: 0x00007fff860370c1, where = AppKit`-[NSMenu performKeyEquivalent:] + 272
+	> frame #5: 0x00007fff86035e69, where = AppKit`-[NSApplication _handleKeyEquivalent:] + 559
+	> frame #6: 0x00007fff85f06aa1, where = AppKit`-[NSApplication sendEvent:] + 3630
+	> frame #7: 0x00007fff85e9d922, where = AppKit`-[NSApplication run] + 474
+	> frame #8: 0x00007fff85e965f8, where = AppKit`NSApplicationMain + 364
+	> frame #9: 0x0000000100015ae3, where = Sketch`main + 33 at /Projects/Sketch/SKTMain.m:11
+	> frame #10: 0x0000000100000f20, where = Sketch`start + 52
+	> ```
+
+	> *<small>[**Note:***
+	>
+	> - *`bt` is an alias for `backtrace thread`, see `help bt`.*
+	>
+	> *- **end note**]</small>*
 
 
 <br>
