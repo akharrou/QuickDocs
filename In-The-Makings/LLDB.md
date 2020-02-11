@@ -2439,11 +2439,11 @@ Contents
 >
 > | # | Type               | Author           | Link
 > | - | :----------------- | :--------------- | :-------------------------
-> | 1 | Manual Page        | Unix / Linux / MacOS | `(lldb) help gui`
-> | 2 | Manual Page        | Unix / Linux / MacOS | `(lldb-gui-source-view) h`
-> | 3 | Manual Page        | Unix / Linux / MacOS | `(lldb-gui-variables-view) h`
-> | 4 | Manual Page        | Unix / Linux / MacOS | `(lldb-gui-registers-view) h`
-> | 5 | Manual Page        | Unix / Linux / MacOS | `(lldb-gui-backtrace-view) h`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help gui`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb-gui-source-view) h`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb-gui-variables-view) h`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb-gui-registers-view) h`
+> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb-gui-backtrace-view) h`
 
 
 ---
@@ -2504,20 +2504,20 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 > | - | ------------------ | ---------------- | --------------------------
 > | 1 | Documentation | LLDB | [(Official) Tutorial \| GDB to LLDB command map](https://lldb.llvm.org/use/map.html)
 > |||
-> | 2 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread`
 > |||
-> | 3 | Manual Page        | Unix / Linux / MacOS | `(lldb) help continue`
-> | 4 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread until`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help continue`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread until`
 > |||
-> | 5 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread step-in`
-> | 6 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread step-out`
-> | 7 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread step-over`
+> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-in`
+> | 6 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-out`
+> | 7 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-over`
 > |||
-> | 8 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread step-inst`
-> | 9 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread stepi-inst-over`
+> | 8 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-inst`
+> | 9 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread stepi-inst-over`
 > |||
-> | 10 | Manual Page        | Unix / Linux / MacOS | `(lldb) help kill`
-> | 11 | Manual Page        | Unix / Linux / MacOS | `(lldb) help detach`
+> | 10 | Manual Page | Unix / Linux / MacOS | `(lldb) help kill`
+> | 11 | Manual Page | Unix / Linux / MacOS | `(lldb) help detach`
 
 
 ---
@@ -2545,12 +2545,12 @@ Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual 
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page        | Unix / Linux / MacOS   | `(lldb) help source`
-> | 2 | Manual Page        | Unix / Linux / MacOS   | `(lldb) help thread`
-> | 3 | Manual Page        | Unix / Linux / MacOS   | `(lldb) help frame`
-> | 4 | Documentation      | LLDB                   | [(Official) Tutorial](https://lldb.llvm.org/use/tutorial.html#examining-thread-state)
-> | 5 | Documentation      | LLDB                   | [GDB to LLDB Command Map](https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state)
-> | 6 | Documentation      | Apple                  | [LLDB Quick Start Tutorial](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html)
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help source`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help frame`
+> | 4 | Documentation | LLDB | [(Official) Tutorial](https://lldb.llvm.org/use/tutorial.html#examining-thread-state)
+> | 5 | Documentation | LLDB | [GDB to LLDB Command Map](https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state)
+> | 6 | Documentation | Apple | [LLDB Quick Start Tutorial](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html)
 
 ---
 [🏠](#contents) | [⬅️](#38-examine-execution) | [➡️](#382-variables)
@@ -2607,7 +2607,7 @@ Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual 
 Commands to:
 ---
 - [1 List threads](#list-threads)
-- [2 Thread information](#thread-information)
+- [2 List thread information](#thread-information)
 - [3 Select *[current]* thread](#select-current-thread)
 - [4 Thread backtrace](#thread-backtrace)
 ---
@@ -2673,7 +2673,7 @@ To inspect the current state of your process, you can start with the threads:
 
 <br>
 
--	#### Thread information:
+-	#### List thread information:
 
 	> <small>`[Search Tags: >infothreads >threadsinfo >threadinfo >infothrds >thrdsinfo >thrdinfo >informationthreads >threadsinformation >threadinformation >informationthrds >thrdsinformation >thrdinformation >infthreads >infthrds]`</small>
 
@@ -2686,6 +2686,8 @@ To inspect the current state of your process, you can start with the threads:
 	> (lldb) thread info --json
 	> (lldb) th i -j
 	> ```
+	>
+	> ***[Example] Output:***
 	> ```shell
 	> thread #1: tid = 0x9dbb2, 0x0000000100000a6c a`foo(iterations=0x00006020000000f0) at loopInput.c:11, queue = 'com.apple.main-thread', stop reason = step in
 	> 	> {
@@ -2706,28 +2708,36 @@ To inspect the current state of your process, you can start with the threads:
 
 -	#### Thread backtrace:
 
-	> <small>`[Search Tags: >threadsbactrace >threadsbactrace >thrdbactrace >thrdsbactrace >bactracethreads >bactracethrds >backtracethread >threadbacktrace >backtrcethread >threadbacktrce >bcktrcethread >threadbcktrce >bcktracethread >threadbcktrace >bcktrthread >threadbcktr >bktrthread >threadbktr >btthread >threadbt >backtracethrds >backtracethrd >thrdsbacktrace >thrdbacktrace >backtrcethrds >backtrcethrd >thrdsbacktrce >thrdbacktrce >bcktrcethrds >bcktrcethrd >thrdsbcktrce >thrdbcktrce >bcktracethrds >bcktracethrd >thrdsbcktrace >thrdbcktrace >bcktrthrds >bcktrthrd >thrdsbcktr >thrdbcktr >bktrthrds >bktrthrd >thrdsbktr >thrdbktr >btthrds >btthrd >thrdsbt >thrdbt >stacktracethread >threadstacktrace >stacktrcethread >threadstacktrce >stacktracethrds >stacktracethrd >thrdsstacktrace >thrdstacktrace >stacktrcethrds >stacktrcethrd >thrdsstacktrce >thrdstacktrce >stcktracethread >stktracethread >threadstcktrace >threadstktrace >stcktrcethread >stktrcethread >threadstcktrce >threadstktrce >stcktracethrds >stktracethrds >stcktracethrd >stktracethrd >thrdsstcktrace >thrdsstktrace >thrdstcktrace >thrdstktrace >stcktrcethrds >stktrcethrds >stcktrcethrd >stktrcethrd >thrdsstcktrce >thrdsstktrce >thrdstcktrce >thrdstktrce]`</small>
+	> <small>`[Search Tags: >threadsbactrace >threadsbactrace >thrdbactrace >thrdsbactrace >bactracethreads >bactracethrds >backtracethread >threadbacktrace >backtrcethread >threadbacktrce >bcktrcethread >threadbcktrce >bcktracethread >threadbcktrace >bcktrthread >threadbcktr >bktrthread >threadbktr >btthread >threadbt >backtracethrds >backtracethrd >thrdsbacktrace >thrdbacktrace >backtrcethrds >backtrcethrd >thrdsbacktrce >thrdbacktrce >bcktrcethrds >bcktrcethrd >thrdsbcktrce >thrdbcktrce >bcktracethrds >bcktracethrd >thrdsbcktrace >thrdbcktrace >bcktrthrds >bcktrthrd >thrdsbcktr >thrdbcktr >bktrthrds >bktrthrd >thrdsbktr >thrdbktr >btthrds >btthrd >thrdsbt >thrdbt >stacktracethread >threadstacktrace >stacktrcethread >threadstacktrce >stacktracethrds >stacktracethrd >thrdsstacktrace >thrdstacktrace >stacktrcethrds >stacktrcethrd >thrdsstacktrce >thrdstacktrce >stcktracethread >stktracethread >threadstcktrace >threadstktrace >stcktrcethread >stktrcethread >threadstcktrce >threadstktrce >stcktracethrds >stktracethrds >stcktracethrd >stktracethrd >thrdsstcktrace >thrdsstktrace >thrdstcktrace >thrdstktrace >stcktrcethrds >stktrcethrds >stcktrcethrd >stktrcethrd >thrdsstcktrce >thrdsstktrce >thrdstcktrce >thrdstktrce >showbacktrace >backtraceshow >showbacktrce >backtrceshow >showbcktrace >bcktraceshow >showbcktrce >bcktrceshow >showbcktr >bcktrshow >showbktrce >bktrceshow >showbktr >bktrshow >showbt >btshow]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> thread backtrace [--start <frame-index>] [--count <count>]    # show <count> frames in backtrace, starting from frame #<frame-index>
-	> thread backtrace [all]                                        # show all frames
+	> thread backtrace [--count <count>] [--start <frame-index>]    # Backtrace [the first <count> frames] [starting from the frame <frame-index> for] the current thread.
+	> thread backtrace [all]                                        # Show backtrace all threads.
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) thread backtrace                         # display current thread's backtrace
+	> (lldb) thread backtrace                         # Show the stack backtrace for the current thread.
 	> (lldb) th b
 	> (lldb) bt
 	> ```
 	> ```shell
-	> (lldb) thread backtrace --count 2 --start 4     # display 2 stack frames from the backtrace of current thread starting from stack frame #4
+	> (lldb) thread backtrace --count 5               # Backtrace the first 5 frames for the current thread.
+	> (lldb) th b -c 5
+	> (lldb) bt -c 5
+	> (lldb) bt 5
+	> ```
+	> ```shell
+	> (lldb) thread backtrace --count 2 --start 4     # Backtrace the first 5 frames starting from the frame #4, for the current thread.
 	> (lldb) th b -c 2 -s 4
 	> ```
 	> ```shell
-	> (lldb) thread backtrace all                     # display backtrace of all active threads in the process
+	> (lldb) thread backtrace all                     # Show the stack backtraces for all threads.
 	> (lldb) th b all
 	> ```
+	>
+	> ***[Example] Output:***
 	> ```shell
 	> thread #1: tid = 0x2c03, stop reason = breakpoint 1.1, queue = com.apple.main-thread
 	> frame #0: 0x0000000100010d5b, where = Sketch`-[SKTGraphicView alignLeftEdges:] + 33 at /Projects/Sketch/SKTGraphicView.m:1405
@@ -2757,14 +2767,15 @@ To inspect the current state of your process, you can start with the threads:
 >
 > | # | Type               | Author    | Link
 > | - | ------------------ | --------- | --------------------------
-> | 1 | Manual Page        | LLDB      | `(lldb) help thread list`
-> | 2 | Manual Page        | LLDB      | `(lldb) help thread select`
-> | 3 | Manual Page        | LLDB      | `(lldb) help thread info`
-> | 4 | Manual Page        | LLDB      | `(lldb) help thread backtrace`
-> | 5 | Documentation      | LLDB      | [(Official) Tutorial :: Examine Thread State](https://lldb.llvm.org/use/tutorial.html#examining-thread-state)
-> | 6 | Documentation      | LLDB      | [Gdb to LLDB Command Map :: Examine Thread State](https://lldb.llvm.org/use/map.html?highlight=watchpoints#examining-thread-state)
-> | 7 | Encyclopedia       | Wikipedia | [Stack Trace](https://en.wikipedia.org/wiki/Stack_trace)
-> | 8 | Documentation      | GNU       | [Backtraces](https://www.gnu.org/software/libc/manual/html_node/Backtraces.html)
+> | 1 | Manual Page | LLDB | `(lldb) help thread list`
+> | 2 | Manual Page | LLDB | `(lldb) help thread select`
+> | 3 | Manual Page | LLDB | `(lldb) help thread info`
+> | 4 | Manual Page | LLDB | `(lldb) help thread backtrace`
+> | 5 | Documentation | LLDB | [(Official) Tutorial :: Examine Thread State](https://lldb.llvm.org/use/tutorial.html#examining-thread-state)
+> | 6 | Documentation | LLDB | [Gdb to LLDB Command Map :: Examine Thread State](https://lldb.llvm.org/use/map.html?highlight=watchpoints#examining-thread-state)
+> | 7 | Documentation | Apple | [LLDB Tutorial :: Examining Thread State](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW8)
+> | 8 | Encyclopedia | Wikipedia | [Stack Trace](https://en.wikipedia.org/wiki/Stack_trace)
+> | 9 | Documentation | GNU | [Backtraces](https://www.gnu.org/software/libc/manual/html_node/Backtraces.html)
 
 
 ---
@@ -2775,6 +2786,39 @@ To inspect the current state of your process, you can start with the threads:
 <br>
 
 
+Commands to:
+---
+- [1 List Stack Frame Information](#list-threads)
+- [2 Select *[current]* Stack Frame](#select-current-thread)
+---
+
+-	#### List stack frame information:
+
+	> <small>`[Search Tags: ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> frame info <frame-index>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	>
+	> ```
+
+-	#### Select *[current]* stack frame:
+
+	> <small>`[Search Tags: ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> frame select <frame-index>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	>
+	> ```
 
 
 <br>
@@ -2784,7 +2828,11 @@ To inspect the current state of your process, you can start with the threads:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help frame info`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help frame select`
+> | 3 | Documentation | LLDB | [(Official) Tutorial :: Examining Stack Frame State](https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state)
+> | 4 | Documentation | LLDB | [GDB to LLDB Command Map :: Examining Thread State](https://lldb.llvm.org/use/map.html?highlight=watchpoints#examining-thread-state)
+> | 5 | Documentation | Apple | [LLDB Tutorial :: Examining the Stack Frame State](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW9)
 
 
 ---
