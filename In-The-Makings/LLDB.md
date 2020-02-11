@@ -2528,14 +2528,15 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 <br>
 
 
-Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual stop, crash, etc ...)*, you will be able to examine *(or inspect)* the state of the process.
-
 ## Commands for examining:
 
 - [3.8.1. Source code](#381-source-code)
 - [3.8.2. State of Threads](#382-state-of-threads)
 - [3.8.3. State of Stack Frames](#383-state-of-stack-frames)
 - [3.8.4. State of Variables](#384-state-of-variables)
+
+Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual stop, crash, etc ...)*, you will be able to examine *(or inspect)* the state of the process.
+
 
 <br>
 <br>
@@ -2559,7 +2560,7 @@ Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual 
 <br>
 
 
-> *<small>[**Note:** `gui` mode already displays the source code automatically during execution –– this is for textual mode. - **end note**]</small>*
+> *<small>[**Note:** `gui` mode already displays the source code automatically during execution –– the following command is for `lldb`'s textual mode. - **end note**]</small>*
 >
 > ---
 
