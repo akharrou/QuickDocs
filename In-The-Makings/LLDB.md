@@ -242,7 +242,7 @@ TODO : # 3. How do I use it ?
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Documentation | LLDB | [(Official) Tutorial](https://lldb.llvm.org/use/tutorial.html)
-> | 2 | Documentation | Apple | [LLDB Debugging Guide](https://developer.apple.com/library/archive/documentation/General/Conceptual/lldb-guide/chapters/Introduction.html)
+> | 2 | Documentation | Apple | [LLDB Quick Start Tutorial](https://developer.apple.com/library/archive/documentation/General/Conceptual/lldb-guide/chapters/Introduction.html#//apple_ref/doc/uid/TP40016717-CH1-DontLinkElementID_42)
 
 
 ---
@@ -604,8 +604,8 @@ Commands to:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint`
 > | 3 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
 > | 5 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html#setting-watchpoints)
 
@@ -648,7 +648,7 @@ The following subsections dive into the ***basic*** ([§3.4.1.1](#3411-basics)) 
 > | 1 | Encyclopedia | Wikipedia | [Breakpoints](https://en.wikipedia.org/wiki/Breakpoint)
 > | 2 | Documentation | LLDB | [(Official) Tutorial :: Setting Breakpoints](https://lldb.llvm.org/use/tutorial.html#setting-breakpoints)
 > | 3 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
-> | 4 | Manual Page | LLDB | `(lldb) help breakpoint`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint`
 
 
 [🏠](#341-breakpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
@@ -760,9 +760,9 @@ Contents
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
-> | 2 | Manual Page | LLDB | `(lldb) help breakpoint list`
-> | 3 | Manual Page | LLDB | `(lldb) help breakpoint delete`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint set`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint list`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint delete`
 
 
 ---
@@ -947,10 +947,10 @@ Commands to:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
-> | 2 | Manual Page | LLDB | `(lldb) help breakpoint enable`
-> | 3 | Manual Page | LLDB | `(lldb) help breakpoint disable`
-> | 4 | Manual Page | LLDB | `(lldb) help breakpoint modify`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint set`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint enable`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint disable`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint modify`
 
 
 ---
@@ -1194,11 +1194,11 @@ Commands for:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
-> | 2 | Manual Page | LLDB | `(lldb) help breakpoint command`
-> | 3 | Manual Page | LLDB | `(lldb) help breakpoint command add`
-> | 4 | Manual Page | LLDB | `(lldb) help breakpoint command list`
-> | 5 | Manual Page | LLDB | `(lldb) help breakpoint command delete`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint set`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint command`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint command add`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint command list`
+> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint command delete`
 
 
 [🏠](#341-breakpoints) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
@@ -1478,11 +1478,11 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Documentation | LLDB | [(Official) Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)
-> | 2 | Manual Page | LLDB | `(lldb) help breakpoint name`
-> | 3 | Manual Page | LLDB | `(lldb) help breakpoint name add`
-> | 3 | Manual Page | LLDB | `(lldb) help breakpoint name list`
-> | 3 | Manual Page | LLDB | `(lldb) help breakpoint name configure`
-> | 3 | Manual Page | LLDB | `(lldb) help breakpoint name delete`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint name`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint name add`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint name list`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint name configure`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint name delete`
 
 
 ---
@@ -1524,7 +1524,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint set`
 
 
 ---
@@ -1628,7 +1628,7 @@ Contents
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help breakpoint set`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help breakpoint set`
 
 
 ---
@@ -1663,7 +1663,7 @@ The following subsections dive into the ***basic*** ([§3.4.2.1](#3421-basic-com
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help watchpoint [<command>]`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint [<command>]`
 > | 2 | Documentation | LLDB | [(Official) Tutorial :: Setting Watchpoints](https://lldb.llvm.org/use/tutorial.html?highlight=watchpoints#setting-watchpoints)
 > | 3 | Documentation | LLDB | [GDB to LLDB Command Map](https://lldb.llvm.org/use/map.html?highlight=watchpoints#watchpoint-commands)
 
@@ -1790,9 +1790,9 @@ Commands to:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help watchpoint set`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint list`
-> | 3 | Manual Page | LLDB | `(lldb) help watchpoint delete`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint set`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint list`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint delete`
 
 
 ---
@@ -1857,8 +1857,8 @@ Commands to:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help watchpoint enable`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint disable`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint enable`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint disable`
 
 
 ---
@@ -1934,12 +1934,12 @@ Commands to:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help watchpoint modify`
-> | 2 | Manual Page | LLDB | `(lldb) help watchpoint command`
-> | 3 | Manual Page | LLDB | `(lldb) help watchpoint command add`
-> | 4 | Manual Page | LLDB | `(lldb) help watchpoint command list`
-> | 5 | Manual Page | LLDB | `(lldb) help watchpoint command delete`
-> | 1 | Manual Page | LLDB | `(lldb) help watchpoint ignore`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint modify`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint command`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint command add`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint command list`
+> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint command delete`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help watchpoint ignore`
 
 
 ---
@@ -1965,7 +1965,7 @@ Commands to:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help process [<command>]`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help process [<command>]`
 
 
 ---
@@ -2127,7 +2127,7 @@ Contents
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help process launch`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help process launch`
 > | 2 | Documentation | LLDB | [(Official) Tutorial :: Starting or Attaching to Your Program](https://lldb.llvm.org/use/tutorial.html#starting-or-attaching-to-your-program)
 > | 3 | Encyclopedia | Wikipedia | [Device files](https://en.wikipedia.org/wiki/Device_file)
 > | 4 | Q&A Forum | StackOverflow | [How to get the current terminal name ?](https://unix.stackexchange.com/questions/77796/how-to-get-the-current-terminal-name)
@@ -2226,8 +2226,8 @@ Contents
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help process attach`
-> | 2 | Manual Page | LLDB | `(lldb) help gdb-remote`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help process attach`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help gdb-remote`
 > | 3 | Documentation | Apple | [GDB and LLDB Command Examples](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html)
 > | 4 | Encyclopedia | Wikipedia | [`gdbserver`](https://en.wikipedia.org/wiki/Gdbserver)
 > | 5 | Documentation | `sourceware.org/gdb` | [Using the `gdbserver` Program](https://sourceware.org/gdb/current/onlinedocs/gdb/Server.html)
@@ -2591,8 +2591,8 @@ The following are the aspects of the process that may be examined:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help source list`
-> | 2 | Manual Page | LLDB | `(lldb) help source info`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help source list`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help source info`
 
 
 ---
