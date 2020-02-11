@@ -2460,9 +2460,9 @@ Contents
 
 ## About
 
-After process `launch` / `attach`, `lldb` completely hands over the control of the execution of the process (i.e running program) to you, and it *[`lldb`]* gives you commands with which to control it.
+After process `launch` / `attach`, `lldb` completely hands over the control of execution of the process to you, and it *[`lldb`]* gives you commands with which to control it.
 
-The following subsections will layout the **`lldb` prompt commands** offered to control the program –– not the **graphical user interface commands**, those are laid out in section ([§3.6.2 @ Source Code *[Commands Help Menu]*](#source-code-help-menu)).
+The following section will layout the **`lldb` prompt commands** offered to control the program –– not the **graphical user interface commands**, those are laid out in section ([§3.6.2 @ Source Code *[Commands Help Menu]*](#source-code-help-menu)).
 
 ---
 
@@ -2528,9 +2528,9 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 <br>
 
 
-Once the program stops execution *(e.g. due to breakpoint, watchpoint, manual stop, crash, etc ...)*, you will be able to examine *(or inspect)* the state of the process.
+Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual stop, crash, etc ...)*, you will be able to examine *(or inspect)* the state of the process.
 
-The following are the aspects of the process that may be examined:
+## Commands for examining:
 
 - [3.8.1. Source code](#381-source-code)
 - [3.8.2. State of Threads](#382-state-of-threads)
