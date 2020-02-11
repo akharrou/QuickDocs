@@ -2242,15 +2242,13 @@ Contents
 
 Contents
 ---
-- [1 About](#about)
-- [2 Usage Commands *[Help Menus]*](#usage-commands)
-	- [2.1 Common Commands *[Help Menu]*](#common-help-menu)
-	- [2.2 Source Commands *[Help Menu]*](#source-code-help-menu)
-	- [2.3 Variables & Registers Commands *[Help Menu]*](#variables--registers-help-menu)
-	- [2.4 Backtrace Commands *[Help Menu]*](#backtrace-help-menu)
+- [3.8.1 Usage Commands *[Help Menus]*](#usage-commands)
+	- [Common Commands *[Help Menu]*](#common-help-menu)
+	- [Source Commands *[Help Menu]*](#source-code-help-menu)
+	- [Variables & Registers Commands *[Help Menu]*](#variables--registers-help-menu)
+	- [Backtrace Commands *[Help Menu]*](#backtrace-help-menu)
 ---
 
-## About
 
 -	The graphical user interface *[mode of `lldb`]*, or `gui` for short, is what it says it is –– namely, a user interface for `lldb` that is **graphical** *[, rather than textual (**command prompt**)]*.
 
@@ -2288,9 +2286,12 @@ Contents
 	>
 	> *- **end note**]</small>*
 
----
 
-## Usage Commands
+---
+[🏠](#contents) | [⬅️](#35-start-or-attach-program) | [➡️](#38-examine-execution)
+## 3.6.1. Usage Commands
+<small>`[Search Tags: >guiusagecommands >guiusagecmds >usagecommandsgui >usagecmdsgui >graphicaluserinterfaceusagecommands >graphicaluserinterfaceusagecmds >usagecommandsgraphicaluserinterface >usagecmdsgraphicaluserinterface >guicommands >guicmds >commandsgui >cmdsgui >graphicaluserinterfacecommands >graphicaluserinterfacecmds >commandsgraphicaluserinterface >cmdsgraphicaluserinterface]`</small>
+<br>
 
 
 -	#### Enter & Exit `GUI` *[mode]*:
@@ -2299,7 +2300,6 @@ Contents
 
 	*[After starting your program,]* to enter `GUI` *[mode]*, type "`gui`" *[in the `lldb` command prompt]* –– like so:
 
-	>
 	> ```shell
 	> (lldb) run [<arg> ...]
 	> .
