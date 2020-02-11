@@ -2536,10 +2536,10 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 
 Aspects of the process that may be examined:
 
-- [3.8.1. Source code](#)
-- [3.8.2. State of Threads](#)
-- [3.8.3. State of Stack Frames](#)
-- [3.8.4. State of Variables](#)
+- [3.8.1. Source code](#381-source-code)
+- [3.8.2. State of Threads](#382-state-of-threads)
+- [3.8.3. State of Stack Frames](#383-state-of-stack-frames)
+- [3.8.4. State of Variables](#384-state-of-variables)
 
 <br>
 <br>
