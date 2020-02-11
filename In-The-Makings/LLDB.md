@@ -2455,7 +2455,7 @@ Contents
 - [2 Control Commands](#control-commands)
 ---
 
-### [🏠](#contents) About
+## About
 
 After process `launch` / `attach`, `lldb` completely hands over the control of the execution of the process (i.e running program) to you, and it *[`lldb`]* gives you commands with which to control it.
 
@@ -2463,7 +2463,7 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 
 ---
 
-### [🏠](#contents) Control commands:
+## Control commands:
 
 <small>`[Search Tags: >ctrlcommands >controlcommands >cntrlcommands >ctrlcmds >controlcmds >cntrlcmds >commandsctrl >commandscontrol >commandscntrl >cmdsctrl >cmdscontrol >cmdscntrl >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >until >cmduntil >untilcmd >commanduntil >untilcommand >step >cmdstep >stepcmd >commandstep >stepcommand >stepin >stepout >stepover >cmdstepin >cmdstepout >cmdstepover >stepincmd >stepoutcmd >stepovercmd >commandstepin >commandstepout >commandstepover >stepincommand >stepoutcommand >stepovercommand >kill >cmdkill >killcmd >commandkill >killcommand >detach >cmddetach >detachcmd >commanddetach >detachcommand]`</small>
 
