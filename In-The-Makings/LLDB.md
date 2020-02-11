@@ -45,12 +45,12 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.6. Graphical User Interface (`GUI`)](#36-graphical-user-interface-gui)
 		- [3.6.1 About](#about)
 		- [3.6.2 Usage Commands *[Help Menus]*](#usage-commands)
-	- [3.7. Controlling Process Execution](#37-controlling-process-execution)
-	- [3.8. Examination](#38-examination)
+	- [3.7. Control Process Execution](#37-control-process-execution)
+	- [3.8. Examine](#38-examination)
 		- [3.8.1. Source Code](#381-source-code)
-		- [3.8.2. Variable(s)](#382-variables)
-		- [3.8.3. Thread(s)](#383-thread-states)
-		- [3.8.4. Stack Frame(s)](#384-stack-frame-states)
+		- [3.8.2. State of Threads](#382-state-of-threads)
+		- [3.8.3. State of Stack Frames](#383-state-of-stack-frames)
+		- [3.8.4. State of Variables](#384-state-of-variables)
 - [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
 	- [3.1 Makfile](#)
 
@@ -973,7 +973,6 @@ Commands for:
 	- [3.2 Add/Modify Breakpoint Attributes](#add-modify-breakpoint-attributes)
 ---
 
-
 >	*(**Know that**) –– "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions hit-count, auto-continue…) we call breakpoint options."*
 >
 >	*––	[LLDB :: Tutorial :: Breakpoint Names](https://lldb.llvm.org/use/tutorial.html#breakpoint-names)*
@@ -1106,7 +1105,7 @@ Commands for:
 
 	- #### List *[breakpoint]* command(s):
 
-		> <small>`[Search Tags: >breakpointlistcommands >breakpointlistcmds >breakpointlscmds >breakptlistcommands >breakptlistcmds >breakptlscmds >brkptlistcommands >brkptlistcmds >brkptlscmds >brptlistcommands >brptlistcmds >brptlscmds >brlistcommands >brlistcmds >brlscmds >breakpointlicmds >breakptlicmds >brkptlicmds >brptlicmds >brlicmds]`</small>
+		> <small>`[Search Tags: >breakpointlistcommands >breakpointlistcmds >breakpointlscmds >breakptlistcommands >breakptlistcmds >breakptlscmds >brkptlistcommands >brkptlistcmds >brkptlscmds >brptlistcommands >brptlistcmds >brptlscmds >brlistcommands >brlistcmds >brlscmds >breakpointlicmds >breakptlicmds >brkptlicmds >brptlicmds >brlicmds >lsbreakptcmds >lsbrkptcmds >lsbrptcmds >lsbreakptcmds >lsbrkptcmds >lsbrptcmds >lstbreakptcmds >lstbrkptcmds >lstbrptcmds >lstbrcmds >listbreakptcmds >listbrkptcmds >listbrptcmds >listbrcmds >lsbrcmds >lsbreakptcommands >lsbrkptcommands >lsbrptcommands >lsbreakptcommands >lsbrkptcommands >lsbrptcommands >lstbreakptcommands >lstbrkptcommands >lstbrptcommands >lstbrcommands >listbreakptcommands >listbrkptcommands >listbrptcommands >listbrcommands >lsbrcommands]`</small>
 
 		> ***Synopsis:***
 		> ```shell
@@ -1951,12 +1950,12 @@ Commands to:
 <br>
 
 
--	There are two ways to start debugging a process (program):
+-	There are two ways to start debugging a process (running program):
 
-	- Launching one ([§3.5.1](#351-launch-program))
-	- Attaching to *[an already running]* one ([§3.5.2](#352-attach-to-program)) – (i.e joining a running one at whatever point in execution it has reached).
+	-  [`launch`](#351-launch-program)     – Launching one ([§3.5.1](#351-launch-program))
+	-  [`attach`](#352-attach-to-program)  – Attaching to *[an already running]* one ([§3.5.2](#352-attach-to-program))
 
--	*`lldb`* also gives the possibility of configuring things like: where you want the process to be run *(terminal, shell)*, setting environment variables, setting the current working directory, redirecting `stdin`/`out`/`err`, etc – all of which is dicussed in **Advanced Program Configurations** ([§3.5.3](#353-advanced-program-configurations)).
+-	Also, with regards to programs that are `launched gives the possibility of configuring things like: where you want the process to be run *(terminal, shell)*, setting environment variables, setting the current working directory, redirecting `stdin`/`out`/`err`, etc – all of which is dicussed in **Advanced Program Configurations** ([§3.5.3](#353-advanced-program-configurations)).
 
 
 <br>
@@ -2253,7 +2252,7 @@ Contents
 
 ## About
 
--	The graphical user interface *[mode of `lldb`]*, or `gui` for short, is what it says it is –– namely, a user interface for `lldb` that is **graphical**, rather than textual (**command prompt**).
+-	The graphical user interface *[mode of `lldb`]*, or `gui` for short, is what it says it is –– namely, a user interface for `lldb` that is **graphical** *[, rather than textual (**command prompt**)]*.
 
 -	Its advantages are **MASSIVE**. Here are a few:
 
@@ -2276,16 +2275,16 @@ Contents
 
     | Window Pane            | Description
     | :--------------------- | :-----------------
-    | Source                 | Displays, *[currently executing]* and surrounding, *[assembly]* instructions, or if the `-g` flag was used, source code.
+    | Source                 | Displays, *[currently executing]* and surrounding, *[assembly]* instructions, or if the `-g` flag was used *[in compilation]*, source code.
     | Variables              | Displays variables *[, belonging to the current stack frame, ]* and their currently held values.
     | Registers              | Displays registers *[, belonging to the current stack frame, ]* and their currently held values. <!-- POTENTIAL-MISTAKE: Do stack frames have different registers ? -->
     | Backtrace *(Threads & Stack Frames)* | Displays the process's current threads and their stack frames.
 
 	> *<small>[**Note:***
 	>
-	> -	*The "registers" window pane is not visible on entry of the `gui`, you must toggle it on, from the source code window pane, top menu; <!--(§ SECTION )-->.*
+	> -	*The "registers" window pane is not visible on entry of the `gui`, you must toggle it on, from: >Source Code View > Top Menu > Views > Registers; <!--(§ SECTION )-->.*
 	>
-	> -	*The **variable** and **register** window panes are toggleable, i.e you can choose to have them displayed or not.*
+	>	![Toggle Register View](../Assets/LLDB/toggle-register-view.png)
 	>
 	> *- **end note**]</small>*
 
@@ -2446,7 +2445,7 @@ Contents
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-## 3.7. Controlling Process Execution
+## 3.7. Control Process Execution
 <small>`[Search Tags: >lldb.controlprocessexecution >lldbcontrolprocessexecution >debugger.controlprocessexecution >debuggercontrolprocessexecution >controlprocessexecution >contrlprocessexecution >cntrlprocessexecution >ctrlprocessexecution >controlprcsexecution >contrlprcsexecution >cntrlprcsexecution >ctrlprcsexecution >controlprcsexecs >contrlprcsexecs >cntrlprcsexecs >ctrlprcsexecs >controlsection >ctrlsection >processcontrolsection >prcsctrlsection >prcscontrolsection >processcontrolsection >lldb.controlprogramexecution >lldbcontrolprogramexecution >debugger.controlprogramexecution >debuggercontrolprogramexecution >controlprogramexecution >contrlprogramexecution >cntrlprogramexecution >ctrlprogramexecution >controlprogexecution >controlprogsexecution >contrlprogexecution >contrlprogsexecution >cntrlprogexecution >cntrlprogsexecution >ctrlprogexecution >ctrlprogsexecution >controlprogexecs >controlprogsexecs >contrlprogexecs >contrlprogsexecs >cntrlprogexecs >cntrlprogsexecs >ctrlprogexecs >ctrlprogsexecs >controlsection >ctrlsection >programcontrolsection >progctrlsection >progsctrlsection >progcontrolsection >progscontrolsection >programcontrolsection]`</small>
 <br>
 
@@ -2521,15 +2520,23 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 ---
 [🏠](#contents) | [⬅️](#36-graphical-user-interface-gui) | [➡️](#381-source-code)
 ## 3.8. Examination
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >lldb.examine >lldbexamine >debuggerexamine >debugger.examine >lldb.examination >lldbexamination >debuggerexamination >debugger.examination >lldb.examinating >lldbexaminating >debuggerexaminating >debugger.examinating >examine >examination >examinating]`</small>
 <br>
 <br>
 
 
-> TODO: ## 3.8. Examination
+---
+> *When the program stops during execution 'for a `<reason>`' *(e.g.: breakpoint, watchpoint, manual-stop, crash, etc ...)*, `lldb` will choose a current thread, usually the one that stopped, and a current frame in that thread *(on stop this is always the bottom-most frame)*.*
+>
+>	*––	[LLDB :: Tutorial :: Examine Thread State](https://lldb.llvm.org/use/tutorial.html#examining-thread-state)*
+---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+Aspects of the process that may be examined:
 
+- [3.8.1. Source code](#)
+- [3.8.2. State of Threads](#)
+- [3.8.3. State of Stack Frames](#)
+- [3.8.4. State of Variables](#)
 
 <br>
 <br>
@@ -2544,29 +2551,32 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#38-examine-execution) | [➡️](#382-variables)
 ### 3.8.1. Source Code
-<small>`[Search Tags: >sourcecodelldb >lldb.sourcecode >lldbsourcecode]`</small>
+<small>`[Search Tags: >sourcecodelldb >lldb.sourcecode >lldbsourcecode >examinesourcecode >sourcecodeexamine >sourcecodeexamination >examinesourcecde >sourcecdeexamine >sourcecdeexamination >examinesrccode >srccodeexamine >srccodeexamination >examinesrccde >srccdeexamine >srccdeexamination >examinecode >examinecode >scodeexamine >scodeexamine]`</small>
 <br>
 <br>
 
-> *`gui` mode displays the source code that is currently executing, in one of the window panes.*
+
+> *<small>[**Note:** `gui` mode already displays the source code automatically during execution –– this is for textual mode. - **end note**]</small>*
+>
+> ---
 
 -	***List source code:***
 
-	> <small>`[Search Tags: >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso]`</small>
+	> <small>`[Search Tags: >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
 
 	> ***Synopsis:***
 	> ```shell
 	> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <linenum>]
-	> source list [--show-breakpoints] [--count <count>] [--name <symbol>]
+	> source list [--show-breakpoints] [--count <count>] [--name <program-symbol>]
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) source list --count 20 --file main.c --line 5
+	> (lldb) source list --count 20 --file main.c --line 5    # list <count> lines from <file> starting from line <line>
 	> (lldb) so li -c 20 -f main.c -l 5
 	> ```
 	> ```shell
-	> (lldb) source list --count 25 --name foo
+	> (lldb) source list --count 25 --name foo                # list <count> lines having to do with <program-symbol>
 	> (lldb) so li -c 25 -n foo
 	> ```
 
@@ -2582,39 +2592,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-[🏠](#contents) | [⬅️](#381-source-code) | [➡️](#383-thread-states)
-### 3.8.2. Variable(s)
-<small>`[Search Tags: >]`</small>
-<br>
-<br>
-
-
-> TODO: ### 3.8.2. Variable(s)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
 [🏠](#contents) | [⬅️](#382-variables) | [➡️](#384-stack-frame-states)
-### 3.8.3. Thread State(s)
+### 3.8.2. State of Threads
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.8.3. Thread State(s)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+To inspect the current state of your process, you can start with the threads:
 
 
 <br>
@@ -2629,13 +2614,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 [🏠](#contents) | [⬅️](#383-thread-states) | [➡️](#39-graphical-user-interface-gui)
-### 3.8.4. Stack Frame State(s)
+### 3.8.3. State of Stack Frames
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.8.4. Stack Frame State(s)
+> TODO: ### 3.8.3. Stack Frame State(s)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
@@ -2648,6 +2633,30 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#381-source-code) | [➡️](#383-thread-states)
+### 3.8.4. State of Variables
+<small>`[Search Tags: >]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.8.4. Variable(s)
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
 
 
 ---
