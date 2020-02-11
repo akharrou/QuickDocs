@@ -2439,11 +2439,11 @@ Contents
 >
 > | # | Type               | Author           | Link
 > | - | :----------------- | :--------------- | :-------------------------
-> | 1 | Manual Page        | LLDB             | `(lldb) help gui`
-> | 2 | Manual Page        | LLDB             | `(lldb-gui-source-view) h`
-> | 3 | Manual Page        | LLDB             | `(lldb-gui-variables-view) h`
-> | 4 | Manual Page        | LLDB             | `(lldb-gui-registers-view) h`
-> | 5 | Manual Page        | LLDB             | `(lldb-gui-backtrace-view) h`
+> | 1 | Manual Page        | Unix / Linux / MacOS | `(lldb) help gui`
+> | 2 | Manual Page        | Unix / Linux / MacOS | `(lldb-gui-source-view) h`
+> | 3 | Manual Page        | Unix / Linux / MacOS | `(lldb-gui-variables-view) h`
+> | 4 | Manual Page        | Unix / Linux / MacOS | `(lldb-gui-registers-view) h`
+> | 5 | Manual Page        | Unix / Linux / MacOS | `(lldb-gui-backtrace-view) h`
 
 
 ---
@@ -2504,20 +2504,20 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 > | - | ------------------ | ---------------- | --------------------------
 > | 1 | Documentation | LLDB | [(Official) Tutorial \| GDB to LLDB command map](https://lldb.llvm.org/use/map.html)
 > |||
-> | 2 | Manual Page        | LLDB             | `(lldb) help thread`
+> | 2 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread`
 > |||
-> | 3 | Manual Page        | LLDB             | `(lldb) help continue`
-> | 4 | Manual Page        | LLDB             | `(lldb) help thread until`
+> | 3 | Manual Page        | Unix / Linux / MacOS | `(lldb) help continue`
+> | 4 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread until`
 > |||
-> | 5 | Manual Page        | LLDB             | `(lldb) help thread step-in`
-> | 6 | Manual Page        | LLDB             | `(lldb) help thread step-out`
-> | 7 | Manual Page        | LLDB             | `(lldb) help thread step-over`
+> | 5 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread step-in`
+> | 6 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread step-out`
+> | 7 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread step-over`
 > |||
-> | 8 | Manual Page        | LLDB             | `(lldb) help thread step-inst`
-> | 9 | Manual Page        | LLDB             | `(lldb) help thread stepi-inst-over`
+> | 8 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread step-inst`
+> | 9 | Manual Page        | Unix / Linux / MacOS | `(lldb) help thread stepi-inst-over`
 > |||
-> | 10 | Manual Page        | LLDB             | `(lldb) help kill`
-> | 11 | Manual Page        | LLDB             | `(lldb) help detach`
+> | 10 | Manual Page        | Unix / Linux / MacOS | `(lldb) help kill`
+> | 11 | Manual Page        | Unix / Linux / MacOS | `(lldb) help detach`
 
 
 ---
@@ -2544,9 +2544,9 @@ The following are the aspects of the process that may be examined:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page        | LLDB                   | `(lldb) help source`
-> | 2 | Manual Page        | LLDB                   | `(lldb) help thread`
-> | 3 | Manual Page        | LLDB                   | `(lldb) help frame`
+> | 1 | Manual Page        | Unix / Linux / MacOS   | `(lldb) help source`
+> | 2 | Manual Page        | Unix / Linux / MacOS   | `(lldb) help thread`
+> | 3 | Manual Page        | Unix / Linux / MacOS   | `(lldb) help frame`
 > | 4 | Documentation      | LLDB                   | [(Official) Tutorial](https://lldb.llvm.org/use/tutorial.html#examining-thread-state)
 > | 5 | Documentation      | LLDB                   | [GDB to LLDB Command Map](https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state)
 > | 6 | Documentation      | Apple                  | [LLDB Quick Start Tutorial](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html)
