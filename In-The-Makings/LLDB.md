@@ -46,7 +46,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.6.1 About](#about)
 		- [3.6.2 Usage Commands *[Help Menus]*](#usage-commands)
 	- [3.7. Control Process Execution](#37-control-process-execution)
-	- [3.8. Examine](#38-examination)
+	- [3.8. Examine](#38-examine)
 		- [3.8.1. Source Code](#381-source-code)
 		- [3.8.2. State of Threads](#382-state-of-threads)
 		- [3.8.3. State of Stack Frames](#383-state-of-stack-frames)
@@ -2528,13 +2528,9 @@ The following subsections will layout the **`lldb` prompt commands** offered to 
 <br>
 
 
----
-> *When the program stops during execution 'for a `<reason>`' *(e.g.: breakpoint, watchpoint, manual-stop, crash, etc ...)*, `lldb` will choose a current thread, usually the one that stopped, and a current frame in that thread *(on stop this is always the bottom-most frame)*.*
->
->	*––	[LLDB :: Tutorial :: Examine Thread State](https://lldb.llvm.org/use/tutorial.html#examining-thread-state)*
----
+Once the program stops execution *(e.g. due to breakpoint, watchpoint, manual stop, crash, etc ...)*, you will be able to examine *(or inspect)* the state of the process.
 
-Aspects of the process that may be examined:
+The following are the aspects of the process that may be examined:
 
 - [3.8.1. Source code](#381-source-code)
 - [3.8.2. State of Threads](#382-state-of-threads)
@@ -2548,8 +2544,12 @@ Aspects of the process that may be examined:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
+> | 1 | Manual Page        | LLDB                   | `(lldb) help source`
+> | 2 | Manual Page        | LLDB                   | `(lldb) help thread`
+> | 3 | Manual Page        | LLDB                   | `(lldb) help frame`
+> | 4 | Documentation      | LLDB                   | [(Official) Tutorial](https://lldb.llvm.org/use/tutorial.html#examining-thread-state)
+> | 5 | Documentation      | LLDB                   | [GDB to LLDB Command Map](https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state)
+> | 6 | Documentation      | Apple                  | [LLDB Quick Start Tutorial](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html)
 
 ---
 [🏠](#contents) | [⬅️](#38-examine-execution) | [➡️](#382-variables)
@@ -2598,7 +2598,7 @@ Aspects of the process that may be examined:
 ---
 [🏠](#contents) | [⬅️](#382-variables) | [➡️](#384-stack-frame-states)
 ### 3.8.2. State of Threads
-<small>`[Search Tags: >threadexamination >examinationthread >examthreads >threadsexam >threadexam >examthrds >thrdsexam >thrdexam >examinthreads >threadsexamin >threadexamin >examinthrds >thrdsexamin >thrdexamin >examinethreads >threadsexamine >threadexamine >examinethrds >thrdsexamine >thrdexamine >examinatingthreads >threadsexaminating >threadexaminating >examinatingthrds >thrdsexaminating >thrdexaminating]`</small>
+<small>`[Search Tags: >threadexamination >examinationthread >examthreads >threadsexam >threadexam >examthrds >thrdsexam >thrdexam >examinthreads >threadsexamin >threadexamin >examinthrds >thrdsexamin >thrdexamin >examinethreads >threadsexamine >threadexamine >examinethrds >thrdsexamine >thrdexamine >examinatingthreads >threadsexaminating >threadexaminating >examinatingthrds >thrdsexaminating >thrdexaminating >threadsstate >thrdsstate >threadstate >thrdstate >thrsstate >thrstate >thsstate >thstate >tsstate >tstate >statethreads >statethrds >statethread >statethrd >statethrs]`</small>
 <br>
 <br>
 
@@ -2754,20 +2754,22 @@ To inspect the current state of your process, you can start with the threads:
 
 > ***Further Reading:***
 >
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | LLDB | `(lldb) help thread list`
-> | 2 | Manual Page | LLDB | `(lldb) help thread select`
-> | 3 | Manual Page | LLDB | `(lldb) help thread info`
-> | 4 | Manual Page | LLDB | `(lldb) help thread backtrace`
-> | 5 | Encyclopedia | Wikipedia | [Stack Trace](https://en.wikipedia.org/wiki/Stack_trace)
-> | 6 | Documentation | GNU | [Backtraces](https://www.gnu.org/software/libc/manual/html_node/Backtraces.html)
+> | # | Type               | Author    | Link
+> | - | ------------------ | --------- | --------------------------
+> | 1 | Manual Page        | LLDB      | `(lldb) help thread list`
+> | 2 | Manual Page        | LLDB      | `(lldb) help thread select`
+> | 3 | Manual Page        | LLDB      | `(lldb) help thread info`
+> | 4 | Manual Page        | LLDB      | `(lldb) help thread backtrace`
+> | 5 | Documentation      | LLDB      | [(Official) Tutorial :: Examine Thread State](https://lldb.llvm.org/use/tutorial.html#examining-thread-state)
+> | 6 | Documentation      | LLDB      | [Gdb to LLDB Command Map :: Examine Thread State](https://lldb.llvm.org/use/map.html?highlight=watchpoints#examining-thread-state)
+> | 7 | Encyclopedia       | Wikipedia | [Stack Trace](https://en.wikipedia.org/wiki/Stack_trace)
+> | 8 | Documentation      | GNU       | [Backtraces](https://www.gnu.org/software/libc/manual/html_node/Backtraces.html)
 
 
 ---
 [🏠](#contents) | [⬅️](#383-thread-states) | [➡️](#39-graphical-user-interface-gui)
 ### 3.8.3. State of Stack Frames
-<small>`[Search Tags: >stackexamination >examinationstack >examstacks >stacksexam >stackexam >examstcks >examstks >stcksexam >stksexam >stckexam >stkexam >examinstacks >stacksexamin >stackexamin >examinstcks >examinstks >stcksexamin >stksexamin >stckexamin >stkexamin >examinestacks >stacksexamine >stackexamine >examinestcks >examinestks >stcksexamine >stksexamine >stckexamine >stkexamine >examinatingstacks >stacksexaminating >stackexaminating >examinatingstcks >examinatingstks >stcksexaminating >stksexaminating >stckexaminating >stkexaminating >frameexamination >examinationframe >examframes >framesexam >frameexam >examfrms >examfrs >frmsexam >frsexam >frmexam >frexam >examinframes >framesexamin >frameexamin >examinfrms >examinfrs >frmsexamin >frsexamin >frmexamin >frexamin >examineframes >framesexamine >frameexamine >examinefrms >examinefrs >frmsexamine >frsexamine >frmexamine >frexamine >examinatingframes >framesexaminating >frameexaminating >examinatingfrms >examinatingfrs >frmsexaminating >frsexaminating >frmexaminating >frexaminating]`</small>
+<small>`[Search Tags: >stackexamination >examinationstack >examstacks >stacksexam >stackexam >examstcks >examstks >stcksexam >stksexam >stckexam >stkexam >examinstacks >stacksexamin >stackexamin >examinstcks >examinstks >stcksexamin >stksexamin >stckexamin >stkexamin >examinestacks >stacksexamine >stackexamine >examinestcks >examinestks >stcksexamine >stksexamine >stckexamine >stkexamine >examinatingstacks >stacksexaminating >stackexaminating >examinatingstcks >examinatingstks >stcksexaminating >stksexaminating >stckexaminating >stkexaminating >frameexamination >examinationframe >examframes >framesexam >frameexam >examfrms >examfrs >frmsexam >frsexam >frmexam >frexam >examinframes >framesexamin >frameexamin >examinfrms >examinfrs >frmsexamin >frsexamin >frmexamin >frexamin >examineframes >framesexamine >frameexamine >examinefrms >examinefrs >frmsexamine >frsexamine >frmexamine >frexamine >examinatingframes >framesexaminating >frameexaminating >examinatingfrms >examinatingfrs >frmsexaminating >frsexaminating >frmexaminating >frexaminating >stacksstate >stcksstate >stackstate >stckstate >stksstate >stkstate >stsstate >ststate >tsstate >tstate >statestacks >statestcks >statestack >statestck >statestks >framesstate >frmsstate >framestate >frmstate >frsstate >frstate >stsstate >ststate >tsstate >tstate >stateframes >statefrms >stateframe >statefrm >statefrs]`</small>
 <br>
 <br>
 
@@ -2804,6 +2806,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Documentation | LLDB | [Gdb to LLDB Command Map :: Examine Variables](https://lldb.llvm.org/use/map.html?highlight=watchpoints#examining-variables)
 > | 1 | n/a               | n/a                    | n/a
 
 
