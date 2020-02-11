@@ -2417,6 +2417,7 @@ Contents
 
 	> <small>`[Search Tags: >backtraceguihelpmenu >backtraceguimenu >backtraceguipage >backtracehelpmenu >backtracemenu >backtracepage >btguihelpmenu >btguimenu >btguipage >bthelpmenu >btmenu btpage >guipanesthreads >guipanesthrds >guipanesthreads >guipanesthrds >guipanethreads >guipanethrds >guipanethreads >guipanethrds >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guithreadspanes >guithrdspanes >guipanesstackframes >guipanesstckframes >guipanestackframes >guipanestckframes >guipanesframes >guipaneframes >guistackframes >guistckframes >guiframes >guiframes >guibacktracehelp >helpbacktrace >hbracktrace >hbt >guibt >helpbt]`</small>
 
+
 	> | Key         | Action                                         |
 	> | :---------- | :--------------------------------------------- |
 	> | `up`        | Select previous item                           |
@@ -2591,15 +2592,24 @@ Aspects of the process that may be examined:
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | LLDB | `(lldb) help source list`
+> | 2 | Manual Page | LLDB | `(lldb) help source info`
 
 
 ---
 [🏠](#contents) | [⬅️](#382-variables) | [➡️](#384-stack-frame-states)
 ### 3.8.2. State of Threads
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >threadexamination >examinationthread >examthreads >threadsexam >threadexam >examthrds >thrdsexam >thrdexam >examinthreads >threadsexamin >threadexamin >examinthrds >thrdsexamin >thrdexamin >examinethreads >threadsexamine >threadexamine >examinethrds >thrdsexamine >thrdexamine >examinatingthreads >threadsexaminating >threadexaminating >examinatingthrds >thrdsexaminating >thrdexaminating]`</small>
 <br>
 <br>
 
+
+Commands to:
+---
+- [1 List threads](#list-threads)
+- [2 Thread information](#thread-information)
+- [3 Select *[current]* thread](#select-current-thread)
+- [4 Thread backtrace](#thread-backtrace)
+---
 
 To inspect the current state of your process, you can start with the threads:
 
@@ -2619,12 +2629,18 @@ To inspect the current state of your process, you can start with the threads:
 	> (lldb) thread list
 	> (lldb) th l
 	> ```
-	>
-	> ***Output:***
 	> ```shell
-	> * thread #1: tid = 0x2c03, 0x00007fff85cac76a, where = libSystem.B.dylib`__getdirentries64 + 10, stop reason = signal = SIGSTOP, queue = com.apple.main-thread
-	> thread #2: tid = 0x2e03, 0x00007fff85cbb08a, where = libSystem.B.dylib`kevent + 10, queue = com.apple.libdispatch-manager
-	> thread #3: tid = 0x2f03, 0x00007fff85cbbeaa, where = libSystem.B.dylib`__workq_kernreturn + 10 -->
+	> * thread #1: tid = 0xa3727, 0x0000000100003b49 a`main(ac=1, av=0x00007ffeefbff5b0) at threadedHello.cpp:29, queue = 'com.apple.main-thread', stop reason = one-shot breakpoint 3
+	>   thread #2: tid = 0xa37da, 0x00007fff621d5d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>   thread #3: tid = 0xa37db, 0x00007fff621d5d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>   thread #4: tid = 0xa37dc, 0x00007fff621d5d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>   thread #5: tid = 0xa37dd, 0x00007fff621d5d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>   thread #6: tid = 0xa37de, 0x00007fff621d5d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>   thread #7: tid = 0xa37df, 0x00007fff621d5d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>   thread #8: tid = 0xa37e0, 0x00007fff621d5d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>   thread #9: tid = 0xa37e1, 0x00007fff621d5d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>   thread #10: tid = 0xa37e2, 0x00007fff621d5d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>   thread #11: tid = 0xa37e3, 0x000000010013d7e0 libclang_rt.asan_osx_dynamic.dylib`__asan::ReportGenericError(unsigned long, unsigned long, unsigned long, unsigned long, bool, unsigned long, unsigned int, bool)
 	> ```
 
 	> *<small>[**Note:** The `*` indicates that `thread #1` is the current thread. - **end note**]</small>*
@@ -2650,15 +2666,46 @@ To inspect the current state of your process, you can start with the threads:
 	>
 	> -	*The `select`'ed thread will be used by default in all the commands in the next section.*
 	>
-	> -	*Thread index is just the one shown in the “thread list” listing.*
+	> -	*Thread index is just the one shown in the `thread list` listing.*
 	>
 	> *- **end note**]</small>*
 
 <br>
 
+-	#### Thread information:
+
+	> <small>`[Search Tags: >infothreads >threadsinfo >threadinfo >infothrds >thrdsinfo >thrdinfo >informationthreads >threadsinformation >threadinformation >informationthrds >thrdsinformation >thrdinformation >infthreads >infthrds]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> thread info [--json] [--stop-info] [<thread-index> | all]
+	> ```
+	>
+	> ```shell
+	> (lldb) thread info --json
+	> (lldb) th i -j
+	> ```
+	> ```shell
+	> thread #1: tid = 0x9dbb2, 0x0000000100000a6c a`foo(iterations=0x00006020000000f0) at loopInput.c:11, queue = 'com.apple.main-thread', stop reason = step in
+	> 	> {
+	>   "dispatch_queue_t" : 140735783837760,
+	>   "pthread_t" : 140735784059776,
+	>   "requested_qos" : {
+	>     "constant_name" : "QOS_CLASS_USER_INTERACTIVE",
+	>     "enum_value" : 33,
+	>     "printable_name" : "User Interactive"
+	>   },
+	>   "tsd_address" : 140735784060000
+	> }
+	> ```
+
+	> *<small>[**Note:** The `*` indicates that `thread #1` is the current thread. - **end note**]</small>*
+
+<br>
+
 -	#### Thread backtrace:
 
-	> <small>`[Search Tags: >selectthreads >selctthreads >selcthreads >threadsselect >threadselect >threadsselct >threadselct >threadsslct >threadslct >slctthreads >slctthread >selectthrds >selctthrds >selcthrds >thrdsselect >thrdlist >thrdsselct >thrdselct >thrdsslct >thrdslct >slctthrds >slctthrd]`</small>
+	> <small>`[Search Tags: >threadsbactrace >threadsbactrace >thrdbactrace >thrdsbactrace >bactracethreads >bactracethrds >backtracethread >threadbacktrace >backtrcethread >threadbacktrce >bcktrcethread >threadbcktrce >bcktracethread >threadbcktrace >bcktrthread >threadbcktr >bktrthread >threadbktr >btthread >threadbt >backtracethrds >backtracethrd >thrdsbacktrace >thrdbacktrace >backtrcethrds >backtrcethrd >thrdsbacktrce >thrdbacktrce >bcktrcethrds >bcktrcethrd >thrdsbcktrce >thrdbcktrce >bcktracethrds >bcktracethrd >thrdsbcktrace >thrdbcktrace >bcktrthrds >bcktrthrd >thrdsbcktr >thrdbcktr >bktrthrds >bktrthrd >thrdsbktr >thrdbktr >btthrds >btthrd >thrdsbt >thrdbt >stacktracethread >threadstacktrace >stacktrcethread >threadstacktrce >stacktracethrds >stacktracethrd >thrdsstacktrace >thrdstacktrace >stacktrcethrds >stacktrcethrd >thrdsstacktrce >thrdstacktrce >stcktracethread >stktracethread >threadstcktrace >threadstktrace >stcktrcethread >stktrcethread >threadstcktrce >threadstktrce >stcktracethrds >stktracethrds >stcktracethrd >stktracethrd >thrdsstcktrace >thrdsstktrace >thrdstcktrace >thrdstktrace >stcktrcethrds >stktrcethrds >stcktrcethrd >stktrcethrd >thrdsstcktrce >thrdsstktrce >thrdstcktrce >thrdstktrce]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -2668,22 +2715,18 @@ To inspect the current state of your process, you can start with the threads:
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) thread backtrace
+	> (lldb) thread backtrace                         # display current thread's backtrace
 	> (lldb) th b
 	> (lldb) bt
 	> ```
-	>
 	> ```shell
-	> (lldb) thread backtrace --count 2 --start 4
+	> (lldb) thread backtrace --count 2 --start 4     # display 2 stack frames from the backtrace of current thread starting from stack frame #4
 	> (lldb) th b -c 2 -s 4
 	> ```
-	>
 	> ```shell
-	> (lldb) thread backtrace all
+	> (lldb) thread backtrace all                     # display backtrace of all active threads in the process
 	> (lldb) th b all
 	> ```
-	>
-	> ***Output:***
 	> ```shell
 	> thread #1: tid = 0x2c03, stop reason = breakpoint 1.1, queue = com.apple.main-thread
 	> frame #0: 0x0000000100010d5b, where = Sketch`-[SKTGraphicView alignLeftEdges:] + 33 at /Projects/Sketch/SKTGraphicView.m:1405
@@ -2713,20 +2756,22 @@ To inspect the current state of your process, you can start with the threads:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | LLDB | `(lldb) help thread list`
+> | 2 | Manual Page | LLDB | `(lldb) help thread select`
+> | 3 | Manual Page | LLDB | `(lldb) help thread info`
+> | 4 | Manual Page | LLDB | `(lldb) help thread backtrace`
+> | 5 | Encyclopedia | Wikipedia | [Stack Trace](https://en.wikipedia.org/wiki/Stack_trace)
+> | 6 | Documentation | GNU | [Backtraces](https://www.gnu.org/software/libc/manual/html_node/Backtraces.html)
 
 
 ---
 [🏠](#contents) | [⬅️](#383-thread-states) | [➡️](#39-graphical-user-interface-gui)
 ### 3.8.3. State of Stack Frames
-<small>`[Search Tags: >]`</small>
+<small>`[Search Tags: >stackexamination >examinationstack >examstacks >stacksexam >stackexam >examstcks >examstks >stcksexam >stksexam >stckexam >stkexam >examinstacks >stacksexamin >stackexamin >examinstcks >examinstks >stcksexamin >stksexamin >stckexamin >stkexamin >examinestacks >stacksexamine >stackexamine >examinestcks >examinestks >stcksexamine >stksexamine >stckexamine >stkexamine >examinatingstacks >stacksexaminating >stackexaminating >examinatingstcks >examinatingstks >stcksexaminating >stksexaminating >stckexaminating >stkexaminating >frameexamination >examinationframe >examframes >framesexam >frameexam >examfrms >examfrs >frmsexam >frsexam >frmexam >frexam >examinframes >framesexamin >frameexamin >examinfrms >examinfrs >frmsexamin >frsexamin >frmexamin >frexamin >examineframes >framesexamine >frameexamine >examinefrms >examinefrs >frmsexamine >frsexamine >frmexamine >frexamine >examinatingframes >framesexaminating >frameexaminating >examinatingfrms >examinatingfrs >frmsexaminating >frsexaminating >frmexaminating >frexaminating]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.8.3. Stack Frame State(s)
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
 
 <br>
