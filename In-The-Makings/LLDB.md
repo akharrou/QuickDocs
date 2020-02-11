@@ -2282,7 +2282,7 @@ Contents
 
 	> *<small>[**Note:***
 	>
-	> -	*The "registers" window pane is not visible on entry of the `gui`, you must toggle it on, from: >Source Code View > Top Menu > Views > Registers; <!--(§ SECTION )-->.*
+	> -	*The "registers" window pane is not visible on entry of the `gui`, you must toggle it on, from: `>Source Code View > Top Menu > Views > Registers`.*
 	>
 	>	![Toggle Register View](../Assets/LLDB/toggle-register-view.png)
 	>
