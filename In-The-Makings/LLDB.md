@@ -2943,9 +2943,6 @@ Commands to:
 	>
 	> ***[Example] Output:***
 	> ```shell
-	> (int) ac = 2
-	> (char **) av = 0x00007ffeefbff5a8
-	> (int *) userInputCount = 0x00006020000000f0
 	> (lldb) fr v -s -g -P 3
 	> ARG: (int) ac = 2
 	> ARG: (char **) av = 0x00007ffeefbff5a8 {
