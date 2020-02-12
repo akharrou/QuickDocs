@@ -34,7 +34,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.1. Compile Program](#31-compile-program)
 		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g---o0)
 		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
-		- [3.1.3 Makfile Setup](#)
+		- [3.1.3 Makfile Setup](#313-makfile-setup)
 	- [3.2. Run LLDB](#32-run-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
 	- [3.4. Setup LLDB](#34-setup-lldb)
@@ -48,31 +48,59 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.6.2 Usage Commands *[Help Menus]*](#usage-commands)
 	- [3.7. Control Process Execution](#37-control-process-execution)
 	- [3.8. Examine](#38-examine)
-		- [3.8.1. Source Code](#381-source-code)
-		- [3.8.2. State of Threads](#382-state-of-threads)
-		- [3.8.3. State of Stack Frames](#383-state-of-stack-frames)
-		- [3.8.4. State of Variables](#384-state-of-stack-frame-variables)
-	<!-- - [3.9. Beyond Basics: Advanced *[`LLDB`]* Commands](#38-examine)
-		- [`bugreport`](#)
-		- [`disassemble`](#)
-		- [`command`](#)
-		- [`expression`](#)
-		- [`log`](#)
-			- [`disable`](#) -- Disable one or more log channel categories.
-			- [`enable`](#)  -- Enable logging for a single log channel.
-			- [`list`](#)    -- List the log categories for one or more log channels.  If none specified, lists them all.
-			- [`timers`](#)  -- Enable, disable, dump, and reset LLDB internal performance timers.
-		- [`memory`](#)
-			- [`find`](#)    -- Find a value in the memory of the current target process.
-			- [`history`](#) -- Print recorded stack traces for allocation/deallocation events associated with an address.
-			- [`read`](#)    -- Read from the memory of the current target process.
-			- [`region`](#)  -- Get information on the memory region containing an address in the current target process.
-			- [`write`](#)   -- Write to the memory of the current target process.
-		- [`register`](#)
-			- [`read`](#)  -- Dump the contents of one or more register values from the current frame.  If no register is specified, dumps them all.
-			- [`write`](#) -- Modify a single register value.
-		- [`script`](#)
-		- [`settings`](#) -->
+		- [3.8.1. Source code](#381-source-code)
+		- [3.8.2. Threads](#382-threads)
+		- [3.8.3. Stack Frames](#383-stack-frames)
+		- [3.8.4. Variables](#384-variables)
+		- [3.8.5. Registers](#385-registers)                               <!-- w/ `register` -->
+		- [3.8.6. Expressions](#386-expressions)                           <!-- w/ `expression` -->
+		- [3.8.7. Memory *(Advanced)*](#387-memory)                                     <!-- w/ `memory` -->
+		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)   <!-- w/ `disassemble` -->
+	- [3.9. Self-Help: `help` & `apropos` commands](#)
+- [4. Beyond Basics *(Advanced)*](#3-how-do-i-use-it-)
+	- [4.1. `LLDB` Settings](#38-examine)
+	- [4.2. `LLDB` Commands](#38-examine)
+	- [4.3. `LLDB` Logging](#38-examine)
+	- [4.4. `LLDB` Bugreporting](#38-examine)
+
+<!--
+- [3.8.7. Memory](#387-memory)
+  	- [`find`](#)    -- Find a value in the memory of the current target process.
+  	- [`history`](#) -- Print recorded stack traces for allocation/deallocation events associated with an address.
+  	- [`read`](#)    -- Read from the memory of the current target process.
+  	- [`region`](#)  -- Get information on the memory region containing an address in the current target process.
+  	- [`write`](#)   -- Write to the memory of the current target process.
+
+  - [`settings`](#)
+  	- [`append`](#)  -- Append one or more values to a debugger array, dictionary, or string setting.
+  	- [`clear`](#)   -- Clear a debugger setting array, dictionary, or string.
+  	- [`insert-after`](#) -- Insert one or more values into a debugger array settings after the specified element index.
+  	- [`insert-before`](#) -- Insert one or more values into an debugger array setting immediately before the specified element
+                       index.
+  	- [`list`](#)    -- List and describe matching debugger settings. Defaults to all listing all settings.
+  	- [`remove`](#)  -- Remove a value from a setting, specified by array index or dictionary key.
+  	- [`replace`](#) -- Replace the debugger setting value specified by array index or dictionary key.
+  	- [`set`](#)     -- Set the value of the specified debugger setting.
+  	- [`show`](#)    -- Show matching debugger settings and their current values. Defaults to showing all settings.
+
+  - [`command`](#)
+  	- [`alias  `](#) -- Define a custom command in terms of an existing command.  Expects 'raw' input (see 'help raw-input'.)
+  	- [`delete `](#) -- Delete one or more custom commands defined by 'command regex'.
+  	- [`history`](#) -- Dump the history of commands in this session.
+  	- [`regex  `](#) -- Define a custom command in terms of existing commands by matching regular expressions.
+  	- [`script `](#) -- Commands for managing custom commands implemented by interpreter scripts.
+  	- [`source `](#) -- Read and execute LLDB commands from the file <filename>.
+  	- [`unalias`](#) -- Delete one or more custom commands defined by 'command alias'.
+
+  - [`log`](#)
+  	- [`disable`](#) -- Disable one or more log channel categories.
+  	- [`enable`](#)  -- Enable logging for a single log channel.
+  	- [`list`](#)    -- List the log categories for one or more log channels.  If none specified, lists them all.
+  	- [`timers`](#)  -- Enable, disable, dump, and reset LLDB internal performance timers.
+
+  - [`script`](#)
+  - [`bugreport`](#)
+ -->
 
 
 <!-- >Start --------------------------------------------------------------------
@@ -392,6 +420,139 @@ Contents
 > | 1 | Documentation | Apple |[Sanitizers Family](https://developer.apple.com/documentation/code_diagnostics/)
 > | 2 | Documentation | Clang | [Sanitizers Family](https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation)
 > | 3 | Documentation | GNU | [Sanitizers Family (scroll down) ](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html#-fsanitize=address)
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.1.3 Makfile Setup
+<small>`[Search Tags: >lldb.makefilesetup >lldbmakefilesetup >debugger.makefilesetup >debug.makefilesetup >debuggermakefilesetup >debugmakefilesetup >makefilesetup >mkfilesetup >mkflsetup >mkflstup >mkflsup]`</small>
+<br>
+<br>
+
+> *Umm ... first [*what's a `makefile` ?*](https://en.wikipedia.org/wiki/Makefile) and second, [*how do I use it ?*](https://www.gnu.org/software/make/manual/make.html)*
+---
+
+The following link below, suggests a `Makefile` *[template]* that hopefully can make convenient the compilation of programs with the [debug](#311-debug-flags--g---o0) and [`fsantize`](#312-sanitizer-flags--fsanitize-family) flags.
+
+> To use; call `make` or `make all` to compile normally and call `make debug` to compile with debug and `fsanitize` flags.
+>
+> ```makefile
+> # Makefile (for C programs)
+>
+> # Program Name  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> NAME        =   Program
+>
+>
+> # Header Files  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> HEADERS     =                                                                 \
+>                 Includes/____.h                                               \
+>                 Includes/____.h                                               \
+>                 Includes/____.h                                               \
+>                 ...                                                           \
+>
+>
+> # Source Files  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> SOURCES     =                                                                 \
+>                 Sources/main.c                                                \
+>                 Sources/____.c                                                \
+>                 Sources/____.c                                                \
+>                 ...                                                           \
+>
+>
+> # Object Files  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> OBJECTS     =   $(SOURCES:.c=.o)
+>
+>
+> # Compilation Flags  — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> CC          =   gcc
+> CSTANDARD   =   -std=c99
+> CFLAGS      =   -Wall -Wextra -Werror
+>
+>
+> # Optimization Flags  — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> O_FLAGS     =   -O2 -march=native
+>
+>
+> # Debug Flags  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> D_FLAGS     =   -O0 -g $(S_FLAGS)
+>
+>
+> # Sanitizer Flags  — — —— — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> S_FLAGS     +=  -fsanitize=undefined
+> S_FLAGS     +=  -fsanitize=address
+> # S_FLAGS     +=  -fsanitize=memory
+> # S_FLAGS     +=  -fsanitize=leak
+> # S_FLAGS     +=  -fsanitize=thread
+> # S_FLAGS     +=  -fsanitize=dataflow
+> # S_FLAGS     +=  -fsanitize=cfi
+> # S_FLAGS     +=  -fsanitize=safe-stack
+>
+>
+> # Rules/Targets  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> all: CFLAGS += $(O_FLAGS)
+> all: $(NAME)
+>
+> debug: CFLAGS += $(D_FLAGS)
+> debug: clean $(NAME)
+> 	@make clean
+>
+> run: $(NAME)
+> 	@./$(NAME)
+>
+> $(NAME): $(OBJECTS)
+> 	@$(CC) $(CFLAGS) $^ -o $@
+> 	@echo && echo $(GREEN) "[√]     [$(NAME) Successfully Compiled!]"
+> 	@echo $(WHITE)
+>
+> %.o: %.c $(HEADERS)
+> 	@$(CC) $(CFLAGS) -pipe -c $< -o $@
+> 	@echo $(WHITE) "Compiling => " $<
+>
+>
+> # House Keeping — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> DEL = /bin/rm -rf
+>
+> clean:
+> 	@$(DEL) $(shell find . -name '*.o')
+>
+> fclean: clean
+> 	@$(DEL) $(NAME)
+>
+> re: fclean all
+>
+>
+> # Text Colorization — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> GREEN = "\033[1;32m"
+> WHITE = "\033[1;37m"
+>
+>
+> # Phony — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> .PHONY: all clean fclean re run debug
+> ```
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Encyclopedia | Wikipedia | [Makefile](https://en.wikipedia.org/wiki/Makefile)
+> | 2 | Documentation | GNU | [(Official) GNU Makefile *[Manual]*](https://www.gnu.org/software/make/manual/make.html)
+
 
 ---
 [🏠](#contents) | [⬅️](#312-sanitizer-flags--fsanitize-family) | [➡️](#33-load-lldb)
@@ -2553,11 +2714,14 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 ## Commands for examining:
 
 - [3.8.1. Source code](#381-source-code)
-- [3.8.2. State of Threads](#382-state-of-threads)
-- [3.8.3. State of Stack Frames](#383-state-of-stack-frames)
-- [3.8.4. State of Variables](#384-state-of-variables)
+- [3.8.2. Threads](#382-threads)
+- [3.8.3. Stack Frames](#383-stack-frames)
+- [3.8.4. Variables](#384-variables)
+- [3.8.5. Registers](#385-registers)
+- [3.8.6. Expressions](#386-expressions)
 
-Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual stop, crash, etc ...)*, you will be able to examine *(or inspect)* the state of the process.
+---
+Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual stop, crash, etc ...)*, you can examine *(or inspect)* the state of the process on many levels –– those stated above.
 
 
 <br>
@@ -2577,7 +2741,7 @@ Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual 
 ---
 [🏠](#contents) | [⬅️](#38-examine-execution) | [➡️](#382-variables)
 ### 3.8.1. Source Code
-<small>`[Search Tags: >sourcecodelldb >lldb.sourcecode >lldbsourcecode >examinesourcecode >sourcecodeexamine >sourcecodeexamination >examinesourcecde >sourcecdeexamine >sourcecdeexamination >examinesrccode >srccodeexamine >srccodeexamination >examinesrccde >srccdeexamine >srccdeexamination >examinecode >examinecode >scodeexamine >scodeexamine]`</small>
+<small>`[Search Tags: >sourcecodelldb >lldb.sourcecode >lldbsourcecode >examinesourcecode >sourcecodeexamine >examsourcecode >sourcecodeexam >examinationsourcecode >sourcecodeexamination >examinatingsourcecode >sourcecodeexaminating >examinesrcecod >srcecodexamine >examsrcecod >srcecodexam >examinationsrcecod >srcecodexamination >examinatingsrcecod >srcecodexaminating >examinesrccode >srccodeecodxamine >examsrccode >srccodeecodxam >examinationsrccode >srccodeecodxamination >examinatingsrccode >srcecodxaminating >examinesource >sourceexamine >examsource >sourceexam >examinationsource >sourceexamination >examinatingsource >sourceexaminating >examinesrce >srceexamine >examsrce >srceexam >examinationsrce >srceexamination >examinatingsrce >srceexaminating >examinesrc >srcexamine >examsrc >srcexam >examinationsrc >srcexamination >examinatingsrc >srcexaminating >examinecode >codeexamine >examcode >codeexam >examinationcode >codeexamination >examinatingcode >codeexaminating >examinecod >codexamine >examcod >codexam >examinationcod >codexamination >examinatingcod >codexaminating >examinecd >cdexamine >codxamine >examcd >cdexam >codxam >examinationcd >cdexamination >codxamination >examinatingcd >cdexaminating >codxaminating]`</small>
 <br>
 <br>
 
@@ -2620,7 +2784,7 @@ Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual 
 
 ---
 [🏠](#contents) | [⬅️](#382-variables) | [➡️](#384-stack-frame-states)
-### 3.8.2. State of Threads
+### 3.8.2. Threads
 <small>`[Search Tags: >threadexamination >examinationthread >examthreads >threadsexam >threadexam >examthrds >thrdsexam >thrdexam >examinthreads >threadsexamin >threadexamin >examinthrds >thrdsexamin >thrdexamin >examinethreads >threadsexamine >threadexamine >examinethrds >thrdsexamine >thrdexamine >examinatingthreads >threadsexaminating >threadexaminating >examinatingthrds >thrdsexaminating >thrdexaminating >threadsstate >thrdsstate >threadstate >thrdstate >thrsstate >thrstate >thsstate >thstate >tsstate >tstate >statethreads >statethrds >statethread >statethrd >statethrs]`</small>
 <br>
 <br>
@@ -2802,7 +2966,7 @@ To inspect the current state of your process, you can start with the threads:
 
 ---
 [🏠](#contents) | [⬅️](#383-thread-states) | [➡️](#39-graphical-user-interface-gui)
-### 3.8.3. State of Stack Frames
+### 3.8.3. Stack Frames
 <small>`[Search Tags: >stackexamination >examinationstack >examstacks >stacksexam >stackexam >examstcks >examstks >stcksexam >stksexam >stckexam >stkexam >examinstacks >stacksexamin >stackexamin >examinstcks >examinstks >stcksexamin >stksexamin >stckexamin >stkexamin >examinestacks >stacksexamine >stackexamine >examinestcks >examinestks >stcksexamine >stksexamine >stckexamine >stkexamine >examinatingstacks >stacksexaminating >stackexaminating >examinatingstcks >examinatingstks >stcksexaminating >stksexaminating >stckexaminating >stkexaminating >frameexamination >examinationframe >examframes >framesexam >frameexam >examfrms >examfrs >frmsexam >frsexam >frmexam >frexam >examinframes >framesexamin >frameexamin >examinfrms >examinfrs >frmsexamin >frsexamin >frmexamin >frexamin >examineframes >framesexamine >frameexamine >examinefrms >examinefrs >frmsexamine >frsexamine >frmexamine >frexamine >examinatingframes >framesexaminating >frameexaminating >examinatingfrms >examinatingfrs >frmsexaminating >frsexaminating >frmexaminating >frexaminating >stacksstate >stcksstate >stackstate >stckstate >stksstate >stkstate >stsstate >ststate >tsstate >tstate >statestacks >statestcks >statestack >statestck >statestks >framesstate >frmsstate >framestate >frmstate >frsstate >frstate >stsstate >ststate >tsstate >tstate >stateframes >statefrms >stateframe >statefrm >statefrs >stackframeexamination >examinationstackframe >examstackframes >stackframesexam >stackframeexam >examinstackframes >stackframesexamin >stackframeexamin >examinestackframes >stackframesexamine >stackframeexamine >examinatingstackframes >stackframesexaminating >stackframeexaminating >stackframesstate >stackframestate >statestackframes >statestackframe]`</small>
 <br>
 <br>
@@ -2893,7 +3057,7 @@ Commands to:
 
 ---
 [🏠](#contents) | [⬅️](#381-source-code) | [➡️](#383-thread-states)
-### 3.8.4. State of *[Stack Frame]* Variables
+### 3.8.4. Variables
 <small>`[Search Tags: >variableexamination >variablesexamination >varsexamination >varexamination >examinationvariable >examinationvariables >examinationvars >examinationvar >examvariables >examvariabless >examvarss >examvars >variablesexam >variablessexam >varssexam >varsexam >variableexam >variablesexam >varsexam >varexam]`</small>
 <br>
 <br>
@@ -2905,26 +3069,31 @@ Commands to:
 
 	> ***Synopsis:***
 	> ```shell
-	> frame variable [-sgcLFlar] -P <count> [<var-name>]
+	> frame variable [-scarfglFL] -P <count> [<var-name>]
 	> ```
 	>
 	> ***Option:***
-	> | Flag | Description
-	> | - | - |
-	> | |
-	> | `-r ( --regex )`                     | *The <variable-name> argument for name lookups are regular expressions.*
-	> | |
-	> | **More Information**                 |
-    > | `-P <count> ( --ptr-depth <count> )` | *Number of times pointer variables get dereferenced <br> (default is zero).*
-	> | `-s ( --scope )`                     | *Show variable scope (argument, local, global, static).*
-	> | `-g ( --show-globals )`              | *Show [the current frame source file] global and static <br> variables.*
-	> | `-c ( --show-declaration )`          | *Show variable declaration line [in source file].*
-    > | `-L ( --location )`                  | *Show variable location information.*
-	> | |
-	> | **Less Information**                 |
-	> | `-F ( --flat )`                      | *Omit [showing] type description.*
-	> | `-l ( --no-locals )`                 | *Omit [showing] local variables.*
-	> | `-a ( --no-args )`                   | *Omit [showing] function arguments.*
+	> | Flag | Shortcut | Description
+	> | - | - | - |
+	> |                       |      |
+	> | `--regex`             | `-r` | *The <variable-name> argument for name lookups are regular expressions.*
+	> |                       |      |
+	> | **Format**            |      |
+	> | `--format <format>`   | `-f` | *Specify a format (e.g. binary, hex, decimal) to be used for <br> display. See notes below for a list of all the formats available.*
+	> |                       |      |
+	> | **More Information**  |      |
+    > | `--ptr-depth <count>` | `-P` | *Number of times pointer variables get dereferenced <br> (default is zero).*
+	> | `--scope`             | `-s` | *Show variable scope (argument, local, global, static).*
+	> | `--show-globals`      | `-g` | *Show [the current frame source file] global and static <br> variables.*
+	> | `--show-declaration`  | `-c` | *Show variable declaration line [in source file].*
+    > | `--location`          | `-L` | *Show variable location information.*
+	> |                       |      |
+	> | **Less Information**  |      |
+	> | `--flat`              | `-F` | *Omit [showing] variable type.*
+	> | `--no-locals`         | `-l` | *Omit [showing] local variables.*
+	> | `--no-args`           | `-a` | *Omit [showing] [function] argument variables.*
+	> |                       |      |
+	> | ...                   | ...  | *For more, see `(lldb) help frame variable`.*
 	>
 	> ***Example(s):***
 	> ```shell
@@ -2932,8 +3101,12 @@ Commands to:
 	> (lldb) fr v
 	> ```
 	> ```shell
-	> (lldb) frame variable someVarName                                # Show `someVarName` variable information
-	> (lldb) fr v someVarName
+	> (lldb) frame variable my_var                                     # Show `my_var` value.
+	> (lldb) fr v my_var
+	> ```
+	> ```shell
+	> (lldb) frame variable *my_ptr --format b                         # Show variable in "binary" format.
+	> (lldb) fr v *my_ptr -f b
 	> ```
 	> ```shell
 	> (lldb) frame variable --scope --show-globals --ptr-depth 3       # Show all arguments and [local, global, static] variables, and
@@ -2954,6 +3127,33 @@ Commands to:
 	> }
 	> ```
 
+	> *<small>[**Note:***
+	>
+	> -	*Available `<formats>` are [, for the `-f` option]:*
+	>
+	>	| Format | Description
+	>	| - | - |
+	>	| `A` | *Format as annotated address.*
+	>	| `b` | *Format as binary.*
+	>	| `B` | *Format as hex bytes with ASCII.*
+	>	| `c` | *Format as character.*
+	>	| `d` | *Format as a signed integer.*
+	>	| `D` | *Format selected value using the default format for the type.*
+	>	| `f` | *Format as float.*
+	>	| `h` | *Show help dialog.*
+	>	| `i` | *Format as instructions.*
+	>	| `o` | *Format as octal.*
+	>	| `p` | *Format as pointer.*
+	>	| `s` | *Format as C string.*
+	>	| `t` | *Toggle showing/hiding type names.*
+	>	| `u` | *Format as an unsigned integer.*
+	>	| `x` | *Format as hex.*
+	>	| `X` | *Format as uppercase hex.*
+	>
+	>	*They are the same as with the `GUI` variable view.*
+	>
+	> *- **end note**]</small>*
+
 
 <br>
 <br>
@@ -2967,7 +3167,117 @@ Commands to:
 > | 3 | Documentation | Apple | [LLDB Tutorial :: Examining the Stack Frame State](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW9)
 
 
-<!-- # 3. Tips & Shortcuts -->
+---
+[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.8.5. Registers
+<small>`[Search Tags: >examinationregisters >registersexamination >examinatingregisters >registersexaminating >examineregisters >registersexamine >examregisters >registersexam >examinationregistrs >registrsexamination >examinatingregistrs >registrsexaminating >examineregistrs >registrsexamine >examregistrs >registrsexam >examinationregs >regsexamination >examinatingregs >regsexaminating >examineregs >regsexamine >examregs >regsexam >examinationrgs >rgsexamination >examinatingrgs >rgsexaminating >examinergs >rgsexamine >examrgs >rgsexam]`</small>
+<br>
+
+
+Contents
+---
+- [1 Read Registers](#read-registers)
+- [2 Write to Registers](#write-to-registers)
+---
+
+> TODO: ### 3.8.5. Registers
+
+
+-	#### Read registers:
+
+	> <small>`[Search Tags: >infostackframes >stackframesinfo >stackframeinfo >informationstackframes >stackframesinformation >stackframeinformation >infstackframes >infostacks >stacksinfo >stackinfo >informationstacks >stacksinformation >stackinformation >infstacks >infostcks >stcksinfo >stckinfo >informationstcks >stcksinformation >stckinformation >infstcks >infostks >stksinfo >stkinfo >informationstks >stksinformation >stkinformation >infstks >infoframes >framesinfo >frameinfo >informationframes >framesinformation >frameinformation >infframes >infofrms >frmsinfo >frminfo >informationfrms >frmsinformation >frminformation >inffrms >infofrs >frsinfo >frinfo >informationfrs >frsinformation >frinformation >inffrs]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> register read [--all] [--format <format>] [--set <index>] [<register-name> [<register-name> [...]]]
+	> ```
+	>
+	> ***Option:***
+	> | Flag | Shortcut | Description
+	> | - | - | - |
+	> |                     |      |
+    > | `--all`             | `-a` | *Show all register sets.*
+    > | `--format <format>` | `-f` | *Specify a format to be used for display.*
+    > | `--set <index>`     | `-s` | *Specify which register sets to dump by index.*
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) register
+	> (lldb) register
+	> ```
+	>
+	> ***[Example] Output:***
+	> ```shell
+	> frame #0: 0x0000000100003b49 a`main(ac=2, av=0x00007ffeefbff5a0) at threadedHello.cpp:29
+	> ```
+
+<br>
+
+-	#### Write to registers:
+
+	> <small>`[Search Tags: >infostackframes >stackframesinfo >stackframeinfo >informationstackframes >stackframesinformation >stackframeinformation >infstackframes >infostacks >stacksinfo >stackinfo >informationstacks >stacksinformation >stackinformation >infstacks >infostcks >stcksinfo >stckinfo >informationstcks >stcksinformation >stckinformation >infstcks >infostks >stksinfo >stkinfo >informationstks >stksinformation >stkinformation >infstks >infoframes >framesinfo >frameinfo >informationframes >framesinformation >frameinformation >infframes >infofrms >frmsinfo >frminfo >informationfrms >frmsinformation >frminformation >inffrms >infofrs >frsinfo >frinfo >informationfrs >frsinformation >frinformation >inffrs]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> frame info
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) frame info     # List information about the currently selected frame, in the current thread.
+	> (lldb) fr i
+	> ```
+	>
+	> ***[Example] Output:***
+	> ```shell
+	> frame #0: 0x0000000100003b49 a`main(ac=2, av=0x00007ffeefbff5a0) at threadedHello.cpp:29
+	> ```
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.8.6. Expressions
+<small>`[Search Tags: >]`</small>
+<br>
+
+Contents
+---
+- [1 Title](#tag)
+	- [1.1 Title](#tag)
+- [2 Title](#tag)
+---
+
+> TODO: ### 3.8.6. Expressions
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+
+
+
+
+
 
 
 <!--
@@ -2996,7 +3306,7 @@ Commands to:
 
 		- how to skip loops, cuz it takes too long
 
-		- and be able to see stderr, stdout
+		[√] - and be able to see stderr, stdout
 
 		- segfaults when a variable reaches a value of 3
 		but it takes time to get there, so how can you
@@ -3008,5 +3318,21 @@ Commands to:
 		Expression :: Break when expression evaluates to true.
 		Hit-Count  :: Log boolean when expression evaluates to true.
 		Logpoint   :: Log <Inputed-Message> when breakpoint is hit.
+
+
+
+Executing Alternative Code
+Expressions can also be used to call functions, as in this example:
+
+(lldb) expr (int) printf ("I have a pointer 0x%llx.\n", self)
+$2 = (int) 22
+I have a pointer 0x0.
+The expression command is one of the raw commands. As a result, you don’t have to quote your whole expression, or backslash protect quotes, and so forth.
+
+The results of the expressions are stored in persistent variables (of the form $[0-9]+) that you can use in further expressions, such as:
+
+(lldb) expr self = $0
+$4 = (SKTGraphicView *) 0x0000000100135430
+
 
 ------------------------------------------------------------------------------->
