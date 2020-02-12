@@ -34,6 +34,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.1. Compile Program](#31-compile-program)
 		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g---o0)
 		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
+		- [3.1.3 Makfile Setup](#)
 	- [3.2. Run LLDB](#32-run-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
 	- [3.4. Setup LLDB](#34-setup-lldb)
@@ -51,7 +52,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.2. State of Threads](#382-state-of-threads)
 		- [3.8.3. State of Stack Frames](#383-state-of-stack-frames)
 		- [3.8.4. State of Variables](#384-state-of-stack-frame-variables)
-	<!-- - [3.8. Some Advanced *[`LLDB`]* Commands](#38-examine)
+	<!-- - [3.9. Beyond Basics: Advanced *[`LLDB`]* Commands](#38-examine)
 		- [`bugreport`](#)
 		- [`disassemble`](#)
 		- [`command`](#)
@@ -72,8 +73,6 @@ QuickDocs \| Low Level Debugger (LLDB)
 			- [`write`](#) -- Modify a single register value.
 		- [`script`](#)
 		- [`settings`](#) -->
-- [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
-	- [3.1 Makfile](#)
 
 
 <!-- >Start --------------------------------------------------------------------
@@ -2902,7 +2901,7 @@ Commands to:
 
 -	#### Show variable(s):
 
-	> <small>`[Search Tags: >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay]`</small>
+	> <small>`[Search Tags: >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay >variableprint >variablesprint >varsprint >varprint >printvariable >printvariables >printvars >printvar]`</small>
 
 	> ***Synopsis:***
 	> ```shell
