@@ -469,8 +469,8 @@ The following link below, suggests a `Makefile` *[template]* that hopefully can 
 >
 > # Compilation Flags  — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 >
-> CC          =   gcc
-> CSTANDARD   =   -std=c99
+> CC          =   clang    # or clang++    (for C++)
+> CSTANDARD   =   -std=c99 # or -std=c++2a (for C++)
 > CFLAGS      =   -Wall -Wextra -Werror
 >
 >
