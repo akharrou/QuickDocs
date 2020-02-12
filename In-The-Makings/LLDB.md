@@ -432,9 +432,9 @@ Contents
 > *Umm ... first [*what's a `makefile` ?*](https://en.wikipedia.org/wiki/Makefile) and second, [*how do I use it ?*](https://www.gnu.org/software/make/manual/make.html)*
 ---
 
-The following link below, suggests a `Makefile` *[template]* that hopefully can make convenient the compilation of programs with the [debug](#311-debug-flags--g---o0) and [`fsantize`](#312-sanitizer-flags--fsanitize-family) flags.
+The following link below, suggests a `Makefile` *[template]* that hopefully can make convenient the compilation of programs with the [*debug*](#311-debug-flags--g---o0) and [*`fsantize`*](#312-sanitizer-flags--fsanitize-family) flags.
 
-> To use; call `make` or `make all` to compile normally and call `make debug` to compile with debug and `fsanitize` flags.
+> To use; call `make` or `make all` to compile normally and call `make debug` to compile with **debug** and **`fsanitize`** flags.
 >
 > ```makefile
 > # Makefile (for C programs)
