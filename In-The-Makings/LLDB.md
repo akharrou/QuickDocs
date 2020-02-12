@@ -50,7 +50,28 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.1. Source Code](#381-source-code)
 		- [3.8.2. State of Threads](#382-state-of-threads)
 		- [3.8.3. State of Stack Frames](#383-state-of-stack-frames)
-		- [3.8.4. State of Variables](#384-state-of-variables)
+		- [3.8.4. State of Variables](#384-state-of-stack-frame-variables)
+	<!-- - [3.8. Some Advanced *[`LLDB`]* Commands](#38-examine)
+		- [`bugreport`](#)
+		- [`disassemble`](#)
+		- [`command`](#)
+		- [`expression`](#)
+		- [`log`](#)
+			- [`disable`](#) -- Disable one or more log channel categories.
+			- [`enable`](#)  -- Enable logging for a single log channel.
+			- [`list`](#)    -- List the log categories for one or more log channels.  If none specified, lists them all.
+			- [`timers`](#)  -- Enable, disable, dump, and reset LLDB internal performance timers.
+		- [`memory`](#)
+			- [`find`](#)    -- Find a value in the memory of the current target process.
+			- [`history`](#) -- Print recorded stack traces for allocation/deallocation events associated with an address.
+			- [`read`](#)    -- Read from the memory of the current target process.
+			- [`region`](#)  -- Get information on the memory region containing an address in the current target process.
+			- [`write`](#)   -- Write to the memory of the current target process.
+		- [`register`](#)
+			- [`read`](#)  -- Dump the contents of one or more register values from the current frame.  If no register is specified, dumps them all.
+			- [`write`](#) -- Modify a single register value.
+		- [`script`](#)
+		- [`settings`](#) -->
 - [3. Tips &amp; Shortcuts](#3-tips-amp-shortcuts)
 	- [3.1 Makfile](#)
 
@@ -2873,26 +2894,19 @@ Commands to:
 
 ---
 [🏠](#contents) | [⬅️](#381-source-code) | [➡️](#383-thread-states)
-### 3.8.4. State of Stack Frame Variables
-<small>`[Search Tags: >]`</small>
+### 3.8.4. State of *[Stack Frame]* Variables
+<small>`[Search Tags: >variableexamination >variablesexamination >varsexamination >varexamination >examinationvariable >examinationvariables >examinationvars >examinationvar >examvariables >examvariabless >examvarss >examvars >variablesexam >variablessexam >varssexam >varsexam >variableexam >variablesexam >varsexam >varexam]`</small>
 <br>
 <br>
 
 
-Contents
----
-- [1 Show Variable Value](#tag)
-- [1 Show Variables](#tag)
-- [2 Show Variables](#tag)
----
+-	#### Show variable(s):
 
--	#### Print variable(s):
-
-	> <small>`[Search Tags: ]`</small>
+	> <small>`[Search Tags: >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> frame variable [<var-name>]
+	> frame variable [-sgcLFlar] -P <count> [<var-name>]
 	> ```
 	>
 	> ***Option:***
@@ -2902,7 +2916,7 @@ Contents
 	> | `-r ( --regex )`                     | *The <variable-name> argument for name lookups are regular expressions.*
 	> | |
 	> | **More Information**                 |
-    > | `-P <count> ( --ptr-depth <count> )` | *The number of pointers to be traversed when dumping <br> values (default is zero).*
+    > | `-P <count> ( --ptr-depth <count> )` | *Number of times pointer variables get dereferenced <br> (default is zero).*
 	> | `-s ( --scope )`                     | *Show variable scope (argument, local, global, static).*
 	> | `-g ( --show-globals )`              | *Show [the current frame source file] global and static <br> variables.*
 	> | `-c ( --show-declaration )`          | *Show variable declaration line [in source file].*
@@ -2915,16 +2929,33 @@ Contents
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) frame variable                     # Show all arguments and local variables.
+	> (lldb) frame variable                                            # Show all arguments and local variables.
 	> (lldb) fr v
 	> ```
 	> ```shell
-	> (lldb) frame variable someVarName         # Show `someVarName` variable information
+	> (lldb) frame variable someVarName                                # Show `someVarName` variable information
 	> (lldb) fr v someVarName
 	> ```
 	> ```shell
-	> (lldb) frame variable -s -g -P 3          # Show all arguments and [local, global, static] variables, and
+	> (lldb) frame variable --scope --show-globals --ptr-depth 3       # Show all arguments and [local, global, static] variables, and
 	> (lldb) fr v -s -g -P 3
+	> ```
+	>
+	> ***[Example] Output:***
+	> ```shell
+	> (int) ac = 2
+	> (char **) av = 0x00007ffeefbff5a8
+	> (int *) userInputCount = 0x00006020000000f0
+	> (lldb) fr v -s -g -P 3
+	> ARG: (int) ac = 2
+	> ARG: (char **) av = 0x00007ffeefbff5a8 {
+	>   *av = 0x00007ffeefbff7e8 "/path/to/working/directory/a.out" {
+	>     **av = '/'
+	>   }
+	> }
+	> LOCAL: (int *) userInputCount = 0x00006020000000f0 {
+	>   *userInputCount = 5
+	> }
 	> ```
 
 
@@ -2936,9 +2967,8 @@ Contents
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help frame variable`
-> | 3 | Documentation | LLDB | [(Official) Tutorial :: Examining Stack Frame State](https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state)
-> | 4 | Documentation | LLDB | [GDB to LLDB Command Map :: Examining Thread State](https://lldb.llvm.org/use/map.html?highlight=watchpoints#examining-thread-state)
-> | 5 | Documentation | Apple | [LLDB Tutorial :: Examining the Stack Frame State](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW9)
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Examining Stack Frame State](https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state)
+> | 3 | Documentation | Apple | [LLDB Tutorial :: Examining the Stack Frame State](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW9)
 
 
 <!-- # 3. Tips & Shortcuts -->
