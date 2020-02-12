@@ -141,24 +141,28 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ---
 [🏠](#contents) | [⬅️](#contents) | [➡️](#3-how-do-i-use-it-)
 # 2. What is it ?
-<small>`[Search Tags: >lldb.what? >lldbwhat? >lldb.who? >lldb.why? >lldb.whocares? >lldb.whycare? >lldb.? >lldb? >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro >lldb.whatisit >lldb.whycare? >lldb.whyshouldicare?]`</small>
+<small>`[Search Tags: >lldb.what? >lldbwhat? >lldb.who? >lldb.why? >lldb.whocares? >lldb.whycare? >lldb.? >lldb? >wat >woot >wut >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro >lldb.whatisit >lldb.whycare? >lldb.whyshouldicare?]`</small>
 <br>
 <br>
 
 
 #### What is it ?
 
--	LLDB, is a program – that provides an interface for you to examine the execution of a program – instruction by instruction, or line by line, or breakpoint by breakpoint.
+-	LLDB, is a program – that provides an interface for you to examine the execution of a *[running]* program – instruction by instruction, or step by step, or breakpoint by breakpoint.
 
-	> More detailed:
+	> Didnt understand ? Try this:
 	>
-	> LLDB, short for ***Low-Level-De-Bugger***, is a program – **that provides an interface** *(a way/channel/portal/access-point/control-panel)* **for you to examine the execution** *([individual] actions/steps taken-by/performed-by)* **of a** *[-nother]* **program** – *[CPU]* **instruction by instruction, or** *[source code]* **line by line, or breakpoint** *(checkpoint(s) set by you, in the source code)* **by breakpoint.** <br>
+	> LLDB, short for ***Low-Level-De-Bugger***, is a program – **that provides an interface** *(a way/channel/portal/access-point/control-panel)* **for you to examine the execution** *([individual] actions/steps taken-by/performed-by)* **of a** *[-nother]* **program** – *[CPU]* **instruction by instruction, or** *[source code]* **statement by statement, or breakpoint** *(checkpoint(s) set by you, in the source code)* **by breakpoint.** <br>
 
 - "`lldb` is the default debugger in Xcode on macOS and supports debugging C, Objective-C and C++ on the desktop and iOS devices and simulator."
 
 #### Why should I care ?
 
--	*The short answer;* you should care because it will save you *(***THOUSANDS*** of)* hours of [debugging](https://en.wikipedia.org/wiki/Debugging) – the process of locating [bugs](https://en.wikipedia.org/wiki/Software_bug) *[in source code]*, finding their cause(s) and [patching](https://en.wikipedia.org/wiki/Patch_(computing)) (i.e fixing/removing) them.
+-	*The short answer;* because it will save you *(***THOUSANDS*** of)* hours of [debugging](https://en.wikipedia.org/wiki/Debugging) [, and by extention, of your ***LIFE***].
+
+	> What's "***Debugging***" ?
+	>
+	> Short, oversimplified answer; the process of locating [bugs](https://en.wikipedia.org/wiki/Software_bug) *[in source code]*, finding their cause(s) and [patching](https://en.wikipedia.org/wiki/Patch_(computing)) (i.e fixing/removing) them.
 
 
 <br>
@@ -402,8 +406,7 @@ Run the `lldb` debugger *[program]* by typing *[in your command prompt]*:
 <small>`[Search Tags: >loadprogram >loadprocess >loadexecutable >programload >processload >executableload >lldb.loadprogram >loadlldb >loaddebugger >debugger.loadprogram >db.loadprogram >programload >program.load >lldb.unloadprogram >unloadlldb >unloaddebugger >debugger.unloadprogram >db.unloadprogram >programunload >program.unload]`</small>
 <br>
 
-Contents
----
+## Contents
 - [1 Basic Commands](#331-basic-commands)
 ---
 
@@ -434,8 +437,7 @@ Contents
 <small>`[Search Tags: >lldbloadcomands >lldb.load.commands >lldbloadcmds >lldb.load.cmds >debuggerloadcomands >debugger.load.commands >debuggerloadcmds >debugger.load.cmds >loadcomands >load.commands >loadcmds >load.cmds >loadbasiccommands >loadbasics >ldbasiccommands >ldbasics >basiccommandsload >basicsload >basiccommandsld >basicsld >loadbasiccmds >loadbasics >ldbasiccmds >ldbasics >basiccmdsload >basicsload >basiccmdsld >basicsld >loadbsccommands >loadbscs >ldbsccommands >ldbscs >bsccommandsload >bscsload >bsccommandsld >bscsld]`</small>
 <br>
 
-Commands to:
----
+## Commands to:
 - [1 Create a Target](#create-a-target-ie-load-a-program-executable)
 	- [1.1 From outside *\[`lldb`\]*](#from-outside-lldb)
 	- [1.2 From inside *\[`lldb`\]*](#from-inside-lldb)
@@ -2781,43 +2783,77 @@ To inspect the current state of your process, you can start with the threads:
 ---
 [🏠](#contents) | [⬅️](#383-thread-states) | [➡️](#39-graphical-user-interface-gui)
 ### 3.8.3. State of Stack Frames
-<small>`[Search Tags: >stackexamination >examinationstack >examstacks >stacksexam >stackexam >examstcks >examstks >stcksexam >stksexam >stckexam >stkexam >examinstacks >stacksexamin >stackexamin >examinstcks >examinstks >stcksexamin >stksexamin >stckexamin >stkexamin >examinestacks >stacksexamine >stackexamine >examinestcks >examinestks >stcksexamine >stksexamine >stckexamine >stkexamine >examinatingstacks >stacksexaminating >stackexaminating >examinatingstcks >examinatingstks >stcksexaminating >stksexaminating >stckexaminating >stkexaminating >frameexamination >examinationframe >examframes >framesexam >frameexam >examfrms >examfrs >frmsexam >frsexam >frmexam >frexam >examinframes >framesexamin >frameexamin >examinfrms >examinfrs >frmsexamin >frsexamin >frmexamin >frexamin >examineframes >framesexamine >frameexamine >examinefrms >examinefrs >frmsexamine >frsexamine >frmexamine >frexamine >examinatingframes >framesexaminating >frameexaminating >examinatingfrms >examinatingfrs >frmsexaminating >frsexaminating >frmexaminating >frexaminating >stacksstate >stcksstate >stackstate >stckstate >stksstate >stkstate >stsstate >ststate >tsstate >tstate >statestacks >statestcks >statestack >statestck >statestks >framesstate >frmsstate >framestate >frmstate >frsstate >frstate >stsstate >ststate >tsstate >tstate >stateframes >statefrms >stateframe >statefrm >statefrs]`</small>
+<small>`[Search Tags: >stackexamination >examinationstack >examstacks >stacksexam >stackexam >examstcks >examstks >stcksexam >stksexam >stckexam >stkexam >examinstacks >stacksexamin >stackexamin >examinstcks >examinstks >stcksexamin >stksexamin >stckexamin >stkexamin >examinestacks >stacksexamine >stackexamine >examinestcks >examinestks >stcksexamine >stksexamine >stckexamine >stkexamine >examinatingstacks >stacksexaminating >stackexaminating >examinatingstcks >examinatingstks >stcksexaminating >stksexaminating >stckexaminating >stkexaminating >frameexamination >examinationframe >examframes >framesexam >frameexam >examfrms >examfrs >frmsexam >frsexam >frmexam >frexam >examinframes >framesexamin >frameexamin >examinfrms >examinfrs >frmsexamin >frsexamin >frmexamin >frexamin >examineframes >framesexamine >frameexamine >examinefrms >examinefrs >frmsexamine >frsexamine >frmexamine >frexamine >examinatingframes >framesexaminating >frameexaminating >examinatingfrms >examinatingfrs >frmsexaminating >frsexaminating >frmexaminating >frexaminating >stacksstate >stcksstate >stackstate >stckstate >stksstate >stkstate >stsstate >ststate >tsstate >tstate >statestacks >statestcks >statestack >statestck >statestks >framesstate >frmsstate >framestate >frmstate >frsstate >frstate >stsstate >ststate >tsstate >tstate >stateframes >statefrms >stateframe >statefrm >statefrs >stackframeexamination >examinationstackframe >examstackframes >stackframesexam >stackframeexam >examinstackframes >stackframesexamin >stackframeexamin >examinestackframes >stackframesexamine >stackframeexamine >examinatingstackframes >stackframesexaminating >stackframeexaminating >stackframesstate >stackframestate >statestackframes >statestackframe]`</small>
 <br>
 <br>
 
 
 Commands to:
 ---
-- [1 List Stack Frame Information](#list-threads)
-- [2 Select *[current]* Stack Frame](#select-current-thread)
+- [1 Select *[current]* Stack Frame](#select-current-thread)
+- [2 List Stack Frame Information](#list-threads)
 ---
-
--	#### List stack frame information:
-
-	> <small>`[Search Tags: ]`</small>
-
-	> ***Synopsis:***
-	> ```shell
-	> frame info <frame-index>
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	>
-	> ```
 
 -	#### Select *[current]* stack frame:
 
-	> <small>`[Search Tags: ]`</small>
+	> <small>`[Search Tags: >selectstacks >selctstacks >selcstacks >stacksselect >stackselect >stacksselct >stackselct >stacksslct >stackslct >slctstacks >slctstack >sstacks >sestacks >selstacks >selectstcks >selctstcks >selcstcks >stcksselect >stcklist >stcksselct >stckselct >stcksslct >stckslct >slctstcks >slctstck >sstcks >sestcks >selstcks >selectstks >selctstks >selcstks >stksselect >stklist >stksselct >stkselct >stksslct >stkslct >slctstks >slctstk >sstks >sestks >selstks >selectframes >selctframes >selcframes >framesselect >frameselect >framesselct >frameselct >framesslct >frameslct >slctframes >slctframe >sframes >seframes >selframes >selectfrms >selctfrms >selcfrms >frmsselect >frmlist >frmsselct >frmselct >frmsslct >frmslct >slctfrms >slctfrm >sfrms >sefrms >selfrms >selectfrs >selctfrs >selcfrs >frsselect >frlist >frsselct >frselct >frsslct >frslct >slctfrs >slctfr >sfrs >sefrs >selfrs >selectstackframes >selctstackframes >selcstackframes >stackframesselect >stackframeselect >stackframesselct >stackframeselct >stackframesslct >stackframeslct >slctstackframes >slctstackframe >sstackframes >sestackframes >selstackframes]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> frame select <frame-index>
+	> frame select [--relative <offset>] [<frame-index>]
+	> ```
+	> ```shell
+	> down         # Select the stack frame: current-index - 1 ; that is called by the current stack frame.
+	> up           # Select the stack frame: current-index + 1 ; that called the current stack frame.
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
+	> (lldb) fr select 4                   # Select stack frame #4 for the current thread.
+	> (lldb) fr s 4
+	> (lldb) f 4
+	> ```
+	> ```shell
+	> (lldb) fr select --relative 3        # Select a stack frame relative to the the current thread.
+	> (lldb) fr s -r 3
+	> (lldb) f s -r 3
+	> ```
+	> ```shell
+	> (lldb) down
+	> (lldb) frame select --relative=-1    # same as 'down'
+	> ```
+	> ```shell
+	> (lldb) up
+	> (lldb) frame select --relative=1     # same as 'up'
+	> ```
+
+	> *<small>[**Note:***
 	>
+	> -	*`f` is an alias for `frame select`, see `(lldb) help f`.*
+	> -	*`down` and `up` are aliases, see `(lldb) help down` and `(lldb) help up`.*
+	>
+	> *- **end note**]</small>*
+
+<br>
+
+-	#### List stack frame information:
+
+	> <small>`[Search Tags: >infostackframes >stackframesinfo >stackframeinfo >informationstackframes >stackframesinformation >stackframeinformation >infstackframes >infostacks >stacksinfo >stackinfo >informationstacks >stacksinformation >stackinformation >infstacks >infostcks >stcksinfo >stckinfo >informationstcks >stcksinformation >stckinformation >infstcks >infostks >stksinfo >stkinfo >informationstks >stksinformation >stkinformation >infstks >infoframes >framesinfo >frameinfo >informationframes >framesinformation >frameinformation >infframes >infofrms >frmsinfo >frminfo >informationfrms >frmsinformation >frminformation >inffrms >infofrs >frsinfo >frinfo >informationfrs >frsinformation >frinformation >inffrs]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> frame info
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) frame info     # List information about the currently selected frame, in the current thread.
+	> (lldb) fr i
+	> ```
+	>
+	> ***[Example] Output:***
+	> ```shell
+	> frame #0: 0x0000000100003b49 a`main(ac=2, av=0x00007ffeefbff5a0) at threadedHello.cpp:29
 	> ```
 
 
@@ -2837,15 +2873,13 @@ Commands to:
 
 ---
 [🏠](#contents) | [⬅️](#381-source-code) | [➡️](#383-thread-states)
-### 3.8.4. State of Variables
+### 3.8.4. State of Stack Frame Variables
 <small>`[Search Tags: >]`</small>
 <br>
 <br>
 
 
-> TODO: ### 3.8.4. Variable(s)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
 
 <br>
