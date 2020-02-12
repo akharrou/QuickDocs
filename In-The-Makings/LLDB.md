@@ -2879,7 +2879,53 @@ Commands to:
 <br>
 
 
+Contents
+---
+- [1 Show Variable Value](#tag)
+- [1 Show Variables](#tag)
+- [2 Show Variables](#tag)
+---
 
+-	#### Print variable(s):
+
+	> <small>`[Search Tags: ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> frame variable [<var-name>]
+	> ```
+	>
+	> ***Option:***
+	> | Flag | Description
+	> | - | - |
+	> | |
+	> | `-r ( --regex )`                     | *The <variable-name> argument for name lookups are regular expressions.*
+	> | |
+	> | **More Information**                 |
+    > | `-P <count> ( --ptr-depth <count> )` | *The number of pointers to be traversed when dumping <br> values (default is zero).*
+	> | `-s ( --scope )`                     | *Show variable scope (argument, local, global, static).*
+	> | `-g ( --show-globals )`              | *Show [the current frame source file] global and static <br> variables.*
+	> | `-c ( --show-declaration )`          | *Show variable declaration line [in source file].*
+    > | `-L ( --location )`                  | *Show variable location information.*
+	> | |
+	> | **Less Information**                 |
+	> | `-F ( --flat )`                      | *Omit [showing] type description.*
+	> | `-l ( --no-locals )`                 | *Omit [showing] local variables.*
+	> | `-a ( --no-args )`                   | *Omit [showing] function arguments.*
+	>
+	> ***Example(s):***
+	> ```shell
+	> (lldb) frame variable                     # Show all arguments and local variables.
+	> (lldb) fr v
+	> ```
+	> ```shell
+	> (lldb) frame variable someVarName         # Show `someVarName` variable information
+	> (lldb) fr v someVarName
+	> ```
+	> ```shell
+	> (lldb) frame variable -s -g -P 3          # Show all arguments and [local, global, static] variables, and
+	> (lldb) fr v -s -g -P 3
+	> ```
 
 
 <br>
@@ -2889,8 +2935,10 @@ Commands to:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Documentation | LLDB | [Gdb to LLDB Command Map :: Examine Variables](https://lldb.llvm.org/use/map.html?highlight=watchpoints#examining-variables)
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help frame variable`
+> | 3 | Documentation | LLDB | [(Official) Tutorial :: Examining Stack Frame State](https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state)
+> | 4 | Documentation | LLDB | [GDB to LLDB Command Map :: Examining Thread State](https://lldb.llvm.org/use/map.html?highlight=watchpoints#examining-thread-state)
+> | 5 | Documentation | Apple | [LLDB Tutorial :: Examining the Stack Frame State](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW9)
 
 
 <!-- # 3. Tips & Shortcuts -->
