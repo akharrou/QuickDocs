@@ -3063,9 +3063,9 @@ Commands to:
 <br>
 
 
--	#### Show variable(s):
+-	#### Print *(read)* variable(s):
 
-	> <small>`[Search Tags: >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay >variableprint >variablesprint >varsprint >varprint >printvariable >printvariables >printvars >printvar]`</small>
+	> <small>`[Search Tags: >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay >variableprint >variablesprint >varsprint >varprint >printvariable >printvariables >printvars >printvar >variableread >variablesread >varsread >varread >variablerd >variablesrd >varsrd >varrd >readvariable >readvariables >readvars >readvar >rdvariable >rdvariables >rdvars >rdvar]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -3101,15 +3101,15 @@ Commands to:
 	> (lldb) fr v
 	> ```
 	> ```shell
-	> (lldb) frame variable my_var                                     # Show `my_var` value.
+	> (lldb) frame variable my_var                                     # Show the value of `my_var`.
 	> (lldb) fr v my_var
 	> ```
 	> ```shell
-	> (lldb) frame variable *my_ptr --format b                         # Show variable in "binary" format.
+	> (lldb) frame variable *my_ptr --format b                         # Show the value that `my_ptr` points to, in "binary" format.
 	> (lldb) fr v *my_ptr -f b
 	> ```
 	> ```shell
-	> (lldb) frame variable --scope --show-globals --ptr-depth 3       # Show all arguments and [local, global, static] variables, and
+	> (lldb) frame variable --scope --show-globals --ptr-depth 3       # Show all variables that exist (i.e arguments, locals, globals, [file] statics); as for pointers, dereference them 3 times.
 	> (lldb) fr v -s -g -P 3
 	> ```
 	>
@@ -3176,61 +3176,98 @@ Commands to:
 
 Contents
 ---
-- [1 Read Registers](#read-registers)
+- [1 Print *(read)* Registers](#print-read-registers)
 - [2 Write to Registers](#write-to-registers)
 ---
 
 > TODO: ### 3.8.5. Registers
 
+-	#### Print *(read)* registers:
 
--	#### Read registers:
-
-	> <small>`[Search Tags: >infostackframes >stackframesinfo >stackframeinfo >informationstackframes >stackframesinformation >stackframeinformation >infstackframes >infostacks >stacksinfo >stackinfo >informationstacks >stacksinformation >stackinformation >infstacks >infostcks >stcksinfo >stckinfo >informationstcks >stcksinformation >stckinformation >infstcks >infostks >stksinfo >stkinfo >informationstks >stksinformation >stkinformation >infstks >infoframes >framesinfo >frameinfo >informationframes >framesinformation >frameinformation >infframes >infofrms >frmsinfo >frminfo >informationfrms >frmsinformation >frminformation >inffrms >infofrs >frsinfo >frinfo >informationfrs >frsinformation >frinformation >inffrs]`</small>
+	> <small>`[Search Tags: >registershow >registersshow >showregister >showregisters >listregisters >displayregisters >dispregisters >listregisterss >displayregisterss >dispregisterss >registerslist >registersdisplay >registersslist >registerssdisplay >registerlist >registerdisplay >registerslist >registersdisplay >registerprint >registersprint >printregister >printregisters >regsshow >regshow >showregs >showreg >listregss >displayregss >dispregss >listregs >displayregs >dispregs >regsslist >regssdisplay >regslist >regsdisplay >regslist >regsdisplay >reglist >regdisplay >regsprint >regprint >printregs >printreg >registerread >registersread >regsread >regread >registerrd >registersrd >regsrd >regrd >readregister >readregisters >readregs >rdregister >rdregisters >rdregs]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> register read [--all] [--format <format>] [--set <index>] [<register-name> [<register-name> [...]]]
+	> register read [--all] [--format <format>] [--set <index>] [<register-name> ...]
 	> ```
 	>
 	> ***Option:***
 	> | Flag | Shortcut | Description
 	> | - | - | - |
 	> |                     |      |
-    > | `--all`             | `-a` | *Show all register sets.*
     > | `--format <format>` | `-f` | *Specify a format to be used for display.*
+    > | `--all`             | `-a` | *Show all register sets.*
     > | `--set <index>`     | `-s` | *Specify which register sets to dump by index.*
 	>
-	> ***Example(s):***
+	> ***Example(s):*** <br>
+	>
+	> (1)
 	> ```shell
-	> (lldb) register
-	> (lldb) register
+	> (lldb) register read --all                             # Print (read) all registers.
+	> (lldb) re r -a
 	> ```
 	>
-	> ***[Example] Output:***
+	> (2)
 	> ```shell
-	> frame #0: 0x0000000100003b49 a`main(ac=2, av=0x00007ffeefbff5a0) at threadedHello.cpp:29
+	> (lldb) register read eax --format b                    # Print the 'eax' register, in binary format.
+	> (lldb) re r eax -f b
 	> ```
+	> ```shell
+	>     eax = 0b00000000000000000000000011110000
+	> ```
+	>
+	> (3)
+	> ```shell
+	> (lldb) register read rax rbx rcx rdx eax ebx ecx       # Print the specified [by name] registers.
+	> (lldb) re r rax rbx rcx rdx eax ebx ecx
+	> ```
+	> ```shell
+	>     rax = 0x0000000000000000
+	>     rbx = 0x0000000000000000
+	>     rcx = 0x0000000000000050
+	>     rdx = 0x0000000000000051
+	>     eax = 0x00000000
+	>     ebx = 0x00000000
+	>     ecx = 0x00000050
+	> ```
+	>
+	> (4)
+	> ```shell
+	> (lldb) register read --set 2                           # Print the 2nd set of registers –– the 'Exception State Registers'.
+	> (lldb) re r -s 2
+	> ```
+	> ```shell
+	> Exception State Registers:
+	>     trapno = 0x00000003
+	>        err = 0x00000000
+	>   faultvaddr = 0x0000000100ba41d0  libclang_rt.asan_osx_dynamic.dylib`__sanitizer::theDepot + 6046032
+	> ```
+	>
+	> *<small>[**Note:** The default format is (lowercase) hexadecimal format (`'x'`). - **end note**]</small>*
 
 <br>
 
 -	#### Write to registers:
 
-	> <small>`[Search Tags: >infostackframes >stackframesinfo >stackframeinfo >informationstackframes >stackframesinformation >stackframeinformation >infstackframes >infostacks >stacksinfo >stackinfo >informationstacks >stacksinformation >stackinformation >infstacks >infostcks >stcksinfo >stckinfo >informationstcks >stcksinformation >stckinformation >infstcks >infostks >stksinfo >stkinfo >informationstks >stksinformation >stkinformation >infstks >infoframes >framesinfo >frameinfo >informationframes >framesinformation >frameinformation >infframes >infofrms >frmsinfo >frminfo >informationfrms >frmsinformation >frminformation >inffrms >infofrs >frsinfo >frinfo >informationfrs >frsinformation >frinformation >inffrs]`</small>
+	> <small>`[Search Tags: >registerwrite >registerswrite >writeregister >writeregisters >regswrite >regwrite >writeregs >writereg >modifyregisters >modifyregisterss >registersmodify >registerssmodify >registermodify >registersmodify >modifyregss >modifyregs >regssmodify >regsmodify >regsmodify >regmodify >changeregisters >changeregisterss >registerschange >registersschange >registerchange >registerschange >changeregss >changeregs >regsschange >regschange >regschange >regchange >assignregisters >assignregisterss >registersassign >registerssassign >registerassign >registersassign >assignregss >assignregs >regssassign >regsassign >regsassign >regassign]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> frame info
+	> write register <register-name> <value>
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) frame info     # List information about the currently selected frame, in the current thread.
-	> (lldb) fr i
+	> register write eax 800                       # write a value in decimal format
+	> re w eax 800
 	> ```
-	>
-	> ***[Example] Output:***
 	> ```shell
-	> frame #0: 0x0000000100003b49 a`main(ac=2, av=0x00007ffeefbff5a0) at threadedHello.cpp:29
+	> register write eax 0x972362355               # write a value in lowercase hexadecimal format
+	> re w eax 0x972362355
+	> ```
+	> ```shell
+	> register write eax 0b10000000                # write a value in binary format
+	> re w eax 0b10000000
 	> ```
 
 
@@ -3241,43 +3278,8 @@ Contents
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.8.6. Expressions
-<small>`[Search Tags: >]`</small>
-<br>
-
-Contents
----
-- [1 Title](#tag)
-	- [1.1 Title](#tag)
-- [2 Title](#tag)
----
-
-> TODO: ### 3.8.6. Expressions
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-
-
-
-
-
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help register read`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help register write`
 
 
 <!--
