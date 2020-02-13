@@ -52,54 +52,23 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.2. Threads](#382-threads)
 		- [3.8.3. Stack Frames](#383-stack-frames)
 		- [3.8.4. Variables](#384-variables)
-		- [3.8.5. Registers](#385-registers)                               <!-- w/ `register` -->
-		- [3.8.6. Expressions](#386-expressions)                           <!-- w/ `expression` -->
-		- [3.8.7. Memory *(Advanced)*](#387-memory)                                     <!-- w/ `memory` -->
-		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)   <!-- w/ `disassemble` -->
-	- [3.9. Self-Help: `help` & `apropos` commands](#)
-- [4. Beyond Basics *(Advanced)*](#3-how-do-i-use-it-)
-	- [4.1. `LLDB` Settings](#38-examine)
-	- [4.2. `LLDB` Commands](#38-examine)
-	- [4.3. `LLDB` Logging](#38-examine)
-	- [4.4. `LLDB` Bugreporting](#38-examine)
-
+		- [3.8.5. Registers](#385-registers)
+		- [3.8.6. Expressions](#386-expressions)
+		- [3.8.7. Memory *(Advanced)*](#387-memory)                          TODO: do chapter
+		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)     TODO: do chapter
+	- [3.9. Self-Help Commands](#)                                           TODO: do chapter
+		- [3.9.1. `help`](#)                                                 TODO: do chapter
+		- [3.9.2. `apropos`](#)                                              TODO: do chapter
+- [4. Beyond Basics *(Advanced)*](#)                                         TODO: do chapter
+	- [4.1. `LLDB` Settings](#)                                              TODO: do chapter
+	- [4.2. `LLDB` Commands](#)                                              TODO: do chapter
+	- [4.3. `LLDB` Type](#)                                                  TODO: do chapter
+	- [4.4. `LLDB` Logging](#)                                               TODO: do chapter
+	- [4.5. `LLDB` Bugreporting](#)                                          TODO: do chapter
 <!--
-- [3.8.7. Memory](#387-memory)
-  	- [`find`](#)    -- Find a value in the memory of the current target process.
-  	- [`history`](#) -- Print recorded stack traces for allocation/deallocation events associated with an address.
-  	- [`read`](#)    -- Read from the memory of the current target process.
-  	- [`region`](#)  -- Get information on the memory region containing an address in the current target process.
-  	- [`write`](#)   -- Write to the memory of the current target process.
-
-  - [`settings`](#)
-  	- [`append`](#)  -- Append one or more values to a debugger array, dictionary, or string setting.
-  	- [`clear`](#)   -- Clear a debugger setting array, dictionary, or string.
-  	- [`insert-after`](#) -- Insert one or more values into a debugger array settings after the specified element index.
-  	- [`insert-before`](#) -- Insert one or more values into an debugger array setting immediately before the specified element
-                       index.
-  	- [`list`](#)    -- List and describe matching debugger settings. Defaults to all listing all settings.
-  	- [`remove`](#)  -- Remove a value from a setting, specified by array index or dictionary key.
-  	- [`replace`](#) -- Replace the debugger setting value specified by array index or dictionary key.
-  	- [`set`](#)     -- Set the value of the specified debugger setting.
-  	- [`show`](#)    -- Show matching debugger settings and their current values. Defaults to showing all settings.
-
-  - [`command`](#)
-  	- [`alias  `](#) -- Define a custom command in terms of an existing command.  Expects 'raw' input (see 'help raw-input'.)
-  	- [`delete `](#) -- Delete one or more custom commands defined by 'command regex'.
-  	- [`history`](#) -- Dump the history of commands in this session.
-  	- [`regex  `](#) -- Define a custom command in terms of existing commands by matching regular expressions.
-  	- [`script `](#) -- Commands for managing custom commands implemented by interpreter scripts.
-  	- [`source `](#) -- Read and execute LLDB commands from the file <filename>.
-  	- [`unalias`](#) -- Delete one or more custom commands defined by 'command alias'.
-
-  - [`log`](#)
-  	- [`disable`](#) -- Disable one or more log channel categories.
-  	- [`enable`](#)  -- Enable logging for a single log channel.
-  	- [`list`](#)    -- List the log categories for one or more log channels.  If none specified, lists them all.
-  	- [`timers`](#)  -- Enable, disable, dump, and reset LLDB internal performance timers.
-
-  - [`script`](#)
-  - [`bugreport`](#)
+	- [4.x. `LLDB` Language](#)                                              TODO: do chapter
+	- [4.x. `LLDB` Platform](#)                                              TODO: do chapter
+	- [4.x. `LLDB` Version](#)    # Show `LLDB` version.                     TODO: do chapter
  -->
 
 
@@ -234,7 +203,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <br>
 
 TODO : # 3. How do I use it ?
-
+<!--
 -	***To use LLDB***:
 
 	```shell
@@ -285,7 +254,7 @@ TODO : # 3. How do I use it ?
 	>
 	> *- **end note**]</small>*
 
-
+ -->
 <br>
 <br>
 
@@ -3072,7 +3041,7 @@ Commands to:
 	> frame variable [-scarfglFL] -P <count> [<var-name>]
 	> ```
 	>
-	> ***Option:***
+	> ***Options:***
 	> | Flag | Shortcut | Description
 	> | - | - | - |
 	> |                       |      |
@@ -3176,13 +3145,11 @@ Commands to:
 
 Contents
 ---
-- [1 Print *(read)* Registers](#print-read-registers)
-- [2 Write to Registers](#write-to-registers)
+- [1 Print *(read)* Registers](#read-print-registers)
+- [2 Write to Registers](#overwrite-modify-to-registers)
 ---
 
-> TODO: ### 3.8.5. Registers
-
--	#### Print *(read)* registers:
+-	#### Read *(print)* registers:
 
 	> <small>`[Search Tags: >registershow >registersshow >showregister >showregisters >listregisters >displayregisters >dispregisters >listregisterss >displayregisterss >dispregisterss >registerslist >registersdisplay >registersslist >registerssdisplay >registerlist >registerdisplay >registerslist >registersdisplay >registerprint >registersprint >printregister >printregisters >regsshow >regshow >showregs >showreg >listregss >displayregss >dispregss >listregs >displayregs >dispregs >regsslist >regssdisplay >regslist >regsdisplay >regslist >regsdisplay >reglist >regdisplay >regsprint >regprint >printregs >printreg >registerread >registersread >regsread >regread >registerrd >registersrd >regsrd >regrd >readregister >readregisters >readregs >rdregister >rdregisters >rdregs]`</small>
 
@@ -3191,7 +3158,7 @@ Contents
 	> register read [--all] [--format <format>] [--set <index>] [<register-name> ...]
 	> ```
 	>
-	> ***Option:***
+	> ***Options:***
 	> | Flag | Shortcut | Description
 	> | - | - | - |
 	> |                     |      |
@@ -3247,9 +3214,9 @@ Contents
 
 <br>
 
--	#### Write to registers:
+-	#### Overwrite (modify) registers:
 
-	> <small>`[Search Tags: >registerwrite >registerswrite >writeregister >writeregisters >regswrite >regwrite >writeregs >writereg >modifyregisters >modifyregisterss >registersmodify >registerssmodify >registermodify >registersmodify >modifyregss >modifyregs >regssmodify >regsmodify >regsmodify >regmodify >changeregisters >changeregisterss >registerschange >registersschange >registerchange >registerschange >changeregss >changeregs >regsschange >regschange >regschange >regchange >assignregisters >assignregisterss >registersassign >registerssassign >registerassign >registersassign >assignregss >assignregs >regssassign >regsassign >regsassign >regassign]`</small>
+	> <small>`[Search Tags: >registerwrite >registerswrite >writeregister >writeregisters >regswrite >regwrite >writeregs >writereg >modifyregisters >modifyregisterss >registersmodify >registerssmodify >registermodify >registersmodify >modifyregss >modifyregs >regssmodify >regsmodify >regsmodify >regmodify >changeregisters >changeregisterss >registerschange >registersschange >registerchange >registerschange >changeregss >changeregs >regsschange >regschange >regschange >regchange >assignregisters >assignregisterss >registersassign >registerssassign >registerassign >registersassign >assignregss >assignregs >regssassign >regsassign >regsassign >regassign >modregister >modiregister >modifregister >mdregister >modregisters >modiregisters >modifregisters >mdregisters]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -3280,6 +3247,202 @@ Contents
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help register read`
 > | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help register write`
+
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.8.6. Expressions
+<small>`[Search Tags: ]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.8.6. Expressions
+
+-	#### Read *(print)* registers:
+
+	> <small>`[Search Tags: >registershow >registersshow >showregister >showregisters >listregisters >displayregisters >dispregisters >listregisterss >displayregisterss >dispregisterss >registerslist >registersdisplay >registersslist >registerssdisplay >registerlist >registerdisplay >registerslist >registersdisplay >registerprint >registersprint >printregister >printregisters >regsshow >regshow >showregs >showreg >listregss >displayregss >dispregss >listregs >displayregs >dispregs >regsslist >regssdisplay >regslist >regsdisplay >regslist >regsdisplay >reglist >regdisplay >regsprint >regprint >printregs >printreg >registerread >registersread >regsread >regread >registerrd >registersrd >regsrd >regrd >readregister >readregisters >readregs >rdregister >rdregisters >rdregs]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> register read [--all] [--format <format>] [--set <index>] [<register-name> ...]
+	> ```
+	>
+	> ***Options:***
+	> | Flag | Shortcut | Description
+	> | - | - | - |
+	> |                                  |      |
+	> | `--regex`                        | `-r` | *The <variable-name> argument for name lookups are regular expressions.*
+	> |                                  |      |
+	> | **Format**                       |      |
+	> | `--format <format>`              | `-f` | *Specify a format (e.g. binary, hex, decimal) to be used for <br> display. See notes below for a list of all the formats available.*
+	> |                                  |      |
+	> | **More Information**             |      |
+    > | `--ptr-depth <count>`            | `-P` | *Number of times pointer variables get dereferenced <br> (default is zero).*
+	> | `--scope`                        | `-s` | *Show variable scope (argument, local, global, static).*
+	> | `--show-globals`                 | `-g` | *Show [the current frame source file] global and static <br> variables.*
+	> | `--show-declaration`             | `-c` | *Show variable declaration line [in source file].*
+    > | `--location`                     | `-L` | *Show variable location information.*
+	> |                                  |      |
+	> | **Less Information**             |      |
+	> | `--raw-output`                   | `-R` | *Don't use formatting options.*
+	> | `--flat`                         | `-F` | *Omit [showing] variable type.*
+	> | `--no-locals`                    | `-l` | *Omit [showing] local variables.*
+	> | `--no-args`                      | `-a` | *Omit [showing] [function] argument variables.*
+	> |                                  |      |
+	> | `--ignore-breakpoints <boolean>` | `-i` | *Ignore breakpoint hits while running expressions*
+	> | ...                              | ...  | *For more, see `(lldb) help frame variable`.*
+	>
+	> ***Example(s):*** <br>
+	>
+	> (1)
+	> ```shell
+	> (lldb) register read --all                             # Print (read) all registers.
+	> (lldb) re r -a
+	> ```
+
+
+Executing Alternative Code
+Expressions can also be used to call functions, as in this example:
+
+(lldb) expr (int) printf ("I have a pointer 0x%llx.\n", self)
+$2 = (int) 22
+I have a pointer 0x0.
+The expression command is one of the raw commands. As a result, you don’t have to quote your whole expression, or backslash protect quotes, and so forth.
+
+The results of the expressions are stored in persistent variables (of the form $[0-9]+) that you can use in further expressions, such as:
+
+(lldb) expr self = $0
+$4 = (SKTGraphicView *) 0x0000000100135430
+
+
+[Over]w    Evaluate an expression the current thread.  Displays any returned value with LLDB's default formatting.  Expects
+     'raw' input (see 'help raw-input'.)
+
+Syntax:
+
+Command Options Usage:
+
+  expression [-AFLORTgp] [-f <format>] [-G <gdb-format>] [-a <boolean>] [-i <boolean>] [-t <unsigned-integer>] [-u <boolean>] [-l <source-language>] [-X <boolean>] [-v[<description-verbosity>]] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
+  expression [-AFLORTgp] [-a <boolean>] [-i <boolean>] [-t <unsigned-integer>] [-u <boolean>] [-l <source-language>] [-X <boolean>] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
+  expression <expr>
+
+
+       -O ( --object-description )
+            Display using a language-specific description API, if possible.
+
+       -j <boolean> ( --allow-jit <boolean> )
+            Controls whether the expression can fall back to being JITted if it's not supported by the interpreter
+            (defaults to true).
+
+       -l <source-language> ( --language <source-language> )
+            Specifies the Language to use when parsing the expression.  If not set the target.language setting is used.
+
+       -p ( --top-level )
+            Interpret the expression as a complete translation unit, without injecting it into the local context.  Allows
+            declaration of persistent, top-level entities without a $ prefix.
+
+       -t <unsigned-integer> ( --timeout <unsigned-integer> )
+            Timeout value (in microseconds) for running the expression.
+
+       -u <boolean> ( --unwind-on-error <boolean> )
+            Clean up program state if the expression causes a crash, or raises a signal.  Note, unlike gdb hitting a
+            breakpoint is controlled by another option (-i).
+
+       -v[<description-verbosity>] ( --description-verbosity=[<description-verbosity>] )
+            How verbose should the output of this expression be, if the object description is asked for.
+            Values: compact | full
+
+Single and multi-line expressions:
+
+    The expression provided on the command line must be a complete expression with no newlines.  To evaluate a multi-line
+    expression, hit a return after an empty expression, and lldb will enter the multi-line expression editor. Hit return on
+    an empty line to end the multi-line expression.
+
+Timeouts:
+
+    If the expression can be evaluated statically (without running code) then it will be.  Otherwise, by default the
+    expression will run on the current thread with a short timeout: currently .25 seconds.  If it doesn't return in that
+    time, the evaluation will be interrupted and resumed with all threads running.  You can use the -a option to disable
+    retrying on all threads.  You can use the -t option to set a shorter timeout.
+
+User defined variables:
+
+    You can define your own variables for convenience or to be used in subsequent expressions.  You define them the same
+    way you would define variables in C.  If the first character of your user defined variable is a $, then the variable's
+    value will be available in future expressions, otherwise it will just be available in the current expression.
+
+Continuing evaluation after a breakpoint:
+
+    If the "-i false" option is used, and execution is interrupted by a breakpoint hit, once you are done with your
+    investigation, you can either remove the expression execution frames from the stack with "thread return -x" or if you
+    are still interested in the expression result you can issue the "continue" command and the expression evaluation will
+    complete and the expression result will be available using the "thread.completed-expression" key in the thread format.
+
+Examples:
+
+    expr my_struct->a = my_array[3]
+    expr -f bin -- (index * 8) + 5
+    expr unsigned int $foo = 5
+    expr char c[] = \"foo\"; c[0]
+
+     Important Note: Because this command takes 'raw' input, if you use any command options you must use ' -- ' between the
+     end of the command options and the beginning of the raw input.
+
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.8.7. Memory *(Advanced)*
+<small>`[Search Tags: ]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.8.7. Memory *(Advanced)*
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.8.8. Instructions *(Advanced)*
+<small>`[Search Tags: ]`</small>
+<br>
+<br>
+
+
+> TODO: ### 3.8.8. Instructions *(Advanced)*
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
 
 
 <!--
@@ -3320,21 +3483,5 @@ Contents
 		Expression :: Break when expression evaluates to true.
 		Hit-Count  :: Log boolean when expression evaluates to true.
 		Logpoint   :: Log <Inputed-Message> when breakpoint is hit.
-
-
-
-Executing Alternative Code
-Expressions can also be used to call functions, as in this example:
-
-(lldb) expr (int) printf ("I have a pointer 0x%llx.\n", self)
-$2 = (int) 22
-I have a pointer 0x0.
-The expression command is one of the raw commands. As a result, you don’t have to quote your whole expression, or backslash protect quotes, and so forth.
-
-The results of the expressions are stored in persistent variables (of the form $[0-9]+) that you can use in further expressions, such as:
-
-(lldb) expr self = $0
-$4 = (SKTGraphicView *) 0x0000000100135430
-
 
 ------------------------------------------------------------------------------->
