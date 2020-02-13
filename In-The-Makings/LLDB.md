@@ -54,21 +54,21 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.4. Variables](#384-variables)
 		- [3.8.5. Registers](#385-registers)
 		- [3.8.6. Expressions](#386-expressions)
-		- [3.8.7. Memory *(Advanced)*](#387-memory)                          TODO: do chapter
-		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)     TODO: do chapter
-	- [3.9. Self-Help Commands](#)                                           TODO: do chapter
-		- [3.9.1. `help`](#)                                                 TODO: do chapter
-		- [3.9.2. `apropos`](#)                                              TODO: do chapter
-- [4. Beyond Basics *(Advanced)*](#)                                         TODO: do chapter
-	- [4.1. `LLDB` Settings](#)                                              TODO: do chapter
-	- [4.2. `LLDB` Commands](#)                                              TODO: do chapter
-	- [4.3. `LLDB` Type](#)                                                  TODO: do chapter
-	- [4.4. `LLDB` Logging](#)                                               TODO: do chapter
-	- [4.5. `LLDB` Bugreporting](#)                                          TODO: do chapter
+		- [3.8.7. Memory *(Advanced)*](#387-memory)                          <!-- TODO: do chapter ::: `x` is an alias for `memory read`-->
+		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)     <!-- TODO: do chapter -->
+	- [3.9. Self-Help Commands](#)                                           <!-- TODO: do chapter -->
+		- [3.9.1. `help`](#)                                                 <!-- TODO: do chapter -->
+		- [3.9.2. `apropos`](#)                                              <!-- TODO: do chapter -->
+- [4. Beyond Basics *(Advanced)*](#)                                         <!-- TODO: do chapter -->
+	- [4.1. `LLDB` Settings](#)                                              <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
+	- [4.2. `LLDB` Commands & Aliases](#)                                    <!-- TODO: do chapter -->
+	- [4.3. `LLDB` Type Display Format](#)                                   <!-- TODO: do chapter -->
+	- [4.4. `LLDB` Logging](#)                                               <!-- TODO: do chapter -->
+	- [4.5. `LLDB` Bugreporting](#)                                          <!-- TODO: do chapter -->
 <!--
 	- [4.x. `LLDB` Language](#)                                              TODO: do chapter
 	- [4.x. `LLDB` Platform](#)                                              TODO: do chapter
-	- [4.x. `LLDB` Version](#)    # Show `LLDB` version.                     TODO: do chapter
+	- [4.x. `LLDB` Version](#)                                               TODO: do chapter ::: # Show `LLDB` version* ::: <small>[**Note:** `v` is a shorthand for `version` - **end note**]</small>*
  -->
 
 
@@ -209,9 +209,9 @@ TODO : # 3. How do I use it ?
 	```shell
 	$> clang <source-code-files> -g -O0
 	$> lldb <execuable>
-	$> (lldb) b main
-	$> (lldb) r <arg-1> <arg-2> ... <arg-n>
-	$> (lldb) gui
+	$> b main
+	$> r <arg-1> <arg-2> ... <arg-n>
+	$> gui
 	```
 
 	---
@@ -236,14 +236,14 @@ TODO : # 3. How do I use it ?
 	> $> lldb <execuable>
 	> $>
 	> $> # 4. Setup
-	> $> (lldb) b main  # Choose your entry-point, I chose the `int main()` function
-	> $> (lldb) b ...   # Add more breakpoints if you want
+	> $> b main  # Choose your entry-point, I chose the `int main()` function
+	> $> b ...   # Add more breakpoints if you want
 	> $>
 	> $> # 5. Run (optionally, with arguments)
-	> $> (lldb) run <arg-1> <arg-2> ... <arg-n>
+	> $> run <arg-1> <arg-2> ... <arg-n>
 	> $>
 	> $> # 6. Launch 'gui' mode
-	> $> (lldb) gui
+	> $> gui
 	> $>
 	> $> # 7. Examine Code
 	> ```
@@ -349,7 +349,7 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> $> <compile-command> [-g -O0] [-fsanitize=<sanitizer-flag> ...]
+	> $> $> <compile-command> [-g -O0] [-fsanitize=<sanitizer-flag> ...]
 	> ```
 	>
 	> ***Option(s):***
@@ -619,7 +619,7 @@ Run the `lldb` debugger *[program]* by typing *[in your command prompt]*:
 	> > ***Synopsis:***
 	> >
 	> > ```shell
-	> > (lldb) target create <program-execuable-filename>
+	> > %> target create <program-execuable-filename>
 	> > ```
 	> >
 	> > ***Example(s):***
@@ -637,9 +637,8 @@ Run the `lldb` debugger *[program]* by typing *[in your command prompt]*:
 	> <small>`[Search Tags: >lsttarget >listtarget >lstarget >targetlst >targetlist >targetls >lsttargt >listtargt >lstargt >targtlst >targtlist >targtls >lsttrgt >listtrgt >lstrgt >trgtlst >trgtlist >trgtls >lsttr >listtr >lstr >trlst >trlist >trls >litarget >targetli >litargt >targtli >litrgt >trgtli >litr >trli]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> (lldb) target list
+	> %> target list
 	> ```
 	>
 	> ***Example(s):***
@@ -655,9 +654,8 @@ Run the `lldb` debugger *[program]* by typing *[in your command prompt]*:
 	> <small>`[Search Tags: >selcttarget >setarget >selecttarget >targetselect >selcttargt >setargt >selecttargt >targtselect >selcttrgt >setrgt >selecttrgt >trgtselect >selcttr >setr >selecttr >trselect]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> (lldb) target select <target-index>
+	> %> target select <target-index>
 	> ```
 	>
 	> ***Example(s):***
@@ -673,10 +671,9 @@ Run the `lldb` debugger *[program]* by typing *[in your command prompt]*:
 	> <small>`[Search Tags: >detarget >deltarget >deletetarget >targetdelete >detargt >deltargt >deletetargt >targtdelete >detrgt >deltrgt >deletetrgt >trgtdelete >detr >deltr >deletetr >trdelete >ultarget >unltarget >unletetarget >targetunload >ultargt >unltargt >unloadtargt >targtunload >ultrgt >unltrgt >unloadtrgt >trgtunload >ultr >unltr >unloadtr >trunload]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> (lldb) target delete [<target-ids>]
-	> (lldb) target delete [--all]
+	> %> target delete [<target-ids>]
+	> $> target delete [--all]
 	> ```
 	>
 	> ***Example(s):***
@@ -825,9 +822,8 @@ Contents
 	> <small>`[Search Tags: >brset >setbr >sbr >sebr >breakpointset  >breakpointfunctions >breakpointfuncs >breakpointfts >breakpointfcs >breakpointmain >setbreakpoint >brkptset >setbrkpt >breakptset >setbreakpt >brsetfunctions >brfunctions >brfuncs >brfts >brfcs >brsfunctions >brsfuncs >brsfts >brsfcs >brsmain]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> breakpoint set --name <function-name>
+	> $> breakpoint set --name <function-name>
 	> b <function-name>
 	> ```
 	>
@@ -848,8 +844,8 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint set --file <filename> --line <line-number>
-	> b <filename>:<line-number>
+	> $> breakpoint set --file <filename> --line <line-number>
+	> $> b <filename>:<line-number>
 	>```
 	>
 	> ***Example(s):***
@@ -866,9 +862,8 @@ Contents
 	> <small>`[Search Tags: >breakpointlist >breakpointls >listbreakpoint >lstbreakpoint >lsbreakpoint >libreakpoint >breakptlist >breakptls >listbreakpt >lstbreakpt >lsbreakpt >libreakpt >brkptlist >brkptls >listbrkpt >lstbrkpt >lsbrkpt >librkpt >brptlist >brptls >listbrpt >lstbrpt >lsbrpt >librpt >brlist >brls >listbr >lstbr >lsbr >libr]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> breakpoint list -[bfv] [<breakpt-id> ...]
+	> $> breakpoint list -[bfv] [<breakpt-id> ...]
 	> ```
 	>
 	> ***Example(s):***
@@ -886,7 +881,7 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint delete [<breakpt-ids | breakpt-name>]
+	> $> breakpoint delete [<breakpt-ids | breakpt-name>]
 	> ```
 	>
 	> ***Example(s):***
@@ -943,8 +938,8 @@ Commands to:
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint disable [<breakpt-id | breakpt-name> ...]
-	> (lldb) breakpoint enable  [<breakpt-id | breakpt-name> ...]
+	> $> breakpoint disable [<breakpt-id | breakpt-name> ...]
+	> $> breakpoint enable  [<breakpt-id | breakpt-name> ...]
 	> ```
 	>
 	> ***Example(s):***
@@ -984,9 +979,8 @@ Commands to:
 	> <small>`[Search Tags: >regexftbreakpoint >regexfcbreakpoint >regexfuncbreakpoint >regexfunctionbreakpoint >regexftbreakpt >regexfcbreakpt >regexfuncbreakpt >regexfunctionbreakpt >regexftbrkpt >regexfcbrkpt >regexfuncbrkpt >regexfunctionbrkpt >regexftbrpt >regexfcbrpt >regexfuncbrpt >regexfunctionbrpt >regexftbr >regexfcbr >regexfuncbr >regexfunctionbr >breakpointregexfts >breakpointregexfcs >breakpointregexfuncs >breakpointregexfunctions >breakptregexfts >breakptregexfcs >breakptregexfuncs >breakptregexfunctions >brkptregexfts >brkptregexfcs >brkptregexfuncs >brkptregexfunctions >brptregexfts >brptregexfcs >brptregexfuncs >brptregexfunctions >brregexfts >brregexfcs >brregexfuncs >brregexfunctions]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> breakpoint set --func-regex <regular-expression>
+	> $> breakpoint set --func-regex <regular-expression>
 	> ```
 	>
 	> ***Example(s):***
@@ -1004,10 +998,9 @@ Commands to:
 	> <small>`[Search Tags: >regexsrcbreakpoint >regexsrcebreakpoint >regexsourcebreakpoint >regexsrcbreakpt >regexsrcebreakpt >regexsourcebreakpt >regexsrcbrkpt >regexsrcebrkpt >regexsourcebrkpt >regexsrcbrpt >regexsrcebrpt >regexsourcebrpt >regexsrcbr >regexsrcebr >regexsourcebr >breakpointregexsrcs >breakpointregexsrces >breakpointregexsources >breakptregexsrcs >breakptregexsrces >breakptregexsources >brkptregexsrcs >brkptregexsrces >brkptregexsources >brptregexsrcs >brptregexsrces >brptregexsources >brregexsrcs >brregexsrces >brregexsources]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> breakpoint set --all-files --source-pattern-regexp <regular-expression>                # Search in all files
-	> breakpoint set [--file <files> ...] --source-pattern-regexp <regular-expression>       # Search (only) in specified files
+	> $> breakpoint set --all-files --source-pattern-regexp <regular-expression>                # Search in all files
+	> $> breakpoint set [--file <files> ...] --source-pattern-regexp <regular-expression>       # Search (only) in specified files
 	> ```
 	>
 	> ***Example(s):***
@@ -1042,7 +1035,7 @@ Commands to:
 	>
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint modify <cmd-options> [<breakpt-id | breakpt-name> ...]
+	> $> breakpoint modify <cmd-options> [<breakpt-id | breakpt-name> ...]
 	> ```
 	>
 	> ***Command Options:***
@@ -1147,7 +1140,7 @@ Commands for:
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint set <breakpt-definition> [--condition <expr>]
+		> $> breakpoint set <breakpt-definition> [--condition <expr>]
 		> ```
 		>
 		> ***Example(s):***
@@ -1166,7 +1159,7 @@ Commands for:
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint modify [--condition <expr>] [<breakpt-id | breakpt-name> ...]
+		> $> breakpoint modify [--condition <expr>] [<breakpt-id | breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -1193,7 +1186,7 @@ Commands for:
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint command add [--script-type <type>] [<breakpt-id | breakpt-name> ...]
+		> $> breakpoint command add [--script-type <type>] [<breakpt-id | breakpt-name> ...]
 		> ```
 		> Then you are prompted:
 		> ```
@@ -1261,7 +1254,7 @@ Commands for:
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint command list <breakpt-id>
+		> $> breakpoint command list <breakpt-id>
 		> ```
 		>
 		> ***Example(s):***
@@ -1278,7 +1271,7 @@ Commands for:
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint command delete <breakpt-id>
+		> $> breakpoint command delete <breakpt-id>
 		> ```
 		>
 		> ***Example(s):***
@@ -1297,7 +1290,7 @@ Commands for:
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint set <breakpt-definition> <conditions> [<attribute> <boolean> ...]
+		> $> breakpoint set <breakpt-definition> <conditions> [<attribute> <boolean> ...]
 		>```
 		>
 		> ***Command Options:***
@@ -1325,7 +1318,7 @@ Commands for:
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint modify <attributes> [<breakpt-id | breakpt-name> ...]
+		> $> breakpoint modify <attributes> [<breakpt-id | breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -1388,12 +1381,12 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 	> ***Synopsis:***
 	> > *At creation (`set`ing) [of breakpoint]:*
 	> > ```shell
-	> > breakpoint set <breakpt-definition> --breakpoint-name <breakpt-name>
+	> > $> breakpoint set <breakpt-definition> --breakpoint-name <breakpt-name>
 	> > ```
 	>
 	> > *After creation (`set`ing) [of breakpoint]:*
 	> > ```shell
-	> > breakpoint name add --name <breakpt-name> [<breakpt-id | breakpt-name> ...]
+	> > $> breakpoint name add --name <breakpt-name> [<breakpt-id | breakpt-name> ...]
 	> > ```
 	>
 	> ***Example(s):***
@@ -1448,7 +1441,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint name list
+	> $> breakpoint name list
 	> ```
 	>
 	> ***Example(s):***
@@ -1465,7 +1458,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint name delete [--name <breakpt-name>] [<breakpt-id>]
+	> $> breakpoint name delete [--name <breakpt-name>] [<breakpt-id>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1488,8 +1481,8 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 	>
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint name configure <cmd-options> [<breakpt-name> ...]       # i.e, expanded below
-	> breakpoint name configure <condition> [<command> ...] [<attribute> ...] [<breakpt-name> ...]
+	> $> breakpoint name configure <cmd-options> [<breakpt-name> ...]       # i.e, expanded below
+	> $> breakpoint name configure <condition> [<command> ...] [<attribute> ...] [<breakpt-name> ...]
 	> ```
 	>
 	> ***Example(s):***
@@ -1518,7 +1511,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint name configure [--disable] [--enable] [<breakpt-name> ...]
+		> $> breakpoint name configure [--disable] [--enable] [<breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -1539,7 +1532,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint name configure --condition <condition-epxr> [<breakpt-name> ...]
+		> $> breakpoint name configure --condition <condition-epxr> [<breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -1556,7 +1549,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint name configure --command <command> [<breakpt-name> ...]
+		> $> breakpoint name configure --command <command> [<breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -1577,7 +1570,7 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 		> ***Synopsis:***
 		> ```shell
-		> breakpoint name configure [-i <boolean>] [-G <boolean>] [-o <boolean>] [<breakpt-name> ...]
+		> $> breakpoint name configure [-i <boolean>] [-G <boolean>] [-o <boolean>] [<breakpt-name> ...]
 		> ```
 		>
 		> ***Command Options:***
@@ -1602,9 +1595,9 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 		> ***Synopsis:***
 		> ```shell
-		> (lldb) breakpoint name configure [ --thread-index <index> ] [<breakpt-name> ...]
-		>                                  [ --thread-name <name> ]   [<breakpt-name> ...]
-		>                                  [ --thread-id <tid> ]      [<breakpt-name> ...]
+		> $> breakpoint name configure [ --thread-index <index> ] [<breakpt-name> ...]
+		>       "               "      [ --thread-name <name>   ] [<breakpt-name> ...]
+		>       "               "      [ --thread-id <tid>      ] [<breakpt-name> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -1649,9 +1642,9 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint set <breakpt-definition> [ --thread-index <index> ]     # by index (in the process)
-	> (lldb) breakpoint set <breakpt-definition> [ --thread-name <name> ]       # by name
-	> (lldb) breakpoint set <breakpt-definition> [ --thread-id <tid> ]          # by tid (in the computer)
+	> $> breakpoint set <breakpt-definition> [ --thread-index <index> ]   # by index (in the process)
+	>            "               "           [ --thread-name <name>   ]   # by name
+	>            "               "           [ --thread-id <tid>      ]   # by tid (in the computer)
 	> ```
 	>
 	> ***Example(s):***
@@ -1699,7 +1692,7 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint set --fullname <full-function-name>
+	> $> breakpoint set --fullname <full-function-name>
 	> ```
 	>
 	> ***Example(s):***
@@ -1716,7 +1709,7 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint set --basename <base-function-name>
+	> $> breakpoint set --basename <base-function-name>
 	> ```
 	>
 	> ***Example(s):***
@@ -1735,7 +1728,7 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) breakpoint set --method <method>
+	> $> breakpoint set --method <method>
 	> ```
 	>
 	> ***Example(s):***
@@ -1752,7 +1745,7 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> breakpoint set --language-exception <source-code-language> [--on-catch <true | false>] [--on-throw <true | false>]
+	> $> breakpoint set --language-exception <source-code-language> [--on-catch <true | false>] [--on-throw <true | false>]
 	> ```
 	>
 	> ***Example(s):***
@@ -1846,13 +1839,13 @@ Commands to:
 	>
 	> > *on a variable:*
 	> > ```shell
-	> > watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
+	> > $> watchpoint set variable [--watch <watch-type>] [--size <byte-size>] <variable-name>
 	> > ```
 	>
 	> > *on an address *[by supplying an expression]*:*
 	> > ```shell
-	> > watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
-	> > watchpoint set expression <expr>
+	> > $> watchpoint set expression [--watch <watch-type>] [--size <byte-size>] -- <expr>
+	> > $> watchpoint set expression <expr>
 	> > ```
 	>
 	> ***Option(s):***
@@ -1869,12 +1862,12 @@ Commands to:
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) watchpoint set variable --watch read_write my_var
+	> (lldb) watchpoint set variable --watch read_write -- my_var
 	> (lldb) wa s v -w read_write my_var
 	> ```
 	>
 	> ```shell
-	> (lldb) watchpoint set variable   --watch write --size 8 -- my_PtrToLongInt
+	> (lldb) watchpoint set variable --watch write --size 8 -- my_PtrToLongInt
 	> (lldb) wa s v -w write -s 8 -- my_PtrToLongInt
 	> ```
 	> ```shell
@@ -1904,7 +1897,7 @@ Commands to:
 
 	> ***Synopsis:***
 	> ```shell
-	> watchpoint list -[bfv] [<watchpt-ids>]
+	> $> watchpoint list -[bfv] [<watchpt-id> ...]
 	> ```
 	>
 	> ***Example(s):***
@@ -1921,9 +1914,8 @@ Commands to:
 	> <small>`[Search Tags: >wadelete >deletewa >deletewapt >deletewatchpt >deletewatchpoint >wadelete >waptdelete >watchptdelete >watchpointdelete >dewa >deletewa >deletetarge >waunload >unloadwatchpoints >uldwatchpoints >watchpointunload >unloadwatchpoint >delwa >wadel >delwapt >waptdel >delwatchpt >watchptdel >delwatchpoint >watchpointdel]`</small>
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> watchpoint delete [<watchpt-ids>]
+	> $> watchpoint delete [<watchpt-id> ...]
 	> ```
 	>
 	> ***Example(s):***
@@ -1968,8 +1960,8 @@ Commands to:
 
 	> ***Synopsis:***
 	> ```shell
-	> (lldb) watchpoint disable <watchpt-ids | watchpt-names>
-	> (lldb) watchpoint enable  <watchpt-ids | watchpt-names>
+	> $> watchpoint disable [<watchpt-id | watchpt-name> ...]
+	> $> watchpoint enable  [<watchpt-id | watchpt-name> ...]
 	> ```
 	> ```
 	> (lldb) watchpoint modify [--disable] [--enable] <watchpt-ids | watchpt-names>
@@ -2036,7 +2028,7 @@ Commands to:
 
 	> ***Synopsis:***
 	> ```shell
-	> watchpoint modify --condition <condition-expr> [<watch-id> ...]
+	> $> watchpoint modify --condition <condition-expr> [<watch-id> ...]
 	> ```
 	>
 	> ***Example(s):***
@@ -2067,7 +2059,7 @@ Commands to:
 
 	> ***Synopsis:***
 	> ```shell
-	> watchpoint ignore --ignore-count <count> [<watchpt-id> ...]
+	> $> watchpoint ignore --ignore-count <count> [<watchpt-id> ...]
 	> ```
 	>
 	> ***Example(s):***
@@ -2139,9 +2131,8 @@ Contents
 -	#### Launch *[a program]*:
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> process launch -- [<arg> ...]
+	> $> process launch -- [<arg> ...]
 	> run [<arg> ...]                                    # alias
 	> r [<arg> ...]                                      # alias
 	> ```
@@ -2176,7 +2167,7 @@ Contents
 
 		> ***Synopsis:***
 		> ```shell
-		> process launch --shell=[<filename>] -- [<arg> ...]   # shell
+		> $> process launch --shell=[<filename>] -- [<arg> ...]   # shell
 		> process launch --tty -- [<arg> ...]                  # terminal
 		> ```
 		>
@@ -2200,7 +2191,7 @@ Contents
 
 		> ***Synopsis:***
 		> ```shell
-		> process launch --environment <NAME>=<VALUE> -- [<arg> ...]
+		> $> process launch --environment <NAME>=<VALUE> -- [<arg> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -2221,7 +2212,7 @@ Contents
 
 		> ***Synopsis:***
 		> ```shell
-		> process launch --working-dir <directory> -- [<arg> ...]
+		> $> process launch --working-dir <directory> -- [<arg> ...]
 		> ```
 		>
 		> ***Example(s):***
@@ -2321,9 +2312,8 @@ Contents
 -	#### Attach to process:
 
 	> ***Synopsis:***
-	>
 	> ```shell
-	> process attach [--pid <pid>]                           # by process identifier (pid)
+	> $> process attach [--pid <pid>]                           # by process identifier (pid)
 	> process attach [--wait-for] [--name <program-name>]    # by program name
 	> ```
 	>
@@ -2350,9 +2340,8 @@ Contents
 	> *Connect to a process via remote GDB server. If no host is specifed, localhost is assumed.*
 	>
 	> ***Synopsis:***
-	>
 	> ```shell
-	> gdb-remote <host>:<port>
+	> $> gdb-remote <host>:<port>
 	> ```
 	>
 	> *****Example(s):*****
@@ -2725,7 +2714,7 @@ Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual 
 
 	> ***Synopsis:***
 	> ```shell
-	> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <linenum>]
+	> $> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <linenum>]
 	> source list [--show-breakpoints] [--count <count>] [--name <program-symbol>]
 	> ```
 	>
@@ -2777,7 +2766,7 @@ To inspect the current state of your process, you can start with the threads:
 
 	> ***Synopsis:***
 	> ```shell
-	> thread list
+	> $> thread list
 	> ```
 	>
 	> ***Example(s):***
@@ -2809,7 +2798,7 @@ To inspect the current state of your process, you can start with the threads:
 
 	> ***Synopsis:***
 	> ```shell
-	> thread select <thread-index>
+	> $> thread select <thread-index>
 	> ```
 	>
 	> ***Example(s):***
@@ -2834,7 +2823,7 @@ To inspect the current state of your process, you can start with the threads:
 
 	> ***Synopsis:***
 	> ```shell
-	> thread info [--json] [--stop-info] [<thread-index> | all]
+	> $> thread info [--json] [--stop-info] [<thread-index> | all]
 	> ```
 	>
 	> ```shell
@@ -2867,7 +2856,7 @@ To inspect the current state of your process, you can start with the threads:
 
 	> ***Synopsis:***
 	> ```shell
-	> thread backtrace [--count <count>] [--start <frame-index>]    # Backtrace [the first <count> frames] [starting from the frame <frame-index> for] the current thread.
+	> $> thread backtrace [--count <count>] [--start <frame-index>]    # Backtrace [the first <count> frames] [starting from the frame <frame-index> for] the current thread.
 	> thread backtrace [all]                                        # Show backtrace all threads.
 	> ```
 	>
@@ -2953,7 +2942,7 @@ Commands to:
 
 	> ***Synopsis:***
 	> ```shell
-	> frame select [--relative <offset>] [<frame-index>]
+	> $> frame select [--relative <offset>] [<frame-index>]
 	> ```
 	> ```shell
 	> down         # Select the stack frame: current-index - 1 ; that is called by the current stack frame.
@@ -2995,7 +2984,7 @@ Commands to:
 
 	> ***Synopsis:***
 	> ```shell
-	> frame info
+	> $> frame info
 	> ```
 	>
 	> ***Example(s):***
@@ -3038,7 +3027,7 @@ Commands to:
 
 	> ***Synopsis:***
 	> ```shell
-	> frame variable [-scarfglFL] -P <count> [<var-name>]
+	> $> frame variable [-scarfglFL] -P <count> [<var-name>]
 	> ```
 	>
 	> ***Options:***
@@ -3074,8 +3063,10 @@ Commands to:
 	> (lldb) fr v my_var
 	> ```
 	> ```shell
-	> (lldb) frame variable *my_ptr --format b                         # Show the value that `my_ptr` points to, in "binary" format.
-	> (lldb) fr v *my_ptr -f b
+	>
+	> (lldb) frame variable --format x *my_ptr                         # Show the value that `my_ptr` points to, in "(lowercase) hexadecimal" format.
+	> (lldb) fr v -f x *my_ptr
+	> (lldb) fr v/x *my_ptr
 	> ```
 	> ```shell
 	> (lldb) frame variable --scope --show-globals --ptr-depth 3       # Show all variables that exist (i.e arguments, locals, globals, [file] statics); as for pointers, dereference them 3 times.
@@ -3098,28 +3089,52 @@ Commands to:
 
 	> *<small>[**Note:***
 	>
-	> -	*Available `<formats>` are [, for the `-f` option]:*
+	> - *`LLDB` supports formatting the output with `GDB`'s shorthand notation: appending to the command a backslash followed by its format specifier (see [Format Table](#format-table) below), e.g.: `fr v/x` (hexadecimal), `fr v/o` (octal), `fr v/t` (binary), ...*
 	>
-	>	| Format | Description
-	>	| - | - |
-	>	| `A` | *Format as annotated address.*
-	>	| `b` | *Format as binary.*
-	>	| `B` | *Format as hex bytes with ASCII.*
-	>	| `c` | *Format as character.*
-	>	| `d` | *Format as a signed integer.*
-	>	| `D` | *Format selected value using the default format for the type.*
-	>	| `f` | *Format as float.*
-	>	| `h` | *Show help dialog.*
-	>	| `i` | *Format as instructions.*
-	>	| `o` | *Format as octal.*
-	>	| `p` | *Format as pointer.*
-	>	| `s` | *Format as C string.*
-	>	| `t` | *Toggle showing/hiding type names.*
-	>	| `u` | *Format as an unsigned integer.*
-	>	| `x` | *Format as hex.*
-	>	| `X` | *Format as uppercase hex.*
+	> -	*To obtain a table of the available formats, type: `(lldb) frame variable --format ?`*
 	>
-	>	*They are the same as with the `GUI` variable view.*
+	>	### Format Table:
+	>	| Word | Shorthand | Gdb Shorthand
+	>	| - | - | - |
+	>	| `default` | - | -
+	>	| `boolean` | `B` | -
+	>	| `binary` | `b` | `/t`
+	>	| `bytes` | `y` | -
+	>	| `bytes with ASCII` | `Y` | -
+	>	| `character` | `c` | `/c`
+	>	| `printable character` | `C` | -
+	>	| `complex float` | `F` | -
+	>	| `c-string` | `s` | `/s`
+	>	| `decimal` | `d` | `/d`
+	>	| `enumeration` | `E` | -
+	>	| `hex` | `x` | `/x`
+	>	| `uppercase hex` | `X` | -
+	>	| `float` | `f` | `/f`
+	>	| `octal` | `o` | `/o`
+	>	| `OSType` | `O` | -
+	>	| `unicode16` | `U` | -
+	>	| `unicode32` | - | -
+	>	| `unsigned decimal` | `u` | `/u`
+	>	| `pointer` | `p` | `/a`
+	>	| `char[]` | - |  -
+	>	| `int8_t[]` | - |  -
+	>	| `uint8_t[]` | - |  -
+	>	| `int16_t[]` | - |  -
+	>	| `uint16_t[]` | - |  -
+	>	| `int32_t[]` | - |  -
+	>	| `uint32_t[]` | - |  -
+	>	| `int64_t[]` | - |  -
+	>	| `uint64_t[]` | - |  -
+	>	| `float16[]` | - |  -
+	>	| `float32[]` | - |  -
+	>	| `float64[]` | - |  -
+	>	| `uint128_t[]` | - |  -
+	>	| `complex integer` | `I` | -
+	>	| `character array` | `a` | -
+	>	| `address` | `A` | `/a`
+	>	| `hex float` | - | -
+	>	| `instruction` | `i` | `/i`
+	>	| `void` | `v` | -
 	>
 	> *- **end note**]</small>*
 
@@ -3155,7 +3170,7 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> register read [--all] [--format <format>] [--set <index>] [<register-name> ...]
+	> $> register read [--all] [--format <format>] [--set <index>] [<register-name> ...]
 	> ```
 	>
 	> ***Options:***
@@ -3176,8 +3191,9 @@ Contents
 	>
 	> (2)
 	> ```shell
-	> (lldb) register read eax --format b                    # Print the 'eax' register, in binary format.
-	> (lldb) re r eax -f b
+	> (lldb) register read --format b eax                    # Print the 'eax' register, in binary format.
+	> (lldb) re r -f b eax
+	> (lldb) re r/t eax
 	> ```
 	> ```shell
 	>     eax = 0b00000000000000000000000011110000
@@ -3210,7 +3226,14 @@ Contents
 	>   faultvaddr = 0x0000000100ba41d0  libclang_rt.asan_osx_dynamic.dylib`__sanitizer::theDepot + 6046032
 	> ```
 	>
-	> *<small>[**Note:** The default format is (lowercase) hexadecimal format (`'x'`). - **end note**]</small>*
+
+	> *<small>[**Note:***
+	>
+	> - *"`/t`", is a shorthand for binary format (`--format b`) –– originally from `gdb`.*
+	>
+	> -	*To obtain a table of the available formats, type: `(lldb) register read --format ?` ; see [§3.8.4 @Format Table](#formats-table) for the complete table.*
+	>
+	> *- **end note**]</small>*
 
 <br>
 
@@ -3220,7 +3243,7 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> write register <register-name> <value>
+	> $> register write <register-name> <value>
 	> ```
 	>
 	> ***Example(s):***
@@ -3263,7 +3286,7 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> register read [--all] [--format <format>] [--set <index>] [<register-name> ...]
+	> $> register read [--all] [--format <format>] [--set <index>] [<register-name> ...]
 	> ```
 	>
 	> ***Options:***
@@ -3326,8 +3349,8 @@ Command Options Usage:
   expression <expr>
 
 
-       -O ( --object-description )
-            Display using a language-specific description API, if possible.
+        -O ( --object-description )
+             Display using a language-specific description API, if possible.
 
        -j <boolean> ( --allow-jit <boolean> )
             Controls whether the expression can fall back to being JITted if it's not supported by the interpreter
@@ -3485,3 +3508,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		Logpoint   :: Log <Inputed-Message> when breakpoint is hit.
 
 ------------------------------------------------------------------------------->
+
+
+<!--
+## Questions –– Waterloo
+
+- Can I leave to pursue a startup idea, or a reasearch mission and come back ?
+-
+ -->
