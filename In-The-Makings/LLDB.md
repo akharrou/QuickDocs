@@ -29,7 +29,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 # Contents
 
 - [1. Overview / Cheat Sheet](#1-overview--cheat-sheet)
-- [2. What is it ?](#2-what-is-it-)
+- [2. What is it ?](#2-what-is-it-¶)
 - [3. How do I use it ?](#3-how-do-i-use-it-)
 	- [3.1. Compile Program](#31-compile-program)
 		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g---o0)
@@ -154,7 +154,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 [🏠](#contents) | [⬅️](#contents) | [➡️](#3-how-do-i-use-it-)
-# [2. What is it ?](#contents)
+# [2. What is it ?](#contents) [¶](#2-what-is-it-)
 <small>`[Search Tags: >lldb.what? >lldbwhat? >lldb.who? >lldb.why? >lldb.whocares? >lldb.whycare? >lldb.? >lldb? >wat >woot >wut >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro >lldb.whatisit >lldb.whycare? >lldb.whyshouldicare?]`</small>
 <br>
 <br>

@@ -455,6 +455,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <li><a href="#311-debug-flags--g---o0">3.1.1. Debug Flags: <code>-g</code> &amp; <code>-O0</code></a></li>
 <li><a href="#312-sanitizer-flags--fsanitize-family">3.1.2. Sanitizer Flags: <code>-fsanitize</code> family</a></li>
 </ul>
+  <!-- - [3.1.3 Makfile Setup](#313-makfile-setup) -->
 </li>
 <li><a href="#32-run-lldb">3.2. Run LLDB</a></li>
 <li><a href="#33-load-lldb">3.3. Load LLDB</a></li>
@@ -462,6 +463,10 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <ul>
 <li><a href="#341-breakpoints">3.4.1. Breakpoints</a></li>
 <li><a href="#342-watchpoints">3.4.2. Watchpoints</a></li>
+<li><a href="#">3.4.3 Settings <em>(Advanced)</em></a>                                              <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. --></li>
+<li><a href="#">3.4.4 Commands &amp; Aliases <em>(Advanced)</em></a>                                    <!-- TODO: do chapter --></li>
+<li><a href="#">3.4.5 Type <em>[Formatting]</em> <em>(Advanced)</em></a>                                   <!-- TODO: do chapter --></li>
+<li><a href="#">3.4.6 Logging <em>(Advanced)</em></a>                                               <!-- TODO: do chapter --></li>
 </ul>
 </li>
 <li><a href="#35-start-debugging">3.5. Start Debugging</a>
@@ -479,17 +484,29 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <li><a href="#37-control-process-execution">3.7. Control Process Execution</a></li>
 <li><a href="#38-examine">3.8. Examine</a>
 <ul>
-<li><a href="#381-source-code">3.8.1. Source Code</a></li>
-<li><a href="#382-state-of-threads">3.8.2. State of Threads</a></li>
-<li><a href="#383-state-of-stack-frames">3.8.3. State of Stack Frames</a></li>
-<li><a href="#384-state-of-variables">3.8.4. State of Variables</a></li>
+<li><a href="#381-source-code">3.8.1. Source code</a></li>
+<li><a href="#382-threads">3.8.2. Threads</a></li>
+<li><a href="#383-stack-frames">3.8.3. Stack Frames</a></li>
+<li><a href="#384-variables">3.8.4. Variables</a></li>
+<li><a href="#385-registers">3.8.5. Registers</a></li>
+<li><a href="#386-expressions">3.8.6. Expressions</a></li>
+<li><a href="#387-memory">3.8.7. Memory <em>(Advanced)</em></a>                          <!-- TODO: do chapter ::: `x` is an alias for `memory read`--></li>
+<li><a href="#388-assembly-instructions">3.8.8. Instructions <em>(Advanced)</em></a>     <!-- TODO: do chapter --></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#3-tips-amp-shortcuts">3. Tips &amp; Shortcuts</a>
+<li><a href="#">3.9. Self-Help Commands</a>                                           <!-- TODO: do chapter -->
 <ul>
-<li><a href="#">3.1 Makfile</a></li>
+<li><a href="#">3.9.1. <code>help</code></a>                                                 <!-- TODO: do chapter --></li>
+<li><a href="#">3.9.2. <code>apropos</code></a>                                              <!-- TODO: do chapter --></li>
+<li><a href="#">3.9.3. <code>version</code></a>                                              <!-- TODO: do chapter --></li>
+</ul>
+</li>
+<li><a href="#">3.10. Advanced Topics</a>                                             <!-- TODO: do chapter -->
+<ul>
+<li><a href="#">3.10.1. Bugreporting</a>                                          <!-- TODO: do chapter --></li>
+<li><a href="#">3.10.2. Remote Debugging <em>(with <code>platform</code>)</em></a>                                              TODO: do chapter</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -604,7 +621,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 </blockquote>
 <hr>
 <p><a href="#contents">🏠</a> | <a href="#contents">⬅️</a> | <a href="#3-how-do-i-use-it-">➡️</a></p>
-<h1 id="2-what-is-it">2. What is it ?</h1>
+<h1 id="2-what-is-it"><a href="#contents">2. What is it ?</a></h1>
 <p><small><code>[Search Tags: &gt;lldb.what? &gt;lldbwhat? &gt;lldb.who? &gt;lldb.why? &gt;lldb.whocares? &gt;lldb.whycare? &gt;lldb.? &gt;lldb? &gt;wat &gt;woot &gt;wut &gt;whatisit ?isit &gt;whatsit &gt;about &gt;description &gt;whycare &gt;caring? &gt;info &gt;intro &gt;lldb.whatisit &gt;lldb.whycare? &gt;lldb.whyshouldicare?]</code></small>
 <br>
 <br></p>
@@ -667,56 +684,58 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <br>
 <br></p>
 <p>TODO : # 3. How do I use it ?</p>
-<ul>
-<li>
-<p><em><strong>To use LLDB</strong></em>:</p>
-<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; clang &lt;<span class="hljs-built_in">source</span>-code-files&gt; -g -O0</span>
-<span class="hljs-meta">$</span><span class="bash">&gt; lldb &lt;execuable&gt;</span>
-<span class="hljs-meta">$</span><span class="bash">&gt; (lldb) b main</span>
-<span class="hljs-meta">$</span><span class="bash">&gt; (lldb) r &lt;arg-1&gt; &lt;arg-2&gt; ... &lt;arg-n&gt;</span>
-<span class="hljs-meta">$</span><span class="bash">&gt; (lldb) gui</span>
-</div></code></pre>
-<hr>
-<blockquote>
-<p>In words;</p>
-<ul>
-<li><em>1.</em> <strong>Compile Program</strong> (<a href="#31-compile-program">§3.1</a>) with <strong>Debug Flags</strong> (<a href="#311-debug-flags--g---o0">§3.1.1 </a>)</li>
-<li><em>2.</em> <strong>Launch LLDB</strong> (<a href="#32-launch-lldb">§3.2</a>)</li>
-<li><em>3.</em> <strong>Load LLDB</strong> <em>[with your program]</em> (<a href="#33-load-lldb">§3.3</a>)</li>
-<li><em>4.</em> <strong>Setup LLDB</strong> (<a href="#34-setup-lldb">§3.4</a>) (e.g. entry-point, breakpoints, watchpoints) <em>[for your program]</em></li>
-<li><em>5.</em> <strong>Run your program</strong> (<a href="#35-start-or-attach-program">§3.5</a>) <em>(within LLDB)</em></li>
-<li><em>6.</em> <strong>Launch Graphical User Interface</strong> (<a href="#36-graphical-user-interface-gui">3.6</a>) mode</li>
-<li><em>7.</em> <strong>Examine the Execution</strong> (<a href="#38-examine-execution">§3.7</a>) <em>[of your program]</em>. <br> <br></li>
-</ul>
-<p><em>Annotated Command Line:</em></p>
-<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; <span class="hljs-comment"># 1. Compile</span></span>
-<span class="hljs-meta">$</span><span class="bash">&gt; clang &lt;<span class="hljs-built_in">source</span>-code&gt; -g -O0</span>
-<span class="hljs-meta">$</span><span class="bash">&gt;</span>
-<span class="hljs-meta">$</span><span class="bash">&gt; <span class="hljs-comment"># 2,3. Launch &amp; Load</span></span>
-<span class="hljs-meta">$</span><span class="bash">&gt; lldb &lt;execuable&gt;</span>
-<span class="hljs-meta">$</span><span class="bash">&gt;</span>
-<span class="hljs-meta">$</span><span class="bash">&gt; <span class="hljs-comment"># 4. Setup</span></span>
-<span class="hljs-meta">$</span><span class="bash">&gt; (lldb) b main  <span class="hljs-comment"># Choose your entry-point, I chose the `int main()` function</span></span>
-<span class="hljs-meta">$</span><span class="bash">&gt; (lldb) b ...   <span class="hljs-comment"># Add more breakpoints if you want</span></span>
-<span class="hljs-meta">$</span><span class="bash">&gt;</span>
-<span class="hljs-meta">$</span><span class="bash">&gt; <span class="hljs-comment"># 5. Run (optionally, with arguments)</span></span>
-<span class="hljs-meta">$</span><span class="bash">&gt; (lldb) run &lt;arg-1&gt; &lt;arg-2&gt; ... &lt;arg-n&gt;</span>
-<span class="hljs-meta">$</span><span class="bash">&gt;</span>
-<span class="hljs-meta">$</span><span class="bash">&gt; <span class="hljs-comment"># 6. Launch 'gui' mode</span></span>
-<span class="hljs-meta">$</span><span class="bash">&gt; (lldb) gui</span>
-<span class="hljs-meta">$</span><span class="bash">&gt;</span>
-<span class="hljs-meta">$</span><span class="bash">&gt; <span class="hljs-comment"># 7. Examine Code</span></span>
-</div></code></pre>
-</blockquote>
-<blockquote>
-<p><em><small>[<strong>Note</strong>:</em></p>
-<ul>
-<li><em>There is also a brief section on a set of <em>[compiler]</em> flags, which, basically, make up the other half of the <a href="https://en.wikipedia.org/wiki/Debugging">debugging</a> tools/weapons available to you – <em><strong>the <code>&quot;fsanitize&quot;</code> family</strong></em> (<a href="#312-sanitizer-flags--fsanitize-family">§3.1.2</a>) <em>[of flags]</em>. Don't miss it, you'll miss out on a LOT ! <br></em></li>
-</ul>
-<p><em>- <strong>end note</strong>]</small></em></p>
-</blockquote>
-</li>
-</ul>
+<!--
+-	***To use LLDB***:
+
+	```shell
+	$> clang <source-code-files> -g -O0
+	$> lldb <execuable>
+	$> b main
+	$> r <arg-1> <arg-2> ... <arg-n>
+	$> gui
+	```
+
+	---
+
+	>	In words;
+	>
+	>	- *1.* **Compile Program** ([§3.1](#31-compile-program)) with **Debug Flags** ([§3.1.1 ](#311-debug-flags--g---o0))
+	>	- *2.* **Launch LLDB** ([§3.2](#32-launch-lldb))
+	>	- *3.* **Load LLDB** *[with your program]* ([§3.3](#33-load-lldb))
+	>	- *4.* **Setup LLDB** ([§3.4](#34-setup-lldb)) (e.g. entry-point, breakpoints, watchpoints) *[for your program]*
+	>	- *5.* **Run your program** ([§3.5](#35-start-or-attach-program)) *(within LLDB)*
+	>	- *6.* **Launch Graphical User Interface** ([3.6](#36-graphical-user-interface-gui)) mode
+	>	- *7.* **Examine the Execution** ([§3.7](#38-examine-execution)) *[of your program]*. <br> <br>
+	>
+	> *Annotated Command Line:*
+	>
+	> ```shell
+	> $> # 1. Compile
+	> $> clang <source-code> -g -O0
+	> $>
+	> $> # 2,3. Launch & Load
+	> $> lldb <execuable>
+	> $>
+	> $> # 4. Setup
+	> $> b main  # Choose your entry-point, I chose the `int main()` function
+	> $> b ...   # Add more breakpoints if you want
+	> $>
+	> $> # 5. Run (optionally, with arguments)
+	> $> run <arg-1> <arg-2> ... <arg-n>
+	> $>
+	> $> # 6. Launch 'gui' mode
+	> $> gui
+	> $>
+	> $> # 7. Examine Code
+	> ```
+
+	> *<small>[**Note**:*
+	>
+	> -	*There is also a brief section on a set of *[compiler]* flags, which, basically, make up the other half of the [debugging](https://en.wikipedia.org/wiki/Debugging) tools/weapons available to you – ***the `"fsanitize"` family*** ([§3.1.2](#312-sanitizer-flags--fsanitize-family)) *[of flags]*. Don't miss it, you'll miss out on a LOT ! <br>*
+	>
+	> *- **end note**]</small>*
+
+ -->
 <br>
 <br>
 <blockquote>
@@ -883,7 +902,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <p><em><strong>Enable sanitizer</strong> [checks] <strong>:</strong></em></p>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; &lt;compile-command&gt; [-g -O0] [-fsanitize=&lt;sanitizer-flag&gt; ...]</span>
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; $&gt; &lt;compile-command&gt; [-g -O0] [-fsanitize=&lt;sanitizer-flag&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Option(s):</strong></em></p>
 <table>
@@ -990,6 +1009,141 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 </tbody>
 </table>
 </blockquote>
+<!--
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.1.3 Makfile Setup
+<small>`[Search Tags: >lldb.makefilesetup >lldbmakefilesetup >debugger.makefilesetup >debug.makefilesetup >debuggermakefilesetup >debugmakefilesetup >makefilesetup >mkfilesetup >mkflsetup >mkflstup >mkflsup]`</small>
+<br>
+<br>
+
+> *Umm ... first [*what's a `makefile` ?*](https://en.wikipedia.org/wiki/Makefile) and second, [*how do I use it ?*](https://www.gnu.org/software/make/manual/make.html)*
+---
+
+The following link below, suggests a `Makefile` *[template]* that hopefully can make convenient the compilation of programs with the [*debug*](#311-debug-flags--g---o0) and [*`fsantize`*](#312-sanitizer-flags--fsanitize-family) flags.
+
+> To use; call `make` or `make all` to compile normally and call `make debug` to compile with **debug** and **`fsanitize`** flags.
+>
+> ```makefile
+> # Makefile (for C programs)
+>
+> # Program Name  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> NAME        =   Program
+>
+>
+> # Libraries Files  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> LIBRARIES   =                                                                 \
+>                 Path/________.a                                               \
+>
+> # Header Files  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> HEADERS     =                                                                 \
+>                 Includes/______.h                                             \
+>                 Includes/______.h                                             \
+>                 ...                                                           \
+>
+> # Source Files  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> SOURCES     =                                                                 \
+>                 Sources/main.c                                                \
+>                 Sources/______.c                                              \
+>                 ...                                                           \
+>
+>
+> # Object Files  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> OBJECTS     =   $(SOURCES:.c=.o)
+>
+>
+> # Compilation Flags  — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> CC          =   clang    # or clang++    (for C++)
+> CSTANDARD   =   -std=c99 # or -std=c++2a (for C++)
+> CFLAGS      =   -Wall -Wextra -Werror
+>
+>
+> # Optimization Flags  — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> O_FLAGS     =   -O2 -march=native
+>
+>
+> # Debug Flags  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> D_FLAGS     =   -O0 -g $(S_FLAGS)
+>
+>
+> # Sanitizer Flags  — — —— — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> S_FLAGS     +=  -fsanitize=undefined
+> S_FLAGS     +=  -fsanitize=address
+> # S_FLAGS     +=  -fsanitize=memory
+> # S_FLAGS     +=  -fsanitize=leak
+> # S_FLAGS     +=  -fsanitize=thread
+> # S_FLAGS     +=  -fsanitize=dataflow
+> # S_FLAGS     +=  -fsanitize=cfi
+> # S_FLAGS     +=  -fsanitize=safe-stack
+>
+>
+> # Rules/Targets  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> all: CFLAGS += $(O_FLAGS)
+> all: $(NAME)
+>
+> debug: CFLAGS += $(D_FLAGS)
+> debug: fclean $(NAME)
+>
+> run: $(NAME)
+> 	@./$(NAME)
+>
+> $(NAME): $(OBJECTS) $(LIBRARIES)
+> 	@$(CC) $(CFLAGS) $^ -o $@
+> 	@echo && echo $(GREEN) "[√]     [$(NAME) Successfully Compiled!]"
+> 	@echo $(WHITE)
+>
+> %.o: %.c $(HEADERS)
+> 	@$(CC) $(CFLAGS) -pipe -c $< -o $@
+> 	@echo $(WHITE) "Compiling => " $<
+>
+>
+> # House Keeping — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> DEL = /bin/rm -rf
+>
+> clean:
+> 	@$(DEL) $(shell find . -name '*.o')
+>
+> fclean: clean
+> 	@$(DEL) $(NAME)
+>
+> re: fclean all
+>
+>
+> # Text Colorization — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> GREEN = "\033[1;32m"
+> WHITE = "\033[1;37m"
+>
+>
+> # Phony — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> .PHONY: all clean fclean re run debug
+> ```
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Encyclopedia | Wikipedia | [Makefile](https://en.wikipedia.org/wiki/Makefile)
+> | 2 | Documentation | GNU | [(Official) GNU Makefile *[Manual]*](https://www.gnu.org/software/make/manual/make.html)
+
+-->
 <hr>
 <p><a href="#contents">🏠</a> | <a href="#312-sanitizer-flags--fsanitize-family">⬅️</a> | <a href="#33-load-lldb">➡️</a></p>
 <h2 id="32-run-lldb">3.2. Run LLDB</h2>
@@ -1120,7 +1274,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <h5 id="from-inside-lldb"><em>From inside [<code>lldb</code>]:</em></h5>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) target create &lt;program-execuable-filename&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">%</span><span class="bash">&gt; target create &lt;program-execuable-filename&gt;</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) file a.out                   # OR
@@ -1141,7 +1295,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) target list
+<pre class="hljs"><code><div><span class="hljs-meta">%</span><span class="bash">&gt; target list</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) target list
@@ -1159,7 +1313,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) target select &lt;target-index&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">%</span><span class="bash">&gt; target select &lt;target-index&gt;</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) target select 3       # select the third target, as current debugging target
@@ -1177,8 +1331,8 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) target delete [&lt;target-ids&gt;]
-(lldb) target delete [--all]
+<pre class="hljs"><code><div><span class="hljs-meta">%</span><span class="bash">&gt; target delete [&lt;target-ids&gt;]</span>
+<span class="hljs-meta">$</span><span class="bash">&gt; target delete [--all]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) target delete 3       # delete the target with `target-id`: #3
@@ -1415,7 +1569,7 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint set --name &lt;function-name&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> --name &lt;<span class="hljs-keyword">function</span>-name&gt;</span>
 b &lt;function-name&gt;
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
@@ -1438,8 +1592,8 @@ b &lt;function-name&gt;
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint set --file &lt;filename&gt; --line &lt;line-number&gt;
-b &lt;filename&gt;:&lt;line-number&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> --file &lt;filename&gt; --line &lt;line-number&gt;</span>
+<span class="hljs-meta">$</span><span class="bash">&gt; b &lt;filename&gt;:&lt;line-number&gt;</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint set -f hello.c -l 10
@@ -1458,7 +1612,7 @@ b &lt;filename&gt;:&lt;line-number&gt;
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint list -[bfv] [&lt;breakpt-id&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint list -[bfv] [&lt;breakpt-id&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint list --brief 3 2    # --brief    (minimum description)
@@ -1477,7 +1631,7 @@ b &lt;filename&gt;:&lt;line-number&gt;
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint delete [&lt;breakpt-ids | breakpt-name&gt;]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint delete [&lt;breakpt-ids | breakpt-name&gt;]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint delete 5
@@ -1559,8 +1713,8 @@ b &lt;filename&gt;:&lt;line-number&gt;
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) breakpoint disable [&lt;breakpt-id | breakpt-name&gt; ...]
-(lldb) breakpoint enable  [&lt;breakpt-id | breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">disable</span> [&lt;breakpt-id | breakpt-name&gt; ...]</span>
+<span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">enable</span>  [&lt;breakpt-id | breakpt-name&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint disable 1
@@ -1601,7 +1755,7 @@ b &lt;filename&gt;:&lt;line-number&gt;
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint set --func-regex &lt;regular-expression&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> --func-regex &lt;regular-expression&gt;</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint set --func-regex 'Parser.{3,4,5}_Command\(\)'
@@ -1622,8 +1776,8 @@ b &lt;filename&gt;:&lt;line-number&gt;
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint set --all-files --source-pattern-regexp &lt;regular-expression&gt;                # Search in all files
-breakpoint set [--file &lt;files&gt; ...] --source-pattern-regexp &lt;regular-expression&gt;       # Search (only) in specified files
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> --all-files --<span class="hljs-built_in">source</span>-pattern-regexp &lt;regular-expression&gt;                <span class="hljs-comment"># Search in all files</span></span>
+<span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> [--file &lt;files&gt; ...] --<span class="hljs-built_in">source</span>-pattern-regexp &lt;regular-expression&gt;       <span class="hljs-comment"># Search (only) in specified files</span></span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);'
@@ -1659,7 +1813,7 @@ breakpoint set [--file &lt;files&gt; ...] --source-pattern-regexp &lt;regular-ex
 <p><strong>Brief</strong></p>
 <p><em><code>modify</code> lets one modify previously <code>set</code> [breakpoint] options [of [existent] breakpoint(s)].</em></p>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint modify &lt;cmd-options&gt; [&lt;breakpt-id | breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint modify &lt;cmd-options&gt; [&lt;breakpt-id | breakpt-name&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Command Options:</strong></em></p>
 <table>
@@ -1860,7 +2014,7 @@ breakpoint set [--file &lt;files&gt; ...] --source-pattern-regexp &lt;regular-ex
 <h4 id="set-a-conditional-breakpoint">Set a conditional breakpoint:</h4>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint set &lt;breakpt-definition&gt; [--condition &lt;expr&gt;]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> &lt;breakpt-definition&gt; [--condition &lt;expr&gt;]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint set --line 14 --condition 'argc &lt; 2'
@@ -1878,7 +2032,7 @@ breakpoint set [--file &lt;files&gt; ...] --source-pattern-regexp &lt;regular-ex
 <h4 id="addmodify-breakpoint-condition-of-an-existing-breakpoint">Add/Modify breakpoint condition <em>[of an existing breakpoint]</em>:</h4>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint modify [--condition &lt;expr&gt;] [&lt;breakpt-id | breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint modify [--condition &lt;expr&gt;] [&lt;breakpt-id | breakpt-name&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint modify --condition 'my_var == 42' 3     # add condition to breakpt with ID: 3
@@ -1908,7 +2062,7 @@ breakpoint set [--file &lt;files&gt; ...] --source-pattern-regexp &lt;regular-ex
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint command add [--script-type &lt;type&gt;] [&lt;breakpt-id | breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">command</span> add [--script-type &lt;<span class="hljs-built_in">type</span>&gt;] [&lt;breakpt-id | breakpt-name&gt; ...]</span>
 </div></code></pre>
 <p>Then you are prompted:</p>
 <pre class="hljs"><code><div>&gt; Enter your debugger command(s). Type 'DONE' to end.
@@ -1975,7 +2129,7 @@ Enter your Python command(s). Type 'DONE' to end.
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint command list &lt;breakpt-id&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">command</span> list &lt;breakpt-id&gt;</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint command list 1.1
@@ -1993,7 +2147,7 @@ Enter your Python command(s). Type 'DONE' to end.
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint command delete &lt;breakpt-id&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">command</span> delete &lt;breakpt-id&gt;</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint command delete 1.1
@@ -2016,7 +2170,7 @@ Enter your Python command(s). Type 'DONE' to end.
 <h4 id="set-a-breakpoint-with-attributes">Set a breakpoint, with attribute(s):</h4>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint set &lt;breakpt-definition&gt; &lt;conditions&gt; [&lt;attribute&gt; &lt;boolean&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> &lt;breakpt-definition&gt; &lt;conditions&gt; [&lt;attribute&gt; &lt;boolean&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Command Options:</strong></em></p>
 <table>
@@ -2066,7 +2220,7 @@ Enter your Python command(s). Type 'DONE' to end.
 <h4 id="addmodify-breakpoint-attributes">Add/Modify breakpoint attributes:</h4>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint modify &lt;attributes&gt; [&lt;breakpt-id | breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint modify &lt;attributes&gt; [&lt;breakpt-id | breakpt-name&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint modify --auto-continue true 1.1
@@ -2164,12 +2318,12 @@ Enter your Python command(s). Type 'DONE' to end.
 <p><em><strong>Synopsis:</strong></em></p>
 <blockquote>
 <p><em>At creation (<code>set</code>ing) [of breakpoint]:</em></p>
-<pre class="hljs"><code><div>breakpoint set &lt;breakpt-definition&gt; --breakpoint-name &lt;breakpt-name&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> &lt;breakpt-definition&gt; --breakpoint-name &lt;breakpt-name&gt;</span>
 </div></code></pre>
 </blockquote>
 <blockquote>
 <p><em>After creation (<code>set</code>ing) [of breakpoint]:</em></p>
-<pre class="hljs"><code><div>breakpoint name add --name &lt;breakpt-name&gt; [&lt;breakpt-id | breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint name add --name &lt;breakpt-name&gt; [&lt;breakpt-id | breakpt-name&gt; ...]</span>
 </div></code></pre>
 </blockquote>
 <p><em><strong>Example(s):</strong></em></p>
@@ -2229,7 +2383,7 @@ Enter your Python command(s). Type 'DONE' to end.
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint name list
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint name list</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint name list
@@ -2247,7 +2401,7 @@ Enter your Python command(s). Type 'DONE' to end.
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint name delete [--name &lt;breakpt-name&gt;] [&lt;breakpt-id&gt;]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint name delete [--name &lt;breakpt-name&gt;] [&lt;breakpt-id&gt;]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint name delete --name 'funcs' 3 2     # remove 'funcs' name from the breakpoints [of id]: 3, 2
@@ -2268,8 +2422,8 @@ Enter your Python command(s). Type 'DONE' to end.
 <p><em><strong>Brief:</strong></em></p>
 <p><em><code>breakpoint name configure</code> allows to configure the options of breakpoints who have in their list of names anyone of the <code>&lt;breakpoint-names&gt;</code> provided.</em></p>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint name configure &lt;cmd-options&gt; [&lt;breakpt-name&gt; ...]       # i.e, expanded below
-breakpoint name configure &lt;condition&gt; [&lt;command&gt; ...] [&lt;attribute&gt; ...] [&lt;breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint name configure &lt;cmd-options&gt; [&lt;breakpt-name&gt; ...]       <span class="hljs-comment"># i.e, expanded below</span></span>
+<span class="hljs-meta">$</span><span class="bash">&gt; breakpoint name configure &lt;condition&gt; [&lt;<span class="hljs-built_in">command</span>&gt; ...] [&lt;attribute&gt; ...] [&lt;breakpt-name&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint name configure --condition '2 &lt;= ac &amp;&amp; ac &lt;= 10' --command bt --command 'fr v' --auto-continue true controlFlow
@@ -2300,7 +2454,7 @@ the breakpoint, otherwise only the options specified will be set on the name.</e
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint name configure [--disable] [--enable] [&lt;breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint name configure [--<span class="hljs-built_in">disable</span>] [--<span class="hljs-built_in">enable</span>] [&lt;breakpt-name&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint name configure --disable 'funcs'         # disable all breakpoints named: 'funcs'
@@ -2321,7 +2475,7 @@ the breakpoint, otherwise only the options specified will be set on the name.</e
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint name configure --condition &lt;condition-epxr&gt; [&lt;breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint name configure --condition &lt;condition-epxr&gt; [&lt;breakpt-name&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint name configure --condition 'argc &gt; 2'
@@ -2339,7 +2493,7 @@ the breakpoint, otherwise only the options specified will be set on the name.</e
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint name configure --command &lt;command&gt; [&lt;breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint name configure --<span class="hljs-built_in">command</span> &lt;<span class="hljs-built_in">command</span>&gt; [&lt;breakpt-name&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint name configure --command 'bt'
@@ -2360,7 +2514,7 @@ the breakpoint, otherwise only the options specified will be set on the name.</e
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint name configure [-i &lt;boolean&gt;] [-G &lt;boolean&gt;] [-o &lt;boolean&gt;] [&lt;breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint name configure [-i &lt;boolean&gt;] [-G &lt;boolean&gt;] [-o &lt;boolean&gt;] [&lt;breakpt-name&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Command Options:</strong></em></p>
 <table>
@@ -2405,9 +2559,9 @@ the breakpoint, otherwise only the options specified will be set on the name.</e
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) breakpoint name configure [ --thread-index &lt;index&gt; ] [&lt;breakpt-name&gt; ...]
-                                 [ --thread-name &lt;name&gt; ]   [&lt;breakpt-name&gt; ...]
-                                 [ --thread-id &lt;tid&gt; ]      [&lt;breakpt-name&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint name configure [ --thread-index &lt;index&gt; ] [&lt;breakpt-name&gt; ...]</span>
+      "               "      [ --thread-name &lt;name&gt;   ] [&lt;breakpt-name&gt; ...]
+      "               "      [ --thread-id &lt;tid&gt;      ] [&lt;breakpt-name&gt; ...]
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint name configure --thread-index 3 'funcs'
@@ -2488,9 +2642,9 @@ the breakpoint, otherwise only the options specified will be set on the name.</e
 <p><em><strong>Set breakpoint, on</strong> [a specific] <strong>thread:</strong></em></p>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) breakpoint set &lt;breakpt-definition&gt; [ --thread-index &lt;index&gt; ]     # by index (in the process)
-(lldb) breakpoint set &lt;breakpt-definition&gt; [ --thread-name &lt;name&gt; ]       # by name
-(lldb) breakpoint set &lt;breakpt-definition&gt; [ --thread-id &lt;tid&gt; ]          # by tid (in the computer)
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> &lt;breakpt-definition&gt; [ --thread-index &lt;index&gt; ]   <span class="hljs-comment"># by index (in the process)</span></span>
+           "               "           [ --thread-name &lt;name&gt;   ]   # by name
+           "               "           [ --thread-id &lt;tid&gt;      ]   # by tid (in the computer)
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint set --name baz --thread-index 3
@@ -2549,7 +2703,7 @@ the breakpoint, otherwise only the options specified will be set on the name.</e
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) breakpoint set --fullname &lt;full-function-name&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> --fullname &lt;full-function-name&gt;</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint set --fullname 'Temperature::getter'
@@ -2567,7 +2721,7 @@ the breakpoint, otherwise only the options specified will be set on the name.</e
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) breakpoint set --basename &lt;base-function-name&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> --basename &lt;base-function-name&gt;</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint set --basename 'getter'
@@ -2588,7 +2742,7 @@ the breakpoint, otherwise only the options specified will be set on the name.</e
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) breakpoint set --method &lt;method&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> --method &lt;method&gt;</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) breakpoint set --method 'getter'
@@ -2606,7 +2760,7 @@ the breakpoint, otherwise only the options specified will be set on the name.</e
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>breakpoint set --language-exception &lt;source-code-language&gt; [--on-catch &lt;true | false&gt;] [--on-throw &lt;true | false&gt;]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; breakpoint <span class="hljs-built_in">set</span> --language-exception &lt;<span class="hljs-built_in">source</span>-code-language&gt; [--on-catch &lt;<span class="hljs-literal">true</span> | <span class="hljs-literal">false</span>&gt;] [--on-throw &lt;<span class="hljs-literal">true</span> | <span class="hljs-literal">false</span>&gt;]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>breakpoint set --language-exception c++                                        # on default setting
@@ -2730,13 +2884,13 @@ br s -E c++ -h True -w False
 <p><em><strong>Synopsis:</strong></em></p>
 <blockquote>
 <p><em>on a variable:</em></p>
-<pre class="hljs"><code><div>watchpoint set variable [--watch &lt;watch-type&gt;] [--size &lt;byte-size&gt;] &lt;variable-name&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; watchpoint <span class="hljs-built_in">set</span> variable [--watch &lt;watch-type&gt;] [--size &lt;byte-size&gt;] &lt;variable-name&gt;</span>
 </div></code></pre>
 </blockquote>
 <blockquote>
 <p><em>on an address <em>[by supplying an expression]</em>:</em></p>
-<pre class="hljs"><code><div>watchpoint set expression [--watch &lt;watch-type&gt;] [--size &lt;byte-size&gt;] -- &lt;expr&gt;
-watchpoint set expression &lt;expr&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; watchpoint <span class="hljs-built_in">set</span> expression [--watch &lt;watch-type&gt;] [--size &lt;byte-size&gt;] -- &lt;expr&gt;</span>
+<span class="hljs-meta">$</span><span class="bash">&gt; watchpoint <span class="hljs-built_in">set</span> expression &lt;expr&gt;</span>
 </div></code></pre>
 </blockquote>
 <p><em><strong>Option(s):</strong></em></p>
@@ -2749,10 +2903,10 @@ watchpoint set expression &lt;expr&gt;
 		Values: read | write | read_write
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
-<pre class="hljs"><code><div>(lldb) watchpoint set variable --watch read_write my_var
+<pre class="hljs"><code><div>(lldb) watchpoint set variable --watch read_write -- my_var
 (lldb) wa s v -w read_write my_var
 </div></code></pre>
-<pre class="hljs"><code><div>(lldb) watchpoint set variable   --watch write --size 8 -- my_PtrToLongInt
+<pre class="hljs"><code><div>(lldb) watchpoint set variable --watch write --size 8 -- my_PtrToLongInt
 (lldb) wa s v -w write -s 8 -- my_PtrToLongInt
 </div></code></pre>
 <pre class="hljs"><code><div>(lldb) watchpoint set expression --watch write --size 8 -- my_PtrToLongInt
@@ -2786,7 +2940,7 @@ watchpoint set expression &lt;expr&gt;
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>watchpoint list -[bfv] [&lt;watchpt-ids&gt;]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; watchpoint list -[bfv] [&lt;watchpt-id&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) watchpoint list -b 4 5 2       # --brief    (minimum description)
@@ -2805,7 +2959,7 @@ watchpoint set expression &lt;expr&gt;
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>watchpoint delete [&lt;watchpt-ids&gt;]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; watchpoint delete [&lt;watchpt-id&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) watchpoint delete 1 2 3
@@ -2874,8 +3028,8 @@ watchpoint set expression &lt;expr&gt;
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>(lldb) watchpoint disable &lt;watchpt-ids | watchpt-names&gt;
-(lldb) watchpoint enable  &lt;watchpt-ids | watchpt-names&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; watchpoint <span class="hljs-built_in">disable</span> [&lt;watchpt-id | watchpt-name&gt; ...]</span>
+<span class="hljs-meta">$</span><span class="bash">&gt; watchpoint <span class="hljs-built_in">enable</span>  [&lt;watchpt-id | watchpt-name&gt; ...]</span>
 </div></code></pre>
 <pre class="hljs"><code><div>(lldb) watchpoint modify [--disable] [--enable] &lt;watchpt-ids | watchpt-names&gt;
 </div></code></pre>
@@ -2957,7 +3111,7 @@ watchpoint set expression &lt;expr&gt;
 <h4 id="addmodify-watchpoint-condition">Add/modify [watchpoint] condition:</h4>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>watchpoint modify --condition &lt;condition-expr&gt; [&lt;watch-id&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; watchpoint modify --condition &lt;condition-expr&gt; [&lt;watch-id&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>watchpoint modify --condition 'my_var &gt; 10' 1
@@ -2990,7 +3144,7 @@ wa mo -c '' 1
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>watchpoint ignore --ignore-count &lt;count&gt; [&lt;watchpt-id&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; watchpoint ignore --ignore-count &lt;count&gt; [&lt;watchpt-id&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>watchpoint ignore --ignore-count 10 3 7 6
@@ -3117,7 +3271,7 @@ wa i -i 10 3 7 6
 <h4 id="launch-a-program">Launch <em>[a program]</em>:</h4>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>process launch -- [&lt;arg&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; process launch -- [&lt;arg&gt; ...]</span>
 run [&lt;arg&gt; ...]                                    # alias
 r [&lt;arg&gt; ...]                                      # alias
 </div></code></pre>
@@ -3158,7 +3312,7 @@ r [&lt;arg&gt; ...]                                      # alias
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>process launch --shell=[&lt;filename&gt;] -- [&lt;arg&gt; ...]   # shell
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; process launch --shell=[&lt;filename&gt;] -- [&lt;arg&gt; ...]   <span class="hljs-comment"># shell</span></span>
 process launch --tty -- [&lt;arg&gt; ...]                  # terminal
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
@@ -3183,7 +3337,7 @@ pr la -c=/dev/ttys003
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>process launch --environment &lt;NAME&gt;=&lt;VALUE&gt; -- [&lt;arg&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; process launch --environment &lt;NAME&gt;=&lt;VALUE&gt; -- [&lt;arg&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>process launch --environment BIG_ENDIAN=true -- "arg1"
@@ -3204,7 +3358,7 @@ pr la -v GREET="hello" -v FAREWELL="bye" -- "arg1" "arg2"
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>process launch --working-dir &lt;directory&gt; -- [&lt;arg&gt; ...]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; process launch --working-dir &lt;directory&gt; -- [&lt;arg&gt; ...]</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>process launch --working-dir /Volumes/Driver/Core/ -- "arg1" "arg2"
@@ -3347,7 +3501,7 @@ pr la -w /Volumes/Driver/Core/ -- "arg1" "arg2"
 <h4 id="attach-to-process">Attach to process:</h4>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>process attach [--pid &lt;pid&gt;]                           # by process identifier (pid)
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; process attach [--pid &lt;pid&gt;]                           <span class="hljs-comment"># by process identifier (pid)</span></span>
 process attach [--wait-for] [--name &lt;program-name&gt;]    # by program name
 </div></code></pre>
 <p><em><strong><strong>Example(s):</strong></strong></em></p>
@@ -3371,7 +3525,7 @@ process attach [--wait-for] [--name &lt;program-name&gt;]    # by program name
 <p><em><strong>Brief:</strong></em></p>
 <p><em>Connect to a process via remote GDB server. If no host is specifed, localhost is assumed.</em></p>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>gdb-remote &lt;host&gt;:&lt;port&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; gdb-remote &lt;host&gt;:&lt;port&gt;</span>
 </div></code></pre>
 <p><em><strong><strong>Example(s):</strong></strong></em></p>
 <pre class="hljs"><code><div>(lldb) gdb-remote 8000
@@ -3972,15 +4126,15 @@ process attach [--wait-for] [--name &lt;program-name&gt;]    # by program name
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left"><code>(lldb) thread step-over</code> <br> <code>(lldb) next</code> <br> <code>(lldb) n</code></td>
+<td style="text-align:left"><code>(lldb) thread</code><strong><code>step-over</code></strong> <br> <code>(lldb) next</code> <br> <code>(lldb) n</code></td>
 <td style="text-align:left"><strong>Step over</strong> <em>[function call]</em> lines <em>[, if any]</em>, executing the current <br> line and stepping, thereafter, over it, to the next one. Defaults to <br> current thread unless specified.</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>(lldb) thread step-in</code> <br> <code>(lldb) step</code> <br> <code>(lldb) s</code></td>
+<td style="text-align:left"><code>(lldb) thread</code><strong><code>step-in</code></strong> <br> <code>(lldb) step</code> <br> <code>(lldb) s</code></td>
 <td style="text-align:left"><strong>Step into</strong> <em>[function]</em> calls. Defaults to current thread unless <br> specified.</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>(lldb) thread step-out</code> <br> <code>(lldb) finish</code></td>
+<td style="text-align:left"><code>(lldb) thread</code><strong><code>step-out</code></strong> <br> <code>(lldb) finish</code></td>
 <td style="text-align:left"><strong>Step out</strong> of the currently selected frame <em>(i.e function call)</em>.</td>
 </tr>
 <tr>
@@ -4146,11 +4300,14 @@ process attach [--wait-for] [--name &lt;program-name&gt;]    # by program name
 <h2 id="commands-for-examining">Commands for examining:</h2>
 <ul>
 <li><a href="#381-source-code">3.8.1. Source code</a></li>
-<li><a href="#382-state-of-threads">3.8.2. State of Threads</a></li>
-<li><a href="#383-state-of-stack-frames">3.8.3. State of Stack Frames</a></li>
-<li><a href="#384-state-of-variables">3.8.4. State of Variables</a></li>
+<li><a href="#382-threads">3.8.2. Threads</a></li>
+<li><a href="#383-stack-frames">3.8.3. Stack Frames</a></li>
+<li><a href="#384-variables">3.8.4. Variables</a></li>
+<li><a href="#385-registers">3.8.5. Registers</a></li>
+<li><a href="#386-expressions">3.8.6. Expressions</a></li>
 </ul>
-<p>Once the program stops execution <em>(e.g. due to a breakpoint, watchpoint, manual stop, crash, etc ...)</em>, you will be able to examine <em>(or inspect)</em> the state of the process.</p>
+<hr>
+<p>Once the program stops execution <em>(e.g. due to a breakpoint, watchpoint, manual stop, crash, etc ...)</em>, you can examine <em>(or inspect)</em> the state of the process on many levels –– those stated above.</p>
 <br>
 <br>
 <blockquote>
@@ -4207,7 +4364,7 @@ process attach [--wait-for] [--name &lt;program-name&gt;]    # by program name
 <hr>
 <p><a href="#contents">🏠</a> | <a href="#38-examine-execution">⬅️</a> | <a href="#382-variables">➡️</a></p>
 <h3 id="381-source-code">3.8.1. Source Code</h3>
-<p><small><code>[Search Tags: &gt;sourcecodelldb &gt;lldb.sourcecode &gt;lldbsourcecode &gt;examinesourcecode &gt;sourcecodeexamine &gt;sourcecodeexamination &gt;examinesourcecde &gt;sourcecdeexamine &gt;sourcecdeexamination &gt;examinesrccode &gt;srccodeexamine &gt;srccodeexamination &gt;examinesrccde &gt;srccdeexamine &gt;srccdeexamination &gt;examinecode &gt;examinecode &gt;scodeexamine &gt;scodeexamine]</code></small>
+<p><small><code>[Search Tags: &gt;sourcecodelldb &gt;lldb.sourcecode &gt;lldbsourcecode &gt;examinesourcecode &gt;sourcecodeexamine &gt;examsourcecode &gt;sourcecodeexam &gt;examinationsourcecode &gt;sourcecodeexamination &gt;examinatingsourcecode &gt;sourcecodeexaminating &gt;examinesrcecod &gt;srcecodexamine &gt;examsrcecod &gt;srcecodexam &gt;examinationsrcecod &gt;srcecodexamination &gt;examinatingsrcecod &gt;srcecodexaminating &gt;examinesrccode &gt;srccodeecodxamine &gt;examsrccode &gt;srccodeecodxam &gt;examinationsrccode &gt;srccodeecodxamination &gt;examinatingsrccode &gt;srcecodxaminating &gt;examinesource &gt;sourceexamine &gt;examsource &gt;sourceexam &gt;examinationsource &gt;sourceexamination &gt;examinatingsource &gt;sourceexaminating &gt;examinesrce &gt;srceexamine &gt;examsrce &gt;srceexam &gt;examinationsrce &gt;srceexamination &gt;examinatingsrce &gt;srceexaminating &gt;examinesrc &gt;srcexamine &gt;examsrc &gt;srcexam &gt;examinationsrc &gt;srcexamination &gt;examinatingsrc &gt;srcexaminating &gt;examinecode &gt;codeexamine &gt;examcode &gt;codeexam &gt;examinationcode &gt;codeexamination &gt;examinatingcode &gt;codeexaminating &gt;examinecod &gt;codexamine &gt;examcod &gt;codexam &gt;examinationcod &gt;codexamination &gt;examinatingcod &gt;codexaminating &gt;examinecd &gt;cdexamine &gt;codxamine &gt;examcd &gt;cdexam &gt;codxam &gt;examinationcd &gt;cdexamination &gt;codxamination &gt;examinatingcd &gt;cdexaminating &gt;codxaminating]</code></small>
 <br>
 <br></p>
 <blockquote>
@@ -4222,7 +4379,7 @@ process attach [--wait-for] [--name &lt;program-name&gt;]    # by program name
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>source list [--show-breakpoints] [--count &lt;count&gt;] [--file &lt;filename&gt;] [--line &lt;linenum&gt;]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; <span class="hljs-built_in">source</span> list [--show-breakpoints] [--count &lt;count&gt;] [--file &lt;filename&gt;] [--line &lt;linenum&gt;]</span>
 source list [--show-breakpoints] [--count &lt;count&gt;] [--name &lt;program-symbol&gt;]
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
@@ -4266,7 +4423,7 @@ source list [--show-breakpoints] [--count &lt;count&gt;] [--name &lt;program-sym
 </blockquote>
 <hr>
 <p><a href="#contents">🏠</a> | <a href="#382-variables">⬅️</a> | <a href="#384-stack-frame-states">➡️</a></p>
-<h3 id="382-state-of-threads">3.8.2. State of Threads</h3>
+<h3 id="382-threads">3.8.2. Threads</h3>
 <p><small><code>[Search Tags: &gt;threadexamination &gt;examinationthread &gt;examthreads &gt;threadsexam &gt;threadexam &gt;examthrds &gt;thrdsexam &gt;thrdexam &gt;examinthreads &gt;threadsexamin &gt;threadexamin &gt;examinthrds &gt;thrdsexamin &gt;thrdexamin &gt;examinethreads &gt;threadsexamine &gt;threadexamine &gt;examinethrds &gt;thrdsexamine &gt;thrdexamine &gt;examinatingthreads &gt;threadsexaminating &gt;threadexaminating &gt;examinatingthrds &gt;thrdsexaminating &gt;thrdexaminating &gt;threadsstate &gt;thrdsstate &gt;threadstate &gt;thrdstate &gt;thrsstate &gt;thrstate &gt;thsstate &gt;thstate &gt;tsstate &gt;tstate &gt;statethreads &gt;statethrds &gt;statethread &gt;statethrd &gt;statethrs]</code></small>
 <br>
 <br></p>
@@ -4288,7 +4445,7 @@ source list [--show-breakpoints] [--count &lt;count&gt;] [--name &lt;program-sym
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>thread list
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; thread list</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) thread list
@@ -4321,7 +4478,7 @@ source list [--show-breakpoints] [--count &lt;count&gt;] [--name &lt;program-sym
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>thread select &lt;thread-index&gt;
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; thread select &lt;thread-index&gt;</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) thread select 2
@@ -4351,7 +4508,7 @@ source list [--show-breakpoints] [--count &lt;count&gt;] [--name &lt;program-sym
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>thread info [--json] [--stop-info] [&lt;thread-index&gt; | all]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; thread info [--json] [--stop-info] [&lt;thread-index&gt; | all]</span>
 </div></code></pre>
 <pre class="hljs"><code><div>(lldb) thread info --json
 (lldb) th i -j
@@ -4384,7 +4541,7 @@ source list [--show-breakpoints] [--count &lt;count&gt;] [--name &lt;program-sym
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>thread backtrace [--count &lt;count&gt;] [--start &lt;frame-index&gt;]    # Backtrace [the first &lt;count&gt; frames] [starting from the frame &lt;frame-index&gt; for] the current thread.
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; thread backtrace [--count &lt;count&gt;] [--start &lt;frame-index&gt;]    <span class="hljs-comment"># Backtrace [the first &lt;count&gt; frames] [starting from the frame &lt;frame-index&gt; for] the current thread.</span></span>
 thread backtrace [all]                                        # Show backtrace all threads.
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
@@ -4500,7 +4657,7 @@ frame #10: 0x0000000100000f20, where = Sketch`start + 52
 </blockquote>
 <hr>
 <p><a href="#contents">🏠</a> | <a href="#383-thread-states">⬅️</a> | <a href="#39-graphical-user-interface-gui">➡️</a></p>
-<h3 id="383-state-of-stack-frames">3.8.3. State of Stack Frames</h3>
+<h3 id="383-stack-frames">3.8.3. Stack Frames</h3>
 <p><small><code>[Search Tags: &gt;stackexamination &gt;examinationstack &gt;examstacks &gt;stacksexam &gt;stackexam &gt;examstcks &gt;examstks &gt;stcksexam &gt;stksexam &gt;stckexam &gt;stkexam &gt;examinstacks &gt;stacksexamin &gt;stackexamin &gt;examinstcks &gt;examinstks &gt;stcksexamin &gt;stksexamin &gt;stckexamin &gt;stkexamin &gt;examinestacks &gt;stacksexamine &gt;stackexamine &gt;examinestcks &gt;examinestks &gt;stcksexamine &gt;stksexamine &gt;stckexamine &gt;stkexamine &gt;examinatingstacks &gt;stacksexaminating &gt;stackexaminating &gt;examinatingstcks &gt;examinatingstks &gt;stcksexaminating &gt;stksexaminating &gt;stckexaminating &gt;stkexaminating &gt;frameexamination &gt;examinationframe &gt;examframes &gt;framesexam &gt;frameexam &gt;examfrms &gt;examfrs &gt;frmsexam &gt;frsexam &gt;frmexam &gt;frexam &gt;examinframes &gt;framesexamin &gt;frameexamin &gt;examinfrms &gt;examinfrs &gt;frmsexamin &gt;frsexamin &gt;frmexamin &gt;frexamin &gt;examineframes &gt;framesexamine &gt;frameexamine &gt;examinefrms &gt;examinefrs &gt;frmsexamine &gt;frsexamine &gt;frmexamine &gt;frexamine &gt;examinatingframes &gt;framesexaminating &gt;frameexaminating &gt;examinatingfrms &gt;examinatingfrs &gt;frmsexaminating &gt;frsexaminating &gt;frmexaminating &gt;frexaminating &gt;stacksstate &gt;stcksstate &gt;stackstate &gt;stckstate &gt;stksstate &gt;stkstate &gt;stsstate &gt;ststate &gt;tsstate &gt;tstate &gt;statestacks &gt;statestcks &gt;statestack &gt;statestck &gt;statestks &gt;framesstate &gt;frmsstate &gt;framestate &gt;frmstate &gt;frsstate &gt;frstate &gt;stsstate &gt;ststate &gt;tsstate &gt;tstate &gt;stateframes &gt;statefrms &gt;stateframe &gt;statefrm &gt;statefrs &gt;stackframeexamination &gt;examinationstackframe &gt;examstackframes &gt;stackframesexam &gt;stackframeexam &gt;examinstackframes &gt;stackframesexamin &gt;stackframeexamin &gt;examinestackframes &gt;stackframesexamine &gt;stackframeexamine &gt;examinatingstackframes &gt;stackframesexaminating &gt;stackframeexaminating &gt;stackframesstate &gt;stackframestate &gt;statestackframes &gt;statestackframe]</code></small>
 <br>
 <br></p>
@@ -4518,7 +4675,7 @@ frame #10: 0x0000000100000f20, where = Sketch`start + 52
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>frame select [--relative &lt;offset&gt;] [&lt;frame-index&gt;]
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; frame select [--relative &lt;offset&gt;] [&lt;frame-index&gt;]</span>
 </div></code></pre>
 <pre class="hljs"><code><div>down         # Select the stack frame: current-index - 1 ; that is called by the current stack frame.
 up           # Select the stack frame: current-index + 1 ; that called the current stack frame.
@@ -4558,7 +4715,7 @@ up           # Select the stack frame: current-index + 1 ; that called the curre
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>frame info
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; frame info</span>
 </div></code></pre>
 <p><em><strong>Example(s):</strong></em></p>
 <pre class="hljs"><code><div>(lldb) frame info     # List information about the currently selected frame, in the current thread.
@@ -4619,81 +4776,374 @@ up           # Select the stack frame: current-index + 1 ; that called the curre
 </blockquote>
 <hr>
 <p><a href="#contents">🏠</a> | <a href="#381-source-code">⬅️</a> | <a href="#383-thread-states">➡️</a></p>
-<h3 id="384-state-of-stack-frame-variables">3.8.4. State of Stack Frame Variables</h3>
-<p><small><code>[Search Tags: &gt;]</code></small>
+<h3 id="384-variables">3.8.4. Variables</h3>
+<p><small><code>[Search Tags: &gt;variableexamination &gt;variablesexamination &gt;varsexamination &gt;varexamination &gt;examinationvariable &gt;examinationvariables &gt;examinationvars &gt;examinationvar &gt;examvariables &gt;examvariabless &gt;examvarss &gt;examvars &gt;variablesexam &gt;variablessexam &gt;varssexam &gt;varsexam &gt;variableexam &gt;variablesexam &gt;varsexam &gt;varexam]</code></small>
 <br>
 <br></p>
-<h2 id="contents">Contents</h2>
-<ul>
-<li><a href="#tag">1 Show Variable Value</a></li>
-<li><a href="#tag">1 Show Variables</a></li>
-<li><a href="#tag">2 Show Variables</a></li>
-</ul>
-<hr>
 <ul>
 <li>
-<h4 id="">:</h4>
+<h4 id="print-read-variables">Print <em>(read)</em> variable(s):</h4>
 <blockquote>
-<p><small><code>[Search Tags: &gt;termlaunchprocesses &gt;termlaunchprograms &gt;terminallaunchprocesses &gt;terminallaunchprograms &gt;shelllaunchprocesses &gt;shelllaunchprograms &gt;launchshell &gt;shelllaunch &gt;launchshll &gt;shlllaunch &gt;launchterminal &gt;terminallaunch &gt;lnchshell &gt;shelllnch &gt;lnchshll &gt;shlllnch &gt;lnchterminal &gt;terminallnch &gt;lashell &gt;shellla &gt;lashll &gt;shllla &gt;laterminal &gt;terminalla &gt;launchconfigshell &gt;shellconfiglaunch &gt;launchconfigshll &gt;shllconfiglaunch &gt;launchconfigterminal &gt;terminalconfiglaunch &gt;lnchconfigshell &gt;shellconfiglnch &gt;lnchconfigshll &gt;shllconfiglnch &gt;lnchconfigterminal &gt;terminalconfiglnch &gt;laconfigshell &gt;shellconfigla &gt;laconfigshll &gt;shllconfigla &gt;laconfigterminal &gt;terminalconfigla &gt;termlaunch &gt;termlnch &gt;termla &gt;termconfiglaunch &gt;termconfiglnch &gt;termconfigla]</code></small></p>
+<p><small><code>[Search Tags: &gt;variableshow &gt;variablesshow &gt;varsshow &gt;varshow &gt;showvariable &gt;showvariables &gt;showvars &gt;showvar &gt;listvariables &gt;displayvariables &gt;dispvariables &gt;listvariabless &gt;displayvariabless &gt;dispvariabless &gt;listvarss &gt;displayvarss &gt;dispvarss &gt;listvars &gt;displayvars &gt;dispvars &gt;variableslist &gt;variablesdisplay &gt;variablesslist &gt;variablessdisplay &gt;varsslist &gt;varssdisplay &gt;varslist &gt;varsdisplay &gt;variablelist &gt;variabledisplay &gt;variableslist &gt;variablesdisplay &gt;varslist &gt;varsdisplay &gt;varlist &gt;vardisplay &gt;variableprint &gt;variablesprint &gt;varsprint &gt;varprint &gt;printvariable &gt;printvariables &gt;printvars &gt;printvar &gt;variableread &gt;variablesread &gt;varsread &gt;varread &gt;variablerd &gt;variablesrd &gt;varsrd &gt;varrd &gt;readvariable &gt;readvariables &gt;readvars &gt;readvar &gt;rdvariable &gt;rdvariables &gt;rdvars &gt;rdvar]</code></small></p>
 </blockquote>
 <blockquote>
 <p><em><strong>Synopsis:</strong></em></p>
-<pre class="hljs"><code><div>frame variable
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; frame variable [-scarfglFL] -P &lt;count&gt; [&lt;var-name&gt;]</span>
 </div></code></pre>
+<p><em><strong>Options:</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--regex</code></td>
+<td><code>-r</code></td>
+<td><em>The <variable-name> argument for name lookups are regular expressions.</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--format &lt;format&gt;</code></td>
+<td><code>-f</code></td>
+<td><em>Specify a format (e.g. binary, hex, decimal) to be used for <br> display. See notes below for a list of all the formats available.</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>More Information</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--ptr-depth &lt;count&gt;</code></td>
+<td><code>-P</code></td>
+<td><em>Number of times pointer variables get dereferenced <br> (default is zero).</em></td>
+</tr>
+<tr>
+<td><code>--scope</code></td>
+<td><code>-s</code></td>
+<td><em>Show variable scope (argument, local, global, static).</em></td>
+</tr>
+<tr>
+<td><code>--show-globals</code></td>
+<td><code>-g</code></td>
+<td><em>Show [the current frame source file] global and static <br> variables.</em></td>
+</tr>
+<tr>
+<td><code>--show-declaration</code></td>
+<td><code>-c</code></td>
+<td><em>Show variable declaration line [in source file].</em></td>
+</tr>
+<tr>
+<td><code>--location</code></td>
+<td><code>-L</code></td>
+<td><em>Show variable location information.</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Less Information</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--flat</code></td>
+<td><code>-F</code></td>
+<td><em>Omit [showing] variable type.</em></td>
+</tr>
+<tr>
+<td><code>--no-locals</code></td>
+<td><code>-l</code></td>
+<td><em>Omit [showing] local variables.</em></td>
+</tr>
+<tr>
+<td><code>--no-args</code></td>
+<td><code>-a</code></td>
+<td><em>Omit [showing] [function] argument variables.</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td><em>For more, see <code>(lldb) help frame variable</code>.</em></td>
+</tr>
+</tbody>
+</table>
 <p><em><strong>Example(s):</strong></em></p>
-<pre class="hljs"><code><div></div></code></pre>
-<pre class="hljs"><code><div></div></code></pre>
+<pre class="hljs"><code><div>(lldb) frame variable                                            # Show all arguments and local variables.
+(lldb) fr v
+</div></code></pre>
+<pre class="hljs"><code><div>(lldb) frame variable my_var                                     # Show the value of `my_var`.
+(lldb) fr v my_var
+</div></code></pre>
+<pre class="hljs"><code><div>
+(lldb) frame variable --format x *my_ptr                         # Show the value that `my_ptr` points to, in "(lowercase) hexadecimal" format.
+(lldb) fr v -f x *my_ptr
+(lldb) fr v/x *my_ptr
+</div></code></pre>
+<pre class="hljs"><code><div>(lldb) frame variable --scope --show-globals --ptr-depth 3       # Show all variables that exist (i.e arguments, locals, globals, [file] statics); as for pointers, dereference them 3 times.
+(lldb) fr v -s -g -P 3
+</div></code></pre>
+<p><em><strong>[Example] Output:</strong></em></p>
+<pre class="hljs"><code><div>(lldb) fr v -s -g -P 3
+ARG: (int) ac = 2
+ARG: (char **) av = 0x00007ffeefbff5a8 {
+  *av = 0x00007ffeefbff7e8 "/path/to/working/directory/a.out" {
+    **av = '/'
+  }
+}
+LOCAL: (int *) userInputCount = 0x00006020000000f0 {
+  *userInputCount = 5
+}
+</div></code></pre>
 </blockquote>
 <blockquote>
-<p><em><small>[<strong>Note</strong>: . - <strong>end note</strong>]</small></em></p>
+<p><em><small>[<strong>Note:</strong></em></p>
+<ul>
+<li>
+<p><em><code>LLDB</code> supports formatting the output with <code>GDB</code>'s shorthand notation: appending to the command a backslash followed by its format specifier (see <a href="#format-table">Format Table</a> below), e.g.: <code>fr v/x</code> (hexadecimal), <code>fr v/o</code> (octal), <code>fr v/t</code> (binary), ...</em></p>
+</li>
+<li>
+<p><em>To obtain a table of the available formats, type: <code>(lldb) frame variable --format ?</code></em></p>
+<h3 id="format-table">Format Table:</h3>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Shorthand</th>
+<th>Gdb Shorthand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td><code>B</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>binary</code></td>
+<td><code>b</code></td>
+<td><code>/t</code></td>
+</tr>
+<tr>
+<td><code>bytes</code></td>
+<td><code>y</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>bytes with ASCII</code></td>
+<td><code>Y</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>character</code></td>
+<td><code>c</code></td>
+<td><code>/c</code></td>
+</tr>
+<tr>
+<td><code>printable character</code></td>
+<td><code>C</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>complex float</code></td>
+<td><code>F</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>c-string</code></td>
+<td><code>s</code></td>
+<td><code>/s</code></td>
+</tr>
+<tr>
+<td><code>decimal</code></td>
+<td><code>d</code></td>
+<td><code>/d</code></td>
+</tr>
+<tr>
+<td><code>enumeration</code></td>
+<td><code>E</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>hex</code></td>
+<td><code>x</code></td>
+<td><code>/x</code></td>
+</tr>
+<tr>
+<td><code>uppercase hex</code></td>
+<td><code>X</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td><code>f</code></td>
+<td><code>/f</code></td>
+</tr>
+<tr>
+<td><code>octal</code></td>
+<td><code>o</code></td>
+<td><code>/o</code></td>
+</tr>
+<tr>
+<td><code>OSType</code></td>
+<td><code>O</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>unicode16</code></td>
+<td><code>U</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>unicode32</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>unsigned decimal</code></td>
+<td><code>u</code></td>
+<td><code>/u</code></td>
+</tr>
+<tr>
+<td><code>pointer</code></td>
+<td><code>p</code></td>
+<td><code>/a</code></td>
+</tr>
+<tr>
+<td><code>char[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>int8_t[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>uint8_t[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>int16_t[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>uint16_t[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>int32_t[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>uint32_t[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>int64_t[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>uint64_t[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>float16[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>float32[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>float64[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>uint128_t[]</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>complex integer</code></td>
+<td><code>I</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>character array</code></td>
+<td><code>a</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td><code>A</code></td>
+<td><code>/a</code></td>
+</tr>
+<tr>
+<td><code>hex float</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>instruction</code></td>
+<td><code>i</code></td>
+<td><code>/i</code></td>
+</tr>
+<tr>
+<td><code>void</code></td>
+<td><code>v</code></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><em>- <strong>end note</strong>]</small></em></p>
 </blockquote>
-<p>-A ( --show-all-children )
-Ignore the upper bound on the number of children to show.</p>
-<p>-D <count> ( --depth <count> )
-Set the max recurse depth when dumping aggregate types (default is infinity).</p>
-<p>-F ( --flat )
-Display results in a flat format that uses expression paths for each variable or member.</p>
-<p>-G <gdb-format> ( --gdb-format <gdb-format> )
-Specify a format using a GDB format specifier string.</p>
-<p>-L ( --location )
-Show variable location information.</p>
-<p>-O ( --object-description )
-Display using a language-specific description API, if possible.</p>
-<p>-P <count> ( --ptr-depth <count> )
-The number of pointers to be traversed when dumping values (default is zero).</p>
-<p>-R ( --raw-output )
-Don't use formatting options.</p>
-<p>-S <boolean> ( --synthetic-type <boolean> )
-Show the object obeying its synthetic provider, if available.</p>
-<p>-T ( --show-types )
-Show variable types when dumping values.</p>
-<p>-V <boolean> ( --validate <boolean> )
-Show results of type validators.</p>
-<p>-Y[<count>] ( --no-summary-depth=[<count>] )
-Set the depth at which omitting summary information stops (default is 1).</p>
-<p>-Z <count> ( --element-count <count> )
-Treat the result of the expression as if its type is an array of this many values.</p>
-<p>-a ( --no-args )
-Omit function arguments.</p>
-<p>-c ( --show-declaration )
-Show variable declaration information (source file and line where the variable was declared).</p>
-<p>-d <none> ( --dynamic-type <none> )
-Show the object as its full dynamic type, not its static type, if available.
-Values: no-dynamic-values | run-target | no-run-target</p>
-<p>-f <format> ( --format <format> )
-Specify a format to be used for display.</p>
-<p>-g ( --show-globals )
-Show the current frame source file global and static variables.</p>
-<p>-l ( --no-locals )
-Omit local variables.</p>
-<p>-r ( --regex )
-The <variable-name> argument for name lookups are regular expressions.</p>
-<p>-s ( --scope )
-Show variable scope (argument, local, global, static).</p>
-<p>-y <name> ( --summary <name> )
-Specify the summary that the variable output should use.</p>
-<p>-z <name> ( --summary-string <name> )
-Specify a summary string to use to format the variable output.</p>
 </li>
 </ul>
 <br>
@@ -4712,10 +5162,408 @@ Specify a summary string to use to format the variable output.</p>
 <tbody>
 <tr>
 <td>1</td>
+<td>Manual Page</td>
+<td>Unix / Linux / MacOS</td>
+<td><code>(lldb) help frame variable</code></td>
+</tr>
+<tr>
+<td>2</td>
 <td>Documentation</td>
 <td>LLDB</td>
-<td><a href="https://lldb.llvm.org/use/map.html?highlight=watchpoints#examining-variables">Gdb to LLDB Command Map :: Examine Variables</a></td>
+<td><a href="https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state">(Official) Tutorial :: Examining Stack Frame State</a></td>
 </tr>
+<tr>
+<td>3</td>
+<td>Documentation</td>
+<td>Apple</td>
+<td><a href="https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW9">LLDB Tutorial :: Examining the Stack Frame State</a></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<hr>
+<p><a href="#HOME">🏠</a> | <a href="#PREVIOUS">⬅️</a> | <a href="#NEXT">➡️</a></p>
+<h3 id="385-registers">3.8.5. Registers</h3>
+<p><small><code>[Search Tags: &gt;examinationregisters &gt;registersexamination &gt;examinatingregisters &gt;registersexaminating &gt;examineregisters &gt;registersexamine &gt;examregisters &gt;registersexam &gt;examinationregistrs &gt;registrsexamination &gt;examinatingregistrs &gt;registrsexaminating &gt;examineregistrs &gt;registrsexamine &gt;examregistrs &gt;registrsexam &gt;examinationregs &gt;regsexamination &gt;examinatingregs &gt;regsexaminating &gt;examineregs &gt;regsexamine &gt;examregs &gt;regsexam &gt;examinationrgs &gt;rgsexamination &gt;examinatingrgs &gt;rgsexaminating &gt;examinergs &gt;rgsexamine &gt;examrgs &gt;rgsexam]</code></small>
+<br></p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#read-print-registers">1 Print <em>(read)</em> Registers</a></li>
+<li><a href="#overwrite-modify-to-registers">2 Write to Registers</a></li>
+</ul>
+<hr>
+<ul>
+<li>
+<h4 id="read-print-registers">Read <em>(print)</em> registers:</h4>
+<blockquote>
+<p><small><code>[Search Tags: &gt;registershow &gt;registersshow &gt;showregister &gt;showregisters &gt;listregisters &gt;displayregisters &gt;dispregisters &gt;listregisterss &gt;displayregisterss &gt;dispregisterss &gt;registerslist &gt;registersdisplay &gt;registersslist &gt;registerssdisplay &gt;registerlist &gt;registerdisplay &gt;registerslist &gt;registersdisplay &gt;registerprint &gt;registersprint &gt;printregister &gt;printregisters &gt;regsshow &gt;regshow &gt;showregs &gt;showreg &gt;listregss &gt;displayregss &gt;dispregss &gt;listregs &gt;displayregs &gt;dispregs &gt;regsslist &gt;regssdisplay &gt;regslist &gt;regsdisplay &gt;regslist &gt;regsdisplay &gt;reglist &gt;regdisplay &gt;regsprint &gt;regprint &gt;printregs &gt;printreg &gt;registerread &gt;registersread &gt;regsread &gt;regread &gt;registerrd &gt;registersrd &gt;regsrd &gt;regrd &gt;readregister &gt;readregisters &gt;readregs &gt;rdregister &gt;rdregisters &gt;rdregs]</code></small></p>
+</blockquote>
+<blockquote>
+<p><em><strong>Synopsis:</strong></em></p>
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; register <span class="hljs-built_in">read</span> [--all] [--format &lt;format&gt;] [--<span class="hljs-built_in">set</span> &lt;index&gt;] [&lt;register-name&gt; ...]</span>
+</div></code></pre>
+<p><em><strong>Options:</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--format &lt;format&gt;</code></td>
+<td><code>-f</code></td>
+<td><em>Specify a format to be used for display.</em></td>
+</tr>
+<tr>
+<td><code>--all</code></td>
+<td><code>-a</code></td>
+<td><em>Show all register sets.</em></td>
+</tr>
+<tr>
+<td><code>--set &lt;index&gt;</code></td>
+<td><code>-s</code></td>
+<td><em>Specify which register sets to dump by index.</em></td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Example(s):</strong></em> <br></p>
+<p>(1)</p>
+<pre class="hljs"><code><div>(lldb) register read --all                             # Print (read) all registers.
+(lldb) re r -a
+</div></code></pre>
+<p>(2)</p>
+<pre class="hljs"><code><div>(lldb) register read --format b eax                    # Print the 'eax' register, in binary format.
+(lldb) re r -f b eax
+(lldb) re r/t eax
+</div></code></pre>
+<pre class="hljs"><code><div>    eax = 0b00000000000000000000000011110000
+</div></code></pre>
+<p>(3)</p>
+<pre class="hljs"><code><div>(lldb) register read rax rbx rcx rdx eax ebx ecx       # Print the specified [by name] registers.
+(lldb) re r rax rbx rcx rdx eax ebx ecx
+</div></code></pre>
+<pre class="hljs"><code><div>    rax = 0x0000000000000000
+    rbx = 0x0000000000000000
+    rcx = 0x0000000000000050
+    rdx = 0x0000000000000051
+    eax = 0x00000000
+    ebx = 0x00000000
+    ecx = 0x00000050
+</div></code></pre>
+<p>(4)</p>
+<pre class="hljs"><code><div>(lldb) register read --set 2                           # Print the 2nd set of registers –– the 'Exception State Registers'.
+(lldb) re r -s 2
+</div></code></pre>
+<pre class="hljs"><code><div>Exception State Registers:
+    trapno = 0x00000003
+       err = 0x00000000
+  faultvaddr = 0x0000000100ba41d0  libclang_rt.asan_osx_dynamic.dylib`__sanitizer::theDepot + 6046032
+</div></code></pre>
+</blockquote>
+<blockquote>
+<p><em><small>[<strong>Note:</strong></em></p>
+<ul>
+<li>
+<p><em>&quot;<code>/t</code>&quot;, is a shorthand for binary format (<code>--format b</code>) –– originally from <code>gdb</code>.</em></p>
+</li>
+<li>
+<p><em>To obtain a table of the available formats, type: <code>(lldb) register read --format ?</code> ; see <a href="#formats-table">§3.8.4 @Format Table</a> for the complete table.</em></p>
+</li>
+</ul>
+<p><em>- <strong>end note</strong>]</small></em></p>
+</blockquote>
+</li>
+</ul>
+<br>
+<ul>
+<li>
+<h4 id="overwrite-modify-registers">Overwrite (modify) registers:</h4>
+<blockquote>
+<p><small><code>[Search Tags: &gt;registerwrite &gt;registerswrite &gt;writeregister &gt;writeregisters &gt;regswrite &gt;regwrite &gt;writeregs &gt;writereg &gt;modifyregisters &gt;modifyregisterss &gt;registersmodify &gt;registerssmodify &gt;registermodify &gt;registersmodify &gt;modifyregss &gt;modifyregs &gt;regssmodify &gt;regsmodify &gt;regsmodify &gt;regmodify &gt;changeregisters &gt;changeregisterss &gt;registerschange &gt;registersschange &gt;registerchange &gt;registerschange &gt;changeregss &gt;changeregs &gt;regsschange &gt;regschange &gt;regschange &gt;regchange &gt;assignregisters &gt;assignregisterss &gt;registersassign &gt;registerssassign &gt;registerassign &gt;registersassign &gt;assignregss &gt;assignregs &gt;regssassign &gt;regsassign &gt;regsassign &gt;regassign &gt;modregister &gt;modiregister &gt;modifregister &gt;mdregister &gt;modregisters &gt;modiregisters &gt;modifregisters &gt;mdregisters]</code></small></p>
+</blockquote>
+<blockquote>
+<p><em><strong>Synopsis:</strong></em></p>
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; register write &lt;register-name&gt; &lt;value&gt;</span>
+</div></code></pre>
+<p><em><strong>Example(s):</strong></em></p>
+<pre class="hljs"><code><div>register write eax 800                       # write a value in decimal format
+re w eax 800
+</div></code></pre>
+<pre class="hljs"><code><div>register write eax 0x972362355               # write a value in lowercase hexadecimal format
+re w eax 0x972362355
+</div></code></pre>
+<pre class="hljs"><code><div>register write eax 0b10000000                # write a value in binary format
+re w eax 0b10000000
+</div></code></pre>
+</blockquote>
+</li>
+</ul>
+<br>
+<br>
+<blockquote>
+<p><em><strong>Further Reading:</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Type</th>
+<th>Author</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Manual Page</td>
+<td>Unix / Linux / MacOS</td>
+<td><code>(lldb) help register read</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Manual Page</td>
+<td>Unix / Linux / MacOS</td>
+<td><code>(lldb) help register write</code></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><a href="#contents">🏠</a> | <a href="#PREVIOUS">⬅️</a> | <a href="#NEXT">➡️</a></p>
+<h3 id="386-expressions">3.8.6. Expressions</h3>
+<p><small><code>[Search Tags: ]</code></small>
+<br>
+<br></p>
+<blockquote>
+<p>TODO: ### 3.8.6. Expressions</p>
+</blockquote>
+<ul>
+<li>
+<h4 id="read-print-registers">Read <em>(print)</em> registers:</h4>
+<blockquote>
+<p><small><code>[Search Tags: &gt;registershow &gt;registersshow &gt;showregister &gt;showregisters &gt;listregisters &gt;displayregisters &gt;dispregisters &gt;listregisterss &gt;displayregisterss &gt;dispregisterss &gt;registerslist &gt;registersdisplay &gt;registersslist &gt;registerssdisplay &gt;registerlist &gt;registerdisplay &gt;registerslist &gt;registersdisplay &gt;registerprint &gt;registersprint &gt;printregister &gt;printregisters &gt;regsshow &gt;regshow &gt;showregs &gt;showreg &gt;listregss &gt;displayregss &gt;dispregss &gt;listregs &gt;displayregs &gt;dispregs &gt;regsslist &gt;regssdisplay &gt;regslist &gt;regsdisplay &gt;regslist &gt;regsdisplay &gt;reglist &gt;regdisplay &gt;regsprint &gt;regprint &gt;printregs &gt;printreg &gt;registerread &gt;registersread &gt;regsread &gt;regread &gt;registerrd &gt;registersrd &gt;regsrd &gt;regrd &gt;readregister &gt;readregisters &gt;readregs &gt;rdregister &gt;rdregisters &gt;rdregs]</code></small></p>
+</blockquote>
+<blockquote>
+<p><em><strong>Synopsis:</strong></em></p>
+<pre class="hljs"><code><div><span class="hljs-meta">$</span><span class="bash">&gt; register <span class="hljs-built_in">read</span> [--all] [--format &lt;format&gt;] [--<span class="hljs-built_in">set</span> &lt;index&gt;] [&lt;register-name&gt; ...]</span>
+</div></code></pre>
+<p><em><strong>Options:</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--regex</code></td>
+<td><code>-r</code></td>
+<td><em>The <variable-name> argument for name lookups are regular expressions.</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--format &lt;format&gt;</code></td>
+<td><code>-f</code></td>
+<td><em>Specify a format (e.g. binary, hex, decimal) to be used for <br> display. See notes below for a list of all the formats available.</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>More Information</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--ptr-depth &lt;count&gt;</code></td>
+<td><code>-P</code></td>
+<td><em>Number of times pointer variables get dereferenced <br> (default is zero).</em></td>
+</tr>
+<tr>
+<td><code>--scope</code></td>
+<td><code>-s</code></td>
+<td><em>Show variable scope (argument, local, global, static).</em></td>
+</tr>
+<tr>
+<td><code>--show-globals</code></td>
+<td><code>-g</code></td>
+<td><em>Show [the current frame source file] global and static <br> variables.</em></td>
+</tr>
+<tr>
+<td><code>--show-declaration</code></td>
+<td><code>-c</code></td>
+<td><em>Show variable declaration line [in source file].</em></td>
+</tr>
+<tr>
+<td><code>--location</code></td>
+<td><code>-L</code></td>
+<td><em>Show variable location information.</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Less Information</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--raw-output</code></td>
+<td><code>-R</code></td>
+<td><em>Don't use formatting options.</em></td>
+</tr>
+<tr>
+<td><code>--flat</code></td>
+<td><code>-F</code></td>
+<td><em>Omit [showing] variable type.</em></td>
+</tr>
+<tr>
+<td><code>--no-locals</code></td>
+<td><code>-l</code></td>
+<td><em>Omit [showing] local variables.</em></td>
+</tr>
+<tr>
+<td><code>--no-args</code></td>
+<td><code>-a</code></td>
+<td><em>Omit [showing] [function] argument variables.</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>--ignore-breakpoints &lt;boolean&gt;</code></td>
+<td><code>-i</code></td>
+<td><em>Ignore breakpoint hits while running expressions</em></td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td><em>For more, see <code>(lldb) help frame variable</code>.</em></td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Example(s):</strong></em> <br></p>
+<p>(1)</p>
+<pre class="hljs"><code><div>(lldb) register read --all                             # Print (read) all registers.
+(lldb) re r -a
+</div></code></pre>
+</blockquote>
+</li>
+</ul>
+<p>Executing Alternative Code
+Expressions can also be used to call functions, as in this example:</p>
+<p>(lldb) expr (int) printf (&quot;I have a pointer 0x%llx.\n&quot;, self)
+$2 = (int) 22
+I have a pointer 0x0.
+The expression command is one of the raw commands. As a result, you don’t have to quote your whole expression, or backslash protect quotes, and so forth.</p>
+<p>The results of the expressions are stored in persistent variables (of the form $[0-9]+) that you can use in further expressions, such as:</p>
+<p>(lldb) expr self = $0
+$4 = (SKTGraphicView *) 0x0000000100135430</p>
+<p>[Over]w    Evaluate an expression the current thread.  Displays any returned value with LLDB's default formatting.  Expects
+'raw' input (see 'help raw-input'.)</p>
+<p>Syntax:</p>
+<p>Command Options Usage:</p>
+<p>expression [-AFLORTgp] [-f <format>] [-G <gdb-format>] [-a <boolean>] [-i <boolean>] [-t <unsigned-integer>] [-u <boolean>] [-l <source-language>] [-X <boolean>] [-v[<description-verbosity>]] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
+expression [-AFLORTgp] [-a <boolean>] [-i <boolean>] [-t <unsigned-integer>] [-u <boolean>] [-l <source-language>] [-X <boolean>] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
+expression <expr></p>
+<pre><code>    -O ( --object-description )
+         Display using a language-specific description API, if possible.
+
+   -j &lt;boolean&gt; ( --allow-jit &lt;boolean&gt; )
+        Controls whether the expression can fall back to being JITted if it's not supported by the interpreter
+        (defaults to true).
+
+   -l &lt;source-language&gt; ( --language &lt;source-language&gt; )
+        Specifies the Language to use when parsing the expression.  If not set the target.language setting is used.
+
+   -p ( --top-level )
+        Interpret the expression as a complete translation unit, without injecting it into the local context.  Allows
+        declaration of persistent, top-level entities without a $ prefix.
+
+   -t &lt;unsigned-integer&gt; ( --timeout &lt;unsigned-integer&gt; )
+        Timeout value (in microseconds) for running the expression.
+
+   -u &lt;boolean&gt; ( --unwind-on-error &lt;boolean&gt; )
+        Clean up program state if the expression causes a crash, or raises a signal.  Note, unlike gdb hitting a
+        breakpoint is controlled by another option (-i).
+
+   -v[&lt;description-verbosity&gt;] ( --description-verbosity=[&lt;description-verbosity&gt;] )
+        How verbose should the output of this expression be, if the object description is asked for.
+        Values: compact | full
+</code></pre>
+<p>Single and multi-line expressions:</p>
+<pre><code>The expression provided on the command line must be a complete expression with no newlines.  To evaluate a multi-line
+expression, hit a return after an empty expression, and lldb will enter the multi-line expression editor. Hit return on
+an empty line to end the multi-line expression.
+</code></pre>
+<p>Timeouts:</p>
+<pre><code>If the expression can be evaluated statically (without running code) then it will be.  Otherwise, by default the
+expression will run on the current thread with a short timeout: currently .25 seconds.  If it doesn't return in that
+time, the evaluation will be interrupted and resumed with all threads running.  You can use the -a option to disable
+retrying on all threads.  You can use the -t option to set a shorter timeout.
+</code></pre>
+<p>User defined variables:</p>
+<pre><code>You can define your own variables for convenience or to be used in subsequent expressions.  You define them the same
+way you would define variables in C.  If the first character of your user defined variable is a $, then the variable's
+value will be available in future expressions, otherwise it will just be available in the current expression.
+</code></pre>
+<p>Continuing evaluation after a breakpoint:</p>
+<pre><code>If the &quot;-i false&quot; option is used, and execution is interrupted by a breakpoint hit, once you are done with your
+investigation, you can either remove the expression execution frames from the stack with &quot;thread return -x&quot; or if you
+are still interested in the expression result you can issue the &quot;continue&quot; command and the expression evaluation will
+complete and the expression result will be available using the &quot;thread.completed-expression&quot; key in the thread format.
+</code></pre>
+<p>Examples:</p>
+<pre><code>expr my_struct-&gt;a = my_array[3]
+expr -f bin -- (index * 8) + 5
+expr unsigned int $foo = 5
+expr char c[] = \&quot;foo\&quot;; c[0]
+
+ Important Note: Because this command takes 'raw' input, if you use any command options you must use ' -- ' between the
+ end of the command options and the beginning of the raw input.
+</code></pre>
+<br>
+<br>
+<blockquote>
+<p><em><strong>Further Reading:</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Type</th>
+<th>Author</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>1</td>
 <td>n/a</td>
@@ -4725,7 +5573,72 @@ Specify a summary string to use to format the variable output.</p>
 </tbody>
 </table>
 </blockquote>
-<!-- # 3. Tips & Shortcuts -->
+<hr>
+<p><a href="#contents">🏠</a> | <a href="#PREVIOUS">⬅️</a> | <a href="#NEXT">➡️</a></p>
+<h3 id="387-memory-advanced">3.8.7. Memory <em>(Advanced)</em></h3>
+<p><small><code>[Search Tags: ]</code></small>
+<br>
+<br></p>
+<blockquote>
+<p>TODO: ### 3.8.7. Memory <em>(Advanced)</em></p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.</p>
+<br>
+<br>
+<blockquote>
+<p><em><strong>Further Reading:</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Type</th>
+<th>Author</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<hr>
+<p><a href="#contents">🏠</a> | <a href="#PREVIOUS">⬅️</a> | <a href="#NEXT">➡️</a></p>
+<h3 id="388-instructions-advanced">3.8.8. Instructions <em>(Advanced)</em></h3>
+<p><small><code>[Search Tags: ]</code></small>
+<br>
+<br></p>
+<blockquote>
+<p>TODO: ### 3.8.8. Instructions <em>(Advanced)</em></p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.</p>
+<br>
+<br>
+<blockquote>
+<p><em><strong>Further Reading:</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Type</th>
+<th>Author</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
 <!--
 .
 .
@@ -4742,7 +5655,7 @@ Specify a summary string to use to format the variable output.</p>
 
 		- how to skip loops, cuz it takes too long
 
-		- and be able to see stderr, stdout
+		[√] - and be able to see stderr, stdout
 
 		- segfaults when a variable reaches a value of 3
 		but it takes time to get there, so how can you
@@ -4756,6 +5669,12 @@ Specify a summary string to use to format the variable output.</p>
 		Logpoint   :: Log <Inputed-Message> when breakpoint is hit.
 
 ------------------------------------------------------------------------------->
+<!--
+## Questions –– Waterloo
+
+- Can I leave to pursue a startup idea, or a reasearch mission and come back ?
+-
+ -->
 
 </body>
 </html>
