@@ -3048,7 +3048,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> | `--regex`             | `-r` | *The <variable-name> argument for name lookups are regular expressions.*
 	> |                       |      |
 	> | **Format**            |      |
-	> | `--format <format>`   | `-f` | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). See notes below for a list of all the formats <br> available.*
+	> | `--format <format>`   | `-f` | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). See [Format Table](#format-table) for all available formats.*
 	> |                       |      |
 	> | **More Information**  |      |
     > | `--ptr-depth <count>` | `-P` | *Number of times pointer variables get dereferenced; <br> (default=0).*
@@ -3204,7 +3204,7 @@ Contents
 	> | Flag | Shortcut | Description
 	> | - | - | - |
 	> |                     |      |
-    > | `--format <format>` | `-f` | *Specify a format to be used for display.*
+    > | `--format <format>` | `-f` | *Specify a format to be used for display. See [Format Table](#format-table) for all available formats.*
     > | `--all`             | `-a` | *Show all register sets.*
     > | `--set <index>`     | `-s` | *Specify which register sets to dump by index.*
 	>
@@ -3258,15 +3258,15 @@ Contents
 	>
 	> - *"`/t`", is a shorthand for binary format (`--format b`) –– originally from `gdb`.*
 	>
-	> -	*To obtain a table of the available formats, type: `(lldb) register read --format ?` ; see [§3.8.4 @Format Table](#formats-table) for the complete table.*
+	> -	*To obtain a table of the available formats, type: `(lldb) register read --format ?` ; see [§3.8.4 :: Format Table](#format-table) for the complete table.*
 	>
 	> *- **end note**]</small>*
 
 <br>
 
--	#### Overwrite (modify) registers:
+-	#### [Over]-write (modify) registers:
 
-	> <small>`[Search Tags: >registerwrite >registerswrite >writeregister >writeregisters >regswrite >regwrite >writeregs >writereg >modifyregisters >modifyregisterss >registersmodify >registerssmodify >registermodify >registersmodify >modifyregss >modifyregs >regssmodify >regsmodify >regsmodify >regmodify >changeregisters >changeregisterss >registerschange >registersschange >registerchange >registerschange >changeregss >changeregs >regsschange >regschange >regschange >regchange >assignregisters >assignregisterss >registersassign >registerssassign >registerassign >registersassign >assignregss >assignregs >regssassign >regsassign >regsassign >regassign >modregister >modiregister >modifregister >mdregister >modregisters >modiregisters >modifregisters >mdregisters]`</small>
+	> <small>`[Search Tags: >registerwrite >registerswrite >writeregister >writeregisters >regswrite >regwrite >writeregs >writereg >modifyregisters >modifyregisterss >registersmodify >registerssmodify >registermodify >registersmodify >modifyregss >modifyregs >regssmodify >regsmodify >regsmodify >regmodify >changeregisters >changeregisterss >registerschange >registersschange >registerchange >registerschange >changeregss >changeregs >regsschange >regschange >regschange >regchange >assignregisters >assignregisterss >registersassign >registerssassign >registerassign >registersassign >assignregss >assignregs >regssassign >regsassign >regsassign >regassign >modregister >modiregister >modifregister >mdregister >modregisters >modiregisters >modifregisters >mdregisters >registeroverwrite >registersoverwrite >overwriteregister >overwriteregisters >regsoverwrite >regoverwrite >overwriteregs]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -3279,11 +3279,11 @@ Contents
 	> re w eax 800
 	> ```
 	> ```shell
-	> register write eax 0x972362355               # write a value in lowercase hexadecimal format
+	> register write eax 0x972362355               # " "  in (lowercase) hexadecimal format
 	> re w eax 0x972362355
 	> ```
 	> ```shell
-	> register write eax 0b10000000                # write a value in binary format
+	> register write eax 0b10000000                # " "  in binary format
 	> re w eax 0b10000000
 	> ```
 
@@ -3300,20 +3300,23 @@ Contents
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.8.6. Expressions
-<small>`[Search Tags: ]`</small>
+<small>`[Search Tags: >exprexam >expressionexam >examexpression >exprexamine >expressionexamine >examineexpression >exprexamination >expressionexamination >examinationexpression >exprexaminating >expressionexaminating >examinatingexpression]`</small>
 <br>
 <br>
 
 
 > TODO: ### 3.8.6. Expressions
 
--	#### Read *(print)* registers:
+-	#### Evaluate expressions:
 
-	> <small>`[Search Tags: >registershow >registersshow >showregister >showregisters >listregisters >displayregisters >dispregisters >listregisterss >displayregisterss >dispregisterss >registerslist >registersdisplay >registersslist >registerssdisplay >registerlist >registerdisplay >registerslist >registersdisplay >registerprint >registersprint >printregister >printregisters >regsshow >regshow >showregs >showreg >listregss >displayregss >dispregss >listregs >displayregs >dispregs >regsslist >regssdisplay >regslist >regsdisplay >regslist >regsdisplay >reglist >regdisplay >regsprint >regprint >printregs >printreg >registerread >registersread >regsread >regread >registerrd >registersrd >regsrd >regrd >readregister >readregisters >readregs >rdregister >rdregisters >rdregs]`</small>
+	> <small>`[Search Tags: >exprcompt >expressioncompt >comptexpression >exprcompute >expressioncompute >computeexpression >exprcomputation >expressioncomputation >computationexpression >exprcomputing >expressioncomputing >computingexpression >expreval >expressioneval >evalexpression >exprevaluate >expressionevaluate >evaluateexpression >exprevaluation >expressionevaluation >evaluationexpression >exprevaluating >expressionevaluating >evaluatingexpression]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> $> register read [--all] [--format <format>] [--set <index>] [<register-name> ...]
+	> $> expression
+	> $> expr                  # alias for ->   expression
+	> $> po <expr>             # alias for ->   expression -O -- <expr>
+	> $> p <expr>              # alias for ->   expression -- <expr>
 	> ```
 	>
 	> ***Options:***
@@ -3323,7 +3326,7 @@ Contents
 	> | `--regex`                        | `-r` | *The <variable-name> argument for name lookups are regular expressions.*
 	> |                                  |      |
 	> | **Format**                       |      |
-	> | `--format <format>`              | `-f` | *Specify a format (e.g. binary, hex, decimal) to be used for <br> display. See notes below for a list of all the formats available.*
+	> | `--format <format>`              | `-f` | *Specify a format (e.g. binary, hex, decimal) to be used for <br> display. See [Format Table](#format-table) for all available formats.*
 	> |                                  |      |
 	> | **More Information**             |      |
     > | `--ptr-depth <count>`            | `-P` | *Number of times pointer variables get dereferenced <br> (default is zero).*
@@ -3349,83 +3352,159 @@ Contents
 	> (lldb) re r -a
 	> ```
 
-
-Executing Alternative Code
-Expressions can also be used to call functions, as in this example:
-
-(lldb) expr (int) printf ("I have a pointer 0x%llx.\n", self)
-$2 = (int) 22
-I have a pointer 0x0.
-The expression command is one of the raw commands. As a result, you don’t have to quote your whole expression, or backslash protect quotes, and so forth.
-
-The results of the expressions are stored in persistent variables (of the form $[0-9]+) that you can use in further expressions, such as:
-
-(lldb) expr self = $0
-$4 = (SKTGraphicView *) 0x0000000100135430
-
-
-[Over]w    Evaluate an expression the current thread.  Displays any returned value with LLDB's default formatting.  Expects
-     'raw' input (see 'help raw-input'.)
+    Evaluate an expression on the current thread.  Displays any returned value with LLDB's default formatting.  Expects 'raw' input (see 'help
+     raw-input'.)
 
 Syntax:
 
 Command Options Usage:
-
   expression [-AFLORTgp] [-f <format>] [-G <gdb-format>] [-a <boolean>] [-i <boolean>] [-t <unsigned-integer>] [-u <boolean>] [-l <source-language>] [-X <boolean>] [-v[<description-verbosity>]] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
   expression [-AFLORTgp] [-a <boolean>] [-i <boolean>] [-t <unsigned-integer>] [-u <boolean>] [-l <source-language>] [-X <boolean>] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
+  expression [-r] -- <expr>
   expression <expr>
 
+       -F ( --flat )
+            Display results in a flat format that uses expression paths for each variable or member.
 
-        -O ( --object-description )
-             Display using a language-specific description API, if possible.
+       -L ( --location )
+            Show variable location information.
 
-       -j <boolean> ( --allow-jit <boolean> )
-            Controls whether the expression can fall back to being JITted if it's not supported by the interpreter
-            (defaults to true).
+       -O ( --object-description )
+            Display using a language-specific description API, if possible.
+
+       -P <count> ( --ptr-depth <count> )
+            The number of pointers to be traversed when dumping values (default is zero).
+
+       -V <boolean> ( --validate <boolean> )
+            Show results of type validators.
+
+       -Z <count> ( --element-count <count> )
+            Treat the result of the expression as if its type is an array of this many values.
+
+       -d <none> ( --dynamic-type <none> )
+            Show the object as its full dynamic type, not its static type, if available.
+            Values: no-dynamic-values | run-target | no-run-target
+
+       -f <format> ( --format <format> )
+            Specify a format to be used for display.
+
+       -g ( --debug )
+            When specified, debug the JIT code by setting a breakpoint on the first instruction and forcing breakpoints to not be ignored (-i0)
+            and no unwinding to happen on error (-u0).
 
        -l <source-language> ( --language <source-language> )
             Specifies the Language to use when parsing the expression.  If not set the target.language setting is used.
 
        -p ( --top-level )
-            Interpret the expression as a complete translation unit, without injecting it into the local context.  Allows
-            declaration of persistent, top-level entities without a $ prefix.
-
-       -t <unsigned-integer> ( --timeout <unsigned-integer> )
-            Timeout value (in microseconds) for running the expression.
-
-       -u <boolean> ( --unwind-on-error <boolean> )
-            Clean up program state if the expression causes a crash, or raises a signal.  Note, unlike gdb hitting a
-            breakpoint is controlled by another option (-i).
+            Interpret the expression as a complete translation unit, without injecting it into the local context.  Allows declaration of
+            persistent, top-level entities without a $ prefix.
 
        -v[<description-verbosity>] ( --description-verbosity=[<description-verbosity>] )
             How verbose should the output of this expression be, if the object description is asked for.
             Values: compact | full
 
+### Single Line Expressions
+
+```shell
+(lldb) expr my_struct->a = my_array[3]
+```
+```shell
+(lldb) expr unsigned int $foo = 5
+```
+```shell
+(lldb) expr char c[] = \"foo\"; c[0]
+```
+
+Because this command takes *'raw input'*, if you use any command options you must use '`--`' between the end of the command options and the beginning of the raw input:
+
+```shell
+(lldb) expr -f bin -- (index * 8) + 5
+```
+
+### Multi-Line Expressions
+
+```shell
+(lldb) expr *enter*
+Enter expressions, then terminate with an empty line to evaluate:
+>
+> *enter*
+```
+
+### User Defined & Persistent Variables
+
+You can define your own variables for convenience or to be used in subsequent expressions.  You define them the same way you would define
+    variables in **C**.
+
+If the first character of your user defined variable is a '`$`', then the variable's value will be available in future
+    expressions, ...
+
+```shell
+(lldb) expr const char *$name = "John Doe";
+(lldb) expr $name
+(const char *) $name = 0x00000001032b9080 "John Doe"
+```
+
+```shell
+(lldb) expr int $status = 10;
+(lldb) expr $status
+(int) $status = 10
+```
+
+... otherwise it will just be available in the current expression.
+
+```shell
+(lldb) expr int status = 10; status + 1
+(int) $0 = 11
+```
+```shell
+(lldb) expr status
+error: use of undeclared identifier 'status'
+```
+
+The results of the expressions are stored in persistent variables (of the form `$[0-9]+`) that you can use in further expressions:
+
+```shell
+(lldb) expr $0 + 1
+(int) $1 = 12
+```
+```shell
+(lldb) expr $1 + 1
+(int) $2 = 13
+```
+```shell
+(lldb) expr $2 + $status
+(int) $3 = 23
+```
+
+
+> Running Functions
+
+
 Single and multi-line expressions:
 
-    The expression provided on the command line must be a complete expression with no newlines.  To evaluate a multi-line
-    expression, hit a return after an empty expression, and lldb will enter the multi-line expression editor. Hit return on
-    an empty line to end the multi-line expression.
+    The expression provided on the command line must be a complete expression with no newlines.  To evaluate a multi-line expression, hit a
+    return after an empty expression, and lldb will enter the multi-line expression editor. Hit return on an empty line to end the multi-line
+    expression.
 
 Timeouts:
 
-    If the expression can be evaluated statically (without running code) then it will be.  Otherwise, by default the
-    expression will run on the current thread with a short timeout: currently .25 seconds.  If it doesn't return in that
-    time, the evaluation will be interrupted and resumed with all threads running.  You can use the -a option to disable
-    retrying on all threads.  You can use the -t option to set a shorter timeout.
+    If the expression can be evaluated statically (without running code) then it will be.  Otherwise, by default the expression will run on the
+    current thread with a short timeout: currently .25 seconds.  If it doesn't return in that time, the evaluation will be interrupted and
+    resumed with all threads running.  You can use the -a option to disable retrying on all threads.  You can use the -t option to set a
+    shorter timeout.
 
 User defined variables:
 
-    You can define your own variables for convenience or to be used in subsequent expressions.  You define them the same
-    way you would define variables in C.  If the first character of your user defined variable is a $, then the variable's
-    value will be available in future expressions, otherwise it will just be available in the current expression.
+    You can define your own variables for convenience or to be used in subsequent expressions.  You define them the same way you would define
+    variables in C.  If the first character of your user defined variable is a $, then the variable's value will be available in future
+    expressions, otherwise it will just be available in the current expression.
 
 Continuing evaluation after a breakpoint:
 
-    If the "-i false" option is used, and execution is interrupted by a breakpoint hit, once you are done with your
-    investigation, you can either remove the expression execution frames from the stack with "thread return -x" or if you
-    are still interested in the expression result you can issue the "continue" command and the expression evaluation will
-    complete and the expression result will be available using the "thread.completed-expression" key in the thread format.
+    If the "-i false" option is used, and execution is interrupted by a breakpoint hit, once you are done with your investigation, you can
+    either remove the expression execution frames from the stack with "thread return -x" or if you are still interested in the expression
+    result you can issue the "continue" command and the expression evaluation will complete and the expression result will be available using
+    the "thread.completed-expression" key in the thread format.
 
 Examples:
 
@@ -3434,8 +3513,22 @@ Examples:
     expr unsigned int $foo = 5
     expr char c[] = \"foo\"; c[0]
 
-     Important Note: Because this command takes 'raw' input, if you use any command options you must use ' -- ' between the
-     end of the command options and the beginning of the raw input.
+     Important Note: Because this command takes 'raw' input, if you use any command options you must use ' -- ' between the end of the command
+     options and the beginning of the raw input.
+
+
+
+Executing Alternative Code
+Expressions can also be used to call functions, as in this example:
+
+(lldb) expr (int) printf ("I have a pointer 0x%llx.\n", self)
+$2 = (int) 22
+I have a pointer 0x0.
+
+The expression command is one of the raw commands. As a result, you don’t have to quote your whole expression, or backslash protect quotes, and so forth.
+
+The results of the expressions are stored in persistent variables (of the form $[0-9]+) that you can use in further expressions, such as:
+The results of the expressions are stored in persistent variables (of the form $[0-9]+) that you can use in further expressions, such as:
 
 
 
