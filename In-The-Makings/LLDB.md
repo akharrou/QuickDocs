@@ -63,7 +63,6 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.9. Self-Help Commands](#)                                           <!-- TODO: do chapter -->
 		- [3.9.1. `help`](#)                                                 <!-- TODO: do chapter -->
 		- [3.9.2. `apropos`](#)                                              <!-- TODO: do chapter -->
-		- [3.9.3. `version`](#)                                              <!-- TODO: do chapter -->
 	- [3.10. Advanced Topics](#)                                             <!-- TODO: do chapter -->
 		- [3.10.1. Bugreporting](#)                                          <!-- TODO: do chapter -->
 		- [3.10.2. Remote Debugging *(with `platform`)*](#)                                              TODO: do chapter
@@ -153,8 +152,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-<!-- [🏠](#contents) | [⬅️](#contents) | [➡️](#3-how-do-i-use-it-) -->
-# [2. What is it ?](#contents)
+[🏠](#contents) | [⬅️](#contents) | [➡️](#3-how-do-i-use-it-)
+# 2. What is it ?
 <small>`[Search Tags: >lldb.what? >lldbwhat? >lldb.who? >lldb.why? >lldb.whocares? >lldb.whycare? >lldb.? >lldb? >wat >woot >wut >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro >lldb.whatisit >lldb.whycare? >lldb.whyshouldicare?]`</small>
 <br>
 <br>
@@ -191,8 +190,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ---
-<!-- [🏠](#contents) | [⬅️](#2-what-is-it-) | [➡️](#31-compile-program) -->
-# [3. How do I use it ?](#contents)
+
+
+[🏠](#contents) | [⬅️](#2-what-is-it-) | [➡️](#31-compile-program)
+# 3. How do I use it ?
 <small>`[Search Tags: >lldb.usage > lldb.use >use >usage >how? >howtouse >usinglldb >howtouse >howdoiuseit >howtousage >lldbhowtouse >uselldb >lldbusage]`</small>
 <br>
 <br>
@@ -2754,7 +2755,7 @@ Commands to:
 - [4 Thread backtrace](#thread-backtrace)
 ---
 
-To inspect the current state of your process, you can start with the threads:
+You can inspect a process's thread with the following commands:
 
 ---
 
@@ -2809,7 +2810,7 @@ To inspect the current state of your process, you can start with the threads:
 	>
 	> -	*The `select`'ed thread will be used by default in all the commands in the next section.*
 	>
-	> -	*Thread index is just the one shown in the `thread list` listing.*
+	> -	*`<thread-index>` can be any of the shown indexes, in the `thread list` listing, e.g.: `thread #3` <=> `3`.*
 	>
 	> *- **end note**]</small>*
 
@@ -2824,12 +2825,11 @@ To inspect the current state of your process, you can start with the threads:
 	> $> thread info [--json] [--stop-info] [<thread-index> | all]
 	> ```
 	>
+	> ***Example(s):***
 	> ```shell
 	> (lldb) thread info --json
 	> (lldb) th i -j
 	> ```
-	>
-	> ***[Example] Output:***
 	> ```shell
 	> thread #1: tid = 0x9dbb2, 0x0000000100000a6c a`foo(iterations=0x00006020000000f0) at loopInput.c:11, queue = 'com.apple.main-thread', stop reason = step in
 	> 	> {
@@ -2844,8 +2844,6 @@ To inspect the current state of your process, you can start with the threads:
 	> }
 	> ```
 
-	> *<small>[**Note:** The `*` indicates that `thread #1` is the current thread. - **end note**]</small>*
-
 <br>
 
 -	#### Thread backtrace:
@@ -2854,45 +2852,44 @@ To inspect the current state of your process, you can start with the threads:
 
 	> ***Synopsis:***
 	> ```shell
-	> $> thread backtrace [--count <count>] [--start <frame-index>]    # Backtrace [the first <count> frames] [starting from the frame <frame-index> for] the current thread.
-	> thread backtrace [all]                                        # Show backtrace all threads.
+	> $> thread backtrace [--count <count>] [--start <frame-index>] [all]    # Backtrace [the first <count> frames] [starting from the frame <frame-index> for] [all] thread(s).
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) thread backtrace                         # Show the stack backtrace for the current thread.
+	> (lldb) thread backtrace                            # Backtrace the current thread.
 	> (lldb) th b
 	> (lldb) bt
 	> ```
 	> ```shell
-	> (lldb) thread backtrace --count 5               # Backtrace the first 5 frames for the current thread.
+	> (lldb) thread backtrace 3                          # Backtrace thread #3.
+	> (lldb) th b 3
+	> ```
+	> ```shell
+	> (lldb) thread backtrace --count 5                  # Backtrace the first 5 frames for the current thread.
 	> (lldb) th b -c 5
 	> (lldb) bt -c 5
 	> (lldb) bt 5
 	> ```
 	> ```shell
-	> (lldb) thread backtrace --count 2 --start 4     # Backtrace the first 5 frames starting from the frame #4, for the current thread.
-	> (lldb) th b -c 2 -s 4
+	> (lldb) thread backtrace --count 3 --start 4        # Backtrace the first 3 frames starting from the frame #4, of the current thread.
+	> (lldb) th b -c 3 -s 4
 	> ```
 	> ```shell
-	> (lldb) thread backtrace all                     # Show the stack backtraces for all threads.
+	> (lldb) thread backtrace all                        # Backtrace all threads.
 	> (lldb) th b all
+	> ```
+	> ```shell
+	> (lldb) thread backtrace --count 2 --start 1 all    # Backtrace the first 2 frames starting from the frame #1, of all threads.
+	> (lldb) th b -c 2 -s 1 all
 	> ```
 	>
 	> ***[Example] Output:***
 	> ```shell
-	> thread #1: tid = 0x2c03, stop reason = breakpoint 1.1, queue = com.apple.main-thread
-	> frame #0: 0x0000000100010d5b, where = Sketch`-[SKTGraphicView alignLeftEdges:] + 33 at /Projects/Sketch/SKTGraphicView.m:1405
-	> frame #1: 0x00007fff8602d152, where = AppKit`-[NSApplication sendAction:to:from:] + 95
-	> frame #2: 0x00007fff860516be, where = AppKit`-[NSMenuItem _corePerformAction] + 365
-	> frame #3: 0x00007fff86051428, where = AppKit`-[NSCarbonMenuImpl performActionWithHighlightingForItemAtIndex:] + 121
-	> frame #4: 0x00007fff860370c1, where = AppKit`-[NSMenu performKeyEquivalent:] + 272
-	> frame #5: 0x00007fff86035e69, where = AppKit`-[NSApplication _handleKeyEquivalent:] + 559
-	> frame #6: 0x00007fff85f06aa1, where = AppKit`-[NSApplication sendEvent:] + 3630
-	> frame #7: 0x00007fff85e9d922, where = AppKit`-[NSApplication run] + 474
-	> frame #8: 0x00007fff85e965f8, where = AppKit`NSApplicationMain + 364
-	> frame #9: 0x0000000100015ae3, where = Sketch`main + 33 at /Projects/Sketch/SKTMain.m:11
-	> frame #10: 0x0000000100000f20, where = Sketch`start + 52
+	> (lldb) bt
+	> * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 2.1
+	>   * frame #0: 0x0000000100003b49 a`main(ac=1, av=0x00007ffeefbff5b0) at threadedHello.cpp:29
+	>     frame #1: 0x00007fff789cd015 libdyld.dylib`start + 1
 	> ```
 
 	> *<small>[**Note:***
