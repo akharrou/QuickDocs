@@ -40,10 +40,10 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 		- [3.4.2. Watchpoints](#342-watchpoints)
-		- [3.4.3 Settings *(Advanced)*](#)                                              <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
-		- [3.4.4 Commands & Aliases *(Advanced)*](#)                                    <!-- TODO: do chapter -->
-		- [3.4.5 Type *[Formatting]* *(Advanced)*](#)                                   <!-- TODO: do chapter -->
-		- [3.4.6 Logging *(Advanced)*](#)                                               <!-- TODO: do chapter -->
+		- [3.4.3. Settings *(Advanced)*](#)                                              <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
+		- [3.4.4. Commands & Aliases *(Advanced)*](#)                                    <!-- TODO: do chapter -->
+		- [3.4.5. Type *[Formatting]* *(Advanced)*](#)                                   <!-- TODO: do chapter -->
+		- [3.4.6. Logging *(Advanced)*](#)                                               <!-- TODO: do chapter -->
 	- [3.5. Start Debugging](#35-start-debugging)
 		- [3.5.1. Launch](#351-launch)
 		- [3.5.2. Attach](#352-attach)
@@ -56,14 +56,14 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.2. Threads](#382-threads)
 		- [3.8.3. Stack Frames](#383-stack-frames)
 		- [3.8.4. Variables](#384-variables)
-		- [3.8.5. Registers](#385-registers)
-		- [3.8.6. Expressions](#386-expressions)
+		- [3.8.5. Registers *(Advanced)*](#385-registers)
+		- [3.8.6. Expressions *(Advanced)*](#386-expressions)
 		- [3.8.7. Memory *(Advanced)*](#387-memory)                          <!-- TODO: do chapter ::: `x` is an alias for `memory read`-->
 		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)     <!-- TODO: do chapter -->
 	- [3.9. Self-Help Commands](#)                                           <!-- TODO: do chapter -->
 		- [3.9.1. `help`](#)                                                 <!-- TODO: do chapter -->
 		- [3.9.2. `apropos`](#)                                              <!-- TODO: do chapter -->
-	- [3.10. Advanced Topics](#)                                             <!-- TODO: do chapter -->
+	- [3.10. Other Topics](#)                                                <!-- TODO: do chapter -->
 		- [3.10.1. Bugreporting](#)                                          <!-- TODO: do chapter -->
 		- [3.10.2. Remote Debugging *(with `platform`)*](#)                                              TODO: do chapter
 
@@ -2608,20 +2608,22 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 
 ## Control commands:
 
-<small>`[Search Tags: >ctrlcommands >controlcommands >cntrlcommands >ctrlcmds >controlcmds >cntrlcmds >commandsctrl >commandscontrol >commandscntrl >cmdsctrl >cmdscontrol >cmdscntrl >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >until >cmduntil >untilcmd >commanduntil >untilcommand >step >cmdstep >stepcmd >commandstep >stepcommand >stepin >stepout >stepover >cmdstepin >cmdstepout >cmdstepover >stepincmd >stepoutcmd >stepovercmd >commandstepin >commandstepout >commandstepover >stepincommand >stepoutcommand >stepovercommand >kill >cmdkill >killcmd >commandkill >killcommand >detach >cmddetach >detachcmd >commanddetach >detachcommand]`</small>
+<small>`[Search Tags: >steps >progsteps >threadcontinue >processcontinue >continuethread >continueprocess >contthread >contprocess >untilthread >threaduntil >untilprocess >process until >untilline >lineuntil >untiloperation >operationuntil >untilinstruction >instructionuntil >untiladdress >addressuntil >untillocation >locationuntil >untilevent >eventuntil >untilterminate >terminateuntil >untilreturn >returnuntil >stepinthreads >threadstepin >stepinprocesses >processstepin >stepinprogram >stepinfunction >functionstepin >funcstepin >stepinframe >stepinstackframe >stackframestepin >framestepin >stpinthreads >threadstpin >stpinprocesses >processstpin >stpinprogram >stpinfunction >functionstpin >funcstpin >stpinframe >stpinstackframe >stackframestpin >framestpin >sinthreads >threadsin >sinprocesses >processsin >sinprogram >sinfunction >functionsin >funcsin >sinframe >sinstackframe >stackframesin >framesin >inthreads >threadin >inprocesses >processin >inprogram >infunction >functionin >funcin >inframe >instackframe >stackframein >framein >stepoverthreads >threadstepover >stepoverprocesses >processstepover >stepoverprogram >stepoverfunction >functionstepover >funcstepover >stepoverframe >stepoverstackframe >stackframestepover >framestepover >stpoverthreads >threadstpover >stpoverprocesses >processstpover >stpoverprogram >stpoverfunction >functionstpover >funcstpover >stpoverframe >stpoverstackframe >framestpover >soverthreads >threadsover >soverprocesses >processsover >soverprogram >soverfunction >functionsover >funcsover >soverframe >soverstackframe >stackframesover >framesover >overthreads >threadover >overprocesses >processover >overprogram >overfunction >functionover >funcover >overframe >overstackframe >stackframeover >frameover >stepoutthreads >threadstepout >stepoutprocesses >processstepout >stepoutprogram >stepoutfunction >functionstepout >funcstepout >stepoutframe >stepoutstackframe >stackframestepout >framestepout >stpoutthreads >threadstpout >stpoutprocesses >processstpout >stpoutprogram >stpoutfunction >functionstpout >funcstpout >stpoutframe >stpoutstackframe >stackframestpout >framestpout >soutthreads >threadsout >soutprocesses >processsout >soutprogram >soutfunction >functionsout >funcsout >soutframe >soutstackframe >stackframesout >framesout >outthreads >threadout >outprocesses >processout >outprogram >outfunction >functionout >funcout >outframe >outstackframe >stackframeout >frameout >returnframe >framereturn >returnfunction >functionreturn >returnthread >threadreturn >returnprocess >processreturn >returnprogram >programreturn >retframe >retfunction >retthread >retprocess >retprogram >killprogram >endprogram >terminateprogram >finishprogram >stopprogram >programkill >programend >programterminate >programfinish >programstop >killprocess >endprocess >terminateprocess >finishprocess >stopprocess >processkill >processend >processterminate >processfinish >processstop >killexecutable >endexecutable >terminateexecutable >finishexecutable >stopexecutable >executablekill >executableend >executableterminate >executablefinish >executablestop >killthread >endthread >terminatethread >finishthread >stopthread >threadkill >threadend >threadterminate >threadfinish >threadstop >killfunction >endfunction >terminatefunction >finishfunction >stopfunction >functionkill >functionend >functionterminate >functionfinish >functionstop >killframe >endframe >terminateframe >finishframe >stopframe >framekill >frameend >frameterminate >framefinish >framestop >detachprogram >unbindprogram >programdetach >programunbind >detachprocess >unbindprocess >processdetach >processunbind >detachexecutable >unbindexecutable >executabledetach >executableunbind >detachthread >unbindthread >threaddetach >threadunbind >detachfunction >unbindfunction >functiondetach >functionunbind >detachframe >unbindframe >framedetach >frameunbind >ctrlcommands >controlcommands >cntrlcommands >ctrlcmds >controlcmds >cntrlcmds >commandsctrl >commandscontrol >commandscntrl >cmdsctrl >cmdscontrol >cmdscntrl >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >until >cmduntil >untilcmd >commanduntil >untilcommand >step >cmdstep >stepcmd >commandstep >stepcommand >stepin >stepout >stepover >cmdstepin >cmdstepout >cmdstepover >stepincmd >stepoutcmd >stepovercmd >commandstepin >commandstepout >commandstepover >stepincommand >stepoutcommand >stepovercommand >kill >cmdkill >killcmd >commandkill >killcommand >detach >cmddetach >detachcmd >commanddetach >detachcommand >rununtilthread >execuntilthread >executeuntilthread >continueuntilthread >rununtilprocess >execuntilprocess >executeuntilprocess >continueuntilprocess >rununtilline >execuntilline >executeuntilline >continueuntilline >rununtiloperation >execuntiloperation >executeuntiloperation >continueuntiloperation >rununtilinstruction >execuntilinstruction >executeuntilinstruction >continueuntilinstruction >rununtiladdress >execuntiladdress >executeuntiladdress >continueuntiladdress >rununtillocation >execuntillocation >executeuntillocation >continueuntillocation >rununtilevent >execuntilevent >executeuntilevent >continueuntilevent >rununtilterminate >execuntilterminate >executeuntilterminate >continueuntilterminate >rununtilreturn >execuntilreturn >executeuntilreturn >continueuntilreturn >rununtil >execuntil >executeuntil >continueuntil >rununtilcmd >execuntilcmd >executeuntilcmd >continueuntilcmd >rununtilcommand >execuntilcommand >executeuntilcommand >continueuntilcommand >jumpto >tojump >jumpin >injump >jumpout >outjump >jumplines >linejump >jumpinstructions >instructionjump >jumpoperations >operationjump >jumptolines >tolinejump >jumptoinstructions >toinstructionjump >jumptooperations >tooperationjump >jumpthreads >threadjump >jumpprocesses >processjump >jumpprograms >programjump >jumpuntillines >jumpuntilops >jumpuntiloperations >jumpuntilinstructions >jumptilllines >jumptillops >jumptilloperations >jumptillinstructions]`</small>
 
 | Command | Description
 | :------ | :---------------------------------------------------------
 ||
-| `(lldb) continue`  | **Continue execution** *[of all threads in the current process] <br>* *[till a breakpoint is hit or termination of the process is met]*.
-| `(lldb) thread until <line>` | **Run until line** `<line>` or control leaves the current function.
+| `$> continue`  | **Continue execution** *[of all threads in the current process] <br>* *[till a breakpoint is hit or termination of the process is met]*.
+| `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Jump to** a subsequent line/instruction; i.e sets the program counter to a new address.
+| `$> thread`**`jump`**`-l <line-num> [-f <filename>]` <br> `$> thread`**`jump`**`-b <line-offset>` <br> `$> thread`**`jump`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` or until a <br> function return is reached [, by the current or specified frame in <br> the current or specified thread].
 ||
-| `(lldb) thread`**`step-over`** <br> `(lldb) next` <br> `(lldb) n` | **Step over** *[function call]* lines *[, if any]*, executing the current <br> line and stepping, thereafter, over it, to the next one. Defaults to <br> current thread unless specified.
-| `(lldb) thread`**`step-in`** <br> `(lldb) step` <br> `(lldb) s` | **Step into** *[function]* calls. Defaults to current thread unless <br> specified.
-| `(lldb) thread`**`step-out`** <br> `(lldb) finish` | **Step out** of the currently selected frame *(i.e function call)*.
+| `$> thread`**`step-over`** <br> `$> next` <br> `$> n` | **Step over** *[function call]* lines *[, if any]*, executing the current <br> line and stepping, thereafter, over it, to the next one. Defaults <br> to current thread unless specified.
+| `$> thread`**`step-in`** <br> `$> step` <br> `$> s` | **Step into** *[function]* calls. Defaults to current thread unless <br> specified.
+| `$> thread`**`step-out`** <br> `$> finish` | **Step out** of the currently selected frame *(i.e function call)*.
+| `$> thread`**`return`**`[<value>]` | *[Prematurely]* **Return** from a stack frame, optionally yielding <br> a specified value *(else undefined value)*.
 ||
-| `(lldb) kill`      | **Terminate** the current target process.
-| `(lldb) detach`    | **Detach** from the current target process.
+| `$> kill`      | **Terminate** the current target process.
+| `$> detach`    | **Detach** from the current target process.
 
 > *<small>[**Note:***
 >
@@ -2633,6 +2635,21 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 > 	| `(lldb) thread step-inst` <br> `(lldb) si` | Do a single *[instruction]* **step in**.
 >
 > *- **end note**]</small>*
+
+`thread`**`until`**`[-f <frame-index>] [-t <thread-index>] [-m <run-mode>] [-a <address-expression>] <line-num>`
+
+       -a <address-expression> ( --address <address-expression> )
+            Run until we reach the specified address, or leave the function - can be specified multiple times.
+
+       -f <frame-index> ( --frame <frame-index> )
+            Frame index for until operation - defaults to 0
+
+       -m <run-mode> ( --run-mode <run-mode> )
+            Determine how to run other threads while stepping this one
+            Values: this-thread | all-threads
+
+       -t <thread-index> ( --thread <thread-index> )
+            Thread index for the thread for until operation
 
 
 <br>
@@ -2713,8 +2730,8 @@ Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual 
 
 	> ***Synopsis:***
 	> ```shell
-	> $> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <linenum>]
-	> source list [--show-breakpoints] [--count <count>] [--name <program-symbol>]
+	> $> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <line-num>]
+	> $> source list [--show-breakpoints] [--count <count>] [--name <program-symbol>]
 	> ```
 	>
 	> ***Example(s):***
@@ -3181,7 +3198,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 ---
 [🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.8.5. Registers
-<small>`[Search Tags: >examinationregisters >registersexamination >examinatingregisters >registersexaminating >examineregisters >registersexamine >examregisters >registersexam >examinationregistrs >registrsexamination >examinatingregistrs >registrsexaminating >examineregistrs >registrsexamine >examregistrs >registrsexam >examinationregs >regsexamination >examinatingregs >regsexaminating >examineregs >regsexamine >examregs >regsexam >examinationrgs >rgsexamination >examinatingrgs >rgsexaminating >examinergs >rgsexamine >examrgs >rgsexam]`</small>
+<small>`[Search Tags: >regexam >registerexam >regexamine >registerexamine >regexamination >registerexamination >regexaminating >registerexaminating >examinationregisters >registersexamination >examinatingregisters >registersexaminating >examineregisters >registersexamine >examregisters >registersexam >examinationregistrs >registrsexamination >examinatingregistrs >registrsexaminating >examineregistrs >registrsexamine >examregistrs >registrsexam >examinationregs >regsexamination >examinatingregs >regsexaminating >examineregs >regsexamine >examregs >regsexam >examinationrgs >rgsexamination >examinatingrgs >rgsexaminating >examinergs >rgsexamine >examrgs >rgsexam]`</small>
 <br>
 
 
@@ -3204,7 +3221,7 @@ Contents
 	> | Flag | Shortcut | Description
 	> | - | - | - |
 	> |                     |      |
-    > | `--format <format>` | `-f` | *Specify a format to be used for display. See [Format Table](#format-table) for all available formats.*
+    > | `--format <format>` | `-f` | *Specify a format to be used for display. See [Format Table](#format-table) for all <br> available formats.*
     > | `--all`             | `-a` | *Show all register sets.*
     > | `--set <index>`     | `-s` | *Specify which register sets to dump by index.*
 	>
@@ -3314,35 +3331,34 @@ Contents
 	> ***Synopsis:***
 	> ```shell
 	> $> expression
-	> $> expr                  # alias for ->   expression
 	> $> po <expr>             # alias for ->   expression -O -- <expr>
 	> $> p <expr>              # alias for ->   expression -- <expr>
 	> ```
 	>
 	> ***Options:***
-	> | Flag | Shortcut | Description
-	> | - | - | - |
-	> |                                  |      |
-	> | `--regex`                        | `-r` | *The <variable-name> argument for name lookups are regular expressions.*
-	> |                                  |      |
-	> | **Format**                       |      |
-	> | `--format <format>`              | `-f` | *Specify a format (e.g. binary, hex, decimal) to be used for <br> display. See [Format Table](#format-table) for all available formats.*
-	> |                                  |      |
-	> | **More Information**             |      |
-    > | `--ptr-depth <count>`            | `-P` | *Number of times pointer variables get dereferenced <br> (default is zero).*
-	> | `--scope`                        | `-s` | *Show variable scope (argument, local, global, static).*
-	> | `--show-globals`                 | `-g` | *Show [the current frame source file] global and static <br> variables.*
-	> | `--show-declaration`             | `-c` | *Show variable declaration line [in source file].*
-    > | `--location`                     | `-L` | *Show variable location information.*
-	> |                                  |      |
-	> | **Less Information**             |      |
-	> | `--raw-output`                   | `-R` | *Don't use formatting options.*
-	> | `--flat`                         | `-F` | *Omit [showing] variable type.*
-	> | `--no-locals`                    | `-l` | *Omit [showing] local variables.*
-	> | `--no-args`                      | `-a` | *Omit [showing] [function] argument variables.*
-	> |                                  |      |
-	> | `--ignore-breakpoints <boolean>` | `-i` | *Ignore breakpoint hits while running expressions*
-	> | ...                              | ...  | *For more, see `(lldb) help frame variable`.*
+	> | Flag                             | Shortcut | Description
+	> | -                                | -        | - |
+	> |                                  |          |
+	> | `--regex`                        | `-r`     | *The <variable-name> argument for name lookups are regular expressions.*
+	> |                                  |          |
+	> | **Format**                       |          |
+	> | `--format <format>`              | `-f`     | *Specify a format (e.g. binary, hex, decimal) to be used for <br> display. See [Format Table](#format-table) for all available formats.*
+	> |                                  |          |
+	> | **More Information**             |          |
+	> | `--ptr-depth <count>`            | `-P`     | *Number of times pointer variables get dereferenced <br> (default is zero).*
+	> | `--scope`                        | `-s`     | *Show variable scope (argument, local, global, static).*
+	> | `--show-globals`                 | `-g`     | *Show [the current frame source file] global and static <br> variables.*
+	> | `--show-declaration`             | `-c`     | *Show variable declaration line [in source file].*
+	> | `--location`                     | `-L`     | *Show variable location information.*
+	> |                                  |          |
+	> | **Less Information**             |          |
+	> | `--raw-output`                   | `-R`     | *Don't use formatting options.*
+	> | `--flat`                         | `-F`     | *Omit [showing] variable type.*
+	> | `--no-locals`                    | `-l`     | *Omit [showing] local variables.*
+	> | `--no-args`                      | `-a`     | *Omit [showing] [function] argument variables.*
+	> |                                  |          |
+	> | `--ignore-breakpoints <boolean>` | `-i`     | *Ignore breakpoint hits while running expressions*
+	> | ...                              | ...      | *For more, see `(lldb) help frame variable`.*
 	>
 	> ***Example(s):*** <br>
 	>
@@ -3358,50 +3374,24 @@ Contents
 Syntax:
 
 Command Options Usage:
-  expression [-AFLORTgp] [-f <format>] [-G <gdb-format>] [-a <boolean>] [-i <boolean>] [-t <unsigned-integer>] [-u <boolean>] [-l <source-language>] [-X <boolean>] [-v[<description-verbosity>]] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
+  expression [-FLOgp] [-f <format>] [-l <source-language>] [-X <boolean>] [-v[<description-verbosity>]] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
   expression [-AFLORTgp] [-a <boolean>] [-i <boolean>] [-t <unsigned-integer>] [-u <boolean>] [-l <source-language>] [-X <boolean>] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
-  expression [-r] -- <expr>
   expression <expr>
 
-       -F ( --flat )
-            Display results in a flat format that uses expression paths for each variable or member.
-
-       -L ( --location )
-            Show variable location information.
-
-       -O ( --object-description )
-            Display using a language-specific description API, if possible.
-
-       -P <count> ( --ptr-depth <count> )
-            The number of pointers to be traversed when dumping values (default is zero).
-
-       -V <boolean> ( --validate <boolean> )
-            Show results of type validators.
-
-       -Z <count> ( --element-count <count> )
-            Treat the result of the expression as if its type is an array of this many values.
-
-       -d <none> ( --dynamic-type <none> )
-            Show the object as its full dynamic type, not its static type, if available.
-            Values: no-dynamic-values | run-target | no-run-target
-
-       -f <format> ( --format <format> )
-            Specify a format to be used for display.
-
-       -g ( --debug )
-            When specified, debug the JIT code by setting a breakpoint on the first instruction and forcing breakpoints to not be ignored (-i0)
-            and no unwinding to happen on error (-u0).
-
-       -l <source-language> ( --language <source-language> )
-            Specifies the Language to use when parsing the expression.  If not set the target.language setting is used.
-
-       -p ( --top-level )
-            Interpret the expression as a complete translation unit, without injecting it into the local context.  Allows declaration of
-            persistent, top-level entities without a $ prefix.
-
-       -v[<description-verbosity>] ( --description-verbosity=[<description-verbosity>] )
-            How verbose should the output of this expression be, if the object description is asked for.
-            Values: compact | full
+| Flag                          | Shortcut                  | Description
+| -                             | -                         | -
+| `-F`                          | `--flat`                  | Display results in a flat format that uses <br> expression paths for each variable or member.
+| `-L`                          | `--location`              | Show variable location information.<br>
+| `-O`                          | `--object-description`    | Display using a language-specific description<br>  API, if possible.
+| `-P <count>`                  | `--ptr-depth`             | The number of pointers to be traversed when<br>  dumping values (default is zero).
+| `-V <boolean>`                | `--validate`              | Show results of type validators.
+| `-Z <count>`                  | `--element-count`         | Treat the result of the expression as if its<br>  type is an array of this many values.
+| `-d <none>`                   | `--dynamic-type`          | Show the object as its full dynamic type, not<br>  its static type, if available. | Values: no-dynamic-values | run-target | no-run-target
+| `-f <format>`                 | `--format`                | Specify a format to be used for display.
+| `-g`                          | `--debug`                 | When specified, debug the JIT code by setting<br>  a breakpoint on the first instruction and forcing <br> breakpoints to not be ignored (-i0) | and no unwinding to happen on error (-u0).
+| `-l <source-language>`        | `--language`              | Specifies the Language to use when parsing <br> the expression. If not set the `target.language` <br> setting is used.
+| `-p`                          | `--top-level`             | Interpret the expression as a complete <br> translation unit, without injecting it into the local <br> context. Allows declaration of | persistent, top-level entities without a $ prefix.
+| `-v[<description-verbosity>]` | `--description-verbosity` | How verbose should the output of this <br> expression be, if the object description is asked <br> for. Values: `compact` \| `full` .
 
 ### Single Line Expressions
 
@@ -3464,7 +3454,7 @@ error: use of undeclared identifier 'status'
 The results of the expressions are stored in persistent variables (of the form `$[0-9]+`) that you can use in further expressions:
 
 ```shell
-(lldb) expr $0 + 1
+(lldb) expr 12
 (int) $1 = 12
 ```
 ```shell
@@ -3476,35 +3466,11 @@ The results of the expressions are stored in persistent variables (of the form `
 (int) $3 = 23
 ```
 
+### Debugging Expression
 
-> Running Functions
+The expression
 
 
-Single and multi-line expressions:
-
-    The expression provided on the command line must be a complete expression with no newlines.  To evaluate a multi-line expression, hit a
-    return after an empty expression, and lldb will enter the multi-line expression editor. Hit return on an empty line to end the multi-line
-    expression.
-
-Timeouts:
-
-    If the expression can be evaluated statically (without running code) then it will be.  Otherwise, by default the expression will run on the
-    current thread with a short timeout: currently .25 seconds.  If it doesn't return in that time, the evaluation will be interrupted and
-    resumed with all threads running.  You can use the -a option to disable retrying on all threads.  You can use the -t option to set a
-    shorter timeout.
-
-User defined variables:
-
-    You can define your own variables for convenience or to be used in subsequent expressions.  You define them the same way you would define
-    variables in C.  If the first character of your user defined variable is a $, then the variable's value will be available in future
-    expressions, otherwise it will just be available in the current expression.
-
-Continuing evaluation after a breakpoint:
-
-    If the "-i false" option is used, and execution is interrupted by a breakpoint hit, once you are done with your investigation, you can
-    either remove the expression execution frames from the stack with "thread return -x" or if you are still interested in the expression
-    result you can issue the "continue" command and the expression evaluation will complete and the expression result will be available using
-    the "thread.completed-expression" key in the thread format.
 
 Examples:
 
