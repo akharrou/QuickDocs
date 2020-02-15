@@ -34,12 +34,16 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.1. Compile Program](#31-compile-program)
 		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g---o0)
 		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
-		- [3.1.3 Makfile Setup](#313-makfile-setup)
+		<!-- - [3.1.3 Makfile Setup](#313-makfile-setup) -->
 	- [3.2. Run LLDB](#32-run-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 		- [3.4.2. Watchpoints](#342-watchpoints)
+		- [3.4.3 Settings *(Advanced)*](#)                                              <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
+		- [3.4.4 Commands & Aliases *(Advanced)*](#)                                    <!-- TODO: do chapter -->
+		- [3.4.5 Type *[Formatting]* *(Advanced)*](#)                                   <!-- TODO: do chapter -->
+		- [3.4.6 Logging *(Advanced)*](#)                                               <!-- TODO: do chapter -->
 	- [3.5. Start Debugging](#35-start-debugging)
 		- [3.5.1. Launch](#351-launch)
 		- [3.5.2. Attach](#352-attach)
@@ -59,17 +63,10 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.9. Self-Help Commands](#)                                           <!-- TODO: do chapter -->
 		- [3.9.1. `help`](#)                                                 <!-- TODO: do chapter -->
 		- [3.9.2. `apropos`](#)                                              <!-- TODO: do chapter -->
-- [4. Beyond Basics *(Advanced)*](#)                                         <!-- TODO: do chapter -->
-	- [4.1. `LLDB` Settings](#)                                              <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
-	- [4.2. `LLDB` Commands & Aliases](#)                                    <!-- TODO: do chapter -->
-	- [4.3. `LLDB` Type Display Format](#)                                   <!-- TODO: do chapter -->
-	- [4.4. `LLDB` Logging](#)                                               <!-- TODO: do chapter -->
-	- [4.5. `LLDB` Bugreporting](#)                                          <!-- TODO: do chapter -->
-<!--
-	- [4.x. `LLDB` Language](#)                                              TODO: do chapter
-	- [4.x. `LLDB` Platform](#)                                              TODO: do chapter
-	- [4.x. `LLDB` Version](#)                                               TODO: do chapter ::: # Show `LLDB` version* ::: <small>[**Note:** `v` is a shorthand for `version` - **end note**]</small>*
- -->
+		- [3.9.3. `version`](#)                                              <!-- TODO: do chapter -->
+	- [3.10. Advanced Topics](#)                                             <!-- TODO: do chapter -->
+		- [3.10.1. Bugreporting](#)                                          <!-- TODO: do chapter -->
+		- [3.10.2. Remote Debugging *(with `platform`)*](#)                                              TODO: do chapter
 
 
 <!-- >Start --------------------------------------------------------------------
@@ -157,7 +154,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ---
 [🏠](#contents) | [⬅️](#contents) | [➡️](#3-how-do-i-use-it-)
-# 2. What is it ?
+# [2. What is it ?](#contents)
 <small>`[Search Tags: >lldb.what? >lldbwhat? >lldb.who? >lldb.why? >lldb.whocares? >lldb.whycare? >lldb.? >lldb? >wat >woot >wut >whatisit ?isit >whatsit >about >description >whycare >caring? >info >intro >lldb.whatisit >lldb.whycare? >lldb.whyshouldicare?]`</small>
 <br>
 <br>
@@ -390,6 +387,7 @@ Contents
 > | 2 | Documentation | Clang | [Sanitizers Family](https://clang.llvm.org/docs/UsersManual.html#controlling-code-generation)
 > | 3 | Documentation | GNU | [Sanitizers Family (scroll down) ](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html#-fsanitize=address)
 
+<!--
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
@@ -413,21 +411,23 @@ The following link below, suggests a `Makefile` *[template]* that hopefully can 
 > NAME        =   Program
 >
 >
+> # Libraries Files  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+>
+> LIBRARIES   =                                                                 \
+>                 Path/________.a                                               \
+>
 > # Header Files  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 >
 > HEADERS     =                                                                 \
->                 Includes/____.h                                               \
->                 Includes/____.h                                               \
->                 Includes/____.h                                               \
+>                 Includes/______.h                                             \
+>                 Includes/______.h                                             \
 >                 ...                                                           \
->
 >
 > # Source Files  — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
 >
 > SOURCES     =                                                                 \
 >                 Sources/main.c                                                \
->                 Sources/____.c                                                \
->                 Sources/____.c                                                \
+>                 Sources/______.c                                              \
 >                 ...                                                           \
 >
 >
@@ -471,13 +471,12 @@ The following link below, suggests a `Makefile` *[template]* that hopefully can 
 > all: $(NAME)
 >
 > debug: CFLAGS += $(D_FLAGS)
-> debug: clean $(NAME)
-> 	@make clean
+> debug: fclean $(NAME)
 >
 > run: $(NAME)
 > 	@./$(NAME)
 >
-> $(NAME): $(OBJECTS)
+> $(NAME): $(OBJECTS) $(LIBRARIES)
 > 	@$(CC) $(CFLAGS) $^ -o $@
 > 	@echo && echo $(GREEN) "[√]     [$(NAME) Successfully Compiled!]"
 > 	@echo $(WHITE)
@@ -522,6 +521,7 @@ The following link below, suggests a `Makefile` *[template]* that hopefully can 
 > | 1 | Encyclopedia | Wikipedia | [Makefile](https://en.wikipedia.org/wiki/Makefile)
 > | 2 | Documentation | GNU | [(Official) GNU Makefile *[Manual]*](https://www.gnu.org/software/make/manual/make.html)
 
+-->
 
 ---
 [🏠](#contents) | [⬅️](#312-sanitizer-flags--fsanitize-family) | [➡️](#33-load-lldb)
@@ -2617,9 +2617,9 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 | `(lldb) continue`  | **Continue execution** *[of all threads in the current process] <br>* *[till a breakpoint is hit or termination of the process is met]*.
 | `(lldb) thread until <line>` | **Run until line** `<line>` or control leaves the current function.
 ||
-|  `(lldb) thread step-over` <br> `(lldb) next` <br> `(lldb) n` | **Step over** *[function call]* lines *[, if any]*, executing the current <br> line and stepping, thereafter, over it, to the next one. Defaults to <br> current thread unless specified.
-| `(lldb) thread step-in` <br> `(lldb) step` <br> `(lldb) s` | **Step into** *[function]* calls. Defaults to current thread unless <br> specified.
-| `(lldb) thread step-out` <br> `(lldb) finish` | **Step out** of the currently selected frame *(i.e function call)*.
+| `(lldb) thread`**`step-over`** <br> `(lldb) next` <br> `(lldb) n` | **Step over** *[function call]* lines *[, if any]*, executing the current <br> line and stepping, thereafter, over it, to the next one. Defaults to <br> current thread unless specified.
+| `(lldb) thread`**`step-in`** <br> `(lldb) step` <br> `(lldb) s` | **Step into** *[function]* calls. Defaults to current thread unless <br> specified.
+| `(lldb) thread`**`step-out`** <br> `(lldb) finish` | **Step out** of the currently selected frame *(i.e function call)*.
 ||
 | `(lldb) kill`      | **Terminate** the current target process.
 | `(lldb) detach`    | **Detach** from the current target process.
