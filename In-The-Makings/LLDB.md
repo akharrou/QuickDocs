@@ -2852,52 +2852,60 @@ You can inspect a process's thread with the following commands:
 
 	> ***Synopsis:***
 	> ```shell
-	> $> thread backtrace [--count <count>] [--start <frame-index>] [all]    # Backtrace [the first <count> frames] [starting from the frame <frame-index> for] [all] thread(s).
+	> $> thread backtrace [--count <count>] [--start <frame-index>] [all | <thread-index>]    # Backtrace [the first <count> frames] [starting from the frame <frame-index> for] [all | <thread-index>] thread(s).
 	> $> bt
 	> ```
 	>
 	> ***Example(s):***
+	>
+	> **(1)**
 	> ```shell
 	> (lldb) thread backtrace                            # Backtrace the current thread.
 	> (lldb) th b
 	> (lldb) bt
 	> ```
 	> ```shell
-	> (lldb) thread backtrace 3                          # Backtrace thread #3.
-	> (lldb) th b 3
+	> * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+	>   * frame #0: 0x0000000100000b62 a`foo(iterations=0x00006020000000f0) at loopInput.c:13
+	>     frame #1: 0x0000000100000d76 a`main(ac=1, av=0x00007ffeefbff5b0) at loopInput.c:24
+	>     frame #2: 0x00007fff789cd015 libdyld.dylib`start + 1
+	> ```
+	> **(2)**
+	> ```shell
+	> (lldb) thread backtrace --count 2                  # Backtrace the first 2 frames for the current thread.
+	> (lldb) th b -c 2
+	> (lldb) bt -c 2
+	> (lldb) bt 2
 	> ```
 	> ```shell
-	> (lldb) thread backtrace --count 5                  # Backtrace the first 5 frames for the current thread.
-	> (lldb) th b -c 5
-	> (lldb) bt -c 5
-	> (lldb) bt 5
+	> * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+	>   * frame #0: 0x0000000100000b62 a`foo(iterations=0x00006020000000f0) at loopInput.c:13
+	>     frame #1: 0x0000000100000d76 a`main(ac=1, av=0x00007ffeefbff5b0) at loopInput.c:24
+	> ```
+	> **(3)**
+	> ```shell
+	> (lldb) thread backtrace --count 2 --start 1        # Backtrace the first 2 frames starting from the frame #1, of the current thread.
+	> (lldb) th b -c 2 -s 1
 	> ```
 	> ```shell
-	> (lldb) thread backtrace --count 3 --start 4        # Backtrace the first 3 frames starting from the frame #4, of the current thread.
-	> (lldb) th b -c 3 -s 4
+	> * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+	>     frame #1: 0x0000000100000d76 a`main(ac=1, av=0x00007ffeefbff5b0) at loopInput.c:24
+	>     frame #2: 0x00007fff789cd015 libdyld.dylib`start + 1
 	> ```
+	> **(4)**
 	> ```shell
 	> (lldb) thread backtrace all                        # Backtrace all threads.
 	> (lldb) th b all
 	> ```
+	> **(5)**
 	> ```shell
-	> (lldb) thread backtrace --count 2 --start 1 all    # Backtrace the first 2 frames starting from the frame #1, of all threads.
-	> (lldb) th b -c 2 -s 1 all
+	> (lldb) thread backtrace --count 5 --start 1 all    # Backtrace the first 5 frames starting from the frame #1, for all threads.
+	> (lldb) th b -c 5 -s 1 all
 	> ```
 	>
 	> ***[Example] Output:***
-	> ```shell
-	> (lldb) bt
-	> * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 2.1
-	>   * frame #0: 0x0000000100003b49 a`main(ac=1, av=0x00007ffeefbff5b0) at threadedHello.cpp:29
-	>     frame #1: 0x00007fff789cd015 libdyld.dylib`start + 1
-	> ```
 
-	> *<small>[**Note:***
-	>
-	> - *`bt` is an alias for `backtrace thread`, see `help bt`.*
-	>
-	> *- **end note**]</small>*
+	> *<small>[**Note:** `bt` is an alias for `backtrace thread`, see `help bt`. - **end note**]</small>*
 
 
 <br>
@@ -2932,6 +2940,9 @@ Commands to:
 - [2 List Stack Frame Information](#list-threads)
 ---
 
+You can inspect a thread's stack frame with the following commands:
+
+---
 -	#### Select *[current]* stack frame:
 
 	> <small>`[Search Tags: >selectstacks >selctstacks >selcstacks >stacksselect >stackselect >stacksselct >stackselct >stacksslct >stackslct >slctstacks >slctstack >sstacks >sestacks >selstacks >selectstcks >selctstcks >selcstcks >stcksselect >stcklist >stcksselct >stckselct >stcksslct >stckslct >slctstcks >slctstck >sstcks >sestcks >selstcks >selectstks >selctstks >selcstks >stksselect >stklist >stksselct >stkselct >stksslct >stkslct >slctstks >slctstk >sstks >sestks >selstks >selectframes >selctframes >selcframes >framesselect >frameselect >framesselct >frameselct >framesslct >frameslct >slctframes >slctframe >sframes >seframes >selframes >selectfrms >selctfrms >selcfrms >frmsselect >frmlist >frmsselct >frmselct >frmsslct >frmslct >slctfrms >slctfrm >sfrms >sefrms >selfrms >selectfrs >selctfrs >selcfrs >frsselect >frlist >frsselct >frselct >frsslct >frslct >slctfrs >slctfr >sfrs >sefrs >selfrs >selectstackframes >selctstackframes >selcstackframes >stackframesselect >stackframeselect >stackframesselct >stackframeselct >stackframesslct >stackframeslct >slctstackframes >slctstackframe >sstackframes >sestackframes >selstackframes]`</small>
@@ -2988,8 +2999,6 @@ Commands to:
 	> (lldb) frame info     # List information about the currently selected frame, in the current thread.
 	> (lldb) fr i
 	> ```
-	>
-	> ***[Example] Output:***
 	> ```shell
 	> frame #0: 0x0000000100003b49 a`main(ac=2, av=0x00007ffeefbff5a0) at threadedHello.cpp:29
 	> ```
@@ -3017,6 +3026,12 @@ Commands to:
 <br>
 
 
+---
+
+You can inspect a stack frame's variables, as well as *[static | extern]* global variables:
+
+---
+
 -	#### Print *(read)* variable(s):
 
 	> <small>`[Search Tags: >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay >variableprint >variablesprint >varsprint >varprint >printvariable >printvariables >printvars >printvar >variableread >variablesread >varsread >varread >variablerd >variablesrd >varsrd >varrd >readvariable >readvariables >readvars >readvar >rdvariable >rdvariables >rdvars >rdvar]`</small>
@@ -3033,14 +3048,14 @@ Commands to:
 	> | `--regex`             | `-r` | *The <variable-name> argument for name lookups are regular expressions.*
 	> |                       |      |
 	> | **Format**            |      |
-	> | `--format <format>`   | `-f` | *Specify a format (e.g. binary, hex, decimal) to be used for <br> display. See notes below for a list of all the formats available.*
+	> | `--format <format>`   | `-f` | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). See notes below for a list of all the formats <br> available.*
 	> |                       |      |
 	> | **More Information**  |      |
-    > | `--ptr-depth <count>` | `-P` | *Number of times pointer variables get dereferenced <br> (default is zero).*
-	> | `--scope`             | `-s` | *Show variable scope (argument, local, global, static).*
-	> | `--show-globals`      | `-g` | *Show [the current frame source file] global and static <br> variables.*
-	> | `--show-declaration`  | `-c` | *Show variable declaration line [in source file].*
-    > | `--location`          | `-L` | *Show variable location information.*
+    > | `--ptr-depth <count>` | `-P` | *Number of times pointer variables get dereferenced; <br> (default=0).*
+	> | `--scope`             | `-s` | *Show variable scope (`argument`, `local`, `global`, `static`).*
+	> | `--show-globals`      | `-g` | *Show *[static \| extern]* global variables.*
+	> | `--show-declaration`  | `-c` | *Show variable declaration line [, in source file].*
+    > | `--location`          | `-L` | *Show variable *[memory]* address.*
 	> |                       |      |
 	> | **Less Information**  |      |
 	> | `--flat`              | `-F` | *Omit [showing] variable type.*
@@ -3050,28 +3065,44 @@ Commands to:
 	> | ...                   | ...  | *For more, see `(lldb) help frame variable`.*
 	>
 	> ***Example(s):***
+	>
+	> **(1)**
 	> ```shell
 	> (lldb) frame variable                                            # Show all arguments and local variables.
 	> (lldb) fr v
 	> ```
 	> ```shell
+	> (int) ac = 1
+	> (char **) av = 0x00007ffeefbff5b0
+	> (char [6]) name = "James"
+	> (int *) my_ptr = 0x00006020000000f0
+	> (float) my_var = 0
+	> (int) i = 0
+	> ```
+	> **(2)**
+	> ```shell
 	> (lldb) frame variable my_var                                     # Show the value of `my_var`.
 	> (lldb) fr v my_var
 	> ```
 	> ```shell
-	>
+	> (float) my_var = 0
+	> ```
+	> **(3)**
+	> ```shell
 	> (lldb) frame variable --format x *my_ptr                         # Show the value that `my_ptr` points to, in "(lowercase) hexadecimal" format.
 	> (lldb) fr v -f x *my_ptr
 	> (lldb) fr v/x *my_ptr
 	> ```
 	> ```shell
-	> (lldb) frame variable --scope --show-globals --ptr-depth 3       # Show all variables that exist (i.e arguments, locals, globals, [file] statics); as for pointers, dereference them 3 times.
+	> (int) *my_ptr = 0x52800003                                       # 1384120323, in decimal
+	> ```
+	> **(4)**
+	> ```shell
+	> (lldb) frame variable --scope --show-globals --ptr-depth 3       # Show all variables that exist (i.e arguments, locals, globals, [file] statics); dereference pointers up to 3 times.
 	> (lldb) fr v -s -g -P 3
 	> ```
-	>
-	> ***[Example] Output:***
 	> ```shell
-	> (lldb) fr v -s -g -P 3
+	> (lldb) frame variable --scope --show-globals --ptr-depth 3
 	> ARG: (int) ac = 2
 	> ARG: (char **) av = 0x00007ffeefbff5a8 {
 	>   *av = 0x00007ffeefbff7e8 "/path/to/working/directory/a.out" {
@@ -3179,13 +3210,13 @@ Contents
 	>
 	> ***Example(s):*** <br>
 	>
-	> (1)
+	> **(1)**
 	> ```shell
 	> (lldb) register read --all                             # Print (read) all registers.
 	> (lldb) re r -a
 	> ```
 	>
-	> (2)
+	> **(2)**
 	> ```shell
 	> (lldb) register read --format b eax                    # Print the 'eax' register, in binary format.
 	> (lldb) re r -f b eax
@@ -3195,7 +3226,7 @@ Contents
 	>     eax = 0b00000000000000000000000011110000
 	> ```
 	>
-	> (3)
+	> **(3)**
 	> ```shell
 	> (lldb) register read rax rbx rcx rdx eax ebx ecx       # Print the specified [by name] registers.
 	> (lldb) re r rax rbx rcx rdx eax ebx ecx
@@ -3210,7 +3241,7 @@ Contents
 	>     ecx = 0x00000050
 	> ```
 	>
-	> (4)
+	> **(4)**
 	> ```shell
 	> (lldb) register read --set 2                           # Print the 2nd set of registers –– the 'Exception State Registers'.
 	> (lldb) re r -s 2
