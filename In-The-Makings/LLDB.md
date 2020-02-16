@@ -2736,7 +2736,7 @@ You can investigate source code with the following commands:
 
 	> <small>`[Search Tags: >solst >solist >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
 
-	> ***Canonical:***
+	> ***Synopsis:***
 	> ```shell
 	> $> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <line-num>]
 	> # list [<count>] lines from [current-file | <file>] starting from line [1 | <line-num>].
@@ -2937,7 +2937,7 @@ Commands to:
 - [4 Thread backtrace](#thread-backtrace)
 ---
 
-You can inspect a process's thread with the following commands:
+You can inspect a process's thread(s) with the following commands:
 
 ---
 
@@ -2980,12 +2980,14 @@ You can inspect a process's thread with the following commands:
 	> ***Synopsis:***
 	> ```shell
 	> $> thread select <thread-index>
+	> $> t     # abbreviation
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
 	> (lldb) thread select 2
 	> (lldb) th se 2
+	> (lldb) t 2
 	> ```
 
 	> *<small>[**Note:***
@@ -3004,10 +3006,20 @@ You can inspect a process's thread with the following commands:
 
 	> ***Synopsis:***
 	> ```shell
-	> $> thread info [--json] [--stop-info] [<thread-index> | all]
+	> $> thread info [--json] [<thread-index> | all]
 	> ```
 	>
 	> ***Example(s):***
+	>
+	> #### **(1)** Brief Information
+	> ```shell
+	> (lldb) thread info
+	> (lldb) th i
+	> ```
+	> ```shell
+	> thread #1: tid = 0x2f376e, 0x00000001000017b9 a`main(ac=1, av=0x00007ffeefbff510) at loopInput.c:20, queue = 'com.apple.main-thread', stop reason = breakpoint 6.1
+	> ```
+	> #### **(2)** Full *[Json]* Information
 	> ```shell
 	> (lldb) thread info --json
 	> (lldb) th i -j
@@ -3038,7 +3050,7 @@ You can inspect a process's thread with the following commands:
 	> ```
 	> ***Shorthand:***
 	> ```shell
-	> $> _regexp-bt [<frame-count>]
+	> $> _regexp-bt [<count>]
 	> $> _regexp-bt [all]
 	> ```
 	> ```shell
@@ -3047,10 +3059,12 @@ You can inspect a process's thread with the following commands:
 	>
 	> ***Example(s):***
 	>
-	> **(1)**
+	> #### (1) Backtrace current thread
 	> ```shell
-	> (lldb) thread backtrace                            # Backtrace the current thread.
+	> (lldb) thread backtrace
 	> (lldb) th b
+	> (lldb) _regexp-bt
+	> (lldb) bt
 	> ```
 	> ```shell
 	> * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
@@ -3058,19 +3072,21 @@ You can inspect a process's thread with the following commands:
 	>     frame #1: 0x0000000100000d76 a`main(ac=1, av=0x00007ffeefbff5b0) at loopInput.c:24
 	>     frame #2: 0x00007fff789cd015 libdyld.dylib`start + 1
 	> ```
-	> **(2)**
+	> #### (2) " " first 2 frames
 	> ```shell
-	> (lldb) thread backtrace --count 2                  # Backtrace the first 2 frames for the current thread.
+	> (lldb) thread backtrace --count 2
 	> (lldb) th b -c 2
+	> (lldb) _regexp-bt 2
+	> (lldb) bt 2
 	> ```
 	> ```shell
 	> * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
 	>   * frame #0: 0x0000000100000b62 a`foo(iterations=0x00006020000000f0) at loopInput.c:13
 	>     frame #1: 0x0000000100000d76 a`main(ac=1, av=0x00007ffeefbff5b0) at loopInput.c:24
 	> ```
-	> **(3)**
+	> #### (3) " " starting from the first frame
 	> ```shell
-	> (lldb) thread backtrace --count 2 --start 1        # Backtrace the first 2 frames starting from the frame #1, of the current thread.
+	> (lldb) thread backtrace --count 2 --start 1
 	> (lldb) th b -c 2 -s 1
 	> ```
 	> ```shell
@@ -3078,45 +3094,10 @@ You can inspect a process's thread with the following commands:
 	>     frame #1: 0x0000000100000d76 a`main(ac=1, av=0x00007ffeefbff5b0) at loopInput.c:24
 	>     frame #2: 0x00007fff789cd015 libdyld.dylib`start + 1
 	> ```
-	> **(4)**
+	> #### (4) Backtrace all threads
 	> ```shell
-	> (lldb) thread backtrace all                        # Backtrace all threads.
+	> (lldb) thread backtrace all
 	> (lldb) th b all
-	> ```
-	> ```shell
-	> Example (5):
-	>
-	> (lldb) thread backtrace --count 5 --start 1 all    # Backtrace the first 5 frames starting from the frame #1, for all threads.
-	> (lldb) th b -c 5 -s 1 all
-	> ```
-	>
-	> **(5)**
-	> ```shell
-	> (lldb) _regexp-bt                   # Backtrace current thread
-	> (lldb) bt
-	> ```
-	> ```shell
-	> * thread #1
-	>   * frame #0: 0x00007fff53f46a4e libsystem_kernel.dylib`__psynch_mutexwait + 10
-	>     frame #1: 0x00007fff5410eb9d libsystem_pthread.dylib`_pthread_mutex_lock_wait + 83
-	>     frame #2: 0x00007fff5410c4c8 libsystem_pthread.dylib`_pthread_mutex_lock_slow + 253
-	>     frame #3: 0x00007fff53e80cfa libsystem_c.dylib`flockfile + 31
-	>     frame #4: 0x00007fff53e83d58 libsystem_c.dylib`fwrite + 66
-	>     frame #5: 0x0000000100100178 libclang_rt.asan_osx_dynamic.dylib`wrap_fwrite + 88
-	> ```
-	> **(6)**
-	> ```shell
-	> (lldb) _regexp-bt 3                 # Show backtrace for [up to] 3 frames.
-	> (lldb) bt 3
-	> ```
-	> ```shell
-	> * thread #1
-	>   * frame #0: 0x00007fff53f46a4e libsystem_kernel.dylib`__psynch_mutexwait + 10
-	>     frame #1: 0x00007fff5410eb9d libsystem_pthread.dylib`_pthread_mutex_lock_wait + 83
-	>     frame #2: 0x00007fff5410c4c8 libsystem_pthread.dylib`_pthread_mutex_lock_slow + 253
-	> ```
-	> **(7)**
-	> ```shell
 	> (lldb) _regexp-bt all
 	> (lldb) bt all
 	> ```
@@ -3137,6 +3118,24 @@ You can inspect a process's thread with the following commands:
 	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
 	>     frame #1: 0x000000010000ca00 c`void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct> >, main::$_0> >(void*) [inlined] decltype(__f=0x0000602000000118)(std::__1::forward<>(fp0))) std::__1::__invoke<main::$_0>(main::$_0&&) at type_traits:4323
 	>     frame #2: 0x00007fff53ec1724 libsystem_c.dylib`nanosleep + 199
+	> ...
+	> ```
+	> #### (5) " ", 1 frame starting from the first frame
+	> ```shell
+	> (lldb) thread backtrace --count 1 --start 1 all
+	> (lldb) th b -c 1 -s 1 all
+	> ```
+	> ```shell
+	> * thread #1, queue = 'com.apple.main-thread', stop reason = one-shot breakpoint 2
+	>   * frame #0: 0x0000000100003b49 c`main(ac=1, av=0x00007ffeefbff5b0) at threadedHello.cpp:29
+	>   thread #2
+	>     frame #0: 0x00007fff53f46d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>   thread #3
+	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
+	>   thread #4
+	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
+	>   thread #5
+	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
 	> ...
 	> ```
 
@@ -3185,13 +3184,14 @@ You can inspect a thread's stack frame with the following commands:
 	> $> frame select [--relative <offset>] [<frame-index>]
 	> $> f    # abbreviation
 	> ```
+	> ***Shorthand:***
 	> ```shell
-	> _regexp-down [<frame-count>]   # Select the stack frame: current-index - 1 ; that is called by the current stack frame.
-	> down         # Alias
+	> _regexp-down [<offset>]   # Select the frame: current-frame - <offset>.
+	> down                      # Alias
 	> ```
 	> ```shell
-	> _regexp-up [<frame-count>]   # Select the stack frame: current-index - 1 ; that is called by the current stack frame.
-	> up           # Alias
+	> _regexp-up [<offset>]     # Select the frame: current-frame + <offset>.
+	> up                        # Alias
 	> ```
 	>
 	> ***Example(s):***
@@ -3201,25 +3201,20 @@ You can inspect a thread's stack frame with the following commands:
 	> (lldb) f 4
 	> ```
 	> ```shell
-	> (lldb) fr select --relative 3        # Select a stack frame relative to the the current thread.
+	> (lldb) fr select --relative=3        # Select a stack frame relative to the the current thread.
 	> (lldb) fr s -r 3
 	> (lldb) f s -r 3
 	> ```
 	> ```shell
 	> (lldb) down
 	> (lldb) frame select --relative=-1    # same as 'down'
+	> (lldb) fr s -r -1
 	> ```
 	> ```shell
 	> (lldb) up
 	> (lldb) frame select --relative=1     # same as 'up'
+	> (lldb) fr s -r 1
 	> ```
-
-	> *<small>[**Note:***
-	>
-	> -	*`f` is an alias for `frame select`, see `(lldb) help f`.*
-	> -	*`down` and `up` are aliases, see `(lldb) help down` and `(lldb) help up`.*
-	>
-	> *- **end note**]</small>*
 
 <br>
 
