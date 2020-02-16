@@ -847,7 +847,7 @@ Contents
 
 	>*<small>[**Note:***
 	>
-	> -	*Only the function **itself** has a breakpoint set on it, not its [the function's] call sites.*
+	> -	*Only the function **itself** has a breakpoint set on it, not its call sites.*
 	>
 	> - *`_regexp-break` is a shorthand notation for setting breakpoints. It allows one to set a breakpoint using a regular expression to specify the location:*
 	>
@@ -861,7 +861,7 @@ Contents
 	>
 	> - *'`rbreak`' is an alias for '`breakpoint set -r %1`'.*
 	>
-	> - *'`_regexp-tbreak`' is and its alias '`tbreak`' are broken options (i.e they do not work) –– I believe it is supposed to work like '`_regexp-break`'.*
+	> - *'`_regexp-tbreak`' and its alias '`tbreak`' are broken options (i.e they do not work) –– I believe it is supposed to work like '`_regexp-break`'.*
 	>
 	> *- **end note**]</small>*
 
@@ -902,7 +902,7 @@ Contents
 
 -	#### ***Set a breakpoint, on an *[instruction | line | function]* address:***
 
-	> <small>`[Search Tags: >braddresses >addressesbr >braddrs >addrsbr >brsaddresses >addressesbrs >brsaddrs >addrsbrs >brsetaddresses >addressesbrset >brsetaddrs >addrsbrset >breakpointsetaddresses  >addressesbreakpointset >breakpointsetaddrs  >addrsbreakpointset >braddresses >addressesbr >braddrs >addrsbr >brsaddresses >addressesbrs >brsaddrs >addrsbrs >brlocations >locationsbr >brloc >brlocs >locbr >locsbr >brslocations >locationsbrs >brsloc >brslocs >locbrs >locsbrs >brsetlocations >locationsbrset >brsetloc >brsetlocs >locbrset >locsbrset >breakpointsetlocations  >locationsbreakpointset >breakpointsetloc  >breakpointsetlocs  >locbreakpointset >locsbreakpointset >brlocations >locationsbr >brloc >brlocs >locbr >locsbr >brslocations >locationsbrs >brsloc >brslocs >locbrs >locsbrs >brinstructions >brsinstructions >brsetinstructions >breakpointsetinstructions >brinstructions >brsinstructions >brinsts >brsinsts >brsetinsts >breakpointsetinsts >brinsts >brsinsts >broperations >brsoperations >brsetoperations >breakpointsetoperations >broperations >brsoperations >brops >brsops >brsetops >breakpointsetops >brops >brsops]`</small>
+	> <small>`[Search Tags: >braddresses >addressesbr >braddrs >addrsbr >brsaddresses >addressesbrs >brsaddrs >addrsbrs >brsetaddresses >addressesbrset >brsetaddrs >addrsbrset >breakpointsetaddresses  >addressesbreakpointset >breakpointsetaddrs  >addrsbreakpointset >braddresses >addressesbr >braddrs >addrsbr >brsaddresses >addressesbrs >brsaddrs >addrsbrs >brlocations >locationsbr >brloc >brlocs >locbr >locsbr >brslocations >locationsbrs >brsloc >brslocs >locbrs >locsbrs >brsetlocations >locationsbrset >brsetloc >brsetlocs >locbrset >locsbrset >breakpointsetlocations  >locationsbreakpointset >breakpointsetloc  >breakpointsetlocs  >locbreakpointset >locsbreakpointset >brlocations >locationsbr >brloc >brlocs >locbr >locsbr >brslocations >locationsbrs >brsloc >brslocs >locbrs >locsbrs >brinstructions >brsinstructions >brsetinstructions >breakpointsetinstructions >brinstructions >brsinstructions >brinsts >brsinsts >brsetinsts >breakpointsetinsts >brinsts >brsinsts]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -1213,12 +1213,12 @@ Commands for:
 	- [1.1 Set a Conditional Breakpoint](#set-a-conditional-breakpoint)
 	- [1.2 Add/Modify Breakpoint Condition](#addmodify-breakpoint-condition-of-an-existing-breakpoint)
 - [2 Breakpoint Commands](#breakpoint-commands)
-	- [2.1 Add/Modify Commands](#add-modify-breakpoint-commands)
+	- [2.1 Add/Modify Commands](#addmodify-breakpoint-commands)
 	- [2.2 List Commands](#list-breakpoint-commands)
 	- [2.3 Delete Commands](#delete-breakpoint-commands)
 - [3 Breakpoint Attributes](#breakpoint-attributes)
 	- [3.1 Set a Breakpoint with Attributes](#set-a-breakpoint-with-attributes)
-	- [3.2 Add/Modify Breakpoint Attributes](#add-modify-breakpoint-attributes)
+	- [3.2 Add/Modify Breakpoint Attributes](#addmodify-breakpoint-attributes)
 ---
 
 >	*(**Know that**) –– "Breakpoints carry two orthognal sets of information: one specifies where to set the breakpoint, and the other how to react when the breakpoint is hit. The latter set of information (e.g. commands, conditions hit-count, auto-continue…) we call breakpoint options."*
