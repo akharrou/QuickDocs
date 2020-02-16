@@ -2721,30 +2721,23 @@ Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual 
 
 Contents
 ---
-- [1 List subsequent source code](#tag)
-- [2 List specified source code](#tag)
+- [1 List subsequent source code](#list-subsequent-source-code)
+- [2 List specified source code](#list-specified-source-code)
 ---
 
 You can investigate source code with the following commands:
 
 ---
 
-
 - #### List subsequent source code:
 
-	> <small>`[Search Tags:  >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
+	> <small>`[Search Tags: >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
 
 	> ***Synopsis***:
 	> ```shell
-	> _regexp-list
-	> ```
-	> ***Alias***:
-	> ```shell
-	> list
-	> ```
-	> ***Abbreviation***:
-	> ```shell
-	> l
+	> $> _regexp-list         # shorthand
+	> $> list                 # alais
+	> $> l                    # abbreviation
 	> ```
 	>
 	> ***Example(s)***:
@@ -2927,9 +2920,8 @@ You can inspect a process's thread with the following commands:
 	> $> _regexp-bt [<frame-count>]
 	> $> _regexp-bt [all]
 	> ```
-	> ***Alias:***
 	> ```shell
-	> $> bt
+	> $> bt   # alias of '_regexp-bt'
 	> ```
 	>
 	> ***Example(s):***
