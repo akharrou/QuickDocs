@@ -2722,21 +2722,17 @@ Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual 
 
 Contents
 ---
-- [1 List subsequent source code](#list-subsequent-source-code)
-- [2 List specified source code](#list-specified-source-code)
+- [1 List source code *[of]*](#list-subsequent-source-code)
+	- [1.1. Current stack frame](#1-inspect-current-stack-frame-source-code)
+	- [1.2. Function](#2-inspect-function-source-code)
+	- [1.3. File](#3-inspect-current--specified-file-source-code-starting-from-an-arbitrary-line)
 ---
 
 You can investigate source code with the following commands:
 
 ---
 
-TODO : join the two and show their amazing power
-
-
-
-
-
-- #### List subsequent source code:
+- #### List source code:
 
 	> <small>`[Search Tags: >solst >solist >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
 
@@ -2760,7 +2756,7 @@ TODO : join the two and show their amazing power
 	>
 	> ***Example(s)***:
 	>
-	> **(1)** Inspect current stack frame source code
+	> #### **(1)** Inspect current stack frame source code
 	> ```shell
 	> (lldb) frame select
 	> (lldb) fr s
@@ -2798,7 +2794,7 @@ TODO : join the two and show their amazing power
 	>    31  	}
 	> ```
 	>
-	> **(2)** Inspect function source code
+	> #### **(2)** Inspect function source code
 	> ```shell
 	> (lldb) source list --name foo
 	> (lldb) so l -n foo
@@ -2839,7 +2835,7 @@ TODO : join the two and show their amazing power
 	>    31  	}
 	> ```
 	>
-	> **(3)** Inspect *[current | specified]* file source code starting from an arbitrary line
+	> #### **(3)** Inspect *[current | specified]* file source code starting from an arbitrary line
 	> ```shell
 	> (lldb) source list --file loopInput.c --line 1
 	> (lldb) so li -f loopInput.c -l 1
@@ -2885,7 +2881,7 @@ TODO : join the two and show their amazing power
 	> (lldb)
 	>    31  	}
 	> ```
-	> **(4)** " ", only list arbitrary number of lines
+	> #### **(4)** " ", only list *[up to]* arbitrary number of lines
 	> ```shell
 	> (lldb) source list --count 20 --file main.c --line 5      # list 20 lines from 'main.c' starting from line 5
 	> (lldb) so li -c 20 -f main.c -l 5
