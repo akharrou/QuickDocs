@@ -2729,14 +2729,23 @@ You can investigate source code with the following commands:
 
 ---
 
+
 - #### List subsequent source code:
 
+	> <small>`[Search Tags:  >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
+
 	> ***Synopsis***:
-	> | | |
-	> |-|-|
-	> | **Shorthand** | `_regexp-list`
-	> | **Alias** | `list`
-	> | **Abreviation** | `l`
+	> ```shell
+	> _regexp-list
+	> ```
+	> ***Alias***:
+	> ```shell
+	> list
+	> ```
+	> ***Abbreviation***:
+	> ```shell
+	> l
+	> ```
 	>
 	> ***Example(s)***:
 	> ```shell
