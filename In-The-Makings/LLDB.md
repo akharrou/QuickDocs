@@ -54,19 +54,19 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.4. Variables](#384-variables)
 		- [3.8.5. Registers *(Advanced)*](#385-registers)
 		- [3.8.6. Expressions *(Advanced)*](#386-expressions)
-		- [3.8.7. Memory *(Advanced)*](#387-memory)                          <!-- TODO: do chapter ::: `x` is an alias for `memory read`-->
-		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)     <!-- TODO: do chapter -->
-	- [3.9. Self-Help Commands](#)                                           <!-- TODO: do chapter -->
-		- [3.9.1. `help`](#)                                                 <!-- TODO: do chapter -->
-		- [3.9.2. `apropos`](#)                                              <!-- TODO: do chapter -->
-	- [3.4. Configure LLDB *(Advanced)*](#34-setup-lldb)
-		- [3.4.3. Settings](#)                                              <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
-		- [3.4.4. Commands & Aliases](#)                                    <!-- TODO: do chapter -->
-		- [3.4.5. Type *[Formatting]*](#)                                   <!-- TODO: do chapter -->
-		- [3.4.6. Logging](#)                                               <!-- TODO: do chapter -->
-	- [3.10. Other Topics](#)                                                <!-- TODO: do chapter -->
-		- [3.10.1. Bugreporting](#)                                          <!-- TODO: do chapter -->
-		- [3.10.2. Remote Debugging *(with `platform`)*](#)                                              TODO: do chapter
+		- [3.8.7. Memory *(Advanced)*](#387-memory)                           <!-- TODO: do chapter ::: `x` is an alias for `memory read`-->
+		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)      <!-- TODO: do chapter -->
+	- [3.9. Self-Help Commands](#)                                            <!-- TODO: do chapter -->
+		- [3.9.1. `help`](#)                                                  <!-- TODO: do chapter -->
+		- [3.9.2. `apropos`](#)                                               <!-- TODO: do chapter -->
+	- [3.10. Configure LLDB *(Advanced)*](#34-setup-lldb)                     <!-- TODO: do chapter -->
+		- [3.10.1. Settings](#)                                               <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
+		- [3.10.2. Commands & Aliases](#)                                     <!-- TODO: do chapter -->
+		- [3.10.3. Type *[Formatting]*](#)                                    <!-- TODO: do chapter -->
+		- [3.10.4. Logging](#)                                                <!-- TODO: do chapter -->
+	- [3.11. Other Topics](#)                                                 <!-- TODO: do chapter -->
+		- [3.11.1. Bugreporting](#)                                           <!-- TODO: do chapter -->
+		- [3.11.2. Remote Debugging *(with `platform`)*](#)                   <!-- TODO: do chapter
 
 
 <!-- >Start --------------------------------------------------------------------
@@ -2632,8 +2632,8 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 >
 > 	| Command | Description
 > 	| ------- | ---------------------------------------------------------
-> 	| `(lldb) thread step-inst-over` <br> `(lldb) ni` | Do a single *[instruction]* **step over**.
-> 	| `(lldb) thread step-inst` <br> `(lldb) si` | Do a single *[instruction]* **step in**.
+> 	| `(lldb) thread step-inst-over` <br> `(lldb) ni` | Perform a single *[nstruction* **step over**.
+> 	| `(lldb) thread step-inst` <br> `(lldb) si` | Perform a single *[nstruction* **step in**.
 >
 > *- **end note**]</small>*
 
