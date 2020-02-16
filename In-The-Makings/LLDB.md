@@ -334,19 +334,20 @@ Contents
 <br>
 <br>
 
+
 > *This section is unrelated to LLDB, but related to debugging.*
 
 -	The `fsanitize` family of *[compiler]* flags, is an extraordinarily helpful set of *[compiler]* flags, with regards to debugging. They enable *[compiler]* *[runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase))* checks –– *which are disabled by default* –– that detect and help avoid bugs. If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
-	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *UndefinedBehaviorSanitizer* –– enabled by *`-fsanitize=undefined`* –– performs all the checks listed [here](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer#topics) (or [here](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks) (just another good resource)).
+	Each *[sanitizer]* performs multiple *(different)* checks, for example: the *`UndefinedBehaviorSanitizer`* –– enabled by *`-fsanitize=undefined`* –– performs checks like: divisions by zero, misalignement of pointers, conversions that overflow, creation of null pointers/references, overflows from arithmetic operations, etc... ; see [`clangs` documentation](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html#available-checks) for all checks).
 
-	> *<small>[**Note:** For the better diagnostic messages, compile with the `-g` [compiler] flag; the `-O0` [compiler] flag comes naturally along as well, to disable [compiler] optimizations. - **end note**]</small>*
+	> *<small>[**Note:** For better diagnostic messages, compile with the `-g` [compiler] flag. - **end note**]</small>*
 
 -	***Enable sanitizer** [checks] **:***
 
 	> ***Synopsis:***
 	> ```shell
-	> $> $> <compile-command> [-g -O0] [-fsanitize=<sanitizer-flag> ...]
+	> $> <compile-command> [-g -O0] [-fsanitize=<sanitizer-flag> ...]
 	> ```
 	>
 	> ***Option(s):***
@@ -2729,15 +2730,88 @@ You can investigate source code with the following commands:
 
 ---
 
+TODO : join the two and show their amazing power
+
+
+(lldb) l foo
+File: /nfs/2018/a/akharrou/Desktop/Directory/Directory/loopInput.c
+   4   	 */
+   5
+   6   	#include <stdio.h>
+   7   	#include <stdlib.h>
+   8
+   9   	void    foo(int *iterations)
+   10  	{
+   11  	    for (int i = 0; i < *iterations; ++i)
+   12  	        printf("Hello!\n");
+   13  	    return ;
+   14  	}
+   15
+   16  	int main(int ac, char **av)
+   17  	{
+   18  	    int *my_ptr = malloc(sizeof(int));
+(lldb)
+   19  	    float my_var = 0;
+   20  	    char name[] = "James";
+   21  	    int i = 0;
+   22
+   23  	    *my_ptr = 10;
+   24  	    if (ac > 1)
+   25  	        *my_ptr = atoi(av[1]);
+   26
+   27  	    foo(my_ptr);
+   28  	    free(my_ptr);
+   29
+   30  	    return (0);
+   31  	}
+
+(lldb) l 1
+   1   	/*
+   2   	 *  PROGRAM
+   3   	 *      Loops <user-input> times, printing "Hello!" at each iteration.
+   4   	 */
+   5
+   6   	#include <stdio.h>
+   7   	#include <stdlib.h>
+   8
+   9   	void    foo(int *iterations)
+   10  	{
+(lldb)
+   11  	    for (int i = 0; i < *iterations; ++i)
+   12  	        printf("Hello!\n");
+   13  	    return ;
+   14  	}
+   15
+   16  	int main(int ac, char **av)
+   17  	{
+   18  	    int *my_ptr = malloc(sizeof(int));
+   19  	    float my_var = 0;
+   20  	    char name[] = "James";
+(lldb)
+   21  	    int i = 0;
+   22
+   23  	    *my_ptr = 10;
+   24  	    if (ac > 1)
+   25  	        *my_ptr = atoi(av[1]);
+   26
+   27  	    foo(my_ptr);
+   28  	    free(my_ptr);
+   29
+   30  	    return (0);
+(lldb)
+   31  	}
+
+
+
 - #### List subsequent source code:
 
 	> <small>`[Search Tags: >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
 
 	> ***Synopsis***:
 	> ```shell
-	> $> _regexp-list         # shorthand
-	> $> list                 # alais
-	> $> l                    # abbreviation
+	> $> _regexp-list [<func-name>] [<filename>]         # shorthand
+	> $> list                                            # alais
+	> $> l                                               # abbreviation
 	> ```
 	>
 	> ***Example(s)***:
@@ -2774,18 +2848,58 @@ You can investigate source code with the following commands:
 
 	> ***Synopsis:***
 	> ```shell
-	> $> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <line-num>]
-	> $> source list [--show-breakpoints] [--count <count>] [--name <program-symbol>]
+	> $> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <line-num>]      # list [<count>] lines from <file> starting from line <line>
+	> $> source list [--show-breakpoints] [--count <count>] [--name <program-symbol>]                    # list [<count>] lines having to do with <program-symbol>
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
-	> (lldb) source list --count 20 --file main.c --line 5    # list <count> lines from <file> starting from line <line>
+	> (lldb) source list --count 20 --file main.c --line 5      # list 20 lines from 'main.c' starting from line 5
 	> (lldb) so li -c 20 -f main.c -l 5
 	> ```
 	> ```shell
-	> (lldb) source list --count 25 --name foo                # list <count> lines having to do with <program-symbol>
-	> (lldb) so li -c 25 -n foo
+	>   5
+	>   6   	#include <stdio.h>
+	>   7   	#include <stdlib.h>
+	>   8
+	>   9   	void    foo(int *iterations)
+	>   10  	{
+	>   11  	    for (int i = 0; i < *iterations; ++i)
+	>   12  	        printf("Hello!\n");
+	>   13  	    return ;
+	>   14  	}
+	>   15
+	>   16  	int main(int ac, char **av)
+	>   17  	{
+	>   18  	    int *my_ptr = malloc(sizeof(int));
+	>   19  	    float my_var = 0;
+	>   20  	    char name[] = "James";
+	>   21  	    int i = 0;
+	>   22
+	>   23  	    *my_ptr = 10;
+	>   24  	    if (ac > 1)
+	> ```
+	> ```shell
+	> (lldb) source list --name foo
+	> (lldb) so li -n foo
+	> ```
+	> ```shell
+	> File: /path/to/source/file/loopInput.c
+	>    4   	 */
+	>    5
+	>    6   	#include <stdio.h>
+	>    7   	#include <stdlib.h>
+	>    8
+	>    9   	void    foo(int *iterations)
+	>    10  	{
+	>    11  	    for (int i = 0; i < *iterations; ++i)
+	>    12  	        printf("Hello!\n");
+	>    13  	    return ;
+	>    14  	}
+	>    15
+	>    16  	int main(int ac, char **av)
+	>    17  	{
+	>    18  	    int *my_ptr = malloc(sizeof(int));
 	> ```
 
 
