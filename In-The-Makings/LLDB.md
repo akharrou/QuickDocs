@@ -40,10 +40,6 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 		- [3.4.2. Watchpoints](#342-watchpoints)
-		- [3.4.3. Settings *(Advanced)*](#)                                              <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
-		- [3.4.4. Commands & Aliases *(Advanced)*](#)                                    <!-- TODO: do chapter -->
-		- [3.4.5. Type *[Formatting]* *(Advanced)*](#)                                   <!-- TODO: do chapter -->
-		- [3.4.6. Logging *(Advanced)*](#)                                               <!-- TODO: do chapter -->
 	- [3.5. Start Debugging](#35-start-debugging)
 		- [3.5.1. Launch](#351-launch)
 		- [3.5.2. Attach](#352-attach)
@@ -63,6 +59,11 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.9. Self-Help Commands](#)                                           <!-- TODO: do chapter -->
 		- [3.9.1. `help`](#)                                                 <!-- TODO: do chapter -->
 		- [3.9.2. `apropos`](#)                                              <!-- TODO: do chapter -->
+	- [3.4. Configure LLDB *(Advanced)*](#34-setup-lldb)
+		- [3.4.3. Settings](#)                                              <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
+		- [3.4.4. Commands & Aliases](#)                                    <!-- TODO: do chapter -->
+		- [3.4.5. Type *[Formatting]*](#)                                   <!-- TODO: do chapter -->
+		- [3.4.6. Logging](#)                                               <!-- TODO: do chapter -->
 	- [3.10. Other Topics](#)                                                <!-- TODO: do chapter -->
 		- [3.10.1. Bugreporting](#)                                          <!-- TODO: do chapter -->
 		- [3.10.2. Remote Debugging *(with `platform`)*](#)                                              TODO: do chapter
@@ -2613,14 +2614,14 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 | Command | Description
 | :------ | :---------------------------------------------------------
 ||
-| `$>`**`continue`**  | **Continue until** a break/watch-point is hit or end of process.
-| `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` or until <br> a function returns [, in the current or specified frame in the <br> current or specified thread].
+| `$>`**`continue`**  | **Continue until** a break/watch-point is hit or end of <br> process.
+| `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` or <br> until a function returns [, in the current or specified frame <br> in the current or specified thread].
 | `$> thread`**`jump`**`-l <line-num> [-f <filename>]` <br> `$> thread`**`jump`**`-b <line-offset>` <br> `$> thread`**`jump`**`-a <address-expression>` | **Jump to** a subsequent line/instruction; i.e sets the program <br> counter to a new address.
 ||
 | `$> thread`**`step-over`** <br> `$> next` <br> `$> n` | *[Execute and]* **Step over** the current line. Defaults to the <br> current thread unless specified.
 | `$> thread`**`step-in`** <br> `$> step` <br> `$> s` | **Step into** *(investigate)* *[function]* calls. Defaults to current <br> thread unless specified.
 | `$> thread`**`step-out`** <br> `$> finish` | **Step out** of the currently selected frame *(i.e function call)*. <br> Defaults to current thread unless specified.
-| `$> thread`**`return`**`[<value>]` | *[Prematurely]* **Return** from a stack frame *(function)*, optionally <br> yielding a specified value *(else an undefined value)*.
+| `$> thread`**`return`**`[<value>]` | *[Prematurely]* **Return** from a stack frame *(function)*, <br> optionally yielding a specified value *(else an undefined <br> value)*.
 ||
 | `$>`**`kill`**      | **Terminate** the current target process.
 | `$>`**`detach`**    | **Detach** from the current target process.
