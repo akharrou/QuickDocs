@@ -352,16 +352,16 @@ Contents
 	>
 	> ***Option(s):***
     >
-    > | Sanitizer                                                                                                             | Flag                    | Description                                                         |
+    > | Sanitizer | Flag | Description |
     > | :-------------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------- |
-    > | [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer) | `undefined`             | *A detector for ***undefined behavior***.*                            |
-    > | [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)                      | `address`               | *A detector for ***memory errors*** (e.g. segmentation faults).*      |
-    > | [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)                                                   | `memory`                | *A detector for ***uninitialized reads***.*                           |
-    > | [LeakSanitizer](https://clang.llvm.org/docs/LeakSanitizer.html)                                                       | `leak`                  | *A detector for ***memory leakage***.*                                |
-    > | [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)                        | `thread`                | *A detector for ***data-race***.*                                     |
-    > | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `dataflow`              | *A general ***data flow analysis***.*                                 |
-    > | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `cfi`                   | ****Control flow*** checks.*                                          |
-    > | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `safe-stack`            | *Protection against ***stack-based memory*** corruption errors.*      |
+    > | [UndefinedBehaviorSanitizer](https://developer.apple.com/documentation/code_diagnostics/undefined_behavior_sanitizer) | `undefined`             | *A detector for ***undefined behavior***.*
+    > | [AddressSanitizer](https://developer.apple.com/documentation/code_diagnostics/address_sanitizer)                      | `address`               | *A detector for ***memory errors*** <br> (e.g. segmentation faults).*
+    > | [MemorySanitizer](https://clang.llvm.org/docs/MemorySanitizer.html)                                                   | `memory`                | *A detector for ***uninitialized reads***.*
+    > | [LeakSanitizer](https://clang.llvm.org/docs/LeakSanitizer.html)                                                       | `leak`                  | *A detector for ***memory leakage***.*
+    > | [ThreadSanitizer](https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer)                        | `thread`                | *A detector for ***data-race***.*
+    > | [DataFlowSanitizer](https://clang.llvm.org/docs/DataFlowSanitizer.html)                                               | `dataflow`              | *A general ***data flow analysis***.*
+    > | [Control Flow Integry](https://clang.llvm.org/docs/ControlFlowIntegrity.html)                                         | `cfi`                   | ****Control flow*** checks.*
+    > | [SafeStack](https://clang.llvm.org/docs/SafeStack.html)                                                               | `safe-stack`            | *Protection against ***stack-based <br> memory*** corruption errors.*
 	>
 	> ***Example:***
 	> ```shell
@@ -2733,90 +2733,40 @@ You can investigate source code with the following commands:
 TODO : join the two and show their amazing power
 
 
-(lldb) l foo
-File: /nfs/2018/a/akharrou/Desktop/Directory/Directory/loopInput.c
-   4   	 */
-   5
-   6   	#include <stdio.h>
-   7   	#include <stdlib.h>
-   8
-   9   	void    foo(int *iterations)
-   10  	{
-   11  	    for (int i = 0; i < *iterations; ++i)
-   12  	        printf("Hello!\n");
-   13  	    return ;
-   14  	}
-   15
-   16  	int main(int ac, char **av)
-   17  	{
-   18  	    int *my_ptr = malloc(sizeof(int));
-(lldb)
-   19  	    float my_var = 0;
-   20  	    char name[] = "James";
-   21  	    int i = 0;
-   22
-   23  	    *my_ptr = 10;
-   24  	    if (ac > 1)
-   25  	        *my_ptr = atoi(av[1]);
-   26
-   27  	    foo(my_ptr);
-   28  	    free(my_ptr);
-   29
-   30  	    return (0);
-   31  	}
-
-(lldb) l 1
-   1   	/*
-   2   	 *  PROGRAM
-   3   	 *      Loops <user-input> times, printing "Hello!" at each iteration.
-   4   	 */
-   5
-   6   	#include <stdio.h>
-   7   	#include <stdlib.h>
-   8
-   9   	void    foo(int *iterations)
-   10  	{
-(lldb)
-   11  	    for (int i = 0; i < *iterations; ++i)
-   12  	        printf("Hello!\n");
-   13  	    return ;
-   14  	}
-   15
-   16  	int main(int ac, char **av)
-   17  	{
-   18  	    int *my_ptr = malloc(sizeof(int));
-   19  	    float my_var = 0;
-   20  	    char name[] = "James";
-(lldb)
-   21  	    int i = 0;
-   22
-   23  	    *my_ptr = 10;
-   24  	    if (ac > 1)
-   25  	        *my_ptr = atoi(av[1]);
-   26
-   27  	    foo(my_ptr);
-   28  	    free(my_ptr);
-   29
-   30  	    return (0);
-(lldb)
-   31  	}
 
 
 
 - #### List subsequent source code:
 
-	> <small>`[Search Tags: >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
+	> <small>`[Search Tags: >solst >solist >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
 
-	> ***Synopsis***:
+	> ***Canonical:***
 	> ```shell
-	> $> _regexp-list [<func-name>] [<filename>]         # shorthand
-	> $> list                                            # alais
-	> $> l                                               # abbreviation
+	> $> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <line-num>]
+	> # list [<count>] lines from [current-file | <file>] starting from line [1 | <line-num>].
+	>
+	> $> source list [--show-breakpoints] [--count <count>] [--name <function>]
+	> # list [<count>] lines from the definition of <function>.
+	> ```
+	> ***Shorthand***:
+	> ```shell
+	> $> _regexp-list [<func-name>]
+	> $> _regexp-list [<line-num>]
+	> ```
+	> ```shell
+	> $> list        # Alais
+	> $> l           # Abbreviation
 	> ```
 	>
 	> ***Example(s)***:
+	>
+	> **(1)** Inspect current stack frame source code
 	> ```shell
+	> (lldb) frame select
 	> (lldb) fr s
+	> (lldb) f
+	> ```
+	> ```shell
 	> frame #0: 0x0000000100001961 a`main(ac=0, av=0x0000000100004248) at loopInput.c:17
 	>    14  	}
 	>    15
@@ -2825,7 +2775,15 @@ File: /nfs/2018/a/akharrou/Desktop/Directory/Directory/loopInput.c
 	>    18  	    int *my_ptr = malloc(sizeof(int));
 	>    19  	    float my_var = 0;
 	>    20  	    char name[] = "James";
+	> ```
+	> ```shell
+	> (lldb) source list
+	> (lldb) so l
+	> (lldb) _regexp-list
+	> (lldb) list
 	> (lldb) l
+	> ```
+	> ```shell
 	>    21  	    int i = 0;
 	>    22
 	>    23  	    *my_ptr = 10;
@@ -2833,26 +2791,101 @@ File: /nfs/2018/a/akharrou/Desktop/Directory/Directory/loopInput.c
 	>    25  	        *my_ptr = atoi(av[1]);
 	>    26
 	>    27  	    foo(my_ptr);
-	> (lldb) l
+	> (lldb)
 	>    28  	    free(my_ptr);
 	>    29
 	>    30  	    return (0);
 	>    31  	}
 	> ```
-
-<br>
-
--	#### List specified source code:
-
-	> <small>`[Search Tags: >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
-
-	> ***Synopsis:***
+	>
+	> **(2)** Inspect function source code
 	> ```shell
-	> $> source list [--show-breakpoints] [--count <count>] [--file <filename>] [--line <line-num>]      # list [<count>] lines from <file> starting from line <line>
-	> $> source list [--show-breakpoints] [--count <count>] [--name <program-symbol>]                    # list [<count>] lines having to do with <program-symbol>
+	> (lldb) source list --name foo
+	> (lldb) so l -n foo
+	> (lldb) _regexp-list foo
+	> (lldb) list foo
+	> (lldb) l foo
+	> ```
+	> ```shell
+	> File: /path/to/program/source/loopInput.c
+	>    4   	 */
+	>    5
+	>    6   	#include <stdio.h>
+	>    7   	#include <stdlib.h>
+	>    8
+	>    9   	void    foo(int *iterations)
+	>    10  	{
+	>    11  	    for (int i = 0; i < *iterations; ++i)
+	>    12  	        printf("Hello!\n");
+	>    13  	    return ;
+	>    14  	}
+	>    15
+	>    16  	int main(int ac, char **av)
+	>    17  	{
+	>    18  	    int *my_ptr = malloc(sizeof(int));
+	> (lldb)
+	>    19  	    float my_var = 0;
+	>    20  	    char name[] = "James";
+	>    21  	    int i = 0;
+	>    22
+	>    23  	    *my_ptr = 10;
+	>    24  	    if (ac > 1)
+	>    25  	        *my_ptr = atoi(av[1]);
+	>    26
+	>    27  	    foo(my_ptr);
+	>    28  	    free(my_ptr);
+	>    29
+	>    30  	    return (0);
+	>    31  	}
 	> ```
 	>
-	> ***Example(s):***
+	> **(3)** Inspect *[current | specified]* file source code starting from an arbitrary line
+	> ```shell
+	> (lldb) source list --file loopInput.c --line 1
+	> (lldb) so li -f loopInput.c -l 1
+	> ```
+	> ```shell
+	> (lldb) _regexp-list  1                           # can only inspect current file
+	> (lldb) list 1                                    # can only inspect current file
+	> (lldb) l 1                                       # can only inspect current file
+	> ```
+	> ```shell
+	>    1   	/*
+	>    2   	 *  PROGRAM
+	>    3   	 *      Loops <user-input> times, printing "Hello!" at each iteration.
+	>    4   	 */
+	>    5
+	>    6   	#include <stdio.h>
+	>    7   	#include <stdlib.h>
+	>    8
+	>    9   	void    foo(int *iterations)
+	>    10  	{
+	> (lldb)
+	>    11  	    for (int i = 0; i < *iterations; ++i)
+	>    12  	        printf("Hello!\n");
+	>    13  	    return ;
+	>    14  	}
+	>    15
+	>    16  	int main(int ac, char **av)
+	>    17  	{
+	>    18  	    int *my_ptr = malloc(sizeof(int));
+	>    19  	    float my_var = 0;
+	>    20  	    char name[] = "James";
+	> (lldb)
+	>    21  	    int i = 0;
+	>    22
+	>    23  	    *my_ptr = 10;
+	>    24  	    if (ac > 1)
+	>    25  	        *my_ptr = atoi(av[1]);
+	>    26
+	>    27  	    foo(my_ptr);
+	>    28  	    free(my_ptr);
+	>    29
+	>    30  	    return (0);
+	> (lldb)
+	>    31  	}
+	> ```
+	> **(4)** " ", only list arbitrary number of lines
 	> ```shell
 	> (lldb) source list --count 20 --file main.c --line 5      # list 20 lines from 'main.c' starting from line 5
 	> (lldb) so li -c 20 -f main.c -l 5
@@ -2878,28 +2911,6 @@ File: /nfs/2018/a/akharrou/Desktop/Directory/Directory/loopInput.c
 	>   22
 	>   23  	    *my_ptr = 10;
 	>   24  	    if (ac > 1)
-	> ```
-	> ```shell
-	> (lldb) source list --name foo
-	> (lldb) so li -n foo
-	> ```
-	> ```shell
-	> File: /path/to/source/file/loopInput.c
-	>    4   	 */
-	>    5
-	>    6   	#include <stdio.h>
-	>    7   	#include <stdlib.h>
-	>    8
-	>    9   	void    foo(int *iterations)
-	>    10  	{
-	>    11  	    for (int i = 0; i < *iterations; ++i)
-	>    12  	        printf("Hello!\n");
-	>    13  	    return ;
-	>    14  	}
-	>    15
-	>    16  	int main(int ac, char **av)
-	>    17  	{
-	>    18  	    int *my_ptr = malloc(sizeof(int));
 	> ```
 
 
@@ -3035,7 +3046,7 @@ You can inspect a process's thread with the following commands:
 	> $> _regexp-bt [all]
 	> ```
 	> ```shell
-	> $> bt   # alias of '_regexp-bt'
+	> $> bt   # Alias
 	> ```
 	>
 	> ***Example(s):***
@@ -3176,10 +3187,15 @@ You can inspect a thread's stack frame with the following commands:
 	> ***Synopsis:***
 	> ```shell
 	> $> frame select [--relative <offset>] [<frame-index>]
+	> $> f    # abbreviation
 	> ```
 	> ```shell
-	> down         # Select the stack frame: current-index - 1 ; that is called by the current stack frame.
-	> up           # Select the stack frame: current-index + 1 ; that called the current stack frame.
+	> _regexp-down [<frame-count>]   # Select the stack frame: current-index - 1 ; that is called by the current stack frame.
+	> down         # Alias
+	> ```
+	> ```shell
+	> _regexp-up [<frame-count>]   # Select the stack frame: current-index - 1 ; that is called by the current stack frame.
+	> up           # Alias
 	> ```
 	>
 	> ***Example(s):***
@@ -4020,14 +4036,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Example(s)***:
 	>
 
-- #### `_regexp-env`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
 - #### `_regexp-jump`:
 
 	> ***Synopsis***:
@@ -4064,7 +4072,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 `_regexp-break`
 
-`$> _regexp-break [<filename>:<linenum>]\n_regexp-break [<linenum>]\n_regexp-break [<address>]\n_regexp-break <...>`
+$> _regexp-break [<filename>:<linenum>]
+$> _regexp-break [<linenum>]
+$> _regexp-break [<address>]
+$> _regexp-break [<function>]
 
 Set a breakpoint using a regular expression to specify the location, where `<linenum>` is in decimal and `<address>` is in hex.
 
