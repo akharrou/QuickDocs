@@ -820,41 +820,114 @@ Contents
 
 -	#### ***Set a breakpoint, on a function:***
 
-	> <small>`[Search Tags: >brset >setbr >sbr >sebr >breakpointset  >breakpointfunctions >breakpointfuncs >breakpointfts >breakpointfcs >breakpointmain >setbreakpoint >brkptset >setbrkpt >breakptset >setbreakpt >brsetfunctions >brfunctions >brfuncs >brfts >brfcs >brsfunctions >brsfuncs >brsfts >brsfcs >brsmain]`</small>
+	> <small>`[Search Tags: >brset >breakset >brkset >setbr >sbr >sebr >breakpointset  >breakpointfunctions >breakpointfuncs >breakpointfts >breakpointfcs >breakpointmain >setbreakpoint >brkptset >setbrkpt >breakptset >setbreakpt >brsetfunctions >brfunctions >brfuncs >brfts >brfcs >brsfunctions >brsfuncs >brsfts >brsfcs >brsmain]`</small>
 
 	> ***Synopsis:***
 	> ```shell
 	> $> breakpoint set --name <function-name>
-	> b <function-name>
+	> ```
+	> ***Shorthand:***
+	> ```shell
+	> $> _regexp-break <function>
+	> $> b    # Alias
 	> ```
 	>
 	> ***Example(s):***
+	>
+	> #### (1) Set breakpoint on `main()`
 	> ```shell
 	> (lldb) breakpoint set --name main
 	> (lldb) br s -n main
+	> (lldb) _regexp-break main
 	> (lldb) b main
 	> ```
+	> ```shell
+	> Breakpoint 18: where = a`main + 49 at loopInput.c:9, address = 0x00000001000013f1
+	> ```
 
-	> *<small>[**Note**: Only the function **itself** has a breakpoint set on it – call-sites [of the said function] are ignored. - **end note**]</small>*
+	>*<small>[**Note:***
+	>
+	> -	*Only the function **itself** has a breakpoint set on it, not its [the function's] call sites.*
+	>
+	> - *`_regexp-break` is a shorthand notation for setting breakpoints. It allows one to set a breakpoint using a regular expression to specify the location:*
+	>
+	>	 	$> _regexp-break [<filename>:]<line-num>
+	>	 	$> _regexp-break <function>
+	>	 	$> _regexp-break <address>
+	>
+    >	*Expects 'raw' input (see `help raw-input`.)*
+	>
+	> - *`b` is an alias for `_regexp-break`.*
+	>
+	> - *'`rbreak`' is an alias for '`breakpoint set -r %1`'.*
+	>
+	> - *'`_regexp-tbreak`' is and its alias '`tbreak`' are broken options (i.e they do not work) –– I believe it is supposed to work like '`_regexp-break`'.*
+	>
+	> *- **end note**]</small>*
 
 <br>
 
 -	#### ***Set a breakpoint, on a** [source code] **line:***
 
-	> <small>`[Search Tags: >brsrcs >brssrcs >brsetsrcs >breakpointsetsrcs  >brsources >brssources >brsetsources >breakpointsetsources >brsetfiles >brfiles >brsrcs >brpages >brpgs >brsfiles >brssrcs >brspages >brspgs] >brsetlines >brlines >brlis >brpages >brslines >brslis >brspages >brsls >breakpointlines >breakpointlis >breakpointls >breakpointfcs  >breakpointmainlines`</small>
+	> <small>`[Search Tags: >brsrcs >brssrcs >brsetsrcs >breakpointsetsrcs  >brsources >brssources >brsetsources >breakpointsetsources >brsetfiles >brfiles >brsrcs >brpages >brpgs >brsfiles >brssrcs >brspages >brspgs] >brsetlines >brlines >brlis >brpages >brslines >brslis >brspages >brsls >breakpointlines >breakpointlis >breakpointls >breakpointfcs  >breakpointmainlines`]</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> $> breakpoint set --file <filename> --line <line-number>
-	> $> b <filename>:<line-number>
+	> $> breakpoint set [--file <filename>] --line <line-num>
+	> ```
+	> ***Shorthand:***
+	> ```shell
+	> $> _regexp-break [<filename>:]<line-num>
+	> $> b    # Alias
 	>```
 	>
 	> ***Example(s):***
+	>
+	> #### (1) Set breakpoint on line 10 of *[current]* source file
 	> ```shell
-	> (lldb) breakpoint set -f hello.c -l 10
-	> (lldb) br s -f hello.c -l 10
-	> (lldb) b hello.c:10
+	> (lldb) breakpoint set --line 10
+	> (lldb) br s -l 10
+	> (lldb) _regexp-break 10
+	> (lldb) b 10
 	> ```
+	> #### (2) " " of `utils.c`
+	> ```shell
+	> (lldb) breakpoint set --file utils.c --line 10
+	> (lldb) br s -f utils.c -l 10
+	> (lldb) _regexp-break utils.c:10
+	> (lldb) b utils.c:10
+	> ```
+
+<br>
+
+-	#### ***Set a breakpoint, on an *[instruction | line | function]* address:***
+
+	> <small>`[Search Tags: >braddresses >addressesbr >braddrs >addrsbr >brsaddresses >addressesbrs >brsaddrs >addrsbrs >brsetaddresses >addressesbrset >brsetaddrs >addrsbrset >breakpointsetaddresses  >addressesbreakpointset >breakpointsetaddrs  >addrsbreakpointset >braddresses >addressesbr >braddrs >addrsbr >brsaddresses >addressesbrs >brsaddrs >addrsbrs >brlocations >locationsbr >brloc >brlocs >locbr >locsbr >brslocations >locationsbrs >brsloc >brslocs >locbrs >locsbrs >brsetlocations >locationsbrset >brsetloc >brsetlocs >locbrset >locsbrset >breakpointsetlocations  >locationsbreakpointset >breakpointsetloc  >breakpointsetlocs  >locbreakpointset >locsbreakpointset >brlocations >locationsbr >brloc >brlocs >locbr >locsbr >brslocations >locationsbrs >brsloc >brslocs >locbrs >locsbrs >brinstructions >brsinstructions >brsetinstructions >breakpointsetinstructions >brinstructions >brsinstructions >brinsts >brsinsts >brsetinsts >breakpointsetinsts >brinsts >brsinsts >broperations >brsoperations >brsetoperations >breakpointsetoperations >broperations >brsoperations >brops >brsops >brsetops >breakpointsetops >brops >brsops]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> $> breakpoint set --address <address-expression>
+	> ```
+	> ***Shorthand:***
+	> ```shell
+	> $> _regex-break <address-expression>
+	> $> b    # Alias
+	>```
+	>
+	> ***Example(s):***
+	>
+	> #### (1) Set breakpoint on an address
+	> ```shell
+	> (lldb) breakpoint set --address 0x0000000100001b50
+	> (lldb) br s -a 0x0000000100001b50
+	> (lldb) _regexp-break 0x0000000100001b50
+	> (lldb) b 0x0000000100001b50
+	> ```
+	> ```shell
+	> Breakpoint 1: where = a`foo at utils.c:5, address = 0x0000000100001b50
+	> ```
+
+	> *<small>[**Note:** `(lldb) source info -f <source>`, `(lldb) target modules dump line-table <source>` are interesting commands to list the address of each source line of a file. `(lldb) disassemble` is also useful command in this respect although it deals with the assembly instructions and their addresses. - **end note**]</small>*
 
 <br>
 
@@ -866,8 +939,33 @@ Contents
 	> ```shell
 	> $> breakpoint list -[bfv] [<breakpt-id> ...]
 	> ```
+	> ***Synopsis:***
+	> ```shell
+	> $> _regexp-break
+	> $> b
+	> ```
 	>
 	> ***Example(s):***
+	>
+	> #### (1) List breakpoints
+	> ```shell
+	> (lldb) breakpoint list
+	> (lldb) br l
+	> (lldb) _regexp-break
+	> (lldb) b
+	> ```
+	> ```shell
+	> Current breakpoints:
+	> 1: name = 'main', locations = 1
+	>   1.1: where = a`main + 49 at loopInput.c:9, address = a[0x00000001000013f1], unresolved, hit count = 0
+	>
+	> 2: name = 'foo', locations = 1
+	>   2.1: where = a`foo + 12 at utils.c:6, address = a[0x0000000100001b5c], unresolved, hit count = 0
+	>
+	> 3: file = '/path/to/source/loopInput.c', line = 30, exact_match = 0, locations = 1
+	>   3.1: where = a`main + 1749 at loopInput.c:30, address = a[0x0000000100001a95], unresolved, hit count = 0
+	> ```
+	> #### (2) " " requesting a level of description
 	> ```shell
 	> (lldb) breakpoint list --brief 3 2    # --brief    (minimum description)
 	> (lldb) br l -f 1                      # --full     (full description, default
@@ -984,15 +1082,17 @@ Commands to:
 	> ***Synopsis:***
 	> ```shell
 	> $> breakpoint set --func-regex <regular-expression>
+	> $> rbreak     # Alias
 	> ```
 	>
 	> ***Example(s):***
 	> ```shell
 	> (lldb) breakpoint set --func-regex 'Parser.{3,4,5}_Command\(\)'
 	> (lldb) br s -r "Parser.{3,4,5}_Command\(\)"
+	> (lldb) rbreak "Parser.{3,4,5}_Command\(\)"
 	> ```
 
-	> *<small>[**Note**: Function call-sites also count as matches, and get a breakpoint. - **end note**]</small>*
+	> *<small>[**Note**: Function call-sites also count as matches, and have a breakpoint set at their location. - **end note**]</small>*
 
 <br>
 
@@ -2596,7 +2696,7 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ## 3.7. Control Process Execution
-<small>`[Search Tags: >lldb.controlprocessexecution >lldbcontrolprocessexecution >debugger.controlprocessexecution >debuggercontrolprocessexecution >controlprocessexecution >contrlprocessexecution >cntrlprocessexecution >ctrlprocessexecution >controlprcsexecution >contrlprcsexecution >cntrlprcsexecution >ctrlprcsexecution >controlprcsexecs >contrlprcsexecs >cntrlprcsexecs >ctrlprcsexecs >controlsection >ctrlsection >processcontrolsection >prcsctrlsection >prcscontrolsection >processcontrolsection >lldb.controlprogramexecution >lldbcontrolprogramexecution >debugger.controlprogramexecution >debuggercontrolprogramexecution >controlprogramexecution >contrlprogramexecution >cntrlprogramexecution >ctrlprogramexecution >controlprogexecution >controlprogsexecution >contrlprogexecution >contrlprogsexecution >cntrlprogexecution >cntrlprogsexecution >ctrlprogexecution >ctrlprogsexecution >controlprogexecs >controlprogsexecs >contrlprogexecs >contrlprogsexecs >cntrlprogexecs >cntrlprogsexecs >ctrlprogexecs >ctrlprogsexecs >controlsection >ctrlsection >programcontrolsection >progctrlsection >progsctrlsection >progcontrolsection >progscontrolsection >programcontrolsection]`</small>
+<small>`[Search Tags: >lldb.controlprocessexecution >lldbcontrolprocessexecution >debugger.controlprocessexecution >debuggercontrolprocessexecution >controlprocessexecution >contrlprocessexecution >cntrlprocessexecution >ctrlprogramexecution >ctrlprocessexecution >ctrlexecution >ctrlprocessexecution >controlprcsexecution >contrlprcsexecution >cntrlprcsexecution >ctrlprcsexecution >controlprcsexecs >contrlprcsexecs >cntrlprcsexecs >ctrlprcsexecs >controlsection >ctrlsection >processcontrolsection >prcsctrlsection >prcscontrolsection >processcontrolsection >lldb.controlprogramexecution >lldbcontrolprogramexecution >debugger.controlprogramexecution >debuggercontrolprogramexecution >controlprogramexecution >contrlprogramexecution >cntrlprogramexecution >ctrlprogramexecution >controlprogexecution >controlprogsexecution >contrlprogexecution >contrlprogsexecution >cntrlprogexecution >cntrlprogsexecution >ctrlprogexecution >ctrlprogsexecution >controlprogexecs >controlprogsexecs >contrlprogexecs >contrlprogsexecs >cntrlprogexecs >cntrlprogsexecs >ctrlprogexecs >ctrlprogsexecs >controlsection >ctrlsection >programcontrolsection >progctrlsection >progsctrlsection >progcontrolsection >progscontrolsection >programcontrolsection]`</small>
 <br>
 
 Contents
@@ -3414,7 +3514,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 
 
 ---
-[🏠](#HOME) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.8.5. Registers
 <small>`[Search Tags: >regexam >registerexam >regexamine >registerexamine >regexamination >registerexamination >regexaminating >registerexaminating >examinationregisters >registersexamination >examinatingregisters >registersexaminating >examineregisters >registersexamine >examregisters >registersexam >examinationregistrs >registrsexamination >examinatingregistrs >registrsexaminating >examineregistrs >registrsexamine >examregistrs >registrsexam >examinationregs >regsexamination >examinatingregs >regsexaminating >examineregs >regsexamine >examregs >regsexam >examinationrgs >rgsexamination >examinatingrgs >rgsexaminating >examinergs >rgsexamine >examrgs >rgsexam]`</small>
 <br>
@@ -3820,105 +3920,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 >_regexpcommands
 
-
-- #### `_regexp-attach`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-- #### `_regexp-break`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-
-- #### Backtrace *(shortcut)*:
-
-	> <small>`[Search Tags: >backtraceshortcut >_regexp-bt]`</small>
-
-	> ***Synopsis***:
-	> ```shell
-	> $> _regexp-bt [<frame-count>]       # canonical
-	> $> _regexp-bt [all]
-	> ```
-	> ```shell
-	> $> bt                               # alias
-	> ```
-	>
-	> ***Example(s)***:
-	>
-	> **(1)**
-	> ```shell
-	> (lldb) _regexp-bt                 # Backtrace current thread
-	> (lldb) bt
-	> ```
-	> ```shell
-	> * thread #1
-	>   * frame #0: 0x00007fff53f46a4e libsystem_kernel.dylib`__psynch_mutexwait + 10
-	>     frame #1: 0x00007fff5410eb9d libsystem_pthread.dylib`_pthread_mutex_lock_wait + 83
-	>     frame #2: 0x00007fff5410c4c8 libsystem_pthread.dylib`_pthread_mutex_lock_slow + 253
-	>     frame #3: 0x00007fff53e80cfa libsystem_c.dylib`flockfile + 31
-	>     frame #4: 0x00007fff53e83d58 libsystem_c.dylib`fwrite + 66
-	>     frame #5: 0x0000000100100178 libclang_rt.asan_osx_dynamic.dylib`wrap_fwrite + 88
-	> ```
-	> **(2)**
-	> ```shell
-	> (lldb) _regexp-bt 3                 # Show backtrace for [up to] 3 frames.
-	> (lldb) bt 3
-	> ```
-	> ```shell
-	> * thread #1
-	>   * frame #0: 0x00007fff53f46a4e libsystem_kernel.dylib`__psynch_mutexwait + 10
-	>     frame #1: 0x00007fff5410eb9d libsystem_pthread.dylib`_pthread_mutex_lock_wait + 83
-	>     frame #2: 0x00007fff5410c4c8 libsystem_pthread.dylib`_pthread_mutex_lock_slow + 253
-	> ```
-	> **(3)**
-	> ```shell
-	> (lldb) _regexp-bt all
-	> (lldb) bt all
-	> ```
-	> ```shell
-	> * thread #1, queue = 'com.apple.main-thread', stop reason = one-shot breakpoint 2
-	>   * frame #0: 0x0000000100003b49 c`main(ac=1, av=0x00007ffeefbff5b0) at threadedHello.cpp:29
-	>     frame #1: 0x00007fff53df6015 libdyld.dylib`start + 1
-	>   thread #2
-	>     frame #0: 0x00007fff53f46d8a libsystem_kernel.dylib`__semwait_signal + 10
-	>     frame #1: 0x00007fff53ec1724 libsystem_c.dylib`nanosleep + 199
-	>     frame #2: 0x00007fff53ec1586 libsystem_c.dylib`sleep + 41
-	>   thread #3
-	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
-	>     frame #1: 0x000000010000ca00 c`void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct> >, main::$_0> >(void*) [inlined] decltype(__f=0x0000602000000118)(std::__1::forward<>(fp0))) std::__1::__invoke<main::$_0>(main::$_0&&) at type_traits:4323
-	>   thread #4
-	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
-	>   thread #5
-	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
-	>     frame #1: 0x000000010000ca00 c`void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct> >, main::$_0> >(void*) [inlined] decltype(__f=0x0000602000000118)(std::__1::forward<>(fp0))) std::__1::__invoke<main::$_0>(main::$_0&&) at type_traits:4323
-	>     frame #2: 0x00007fff53ec1724 libsystem_c.dylib`nanosleep + 199
-	> ...
-	> ```
-
-- #### `_regexp-display`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-- #### `_regexp-down`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
 - #### List environment variables:
 
 	> <small>`[Search Tags: >env >_regexp-env >envlst >lsenvironment >lstenvironment >listenvironmentvariables >environmentlist >envvars >varsenvironment >varsenvironment >listenvironment >environmentshow >showenvironment >environmentdisplay >displayenvironment >envlist >listenv >envshow >showenv >envdisplay >displayenv]`</small>
@@ -3947,45 +3948,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>   ...
 	> ```
 
-- #### `_regexp-jump`:
+- #### `_regexp-display`:
 
 	> ***Synopsis***:
 	>
 	>
 	> ***Example(s)***:
-	>
 
-- #### `_regexp-list`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-- #### `_regexp-tbreak`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-- #### `_regexp-undisplay`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-- #### `_regexp-up`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
 
 - #### `_regexp-attach`:
 
@@ -3995,38 +3964,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Example(s)***:
 	>
 
-- #### `_regexp-break`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-- #### `_regexp-bt`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-- #### `_regexp-display`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-- #### `_regexp-down`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
 - #### `_regexp-jump`:
 
 	> ***Synopsis***:
@@ -4036,14 +3973,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	>
 
 
-- #### `_regexp-tbreak`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
 - #### `_regexp-undisplay`:
 
 	> ***Synopsis***:
@@ -4052,30 +3981,51 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	> ***Example(s)***:
 	>
 
-- #### `_regexp-up`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-
-`_regexp-break`
-
-$> _regexp-break [<filename>:<linenum>]
-$> _regexp-break [<linenum>]
-$> _regexp-break [<address>]
-$> _regexp-break [<function>]
-
-Set a breakpoint using a regular expression to specify the location, where `<linenum>` is in decimal and `<address>` is in hex.
-
-> _regexp-break         <=>  b      –– Set a breakpoint using one of several shorthand formats.
-> _regexp-tbreak        <=>  tbreak -- Set a one-shot breakpoint using one of several shorthand formats.
-> breakpoint set -r %1  <=>  rbreak -- Sets a breakpoint or set of breakpoints in the executable.
 
 
 =================================================== end _Regexpcommands
+
+shell
+
+shell
+>target module dump line-table ===================================================
+>target module dump line-table ====shell===============================================
+
+shell
+```shell
+(lldb) target modules dump line-table loopInput.c utils.c
+(lldb) target modules dump line-tabshellle loopInput.c utils.c
+```
+```shell
+```shell
+shell```shell
+Line table for /path/to/source/loopInput.c in `a
+0x00000001000013c0: /path/to/source/loopInput.c:9
+0x00000001000013c0: /path/to/sshellource/loopInput.c:9
+0x00000001000013f1: /path/to/source/loopInput.c:9
+0x00000001000013f1: /path/to/sourceshell/loopInput.c:9
+0x000000010000140e: /path/to/source/loopInput.c
+0x000000010000140e: /path/to/sourceshell/loopInput.c
+...
+...shell
+0x0000000100001b11: /path/to/source/loopInput.c:30:5
+0x0000000100001b1a: /path/to/source/loopInput.c
+0x0000000100001b1a: /path/to/sourceshell/loopInput.c
+0x0000000100001b1f: /path/to/source/loopInput.c
+0x0000000100001b1f: /path/to/sourceshell/loopInput.c
+
+shell
+Line table for /path/to/source/utils.c in `a
+0x0000000100001b50: /path/to/source/utils.c:5
+0x0000000100001b5c: /path/to/source/utils.c:6:14
+0x0000000100001b63: /path/to/source/utils.c:6:21
+...
+0x0000000100001c4d: /path/to/source/utils.c:6:5
+0x0000000100001c52: /path/to/source/utils.c:8:5
+0x0000000100001c58: /path/to/source/utils.c:8:5
+```
+
+============================
 
 
 
