@@ -66,7 +66,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.10.4. Logging](#)                                                <!-- TODO: do chapter -->
 	- [3.11. Other Topics](#)                                                 <!-- TODO: do chapter -->
 		- [3.11.1. Bugreporting](#)                                           <!-- TODO: do chapter -->
-		- [3.11.2. Remote Debugging *(with `platform`)*](#)                   <!-- TODO: do chapter
+		- [3.11.2. Remote Debugging *(with `platform`)*](#)                   <!-- TODO: do chapter -->
 
 
 <!-- >Start --------------------------------------------------------------------
@@ -872,6 +872,8 @@ Contents
 	> (lldb) br l -f 1                      # --full     (full description, default
 	> (lldb) br l -v                        # --verbose  (extensive description)
 	> ```
+
+	> *<small>[**Note:** `tb` is an alias for `tbreak`, which itself is an alias for `_regexp_break`. - **end note**]</small>*
 
 <br>
 
@@ -2096,10 +2098,10 @@ Commands to:
 
 -	There are two ways to start debugging a process (running program):
 
-	-  [`launch`](#351-launch-program)     – Launching one ([§3.5.1](#351-launch-program))
-	-  [`attach`](#352-attach-to-program)  – Attaching to *[an already running]* one ([§3.5.2](#352-attach-to-program))
+	-  [`launch`](#351-launch)  – Launching one ([§3.5.1](#351-launch))
+	-  [`attach`](#352-attach)  – Attaching to *[an already running]* one ([§3.5.2](#352-attach))
 
--	Also, with regards to programs that are `launched gives the possibility of configuring things like: where you want the process to be run *(terminal, shell)*, setting environment variables, setting the current working directory, redirecting `stdin`/`out`/`err`, etc – all of which is dicussed in **Advanced Program Configurations** ([§3.5.3](#353-advanced-program-configurations)).
+> *<small>[**Note:** With regards to programs that are `launch`'ed on the `LLDB` prompt, you can set: environment variables, the current working directory, redirect their `stdin`/`out`/`err` *[data]* streams, have them run on a different terminal, etc –– see ([3.5.1. @Launch Configurations](#launch-configurations)). - **end note**]</small>*
 
 
 <br>
@@ -2115,8 +2117,9 @@ Commands to:
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.5.1. Launch
-<small>`[Search Tags: >prlasection >prsection >processsection >prcssection lasection >lnchsection >lchsection >launchsection >launchprocess >launchprcs >lprocess >lnchprcs >launchprograms >launchprogs >lprograms >lnchprgs >laprogs >laprs >laprs >programlaunch >progrmlaunch >proglaunch >programlnch >progrmlnch >proglnch >programla >progrmla >progla >processlaunch >prcslaunch >processlnch >prcslnch >processla >prcsla >prlaunch >prlnch >prla]`</small>
+<small>`[Search Tags: >prlasection >prsection >processsection >prcssection lasection >lnchsection >lchsection >launchsection >launchprocs >launchprocess >launchprcs >lprocess >lnchprcs >launchprograms >launchprogs >lprograms >lnchprgs >laprogs >laprs >laprs >programlaunch >progrmlaunch >proglaunch >programlnch >progrmlnch >proglnch >programla >progrmla >progla >processlaunch >prcslaunch >processlnch >prcslnch >processla >prcsla >prlaunch >prlnch >prla >exerun >exebegin >exestart >exeexecute >exeexec >exeinitiate >runexecutable >executablerun >beginexecutable >executablebegin >startexecutable >executablestart >executeexecutable >executableexecute >execexecutable >executableexec >initiateexecutable >executableinitiate >runprocess >processrun >beginprocess >processbegin >startprocess >processstart >executeprocess >processexecute >execprocess >processexec >initiateprocess >processinitiate >procun >prcsun >prcun >procegin >prcsegin >prcegin >proctart >prcstart >prctart >procxecute >prcsxecute >prcxecute >procxec >prcsxec >prcxec >procnitiate >prcsnitiate >prcnitiate >runprogram >programrun >beginprogram >programbegin >startprogram >programstart >executeprogram >programexecute >execprogram >programexec >initiateprogram >programinitiate >progrun >progbegin >progstart >progexecute >progexec >proginitiate >prgrun >prgbegin >prgstart >prgexecute >prgexec >prginitiate >runarguments >argumentsrun >runargs >argsrun >runparameters >parametersrun >runparams >paramsrun]`</small>
 <br>
+
 
 Contents
 ---
@@ -2133,6 +2136,8 @@ Contents
 	> ***Synopsis:***
 	> ```shell
 	> $> process launch -- [<arg> ...]
+	> ```
+	> ```shell
 	> run [<arg> ...]                                    # alias
 	> r [<arg> ...]                                      # alias
 	> ```
@@ -2281,9 +2286,9 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.5.2. Attach
-<small>`[Search Tags: >atsection >atchsection >achsection >attchsection >attachsection >attchprocess >attachprocess >attchprcs >attachprcs >aprocess >atchprcs >attchprograms >attachprograms >attchprogs >attachprogs >aprograms >atchprgs >atprogs >attchprs >attachprs >programattch >programattach >progrmattch >progrmattach >progattch >progattach >programatch >progrmatch >progatch >programat >progrmat >progat >processattch >processattach >prcsattch >prcsattach >processatch >prcsatch >processat >prcsat >prattch >prattach >pratch >prat]`</small>
+<small>`[Search Tags: >lldbattachprocess >lldbattachprogram >lldbattachtoprocess >lldbattachtoprogram >lldb.attachprocess >lldb.attachprogram >lldb.attachtoprocess >lldb.attachtoprogram >debuggerattachprocess >debuggerattachprogram >debuggerattachtoprocess >debuggerattachtoprogram >debugger.attachprocess >debugger.attachprogram >debugger.attachtoprocess >debugger.attachtoprogram >atsection >atchsection >achsection >attchsection >attachsection >attchprocess >attachprocess >attchprcs >attachprcs >aprocess >atchprcs >attchprograms >attachprograms >attchprogs >attachprogs >aprograms >atchprgs >atprogs >attchprs >attachprs >programattch >programattach >progrmattch >progrmattach >progattch >progattach >programatch >progrmatch >progatch >programat >progrmat >progat >processattch >processattach >prcsattch >prcsattach >processatch >prcsatch >processat >prcsat >prattch >prattach >pratch >prat]`</small>
 <br>
->lldbattachprocess >lldbattachprogram >lldbattachtoprocess >lldbattachtoprogram >lldb.attachprocess >lldb.attachprogram >lldb.attachtoprocess >lldb.attachtoprogram >debuggerattachprocess >debuggerattachprogram >debuggerattachtoprocess >debuggerattachtoprogram >debugger.attachprocess >debugger.attachprogram >debugger.attachtoprocess >debugger.attachtoprogram
+
 
 Contents
 ---
@@ -2613,6 +2618,7 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 
 | Command | Description
 | :------ | :---------------------------------------------------------
+| `$>`**`run`**``  | **Continue until** a break/watch-point is hit or end of <br> process.
 ||
 | `$>`**`continue`**  | **Continue until** a break/watch-point is hit or end of <br> process.
 | `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` or <br> until a function returns [, in the current or specified frame <br> in the current or specified thread].
@@ -2621,6 +2627,7 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 | `$> thread`**`step-over`** <br> `$> next` <br> `$> n` | *[Execute and]* **Step over** the current line. Defaults to the <br> current thread unless specified.
 | `$> thread`**`step-in`** <br> `$> step` <br> `$> s` | **Step into** *(investigate)* *[function]* calls. Defaults to current <br> thread unless specified.
 | `$> thread`**`step-out`** <br> `$> finish` | **Step out** of the currently selected frame *(i.e function call)*. <br> Defaults to current thread unless specified.
+||
 | `$> thread`**`return`**`[<value>]` | *[Prematurely]* **Return** from a stack frame *(function)*, <br> optionally yielding a specified value *(else an undefined <br> value)*.
 ||
 | `$>`**`kill`**      | **Terminate** the current target process.
@@ -2677,11 +2684,17 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 - [3.8.2. Threads](#382-threads)
 - [3.8.3. Stack Frames](#383-stack-frames)
 - [3.8.4. Variables](#384-variables)
-- [3.8.5. Registers](#385-registers)
-- [3.8.6. Expressions](#386-expressions)
+- [3.8.5. Registers *(Advanced)*](#385-registers)
+- [3.8.6. Expressions *(Advanced)*](#386-expressions)
+- [3.8.7. Memory *(Advanced)*](#387-memory)
+- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)
 
 ---
 Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual stop, crash, etc ...)*, you can examine *(or inspect)* the state of the process on many levels –– those stated above.
+
+---
+
+> *<small>[**Note:** `GUI` mode already displays all these  –– the following command is for `lldb`'s textual mode. - **end note**]</small>*
 
 
 <br>
@@ -2706,11 +2719,54 @@ Once the program stops execution *(e.g. due to a breakpoint, watchpoint, manual 
 <br>
 
 
-> *<small>[**Note:** `gui` mode already displays the source code automatically during execution –– the following command is for `lldb`'s textual mode. - **end note**]</small>*
->
-> ---
+Contents
+---
+- [1 List subsequent source code](#tag)
+- [2 List specified source code](#tag)
+---
 
--	#### List source code:
+You can investigate source code with the following commands:
+
+---
+
+- #### List subsequent source code:
+
+	> ***Synopsis***:
+	> | | |
+	> |-|-|
+	> | **Shorthand** | `_regexp-list`
+	> | **Alias** | `list`
+	> | **Abreviation** | `l`
+	>
+	> ***Example(s)***:
+	> ```shell
+	> (lldb) fr s
+	> frame #0: 0x0000000100001961 a`main(ac=0, av=0x0000000100004248) at loopInput.c:17
+	>    14  	}
+	>    15
+	>    16  	int main(int ac, char **av)
+	> -> 17  	{
+	>    18  	    int *my_ptr = malloc(sizeof(int));
+	>    19  	    float my_var = 0;
+	>    20  	    char name[] = "James";
+	> (lldb) l
+	>    21  	    int i = 0;
+	>    22
+	>    23  	    *my_ptr = 10;
+	>    24  	    if (ac > 1)
+	>    25  	        *my_ptr = atoi(av[1]);
+	>    26
+	>    27  	    foo(my_ptr);
+	> (lldb) l
+	>    28  	    free(my_ptr);
+	>    29
+	>    30  	    return (0);
+	>    31  	}
+	> ```
+
+<br>
+
+-	#### List specified source code:
 
 	> <small>`[Search Tags: >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
 
@@ -2851,11 +2907,19 @@ You can inspect a process's thread with the following commands:
 
 -	#### Thread backtrace:
 
-	> <small>`[Search Tags: >btthread >backtracer >threadbacktracer >threadbt >threadsbactrace >threadsbactrace >thrdbactrace >thrdsbactrace >bactracethreads >bactracethrds >backtracethread >threadbacktrace >backtrcethread >threadbacktrce >bcktrcethread >threadbcktrce >bcktracethread >threadbcktrace >bcktrthread >threadbcktr >bktrthread >threadbktr >btthread >threadbt >backtracethrds >backtracethrd >thrdsbacktrace >thrdbacktrace >backtrcethrds >backtrcethrd >thrdsbacktrce >thrdbacktrce >bcktrcethrds >bcktrcethrd >thrdsbcktrce >thrdbcktrce >bcktracethrds >bcktracethrd >thrdsbcktrace >thrdbcktrace >bcktrthrds >bcktrthrd >thrdsbcktr >thrdbcktr >bktrthrds >bktrthrd >thrdsbktr >thrdbktr >btthrds >btthrd >thrdsbt >thrdbt >stacktracethread >threadstacktrace >stacktrcethread >threadstacktrce >stacktracethrds >stacktracethrd >thrdsstacktrace >thrdstacktrace >stacktrcethrds >stacktrcethrd >thrdsstacktrce >thrdstacktrce >stcktracethread >stktracethread >threadstcktrace >threadstktrace >stcktrcethread >stktrcethread >threadstcktrce >threadstktrce >stcktracethrds >stktracethrds >stcktracethrd >stktracethrd >thrdsstcktrace >thrdsstktrace >thrdstcktrace >thrdstktrace >stcktrcethrds >stktrcethrds >stcktrcethrd >stktrcethrd >thrdsstcktrce >thrdsstktrce >thrdstcktrce >thrdstktrce >showbacktrace >backtraceshow >showbacktrce >backtrceshow >showbcktrace >bcktraceshow >showbcktrce >bcktrceshow >showbcktr >bcktrshow >showbktrce >bktrceshow >showbktr >bktrshow >showbt >btshow]`</small>
+	> <small>`[Search Tags: >btthread >backtracer >threadbt >processbt >framebt >framesbt >threadsbt >threadbacktracer >threadbt >threadsbactrace >threadsbactrace >thrdbactrace >thrdsbactrace >bactracethreads >bactracethrds >backtracethread >threadbacktrace >backtrcethread >threadbacktrce >bcktrcethread >threadbcktrce >bcktracethread >threadbcktrace >bcktrthread >threadbcktr >bktrthread >threadbktr >btthread >threadbt >backtracethrds >backtracethrd >thrdsbacktrace >thrdbacktrace >backtrcethrds >backtrcethrd >thrdsbacktrce >thrdbacktrce >bcktrcethrds >bcktrcethrd >thrdsbcktrce >thrdbcktrce >bcktracethrds >bcktracethrd >thrdsbcktrace >thrdbcktrace >bcktrthrds >bcktrthrd >thrdsbcktr >thrdbcktr >bktrthrds >bktrthrd >thrdsbktr >thrdbktr >btthrds >btthrd >thrdsbt >thrdbt >stacktracethread >threadstacktrace >stacktrcethread >threadstacktrce >stacktracethrds >stacktracethrd >thrdsstacktrace >thrdstacktrace >stacktrcethrds >stacktrcethrd >thrdsstacktrce >thrdstacktrce >stcktracethread >stktracethread >threadstcktrace >threadstktrace >stcktrcethread >stktrcethread >threadstcktrce >threadstktrce >stcktracethrds >stktracethrds >stcktracethrd >stktracethrd >thrdsstcktrace >thrdsstktrace >thrdstcktrace >thrdstktrace >stcktrcethrds >stktrcethrds >stcktrcethrd >stktrcethrd >thrdsstcktrce >thrdsstktrce >thrdstcktrce >thrdstktrce >showbacktrace >backtraceshow >showbacktrce >backtrceshow >showbcktrace >bcktraceshow >showbcktrce >bcktrceshow >showbcktr >bcktrshow >showbktrce >bktrceshow >showbktr >bktrshow >showbt >btshow >backtraceprogram >programbacktrace >progbacktrace >prgbacktrace >backtraceprocess >processbacktrace >procbacktrace >procsbacktrace >prcsbacktrace >prcbacktrace >backtracethread >threadbacktrace >thrdbacktrace >thbacktrace >backtracestackframe >stackframebacktrace >stckframebacktrace >stckfrmebacktrace >stckfrmbacktrace >stkfrbacktrace >backtracefunction >functionbacktrace >funcbacktrace >fcbacktrace]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> $> thread backtrace [--count <count>] [--start <frame-index>] [all | <thread-index>]    # Backtrace [the first <count> frames] [starting from the frame <frame-index> for] [all | <thread-index>] thread(s).
+	> $> thread backtrace [--count <count>] [--start <frame-index>] [all | <thread-index>]        # Backtrace [the first <count> frames] [starting from the frame <frame-index> for] [all | <thread-index>] thread(s).
+	> ```
+	> ***Shorthand:***
+	> ```shell
+	> $> _regexp-bt [<frame-count>]
+	> $> _regexp-bt [all]
+	> ```
+	> ***Alias:***
+	> ```shell
 	> $> bt
 	> ```
 	>
@@ -2865,7 +2929,6 @@ You can inspect a process's thread with the following commands:
 	> ```shell
 	> (lldb) thread backtrace                            # Backtrace the current thread.
 	> (lldb) th b
-	> (lldb) bt
 	> ```
 	> ```shell
 	> * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
@@ -2877,8 +2940,6 @@ You can inspect a process's thread with the following commands:
 	> ```shell
 	> (lldb) thread backtrace --count 2                  # Backtrace the first 2 frames for the current thread.
 	> (lldb) th b -c 2
-	> (lldb) bt -c 2
-	> (lldb) bt 2
 	> ```
 	> ```shell
 	> * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
@@ -2900,15 +2961,62 @@ You can inspect a process's thread with the following commands:
 	> (lldb) thread backtrace all                        # Backtrace all threads.
 	> (lldb) th b all
 	> ```
-	> **(5)**
 	> ```shell
+	> Example (5):
+	>
 	> (lldb) thread backtrace --count 5 --start 1 all    # Backtrace the first 5 frames starting from the frame #1, for all threads.
 	> (lldb) th b -c 5 -s 1 all
 	> ```
 	>
-	> ***[Example] Output:***
-
-	> *<small>[**Note:** `bt` is an alias for `backtrace thread`, see `help bt`. - **end note**]</small>*
+	> **(5)**
+	> ```shell
+	> (lldb) _regexp-bt                   # Backtrace current thread
+	> (lldb) bt
+	> ```
+	> ```shell
+	> * thread #1
+	>   * frame #0: 0x00007fff53f46a4e libsystem_kernel.dylib`__psynch_mutexwait + 10
+	>     frame #1: 0x00007fff5410eb9d libsystem_pthread.dylib`_pthread_mutex_lock_wait + 83
+	>     frame #2: 0x00007fff5410c4c8 libsystem_pthread.dylib`_pthread_mutex_lock_slow + 253
+	>     frame #3: 0x00007fff53e80cfa libsystem_c.dylib`flockfile + 31
+	>     frame #4: 0x00007fff53e83d58 libsystem_c.dylib`fwrite + 66
+	>     frame #5: 0x0000000100100178 libclang_rt.asan_osx_dynamic.dylib`wrap_fwrite + 88
+	> ```
+	> **(6)**
+	> ```shell
+	> (lldb) _regexp-bt 3                 # Show backtrace for [up to] 3 frames.
+	> (lldb) bt 3
+	> ```
+	> ```shell
+	> * thread #1
+	>   * frame #0: 0x00007fff53f46a4e libsystem_kernel.dylib`__psynch_mutexwait + 10
+	>     frame #1: 0x00007fff5410eb9d libsystem_pthread.dylib`_pthread_mutex_lock_wait + 83
+	>     frame #2: 0x00007fff5410c4c8 libsystem_pthread.dylib`_pthread_mutex_lock_slow + 253
+	> ```
+	> **(7)**
+	> ```shell
+	> (lldb) _regexp-bt all
+	> (lldb) bt all
+	> ```
+	> ```shell
+	> * thread #1, queue = 'com.apple.main-thread', stop reason = one-shot breakpoint 2
+	>   * frame #0: 0x0000000100003b49 c`main(ac=1, av=0x00007ffeefbff5b0) at threadedHello.cpp:29
+	>     frame #1: 0x00007fff53df6015 libdyld.dylib`start + 1
+	>   thread #2
+	>     frame #0: 0x00007fff53f46d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>     frame #1: 0x00007fff53ec1724 libsystem_c.dylib`nanosleep + 199
+	>     frame #2: 0x00007fff53ec1586 libsystem_c.dylib`sleep + 41
+	>   thread #3
+	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
+	>     frame #1: 0x000000010000ca00 c`void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct> >, main::$_0> >(void*) [inlined] decltype(__f=0x0000602000000118)(std::__1::forward<>(fp0))) std::__1::__invoke<main::$_0>(main::$_0&&) at type_traits:4323
+	>   thread #4
+	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
+	>   thread #5
+	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
+	>     frame #1: 0x000000010000ca00 c`void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct> >, main::$_0> >(void*) [inlined] decltype(__f=0x0000602000000118)(std::__1::forward<>(fp0))) std::__1::__invoke<main::$_0>(main::$_0&&) at type_traits:4323
+	>     frame #2: 0x00007fff53ec1724 libsystem_c.dylib`nanosleep + 199
+	> ...
+	> ```
 
 
 <br>
@@ -2939,8 +3047,8 @@ You can inspect a process's thread with the following commands:
 
 Commands to:
 ---
-- [1 Select *[current]* Stack Frame](#select-current-thread)
-- [2 List Stack Frame Information](#list-threads)
+- [1 Select *[current]* Stack Frame](#select-current-stack-frame)
+- [2 List Stack Frame Information](#list-stack-frame-information)
 ---
 
 You can inspect a thread's stack frame with the following commands:
@@ -3029,12 +3137,14 @@ You can inspect a thread's stack frame with the following commands:
 <br>
 
 
+Commands to:
+---
+- [1 Print *(read)* variable(s)](#print-read-variables)
 ---
 
 You can inspect a stack frame's variables, as well as *[static | extern]* global variables:
 
 ---
-
 -	#### Print *(read)* variable(s):
 
 	> <small>`[Search Tags: >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay >variableprint >variablesprint >varsprint >varprint >printvariable >printvariables >printvars >printvar >variableread >variablesread >varsread >varread >variablerd >variablesrd >varsrd >varrd >readvariable >readvariables >readvars >readvar >rdvariable >rdvariables >rdvars >rdvar]`</small>
@@ -3207,8 +3317,8 @@ Contents
 	> | Flag | Shortcut | Description
 	> | - | - | - |
 	> |                     |      |
-    > | `--format <format>` | `-f` | *Specify a format to be used for display. See [Format Table](#format-table) for all <br> available formats.*
     > | `--all`             | `-a` | *Show all register sets.*
+    > | `--format <format>` | `-f` | *Specify a format to be used for display. See [Format Table](#format-table) for all <br> available formats.*
     > | `--set <index>`     | `-s` | *Specify which register sets to dump by index.*
 	>
 	> ***Example(s):*** <br>
@@ -3317,8 +3427,10 @@ Contents
 	> ***Synopsis:***
 	> ```shell
 	> $> expression
-	> $> po <expr>             # alias for ->   expression -O -- <expr>
-	> $> p <expr>              # alias for ->   expression -- <expr>
+	> ```
+	> ```shell
+	> $> po <expr>       # expression -O -- <expr>
+	> $> p <expr>        # expression -- <expr>
 	> ```
 	>
 	> ***Options:***
@@ -3368,16 +3480,19 @@ Command Options Usage:
 | -                             | -                         | -
 | `-F`                          | `--flat`                  | Display results in a flat format that uses <br> expression paths for each variable or member.
 | `-L`                          | `--location`              | Show variable location information.<br>
-| `-O`                          | `--object-description`    | Display using a language-specific description<br>  API, if possible.
-| `-P <count>`                  | `--ptr-depth`             | The number of pointers to be traversed when<br>  dumping values (default is zero).
+| `-O`                          | `--object-description`    | Display using a language-specific description<br> API, if possible.
+| `-P <count>`                  | `--ptr-depth`             | The number of pointers to be traversed when<br> dumping values (default is zero).
 | `-V <boolean>`                | `--validate`              | Show results of type validators.
-| `-Z <count>`                  | `--element-count`         | Treat the result of the expression as if its<br>  type is an array of this many values.
-| `-d <none>`                   | `--dynamic-type`          | Show the object as its full dynamic type, not<br>  its static type, if available. | Values: no-dynamic-values | run-target | no-run-target
+| `-Z <count>`                  | `--element-count`         | Treat the result of the expression as if its<br> type is an array of this many values.
+| `-d <none>`                   | `--dynamic-type`          | Show the object as its full dynamic type, not<br> its static type, if available. | Values: no-dynamic-values | run-target | no-run-target
 | `-f <format>`                 | `--format`                | Specify a format to be used for display.
-| `-g`                          | `--debug`                 | When specified, debug the JIT code by setting<br>  a breakpoint on the first instruction and forcing <br> breakpoints to not be ignored (-i0) | and no unwinding to happen on error (-u0).
-| `-l <source-language>`        | `--language`              | Specifies the Language to use when parsing <br> the expression. If not set the `target.language` <br> setting is used.
-| `-p`                          | `--top-level`             | Interpret the expression as a complete <br> translation unit, without injecting it into the local <br> context. Allows declaration of | persistent, top-level entities without a $ prefix.
+| **More Information**          |                           |
 | `-v[<description-verbosity>]` | `--description-verbosity` | How verbose should the output of this <br> expression be, if the object description is asked <br> for. Values: `compact` \| `full` .
+| `-l <source-language>`        | `--language`              | Specifies the Language to use when parsing <br> the expression. If not set the `target.language` <br> setting is used.
+| **Less Information**          |                           |
+| `-p`                          | `--top-level`             | Interpret the expression as a complete <br> translation unit, without injecting it into the local <br> context. Allows declaration of | persistent, top-level entities without a $ prefix.
+| **Debug**                     |                           |
+| `-g`                          | `--debug`                 | When specified, debug the JIT code by setting<br> a breakpoint on the first instruction and forcing <br> breakpoints to not be ignored (-i0) | and no unwinding to happen on error (-u0).
 
 ### Single Line Expressions
 
@@ -3578,6 +3693,277 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 		Expression :: Break when expression evaluates to true.
 		Hit-Count  :: Log boolean when expression evaluates to true.
 		Logpoint   :: Log <Inputed-Message> when breakpoint is hit.
+
+
+
+>_regexpcommands
+
+
+- #### `_regexp-attach`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-break`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+
+- #### Backtrace *(shortcut)*:
+
+	> <small>`[Search Tags: >backtraceshortcut >_regexp-bt]`</small>
+
+	> ***Synopsis***:
+	> ```shell
+	> $> _regexp-bt [<frame-count>]       # canonical
+	> $> _regexp-bt [all]
+	> ```
+	> ```shell
+	> $> bt                               # alias
+	> ```
+	>
+	> ***Example(s)***:
+	>
+	> **(1)**
+	> ```shell
+	> (lldb) _regexp-bt                 # Backtrace current thread
+	> (lldb) bt
+	> ```
+	> ```shell
+	> * thread #1
+	>   * frame #0: 0x00007fff53f46a4e libsystem_kernel.dylib`__psynch_mutexwait + 10
+	>     frame #1: 0x00007fff5410eb9d libsystem_pthread.dylib`_pthread_mutex_lock_wait + 83
+	>     frame #2: 0x00007fff5410c4c8 libsystem_pthread.dylib`_pthread_mutex_lock_slow + 253
+	>     frame #3: 0x00007fff53e80cfa libsystem_c.dylib`flockfile + 31
+	>     frame #4: 0x00007fff53e83d58 libsystem_c.dylib`fwrite + 66
+	>     frame #5: 0x0000000100100178 libclang_rt.asan_osx_dynamic.dylib`wrap_fwrite + 88
+	> ```
+	> **(2)**
+	> ```shell
+	> (lldb) _regexp-bt 3                 # Show backtrace for [up to] 3 frames.
+	> (lldb) bt 3
+	> ```
+	> ```shell
+	> * thread #1
+	>   * frame #0: 0x00007fff53f46a4e libsystem_kernel.dylib`__psynch_mutexwait + 10
+	>     frame #1: 0x00007fff5410eb9d libsystem_pthread.dylib`_pthread_mutex_lock_wait + 83
+	>     frame #2: 0x00007fff5410c4c8 libsystem_pthread.dylib`_pthread_mutex_lock_slow + 253
+	> ```
+	> **(3)**
+	> ```shell
+	> (lldb) _regexp-bt all
+	> (lldb) bt all
+	> ```
+	> ```shell
+	> * thread #1, queue = 'com.apple.main-thread', stop reason = one-shot breakpoint 2
+	>   * frame #0: 0x0000000100003b49 c`main(ac=1, av=0x00007ffeefbff5b0) at threadedHello.cpp:29
+	>     frame #1: 0x00007fff53df6015 libdyld.dylib`start + 1
+	>   thread #2
+	>     frame #0: 0x00007fff53f46d8a libsystem_kernel.dylib`__semwait_signal + 10
+	>     frame #1: 0x00007fff53ec1724 libsystem_c.dylib`nanosleep + 199
+	>     frame #2: 0x00007fff53ec1586 libsystem_c.dylib`sleep + 41
+	>   thread #3
+	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
+	>     frame #1: 0x000000010000ca00 c`void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct> >, main::$_0> >(void*) [inlined] decltype(__f=0x0000602000000118)(std::__1::forward<>(fp0))) std::__1::__invoke<main::$_0>(main::$_0&&) at type_traits:4323
+	>   thread #4
+	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
+	>   thread #5
+	>     frame #0: 0x000000010000e71e c`main::$_0::operator(this=0x0000602000000118)() const at threadedHello.cpp:26
+	>     frame #1: 0x000000010000ca00 c`void* std::__1::__thread_proxy<std::__1::tuple<std::__1::unique_ptr<std::__1::__thread_struct, std::__1::default_delete<std::__1::__thread_struct> >, main::$_0> >(void*) [inlined] decltype(__f=0x0000602000000118)(std::__1::forward<>(fp0))) std::__1::__invoke<main::$_0>(main::$_0&&) at type_traits:4323
+	>     frame #2: 0x00007fff53ec1724 libsystem_c.dylib`nanosleep + 199
+	> ...
+	> ```
+
+- #### `_regexp-display`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-down`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### List environment variables:
+
+	> <small>`[Search Tags: >env >_regexp-env >envlst >lsenvironment >lstenvironment >listenvironmentvariables >environmentlist >envvars >varsenvironment >varsenvironment >listenvironment >environmentshow >showenvironment >environmentdisplay >displayenvironment >envlist >listenv >envshow >showenv >envdisplay >displayenv]`</small>
+
+	> ***Synopsis***:
+	> ```shell
+	> $> _regexp-env       # canonical
+	> $> env               # alias
+	> ```
+	>
+	> ***Example(s)***:
+	> ```shell
+	> (lldb) _regexp-env
+	> ```
+	> ```shell
+	> target.env-vars (dictionary of strings) =
+	>   ARCHFLAGS=-arch x86_64
+	>   Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.e3siimNouz/Render
+	>   BASHRC=/nfs/2018/a/akharrou/.bashrc
+	>   COLORFGBG=15;0
+	>   COLORTERM=truecolor
+	>   LANG=en_US.UTF-8
+	>   LC_CTYPE=en_US.UTF-8
+	>   LC_TERMINAL=iTerm2
+	>   LC_TERMINAL_VERSION=3.3.7
+	>   ...
+	> ```
+
+- #### `_regexp-jump`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-list`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-tbreak`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-undisplay`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-up`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-attach`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-break`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-bt`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-display`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-down`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-env`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-jump`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+
+- #### `_regexp-tbreak`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-undisplay`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+- #### `_regexp-up`:
+
+	> ***Synopsis***:
+	>
+	>
+	> ***Example(s)***:
+	>
+
+
+`_regexp-break`
+
+`$> _regexp-break [<filename>:<linenum>]\n_regexp-break [<linenum>]\n_regexp-break [<address>]\n_regexp-break <...>`
+
+Set a breakpoint using a regular expression to specify the location, where `<linenum>` is in decimal and `<address>` is in hex.
+
+> _regexp-break         <=>  b      –– Set a breakpoint using one of several shorthand formats.
+> _regexp-tbreak        <=>  tbreak -- Set a one-shot breakpoint using one of several shorthand formats.
+> breakpoint set -r %1  <=>  rbreak -- Sets a breakpoint or set of breakpoints in the executable.
+
+
+=================================================== end _Regexpcommands
+
+
+
+
+
 
 ------------------------------------------------------------------------------->
 
