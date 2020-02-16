@@ -2614,13 +2614,13 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 | :------ | :---------------------------------------------------------
 ||
 | `$> continue`  | **Continue execution** *[of all threads in the current process] <br>* *[till a breakpoint is hit or termination of the process is met]*.
-| `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` or until a <br> function return is reached [, by the current or specified frame in <br> the current or specified thread].
+| `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` or until <br> a function return is reached [, by the current or specified <br> frame in the current or specified thread].
 | `$> thread`**`jump`**`-l <line-num> [-f <filename>]` <br> `$> thread`**`jump`**`-b <line-offset>` <br> `$> thread`**`jump`**`-a <address-expression>` | **Jump to** a subsequent line/instruction; i.e sets the program <br> counter to a new address.
 ||
 | `$> thread`**`step-over`** <br> `$> next` <br> `$> n` | **Step over** *[function call]* lines *[, if any]*, executing the current <br> line and stepping, thereafter, over it, to the next one. Defaults <br> to current thread unless specified.
 | `$> thread`**`step-in`** <br> `$> step` <br> `$> s` | **Step into** *[function]* calls. Defaults to current thread unless <br> specified.
 | `$> thread`**`step-out`** <br> `$> finish` | **Step out** of the currently selected frame *(i.e function call)*.
-| `$> thread`**`return`**`[<value>]` | *[Prematurely]* **Return** from a stack frame, optionally yielding <br> a specified value *(else undefined value)*.
+| `$> thread`**`return`**`[<value>]` | *[Prematurely]* **Return** from a stack frame *(function)*, optionally <br> yielding a specified value *(else an undefined value)*.
 ||
 | `$> kill`      | **Terminate** the current target process.
 | `$> detach`    | **Detach** from the current target process.
@@ -2635,21 +2635,6 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 > 	| `(lldb) thread step-inst` <br> `(lldb) si` | Do a single *[instruction]* **step in**.
 >
 > *- **end note**]</small>*
-
-`thread`**`until`**`[-f <frame-index>] [-t <thread-index>] [-m <run-mode>] [-a <address-expression>] <line-num>`
-
-       -a <address-expression> ( --address <address-expression> )
-            Run until we reach the specified address, or leave the function - can be specified multiple times.
-
-       -f <frame-index> ( --frame <frame-index> )
-            Frame index for until operation - defaults to 0
-
-       -m <run-mode> ( --run-mode <run-mode> )
-            Determine how to run other threads while stepping this one
-            Values: this-thread | all-threads
-
-       -t <thread-index> ( --thread <thread-index> )
-            Thread index for the thread for until operation
 
 
 <br>
