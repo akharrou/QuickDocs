@@ -1494,43 +1494,35 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 	>
 	> ***Example(s):***
 	>
-	> #### (1) Add breakpoint name
+	> #### (1)
 	> ```shell
 	> (lldb) breakpoint name add --name 'controlFlow'
 	> (lldb) br n a -N 'controlFlow'
 	> ```
 	> > *To clarify –– we are just creating an [un-configured] breakpoint name (profile), namely: "`controlFlow`" –– it is (implicitly) `add`ed to the last created (i.e `set`) breakpoint.*
 	>
-	> <br>
-	>
-	> #### (2) " " to breakpoint being created
+	> #### (2)
 	> ```shell
 	> (lldb) breakpoint set --name foo --breakpoint-name 'funcs'
 	> (lldb) br s -n foo -N 'funcs'
 	> ```
 	> > *To clarify –– we are adding a breakpoint name –– namely `'funcs`' –– to the list of names of the breakpoint [as we `set` it].*
 	>
-	> <br>
-	>
-	> #### (3) " "
+	> #### (3)
 	> ```shell
 	> (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
 	> (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
 	> ```
 	> > *To clarify –– we are adding a breakpoint name to the list of names of the breakpoint(s) [as we `set` it/them].*
 	>
-	> <br>
-	>
-	> #### (4) Add breakpoint names to breakpoints 3, 2 and 7
+	> #### (4)
 	> ```shell
 	> (lldb) breakpoint name add --name 'funcs' 3 2 7
 	> (lldb) br n a -N 'funcs' 3 2 7
 	> ```
 	> > *To clarify –– we are `add`ing a breakpoint name to the list of names of the breakpoints [of id]: 3, 2 and 7.*
 	>
-	> <br>
-	>
-	> #### (5) Add breakpoint name to breakpoints who have in their list of names, the names: 'func' and/or 'controlFlow'
+	> #### (5)
 	> ```shell
 	> (lldb) breakpoint name add --name 'important' 'funcs' 'controlFlow'
 	> (lldb) br n a -N 'important' 'funcs' 'controlFlow'
