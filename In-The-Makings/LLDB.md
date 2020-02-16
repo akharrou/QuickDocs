@@ -2613,17 +2613,17 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 | Command | Description
 | :------ | :---------------------------------------------------------
 ||
-| `$> continue`  | **Continue execution** *[of all threads in the current process] <br>* *[till a breakpoint is hit or termination of the process is met]*.
-| `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` or until <br> a function return is reached [, by the current or specified <br> frame in the current or specified thread].
+| `$>`**`continue`**  | **Continue until** a break/watch-point is hit or end of process.
+| `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` or until <br> a function returns [, in the current or specified frame in the <br> current or specified thread].
 | `$> thread`**`jump`**`-l <line-num> [-f <filename>]` <br> `$> thread`**`jump`**`-b <line-offset>` <br> `$> thread`**`jump`**`-a <address-expression>` | **Jump to** a subsequent line/instruction; i.e sets the program <br> counter to a new address.
 ||
-| `$> thread`**`step-over`** <br> `$> next` <br> `$> n` | **Step over** *[function call]* lines *[, if any]*, executing the current <br> line and stepping, thereafter, over it, to the next one. Defaults <br> to current thread unless specified.
-| `$> thread`**`step-in`** <br> `$> step` <br> `$> s` | **Step into** *[function]* calls. Defaults to current thread unless <br> specified.
-| `$> thread`**`step-out`** <br> `$> finish` | **Step out** of the currently selected frame *(i.e function call)*.
+| `$> thread`**`step-over`** <br> `$> next` <br> `$> n` | *[Execute and]* **Step over** the current line. Defaults to the <br> current thread unless specified.
+| `$> thread`**`step-in`** <br> `$> step` <br> `$> s` | **Step into** *(investigate)* *[function]* calls. Defaults to current <br> thread unless specified.
+| `$> thread`**`step-out`** <br> `$> finish` | **Step out** of the currently selected frame *(i.e function call)*. <br> Defaults to current thread unless specified.
 | `$> thread`**`return`**`[<value>]` | *[Prematurely]* **Return** from a stack frame *(function)*, optionally <br> yielding a specified value *(else an undefined value)*.
 ||
-| `$> kill`      | **Terminate** the current target process.
-| `$> detach`    | **Detach** from the current target process.
+| `$>`**`kill`**      | **Terminate** the current target process.
+| `$>`**`detach`**    | **Detach** from the current target process.
 
 > *<small>[**Note:***
 >
