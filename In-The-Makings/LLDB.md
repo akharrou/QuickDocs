@@ -834,7 +834,7 @@ Contents
 	>
 	> ***Example(s):***
 	>
-	> #### (1) Set breakpoint on `main()`
+	> ##### (1) Set breakpoint on `main()`
 	> ```shell
 	> (lldb) breakpoint set --name main
 	> (lldb) br s -n main
@@ -883,14 +883,14 @@ Contents
 	>
 	> ***Example(s):***
 	>
-	> #### (1) Set breakpoint on line 10 of *[current]* source file
+	> ##### (1) Set breakpoint on line 10 of *[current]* source file
 	> ```shell
 	> (lldb) breakpoint set --line 10
 	> (lldb) br s -l 10
 	> (lldb) _regexp-break 10
 	> (lldb) b 10
 	> ```
-	> #### (2) " " of `utils.c`
+	> ##### (2) " " of `utils.c`
 	> ```shell
 	> (lldb) breakpoint set --file utils.c --line 10
 	> (lldb) br s -f utils.c -l 10
@@ -916,7 +916,7 @@ Contents
 	>
 	> ***Example(s):***
 	>
-	> #### (1) Set breakpoint on an address
+	> ##### (1) Set breakpoint on an address
 	> ```shell
 	> (lldb) breakpoint set --address 0x0000000100001b50
 	> (lldb) br s -a 0x0000000100001b50
@@ -947,7 +947,7 @@ Contents
 	>
 	> ***Example(s):***
 	>
-	> #### (1) List breakpoints
+	> ##### (1) List breakpoints
 	> ```shell
 	> (lldb) breakpoint list
 	> (lldb) br l
@@ -965,7 +965,7 @@ Contents
 	> 3: file = '/path/to/source/loopInput.c', line = 30, exact_match = 0, locations = 1
 	>   3.1: where = a`main + 1749 at loopInput.c:30, address = a[0x0000000100001a95], unresolved, hit count = 0
 	> ```
-	> #### (2) " " requesting a level of description
+	> ##### (2) " " requesting a level of description
 	> ```shell
 	> (lldb) breakpoint list --brief 3 2    # --brief    (minimum description)
 	> (lldb) br l -f 1                      # --full     (full description, default
@@ -1494,35 +1494,35 @@ Breakpoint `names` *(profiles)* live independantly of breakpoints that inherit t
 	>
 	> ***Example(s):***
 	>
-	> #### (1)
+	> ##### (1)
 	> ```shell
 	> (lldb) breakpoint name add --name 'controlFlow'
 	> (lldb) br n a -N 'controlFlow'
 	> ```
 	> > *To clarify –– we are just creating an [un-configured] breakpoint name (profile), namely: "`controlFlow`" –– it is (implicitly) `add`ed to the last created (i.e `set`) breakpoint.*
 	>
-	> #### (2)
+	> ##### (2)
 	> ```shell
 	> (lldb) breakpoint set --name foo --breakpoint-name 'funcs'
 	> (lldb) br s -n foo -N 'funcs'
 	> ```
 	> > *To clarify –– we are adding a breakpoint name –– namely `'funcs`' –– to the list of names of the breakpoint [as we `set` it].*
 	>
-	> #### (3)
+	> ##### (3)
 	> ```shell
 	> (lldb) breakpoint set --all-files --source-pattern-regexp 'return \(FAILURE\);' --breakpoint-name 'failure'
 	> (lldb) br s -A -p 'return \(FAILURE\);' -N 'failure'
 	> ```
 	> > *To clarify –– we are adding a breakpoint name to the list of names of the breakpoint(s) [as we `set` it/them].*
 	>
-	> #### (4)
+	> ##### (4)
 	> ```shell
 	> (lldb) breakpoint name add --name 'funcs' 3 2 7
 	> (lldb) br n a -N 'funcs' 3 2 7
 	> ```
 	> > *To clarify –– we are `add`ing a breakpoint name to the list of names of the breakpoints [of id]: 3, 2 and 7.*
 	>
-	> #### (5)
+	> ##### (5)
 	> ```shell
 	> (lldb) breakpoint name add --name 'important' 'funcs' 'controlFlow'
 	> (lldb) br n a -N 'important' 'funcs' 'controlFlow'
@@ -3181,7 +3181,7 @@ You can inspect a process's thread(s) with the following commands:
 	>
 	> ***Example(s):***
 	>
-	> #### (1) Backtrace current thread
+	> ##### (1) Backtrace current thread
 	> ```shell
 	> (lldb) thread backtrace
 	> (lldb) th b
@@ -3194,7 +3194,7 @@ You can inspect a process's thread(s) with the following commands:
 	>     frame #1: 0x0000000100000d76 a`main(ac=1, av=0x00007ffeefbff5b0) at loopInput.c:24
 	>     frame #2: 0x00007fff789cd015 libdyld.dylib`start + 1
 	> ```
-	> #### (2) " " first 2 frames
+	> ##### (2) " " first 2 frames
 	> ```shell
 	> (lldb) thread backtrace --count 2
 	> (lldb) th b -c 2
@@ -3206,7 +3206,7 @@ You can inspect a process's thread(s) with the following commands:
 	>   * frame #0: 0x0000000100000b62 a`foo(iterations=0x00006020000000f0) at loopInput.c:13
 	>     frame #1: 0x0000000100000d76 a`main(ac=1, av=0x00007ffeefbff5b0) at loopInput.c:24
 	> ```
-	> #### (3) " " starting from the first frame
+	> ##### (3) " " starting from the first frame
 	> ```shell
 	> (lldb) thread backtrace --count 2 --start 1
 	> (lldb) th b -c 2 -s 1
@@ -3216,7 +3216,7 @@ You can inspect a process's thread(s) with the following commands:
 	>     frame #1: 0x0000000100000d76 a`main(ac=1, av=0x00007ffeefbff5b0) at loopInput.c:24
 	>     frame #2: 0x00007fff789cd015 libdyld.dylib`start + 1
 	> ```
-	> #### (4) Backtrace all threads
+	> ##### (4) Backtrace all threads
 	> ```shell
 	> (lldb) thread backtrace all
 	> (lldb) th b all
@@ -3242,7 +3242,7 @@ You can inspect a process's thread(s) with the following commands:
 	>     frame #2: 0x00007fff53ec1724 libsystem_c.dylib`nanosleep + 199
 	> ...
 	> ```
-	> #### (5) " ", 1 frame starting from the first frame
+	> ##### (5) " ", 1 frame starting from the first frame
 	> ```shell
 	> (lldb) thread backtrace --count 1 --start 1 all
 	> (lldb) th b -c 1 -s 1 all
@@ -3391,11 +3391,11 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 ---
 -	#### Print *(read)* variable(s):
 
-	> <small>`[Search Tags: >frvariableexamine >frvariableexam >Frvars >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay >variableprint >variablesprint >varsprint >varprint >printvariable >printvariables >printvars >printvar >variableread >variablesread >varsread >varread >variablerd >variablesrd >varsrd >varrd >readvariable >readvariables >readvars >readvar >rdvariable >rdvariables >rdvars >rdvar]`</small>
+	> <small>`[Search Tags: >fr variables >frvariableexamine >frvariableexam >Frvars >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay >variableprint >variablesprint >varsprint >varprint >printvariable >printvariables >printvars >printvar >variableread >variablesread >varsread >varread >variablerd >variablesrd >varsrd >varrd >readvariable >readvariables >readvars >readvar >rdvariable >rdvariables >rdvars >rdvar]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> $> frame variable [-scarfglFLZ] -P <count> [<var-name>]
+	> $> frame variable [-scarfglFLZT] -P <count> [<var-name>]
 	> ```
 	>
 	> ***Options:***
@@ -3410,6 +3410,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> | **More Information**      |          |
 	> | `--ptr-depth <count>`     | `-P`     | *Number of times pointer variables get dereferenced; <br> (default=0).*
 	> | `--element-count <count>` | `-Z`     | *Treat the result of the expression as if its type is an array <br> of this many values.*
+	> | `--show-types`            | `-T`     | *Show variable types when dumping values.*
 	> | `--scope`                 | `-s`     | *Show variable scope (`argument`, `local`, `global`, `static`).*
 	> | `--show-globals`          | `-g`     | *Show *[static \| extern]* global variables.*
 	> | `--show-declaration`      | `-c`     | *Show variable declaration line [, in source file].*
@@ -3424,60 +3425,59 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>
 	> ***Example(s):***
 	>
-	> **(1)**
+	> ##### (1) Investigate *[non-aggregate]* variables
 	> ```shell
-	> (lldb) frame variable                                            # Show all arguments and local variables.
-	> (lldb) fr v
-	> ```
-	> ```shell
-	> (int) ac = 1
-	> (char **) av = 0x00007ffeefbff5b0
-	> (char [6]) name = "James"
-	> (int *) my_ptr = 0x00006020000000f0
-	> (float) my_var = 0
-	> (int) i = 0
-	> ```
-	> **(2)**
-	> ```shell
-	> (lldb) frame variable my_var                                     # Show the value of `my_var`.
+	> (lldb) frame variable my_var
 	> (lldb) fr v my_var
 	> ```
 	> ```shell
 	> (float) my_var = 0
 	> ```
-	> **(3)**
+	> ##### (2) " " in different formats
 	> ```shell
-	> (lldb) frame variable --format x *my_ptr                         # Show the value that `my_ptr` points to, in "(lowercase) hexadecimal" format.
-	> (lldb) fr v -f x *my_ptr
-	> (lldb) fr v/x *my_ptr
+	> (lldb) frame variable --format hex *my_ptr    # (lowercase) hexadecimal
+	> (int) *my_ptr = 0x52800003
+	>
+	> (lldb) frame variable -f hex *my_ptr          # shorthand
+	> (int) *my_ptr = 0x52800003
+	>
+	> (lldb) fr v -f x *my_ptr                      # shorthand
+	> (int) *my_ptr = 0x52800003
+	>
+	> (lldb) fr v/x *my_ptr                         # shorthand
+	> (int) *my_ptr = 0x52800003
 	> ```
 	> ```shell
-	> (int) *my_ptr = 0x52800003                                       # 1384120323, in decimal
+	> (lldb) fr v/d *my_ptr                         # decimal
+	> (int) *my_ptr = 1384120323
+	>
+	> (lldb) fr v/o *my_ptr                         # octal
+	> (int) *my_ptr = 12240000003
+	>
+	> (lldb) fr v/t *my_ptr                         # binary
+	> (int) *my_ptr = 1010010100000000000000000000011
 	> ```
-	> **(4)**
+	>
+	> ##### (3) Investigate pointers
 	> ```shell
-	> (lldb) frame variable --scope --show-globals --ptr-depth 3       # Show all variables that exist (i.e arguments, locals, globals, [file] statics); dereference pointers up to 3 times.
-	> (lldb) fr v -s -g -P 3
+	> (lldb) frame variable --ptr-depth 3
+	> (lldb) fr v -P 3
 	> ```
 	> ```shell
-	> (lldb) frame variable --scope --show-globals --ptr-depth 3
-	> ARG: (int) ac = 2
-	> ARG: (char **) av = 0x00007ffeefbff5a8 {
-	>   *av = 0x00007ffeefbff7e8 "/path/to/working/directory/a.out" {
-	>     **av = '/'
+	> (char **) argv = 0x00007ffeefbff598 {
+	>   *argv = 0x00007ffeefbff7b0 "/path/to/execuable/a" {
+	>     **argv = '/'
 	>   }
 	> }
-	> LOCAL: (int *) userInputCount = 0x00006020000000f0 {
-	>   *userInputCount = 5
-	> }
 	> ```
-	> **(5)**
+	>
+	> ##### (4) Investigate aggregate variables, e.g. array pointers
 	> ```shell
-	> (lldb) frame variable --element-count 10 -- av
-	> (lldb) fr v -Z 10 -- av
+	> (lldb) frame variable --element-count 10 -- argv
+	> (lldb) fr v -Z 10 -- argv
 	> ```
 	> ```shell
-	> (char **) av = 0x00007ffeefbff4e0 {
+	> (char **) argv = 0x00007ffeefbff4e0 {
 	>   (char *) [0] = 0x00007ffeefbff740 "/path/to/execuable/a"
 	>   (char *) [1] = 0x00007ffeefbff773 "arg1"
 	>   (char *) [2] = 0x00007ffeefbff778 "arg2"
@@ -3485,10 +3485,41 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>   (char *) [4] = 0x00007ffeefbff782 "arg4"
 	>   (char *) [5] = 0x0000000000000000
 	>   (char *) [6] = 0x00007ffeefbff787 "ARCHFLAGS=-arch x86_64"
-	>   (char *) [7] = 0x00007ffeefbff79e "Apple_PubSub_Socket_Render=/not/so/public/com.apple.launchd.jideoifwsl/Render"
+	>   (char *) [7] = 0x00007ffeefbff79e "Apple_PubSub_Socket_Render=/not/so/public/com.apple.launchd.iuiwunedb/Blender"
 	>   (char *) [8] = 0x00007ffeefbff7ea "BASHRC=/path/to/file/.bashrc"
 	>   (char *) [9] = 0x00007ffeefbff80e "COLORFGBG=15;0"
 	> }
+	> ```
+	> ##### (5) Show all *[local]* scope variables
+	> ```shell
+	> (lldb) frame variable
+	> (lldb) fr v
+	> ```
+	> ```shell
+	> (int) ac = 1
+	> (char **) av = 0x00007ffeefbff598
+	> (char [6]) name = "James"
+	> (limbs_t) new = (eyes = 2, nose = 1, mouth = 2, ears = 2, arms = 2, legs = 2)
+	> (int *) my_ptr = 0x00006020000000f0
+	> (float) my_var = 0
+	> (int) i = 0
+	> ```
+	>
+	> ##### (6) Show all variables of all scopes, with scope information
+	> ```shell
+	> (lldb) frame variable --scope --show-globals
+	> (lldb) fr v -s -g
+	> ```
+	> ```shell
+	> ARG: (int) ac = 1
+	> ARG: (char **) av = 0x00007ffeefbff598
+	> LOCAL: (char [6]) name = "James"
+	> LOCAL: (limbs_t) new = (eyes = 2, nose = 1, mouth = 2, ears = 2, arms = 2, legs = 2)
+	> LOCAL: (int *) my_ptr = 0x00006020000000f0
+	> LOCAL: (float) my_var = 0
+	> LOCAL: (int) i = 0
+	> GLOBAL: (int) extern_global_age = 12
+	> GLOBAL: (int) file_global_new_age = 13
 	> ```
 
 	> *<small>[**Note:***
@@ -3721,20 +3752,87 @@ Contents
 	> | `--timeout <unsigned-integer>` | `-t`     | *Timeout value (in microseconds) <br> for running the expression.*
 	> | `--unwind-on-error <boolean>`  | `-u`     | *Clean up program state if the expression <br> causes a crash, or raises a signal.*
 	>
-	> #### Single Line Expressions:
 	>
 	> ```shell
-	> (lldb) expr my_struct->a = my_array[3]
 	> (lldb) expr unsigned int $foo = 5
 	> (lldb) expr char c[] = \"foo\"; c[0]
 	> ```
+	> #### Single Line Expressions:
+	>
+	> ##### (1) Investigating non-aggregate variables
 	> ```shell
-	> (lldb) expr (int) printf ("I have a pointer 0x%llx.\n", self)
-	> $2 = (int) 22
-	> I have a pointer 0x0.
+	> (lldb) expression my_var
+	> (float) $0 = 12
 	> ```
 	>
 	> Because this command takes *'`raw input`'*, if you use any command options you must use '`--`' between the end of the command options and the beginning of the raw input:
+	>
+	> ##### (2) " " in different formats
+	> ```shell
+	> (lldb) e -f hex -- my_var        # (lowercase) hex format
+	> (float) $1 = 0x4229ae14
+	>
+	> (lldb) e -f x -- my_var          # shorthand
+	> (float) $2 = 0x4229ae14
+	>
+	> (lldb) e/x -- my_var             # shorthand
+	> (float) $3 = 0x4225ae14
+	> ```
+	> ```shell
+	> (lldb) e/d my_var              # decimal (or default)
+	> (float) $4 = 1110027796
+	>
+	> (lldb) print/o my_var          # octal
+	> (float) $5 = 010212327024
+	>
+	> (lldb) p/t my_var              # binary
+	> (float) $6 = 0b01000010001010011010111000010100
+	> ```
+	>
+	> ##### (3) Investigate pointers
+	> ```shell
+	> e --ptr-depth 2 -- name                  # dereference pointers twice
+	> (char **) $7 = 0x00007ffeefbff510 {
+	>   *$7 = 0x00007ffeefbff750 "James" {         # <-- dereference #1
+	>     **$7 = 'J'                               # <-- dereference #2
+	>   }
+	> }
+	> ```
+	>
+	> ##### (4) Investigate aggregate variables, e.g. array pointers
+	> ```shell
+	> (lldb) e -element-count 6 -- av          # pretend there exist 6 elements [of type char*] and show them
+	> (char **) $8 = 0x00007ffeefbff510 {
+	>   (char *) [0] = 0x00007ffeefbff750 "/path/to/executable/a"
+	>   (char *) [1] = 0x00007ffeefbff750 "arg1"
+	>   (char *) [2] = 0x00007ffeefbff750 "arg2"
+	>   (char *) [3] = 0x0000000000000000
+	>   (char *) [4] = 0x00007ffeefbff783 "ARCHFLAGS=-arch E> x86_64 <3"
+	>   (char *) [5] = 0x00007ffeefbff79a "Apple_PubSub_Socket_Render=/not-so-private/tmp/com.apple.launchd.blablabla/Blender"
+	> }
+	> ```
+	> ##### (5) Assigning values to variables
+	> ```shell
+	> (lldb) e my_var
+	> (float) my_var = 0
+	> ...
+	>
+	> (lldb) e my_var = 42.42
+	> (float) $9 = 42.4199982
+	> ...
+	>
+	> (lldb) e my_var
+	> (float) my_var = 42.4199982
+	> ```
+	> ```shell
+	> (lldb) expr my_struct->a = my_array[3]
+	> ```
+	> ##### (6) Calling functions
+	> ```shell
+	> (lldb) expr (int) printf ("I have a pointer 0x%llx.\n", self)
+	> I have a pointer 0x0.
+	> $2 = (int) 22 # printf return value
+	> ```
 	>
 	> ```shell
 	> (lldb) expr -f b -- (index * 8) + 5
@@ -3864,6 +3962,7 @@ Contents
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help expression`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help print`
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help p`
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help po`
 > | 2 | Documentation | LLDB | [(Official) Tutorial :: Evaluating Expressions](https://lldb.llvm.org/use/map.html?highlight=watchpoints#evaluating-expressions)
