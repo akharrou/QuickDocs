@@ -3433,6 +3433,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> ```shell
 	> (float) my_var = 0
 	> ```
+	>
 	> ##### (2) " " in different formats
 	> ```shell
 	> (lldb) frame variable --format hex *my_ptr    # (lowercase) hexadecimal
@@ -3471,7 +3472,8 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> }
 	> ```
 	>
-	> ##### (4) Investigate aggregate variables, e.g. array pointers
+	> ##### (4) Investigate aggregate variables
+	> ###### (4.1) Peek at array pointers
 	> ```shell
 	> (lldb) frame variable --element-count 10 -- argv
 	> (lldb) fr v -Z 10 -- argv
@@ -3490,7 +3492,24 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>   (char *) [9] = 0x00007ffeefbff80e "COLORFGBG=15;0"
 	> }
 	> ```
-	> ##### (5) Show all *[local]* scope variables
+	> ###### (4.2) Show types in structures
+	> ```shell
+	> (lldb) frame variable --show-types -- var_limbs
+	> (lldb) fr v -T -- var_limbs
+	> ```
+	> ```shell
+	> (limbs_t) var_limbs = {
+	>   (int) eyes = 2
+	>   (int) nose = 1
+	>   (int) mouth = 2
+	>   (int) ears = 2
+	>   (int) arms = 2
+	>   (int) legs = 2
+	> }
+	> ```
+	>
+	> ##### (5) Show all variables
+	> ###### (5.1) Of local scope
 	> ```shell
 	> (lldb) frame variable
 	> (lldb) fr v
@@ -3505,23 +3524,54 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> (int) i = 0
 	> ```
 	>
-	> ##### (6) Show all variables of all scopes, with scope information
+	> ###### (5.2) Of all scopes, w/ scope and type information
 	> ```shell
-	> (lldb) frame variable --scope --show-globals
-	> (lldb) fr v -s -g
+	> (lldb) frame variable --show-globals --scope --show-types
+	> (lldb) fr v -g -s -t
 	> ```
 	> ```shell
 	> ARG: (int) ac = 1
 	> ARG: (char **) av = 0x00007ffeefbff598
 	> LOCAL: (char [6]) name = "James"
-	> LOCAL: (limbs_t) new = (eyes = 2, nose = 1, mouth = 2, ears = 2, arms = 2, legs = 2)
+	> LOCAL: (limbs_t) new = {
+	>   (int) eyes = 2
+	>   (int) nose = 1
+	>   (int) mouth = 2
+	>   (int) ears = 2
+	>   (int) arms = 2
+	>   (int) legs = 2
+	> }
 	> LOCAL: (int *) my_ptr = 0x00006020000000f0
 	> LOCAL: (float) my_var = 0
 	> LOCAL: (int) i = 0
-	> GLOBAL: (int) extern_global_age = 12
-	> GLOBAL: (int) file_global_new_age = 13
+	> GLOBAL: (int) eg_age = 12
+	> GLOBAL: (int) fg_new_age = 13
 	> ```
-
+	>
+	> ###### (5.2.1) In (lowercase) hexadecimal ; (see [Format Table](#format-table) for all formats)
+	> ```shell
+	> (lldb) frame variable --show-globals --scope --show-types --format hex
+	> (lldb) fr v -g -s -T -f x
+	> (lldb) fr v/x -g -s -T
+	> ```
+	> ```shell
+	> ARG: (int) ac = 0x00000001
+	> ARG: (char **) av = 0x00007ffeefbff598
+	> LOCAL: (char [6]) name = "James"
+	> LOCAL: (limbs_t) new = {
+	>   (int) eyes = 0x00000002
+	>   (int) nose = 0x00000001
+	>   (int) mouth = 0x00000002
+	>   (int) ears = 0x00000002
+	>   (int) arms = 0x00000002
+	>   (int) legs = 0x00000002
+	> }
+	> LOCAL: (int *) my_ptr = 0x00006020000000f0
+	> LOCAL: (float) my_var = 0x00000000
+	> LOCAL: (int) i = 0x00000000
+	> GLOBAL: (int) eg_age = 0x0000000c
+	> GLOBAL: (int) fg_new_age = 0x0000000d
+	> ```
 	> *<small>[**Note:***
 	>
 	> - *`LLDB` supports formatting the output with `GDB`'s shorthand notation: appending to the command a backslash followed by its format specifier (see [Format Table](#format-table) below), e.g.: `fr v/x` (hexadecimal), `fr v/o` (octal), `fr v/t` (binary), ...*
@@ -3752,11 +3802,6 @@ Contents
 	> | `--timeout <unsigned-integer>` | `-t`     | *Timeout value (in microseconds) <br> for running the expression.*
 	> | `--unwind-on-error <boolean>`  | `-u`     | *Clean up program state if the expression <br> causes a crash, or raises a signal.*
 	>
-	>
-	> ```shell
-	> (lldb) expr unsigned int $foo = 5
-	> (lldb) expr char c[] = \"foo\"; c[0]
-	> ```
 	> #### Single Line Expressions:
 	>
 	> ##### (1) Investigating non-aggregate variables
