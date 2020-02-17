@@ -3839,29 +3839,32 @@ Contents
 	>
 	> ##### (2) " " in different formats
 	> ```shell
-	> (lldb) e -f hex -- my_var        # (lowercase) hex format
+	> (lldb) expression --format hex -- my_var    # (lowercase) hex format
 	> (float) $1 = 0x4229ae14
 	>
-	> (lldb) e -f x -- my_var          # shorthand
+	> (lldb) e -f hex -- my_var                   # shorthand
+	> (float) $1 = 0x4229ae14
+	>
+	> (lldb) e -f x -- my_var                     # shorthand
 	> (float) $2 = 0x4229ae14
 	>
-	> (lldb) e/x -- my_var             # shorthand
+	> (lldb) e/x -- my_var                        # shorthand
 	> (float) $3 = 0x4225ae14
 	> ```
 	> ```shell
-	> (lldb) e/d my_var              # decimal (or default)
+	> (lldb) e/d my_var                           # decimal (or default)
 	> (float) $4 = 1110027796
 	>
-	> (lldb) print/o my_var          # octal
+	> (lldb) print/o my_var                       # octal
 	> (float) $5 = 010212327024
 	>
-	> (lldb) p/t my_var              # binary
+	> (lldb) p/t my_var                           # binary
 	> (float) $6 = 0b01000010001010011010111000010100
 	> ```
 	>
 	> ##### (3) Investigate pointers
 	> ```shell
-	> e --ptr-depth 2 -- name                  # dereference pointers twice
+	> e --ptr-depth 2 -- name                     # dereference pointers twice
 	> (char **) $7 = 0x00007ffeefbff510 {
 	>   *$7 = 0x00007ffeefbff750 "James" {         # <-- dereference #1
 	>     **$7 = 'J'                               # <-- dereference #2
