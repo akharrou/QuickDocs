@@ -900,7 +900,7 @@ Contents
 
 <br>
 
--	#### ***Set a breakpoint, on an *[instruction | line | function]* address:***
+-	#### ***Set a breakpoint, on an address:***
 
 	> <small>`[Search Tags: >braddresses >addressesbr >braddrs >addrsbr >brsaddresses >addressesbrs >brsaddrs >addrsbrs >brsetaddresses >addressesbrset >brsetaddrs >addrsbrset >breakpointsetaddresses  >addressesbreakpointset >breakpointsetaddrs  >addrsbreakpointset >braddresses >addressesbr >braddrs >addrsbr >brsaddresses >addressesbrs >brsaddrs >addrsbrs >brlocations >locationsbr >brloc >brlocs >locbr >locsbr >brslocations >locationsbrs >brsloc >brslocs >locbrs >locsbrs >brsetlocations >locationsbrset >brsetloc >brsetlocs >locbrset >locsbrset >breakpointsetlocations  >locationsbreakpointset >breakpointsetloc  >breakpointsetlocs  >locbreakpointset >locsbreakpointset >brlocations >locationsbr >brloc >brlocs >locbr >locsbr >brslocations >locationsbrs >brsloc >brslocs >locbrs >locsbrs >brinstructions >brsinstructions >brsetinstructions >breakpointsetinstructions >brinstructions >brsinstructions >brinsts >brsinsts >brsetinsts >breakpointsetinsts >brinsts >brsinsts]`</small>
 
@@ -3391,35 +3391,36 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 ---
 -	#### Print *(read)* variable(s):
 
-	> <small>`[Search Tags: >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay >variableprint >variablesprint >varsprint >varprint >printvariable >printvariables >printvars >printvar >variableread >variablesread >varsread >varread >variablerd >variablesrd >varsrd >varrd >readvariable >readvariables >readvars >readvar >rdvariable >rdvariables >rdvars >rdvar]`</small>
+	> <small>`[Search Tags: >frvariableexamine >frvariableexam >Frvars >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay >variableprint >variablesprint >varsprint >varprint >printvariable >printvariables >printvars >printvar >variableread >variablesread >varsread >varread >variablerd >variablesrd >varsrd >varrd >readvariable >readvariables >readvars >readvar >rdvariable >rdvariables >rdvars >rdvar]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> $> frame variable [-scarfglFL] -P <count> [<var-name>]
+	> $> frame variable [-scarfglFLZ] -P <count> [<var-name>]
 	> ```
 	>
 	> ***Options:***
-	> | Flag | Shortcut | Description
-	> | - | - | - |
-	> |                       |      |
-	> | `--regex`             | `-r` | *The <variable-name> argument for name lookups are regular expressions.*
-	> |                       |      |
-	> | **Format**            |      |
-	> | `--format <format>`   | `-f` | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). See [Format Table](#format-table) for all available formats.*
-	> |                       |      |
-	> | **More Information**  |      |
-    > | `--ptr-depth <count>` | `-P` | *Number of times pointer variables get dereferenced; <br> (default=0).*
-	> | `--scope`             | `-s` | *Show variable scope (`argument`, `local`, `global`, `static`).*
-	> | `--show-globals`      | `-g` | *Show *[static \| extern]* global variables.*
-	> | `--show-declaration`  | `-c` | *Show variable declaration line [, in source file].*
-    > | `--location`          | `-L` | *Show variable *[memory]* address.*
-	> |                       |      |
-	> | **Less Information**  |      |
-	> | `--flat`              | `-F` | *Omit [showing] variable type.*
-	> | `--no-locals`         | `-l` | *Omit [showing] local variables.*
-	> | `--no-args`           | `-a` | *Omit [showing] [function] argument variables.*
-	> |                       |      |
-	> | ...                   | ...  | *For more, see `(lldb) help frame variable`.*
+	> | Flag                      | Shortcut | Description
+	> | -                         | -        | - |
+	> |                           |          |
+	> | `--regex`                 | `-r`     | *The <variable-name> argument for name lookups are regular expressions.*
+	> |                           |          |
+	> | **Format**                |          |
+	> | `--format <format>`       | `-f`     | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). See [Format Table](#format-table) for all available formats.*
+	> |                           |          |
+	> | **More Information**      |          |
+	> | `--ptr-depth <count>`     | `-P`     | *Number of times pointer variables get dereferenced; <br> (default=0).*
+	> | `--element-count <count>` | `-Z`     | *Treat the result of the expression as if its type is an array <br> of this many values.*
+	> | `--scope`                 | `-s`     | *Show variable scope (`argument`, `local`, `global`, `static`).*
+	> | `--show-globals`          | `-g`     | *Show *[static \| extern]* global variables.*
+	> | `--show-declaration`      | `-c`     | *Show variable declaration line [, in source file].*
+	> | `--location`              | `-L`     | *Show variable *[memory]* address.*
+	> |                           |          |
+	> | **Less Information**      |          |
+	> | `--flat`                  | `-F`     | *Omit [showing] type information.*
+	> | `--no-locals`             | `-l`     | *Omit [showing] local variables.*
+	> | `--no-args`               | `-a`     | *Omit [showing] [function] argument variables.*
+	> |                           |          |
+	> | ...                       | ...      | *For more, see `(lldb) help frame variable`.*
 	>
 	> ***Example(s):***
 	>
@@ -3468,6 +3469,25 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> }
 	> LOCAL: (int *) userInputCount = 0x00006020000000f0 {
 	>   *userInputCount = 5
+	> }
+	> ```
+	> **(5)**
+	> ```shell
+	> (lldb) frame variable --element-count 10 -- av
+	> (lldb) fr v -Z 10 -- av
+	> ```
+	> ```shell
+	> (char **) av = 0x00007ffeefbff4e0 {
+	>   (char *) [0] = 0x00007ffeefbff740 "/path/to/execuable/a"
+	>   (char *) [1] = 0x00007ffeefbff773 "arg1"
+	>   (char *) [2] = 0x00007ffeefbff778 "arg2"
+	>   (char *) [3] = 0x00007ffeefbff77d "arg3"
+	>   (char *) [4] = 0x00007ffeefbff782 "arg4"
+	>   (char *) [5] = 0x0000000000000000
+	>   (char *) [6] = 0x00007ffeefbff787 "ARCHFLAGS=-arch x86_64"
+	>   (char *) [7] = 0x00007ffeefbff79e "Apple_PubSub_Socket_Render=/not/so/public/com.apple.launchd.jideoifwsl/Render"
+	>   (char *) [8] = 0x00007ffeefbff7ea "BASHRC=/path/to/file/.bashrc"
+	>   (char *) [9] = 0x00007ffeefbff80e "COLORFGBG=15;0"
 	> }
 	> ```
 
@@ -3655,6 +3675,8 @@ Contents
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help register read`
 > | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help register write`
 
+
+---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.8.6. Expressions
 <small>`[Search Tags: >exprexam >expressionexam >examexpression >exprexamine >expressionexamine >examineexpression >exprexamination >expressionexamination >examinationexpression >exprexaminating >expressionexaminating >examinatingexpression]`</small>
@@ -3670,146 +3692,111 @@ Contents
 
 	> ***Synopsis:***
 	> ```shell
-	> $> expression
+	> $> expression [-FLg] [-f <format>] [-P <count>] [-Z <count>] -- <expr>
+	> $> expression <expr>
 	> ```
+	>
+	> ***Abbreviations:***
 	> ```shell
-	> $> po <expr>       # expression -O -- <expr>
-	> $> p <expr>        # expression -- <expr>
+	> $> p <expr>        # Alias for: 'expression -- <expr>'
+	> $> po <expr>       # Alias for: 'expression -O -- <expr>'
 	> ```
 	>
 	> ***Options:***
-	> | Flag                             | Shortcut | Description
-	> | -                                | -        | - |
-	> |                                  |          |
-	> | `--regex`                        | `-r`     | *The <variable-name> argument for name lookups are regular expressions.*
-	> |                                  |          |
-	> | **Format**                       |          |
-	> | `--format <format>`              | `-f`     | *Specify a format (e.g. binary, hex, decimal) to be used for <br> display. See [Format Table](#format-table) for all available formats.*
-	> |                                  |          |
-	> | **More Information**             |          |
-	> | `--ptr-depth <count>`            | `-P`     | *Number of times pointer variables get dereferenced <br> (default is zero).*
-	> | `--scope`                        | `-s`     | *Show variable scope (argument, local, global, static).*
-	> | `--show-globals`                 | `-g`     | *Show [the current frame source file] global and static <br> variables.*
-	> | `--show-declaration`             | `-c`     | *Show variable declaration line [in source file].*
-	> | `--location`                     | `-L`     | *Show variable location information.*
-	> |                                  |          |
-	> | **Less Information**             |          |
-	> | `--raw-output`                   | `-R`     | *Don't use formatting options.*
-	> | `--flat`                         | `-F`     | *Omit [showing] variable type.*
-	> | `--no-locals`                    | `-l`     | *Omit [showing] local variables.*
-	> | `--no-args`                      | `-a`     | *Omit [showing] [function] argument variables.*
-	> |                                  |          |
-	> | `--ignore-breakpoints <boolean>` | `-i`     | *Ignore breakpoint hits while running expressions*
-	> | ...                              | ...      | *For more, see `(lldb) help frame variable`.*
+	> | Flag                           | Shortcut | Description
+	> | -                              | -        | -
+	> | **Format**                     |          |
+	> | `--format <format>`            | `-f`     | *Specify a display format (e.g. `hex` or `x`, <br> `decimal` or `d`, `binary` or `b`). <br> <br> See [Format Table](#format-table) for all available formats.*
+	> |                                |          |
+	> | **More Information**           |          |
+	> | `--ptr-depth <count>`          | `-P`     | *Number of times pointer variables get <br> dereferenced; (default=0).*
+	> | `--element-count <count>`      | `-Z`     | *Treat the result of the expression as if its <br> type is an array of this many values.*
+	> | `--location`                   | `-L`     | *Show variable location information.*
+	> |                                |          |
+	> | **Less Information**           |          |
+	> | `--flat`                       | `-F`     | *Omit *[showing]* type information.*
+	> |                                |          |
+	> | **Debug**                      |          |
+	> | `--debug`                      | `-g`     | *When specified, debug the JIT code by setting<br> a breakpoint on the first instruction and forcing <br> breakpoints to not be ignored (-i0) | and no unwinding to happen on error (-u0).*
+	> |                                |          |
+	> | **Other**                      |          |
+	> | `--timeout <unsigned-integer>` | `-t`     | *When specified, debug the JIT code by setting<br> a breakpoint on the first instruction and forcing <br> breakpoints to not be ignored (-i0) | and no unwinding to happen on error (-u0).*
+	> | `--unwind-on-error <boolean>`  | `-u`     | *Clean up program state if the expression causes <br> a crash, or raises a signal.*
 	>
-	> ***Example(s):*** <br>
+	> <br>
 	>
-	> (1)
+	> #### Single Line Expressions:
+	>
 	> ```shell
-	> (lldb) register read --all                             # Print (read) all registers.
-	> (lldb) re r -a
+	> (lldb) expr my_struct->a = my_array[3]
+	> (lldb) expr unsigned int $foo = 5
+	> (lldb) expr char c[] = \"foo\"; c[0]
 	> ```
-
-    Evaluate an expression on the current thread.  Displays any returned value with LLDB's default formatting.  Expects 'raw' input (see 'help
-     raw-input'.)
-
-Syntax:
-
-Command Options Usage:
-  expression [-FLOgp] [-f <format>] [-l <source-language>] [-X <boolean>] [-v[<description-verbosity>]] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
-  expression [-AFLORTgp] [-a <boolean>] [-i <boolean>] [-t <unsigned-integer>] [-u <boolean>] [-l <source-language>] [-X <boolean>] [-j <boolean>] [-d <none>] [-S <boolean>] [-D <count>] [-P <count>] [-Y[<count>]] [-V <boolean>] [-Z <count>] -- <expr>
-  expression <expr>
-
-| Flag                          | Shortcut                  | Description
-| -                             | -                         | -
-| `-F`                          | `--flat`                  | Display results in a flat format that uses <br> expression paths for each variable or member.
-| `-L`                          | `--location`              | Show variable location information.<br>
-| `-O`                          | `--object-description`    | Display using a language-specific description<br> API, if possible.
-| `-P <count>`                  | `--ptr-depth`             | The number of pointers to be traversed when<br> dumping values (default is zero).
-| `-V <boolean>`                | `--validate`              | Show results of type validators.
-| `-Z <count>`                  | `--element-count`         | Treat the result of the expression as if its<br> type is an array of this many values.
-| `-d <none>`                   | `--dynamic-type`          | Show the object as its full dynamic type, not<br> its static type, if available. | Values: no-dynamic-values | run-target | no-run-target
-| `-f <format>`                 | `--format`                | Specify a format to be used for display.
-| **More Information**          |                           |
-| `-v[<description-verbosity>]` | `--description-verbosity` | How verbose should the output of this <br> expression be, if the object description is asked <br> for. Values: `compact` \| `full` .
-| `-l <source-language>`        | `--language`              | Specifies the Language to use when parsing <br> the expression. If not set the `target.language` <br> setting is used.
-| **Less Information**          |                           |
-| `-p`                          | `--top-level`             | Interpret the expression as a complete <br> translation unit, without injecting it into the local <br> context. Allows declaration of | persistent, top-level entities without a $ prefix.
-| **Debug**                     |                           |
-| `-g`                          | `--debug`                 | When specified, debug the JIT code by setting<br> a breakpoint on the first instruction and forcing <br> breakpoints to not be ignored (-i0) | and no unwinding to happen on error (-u0).
-
-### Single Line Expressions
-
-```shell
-(lldb) expr my_struct->a = my_array[3]
-```
-```shell
-(lldb) expr unsigned int $foo = 5
-```
-```shell
-(lldb) expr char c[] = \"foo\"; c[0]
-```
-
-Because this command takes *'raw input'*, if you use any command options you must use '`--`' between the end of the command options and the beginning of the raw input:
-
-```shell
-(lldb) expr -f bin -- (index * 8) + 5
-```
-
-### Multi-Line Expressions
-
-```shell
-(lldb) expr *enter*
-Enter expressions, then terminate with an empty line to evaluate:
->
-> *enter*
-```
-
-### User Defined & Persistent Variables
-
-You can define your own variables for convenience or to be used in subsequent expressions.  You define them the same way you would define
-    variables in **C**.
-
-If the first character of your user defined variable is a '`$`', then the variable's value will be available in future
-    expressions, ...
-
-```shell
-(lldb) expr const char *$name = "John Doe";
-(lldb) expr $name
-(const char *) $name = 0x00000001032b9080 "John Doe"
-```
-
-```shell
-(lldb) expr int $status = 10;
-(lldb) expr $status
-(int) $status = 10
-```
-
-... otherwise it will just be available in the current expression.
-
-```shell
-(lldb) expr int status = 10; status + 1
-(int) $0 = 11
-```
-```shell
-(lldb) expr status
-error: use of undeclared identifier 'status'
-```
-
-The results of the expressions are stored in persistent variables (of the form `$[0-9]+`) that you can use in further expressions:
-
-```shell
-(lldb) expr 12
-(int) $1 = 12
-```
-```shell
-(lldb) expr $1 + 1
-(int) $2 = 13
-```
-```shell
-(lldb) expr $2 + $status
-(int) $3 = 23
-```
+	>
+	> Because this command takes *'`raw input`'*, if you use any command options you must use '`--`' between the end of the command options and the beginning of the raw input:
+	>
+	> ```shell
+	> (lldb) expr -f b -- (index * 8) + 5
+	> ```
+	>
+	> <br>
+	>
+	> #### Multi-Line Expressions:
+	>
+	> ```shell
+	> (lldb) expr *enter*
+	> Enter expressions, then terminate with an empty line to evaluate:
+	> >
+	> > *enter*
+	> ```
+	>
+	> <br>
+	>
+	> #### User Defined & Persistent Variables:
+	>
+	> You can define your own variables for convenience or to be used in subsequent expressions.  You define them the same way you would define
+	>     variables in **C**.
+	>
+	> If the first character of your user defined variable is a '`$`', then the variable's value will be available in future
+	>     expressions, ...
+	>
+	> ```shell
+	> (lldb) expr -- const char *$name = "John Doe";
+	> (lldb) expr -- $name
+	> (const char *) $name = 0x00000001032b9080 "John Doe"
+	> ```
+	>
+	> ```shell
+	> (lldb) expr -- int $status = 10;
+	> (lldb) expr -- $status
+	> (int) $status = 10
+	> ```
+	>
+	> ... otherwise it will just be available in the current expression.
+	>
+	> ```shell
+	> (lldb) expr -- int age = 10; age + 1;
+	> (int) $0 = 11
+	> ...
+	>
+	> (lldb) expr -- age
+	> error: use of undeclared identifier 'age'
+	> ```
+	>
+	> The results of the expressions are stored in persistent variables (of the form `$[0-9]+`) that you can use in further expressions:
+	>
+	> ```shell
+	> (lldb) expr 12
+	> (int) $1 = 12
+	> ...
+	>
+	> (lldb) expr $1 + 1
+	> (int) $2 = 13
+	> ...
+	>
+	> (lldb) expr $2 + $status
+	> (int) $3 = 23
+	> ```
 
 ### Debugging Expression
 
