@@ -3750,7 +3750,6 @@ Contents
 	>  1: for (int i = 0; i < ac; ++i)
 	>  2:     my_var += 1;
 	>  3: my_var;
-	>  4: *enter*
 	> (float) $1 = 5
 	> ```
 	>
