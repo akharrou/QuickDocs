@@ -3405,7 +3405,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> | `--regex`                 | `-r`     | *The <variable-name> argument for name lookups are regular expressions.*
 	> |                           |          |
 	> | **Format**                |          |
-	> | `--format <format>`       | `-f`     | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). See [Format Table](#format-table) for all available formats.*
+	> | `--format <format>`       | `-f`     | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). <br> <br> See [Format Table](#format-table) for all.*
 	> |                           |          |
 	> | **More Information**      |          |
 	> | `--ptr-depth <count>`     | `-P`     | *Number of times pointer variables get dereferenced; <br> (default=0).*
@@ -3498,7 +3498,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> -	*To obtain a table of the available formats, type: `(lldb) frame variable --format ?`*
 	>
 	>	### Format Table:
-	>	| Word | Shorthand | Gdb Shorthand
+	>	| Full [Word] | Shorthand | *[Supported]* `GDB` Shorthand
 	>	| - | - | - |
 	>	| `default` | - | -
 	>	| `boolean` | `B` | -
@@ -3582,7 +3582,7 @@ Contents
 	> | - | - | - |
 	> |                     |      |
     > | `--all`             | `-a` | *Show all register sets.*
-    > | `--format <format>` | `-f` | *Specify a format to be used for display. See [Format Table](#format-table) for all <br> available formats.*
+    > | `--format <format>` | `-f` | *Specify a format to be used for display. <br> <br> See [Format Table](#format-table) for all available formats.*
     > | `--set <index>`     | `-s` | *Specify which register sets to dump by index.*
 	>
 	> ***Example(s):*** <br>
@@ -3684,8 +3684,6 @@ Contents
 <br>
 
 
-> TODO: ### 3.8.6. Expressions
-
 -	#### Evaluate expressions:
 
 	> <small>`[Search Tags: >exprcompt >expressioncompt >comptexpression >exprcompute >expressioncompute >computeexpression >exprcomputation >expressioncomputation >computationexpression >exprcomputing >expressioncomputing >computingexpression >expreval >expressioneval >evalexpression >exprevaluate >expressionevaluate >evaluateexpression >exprevaluation >expressionevaluation >evaluationexpression >exprevaluating >expressionevaluating >evaluatingexpression]`</small>
@@ -3708,7 +3706,7 @@ Contents
 	> | -                              | -        | -
 	> |                                |          |
 	> | **Format**                     |          |
-	> | `--format <format>`            | `-f`     | *Specify a display format (e.g. `hex` <br> or `x`, `decimal` or `d`, `binary` or `b`). <br> <br> See [Format Table](#format-table) for all available formats.*
+	> | `--format <format>`            | `-f`     | *Specify a display format (e.g. `hex` <br> or `x`, `decimal` or `d`, `binary` or `b`). <br> <br> See [Format Table](#format-table) for all.*
 	> |                                |          |
 	> | **More Information**           |          |
 	> | `--ptr-depth <count>`          | `-P`     | *Number of times pointer variables get <br> dereferenced; (default=0).*
@@ -3719,7 +3717,7 @@ Contents
 	> | `--flat`                       | `-F`     | *Omit *[showing]* type information.*
 	> |                                |          |
 	> | **Other**                      |          |
-	> | `--debug`                      | `-g`     | *Debug the expression in a seperate stack frame.*
+	> | `--debug`                      | `-g`     | *Debug the expression in a seperate process.*
 	> | `--timeout <unsigned-integer>` | `-t`     | *Timeout value (in microseconds) <br> for running the expression.*
 	> | `--unwind-on-error <boolean>`  | `-u`     | *Clean up program state if the expression <br> causes a crash, or raises a signal.*
 	>
@@ -3742,16 +3740,7 @@ Contents
 	> (lldb) expr -f b -- (index * 8) + 5
 	> ```
 	>
-	> #### Multi-Line Expressions:
-	>
-	> ```shell
-	> (lldb) expr -- *enter*
-	> Enter expressions, then terminate with an empty line to evaluate:
-	>  1: for (int i = 0; i < ac; ++i)
-	>  2:     my_var += 1;
-	>  3: my_var;
-	> (float) $1 = 5
-	> ```
+	> > *PS: Multi-line expressions below.*
 	>
 	> #### User Defined & Persistent Variables:
 	>
@@ -3798,6 +3787,73 @@ Contents
 	> (lldb) expr $2 + $status
 	> (int) $3 = 23
 	> ```
+	>
+	> #### Multi-Line Expressions:
+	>
+	> ```shell
+	> (lldb) expression
+	> ```
+	> ```shell
+	> Enter expressions, then terminate with an empty line to evaluate:
+	>   1: for (int i = 0; i < ac; ++i)
+	>   2:     my_var += 1;
+	>   3: if (test_0(my_var) &&
+	>   4:     test_1(my_var) &&
+	>   5:     test_2(my_var) &&
+	>   6:     test_3(my_var) &&
+	>   7:     test_4(my_var))
+	>   8: {
+	>   9:     (int) printf ("my_var: %f -- Valid\n", my_var);
+	>  10: }
+	>  11: else
+	>  12: {
+	>  13:     (int) printf ("my_var: %f -- Invalid\n", my_var);
+	>  14: }
+	> ```
+	>
+	> #### Debugging Expressions:
+	>
+	> By adding the `--debug` (`-g`) flag to the `expression` command, you can debug the code on a seperate process:
+	>
+	> ```shell
+	> (lldb) expression -g --
+	> ```
+	> ```shell
+	> Execution was halted at the first instruction of the expression function because "debug" was requested.
+	> Use "thread return -x" to return to the state before expression evaluation.
+	> Process 36351 stopped
+	> * thread #1, queue = 'com.apple.main-thread', stop reason = signal 2147483647
+	>     frame #0: 0x00000001032ba0d0 $__lldb_expr2`$__lldb_expr($__lldb_arg=0x0000000000000000) at expr2-cd40c4..cpp:42
+	>    39
+	>    40  	void
+	>    41  	$__lldb_expr(void *$__lldb_arg)
+	> -> 42  	{
+	>    43  	    ;
+	>    44  	    /*LLDB_BODY_START*/
+	>    45  	    for (int i = 0; i < ac; ++i)
+	> Target 1: (a) stopped.
+	> (lldb) l
+	>    46  	    my_var += 1;
+	>    47  	if (my_var == 0 ||
+	>    48  	    my_var == 1 ||
+	>    49  	    my_var == 2 ||
+	>    50  	    my_var == 3 ||
+	>    51  	    my_var == 4)
+	>    52  	{
+	> (lldb)
+	>    53  	    (int) printf ("my_var: %f -- Valid\n", my_var);
+	>    54  	}
+	>    55  	else
+	>    56  	{
+	>    57  	    (int) printf ("my_var: %f -- Invalid\n", my_var);
+	>    58  	};
+	>    59  	    /*LLDB_BODY_END*/
+	> (lldb)
+	>    60  	}
+	>    61
+	> ```
+	>
+	> To terminate the `expression` process *[prematurely]*, use: `(lldb) thread return` –– and not `(lldb) process kill` as that would terminate the main process instead.
 
 
 <br>
