@@ -2728,11 +2728,14 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 
 | Command | Description
 | :------ | :---------------------------------------------------------
-| `$>`**`run`**``  | **Continue until** a break/watch-point is hit or end of <br> process.
+| `$>`**`process launch`** <br> `$>`**`run`** <br> `$>`**`r`** | **Begin program execution**.
 ||
-| `$>`**`continue`**  | **Continue until** a break/watch-point is hit or end of <br> process.
-| `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` or <br> until a function returns [, in the current or specified frame <br> in the current or specified thread].
-| `$> thread`**`jump`**`-l <line-num> [-f <filename>]` <br> `$> thread`**`jump`**`-b <line-offset>` <br> `$> thread`**`jump`**`-a <address-expression>` | **Jump to** a subsequent line/instruction; i.e sets the program <br> counter to a new address.
+| `$>`**`process continue`** <br> `$>`**`continue`** <br> `$>`**`c`** | **Continue execution** of *[all current threads]* *[until a <br> break/watch-point is hit or end of]* **process**.
+| `$>`**`thread continue`** | Same as **`process continue`** except: **One or more <br> threads may be specified**, by default all threads <br> continue.
+||
+| `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` <br> or until a function returns [, in the current or specified <br> frame in the current or specified thread].
+||
+| `$> thread`**`jump`**`-l <line-num> [-f <filename>]` <br> `$> thread`**`jump`**`-b <line-offset>` <br> `$> thread`**`jump`**`-a <address-expression>` <br> `$>`**`_regexp-jump`**`<line-num>` <br> `$>`**`_regexp-jump`**`<negative-offset>` <br> <br> Aliases for `_regexp-jump`: <br> `$> jump` <br> `$> j` | **Jump to** a *[prior or subsequent]* line/instruction; i.e set <br> the program counter to a new address.
 ||
 | `$> thread`**`step-over`** <br> `$> next` <br> `$> n` | *[Execute and]* **Step over** the current line. Defaults to the <br> current thread unless specified.
 | `$> thread`**`step-in`** <br> `$> step` <br> `$> s` | **Step into** *(investigate)* *[function]* calls. Defaults to current <br> thread unless specified.
@@ -2745,12 +2748,17 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 
 > *<small>[**Note:***
 >
-> -	For *[assembly]* **instructions**, the step in/out commands are slightly different;
+> -	*For *[assembly]* **instructions**, the step in/out commands are slightly different;*
 >
 > 	| Command | Description
 > 	| ------- | ---------------------------------------------------------
 > 	| `(lldb) thread step-inst-over` <br> `(lldb) ni` | Perform a single *[nstruction* **step over**.
 > 	| `(lldb) thread step-inst` <br> `(lldb) si` | Perform a single *[nstruction* **step in**.
+>
+> -	*`_regexp-jump` and its alias `jump` cannot take addresses as arguments, only relative lines.*
+>
+> (lldb) jump [<line-num>]
+> (lldb) jump [<backward-offset>]
 >
 > *- **end note**]</small>*
 
@@ -3966,14 +3974,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 - #### `_regexp-attach`:
-
-	> ***Synopsis***:
-	>
-	>
-	> ***Example(s)***:
-	>
-
-- #### `_regexp-jump`:
 
 	> ***Synopsis***:
 	>
