@@ -2750,7 +2750,7 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 ||
 | `$> thread`**`return`**`[<value>]` | *[Prematurely]* **Return** from a stack frame *(function)*, <br> optionally yielding a specified value *(else an undefined <br> value)*.
 ||
-| `$>`**`kill`** | **Terminate** the current target process.
+| `$>`**`kill`** | **Terminate program execution**.
 | `$>`**`detach`** | **Detach** from the current target process.
 
 
