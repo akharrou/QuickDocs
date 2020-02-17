@@ -2730,7 +2730,7 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 
 > <small>`[Search Tags: >ctrltable >controltable >ctrlcmdstable >controlcmdstable >ctrlcmdtable >controlcmdtable]`</small>
 
-|  | |
+| | |
 | :------ | :---------------------------------------------------------
 | `$>`**`process launch`** <br> `$>`**`run`** <br> `$>`**`r`** | **Begin program execution**.
 ||
@@ -2745,26 +2745,13 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 | `$> thread`**`step-in`** <br> `$> step` <br> `$> s` | **Step into** *(investigate)* *[function]* calls. Defaults to current <br> thread unless specified.
 | `$> thread`**`step-out`** <br> `$> finish` | **Step out** of the currently selected frame *(i.e function call)*. <br> Defaults to current thread unless specified.
 ||
+| `$> thread`**`step-inst-over`** <br> `$> ni` | Perform a single *[[assembly] instruction]* **step over**.
+| `$> thread`**`step-inst`** <br> `$> stepi` <br> `$> si` | Perform a single *[[assembly] instruction]* **step in**.
+||
 | `$> thread`**`return`**`[<value>]` | *[Prematurely]* **Return** from a stack frame *(function)*, <br> optionally yielding a specified value *(else an undefined <br> value)*.
 ||
-| `$>`**`kill`**      | **Terminate** the current target process.
-| `$>`**`detach`**    | **Detach** from the current target process.
-
-> *<small>[**Note:***
->
-> -	*For *[assembly]* **instructions**, the step in/out commands are slightly different;*
->
-> 	| Command | Description
-> 	| ------- | ---------------------------------------------------------
-> 	| `(lldb) thread step-inst-over` <br> `(lldb) ni` | Perform a single *[nstruction* **step over**.
-> 	| `(lldb) thread step-inst` <br> `(lldb) si` | Perform a single *[nstruction* **step in**.
->
-> -	*`_regexp-jump` and its alias `jump` cannot take addresses as arguments, only relative lines.*
->
-> (lldb) jump [<line-num>]
-> (lldb) jump [<backward-offset>]
->
-> *- **end note**]</small>*
+| `$>`**`kill`** | **Terminate** the current target process.
+| `$>`**`detach`** | **Detach** from the current target process.
 
 
 <br>
@@ -2776,20 +2763,34 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 > | - | ------------------ | ---------------- | --------------------------
 > | 1 | Documentation | LLDB | [(Official) Tutorial \| GDB to LLDB command map](https://lldb.llvm.org/use/map.html)
 > |||
-> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) process launch`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) run`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) r`
 > |||
-> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help continue`
-> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread until`
+> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help process continue`
+> | 6 | Manual Page | Unix / Linux / MacOS | `(lldb) help continue`
+> | 7 | Manual Page | Unix / Linux / MacOS | `(lldb) help c`
 > |||
-> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-in`
-> | 6 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-out`
-> | 7 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-over`
+> | 8 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread continue`
 > |||
-> | 8 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-inst`
-> | 9 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread stepi-inst-over`
+> | 9 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread until`
 > |||
-> | 10 | Manual Page | Unix / Linux / MacOS | `(lldb) help kill`
-> | 11 | Manual Page | Unix / Linux / MacOS | `(lldb) help detach`
+> | 10 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread jump`
+> | 11 | Manual Page | Unix / Linux / MacOS | `(lldb) help _regexp-jump`
+> | 12 | Manual Page | Unix / Linux / MacOS | `(lldb) help jump`
+> | 13 | Manual Page | Unix / Linux / MacOS | `(lldb) help j`
+> |||
+> | 14 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-in`
+> | 15 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-out`
+> | 16 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-over`
+> |||
+> | 17 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread return`
+> |||
+> | 18 | Manual Page | Unix / Linux / MacOS | `(lldb) help kill`
+> | 19 | Manual Page | Unix / Linux / MacOS | `(lldb) help detach`
+> |||
+> | 20 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread step-inst`
+> | 21 | Manual Page | Unix / Linux / MacOS | `(lldb) help thread stepi-inst-over`
 
 
 ---
