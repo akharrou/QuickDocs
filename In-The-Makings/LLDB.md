@@ -3698,8 +3698,9 @@ Contents
 	>
 	> ***Abbreviations:***
 	> ```shell
-	> $> p <expr>        # Alias for: 'expression -- <expr>'
-	> $> po <expr>       # Alias for: 'expression -O -- <expr>'
+	> $> print <expr>    # Alias for: 'expression --'
+	> $> p <expr>        # Alias for: 'expression --'
+	> $> po <expr>       # Alias for: 'expression -O --'
 	> ```
 	>
 	> ***Options:***
@@ -3718,11 +3719,9 @@ Contents
 	> | `--flat`                       | `-F`     | *Omit *[showing]* type information.*
 	> |                                |          |
 	> | **Other**                      |          |
-	> | `--debug`                      | `-g`     | *Debug the JIT code.*
+	> | `--debug`                      | `-g`     | *Debug the expression in a seperate stack frame.*
 	> | `--timeout <unsigned-integer>` | `-t`     | *Timeout value (in microseconds) <br> for running the expression.*
 	> | `--unwind-on-error <boolean>`  | `-u`     | *Clean up program state if the expression <br> causes a crash, or raises a signal.*
-	>
-	> <br>
 	>
 	> #### Single Line Expressions:
 	>
@@ -3730,6 +3729,11 @@ Contents
 	> (lldb) expr my_struct->a = my_array[3]
 	> (lldb) expr unsigned int $foo = 5
 	> (lldb) expr char c[] = \"foo\"; c[0]
+	> ```
+	> ```shell
+	> (lldb) expr (int) printf ("I have a pointer 0x%llx.\n", self)
+	> $2 = (int) 22
+	> I have a pointer 0x0.
 	> ```
 	>
 	> Because this command takes *'`raw input`'*, if you use any command options you must use '`--`' between the end of the command options and the beginning of the raw input:
@@ -3741,10 +3745,13 @@ Contents
 	> #### Multi-Line Expressions:
 	>
 	> ```shell
-	> (lldb) expr *enter*
+	> (lldb) expr -- *enter*
 	> Enter expressions, then terminate with an empty line to evaluate:
-	> >
-	> > *enter*
+	>  1: for (int i = 0; i < ac; ++i)
+	>  2:     my_var += 1;
+	>  3: my_var;
+	>  4: *enter*
+	> (float) $1 = 5
 	> ```
 	>
 	> #### User Defined & Persistent Variables:
@@ -3793,37 +3800,6 @@ Contents
 	> (int) $3 = 23
 	> ```
 
-### Debugging Expression
-
-The expression
-
-
-
-Examples:
-
-    expr my_struct->a = my_array[3]
-    expr -f bin -- (index * 8) + 5
-    expr unsigned int $foo = 5
-    expr char c[] = \"foo\"; c[0]
-
-     Important Note: Because this command takes 'raw' input, if you use any command options you must use ' -- ' between the end of the command
-     options and the beginning of the raw input.
-
-
-
-Executing Alternative Code
-Expressions can also be used to call functions, as in this example:
-
-(lldb) expr (int) printf ("I have a pointer 0x%llx.\n", self)
-$2 = (int) 22
-I have a pointer 0x0.
-
-The expression command is one of the raw commands. As a result, you don’t have to quote your whole expression, or backslash protect quotes, and so forth.
-
-The results of the expressions are stored in persistent variables (of the form $[0-9]+) that you can use in further expressions, such as:
-The results of the expressions are stored in persistent variables (of the form $[0-9]+) that you can use in further expressions, such as:
-
-
 
 <br>
 <br>
@@ -3832,7 +3808,11 @@ The results of the expressions are stored in persistent variables (of the form $
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help expression`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help p`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help po`
+> | 2 | Documentation | LLDB | [(Official) Tutorial :: Evaluating Expressions](https://lldb.llvm.org/use/map.html?highlight=watchpoints#evaluating-expressions)
+> | 3 | Documentation | Apple | [LLDB Tutorial :: Evaluating Alternative Code](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW10)
 
 
 ---
