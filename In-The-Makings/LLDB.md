@@ -527,18 +527,27 @@ The following link below, suggests a `Makefile` *[template]* that hopefully can 
 ---
 [🏠](#contents) | [⬅️](#312-sanitizer-flags--fsanitize-family) | [➡️](#33-load-lldb)
 ## 3.2. Run LLDB
-<small>`[Search Tags: >lldb.run >debugger.run >lldbrun >debuggerrun >run.lldb >run.debugger >runlldb >rundebugger]`</small>
+<small>`[Search Tags: >lldb.run >debugger.run >lldbrun >debuggerrun >run.lldb >run.debugger >runlldb >rundebugger >run lldb >exit lldb >quit lldb >lldbexit >exitlldb >lldbquit >quitlldb >lldbterminate >terminatelldb >lldbstop >stoplldb >lldb.exit >lldb.quit >lldb.terminate >lldb.stop >debuggerexit >exitdebugger >debuggerquit >quitdebugger >debuggerterminate >terminatedebugger >debuggerstop >stopdebugger >debugger.exit >debugger.quit >debugger.terminate >debugger.stop]`</small>
 <br>
 <br>
 
 
-Run the `lldb` debugger *[program]* by typing *[in your command prompt]*:
+- Run the `lldb` debugger *[program]* by typing *[in your command prompt]*:
 
->
-> ```shell
-> $> lldb
-> (lldb)
-> ```
+	>
+	> ```shell
+	> $> lldb
+	> (lldb)
+	> ```
+
+- Quit the `lldb` debugger *[program]* by typing any of the following *[in your command prompt]*:
+
+	> ```shell
+	> (lldb) quit
+	> (lldb) q
+	> (lldb) exit
+	> (lldb) exi
+	> ```
 
 
 <br>
@@ -2724,34 +2733,34 @@ The following section will layout the **`lldb` prompt commands** offered to cont
 
 ## Control commands:
 
-<small>`[Search Tags: >steps >progsteps >threadcontinue >processcontinue >continuethread >continueprocess >contthread >contprocess >untilthread >threaduntil >untilprocess >process until >untilline >lineuntil >untiloperation >operationuntil >untilinstruction >instructionuntil >untiladdress >addressuntil >untillocation >locationuntil >untilevent >eventuntil >untilterminate >terminateuntil >untilreturn >returnuntil >stepinthreads >threadstepin >stepinprocesses >processstepin >stepinprogram >stepinfunction >functionstepin >funcstepin >stepinframe >stepinstackframe >stackframestepin >framestepin >stpinthreads >threadstpin >stpinprocesses >processstpin >stpinprogram >stpinfunction >functionstpin >funcstpin >stpinframe >stpinstackframe >stackframestpin >framestpin >sinthreads >threadsin >sinprocesses >processsin >sinprogram >sinfunction >functionsin >funcsin >sinframe >sinstackframe >stackframesin >framesin >inthreads >threadin >inprocesses >processin >inprogram >infunction >functionin >funcin >inframe >instackframe >stackframein >framein >stepoverthreads >threadstepover >stepoverprocesses >processstepover >stepoverprogram >stepoverfunction >functionstepover >funcstepover >stepoverframe >stepoverstackframe >stackframestepover >framestepover >stpoverthreads >threadstpover >stpoverprocesses >processstpover >stpoverprogram >stpoverfunction >functionstpover >funcstpover >stpoverframe >stpoverstackframe >framestpover >soverthreads >threadsover >soverprocesses >processsover >soverprogram >soverfunction >functionsover >funcsover >soverframe >soverstackframe >stackframesover >framesover >overthreads >threadover >overprocesses >processover >overprogram >overfunction >functionover >funcover >overframe >overstackframe >stackframeover >frameover >stepoutthreads >threadstepout >stepoutprocesses >processstepout >stepoutprogram >stepoutfunction >functionstepout >funcstepout >stepoutframe >stepoutstackframe >stackframestepout >framestepout >stpoutthreads >threadstpout >stpoutprocesses >processstpout >stpoutprogram >stpoutfunction >functionstpout >funcstpout >stpoutframe >stpoutstackframe >stackframestpout >framestpout >soutthreads >threadsout >soutprocesses >processsout >soutprogram >soutfunction >functionsout >funcsout >soutframe >soutstackframe >stackframesout >framesout >outthreads >threadout >outprocesses >processout >outprogram >outfunction >functionout >funcout >outframe >outstackframe >stackframeout >frameout >returnframe >framereturn >returnfunction >functionreturn >returnthread >threadreturn >returnprocess >processreturn >returnprogram >programreturn >retframe >retfunction >retthread >retprocess >retprogram >killprogram >endprogram >terminateprogram >finishprogram >stopprogram >programkill >programend >programterminate >programfinish >programstop >killprocess >endprocess >terminateprocess >finishprocess >stopprocess >processkill >processend >processterminate >processfinish >processstop >killexecutable >endexecutable >terminateexecutable >finishexecutable >stopexecutable >executablekill >executableend >executableterminate >executablefinish >executablestop >killthread >endthread >terminatethread >finishthread >stopthread >threadkill >threadend >threadterminate >threadfinish >threadstop >killfunction >endfunction >terminatefunction >finishfunction >stopfunction >functionkill >functionend >functionterminate >functionfinish >functionstop >killframe >endframe >terminateframe >finishframe >stopframe >framekill >frameend >frameterminate >framefinish >framestop >detachprogram >unbindprogram >programdetach >programunbind >detachprocess >unbindprocess >processdetach >processunbind >detachexecutable >unbindexecutable >executabledetach >executableunbind >detachthread >unbindthread >threaddetach >threadunbind >detachfunction >unbindfunction >functiondetach >functionunbind >detachframe >unbindframe >framedetach >frameunbind >ctrlcommands >controlcommands >cntrlcommands >ctrlcmds >controlcmds >cntrlcmds >commandsctrl >commandscontrol >commandscntrl >cmdsctrl >cmdscontrol >cmdscntrl >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >until >cmduntil >untilcmd >commanduntil >untilcommand >step >cmdstep >stepcmd >commandstep >stepcommand >stepin >stepout >stepover >cmdstepin >cmdstepout >cmdstepover >stepincmd >stepoutcmd >stepovercmd >commandstepin >commandstepout >commandstepover >stepincommand >stepoutcommand >stepovercommand >kill >cmdkill >killcmd >commandkill >killcommand >detach >cmddetach >detachcmd >commanddetach >detachcommand >rununtilthread >execuntilthread >executeuntilthread >continueuntilthread >rununtilprocess >execuntilprocess >executeuntilprocess >continueuntilprocess >rununtilline >execuntilline >executeuntilline >continueuntilline >rununtiloperation >execuntiloperation >executeuntiloperation >continueuntiloperation >rununtilinstruction >execuntilinstruction >executeuntilinstruction >continueuntilinstruction >rununtiladdress >execuntiladdress >executeuntiladdress >continueuntiladdress >rununtillocation >execuntillocation >executeuntillocation >continueuntillocation >rununtilevent >execuntilevent >executeuntilevent >continueuntilevent >rununtilterminate >execuntilterminate >executeuntilterminate >continueuntilterminate >rununtilreturn >execuntilreturn >executeuntilreturn >continueuntilreturn >rununtil >execuntil >executeuntil >continueuntil >rununtilcmd >execuntilcmd >executeuntilcmd >continueuntilcmd >rununtilcommand >execuntilcommand >executeuntilcommand >continueuntilcommand >jumpto >tojump >jumpin >injump >jumpout >outjump >jumplines >linejump >jumpinstructions >instructionjump >jumpoperations >operationjump >jumptolines >tolinejump >jumptoinstructions >toinstructionjump >jumptooperations >tooperationjump >jumpthreads >threadjump >jumpprocesses >processjump >jumpprograms >programjump >jumpuntillines >jumpuntilops >jumpuntiloperations >jumpuntilinstructions >jumptilllines >jumptillops >jumptilloperations >jumptillinstructions]`</small>
+<small>`[Search Tags: >steps >progsteps >threadcontinue >processcontinue >continuethread >continueprocess >contthread >contprocess >untilthread >threaduntil >untilprocess >process until >untilline >lineuntil >untiloperation >operationuntil >untilinstruction >instructionuntil >untiladdress >addressuntil >untillocation >locationuntil >untilevent >eventuntil >untilterminate >terminateuntil >untilreturn >returnuntil >stepinthreads >threadstepin >stepinprocesses >processstepin >stepinprogram >stepinfunction >functionstepin >funcstepin >stepinframe >stepinstackframe >stackframestepin >framestepin >stpinthreads >threadstpin >stpinprocesses >processstpin >stpinprogram >stpinfunction >functionstpin >funcstpin >stpinframe >stpinstackframe >stackframestpin >framestpin >sinthreads >threadsin >sinprocesses >processsin >sinprogram >sinfunction >functionsin >funcsin >sinframe >sinstackframe >stackframesin >framesin >inthreads >threadin >inprocesses >processin >inprogram >infunction >functionin >funcin >inframe >instackframe >stackframein >framein >stepoverthreads >threadstepover >stepoverprocesses >processstepover >stepoverprogram >stepoverfunction >functionstepover >funcstepover >stepoverframe >stepoverstackframe >stackframestepover >framestepover >stpoverthreads >threadstpover >stpoverprocesses >processstpover >stpoverprogram >stpoverfunction >functionstpover >funcstpover >stpoverframe >stpoverstackframe >framestpover >soverthreads >threadsover >soverprocesses >processsover >soverprogram >soverfunction >functionsover >funcsover >soverframe >soverstackframe >stackframesover >framesover >overthreads >threadover >overprocesses >processover >overprogram >overfunction >functionover >funcover >overframe >overstackframe >stackframeover >frameover >stepoutthreads >threadstepout >stepoutprocesses >processstepout >stepoutprogram >stepoutfunction >functionstepout >funcstepout >stepoutframe >stepoutstackframe >stackframestepout >framestepout >stpoutthreads >threadstpout >stpoutprocesses >processstpout >stpoutprogram >stpoutfunction >functionstpout >funcstpout >stpoutframe >stpoutstackframe >stackframestpout >framestpout >soutthreads >threadsout >soutprocesses >processsout >soutprogram >soutfunction >functionsout >funcsout >soutframe >soutstackframe >stackframesout >framesout >outthreads >threadout >outprocesses >processout >outprogram >outfunction >functionout >funcout >outframe >outstackframe >stackframeout >frameout >returnframe >framereturn >returnfunction >functionreturn >returnthread >threadreturn >returnprocess >processreturn >returnprogram >programreturn >retframe >retfunction >retthread >retprocess >retprogram >killprogram >endprogram >terminateprogram >finishprogram >stopprogram >programkill >programend >programterminate >programfinish >programstop >killprocess >endprocess >terminateprocess >finishprocess >stopprocess >processkill >processend >processterminate >processfinish >processstop >killexecutable >endexecutable >terminateexecutable >finishexecutable >stopexecutable >executablekill >executableend >executableterminate >executablefinish >executablestop >killthread >endthread >terminatethread >finishthread >stopthread >threadkill >threadend >threadterminate >threadfinish >threadstop >killfunction >endfunction >terminatefunction >finishfunction >stopfunction >functionkill >functionend >functionterminate >functionfinish >functionstop >killframe >endframe >terminateframe >finishframe >stopframe >framekill >frameend >frameterminate >framefinish >framestop >detachprogram >unbindprogram >programdetach >programunbind >detachprocess >unbindprocess >processdetach >processunbind >detachexecutable >unbindexecutable >executabledetach >executableunbind >detachthread >unbindthread >threaddetach >threadunbind >detachfunction >unbindfunction >functiondetach >functionunbind >detachframe >unbindframe >framedetach >frameunbind >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >continue >cmdcontinue >continuecmd >commandcontinue >continuecommand >until >cmduntil >untilcmd >commanduntil >untilcommand >step >cmdstep >stepcmd >commandstep >stepcommand >stepin >stepout >stepover >cmdstepin >cmdstepout >cmdstepover >stepincmd >stepoutcmd >stepovercmd >commandstepin >commandstepout >commandstepover >stepincommand >stepoutcommand >stepovercommand >kill >cmdkill >killcmd >commandkill >killcommand >detach >cmddetach >detachcmd >commanddetach >detachcommand >rununtilthread >execuntilthread >executeuntilthread >continueuntilthread >rununtilprocess >execuntilprocess >executeuntilprocess >continueuntilprocess >rununtilline >execuntilline >executeuntilline >continueuntilline >rununtiloperation >execuntiloperation >executeuntiloperation >continueuntiloperation >rununtilinstruction >execuntilinstruction >executeuntilinstruction >continueuntilinstruction >rununtiladdress >execuntiladdress >executeuntiladdress >continueuntiladdress >rununtillocation >execuntillocation >executeuntillocation >continueuntillocation >rununtilevent >execuntilevent >executeuntilevent >continueuntilevent >rununtilterminate >execuntilterminate >executeuntilterminate >continueuntilterminate >rununtilreturn >execuntilreturn >executeuntilreturn >continueuntilreturn >rununtil >execuntil >executeuntil >continueuntil >rununtilcmd >execuntilcmd >executeuntilcmd >continueuntilcmd >rununtilcommand >execuntilcommand >executeuntilcommand >continueuntilcommand >jumpto >tojump >jumpin >injump >jumpout >outjump >jumplines >linejump >jumpinstructions >instructionjump >jumpoperations >operationjump >jumptolines >tolinejump >jumptoinstructions >toinstructionjump >jumptooperations >tooperationjump >jumpthreads >threadjump >jumpprocesses >processjump >jumpprograms >programjump >jumpuntillines >jumpuntilops >jumpuntiloperations >jumpuntilinstructions >jumptilllines >jumptillops >jumptilloperations >jumptillinstructions]`</small>
 
 ### Control Commands Table:
 
-> <small>`[Search Tags: >ctrltable >controltable >ctrlcmdstable >controlcmdstable >ctrlcmdtable >controlcmdtable]`</small>
+> <small>`[Search Tags: >ctrltable >controltable >ctrlcmdstable >controlcmdstable >ctrlcmdtable >controlcmdtable  >ctrlcommands >controlcommands >cntrlcommands >ctrlcmds >controlcmds >cntrlcmds >commandsctrl >commandscontrol >commandscntrl >cmdsctrl >cmdscontrol >cmdscntrl]`</small>
 
 | | |
 | :------ | :---------------------------------------------------------
-| `$>`**`process launch`** <br> `$>`**`run`** <br> `$>`**`r`** | **Begin program execution**.
+| `$> process launch` <br> `$> run` <br> `$> r`  | **Begin program execution**.
 ||
-| `$>`**`process continue`** <br> `$>`**`continue`** <br> `$>`**`c`** | **Continue execution** of *[all current threads]* *[until a <br> break/watch-point is hit or end of]* **process**.
-| `$>`**`thread continue`** | Same as **`process continue`** except: **One or more <br> threads may be specified**, by default all threads <br> continue.
+| `$> process continue` <br> `$> continue` <br> `$> c` | **Continue execution** of *[all current threads]* *[until a <br> break/watch-point is hit or end of]* **process**.
+| `$> thread continue` | Same as **`process continue`** except: **One or more <br> threads may be specified**, by default all threads <br> continue.
 ||
-| `$> thread`**`until`**`<line-num>` <br> `$> thread`**`until`**`-a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` <br> or until a function returns [, in the current or specified <br> frame in the current or specified thread].
+| `$> thread until <line-num>` <br> `$> thread until -a <address-expression>` | **Continue until** line `<line-num>` or address `<address>` <br> or until a function returns [, in the current or specified <br> frame in the current or specified thread].
 ||
-| `$> thread`**`jump`**`-l <line-num> [-f <filename>]` <br> `$> thread`**`jump`**`-b <line-offset>` <br> `$> thread`**`jump`**`-a <address-expression>` <br> `$>`**`_regexp-jump`**`<line-num>` <br> `$>`**`_regexp-jump`**`<negative-offset>` <br> <br> Aliases for `_regexp-jump`: <br> `$> jump` <br> `$> j` | **Jump to** a *[prior or subsequent]* line/instruction; i.e set <br> the program counter to a new address.
+| `$> thread jump -l <line-num> [-f <filename>]` <br> `$> thread jump -b <line-offset>` <br> `$> thread jump -a <address-expression>` <br> `$> _regexp-jump <line-num>` <br> `$> _regexp-jump <negative-offset>` <br> <br> Aliases for `_regexp-jump`: <br> `$> jump` <br> `$> j` | **Jump to** a *[prior or subsequent]* line/instruction; i.e set <br> the program counter to a new address.
 ||
-| `$> thread`**`step-over`** <br> `$> next` <br> `$> n` | *[Execute and]* **Step over** the current line. Defaults to the <br> current thread unless specified.
-| `$> thread`**`step-in`** <br> `$> step` <br> `$> s` | **Step into** *(investigate)* *[function]* calls. Defaults to current <br> thread unless specified.
-| `$> thread`**`step-out`** <br> `$> finish` | **Step out** of the currently selected frame *(i.e function call)*. <br> Defaults to current thread unless specified.
+| `$> thread step-over` <br> `$> next` <br> `$> n` | *[Execute and]* **Step over** the current line. <br> Defaults to the current thread unless specified.
+| `$> thread step-in` <br> `$> step` <br> `$> s` | **Step into** *(investigate)* *[function]* calls. <br> Defaults to current thread unless specified.
+| `$> thread step-out` <br> `$> finish` | **Step out** of the currently selected frame *(i.e function <br> call)*. Defaults to current thread unless specified.
 ||
-| `$> thread`**`step-inst-over`** <br> `$> ni` | Perform a single *[[assembly] instruction]* **step over**.
-| `$> thread`**`step-inst`** <br> `$> stepi` <br> `$> si` | Perform a single *[[assembly] instruction]* **step in**.
+| `$> thread step-inst-over` <br> `$> ni` | Perform a single *[[assembly] instruction]* **step over**.
+| `$> thread step-inst` <br> `$> stepi` <br> `$> si` | Perform a single *[[assembly] instruction]* **step in**.
 ||
-| `$> thread`**`return`**`[<value>]` | *[Prematurely]* **Return** from a stack frame *(function)*, <br> optionally yielding a specified value *(else an undefined <br> value)*.
+| `$> thread return [<value>]` | *[Prematurely]* **Return** from a stack frame *(function)*, <br> optionally yielding a specified value *(else an undefined <br> value)*.
 ||
-| `$>`**`kill`** | **Terminate program execution**.
-| `$>`**`detach`** | **Detach** from the current target process.
+| `$> process kill` <br> `$> kill` <br> `$> ki` | **Terminate program execution**.
+| `$> process detach` <br> `$> detach` <br> `$> de` | **Detach** from the current target process.
 
 
 <br>
@@ -3308,12 +3317,12 @@ You can inspect a thread's stack frame with the following commands:
 	> ```
 	> ***Shorthand:***
 	> ```shell
-	> _regexp-down [<offset>]   # Select the frame: current-frame - <offset>.
-	> down                      # Alias
+	> $> _regexp-down [<offset>]   # Select the frame: current-frame - <offset>.
+	> $> down                      # Alias
 	> ```
 	> ```shell
-	> _regexp-up [<offset>]     # Select the frame: current-frame + <offset>.
-	> up                        # Alias
+	> $> _regexp-up [<offset>]     # Select the frame: current-frame + <offset>.
+	> $> up                        # Alias
 	> ```
 	>
 	> ***Example(s):***
@@ -3824,10 +3833,12 @@ Contents
 	>
 	> ***Abbreviations:***
 	> ```shell
-	> $> print <expr>            # Alias for: 'expression -- <expr>'
 	> $> p <expr>                # Alias for: 'expression -- <expr>'
+	> $> print <expr>            # Alias for: 'expression -- <expr>'
+	> $> call <expr>             # Alias for: 'expression -- <expr>'
 	> $> po <expr>               # Alias for: 'expression -O -- <expr>'
 	> $> parray <count> <expr>   # Alias for: 'expression -Z <count> -- <expr>'
+	> $> poarray <count> <expr>  # Alias for: 'expression -O -Z <count> -- <expr>'
 	> ```
 	>
 	> ***Options:***
@@ -3874,9 +3885,8 @@ Contents
 	>
 	> (lldb) e/x -- my_var                        # shorthand
 	> (float) $4 = 0x4225ae14
-	> ```
-	> ```shell
-	> (lldb) e/d my_var                           # decimal (or default)
+	>
+	> (lldb) e/d my_var                           # decimal
 	> (float) $5 = 1110027796
 	>
 	> (lldb) print/o my_var                       # octal
@@ -4069,25 +4079,31 @@ Contents
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help expression`
-> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help print`
-> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help p`
-> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help po`
-> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help parray`
-> | 6 | Documentation | LLDB | [(Official) Tutorial :: Evaluating Expressions](https://lldb.llvm.org/use/map.html?highlight=watchpoints#evaluating-expressions)
-> | 7 | Documentation | Apple | [LLDB Tutorial :: Evaluating Alternative Code](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW10)
+> | |
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help p`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help call`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help print`
+> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help po`
+> | 6 | Manual Page | Unix / Linux / MacOS | `(lldb) help parray`
+> | 7 | Manual Page | Unix / Linux / MacOS | `(lldb) help poarray`
+> | |
+> | 8 | Documentation | LLDB | [(Official) Tutorial :: Evaluating Expressions](https://lldb.llvm.org/use/map.html?highlight=watchpoints#evaluating-expressions)
+> | 9 | Documentation | Apple | [LLDB Tutorial :: Evaluating Alternative Code](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW10)
 
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.8.7. Memory *(Advanced)*
-<small>`[Search Tags: ]`</small>
+<small>`[Search Tags: >mmexam >exammm >mmexamine >examinemm >mmexamination >examinationmm >mmexaminating >examinatingmm >memexam >memexamine >memexamination >memexaminating >memoryexam >memoryexamine >memoryexamination >memoryexaminating >exammemory >examinememory >examinationmemory >examinatingmemory >heapexam >examheap >heapexamine >examineheap >heapexamination >examinationheap >heapexaminating >examinatingheap >memoryinsp >inspmemory >memoryinspct >inspctmemory >memoryinspect >inspectmemory >meminsp >meminspct >meminspect >mminsp >mminspct >mminspect]`</small>
 <br>
 <br>
 
 
 > TODO: ### 3.8.7. Memory *(Advanced)*
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+
+	> `$> x   # Alias: `memory read`
+
 
 
 <br>
@@ -4097,7 +4113,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory`
+> | |
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory find`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory history`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory read`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory region`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory write`
 
 
 ---
