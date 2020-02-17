@@ -9,7 +9,7 @@
 		idev.aymen@gmail.com
 
 	MOTIVATION(S)
-		Promote LLDB, because it is an amazing tool that can benefit in debugging. Explain/remind what LLDB is and how to use it.
+		Promote LLDB, because it is an amazing tool that is beneficial for debugging. Explain/remind what LLDB is and how to use it.
 
 	DESCRIPTION
 		[Beginner to Intermediate Level] Tutorial on LLDB.
@@ -20,7 +20,7 @@
 QuickDocs \| Low Level Debugger (LLDB)
 ===
 
-> ***January 2020***
+> ***February 2020***
 
 ---
 
@@ -3408,24 +3408,24 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> | `--format <format>`       | `-f`     | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). <br> <br> See [Format Table](#format-table) for all.*
 	> |                           |          |
 	> | **More Information**      |          |
-	> | `--ptr-depth <count>`     | `-P`     | *Number of times pointer variables get dereferenced; <br> (default=0).*
-	> | `--element-count <count>` | `-Z`     | *Treat the result of the expression as if its type is an array <br> of this many values.*
-	> | `--show-types`            | `-T`     | *Show variable types when dumping values.*
-	> | `--scope`                 | `-s`     | *Show variable scope (`argument`, `local`, `global`, `static`).*
-	> | `--show-globals`          | `-g`     | *Show *[static \| extern]* global variables.*
-	> | `--show-declaration`      | `-c`     | *Show variable declaration line [, in source file].*
 	> | `--location`              | `-L`     | *Show variable *[memory]* address.*
+	> | `--ptr-depth <count>`     | `-P`     | *Number of times pointer variables get dereferenced; <br> (default=0).*
+	> | `--show-types`            | `-T`     | *Show variable types when dumping values –– useful for aggregate data types.*
+	> | `--element-count <count>` | `-Z`     | *Treat the result of the expression as if its type is an array <br> of this many values.*
+	> | `--show-declaration`      | `-c`     | *Show variable declaration line [, in source file].*
+	> | `--show-globals`          | `-g`     | *Show *[static \| extern]* global variables.*
+	> | `--scope`                 | `-s`     | *Show variable scope (`argument`, `local`, `global`, `static`).*
 	> |                           |          |
 	> | **Less Information**      |          |
 	> | `--flat`                  | `-F`     | *Omit [showing] type information.*
-	> | `--no-locals`             | `-l`     | *Omit [showing] local variables.*
 	> | `--no-args`               | `-a`     | *Omit [showing] [function] argument variables.*
+	> | `--no-locals`             | `-l`     | *Omit [showing] local variables.*
 	> |                           |          |
 	> | ...                       | ...      | *For more, see `(lldb) help frame variable`.*
 	>
 	> ***Example(s):***
 	>
-	> ##### (1) Investigate *[non-aggregate]* variables
+	> ##### (1) Investigate non-aggregate (simple) variables
 	> ```shell
 	> (lldb) frame variable my_var
 	> (lldb) fr v my_var
@@ -3473,7 +3473,8 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> ```
 	>
 	> ##### (4) Investigate aggregate variables
-	> ###### (4.1) Peek at array pointers
+	>
+	> ###### (4.1) Array pointers
 	> ```shell
 	> (lldb) frame variable --element-count 10 -- argv
 	> (lldb) fr v -Z 10 -- argv
@@ -3492,7 +3493,10 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>   (char *) [9] = 0x00007ffeefbff80e "COLORFGBG=15;0"
 	> }
 	> ```
-	> ###### (4.2) Show types in structures
+	>
+	> ###### (4.2) Structures
+	>
+	> ###### (4.2.1) Simple structures, with type information
 	> ```shell
 	> (lldb) frame variable --show-types -- var_limbs
 	> (lldb) fr v -T -- var_limbs
@@ -3508,7 +3512,25 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> }
 	> ```
 	>
+	> ###### (4.2.2) More sophisticated structures, with type information
+	> ```shell
+	> (lldb) frame variable --show-types -- numbers
+	> (lldb) fr v -T -- numbers
+	> ```
+	> ```shell
+	> (std::vector<int>) numbers = {
+	>     (std::_Vector_base<int, std::allocator<int> >) std::_Vector_base<int, std::allocator<int> > = {
+	>         (std::_Vector_base<int, std::allocator&tl;int> >::_Vector_impl) _M_impl = {
+	>             (int *) _M_start = 0x00000001001008a0
+	>             (int *) _M_finish = 0x00000001001008a8
+	>             (int *) _M_end_of_storage = 0x00000001001008a8
+	>         }
+	>     }
+	> }
+	> ```
+	>
 	> ##### (5) Show all variables
+	>
 	> ###### (5.1) Of local scope
 	> ```shell
 	> (lldb) frame variable
@@ -3634,6 +3656,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help frame variable`
 > | 2 | Documentation | LLDB | [(Official) Tutorial :: Examining Stack Frame State](https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state)
 > | 3 | Documentation | Apple | [LLDB Tutorial :: Examining the Stack Frame State](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW9)
+> | 4 | Q&A Forum | StackOverflow | [How to view array in `LLDB` ?](https://stackoverflow.com/questions/7062173/view-array-in-lldb-equivalent-of-gdbs-operator-in-xcode-4-1)
 
 
 ---
@@ -3777,9 +3800,10 @@ Contents
 	>
 	> ***Abbreviations:***
 	> ```shell
-	> $> print <expr>    # Alias for: 'expression --'
-	> $> p <expr>        # Alias for: 'expression --'
-	> $> po <expr>       # Alias for: 'expression -O --'
+	> $> print <expr>            # Alias for: 'expression -- <expr>'
+	> $> p <expr>                # Alias for: 'expression -- <expr>'
+	> $> po <expr>               # Alias for: 'expression -O -- <expr>'
+	> $> parray <count> <expr>   # Alias for: 'expression -Z <count> -- <expr>'
 	> ```
 	>
 	> ***Options:***
@@ -3790,9 +3814,10 @@ Contents
 	> | `--format <format>`            | `-f`     | *Specify a display format (e.g. `hex` <br> or `x`, `decimal` or `d`, `binary` or `b`). <br> <br> See [Format Table](#format-table) for all.*
 	> |                                |          |
 	> | **More Information**           |          |
-	> | `--ptr-depth <count>`          | `-P`     | *Number of times pointer variables get <br> dereferenced; (default=0).*
-	> | `--element-count <count>`      | `-Z`     | *Treat the result of the expression as <br> if its type is an array of this many <br> values.*
 	> | `--location`                   | `-L`     | *Show variable location information.*
+	> | `--ptr-depth <count>`          | `-P`     | *Number of times pointer variables get <br> dereferenced; (default=0).*
+	> | `--show-types`                 | `-T`     | *Show variable types when dumping values –– useful for aggregate data types.*
+	> | `--element-count <count>`      | `-Z`     | *Treat the result of the expression as <br> if its type is an array of this many <br> values.*
 	> |                                |          |
 	> | **Less Information**           |          |
 	> | `--flat`                       | `-F`     | *Omit *[showing]* type information.*
@@ -3804,7 +3829,7 @@ Contents
 	>
 	> #### Single Line Expressions:
 	>
-	> ##### (1) Investigating non-aggregate variables
+	> ##### (1) Investigating non-aggregate (simple) variables
 	> ```shell
 	> (lldb) expression my_var
 	> (float) $0 = 12
@@ -3844,9 +3869,13 @@ Contents
 	> }
 	> ```
 	>
-	> ##### (4) Investigate aggregate variables, e.g. array pointers
+	> ##### (4) Investigate aggregate variables
+	>
+	> ##### (4.1) Array pointers
 	> ```shell
 	> (lldb) e -element-count 6 -- av          # pretend there exist 6 elements [of type char*] and show them
+	> (lldb) e -Z 6 -- av
+	> (lldb) parray 6 av
 	> (char **) $8 = 0x00007ffeefbff510 {
 	>   (char *) [0] = 0x00007ffeefbff750 "/path/to/executable/a"
 	>   (char *) [1] = 0x00007ffeefbff750 "arg1"
@@ -3856,6 +3885,12 @@ Contents
 	>   (char *) [5] = 0x00007ffeefbff79a "Apple_PubSub_Socket_Render=/not-so-private/tmp/com.apple.launchd.blablabla/Blender"
 	> }
 	> ```
+	>
+	> ##### (4.2) Structures
+	> > As of ***17-02-2020***, I am unaware how to do it with the `expression` command. Alternatively though, you can do it with [`frame variable`, see Examples :: (4.2) Structures](#42-structures).
+	> >
+	> > *PS: Please let me know if you know how to do it (with `expression`), I would be grateful.*
+	>
 	> ##### (5) Assigning values to variables
 	> ```shell
 	> (lldb) e my_var
@@ -4007,11 +4042,12 @@ Contents
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help expression`
-> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help print`
-> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help p`
-> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help po`
-> | 2 | Documentation | LLDB | [(Official) Tutorial :: Evaluating Expressions](https://lldb.llvm.org/use/map.html?highlight=watchpoints#evaluating-expressions)
-> | 3 | Documentation | Apple | [LLDB Tutorial :: Evaluating Alternative Code](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW10)
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help print`
+> | 3 | Manual Page | Unix / Linux / MacOS | `(lldb) help p`
+> | 4 | Manual Page | Unix / Linux / MacOS | `(lldb) help po`
+> | 5 | Manual Page | Unix / Linux / MacOS | `(lldb) help parray`
+> | 6 | Documentation | LLDB | [(Official) Tutorial :: Evaluating Expressions](https://lldb.llvm.org/use/map.html?highlight=watchpoints#evaluating-expressions)
+> | 7 | Documentation | Apple | [LLDB Tutorial :: Evaluating Alternative Code](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW10)
 
 
 ---
