@@ -3459,6 +3459,8 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> (int) *my_ptr = 1010010100000000000000000000011
 	> ```
 	>
+	> > *<small>[**Note:** See [Format Table](#format-table) (below) for all formats. - **end note**]</small>*
+	>
 	> ##### (3) Investigate pointers
 	> ```shell
 	> (lldb) frame variable --ptr-depth 3
@@ -3570,7 +3572,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> GLOBAL: (int) fg_new_age = 13
 	> ```
 	>
-	> ###### (5.2.1) In (lowercase) hexadecimal ; (see [Format Table](#format-table) for all formats)
+	> ###### (5.2.1) In (lowercase) hexadecimal
 	> ```shell
 	> (lldb) frame variable --show-globals --scope --show-types --format hex
 	> (lldb) fr v -g -s -T -f x
@@ -3594,6 +3596,9 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> GLOBAL: (int) eg_age = 0x0000000c
 	> GLOBAL: (int) fg_new_age = 0x0000000d
 	> ```
+	>
+	> > *<small>[**Note:** See [Format Table](#format-table) (below) for all formats. - **end note**]</small>*
+	>
 	> *<small>[**Note:***
 	>
 	> - *`LLDB` supports formatting the output with `GDB`'s shorthand notation: appending to the command a backslash followed by its format specifier (see [Format Table](#format-table) below), e.g.: `fr v/x` (hexadecimal), `fr v/o` (octal), `fr v/t` (binary), ...*
@@ -3669,7 +3674,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 Contents
 ---
 - [1 Print *(read)* Registers](#read-print-registers)
-- [2 Write to Registers](#overwrite-modify-to-registers)
+- [2 Write to Registers](#over-write-modify-registers)
 ---
 
 -	#### Read *(print)* registers:
@@ -3691,25 +3696,46 @@ Contents
 	>
 	> ***Example(s):*** <br>
 	>
-	> **(1)**
+	> #### (1) Read Register(s)
+	>
+	> ##### (1.1) One in Specific
 	> ```shell
-	> (lldb) register read --all                             # Print (read) all registers.
-	> (lldb) re r -a
+	> (lldb) register read eax
+	> (lldb) re r eax
+	> ```
+	> ```shell
+	>      eax = 0x00004888
 	> ```
 	>
-	> **(2)**
+	> ##### (1.1.1) " " in different formats
 	> ```shell
-	> (lldb) register read --format b eax                    # Print the 'eax' register, in binary format.
-	> (lldb) re r -f b eax
-	> (lldb) re r/t eax
-	> ```
-	> ```shell
-	>     eax = 0b00000000000000000000000011110000
+	> (lldb) register read --format hex eax       # (lowercase) hexadecimal
+	>      eax = 0x00004888
+	>
+	> (lldb) re r -f hex eax                      # shorthand
+	>      eax = 0x00004888
+	>
+	> (lldb) re r -f x eax                        # shorthand
+	>      eax = 0x00004888
+	>
+	> (lldb) re r/x eax                           # shorthand
+	>      eax = 0x00004888
+	>
+	> (lldb) re r/d eax                           # decimal
+	>      eax = 18568
+	>
+	> (lldb) re r/o eax                           # octal
+	>      eax = 044210
+	>
+	> (lldb) re r/t eax                           # binary
+	>      eax = 0b00000000000000000100100010001000
 	> ```
 	>
-	> **(3)**
+	> > *<small>[**Note:** See [§3.8.4 :: Format Table](#format-table) for all formats. - **end note**]</small>*
+	>
+	> ##### (1.2) Multiple in specific
 	> ```shell
-	> (lldb) register read rax rbx rcx rdx eax ebx ecx       # Print the specified [by name] registers.
+	> (lldb) register read rax rbx rcx rdx eax ebx ecx
 	> (lldb) re r rax rbx rcx rdx eax ebx ecx
 	> ```
 	> ```shell
@@ -3722,9 +3748,15 @@ Contents
 	>     ecx = 0x00000050
 	> ```
 	>
-	> **(4)**
+	> ##### (1.3) All
 	> ```shell
-	> (lldb) register read --set 2                           # Print the 2nd set of registers –– the 'Exception State Registers'.
+	> (lldb) register read --all
+	> (lldb) re r -a
+	> ```
+	>
+	> #### (2) Read a set of registers
+	> ```shell
+	> (lldb) register read --set 2        # e.g. the "Exception State Registers', #2
 	> (lldb) re r -s 2
 	> ```
 	> ```shell
@@ -3734,14 +3766,6 @@ Contents
 	>   faultvaddr = 0x0000000100ba41d0  libclang_rt.asan_osx_dynamic.dylib`__sanitizer::theDepot + 6046032
 	> ```
 	>
-
-	> *<small>[**Note:***
-	>
-	> - *"`/t`", is a shorthand for binary format (`--format b`) –– originally from `gdb`.*
-	>
-	> -	*To obtain a table of the available formats, type: `(lldb) register read --format ?` ; see [§3.8.4 :: Format Table](#format-table) for the complete table.*
-	>
-	> *- **end note**]</small>*
 
 <br>
 
@@ -3861,6 +3885,8 @@ Contents
 	> (lldb) p/t my_var                           # binary
 	> (float) $7 = 0b01000010001010011010111000010100
 	> ```
+	>
+	> > *<small>[**Note:** See [§3.8.4 :: Format Table](#format-table) for all formats. - **end note**]</small>*
 	>
 	> ##### (3) Investigate pointers
 	> ```shell
@@ -4032,7 +4058,7 @@ Contents
 	>    61
 	> ```
 	>
-	> To terminate the `expression` process *[prematurely]*, use: `(lldb) thread return` –– and not `(lldb) process kill` as that would terminate the main process instead.
+	> To terminate the `expression` process *[prematurely]*, and resume debugging the main process, use: `(lldb) thread return` –– and not `(lldb) process kill` as that would terminate the main process instead.
 
 
 <br>
