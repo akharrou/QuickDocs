@@ -3707,11 +3707,11 @@ Contents
 	> | -                              | -        | -
 	> |                                |          |
 	> | **Format**                     |          |
-	> | `--format <format>`            | `-f`     | *Specify a display format (e.g. `hex` or `x`, <br> `decimal` or `d`, `binary` or `b`). <br> <br> See [Format Table](#format-table) for all available formats.*
+	> | `--format <format>`            | `-f`     | *Specify a display format (e.g. `hex` <br> or `x`, `decimal` or `d`, `binary` or `b`). <br> <br> See [Format Table](#format-table) for all available <br> formats.*
 	> |                                |          |
 	> | **More Information**           |          |
-	> | `--ptr-depth <count>`          | `-P`     | *Number of times pointer variables get <br> dereferenced; (default=0).*
-	> | `--element-count <count>`      | `-Z`     | *Treat the result of the expression as if its <br> type is an array of this many values.*
+	> | `--ptr-depth <count>`          | `-P`     | *Number of times pointer variables <br> get dereferenced; (default=0).*
+	> | `--element-count <count>`      | `-Z`     | *Treat the result of the expression as <br> if its type is an array of this many <br> values.*
 	> | `--location`                   | `-L`     | *Show variable location information.*
 	> |                                |          |
 	> | **Less Information**           |          |
@@ -3719,8 +3719,8 @@ Contents
 	> |                                |          |
 	> | **Other**                      |          |
 	> | `--debug`                      | `-g`     | *Debug the JIT code.*
-	> | `--timeout <unsigned-integer>` | `-t`     | *Timeout value (in microseconds) for running the expression.*
-	> | `--unwind-on-error <boolean>`  | `-u`     | *Clean up program state if the expression causes <br> a crash, or raises a signal.*
+	> | `--timeout <unsigned-integer>` | `-t`     | *Timeout value (in microseconds) <br> for running the expression.*
+	> | `--unwind-on-error <boolean>`  | `-u`     | *Clean up program state if the <br> expression causes a crash, or raises <br> a signal.*
 	>
 	> <br>
 	>
