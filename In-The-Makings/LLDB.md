@@ -3705,6 +3705,7 @@ Contents
 	> ***Options:***
 	> | Flag                           | Shortcut | Description
 	> | -                              | -        | -
+	> |                                |          |
 	> | **Format**                     |          |
 	> | `--format <format>`            | `-f`     | *Specify a display format (e.g. `hex` or `x`, <br> `decimal` or `d`, `binary` or `b`). <br> <br> See [Format Table](#format-table) for all available formats.*
 	> |                                |          |
@@ -3716,11 +3717,9 @@ Contents
 	> | **Less Information**           |          |
 	> | `--flat`                       | `-F`     | *Omit *[showing]* type information.*
 	> |                                |          |
-	> | **Debug**                      |          |
-	> | `--debug`                      | `-g`     | *When specified, debug the JIT code by setting<br> a breakpoint on the first instruction and forcing <br> breakpoints to not be ignored (-i0) | and no unwinding to happen on error (-u0).*
-	> |                                |          |
 	> | **Other**                      |          |
-	> | `--timeout <unsigned-integer>` | `-t`     | *When specified, debug the JIT code by setting<br> a breakpoint on the first instruction and forcing <br> breakpoints to not be ignored (-i0) | and no unwinding to happen on error (-u0).*
+	> | `--debug`                      | `-g`     | *Debug the JIT code.*
+	> | `--timeout <unsigned-integer>` | `-t`     | *Timeout value (in microseconds) for running the expression.*
 	> | `--unwind-on-error <boolean>`  | `-u`     | *Clean up program state if the expression causes <br> a crash, or raises a signal.*
 	>
 	> <br>
@@ -3739,8 +3738,6 @@ Contents
 	> (lldb) expr -f b -- (index * 8) + 5
 	> ```
 	>
-	> <br>
-	>
 	> #### Multi-Line Expressions:
 	>
 	> ```shell
@@ -3749,8 +3746,6 @@ Contents
 	> >
 	> > *enter*
 	> ```
-	>
-	> <br>
 	>
 	> #### User Defined & Persistent Variables:
 	>
