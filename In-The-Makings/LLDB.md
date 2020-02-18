@@ -3778,7 +3778,7 @@ Contents
 
 <br>
 
--	#### [Over]-write (modify) registers:
+-	#### Overwrite (modify) registers:
 
 	> <small>`[Search Tags: >registerwrite >registerswrite >writeregister >writeregisters >regswrite >regwrite >writeregs >writereg >modifyregisters >modifyregisterss >registersmodify >registerssmodify >registermodify >registersmodify >modifyregss >modifyregs >regssmodify >regsmodify >regsmodify >regmodify >changeregisters >changeregisterss >registerschange >registersschange >registerchange >registerschange >changeregss >changeregs >regsschange >regschange >regschange >regchange >assignregisters >assignregisterss >registersassign >registerssassign >registerassign >registersassign >assignregss >assignregs >regssassign >regsassign >regsassign >regassign >modregister >modiregister >modifregister >mdregister >modregisters >modiregisters >modifregisters >mdregisters >registeroverwrite >registersoverwrite >overwriteregister >overwriteregisters >regsoverwrite >regoverwrite >overwriteregs]`</small>
 
@@ -3901,6 +3901,9 @@ Contents
 	> ##### (3) Investigate pointers
 	> ```shell
 	> e --ptr-depth 2 -- name                     # dereference pointers twice
+	> e -P 2 -- name
+	> ```
+	> ```shell
 	> (char **) $8 = 0x00007ffeefbff510 {
 	>   *$8 = 0x00007ffeefbff750 "James" {         # <-- dereference #1
 	>     **$8 = 'J'                               # <-- dereference #2
@@ -4106,8 +4109,8 @@ Commands to:
 - [1 Read memory](#print-read-variables)
 - [2 Write to memory](#)
 - [3 Find value in memory](#)
-- [4 [De]Allocations History](#)
-- [5 Memory Region Information](#)
+- [4 Memory Region Information](#)
+- [5 List de/allocations of an address](#)
 ---
 
 You can inspect a your process's memory with the `memory` command:
@@ -4263,6 +4266,97 @@ pression>]
      the arguments.
 
 
+See: https://lldb.llvm.org/use/map.html#examining-thread-state
+
+Read memory from address 0xbffff3c0 and show 4 hex uint32_t values.
+(gdb) x/4xw 0xbffff3c0
+(lldb) memory read --size 4 --format x --count 4 0xbffff3c0
+(lldb) me r -s4 -fx -c4 0xbffff3c0
+(lldb) x -s4 -fx -c4 0xbffff3c0
+
+LLDB now supports the GDB shorthand format syntax but there can't be space after the command:
+(lldb) memory read/4xw 0xbffff3c0
+(lldb) x/4xw 0xbffff3c0
+(lldb) memory read --gdb-format 4xw 0xbffff3c0
+Read memory starting at the expression "argv[0]".
+(gdb) x argv[0]
+(lldb) memory read `argv[0]`
+NOTE: any command can inline a scalar expression result (as long as the target is stopped) using backticks around any expression:
+(lldb) memory read --size `sizeof(int)` `argv[0]`
+Read 512 bytes of memory from address 0xbffff3c0 and save results to a local file as text.
+(gdb) set logging on
+(gdb) set logging file /tmp/mem.txt
+(gdb) x/512bx 0xbffff3c0
+(gdb) set logging off
+(lldb) memory read --outfile /tmp/mem.txt --count 512 0xbffff3c0
+(lldb) me r -o/tmp/mem.txt -c512 0xbffff3c0
+(lldb) x/512bx -o/tmp/mem.txt 0xbffff3c0
+Save binary memory data starting at 0x1000 and ending at 0x2000 to a file.
+(gdb) dump memory /tmp/mem.bin 0x1000 0x2000	(lldb) memory read --outfile /tmp/mem.bin --binary 0x1000 0x2000
+(lldb) me r -o /tmp/mem.bin -b 0x1000 0x2000
+
+<br>
+
+-	#### Overwrite (modify) memory:
+
+	> <small>`[Search Tags: ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> $> memory write
+	> ```
+	> ***Shorthand:***
+	> ```shell
+	> $> <shorthand>
+	> ```
+	>
+	> ***Options:***
+	> | Flag                      | Shortcut  | Description
+	> | -                         | -         | - |
+	> | `--<full>`                | `-<short>`| *<description>*
+	>
+	> ***Example(s):***
+	>
+	> #### (1) <title>
+	>
+	> ##### (1.1) <subtitle>
+	> ```shell
+	> $> <command>
+	> ```
+	> ```shell
+	> $> <output>
+	> ```
+
+     Write to the memory of the current target process.
+
+Syntax:
+
+Command Options Usage:
+  memory write [-f <format>] [-s <byte-size>] <address> <value> [<value> [...]]
+  memory write -i <filename> [-s <byte-size>] [-o <offset>] <address> <value> [
+<value> [...]]
+
+       -f <format> ( --format <format> )
+            Specify a format to be used for display.
+
+       -i <filename> ( --infile <filename> )
+            Write memory using the contents of a file.
+
+       -o <offset> ( --offset <offset> )
+            Start writing bytes from an offset within the input file.
+
+       -s <byte-size> ( --size <byte-size> )
+            The size in bytes to use when displaying with the selected format.
+
+     This command takes options and free-form arguments.  If your arguments
+     resemble option specifiers (i.e., they start with a - or --), you must
+     use ' -- ' between the end of the command options and the beginning of
+     the arguments.
+
+<br>
+
+
+
 <br>
 <br>
 
@@ -4277,8 +4371,13 @@ pression>]
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory read`
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory region`
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory write`
+> | |
+> | 1 | Q&A Forum | StackOverflow | [How to print memory using lldb ?](https://stackoverflow.com/questions/19748866/how-to-print-memory-in-0xb0987654-using-lldb)
+> | 8 | Documentation | LLDB | [(Official) Tutorial :: Examining Thread State (scroll down)](https://lldb.llvm.org/use/map.html#examining-thread-state)
+> | 3 | Documentation | LLDB | [GDB to LLDB Command Map :: Examining Thread State (scroll down)](https://lldb.llvm.org/use/map.html#examining-thread-state)
+> | 9 | Documentation | Apple | [LLDB Tutorial :: Evaluating Alternative Code](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW10)
 
-
+>recall
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.8.8. Instructions *(Advanced)*
@@ -4447,14 +4546,34 @@ Line table for /path/to/source/utils.c in `a
 
 
 
+TODO :  https://lldb.llvm.org/use/map.html#evaluating-expressions
+
+Show the contents of global variable "baz".
+(gdb) p baz
+(lldb) target variable baz
+(lldb) ta v baz
+Show the global/static variables defined in the current source file.
+n/a
+(lldb) target variable
+(lldb) ta v
+Display the variables "argc" and "argv" every time you stop.
+(gdb) display argc
+(gdb) display argv
+(lldb) target stop-hook add --one-liner "frame variable argc argv"
+(lldb) ta st a -o "fr v argc argv"
+(lldb) display argc
+(lldb) display argv
+Display the variables "argc" and "argv" only when you stop in the function named main.
+(lldb) target stop-hook add --name main --one-liner "frame variable argc argv"
+(lldb) ta st a -n main -o "fr v argc argv"
+Display the variable "*this" only when you stop in c class named MyClass.
+(lldb) target stop-hook add --classname MyClass --one-liner "frame variable *this"
+(lldb) ta st a -c MyClass -o "fr v *this
+
+
 
 
 ------------------------------------------------------------------------------->
 
 
-<!--
-## Questions –– Waterloo
-
-- Can I leave to pursue a startup idea, or a reasearch mission and come back ?
--
- -->
+<!--  -->
