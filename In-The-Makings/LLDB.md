@@ -1,20 +1,3 @@
-<!-- ﷽ , In the name of God, the All-Merciful, the All-Compassionate. -->
-
-<!-- >Metadata -----------------------------------------------------------------
-
-	AUTHOR(S)
-		akharrou
-
-	CONTACT
-		idev.aymen@gmail.com
-
-	MOTIVATION(S)
-		Promote LLDB, because it is an amazing tool that is beneficial for debugging. Explain/remind what LLDB is and how to use it.
-
-	DESCRIPTION
-		[Beginner to Intermediate Level] Tutorial on LLDB.
-
-
 <!-- >Top Matter -------------------------------------------------------------->
 
 QuickDocs \| Low Level Debugger (LLDB)
