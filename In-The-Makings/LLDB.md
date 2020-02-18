@@ -37,13 +37,13 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.1.3 Makfile Setup](#313-makfile-setup)
 	- [3.2. Start LLDB](#32-start-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
-	- [3.4. Setup LLDB](#34-setup-lldb)
-		- [3.4.1. Breakpoints](#341-breakpoints)
-		- [3.4.2. Watchpoints](#342-watchpoints)
 	- [3.5. Start Debugging (`process`)](#35-start-debugging)
 		- [3.5.1. Launch](#351-launch)
 		- [3.5.2. Attach *(Advanced)*](#352-attach)
 		- [3.5.3. Connect *(Advanced)*](#353)
+	- [3.4. Setup LLDB](#34-setup-lldb)
+		- [3.4.1. Breakpoints](#341-breakpoints)
+		- [3.4.2. Watchpoints](#342-watchpoints)
 	- [3.6. Graphical User Interface (`GUI`)](#36-graphical-user-interface-gui)
 		- [3.6.1 About](#about)
 		- [3.6.2 Usage Commands](#usage-commands)
@@ -62,8 +62,12 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.9.2. `apropos`](#)                                               <!-- TODO: do chapter -->
 	- [3.10. Configure LLDB *(Advanced)*](#34-setup-lldb)                     <!-- TODO: do chapter -->
 		- [3.10.1. Settings](#)                                               <!-- TODO: do chapter ::: Most important alias (on macosx, because homebrew): alias lldb='PATH="/usr/bin:/bin:/usr/sbin:/sbin" lldb' ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
-		- [3.10.2. Commands & Aliases](#)                                     <!-- TODO: do chapter -->
+		- [3.10.2. Commands](#)                                               <!-- TODO: do chapter -->
+			- [3.10.2.1. Aliases](#)                                          <!-- TODO: do chapter -->
+			- [3.10.2.2. Scripts](#)                                          <!-- TODO: do chapter -->
 		- [3.10.3. Type *[Formatting]*](#)                                    <!-- TODO: do chapter -->
+			- [3.10.3.1. Formats](#)                                          <!-- TODO: do chapter -->
+			- [3.10.3.2. Filters](#)                                          <!-- TODO: do chapter -->
 		- [3.10.4. Logging](#)                                                <!-- TODO: do chapter -->
 	- [3.11. Other Topics](#)                                                 <!-- TODO: do chapter -->
 		- [3.11.1. Bugreporting](#)                                           <!-- TODO: do chapter -->
@@ -343,7 +347,7 @@ Contents
 
 	> *<small>[**Note:** For better diagnostic messages, compile with the `-g` [compiler] flag. - **end note**]</small>*
 
--	***Enable sanitizer** [checks] **:***
+-	#### Enable sanitizer *[checks]*:
 
 	> ***Synopsis:***
 	> ```shell
@@ -399,7 +403,7 @@ Contents
 > *Umm ... first [*what's a `makefile` ?*](https://en.wikipedia.org/wiki/Makefile) and second, [*how do I use it ?*](https://www.gnu.org/software/make/manual/make.html)*
 ---
 
-The following link below, suggests a `Makefile` *[template]* that hopefully can make convenient the compilation of programs with the [*debug*](#311-debug-flags--g---o0) and [*`fsantize`*](#312-sanitizer-flags--fsanitize-family) flags.
+The following, suggests a `Makefile` *[template]* that hopefully makes convenient the compilation of programs with the [*debug*](#311-debug-flags--g---o0) and [*`fsantize`*](#312-sanitizer-flags--fsanitize-family) flags.
 
 > To use; call `make` or `make all` to compile normally and call `make debug` to compile with **debug** and **`fsanitize`** flags.
 >
