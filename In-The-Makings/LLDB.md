@@ -54,7 +54,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.4. Variables](#384-variables)
 		- [3.8.5. Registers *(Advanced)*](#385-registers)
 		- [3.8.6. Expressions *(Advanced)*](#386-expressions)
-		- [3.8.7. Memory *(Advanced)*](#387-memory)                           <!-- TODO: do chapter ::: `x` is an alias for `memory read`-->
+		- [3.8.7. Memory *(Advanced)*](#387-memory-advanced)                  <!-- TODO: do chapter ::: `x` is an alias for `memory read`-->
 		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)      <!-- TODO: do chapter -->
 	- [3.9. Self-Help Commands](#)                                            <!-- TODO: do chapter -->
 		- [3.9.1. `help`](#)                                                  <!-- TODO: do chapter -->
@@ -330,7 +330,7 @@ Contents
 ---
 [🏠](#contents) | [⬅️](#311-debug-flags--g---o0) | [➡️](#32-launch-lldb)
 ### 3.1.2. Sanitizer Flags: `-fsanitize` family
-<small>`[Search Tags: >fsanitize=address >fsanitize=undefined >fsanitize=memory >fsanitize=leaks >fsanitize=threads >fsanitize=dataflag >fsanitize=cfi >fsanitize=safestack >fsanitize=safe-stack >fsanitize=data-flow >sanitizers >sanitizerflags >sanitizeflags >sanitizer.flags >flags.sanitizers >debug.sanitizers >debugsanitizers >debugfsanitizers >memoryflags >leakflags >leaksflags >threadflags >dataflowflags >undefinedbehaviorflags >safestackflags >cfiflags >memory.flags >leaks.flags >leak.flags >thread.flags >dataflow.flags >undefinedbehavior.flags >safestack.flags >cfi.flags] >flags.memory >flags.leak >flags.thread >flags.dataflow >flags.undefinedbehavior >flags.safestack >flags.cfi`</small>
+<small>`[Search Tags: >fsanitize=address >fsanitize=undefined >fsanitize=memory >fsanitize=leaks >fsanitize=threads >fsanitize=dataflag >fsanitize=cfi >fsanitize=safestack >fsanitize=safe-stack >fsanitize=data-flow >sanitizers >sanitizerflags >sanitizeflags >sanitizer.flags >flagsmemory >flags.memory >flags.sanitizers >debug.sanitizers >debugsanitizers >debugfsanitizers >leakflags >leaksflags >threadflags >dataflowflags >undefinedbehaviorflags >safestackflags >cfiflags >leaks.flags >leak.flags >thread.flags >dataflow.flags >undefinedbehavior.flags >safestack.flags >cfi.flags] >flags.memory >flags.leak >flags.thread >flags.dataflow >flags.undefinedbehavior >flags.safestack >flags.cfi`</small>
 <br>
 <br>
 
@@ -4101,9 +4101,166 @@ Contents
 
 > TODO: ### 3.8.7. Memory *(Advanced)*
 
+Commands to:
+---
+- [1 Read memory](#print-read-variables)
+- [2 Write to memory](#)
+- [3 Find value in memory](#)
+- [4 [De]Allocations History](#)
+- [5 Memory Region Information](#)
+---
 
-	> `$> x   # Alias: `memory read`
+You can inspect a your process's memory with the `memory` command:
 
+---
+
+-	#### Read (print) Memory:
+
+	> <small>`[Search Tags: >memoryshow >memorysshow >showmemorys >listmemorys >displaymemorys >dispmemorys >listmemoryss >displaymemoryss >dispmemoryss >memoryslist >memorysdisplay >memorysslist >memoryssdisplay >memorylist >memorydisplay >memoryslist >memorysdisplay >memoryprint >memorysprint >printmemorys >memsshow >memshow >showmems >showmem >listmemss >displaymemss >dispmemss >listmems >displaymems >dispmems >memsslist >memssdisplay >memslist >memsdisplay >memslist >memsdisplay >memlist >memdisplay >memsprint >memprint >printmems >printmem >memoryread >memsread >memread >memoryrd >memsrd >memrd >readmems >rdmemorys >rdmems]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> $> memory read
+	> ```
+	> ***Shorthand:***
+	> ```shell
+	> $> x                        # Alias for 'memory read'
+	> ```
+	>
+	> ***Options:***
+	> | Flag                      | Shortcut | Description
+	> | -                         | -        | - |
+	> |                           |          |
+	> | `--regex`                 | `-r`     | *The <variable-name> argument for name lookups are regular expressions.*
+	> |                           |          |
+	> | **Format**                |          |
+	> | `--format <format>`       | `-f`     | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). <br> <br> See [Format Table](#format-table) for all.*
+	> |                           |          |
+	> | **More Information**      |          |
+	> | `--location`              | `-L`     | *Show variable *[memory]* address.*
+	> | `--ptr-depth <count>`     | `-P`     | *Number of times pointer variables get dereferenced; <br> (default=0).*
+	> | `--show-types`            | `-T`     | *Show variable types when dumping values –– useful for aggregate data types.*
+	> | `--element-count <count>` | `-Z`     | *Treat the result of the expression as if its type is an array <br> of this many values.*
+	> | `--show-declaration`      | `-c`     | *Show variable declaration line [, in source file].*
+	> | `--show-globals`          | `-g`     | *Show *[static \| extern]* global variables.*
+	> | `--scope`                 | `-s`     | *Show variable scope (`argument`, `local`, `global`, `static`).*
+	> |                           |          |
+	> | **Less Information**      |          |
+	> | `--flat`                  | `-F`     | *Omit [showing] type information.*
+	> | `--no-args`               | `-a`     | *Omit [showing] [function] argument variables.*
+	> | `--no-locals`             | `-l`     | *Omit [showing] local variables.*
+	> |                           |          |
+	> | ...                       | ...      | *For more, see `(lldb) help frame variable`.*
+	>
+	> ***Example(s):***
+	>
+	> ##### (1) Investigate non-aggregate (simple) variables
+	> ```shell
+	> (lldb) frame variable my_var
+	> (lldb) fr v my_var
+	> ```
+	> ```shell
+	> (float) my_var = 0
+	> ```
+	>
+
+Command Options Usage:
+  memory read [-r] [-f <format>] [-c <count>] [-G <gdb-format>] [-s <byte-size>
+] [-l <number-per-line>] [-o <filename>] <address-expression> [<address-express
+ion>]
+  memory read [-br] [-f <format>] [-c <count>] [-s <byte-size>] [-o <filename>]
+ <address-expression> [<address-expression>]
+  memory read [-AFLORTr] -t <none> [-f <format>] [-c <count>] [-G <gdb-format>]
+ [-E <count>] [-o <filename>] [-d <none>] [-S <boolean>] [-D <count>] [-P <coun
+t>] [-Y[<count>]] [-V <boolean>] [-Z <count>] <address-expression> [<address-ex
+pression>]
+
+       -A ( --show-all-children )
+            Ignore the upper bound on the number of children to show.
+
+       -D <count> ( --depth <count> )
+            Set the max recurse depth when dumping aggregate types (default is
+            infinity).
+
+       -E <count> ( --offset <count> )
+            How many elements of the specified type to skip before starting to
+            display data.
+
+       -F ( --flat )
+            Display results in a flat format that uses expression paths for
+            each variable or member.
+
+       -G <gdb-format> ( --gdb-format <gdb-format> )
+            Specify a format using a GDB format specifier string.
+
+       -L ( --location )
+            Show variable location information.
+
+       -O ( --object-description )
+            Display using a language-specific description API, if possible.
+
+       -P <count> ( --ptr-depth <count> )
+            The number of pointers to be traversed when dumping values
+            (default is zero).
+
+       -R ( --raw-output )
+            Don't use formatting options.
+
+       -S <boolean> ( --synthetic-type <boolean> )
+            Show the object obeying its synthetic provider, if available.
+
+       -T ( --show-types )
+            Show variable types when dumping values.
+
+       -V <boolean> ( --validate <boolean> )
+            Show results of type validators.
+
+       -Y[<count>] ( --no-summary-depth=[<count>] )
+            Set the depth at which omitting summary information stops (default
+            is 1).
+
+       -Z <count> ( --element-count <count> )
+            Treat the result of the expression as if its type is an array of
+            this many values.
+
+       -b ( --binary )
+            If true, memory will be saved as binary. If false, the memory is
+            saved save as an ASCII dump that uses the format, size, count and
+            number per line settings.
+
+       -c <count> ( --count <count> )
+            The number of total items to display.
+
+       -d <none> ( --dynamic-type <none> )
+            Show the object as its full dynamic type, not its static type, if
+            available.
+            Values: no-dynamic-values | run-target | no-run-target
+
+       -f <format> ( --format <format> )
+            Specify a format to be used for display.
+
+       -l <number-per-line> ( --num-per-line <number-per-line> )
+            The number of items per line to display.
+
+       -o <filename> ( --outfile <filename> )
+            Specify a path for capturing command output.
+
+       -r ( --force )
+            Necessary if reading over target.max-memory-read-size bytes.
+
+       -s <byte-size> ( --size <byte-size> )
+            The size in bytes to use when displaying with the selected format.
+
+       -t <none> ( --type <none> )
+            The name of a type to view memory as.
+
+       --append-outfile
+            Append to the file specified with '--outfile <path>'.
+
+     This command takes options and free-form arguments.  If your arguments
+     resemble option specifiers (i.e., they start with a - or --), you must
+     use ' -- ' between the end of the command options and the beginning of
+     the arguments.
 
 
 <br>
