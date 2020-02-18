@@ -1,3 +1,20 @@
+<!-- ﷽ , In the name of God, the All-Merciful, the All-Compassionate. -->
+
+<!-- >Metadata -----------------------------------------------------------------
+
+	AUTHOR(S)
+		akharrou
+
+	CONTACT
+		idev.aymen@gmail.com
+
+	MOTIVATION(S)
+		Promote LLDB, because it is an amazing tool that is beneficial for debugging. Explain/remind what LLDB is and how to use it.
+
+	DESCRIPTION
+		[Beginner to Intermediate Level] Tutorial on LLDB.
+
+
 <!-- >Top Matter -------------------------------------------------------------->
 
 QuickDocs \| Low Level Debugger (LLDB)
@@ -17,7 +34,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 	- [3.1. Compile Program](#31-compile-program)
 		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g---o0)
 		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
-		<!-- - [3.1.3 Makfile Setup](#313-makfile-setup) -->
+		- [3.1.3 Makfile Setup](#313-makfile-setup)
 	- [3.2. Start LLDB](#32-start-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
 	- [3.4. Setup LLDB](#34-setup-lldb)
