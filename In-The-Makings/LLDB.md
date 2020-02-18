@@ -35,17 +35,18 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.1.1. Debug Flags: `-g` &amp; `-O0`](#311-debug-flags--g---o0)
 		- [3.1.2. Sanitizer Flags: `-fsanitize` family](#312-sanitizer-flags--fsanitize-family)
 		<!-- - [3.1.3 Makfile Setup](#313-makfile-setup) -->
-	- [3.2. Run LLDB](#32-run-lldb)
+	- [3.2. Start LLDB](#32-start-lldb)
 	- [3.3. Load LLDB](#33-load-lldb)
 	- [3.4. Setup LLDB](#34-setup-lldb)
 		- [3.4.1. Breakpoints](#341-breakpoints)
 		- [3.4.2. Watchpoints](#342-watchpoints)
-	- [3.5. Start Debugging](#35-start-debugging)
+	- [3.5. Start Debugging (`process`)](#35-start-debugging)
 		- [3.5.1. Launch](#351-launch)
-		- [3.5.2. Attach](#352-attach)
+		- [3.5.2. Attach *(Advanced)*](#352-attach)
+		- [3.5.3. Connect *(Advanced)*](#353)
 	- [3.6. Graphical User Interface (`GUI`)](#36-graphical-user-interface-gui)
 		- [3.6.1 About](#about)
-		- [3.6.2 Usage Commands *[Help Menus]*](#usage-commands)
+		- [3.6.2 Usage Commands](#usage-commands)
 	- [3.7. Control Process Execution](#37-control-process-execution)
 	- [3.8. Examine](#38-examine)
 		- [3.8.1. Source code](#381-source-code)
@@ -60,7 +61,7 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.9.1. `help`](#)                                                  <!-- TODO: do chapter -->
 		- [3.9.2. `apropos`](#)                                               <!-- TODO: do chapter -->
 	- [3.10. Configure LLDB *(Advanced)*](#34-setup-lldb)                     <!-- TODO: do chapter -->
-		- [3.10.1. Settings](#)                                               <!-- TODO: do chapter ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
+		- [3.10.1. Settings](#)                                               <!-- TODO: do chapter ::: Most important alias (on macosx, because homebrew): alias lldb='PATH="/usr/bin:/bin:/usr/sbin:/sbin" lldb' ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
 		- [3.10.2. Commands & Aliases](#)                                     <!-- TODO: do chapter -->
 		- [3.10.3. Type *[Formatting]*](#)                                    <!-- TODO: do chapter -->
 		- [3.10.4. Logging](#)                                                <!-- TODO: do chapter -->
@@ -188,6 +189,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 > | - | ------------------ | ---------------------- | --------------------------
 > | 1 | Documentation | LLDB | [The LLDB Debugger \| Official Website](https://lldb.llvm.org/)
 > | 2 | Encyclopedia | Wikipedia | [LLDB (debugger)](https://en.wikipedia.org/wiki/LLDB_(debugger))
+> | 3 | PDF Powerpoint | nccgroup | [A Journey into the Darkness of LLDB Scripting](https://recon.cx/2018/montreal/schedule/system/event_attachments/attachments/000/000/056/original/RECON-MTL-2018-Struct-Stalker-LLDB.pdf)
 
 
 ---
@@ -334,8 +336,6 @@ Contents
 <br>
 <br>
 
-
-> *This section is unrelated to LLDB, but related to debugging.*
 
 -	The `fsanitize` family of *[compiler]* flags, is an extraordinarily helpful set of *[compiler]* flags, with regards to debugging. They enable *[compiler]* *[runtime](https://en.wikipedia.org/wiki/Runtime_(program_lifecycle_phase))* checks –– *which are disabled by default* –– that detect and help avoid bugs. If a check fails, a diagnostic message is produced *(at runtime)* explaining the problem.
 
@@ -4303,16 +4303,15 @@ Save binary memory data starting at 0x1000 and ending at 0x2000 to a file.
 
 	> ***Synopsis:***
 	> ```shell
-	> $> memory write
-	> ```
-	> ***Shorthand:***
-	> ```shell
-	> $> <shorthand>
+	> $> memory write [--format <format>]
 	> ```
 	>
 	> ***Options:***
 	> | Flag                      | Shortcut  | Description
 	> | -                         | -         | - |
+	> | `--<full>`                | `-<short>`| *<description>*
+	> | `--<full>`                | `-<short>`| *<description>*
+	> | `--<full>`                | `-<short>`| *<description>*
 	> | `--<full>`                | `-<short>`| *<description>*
 	>
 	> ***Example(s):***
@@ -4327,6 +4326,8 @@ Save binary memory data starting at 0x1000 and ending at 0x2000 to a file.
 	> $> <output>
 	> ```
 
+
+Description:
      Write to the memory of the current target process.
 
 Syntax:
@@ -4354,6 +4355,72 @@ Command Options Usage:
      the arguments.
 
 <br>
+
+-	#### Find value in memory:
+
+	> <small>`[Search Tags: ]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> $> <command>
+	> ```
+	> ***Shorthand:***
+	> ```shell
+	> $> <shorthand>
+	> ```
+	>
+	> ***Options:***
+	> | Flag                      | Shortcut  | Description
+	> | -                         | -         | - |
+	> | `--<full>`                | `-<short>`| *<description>*
+	>
+	> ***Example(s):***
+	>
+	> #### (1) <title>
+	>
+	> ##### (1.1) <subtitle>
+	> ```shell
+	> $> <command>
+	> ```
+	> ```shell
+	> $> <output>
+	> ```
+
+(lldb) h mem find
+     Find a value in the memory of the current target process.
+
+Syntax:
+
+Command Options Usage:
+  memory find -e <expr> [-c <count>] [-o <offset>] <address-expression> <ad
+dress-expression>
+  memory find -s <name> [-c <count>] [-o <offset>] <address-expression> <ad
+dress-expression>
+
+       -c <count> ( --count <count> )
+            How many times to perform the search.
+
+       -e <expr> ( --expression <expr> )
+            Evaluate an expression to obtain a byte pattern.
+
+       -o <offset> ( --dump-offset <offset> )
+            When dumping memory for a match, an offset from the match
+            location to start dumping from.
+
+       -s <name> ( --string <name> )
+            Use text to find a byte pattern.
+
+     This command takes options and free-form arguments.  If your
+     arguments resemble option specifiers (i.e., they start with a - or
+     --), you must use ' -- ' between the end of the command options and
+     the beginning of the arguments.
+
+https://stackoverflow.com/questions/33098321/how-to-use-lldb-memory-find-command
+https://stackoverflow.com/questions/24431619/find-a-string-memory-using-lldb?rq=1
+https://lists.apple.com/archives/xcode-users/2015/Oct/msg00150.html
+
+<br>
+
 
 
 
