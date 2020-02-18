@@ -1,6 +1,6 @@
-<!-- ﷽ , In the name of God, the All-Merciful, the All-Compassionate. -->
+<!-- In the name of God, the All-Merciful, the All-Compassionate.
 
-<!-- >Metadata -----------------------------------------------------------------
+--- >Metadata -----------------------------------------------------------------
 
 	AUTHOR(S)
 		akharrou
@@ -15,7 +15,7 @@
 		[Beginner to Intermediate Level] Tutorial on LLDB.
 
 
-<!-- >Top Matter -------------------------------------------------------------->
+--- >Top Matter -------------------------------------------------------------->
 
 QuickDocs \| Low Level Debugger (LLDB)
 ===
@@ -4638,7 +4638,19 @@ Display the variable "*this" only when you stop in c class named MyClass.
 
 
 
+
+[3.10.2. Commands & Aliases](#) –– (§ SECTION )
+
+
+LLDB Python Scripting :: Useful Links
+
+Multiple LLDB commands as one :: https://stackoverflow.com/questions/14637074/lldb-alias-for-multiple-commands-as-one
+https://lldb.llvm.org/use/python-reference.html
+https://lldb.llvm.org/use/python.html
+https://opensource.apple.com/source/lldb/lldb-159/www/python-reference.html
+https://medium.com/itty-bitty-apps/scripting-lldb-with-python-31718eb4e501
+https://lldb.llvm.org/python_reference/index.html (edited)
+
+
+
 ------------------------------------------------------------------------------->
-
-
-<!--  -->
