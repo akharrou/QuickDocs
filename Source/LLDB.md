@@ -55,23 +55,23 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.4. Variables](#384-variables)
 		- [3.8.5. Registers *(Advanced)*](#385-registers)
 		- [3.8.6. Expressions *(Advanced)*](#386-expressions)
-		- [3.8.7. Memory *(Advanced)*](#387-memory-advanced)                  <!-- TODO: do chapter ::: `x` is an alias for `memory read`-->
-		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)      <!-- TODO: do chapter -->
-	- [3.9. Self-Help Commands](#)                                            <!-- TODO: do chapter -->
-		- [3.9.1. `help`](#)                                                  <!-- TODO: do chapter -->
-		- [3.9.2. `apropos`](#)                                               <!-- TODO: do chapter -->
-	- [3.10. Configure LLDB *(Advanced)*](#34-setup-lldb)                     <!-- TODO: do chapter -->
-		- [3.10.1. Settings](#)                                               <!-- TODO: do chapter ::: Most important alias (on macosx, because homebrew): alias lldb='PATH="/usr/bin:/bin:/usr/sbin:/sbin" lldb' ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
-		- [3.10.2. Commands](#)                                               <!-- TODO: do chapter -->
-			- [3.10.2.1. Aliases](#)                                          <!-- TODO: do chapter -->
-			- [3.10.2.2. Scripts](#)                                          <!-- TODO: do chapter -->
-		- [3.10.3. Type *[Formatting]*](#)                                    <!-- TODO: do chapter -->
-			- [3.10.3.1. Formats](#)                                          <!-- TODO: do chapter -->
-			- [3.10.3.2. Filters](#)                                          <!-- TODO: do chapter -->
-		- [3.10.4. Logging](#)                                                <!-- TODO: do chapter -->
-	- [3.11. Other Topics](#)                                                 <!-- TODO: do chapter -->
-		- [3.11.1. Bugreporting](#)                                           <!-- TODO: do chapter -->
-		- [3.11.2. Remote Debugging *(with `platform`)*](#)                   <!-- TODO: do chapter -->
+		- [3.8.7. Memory *(Advanced)*](#387-memory-advanced)                    <!-- TODO: do chapter ::: `x` is an alias for `memory read`-->
+		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)        <!-- TODO: do chapter -->
+	- [3.9. Self-Help Commands](#)                                              <!-- TODO: do chapter -->
+		- [3.9.1. `help`](#)                                                    <!-- TODO: do chapter -->
+		- [3.9.2. `apropos`](#)                                                 <!-- TODO: do chapter -->
+	- [3.10. Configure LLDB *(Advanced)*](#34-setup-lldb)                       <!-- TODO: do chapter -->
+		- [3.10.1. Settings](#)                                                 <!-- TODO: do chapter ::: Most important alias (on macosx, because homebrew): alias lldb='PATH="/usr/bin:/bin:/usr/sbin:/sbin" lldb' ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
+		- [3.10.2. Commands](#)                                                 <!-- TODO: do chapter -->
+			- [3.10.2.1. Aliases](#)                                            <!-- TODO: do chapter -->
+			- [3.10.2.2. Scripts](#)                                            <!-- TODO: do chapter -->
+		- [3.10.3. Type *[Formatting]*](#)                                      <!-- TODO: do chapter -->
+			- [3.10.3.1. Formats](#)                                            <!-- TODO: do chapter -->
+			- [3.10.3.2. Filters](#)                                            <!-- TODO: do chapter -->
+		- [3.10.4. Logging](#)                                                  <!-- TODO: do chapter -->
+	- [3.11. Other Topics](#)                                                   <!-- TODO: do chapter -->
+		- [3.11.1. Bugreporting](#)                                             <!-- TODO: do chapter -->
+		- [3.11.2. Remote Debugging *(with `platform`)*](#)                     <!-- TODO: do chapter -->
 
 
 <!-- >Start --------------------------------------------------------------------
