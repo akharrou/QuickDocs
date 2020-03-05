@@ -2867,7 +2867,7 @@ You can investigate source code with the following commands:
 
 - #### List source code:
 
-	> <small>`[Search Tags: >solst >solist >sourcelist >solist >listsource >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
+	> <small>`[Search Tags: >solst >solist >sourcelist >solist >listsource >lfile >lstfile >lsfile >listfile >listso >sourcedisplay >sodisplay >displaysource >displayso >sourceshow >soshow >showsource >showso >sourcelist >listsource >sourcelst >lstsource >srclist >listsrc >srclst >lstsrc >lssrc >lssource]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -2889,7 +2889,7 @@ You can investigate source code with the following commands:
 	>
 	> ***Example(s)***:
 	>
-	> #### **(1)** Inspect current stack frame source code
+	> ##### **(1)** Inspect current stack frame source code
 	> ```shell
 	> (lldb) frame select
 	> (lldb) fr s
@@ -2927,7 +2927,7 @@ You can investigate source code with the following commands:
 	>    31  	}
 	> ```
 	>
-	> #### **(2)** Inspect function source code
+	> ##### **(2)** Inspect function source code
 	> ```shell
 	> (lldb) source list --name foo
 	> (lldb) so l -n foo
@@ -2968,7 +2968,7 @@ You can investigate source code with the following commands:
 	>    31  	}
 	> ```
 	>
-	> #### **(3)** Inspect *[current | specified]* file source code starting from an arbitrary line
+	> ##### **(3)** Inspect *[current | specified]* file source code starting from an arbitrary line
 	> ```shell
 	> (lldb) source list --file loopInput.c --line 1
 	> (lldb) so li -f loopInput.c -l 1
@@ -3014,7 +3014,7 @@ You can investigate source code with the following commands:
 	> (lldb)
 	>    31  	}
 	> ```
-	> #### **(4)** " ", only list *[up to]* arbitrary number of lines
+	> ##### **(4)** " ", only list *[up to]* arbitrary number of lines
 	> ```shell
 	> (lldb) source list --count 20 --file main.c --line 5      # list 20 lines from 'main.c' starting from line 5
 	> (lldb) so li -c 20 -f main.c -l 5
@@ -4129,7 +4129,7 @@ You can inspect a your process's memory with the `memory` command:
 	> ```
 	> ***Shorthand:***
 	> ```shell
-	> $> x                        # Alias for 'memory read'
+	> $> x        # Alias for 'memory read'
 	> ```
 	>
 	> ***Options:***
@@ -4175,13 +4175,11 @@ Command Options Usage:
 ion>]
   memory read [-br] [-f <format>] [-c <count>] [-s <byte-size>] [-o <filename>]
  <address-expression> [<address-expression>]
+
   memory read [-AFLORTr] -t <none> [-f <format>] [-c <count>] [-G <gdb-format>]
  [-E <count>] [-o <filename>] [-d <none>] [-S <boolean>] [-D <count>] [-P <coun
 t>] [-Y[<count>]] [-V <boolean>] [-Z <count>] <address-expression> [<address-ex
 pression>]
-
-       -A ( --show-all-children )
-            Ignore the upper bound on the number of children to show.
 
        -D <count> ( --depth <count> )
             Set the max recurse depth when dumping aggregate types (default is
