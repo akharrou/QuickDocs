@@ -4156,26 +4156,28 @@ You can inspect a your process's memory with the `memory` command:
 	> ##### (1.1) Integer:
 	>
 	> ```shell
-	> lldb) x/d -s `sizeof(int)` -- &i     # in decimal
+	> (lldb) x/d -s `sizeof(int)` -- &i                              # in decimal
 	> x7ffeefbff1ec: 950
 	>
-	> lldb) x/x -s `sizeof(int)` -- &i     # in hex
+	> (lldb) x/x -s `sizeof(int)` -- &i                              # in hex
 	> x7ffeefbff1ec: 0x000003b6
 	>
-	> lldb) x/t -s `sizeof(int)` -- &i     # in binary
+	> (lldb) x/t -s `sizeof(int)` -- &i                              # in binary
 	> x7ffeefbff1ec: 0b00000000000000000000001110110110
 	> ```
 	>
 	> ##### (1.2) Float:
 	>
 	> ```shell
-	> lldb) x --format float -s `sizeof(float)` -c1 -- &my_var     # in decimal
+	> (lldb) x --format float -s `sizeof(float)` -c1 -- &my_var      # in decimal
 	> x7ffeefbff204: 42.4199982
-	>
-	> lldb) x --format hex -s `sizeof(float)` -c1 -- &my_var     # in hex
+	> ```
+	> ```shell
+	> (lldb) x --format hex -s `sizeof(float)` -c1 -- &my_var        # in hex
 	> x7ffeefbff204: 0x4229ae14
-	>
-	> lldb) x --format binary -s `sizeof(float)` -c1 -- &my_var     # in binary
+	> ```
+	> ```shell
+	> (lldb) x --format binary -s `sizeof(float)` -c1 -- &my_var     # in binary
 	> x7ffeefbff204: 0b01000010001010011010111000010100
 	> ```
 	>
@@ -4183,8 +4185,8 @@ You can inspect a your process's memory with the `memory` command:
 	>
 	> ##### (2.1) Integer Array (of 8 elements):
 	>
-	> ```
-	> lldb) x/d -s `sizeof(int)` -c 8 -l 1 -- arr      # in decimal, 8 elements, 1 element per line,
+	> ```shell
+	> (lldb) x/d -s `sizeof(int)` -c 8 -l 1 -- arr       # in decimal, 8 elements, 1 element per line,
 	> x603000000550: 1
 	> x603000000554: 2
 	> x603000000558: 3
@@ -4194,8 +4196,8 @@ You can inspect a your process's memory with the `memory` command:
 	> x603000000568: 7
 	> x60300000056c: 7
 	> ```
-	> ```
-	> lldb) x/x -s `sizeof(int)` -c 8 -l 1 -- arr      # in hex, " ", " "
+	> ```shell
+	> (lldb) x/x -s `sizeof(int)` -c 8 -l 1 -- arr       # in hex, " ", " "
 	> x603000000550: 0x00000001
 	> x603000000554: 0x00000002
 	> x603000000558: 0x00000003
@@ -4205,8 +4207,8 @@ You can inspect a your process's memory with the `memory` command:
 	> x603000000568: 0x00000007
 	> x60300000056c: 0x00000007
 	> ```
-	> ```
-	> lldb) x/t -s `sizeof(int)` -c 8 -l 1 -- arr      # in binary, " ", " "
+	> ```shell
+	> (lldb) x/t -s `sizeof(int)` -c 8 -l 1 -- arr       # in binary, " ", " "
 	> x603000000550: 0b00000000000000000000000000000001
 	> x603000000554: 0b00000000000000000000000000000010
 	> x603000000558: 0b00000000000000000000000000000011
@@ -4216,24 +4218,24 @@ You can inspect a your process's memory with the `memory` command:
 	> x603000000568: 0b00000000000000000000000000000111
 	> x60300000056c: 0b00000000000000000000000000000111
 	> ```
-	> ```
-	> lldb) x/d -s `sizeof(int)` -c10 -l2 -- arr      # in decimal, 10 elements (2 past the array), 2 per line
+	> ```shell
+	> (lldb) x/d -s `sizeof(int)` -c10 -l2 -- arr        # in decimal, 10 elements (2 past the array), 2 per line
 	> x603000000550: 1 2
 	> x603000000558: 3 4
 	> x603000000560: 5 6
 	> x603000000568: 7 7
 	> x603000000570: 2 50331647
 	> ```
-	> ```
-	> lldb) x/x -s `sizeof(int)` -c10 -l2 -- arr      # in hex, " ", " "
+	> ```shell
+	> (lldb) x/x -s `sizeof(int)` -c10 -l2 -- arr        # in hex, " ", " "
 	> x603000000550: 0x00000001 0x00000002
 	> x603000000558: 0x00000003 0x00000004
 	> x603000000560: 0x00000005 0x00000006
 	> x603000000568: 0x00000007 0x00000007
 	> x603000000570: 0x00000002 0x02ffffff
 	> ```
-	> ```
-	> lldb) x/x -s `sizeof(int)` -c10 -l5 -- arr      # " ", " ", 5 per line
+	> ```shell
+	> (lldb) x/x -s `sizeof(int)` -c10 -l5 -- arr        # " ", " ", 5 per line
 	> x603000000550: 0x00000001 0x00000002 0x00000003 0x00000004 0x00000005
 	> x603000000564: 0x00000006 0x00000007 0x00000007 0x00000002 0x02ffffff
 	> ```
@@ -4241,13 +4243,13 @@ You can inspect a your process's memory with the `memory` command:
 	> ##### (2.2) Character Array *(C-String)*:
 	>
 	> ```shell
-	> lldb) x/s -- &name
+	> (lldb) x/s -- &name
 	> x7ffeefbfef80: "James"
 	>
-	> lldb) x/c -s 1 -c10 -- &name
+	> (lldb) x/c -s 1 -c10 -- &name
 	> x7ffeefbfef80: James\0\0\0\0\0
 	>
-	> lldb) x/c -s 1 -c10 -l1 -- &name
+	> (lldb) x/c -s 1 -c10 -l1 -- &name
 	> x7ffeefbfef80: J
 	> x7ffeefbfef82: m
 	> x7ffeefbfef83: e
@@ -4258,7 +4260,7 @@ You can inspect a your process's memory with the `memory` command:
 	> x7ffeefbfef88: \0
 	> x7ffeefbfef89: \0
 	>
-	> lldb) x/d -s1 -c10 -- &name
+	> (lldb) x/d -s1 -c10 -- &name
 	> x7ffeefbfef80: 74
 	> x7ffeefbfef81: 97
 	> x7ffeefbfef82: 109
@@ -4270,11 +4272,11 @@ You can inspect a your process's memory with the `memory` command:
 	> x7ffeefbfef88: 0
 	> x7ffeefbfef89: 0
 	>
-	> lldb) x/x -s1 -c10 -l5 -- &name
+	> (lldb) x/x -s1 -c10 -l5 -- &name
 	> x7ffeefbfef80: 0x4a 0x61 0x6d 0x65 0x73
 	> x7ffeefbfef85: 0x00 0x00 0x00 0x00 0x00
 	>
-	> lldb) x/t -s1 -c10 -l5 -- &name
+	> (lldb) x/t -s1 -c10 -l5 -- &name
 	> x7ffeefbfef80: 0b01001010 0b01100001 0b01101101 0b01100101 0b01110011
 	> x7ffeefbfef85: 0b00000000 0b00000000 0b00000000 0b00000000 0b00000000
 	> ```
@@ -4282,7 +4284,7 @@ You can inspect a your process's memory with the `memory` command:
 	> ##### (2.3) String Array:
 	>
 	> ```shell
-	> lldb) x/s -c10 -- *av
+	> (lldb) x/s -c10 -- *av
 	>
 	> x7ffeefbff510: "/nfs/2018/a/akharrou/Desktop/Directory/Directory/a"
 	> x7ffeefbff543: "ARCHFLAGS=-arch x86_64"
@@ -4300,11 +4302,11 @@ You can inspect a your process's memory with the `memory` command:
 	> ##### (3) GDB shorthand format syntax:
 	>
 	> ```shell
-	> lldb) memory read --count 4 --format hex --size `sizeof(int32_t)` -- my_ptr
-	> lldb) x -s4 -fx -c4 my_ptr
-	> lldb) memory read --gdb-format 4xw -- my_ptr
-	> lldb) mem read/4xw -- my_ptr
-	> lldb) x/4xw -- my_ptr
+	> (lldb) memory read --count 4 --format hex --size `sizeof(int32_t)` -- my_ptr
+	> (lldb) x -s4 -fx -c4 my_ptr
+	> (lldb) memory read --gdb-format 4xw -- my_ptr
+	> (lldb) mem read/4xw -- my_ptr
+	> (lldb) x/4xw -- my_ptr
 	> ```
 	> ```shell
 	> x6020000000f0: 0xbebebebe 0x00000000 0x00000000 0x00000000
@@ -4313,29 +4315,29 @@ You can inspect a your process's memory with the `memory` command:
 	> ##### (1) Read 512 bytes of memory from address `buffer` and save results to a local file as text.
 	>
 	> ```shell
-	> lldb) memory read --outfile /tmp/mem.txt --count 512 -- buffer
-	> lldb) me read -o/tmp/mem.txt -c512 buffer
-	> lldb) x/512bx -o/tmp/mem.txt -- buffer
+	> (lldb) memory read --outfile /tmp/mem.txt --count 512 -- buffer
+	> (lldb) me read -o/tmp/mem.txt -c512 buffer
+	> (lldb) x/512bx -o/tmp/mem.txt -- buffer
 	> ```
 	>
 	> ##### (1) Save binary memory data starting at 0x1000 and ending at 0x2000 to a file.
 	>
 	> ```shell
-	> lldb) memory read --outfile /tmp/mem.bin --binary 0x1000 0x2000
-	> lldb) me read -o /tmp/mem.bin -b 0x1000 0x2000
-	> lldb) x -o /tmp/mem.bin -b 0x1000 0x2000
+	> (lldb) memory read --outfile /tmp/mem.bin --binary 0x1000 0x2000
+	> (lldb) me read -o /tmp/mem.bin -b 0x1000 0x2000
+	> (lldb) x -o /tmp/mem.bin -b 0x1000 0x2000
 	> ```
 	>
-	> <small>[**Note:***
+	> *<small>[**Note:***
 	>
-	> 	*You can have expressions evaluated as long as they are surrounded by backticks (``` `` ```):*
+	> 	- *You can evaluate expressions by surrounding them in backticks (``` `` ```):*
 	> 	```shell
 	> 	(lldb) memory read --size `sizeof(int)` `argv[0]`
 	> 	```
 	>
-	> 	*This command takes options and free-form arguments.  If your arguments resemble option specifiers (i.e., they start with a - or --), you must use ' -- ' between the end of the command options and the beginning of the arguments.*
+	> 	- *This command takes options and free-form arguments.  If your arguments resemble option specifiers (i.e., they start with a - or --), you must use ' -- ' between the end of the command options and the beginning of the arguments.*
 	>
-	> - **end note**]</small>*
+	> *- **end note**]</small>*
 
 Command Options Usage:
   memory read [-r] [-f <format>] [-c <count>] [-G <gdb-format>] [-s <byte-size>
