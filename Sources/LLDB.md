@@ -3395,11 +3395,13 @@ You can inspect a thread's stack frame with the following commands:
 Commands to:
 ---
 - [1 Print *(read)* variable(s)](#print-read-variables)
+- [2 Formatting Output](#formatting-output)
 ---
 
 You can inspect a stack frame's variables, as well as *[static | extern]* global variables:
 
 ---
+
 -	#### Print *(read)* variable(s):
 
 	> <small>`[Search Tags: >fr variables >frvariableexamine >frvariableexam >Frvars >variableshow >variablesshow >varsshow >varshow >showvariable >showvariables >showvars >showvar >listvariables >displayvariables >dispvariables >listvariabless >displayvariabless >dispvariabless >listvarss >displayvarss >dispvarss >listvars >displayvars >dispvars >variableslist >variablesdisplay >variablesslist >variablessdisplay >varsslist >varssdisplay >varslist >varsdisplay >variablelist >variabledisplay >variableslist >variablesdisplay >varslist >varsdisplay >varlist >vardisplay >variableprint >variablesprint >varsprint >varprint >printvariable >printvariables >printvars >printvar >variableread >variablesread >varsread >varread >variablerd >variablesrd >varsrd >varrd >readvariable >readvariables >readvars >readvar >rdvariable >rdvariables >rdvars >rdvar]`</small>
@@ -3617,70 +3619,118 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>
 	> -	*To obtain a table of the available formats, type: `(lldb) frame variable --format ?`*
 	>
-	>
-	>	### Formatting:
-	>	*`[Search Tags: >formatting >table >formattable >ftable >frmtable]`*
-	>
-	>	#### Usages:
-	>	|                 |                                      |
-	>	| -               | -                                    |
-	>	| `LLDB`          | `--format [Format]`                  |
-	>	| `GDB`           | `--gdb-format [Count][Format][Size]` |
-	>	| `GDB` Shorthand | `<cmd>/[Format]`                     |
-	>	| `GDB` Shorthand | `<cmd>/[Count][Format][Size]`        |
-	>
-	>	#### Formats:
-	>	| Full [Word] | Shorthand | *[Supported]* `GDB` Shorthand
-	>	| - | - | - |
-	>	| `default` | - | -
-	>	| `boolean` | `B` | -
-	>	| `binary` | `b` | `/t`
-	>	| `bytes` | `y` | -
-	>	| `bytes with ASCII` | `Y` | -
-	>	| `character` | `c` | `/c`
-	>	| `printable character` | `C` | -
-	>	| `complex float` | `F` | -
-	>	| `c-string` | `s` | `/s`
-	>	| `decimal` | `d` | `/d`
-	>	| `enumeration` | `E` | -
-	>	| `hex` | `x` | `/x`
-	>	| `uppercase hex` | `X` | -
-	>	| `float` | `f` | `/f`
-	>	| `octal` | `o` | `/o`
-	>	| `OSType` | `O` | -
-	>	| `unicode16` | `U` | -
-	>	| `unicode32` | - | -
-	>	| `unsigned decimal` | `u` | `/u`
-	>	| `pointer` | `p` | `/a`
-	>	| `char[]` | - |  -
-	>	| `int8_t[]` | - |  -
-	>	| `uint8_t[]` | - |  -
-	>	| `int16_t[]` | - |  -
-	>	| `uint16_t[]` | - |  -
-	>	| `int32_t[]` | - |  -
-	>	| `uint32_t[]` | - |  -
-	>	| `int64_t[]` | - |  -
-	>	| `uint64_t[]` | - |  -
-	>	| `float16[]` | - |  -
-	>	| `float32[]` | - |  -
-	>	| `float64[]` | - |  -
-	>	| `uint128_t[]` | - |  -
-	>	| `complex integer` | `I` | -
-	>	| `character array` | `a` | -
-	>	| `address` | `A` | `/a`
-	>	| `hex float` | - | -
-	>	| `instruction` | `i` | `/i`
-	>	| `void` | `v` | -
-	>
-	>	#### [`GDB`] Sizes :
-	>   |     |                              |
-	>   | -   | -                            |
-	>   | `b` | byte                         |
-	>   | `h` | halfword (16-bit value)      |
-	>   | `w` | word     (32-bit value)      |
-	>   | `g` | giant    word (64-bit value) |
-	>
 	> *- **end note**]</small>*
+
+<br>
+
+-	#### Formatting Output:
+
+	> `[Search Tags: >formatting >table >formattable >ftable >frmtable]`*
+
+	> ***Usages:***
+	> |                 |                                      |
+	> | -               | -                                    |
+	> | `LLDB`          | `--format [Format]`                  |
+	> | `GDB`           | `--gdb-format [Count][Format][Size]` |
+	> | `GDB` Shorthand | `<cmd>/[Format]`                     |
+	> | `GDB` Shorthand | `<cmd>/[Count][Format][Size]`        |
+	>
+	> ***Formats:***
+	> | Full [Word] | Shorthand | *[Supported]* `GDB` Shorthand
+	> | - | - | - |
+	> | `default` | - | -
+	> | `boolean` | `B` | -
+	> | `binary` | `b` | `/t`
+	> | `bytes` | `y` | -
+	> | `bytes with ASCII` | `Y` | -
+	> | `character` | `c` | `/c`
+	> | `printable character` | `C` | -
+	> | `complex float` | `F` | -
+	> | `c-string` | `s` | `/s`
+	> | `decimal` | `d` | `/d`
+	> | `enumeration` | `E` | -
+	> | `hex` | `x` | `/x`
+	> | `uppercase hex` | `X` | -
+	> | `float` | `f` | `/f`
+	> | `octal` | `o` | `/o`
+	> | `OSType` | `O` | -
+	> | `unicode16` | `U` | -
+	> | `unicode32` | - | -
+	> | `unsigned decimal` | `u` | `/u`
+	> | `pointer` | `p` | `/a`
+	> | `char[]` | - |  -
+	> | `int8_t[]` | - |  -
+	> | `uint8_t[]` | - |  -
+	> | `int16_t[]` | - |  -
+	> | `uint16_t[]` | - |  -
+	> | `int32_t[]` | - |  -
+	> | `uint32_t[]` | - |  -
+	> | `int64_t[]` | - |  -
+	> | `uint64_t[]` | - |  -
+	> | `float16[]` | - |  -
+	> | `float32[]` | - |  -
+	> | `float64[]` | - |  -
+	> | `uint128_t[]` | - |  -
+	> | `complex integer` | `I` | -
+	> | `character array` | `a` | -
+	> | `address` | `A` | `/a`
+	> | `hex float` | - | -
+	> | `instruction` | `i` | `/i`
+	> | `void` | `v` | -
+	>
+	> ***[`GDB`] Sizes:***
+	> |     |                              |
+	> | -   | -                            |
+	> | `b` | byte                         |
+	> | `h` | halfword (16-bit value)      |
+	> | `w` | word     (32-bit value)      |
+	> | `g` | giant    word (64-bit value) |
+	>
+	> ***Example(s):*** <br>
+	>
+	> ##### (1) `frame variable`
+	>
+	> ```shell
+	> (lldb) frame variable --format hex -- <variable>
+	> (lldb) fr v --format x -- <variable>
+	> (lldb) fr v -f hex -- <variable>
+	> (lldb) fr v -f x -- <variable>
+	> (lldb) fr v --gdb-format x -- <variable>
+	> (lldb) fr v -G x -- <variable>
+	> (lldb) fr v/x -- <variable>
+	> ```
+	> > *<small>[**Note:** This command doesn't support specifying a **count** nor a **byte size**. - **end note**]</small>*
+	>
+	> ##### (2) `expression`
+	>
+	> ```shell
+	> (lldb) expression --format decimal -- <expression>
+	> (lldb) e --format d -- <expression>
+	> (lldb) e -f decimal -- <expression>
+	> (lldb) e -f d -- <expression>
+	> (lldb) e --gdb-format d -- <expression>
+	> (lldb) e -G d -- <expression>
+	> (lldb) e/d <expression>       # putting a `--` would decrement the result
+	> ```
+	> > *<small>[**Note:** This command doesn't support specifying a **count** nor a **byte size**. - **end note**]</small>*
+	>
+	> ##### (3) `memory read`
+	>
+	> ```shell
+	> (lldb) memory read --format binary -- <address-expression>
+	> (lldb) me read --format b -- <address-expression>
+	> (lldb) x -f binary -- <address-expression>
+	> (lldb) x -f b -- <address-expression>
+	> (lldb) x --gdb-format t -- <address-expression>
+	> (lldb) x -G t -- <address-expression>
+	> (lldb) x/t -- <address-expression>
+	> ```
+	>
+	> ```shell
+	> (lldb) x --gdb-format 4tw -- <address-expression>
+	> (lldb) x -G 4tw -- <address-expression>
+	> (lldb) x/4tw -- <address-expression>
+	> ```
 
 
 <br>
@@ -4166,8 +4216,8 @@ You can inspect a your process's memory with the `memory` command:
 	> | `--num-per-line <number-per-line>`  | `-l`     | *The number of items per line to display.*
 	> | `--force`                           | `-r`     | *Necessary if reading over <br> `target.max-memory-read-size` bytes.*
 	> | **Logging**                         |          |
-	> | `--outfile <filename>`              | `-o`     | *Specify a path for capturing command output.*
-	> | `--append-outfile`                  | -        | *Append to the file specified with '--outfile <path>'.*
+	> | `--outfile <filename>`              | `-o`     | *Specify a path for capturing command <br> output.*
+	> | `--append-outfile`                  | --       | *Append to the file specified with <br> `--outfile <path>`.*
 	>
 	> ***Example(s):***
 	>
@@ -4176,26 +4226,28 @@ You can inspect a your process's memory with the `memory` command:
 	> ##### (1.1) Integer:
 	>
 	> ```shell
-	> (lldb) x/d -s `sizeof(int)` -- &i                              # in decimal
+	> (lldb) memory read --fomrat decimal --size `sizeof(int)` -- &my_int    # in decimal
+	> (lldb) me read -f d -s `sizeof(int)` -- &my_int                        # " ", shorthand
+	> (lldb) x/d -s `sizeof(int)` -- &my_int                                 # " ", shorthand
 	> x7ffeefbff1ec: 950
 	>
-	> (lldb) x/x -s `sizeof(int)` -- &i                              # in hex
+	> (lldb) x/x -s `sizeof(int)` -- &my_int                                 # in hex
 	> x7ffeefbff1ec: 0x000003b6
 	>
-	> (lldb) x/t -s `sizeof(int)` -- &i                              # in binary
+	> (lldb) x/t -s `sizeof(int)` -- &my_int                                 # in binary
 	> x7ffeefbff1ec: 0b00000000000000000000001110110110
 	> ```
 	>
 	> ##### (1.2) Float:
 	>
 	> ```shell
-	> (lldb) x --format float -s `sizeof(float)` -c1 -- &my_var      # in decimal
+	> (lldb) x/f -s `sizeof(float)` -c1 -- &my_float                         # in float
 	> x7ffeefbff204: 42.4199982
 	>
-	> (lldb) x --format hex -s `sizeof(float)` -c1 -- &my_var        # in hex
+	> (lldb) x/x -s `sizeof(float)` -c1 -- &my_float                         # in hex
 	> x7ffeefbff204: 0x4229ae14
 	>
-	> (lldb) x --format binary -s `sizeof(float)` -c1 -- &my_var     # in binary
+	> (lldb) x/t -s `sizeof(float)` -c1 -- &my_float                         # in binary
 	> x7ffeefbff204: 0b01000010001010011010111000010100
 	> ```
 	>
