@@ -3622,11 +3622,12 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>	*`[Search Tags: >formatting >table >formattable >ftable >frmtable]`*
 	>
 	>	#### Usages:
-	>	| |                 |                                      |
-	>	| | -               | -                                    |
-	>	| | `LLDB`          | `--format [Format]`                  |
-	>	| | `GDB`           | `--gdb-format [Count][Format][Size]` |
-	>	| | `GDB` Shorthand | `<cmd>/[Count][Format][Size]`        |
+	>	|                 |                                      |
+	>	| -               | -                                    |
+	>	| `LLDB`          | `--format [Format]`                  |
+	>	| `GDB`           | `--gdb-format [Count][Format][Size]` |
+	>	| `GDB` Shorthand | `<cmd>/[Format]`                     |
+	>	| `GDB` Shorthand | `<cmd>/[Count][Format][Size]`        |
 	>
 	>	#### Formats:
 	>	| Full [Word] | Shorthand | *[Supported]* `GDB` Shorthand
