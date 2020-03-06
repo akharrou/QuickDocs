@@ -1,4 +1,4 @@
-<!-- In the name of God, the All-Merciful, the All-Compassionate.
+<!-- In the name of God, the Most Gracious, the Most Merciful.
 
 --- >Metadata -----------------------------------------------------------------
 
@@ -3612,7 +3612,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>
 	> *<small>[**Note:***
 	>
-	> - *`LLDB` supports formatting the output with `GDB`'s shorthand notation: appending to the command a backslash followed by its format specifier (see [Format Table](#format-table) below), e.g.: `fr v/x` (hexadecimal), `fr v/o` (octal), `fr v/t` (binary), ... See documentation for [GDB's Output Formatting](https://visualgdb.com/gdbreference/commands/x).*
+	> - *`LLDB` supports formatting the output with `GDB`'s shorthand notation: appending to the command a backslash followed by its format specifier (see [Format Table](#format-table) below), e.g.: `fr v/x` (hexadecimal), `fr v/o` (octal), `fr v/t` (binary). See documentation for [GDB's Output Formatting](https://visualgdb.com/gdbreference/commands/x).*
 	>	*The `gdb` shorthand follows the form: `--gdb-format [Count] [Size] [Format] <Address expression>` or can be immediately append to the last part of a subcommand: `memory read/[Count][Size][Format] <Address expression>`*
 	>
 	> -	*To obtain a table of the available formats, type: `(lldb) frame variable --format ?`*
@@ -4136,30 +4136,206 @@ You can inspect a your process's memory with the `memory` command:
 	>
 	> ***Options:***
 	> | Flag                                | Shortcut | Description
-	> | -                                   | -    | - |
-	> | **Format**                          |      |
-	> | `--format <format>`                 | `-f` | Specify a format to be used for display.
-	> | `--gdb-format <gdb-format>`         | `-G` | Specify a format using a GDB format <br> specifier string.
-	> | **Configure**                       |      |
-	> | `--count <count>`                   | `-c` | The number of total items to display.
-	> | `--size <byte-size>`                | `-s` | The size in bytes to use when displaying <br> with the selected format.
-	> | `--num-per-line <number-per-line>`  | `-l` | The number of items per line to display.
-	> | `--force`                           | `-r` | Necessary if reading over <br> `target.max-memory-read-size` bytes.
-	> | **Logging Output**                  |      |
-	> | `--outfile <filename>`              | `-o` | Specify a path for capturing command output.
-	> | `--append-outfile`                  | n/a  | Append to the file specified with '--outfile <path>'.
+	> | -                                   | -        | -
+	> | **Format**                          |          |
+	> | `--format <format>`                 | `-f`     | *Specify a display format (e.g. `hex` or `x`, <br> `decimal` or `d`, `binary` or `b`). <br> <br> See [Format Table](#format-table) for all formats.*
+	> | `--gdb-format <gdb-format>`         | `-G`     | *Specify a format using a GDB format <br> specifier string.*
+	> | **Specifications**                  |          |
+	> | `--count <count>`                   | `-c`     | *The number of total items to display.*
+	> | `--size <byte-size>`                | `-s`     | *The size in bytes to use when displaying <br> with the selected format.*
+	> | `--num-per-line <number-per-line>`  | `-l`     | *The number of items per line to display.*
+	> | `--force`                           | `-r`     | *Necessary if reading over <br> `target.max-memory-read-size` bytes.*
+	> | **Logging**                         |          |
+	> | `--outfile <filename>`              | `-o`     | *Specify a path for capturing command output.*
+	> | `--append-outfile`                  | -        | *Append to the file specified with '--outfile <path>'.*
 	>
 	> ***Example(s):***
 	>
-	> ##### (1) Investigate non-aggregate (simple) variables
+	> ##### (1) Non-Aggregate Types:
+	>
+	> ##### (1.1) Integer:
+	>
 	> ```shell
-	> (lldb) frame variable my_var
-	> (lldb) fr v my_var
-	> ```
-	> ```shell
-	> (float) my_var = 0
+	> lldb) x/d -s `sizeof(int)` -- &i     # in decimal
+	> x7ffeefbff1ec: 950
+	>
+	> lldb) x/x -s `sizeof(int)` -- &i     # in hex
+	> x7ffeefbff1ec: 0x000003b6
+	>
+	> lldb) x/t -s `sizeof(int)` -- &i     # in binary
+	> x7ffeefbff1ec: 0b00000000000000000000001110110110
 	> ```
 	>
+	> ##### (1.2) Float:
+	>
+	> ```shell
+	> lldb) x --format float -s `sizeof(float)` -c1 -- &my_var     # in decimal
+	> x7ffeefbff204: 42.4199982
+	>
+	> lldb) x --format hex -s `sizeof(float)` -c1 -- &my_var     # in hex
+	> x7ffeefbff204: 0x4229ae14
+	>
+	> lldb) x --format binary -s `sizeof(float)` -c1 -- &my_var     # in binary
+	> x7ffeefbff204: 0b01000010001010011010111000010100
+	> ```
+	>
+	> ##### (2) Aggregate Types:
+	>
+	> ##### (2.1) Integer Array (of 8 elements):
+	>
+	> ```
+	> lldb) x/d -s `sizeof(int)` -c 8 -l 1 -- arr      # in decimal, 8 elements, 1 element per line,
+	> x603000000550: 1
+	> x603000000554: 2
+	> x603000000558: 3
+	> x60300000055c: 4
+	> x603000000560: 5
+	> x603000000564: 6
+	> x603000000568: 7
+	> x60300000056c: 7
+	> ```
+	> ```
+	> lldb) x/x -s `sizeof(int)` -c 8 -l 1 -- arr      # in hex, " ", " "
+	> x603000000550: 0x00000001
+	> x603000000554: 0x00000002
+	> x603000000558: 0x00000003
+	> x60300000055c: 0x00000004
+	> x603000000560: 0x00000005
+	> x603000000564: 0x00000006
+	> x603000000568: 0x00000007
+	> x60300000056c: 0x00000007
+	> ```
+	> ```
+	> lldb) x/t -s `sizeof(int)` -c 8 -l 1 -- arr      # in binary, " ", " "
+	> x603000000550: 0b00000000000000000000000000000001
+	> x603000000554: 0b00000000000000000000000000000010
+	> x603000000558: 0b00000000000000000000000000000011
+	> x60300000055c: 0b00000000000000000000000000000100
+	> x603000000560: 0b00000000000000000000000000000101
+	> x603000000564: 0b00000000000000000000000000000110
+	> x603000000568: 0b00000000000000000000000000000111
+	> x60300000056c: 0b00000000000000000000000000000111
+	> ```
+	> ```
+	> lldb) x/d -s `sizeof(int)` -c10 -l2 -- arr      # in decimal, 10 elements (2 past the array), 2 per line
+	> x603000000550: 1 2
+	> x603000000558: 3 4
+	> x603000000560: 5 6
+	> x603000000568: 7 7
+	> x603000000570: 2 50331647
+	> ```
+	> ```
+	> lldb) x/x -s `sizeof(int)` -c10 -l2 -- arr      # in hex, " ", " "
+	> x603000000550: 0x00000001 0x00000002
+	> x603000000558: 0x00000003 0x00000004
+	> x603000000560: 0x00000005 0x00000006
+	> x603000000568: 0x00000007 0x00000007
+	> x603000000570: 0x00000002 0x02ffffff
+	> ```
+	> ```
+	> lldb) x/x -s `sizeof(int)` -c10 -l5 -- arr      # " ", " ", 5 per line
+	> x603000000550: 0x00000001 0x00000002 0x00000003 0x00000004 0x00000005
+	> x603000000564: 0x00000006 0x00000007 0x00000007 0x00000002 0x02ffffff
+	> ```
+	>
+	> ##### (2.2) Character Array *(C-String)*:
+	>
+	> ```shell
+	> lldb) x/s -- &name
+	> x7ffeefbfef80: "James"
+	>
+	> lldb) x/c -s 1 -c10 -- &name
+	> x7ffeefbfef80: James\0\0\0\0\0
+	>
+	> lldb) x/c -s 1 -c10 -l1 -- &name
+	> x7ffeefbfef80: J
+	> x7ffeefbfef82: m
+	> x7ffeefbfef83: e
+	> x7ffeefbfef84: s
+	> x7ffeefbfef85: \0
+	> x7ffeefbfef86: \0
+	> x7ffeefbfef87: \0
+	> x7ffeefbfef88: \0
+	> x7ffeefbfef89: \0
+	>
+	> lldb) x/d -s1 -c10 -- &name
+	> x7ffeefbfef80: 74
+	> x7ffeefbfef81: 97
+	> x7ffeefbfef82: 109
+	> x7ffeefbfef83: 101
+	> x7ffeefbfef84: 115
+	> x7ffeefbfef85: 0
+	> x7ffeefbfef86: 0
+	> x7ffeefbfef87: 0
+	> x7ffeefbfef88: 0
+	> x7ffeefbfef89: 0
+	>
+	> lldb) x/x -s1 -c10 -l5 -- &name
+	> x7ffeefbfef80: 0x4a 0x61 0x6d 0x65 0x73
+	> x7ffeefbfef85: 0x00 0x00 0x00 0x00 0x00
+	>
+	> lldb) x/t -s1 -c10 -l5 -- &name
+	> x7ffeefbfef80: 0b01001010 0b01100001 0b01101101 0b01100101 0b01110011
+	> x7ffeefbfef85: 0b00000000 0b00000000 0b00000000 0b00000000 0b00000000
+	> ```
+	>
+	> ##### (2.3) String Array:
+	>
+	> ```shell
+	> lldb) x/s -c10 -- *av
+	>
+	> x7ffeefbff510: "/nfs/2018/a/akharrou/Desktop/Directory/Directory/a"
+	> x7ffeefbff543: "ARCHFLAGS=-arch x86_64"
+	> x7ffeefbff55a: "Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.KDQ26cchJb/Render
+	>
+	> x7ffeefbff5a6: "COLORTERM=truecolor"
+	> x7ffeefbff5ba: "COMPUTER=e1z2r1p1"
+	> x7ffeefbff5cc: "CPPFLAGS=-I/nfs/2018/a/akharrou/.brew/opt/ncurses/include"
+	> x7ffeefbff606: "DB_URI=mongodb+srv://42:42@42-buildthebay-project-7nufr.mongodb.net/btb"
+	> x7ffeefbff64e: "DISPLAY=/private/tmp/com.apple.launchd.lhFgB51LKL/org.macosforge.xquartz:0"
+	> x7ffeefbff699: "HARD_DRIVE=/Volumes/DISKDRIVE"
+	> x7ffeefbff6b7: "HARD_DRIVE_NAME=DISKDRIVE"
+	> ```
+	>
+	> ##### (3) GDB shorthand format syntax:
+	>
+	> ```shell
+	> lldb) memory read --count 4 --format hex --size `sizeof(int32_t)` -- my_ptr
+	> lldb) x -s4 -fx -c4 my_ptr
+	> lldb) memory read --gdb-format 4xw -- my_ptr
+	> lldb) mem read/4xw -- my_ptr
+	> lldb) x/4xw -- my_ptr
+	> ```
+	> ```shell
+	> x6020000000f0: 0xbebebebe 0x00000000 0x00000000 0x00000000
+	> ```
+	>
+	> ##### (1) Read 512 bytes of memory from address `buffer` and save results to a local file as text.
+	>
+	> ```shell
+	> lldb) memory read --outfile /tmp/mem.txt --count 512 -- buffer
+	> lldb) me read -o/tmp/mem.txt -c512 buffer
+	> lldb) x/512bx -o/tmp/mem.txt -- buffer
+	> ```
+	>
+	> ##### (1) Save binary memory data starting at 0x1000 and ending at 0x2000 to a file.
+	>
+	> ```shell
+	> lldb) memory read --outfile /tmp/mem.bin --binary 0x1000 0x2000
+	> lldb) me read -o /tmp/mem.bin -b 0x1000 0x2000
+	> lldb) x -o /tmp/mem.bin -b 0x1000 0x2000
+	> ```
+	>
+	> <small>[**Note:***
+	>
+	> 	*You can have expressions evaluated as long as they are surrounded by backticks (``` `` ```):*
+	> 	```shell
+	> 	(lldb) memory read --size `sizeof(int)` `argv[0]`
+	> 	```
+	>
+	> 	*This command takes options and free-form arguments.  If your arguments resemble option specifiers (i.e., they start with a - or --), you must use ' -- ' between the end of the command options and the beginning of the arguments.*
+	>
+	> - **end note**]</small>*
 
 Command Options Usage:
   memory read [-r] [-f <format>] [-c <count>] [-G <gdb-format>] [-s <byte-size>
@@ -4173,167 +4349,7 @@ ion>]
 
 See: https://lldb.llvm.org/use/map.html#examining-thread-state
 
-Read memory from address 0xbffff3c0 and show 4 hex uint32_t values.
-(gdb) x/4xw 0xbffff3c0
-(lldb) memory read --size 4 --format x --count 4 0xbffff3c0
-(lldb) me r -s4 -fx -c4 0xbffff3c0
-(lldb) x -s4 -fx -c4 0xbffff3c0
 
-(x) GDB shorthand format syntax:
-
-(lldb) memory read --count 4 --format hex --size `sizeof(int32_t)` -- my_ptr
-(lldb) x -s4 -fx -c4 my_ptr
-
-(lldb) memory read --gdb-format 4xw -- my_ptr
-(lldb) mem read/4xw -- my_ptr
-(lldb) x/4xw -- my_ptr
-0x6020000000f0: 0xbebebebe 0x00000000 0x00000000 0x00000000
-
-Read memory starting at the expression "argv[0]".
-(gdb) x argv[0]
-(lldb) memory read `argv[0]`
-NOTE: any command can inline a scalar expression result (as long as the target is stopped) using backticks around any expression:
-(lldb) memory read --size `sizeof(int)` `argv[0]`
-Read 512 bytes of memory from address 0xbffff3c0 and save results to a local file as text.
-(gdb) set logging on
-(gdb) set logging file /tmp/mem.txt
-(gdb) x/512bx 0xbffff3c0
-(gdb) set logging off
-(lldb) memory read --outfile /tmp/mem.txt --count 512 0xbffff3c0
-(lldb) me r -o/tmp/mem.txt -c512 0xbffff3c0
-(lldb) x/512bx -o/tmp/mem.txt 0xbffff3c0
-Save binary memory data starting at 0x1000 and ending at 0x2000 to a file.
-(gdb) dump memory /tmp/mem.bin 0x1000 0x2000	(lldb) memory read --outfile /tmp/mem.bin --binary 0x1000 0x2000
-(lldb) me r -o /tmp/mem.bin -b 0x1000 0x2000
-
-<br>
-
-
-Examples:
-
-
-(x) Integer
-
-(lldb) x/d -s `sizeof(int)` -- &i
-0x7ffeefbff1ec: 950
-(lldb) x/x -s `sizeof(int)` -- &i
-0x7ffeefbff1ec: 0x000003b6
-(lldb) x/t -s `sizeof(int)` -- &i
-0x7ffeefbff1ec: 0b00000000000000000000001110110110
-
-(x) Float
-
-(lldb) x --format float -s `sizeof(float)` -c1 -- &my_var
-0x7ffeefbff204: 42.4199982
-(lldb) x --format hex -s `sizeof(float)` -c1 -- &my_var
-0x7ffeefbff204: 0x4229ae14
-(lldb) x --format binary -s `sizeof(float)` -c1 -- &my_var
-0x7ffeefbff204: 0b01000010001010011010111000010100
-
-(x) Integer Array (of 8 elements)
-
-(lldb) x/d -s `sizeof(int)` -c 8 -l 1 -- arr
-0x603000000550: 1
-0x603000000554: 2
-0x603000000558: 3
-0x60300000055c: 4
-0x603000000560: 5
-0x603000000564: 6
-0x603000000568: 7
-0x60300000056c: 7
-(lldb) x/x -s `sizeof(int)` -c 8 -l 1 -- arr
-0x603000000550: 0x00000001
-0x603000000554: 0x00000002
-0x603000000558: 0x00000003
-0x60300000055c: 0x00000004
-0x603000000560: 0x00000005
-0x603000000564: 0x00000006
-0x603000000568: 0x00000007
-0x60300000056c: 0x00000007
-(lldb) x/t -s `sizeof(int)` -c 8 -l 1 -- arr
-0x603000000550: 0b00000000000000000000000000000001
-0x603000000554: 0b00000000000000000000000000000010
-0x603000000558: 0b00000000000000000000000000000011
-0x60300000055c: 0b00000000000000000000000000000100
-0x603000000560: 0b00000000000000000000000000000101
-0x603000000564: 0b00000000000000000000000000000110
-0x603000000568: 0b00000000000000000000000000000111
-0x60300000056c: 0b00000000000000000000000000000111
-
-(lldb) x/d -s `sizeof(int)` -c10 -l2 -- arr
-0x603000000550: 1 2
-0x603000000558: 3 4
-0x603000000560: 5 6
-0x603000000568: 7 7
-0x603000000570: 2 50331647
-
-(lldb) x/x -s `sizeof(int)` -c10 -l5 -- arr
-0x603000000550: 0x00000001 0x00000002 0x00000003 0x00000004 0x00000005
-0x603000000564: 0x00000006 0x00000007 0x00000007 0x00000002 0x02ffffff
-
-(lldb) x/x -s `sizeof(int)` -c10 -l2 -- arr
-0x603000000550: 0x00000001 0x00000002
-0x603000000558: 0x00000003 0x00000004
-0x603000000560: 0x00000005 0x00000006
-0x603000000568: 0x00000007 0x00000007
-0x603000000570: 0x00000002 0x02ffffff
-
-
-(x) String
-
-(lldb) x/s -- &name
-0x7ffeefbfef80: "James"
-
-(lldb) x/c -s 1 -c10 -- &name
-0x7ffeefbfef80: James\0\0\0\0\0
-
-(lldb) x/c -s 1 -c10 -l1 -- &name
-0x7ffeefbfef80: J
-0x7ffeefbfef81: a
-0x7ffeefbfef82: m
-0x7ffeefbfef83: e
-0x7ffeefbfef84: s
-0x7ffeefbfef85: \0
-0x7ffeefbfef86: \0
-0x7ffeefbfef87: \0
-0x7ffeefbfef88: \0
-0x7ffeefbfef89: \0
-
-(lldb) x/d -s1 -c10 -- &name
-0x7ffeefbfef80: 74
-0x7ffeefbfef81: 97
-0x7ffeefbfef82: 109
-0x7ffeefbfef83: 101
-0x7ffeefbfef84: 115
-0x7ffeefbfef85: 0
-0x7ffeefbfef86: 0
-0x7ffeefbfef87: 0
-0x7ffeefbfef88: 0
-0x7ffeefbfef89: 0
-
-(lldb) x/x -s1 -c10 -l5 -- &name
-0x7ffeefbfef80: 0x4a 0x61 0x6d 0x65 0x73
-0x7ffeefbfef85: 0x00 0x00 0x00 0x00 0x00
-
-(lldb) x/t -s1 -c10 -l5 -- &name
-0x7ffeefbfef80: 0b01001010 0b01100001 0b01101101 0b01100101 0b01110011
-0x7ffeefbfef85: 0b00000000 0b00000000 0b00000000 0b00000000 0b00000000
-
-
-(x) Array of Strings
-
-(lldb) x/s -c10 -- *av
-0x7ffeefbff510: "/nfs/2018/a/akharrou/Desktop/Directory/Directory/a"
-0x7ffeefbff543: "ARCHFLAGS=-arch x86_64"
-0x7ffeefbff55a: "Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.KDQ26cchJb/Render
-"
-0x7ffeefbff5a6: "COLORTERM=truecolor"
-0x7ffeefbff5ba: "COMPUTER=e1z2r1p1"
-0x7ffeefbff5cc: "CPPFLAGS=-I/nfs/2018/a/akharrou/.brew/opt/ncurses/include"
-0x7ffeefbff606: "DB_URI=mongodb+srv://42:42@42-buildthebay-project-7nufr.mongodb.net/btb"
-0x7ffeefbff64e: "DISPLAY=/private/tmp/com.apple.launchd.lhFgB51LKL/org.macosforge.xquartz:0"
-0x7ffeefbff699: "HARD_DRIVE=/Volumes/DISKDRIVE"
-0x7ffeefbff6b7: "HARD_DRIVE_NAME=DISKDRIVE"
 
 
 -	#### Overwrite (modify) memory:
