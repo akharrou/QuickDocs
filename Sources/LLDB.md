@@ -3695,6 +3695,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> (lldb) fr v --format x -- <variable>
 	> (lldb) fr v -f hex -- <variable>
 	> (lldb) fr v -f x -- <variable>
+	>
 	> (lldb) fr v --gdb-format x -- <variable>
 	> (lldb) fr v -G x -- <variable>
 	> (lldb) fr v/x -- <variable>
@@ -3708,9 +3709,10 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> (lldb) e --format d -- <expression>
 	> (lldb) e -f decimal -- <expression>
 	> (lldb) e -f d -- <expression>
+	>
 	> (lldb) e --gdb-format d -- <expression>
 	> (lldb) e -G d -- <expression>
-	> (lldb) e/d <expression>       # putting a `--` would decrement the result
+	> (lldb) e/d <expression>                 # putting a `--` would decrement the result
 	> ```
 	> > *<small>[**Note:** This command doesn't support specifying a **count** nor a **byte size**. - **end note**]</small>*
 	>
@@ -3721,6 +3723,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> (lldb) me read --format b -- <address-expression>
 	> (lldb) x -f binary -- <address-expression>
 	> (lldb) x -f b -- <address-expression>
+	>
 	> (lldb) x --gdb-format t -- <address-expression>
 	> (lldb) x -G t -- <address-expression>
 	> (lldb) x/t -- <address-expression>
