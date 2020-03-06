@@ -3617,7 +3617,18 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>
 	> -	*To obtain a table of the available formats, type: `(lldb) frame variable --format ?`*
 	>
-	>	### Format Table:
+	>
+	>	### Formatting:
+	>	*`[Search Tags: >formatting >table >formattable >ftable >frmtable]`*
+	>
+	>	#### Usages:
+	>	| |                 |                                      |
+	>	| | -               | -                                    |
+	>	| | `LLDB`          | `--format [Format]`                  |
+	>	| | `GDB`           | `--gdb-format [Count][Format][Size]` |
+	>	| | `GDB` Shorthand | `<cmd>/[Count][Format][Size]`        |
+	>
+	>	#### Formats:
 	>	| Full [Word] | Shorthand | *[Supported]* `GDB` Shorthand
 	>	| - | - | - |
 	>	| `default` | - | -
@@ -3659,6 +3670,14 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>	| `hex float` | - | -
 	>	| `instruction` | `i` | `/i`
 	>	| `void` | `v` | -
+	>
+	>	#### [`GDB`] Sizes :
+	>   |     |                              |
+	>   | -   | -                            |
+	>   | `b` | byte                         |
+	>   | `h` | halfword (16-bit value)      |
+	>   | `w` | word     (32-bit value)      |
+	>   | `g` | giant    word (64-bit value) |
 	>
 	> *- **end note**]</small>*
 
@@ -4171,12 +4190,10 @@ You can inspect a your process's memory with the `memory` command:
 	> ```shell
 	> (lldb) x --format float -s `sizeof(float)` -c1 -- &my_var      # in decimal
 	> x7ffeefbff204: 42.4199982
-	> ```
-	> ```shell
+	>
 	> (lldb) x --format hex -s `sizeof(float)` -c1 -- &my_var        # in hex
 	> x7ffeefbff204: 0x4229ae14
-	> ```
-	> ```shell
+	>
 	> (lldb) x --format binary -s `sizeof(float)` -c1 -- &my_var     # in binary
 	> x7ffeefbff204: 0b01000010001010011010111000010100
 	> ```
@@ -4243,13 +4260,15 @@ You can inspect a your process's memory with the `memory` command:
 	> ##### (2.2) Character Array *(C-String)*:
 	>
 	> ```shell
-	> (lldb) x/s -- &name
+	> (lldb) x/s -- (char*)name
 	> x7ffeefbfef80: "James"
-	>
-	> (lldb) x/c -s 1 -c10 -- &name
+	> ```
+	> ```shell
+	> (lldb) x/c -s 1 -c10 -- (char*)name
 	> x7ffeefbfef80: James\0\0\0\0\0
-	>
-	> (lldb) x/c -s 1 -c10 -l1 -- &name
+	> ```
+	> ```shell
+	> (lldb) x/c -s 1 -c10 -l1 -- (char*)name
 	> x7ffeefbfef80: J
 	> x7ffeefbfef82: m
 	> x7ffeefbfef83: e
@@ -4259,8 +4278,9 @@ You can inspect a your process's memory with the `memory` command:
 	> x7ffeefbfef87: \0
 	> x7ffeefbfef88: \0
 	> x7ffeefbfef89: \0
-	>
-	> (lldb) x/d -s1 -c10 -- &name
+	> ```
+	> ```shell
+	> (lldb) x/d -s1 -c10 -- (char*)name
 	> x7ffeefbfef80: 74
 	> x7ffeefbfef81: 97
 	> x7ffeefbfef82: 109
@@ -4271,12 +4291,14 @@ You can inspect a your process's memory with the `memory` command:
 	> x7ffeefbfef87: 0
 	> x7ffeefbfef88: 0
 	> x7ffeefbfef89: 0
-	>
-	> (lldb) x/x -s1 -c10 -l5 -- &name
+	> ```
+	> ```shell
+	> (lldb) x/x -s1 -c10 -l5 -- (char*)name
 	> x7ffeefbfef80: 0x4a 0x61 0x6d 0x65 0x73
 	> x7ffeefbfef85: 0x00 0x00 0x00 0x00 0x00
-	>
-	> (lldb) x/t -s1 -c10 -l5 -- &name
+	> ```
+	> ```shell
+	> (lldb) x/t -s1 -c10 -l5 -- (char*)name
 	> x7ffeefbfef80: 0b01001010 0b01100001 0b01101101 0b01100101 0b01110011
 	> x7ffeefbfef85: 0b00000000 0b00000000 0b00000000 0b00000000 0b00000000
 	> ```
