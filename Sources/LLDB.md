@@ -4282,8 +4282,7 @@ ion>]
 	> x603000000564: 6
 	> x603000000568: 7
 	> x60300000056c: 7
-	> ```
-	> ```shell
+	>
 	> (lldb) x/x -s `sizeof(int)` -c 8 -l 1 -- arr       # in hex, " ", " "
 	> (lldb) x/8xw -l 1 -- arr
 	> x603000000550: 0x00000001
@@ -4294,8 +4293,7 @@ ion>]
 	> x603000000564: 0x00000006
 	> x603000000568: 0x00000007
 	> x60300000056c: 0x00000007
-	> ```
-	> ```shell
+	>
 	> (lldb) x/t -s `sizeof(int)` -c 8 -l 1 -- arr       # in binary, " ", " "
 	> (lldb) x/8tw -l 1 -- arr
 	> x603000000550: 0b00000000000000000000000000000001
@@ -4306,8 +4304,7 @@ ion>]
 	> x603000000564: 0b00000000000000000000000000000110
 	> x603000000568: 0b00000000000000000000000000000111
 	> x60300000056c: 0b00000000000000000000000000000111
-	> ```
-	> ```shell
+	>
 	> (lldb) x/d -s `sizeof(int)` -c10 -l2 -- arr        # in decimal, 10 elements (2 past the array bound), 2 per line
 	> (lldb) x/10dw -l2 -- arr
 	> x603000000550: 1 2
@@ -4315,8 +4312,7 @@ ion>]
 	> x603000000560: 5 6
 	> x603000000568: 7 7
 	> x603000000570: 2 50331647
-	> ```
-	> ```shell
+	>
 	> (lldb) x/x -s `sizeof(int)` -c10 -l2 -- arr        # in hex, " ", " "
 	> (lldb) x/10xw -l2 -- arr
 	> x603000000550: 0x00000001 0x00000002
@@ -4324,8 +4320,7 @@ ion>]
 	> x603000000560: 0x00000005 0x00000006
 	> x603000000568: 0x00000007 0x00000007
 	> x603000000570: 0x00000002 0x02ffffff
-	> ```
-	> ```shell
+	>
 	> (lldb) x/x -s `sizeof(int)` -c10 -l5 -- arr        # " ", " ", 5 per line
 	> (lldb) x/10xw -l5 -- arr
 	> x603000000550: 0x00000001 0x00000002 0x00000003 0x00000004 0x00000005
@@ -4337,13 +4332,11 @@ ion>]
 	> ```shell
 	> (lldb) x/s -- name
 	> x7ffeefbfef80: "James"
-	> ```
-	> ```shell
+	>
 	> (lldb) x/c -s 1 -c10 -- name
 	> (lldb) x/10cb -- name
 	> x7ffeefbfef80: James\0\0\0\0\0
-	> ```
-	> ```shell
+	>
 	> (lldb) x/c -s 1 -c10 -l1 -- name
 	> (lldb) x/10cb -l1 -- name
 	> x7ffeefbfef80: J
@@ -4355,8 +4348,7 @@ ion>]
 	> x7ffeefbfef87: \0
 	> x7ffeefbfef88: \0
 	> x7ffeefbfef89: \0
-	> ```
-	> ```shell
+	>
 	> (lldb) x/d -s1 -c10 -- name
 	> (lldb) x/10db -l1 -- name
 	> x7ffeefbfef80: 74
@@ -4369,14 +4361,12 @@ ion>]
 	> x7ffeefbfef87: 0
 	> x7ffeefbfef88: 0
 	> x7ffeefbfef89: 0
-	> ```
-	> ```shell
+	>
 	> (lldb) x/x -s1 -c10 -l5 -- name
 	> (lldb) x/10xb -l5 -- name
 	> x7ffeefbfef80: 0x4a 0x61 0x6d 0x65 0x73
 	> x7ffeefbfef85: 0x00 0x00 0x00 0x00 0x00
-	> ```
-	> ```shell
+	>
 	> (lldb) x/t -s1 -c10 -l5 -- name
 	> (lldb) x/10tb -l5 -- name
 	> x7ffeefbfef80: 0b01001010 0b01100001 0b01101101 0b01100101 0b01110011
@@ -4388,8 +4378,6 @@ ion>]
 	> ```shell
 	> (lldb) x/s -c10 -- *av
 	> (lldb) x/10s -- *av
-	> ```
-	> ```shell
 	> x7ffeefbff510: "/path/to/executable"
 	> x7ffeefbff543: "ARCHFLAGS=-arch x86_64"
 	> x7ffeefbff55a: "Apple_PubSub_Socket_Render=/not-so-public/tmp/com.apple.launchd.dadq260jdab/Render
@@ -4409,9 +4397,7 @@ ion>]
 	> (lldb) memory read --outfile /tmp/mem.txt --count 512 -- buffer
 	> (lldb) me read -o /tmp/mem.txt -c512 buffer
 	> (lldb) x/512bx -o /tmp/mem.txt -- buffer
-	> ```
 	>
-	> ```shell
 	> (lldb) memory read --append-outfile /tmp/mem.txt --count 512 -- buffer
 	> (lldb) me read  --append-outfile /tmp/mem.txt -c512 buffer
 	> (lldb) x/512bx  --append-outfile /tmp/mem.txt -- buffer
