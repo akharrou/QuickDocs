@@ -3720,7 +3720,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>
 	> ```shell
 	> (lldb) memory read --format binary -- <address-expression>
-	> (lldb) me read --format b -- <address-expression>
+	> (lldb) x --format b -- <address-expression>
 	> (lldb) x -f binary -- <address-expression>
 	> (lldb) x -f b -- <address-expression>
 	>
@@ -3900,7 +3900,7 @@ Contents
 
 -	#### Evaluate expressions:
 
-	> <small>`[Search Tags: >exprcompt >expressioncompt >comptexpression >exprcompute >expressioncompute >computeexpression >exprcomputation >expressioncomputation >computationexpression >exprcomputing >expressioncomputing >computingexpression >expreval >expressioneval >evalexpression >exprevaluate >expressionevaluate >evaluateexpression >exprevaluation >expressionevaluation >evaluationexpression >exprevaluating >expressionevaluating >evaluatingexpression]`</small>
+	> <small>`[Search Tags: >exprcompt >expressioncompt >comptexpression >exprcompute >expressioncompute >computeexpression >exprcomputation >expressioncomputation >computationexpression >exprcomputing >expressioncomputing >computingexpression >expreval >expressioneval >evalexpression >exprevaluate >expressionevaluate >evaluateexpression >exprevaluation >expressionevaluation >evaluationexpression >exprevaluating >expressionevaluating >evaluatingexpression >writevariables >writevars >write2variables >writetovariables >writetovariables >varwriteto >varswriteto >variablewriteto >variablewriteto]`</small>
 
 	> ***Synopsis:***
 	> ```shell
@@ -4006,11 +4006,6 @@ Contents
 	>   (char *) [5] = 0x00007ffeefbff79a "Apple_PubSub_Socket_Render=/not-so-private/tmp/com.apple.launchd.blablabla/Blender"
 	> }
 	> ```
-	>
-	> ##### (4.2) Structures
-	> > As of ***17-02-2020***, I am unaware how to do it with the `expression` command. Alternatively though, you can do it with [`frame variable`, see Examples :: (4.2) Structures](#42-structures).
-	> >
-	> > *PS: Please let me know if you know how to do it (with `expression`), I would be grateful.*
 	>
 	> ##### (5) Assigning values to variables
 	> ```shell
@@ -4230,36 +4225,46 @@ You can inspect a your process's memory with the `memory` command:
 	>
 	> ```shell
 	> (lldb) memory read --fomrat decimal --size `sizeof(int)` -- &my_int    # in decimal
-	> (lldb) me read -f d -s `sizeof(int)` -- &my_int                        # " ", shorthand
-	> (lldb) x/d -s `sizeof(int)` -- &my_int                                 # " ", shorthand
+	> (lldb) me read -f d -s `sizeof(int)` -- &my_int
+	> (lldb) x/d -s `sizeof(int)` -- &my_int
+	> (lldb) x/1dw -- &my_int                                                # gdb shortahnd, see: §3.8.4.2, Formatting Output (tag: formatting)
 	> x7ffeefbff1ec: 950
 	>
 	> (lldb) x/x -s `sizeof(int)` -- &my_int                                 # in hex
+	> (lldb) x/1xw -- &my_int
 	> x7ffeefbff1ec: 0x000003b6
 	>
 	> (lldb) x/t -s `sizeof(int)` -- &my_int                                 # in binary
+	> (lldb) x/1tw -- &my_int
 	> x7ffeefbff1ec: 0b00000000000000000000001110110110
 	> ```
 	>
 	> ##### (1.2) Float:
 	>
 	> ```shell
+	> (lldb) x/f -- &my_float
 	> (lldb) x/f -s `sizeof(float)` -c1 -- &my_float                         # in float
+	> (lldb) x/1fw -- &my_float
 	> x7ffeefbff204: 42.4199982
 	>
+	> (lldb) x/x -- &my_float
 	> (lldb) x/x -s `sizeof(float)` -c1 -- &my_float                         # in hex
+	> (lldb) x/1xw -- &my_float
 	> x7ffeefbff204: 0x4229ae14
 	>
+	> (lldb) x/t -- &my_float
 	> (lldb) x/t -s `sizeof(float)` -c1 -- &my_float                         # in binary
+	> (lldb) x/1tw -- &my_float
 	> x7ffeefbff204: 0b01000010001010011010111000010100
 	> ```
 	>
 	> ##### (2) Aggregate Types:
 	>
-	> ##### (2.1) Integer Array (of 8 elements):
+	> ##### (2.1) *[Dynamic]* Integer Array *(`int*`)* *with 8 elements*:
 	>
 	> ```shell
 	> (lldb) x/d -s `sizeof(int)` -c 8 -l 1 -- arr       # in decimal, 8 elements, 1 element per line,
+	> (lldb) x/8dw -l 1 -- arr
 	> x603000000550: 1
 	> x603000000554: 2
 	> x603000000558: 3
@@ -4271,6 +4276,7 @@ You can inspect a your process's memory with the `memory` command:
 	> ```
 	> ```shell
 	> (lldb) x/x -s `sizeof(int)` -c 8 -l 1 -- arr       # in hex, " ", " "
+	> (lldb) x/8xw -l 1 -- arr
 	> x603000000550: 0x00000001
 	> x603000000554: 0x00000002
 	> x603000000558: 0x00000003
@@ -4282,6 +4288,7 @@ You can inspect a your process's memory with the `memory` command:
 	> ```
 	> ```shell
 	> (lldb) x/t -s `sizeof(int)` -c 8 -l 1 -- arr       # in binary, " ", " "
+	> (lldb) x/8tw -l 1 -- arr
 	> x603000000550: 0b00000000000000000000000000000001
 	> x603000000554: 0b00000000000000000000000000000010
 	> x603000000558: 0b00000000000000000000000000000011
@@ -4292,7 +4299,8 @@ You can inspect a your process's memory with the `memory` command:
 	> x60300000056c: 0b00000000000000000000000000000111
 	> ```
 	> ```shell
-	> (lldb) x/d -s `sizeof(int)` -c10 -l2 -- arr        # in decimal, 10 elements (2 past the array), 2 per line
+	> (lldb) x/d -s `sizeof(int)` -c10 -l2 -- arr        # in decimal, 10 elements (2 past the array bound), 2 per line
+	> (lldb) x/10dw -l2 -- arr
 	> x603000000550: 1 2
 	> x603000000558: 3 4
 	> x603000000560: 5 6
@@ -4301,6 +4309,7 @@ You can inspect a your process's memory with the `memory` command:
 	> ```
 	> ```shell
 	> (lldb) x/x -s `sizeof(int)` -c10 -l2 -- arr        # in hex, " ", " "
+	> (lldb) x/10xw -l2 -- arr
 	> x603000000550: 0x00000001 0x00000002
 	> x603000000558: 0x00000003 0x00000004
 	> x603000000560: 0x00000005 0x00000006
@@ -4309,22 +4318,25 @@ You can inspect a your process's memory with the `memory` command:
 	> ```
 	> ```shell
 	> (lldb) x/x -s `sizeof(int)` -c10 -l5 -- arr        # " ", " ", 5 per line
+	> (lldb) x/10xw -l5 -- arr
 	> x603000000550: 0x00000001 0x00000002 0x00000003 0x00000004 0x00000005
 	> x603000000564: 0x00000006 0x00000007 0x00000007 0x00000002 0x02ffffff
 	> ```
 	>
-	> ##### (2.2) Character Array *(C-String)*:
+	> ##### (2.2) *[Dynamic]* Character Array *(`char*`)*
 	>
 	> ```shell
-	> (lldb) x/s -- (char*)name
+	> (lldb) x/s -- name
 	> x7ffeefbfef80: "James"
 	> ```
 	> ```shell
-	> (lldb) x/c -s 1 -c10 -- (char*)name
+	> (lldb) x/c -s 1 -c10 -- name
+	> (lldb) x/10cb -- name
 	> x7ffeefbfef80: James\0\0\0\0\0
 	> ```
 	> ```shell
-	> (lldb) x/c -s 1 -c10 -l1 -- (char*)name
+	> (lldb) x/c -s 1 -c10 -l1 -- name
+	> (lldb) x/10cb -l1 -- name
 	> x7ffeefbfef80: J
 	> x7ffeefbfef82: m
 	> x7ffeefbfef83: e
@@ -4336,7 +4348,8 @@ You can inspect a your process's memory with the `memory` command:
 	> x7ffeefbfef89: \0
 	> ```
 	> ```shell
-	> (lldb) x/d -s1 -c10 -- (char*)name
+	> (lldb) x/d -s1 -c10 -- name
+	> (lldb) x/10db -l1 -- name
 	> x7ffeefbfef80: 74
 	> x7ffeefbfef81: 97
 	> x7ffeefbfef82: 109
@@ -4349,33 +4362,38 @@ You can inspect a your process's memory with the `memory` command:
 	> x7ffeefbfef89: 0
 	> ```
 	> ```shell
-	> (lldb) x/x -s1 -c10 -l5 -- (char*)name
+	> (lldb) x/x -s1 -c10 -l5 -- name
+	> (lldb) x/10xb -l5 -- name
 	> x7ffeefbfef80: 0x4a 0x61 0x6d 0x65 0x73
 	> x7ffeefbfef85: 0x00 0x00 0x00 0x00 0x00
 	> ```
 	> ```shell
-	> (lldb) x/t -s1 -c10 -l5 -- (char*)name
+	> (lldb) x/t -s1 -c10 -l5 -- name
+	> (lldb) x/10tb -l5 -- name
 	> x7ffeefbfef80: 0b01001010 0b01100001 0b01101101 0b01100101 0b01110011
 	> x7ffeefbfef85: 0b00000000 0b00000000 0b00000000 0b00000000 0b00000000
 	> ```
 	>
-	> ##### (2.3) String Array:
+	> ##### (2.3) *[Dynamic]* Pointer Array *(`char **`)*:
 	>
 	> ```shell
 	> (lldb) x/s -c10 -- *av
-	>
-	> x7ffeefbff510: "/nfs/2018/a/akharrou/Desktop/Directory/Directory/a"
-	> x7ffeefbff543: "ARCHFLAGS=-arch x86_64"
-	> x7ffeefbff55a: "Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.KDQ26cchJb/Render
-	>
-	> x7ffeefbff5a6: "COLORTERM=truecolor"
-	> x7ffeefbff5ba: "COMPUTER=e1z2r1p1"
-	> x7ffeefbff5cc: "CPPFLAGS=-I/nfs/2018/a/akharrou/.brew/opt/ncurses/include"
-	> x7ffeefbff606: "DB_URI=mongodb+srv://42:42@42-buildthebay-project-7nufr.mongodb.net/btb"
-	> x7ffeefbff64e: "DISPLAY=/private/tmp/com.apple.launchd.lhFgB51LKL/org.macosforge.xquartz:0"
-	> x7ffeefbff699: "HARD_DRIVE=/Volumes/DISKDRIVE"
-	> x7ffeefbff6b7: "HARD_DRIVE_NAME=DISKDRIVE"
+	> (lldb) x/10s -- *av
 	> ```
+	> ```shell
+	> x7ffeefbff510: "/path/to/executable"
+	> x7ffeefbff543: "ARCHFLAGS=-arch x86_64"
+	> x7ffeefbff55a: "Apple_PubSub_Socket_Render=/not-so-public/tmp/com.apple.launchd.dadq260jdab/Render
+	>
+	> x7ffeefbff5a6: "COLORTERM=dqwiqjw"
+	> x7ffeefbff5ba: "COMPUTER=aidoqwjd"
+	> x7ffeefbff5cc: "CPPFLAGS=-/some/path/to/include"
+	> x7ffeefbff606: "DB_URI=asidqwodoiqwjdioqwb"
+	> x7ffeefbff64e: "DISPLAY=/not-so-private/tmp/com.apple.launchd.ldqwdqwddqwdqLKL/org.macler.xquartz:127"
+	> x7ffeefbff699: "HARD_DRIVE=d98j892jd3"
+	> x7ffeefbff6b7: "HARD_DRIVE_NAME=2id109239dk"
+	> ```
+	> *<small>[**Note:** Static arrays (e.g. `char[]`, `int[]`) must be typecast, ex: `x (char*)ptr`. - **end note**]</small>*
 	>
 	> ##### (3) GDB shorthand format syntax:
 	>
@@ -4451,9 +4469,9 @@ See: https://lldb.llvm.org/use/map.html#examining-thread-state
 	>
 	> ***Example(s):***
 	>
-	> #### (1) <title>
+	> #### (1) `<title>`
 	>
-	> ##### (1.1) <subtitle>
+	> ##### (1.1) `<subtitle>`
 	> ```shell
 	> $> <command>
 	> ```
@@ -4511,9 +4529,9 @@ Command Options Usage:
 	>
 	> ***Example(s):***
 	>
-	> #### (1) <title>
+	> #### (1) `<title>`
 	>
-	> ##### (1.1) <subtitle>
+	> ##### (1.1) `<subtitle>`
 	> ```shell
 	> $> <command>
 	> ```
