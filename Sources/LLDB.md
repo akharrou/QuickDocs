@@ -3412,13 +3412,13 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> ***Options:***
 	> | Flag                      | Shortcut | Description
 	> | -                         | -        | - |
-	> |                           |          |
+	> |                                            |          |
 	> | `--regex`                 | `-r`     | *The <variable-name> argument for name lookups are regular expressions.*
-	> |                           |          |
-	> | **Format**                |          |
+	> |                                            |          |
+	> | **Format**                                 |          |
 	> | `--format <format>`       | `-f`     | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). <br> <br> See [Format Table](#format-table) for all.*
-	> |                           |          |
-	> | **More Information**      |          |
+	> |                                            |          |
+	> | **More Information**                       |          |
 	> | `--location`              | `-L`     | *Show variable *[memory]* address.*
 	> | `--ptr-depth <count>`     | `-P`     | *Number of times pointer variables get dereferenced; <br> (default=0).*
 	> | `--show-types`            | `-T`     | *Show variable types when dumping values –– useful for aggregate data types.*
@@ -3612,7 +3612,8 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	>
 	> *<small>[**Note:***
 	>
-	> - *`LLDB` supports formatting the output with `GDB`'s shorthand notation: appending to the command a backslash followed by its format specifier (see [Format Table](#format-table) below), e.g.: `fr v/x` (hexadecimal), `fr v/o` (octal), `fr v/t` (binary), ...*
+	> - *`LLDB` supports formatting the output with `GDB`'s shorthand notation: appending to the command a backslash followed by its format specifier (see [Format Table](#format-table) below), e.g.: `fr v/x` (hexadecimal), `fr v/o` (octal), `fr v/t` (binary), ... See documentation for [GDB's Output Formatting](https://visualgdb.com/gdbreference/commands/x).*
+	>	*The `gdb` shorthand follows the form: `--gdb-format [Count] [Size] [Format] <Address expression>` or can be immediately append to the last part of a subcommand: `memory read/[Count][Size][Format] <Address expression>`*
 	>
 	> -	*To obtain a table of the available formats, type: `(lldb) frame variable --format ?`*
 	>
@@ -3672,7 +3673,8 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 > | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help frame variable`
 > | 2 | Documentation | LLDB | [(Official) Tutorial :: Examining Stack Frame State](https://lldb.llvm.org/use/tutorial.html#examining-stack-frame-state)
 > | 3 | Documentation | Apple | [LLDB Tutorial :: Examining the Stack Frame State](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW9)
-> | 4 | Q&A Forum | StackOverflow | [How to view array in `LLDB` ?](https://stackoverflow.com/questions/7062173/view-array-in-lldb-equivalent-of-gdbs-operator-in-xcode-4-1)
+> | 4 | Documentation | Sysprogs | [GDB's Output Formatting](https://visualgdb.com/gdbreference/commands/x)
+> | 5 | Q&A Forum | StackOverflow | [How to view array in `LLDB` ?](https://stackoverflow.com/questions/7062173/view-array-in-lldb-equivalent-of-gdbs-operator-in-xcode-4-1)
 
 
 ---
@@ -4133,29 +4135,19 @@ You can inspect a your process's memory with the `memory` command:
 	> ```
 	>
 	> ***Options:***
-	> | Flag                      | Shortcut | Description
-	> | -                         | -        | - |
-	> |                           |          |
-	> | `--regex`                 | `-r`     | *The <variable-name> argument for name lookups are regular expressions.*
-	> |                           |          |
-	> | **Format**                |          |
-	> | `--format <format>`       | `-f`     | *Specify a display format (e.g. `hex` or `x`, `decimal` or `d`, <br> `binary` or `b`). <br> <br> See [Format Table](#format-table) for all.*
-	> |                           |          |
-	> | **More Information**      |          |
-	> | `--location`              | `-L`     | *Show variable *[memory]* address.*
-	> | `--ptr-depth <count>`     | `-P`     | *Number of times pointer variables get dereferenced; <br> (default=0).*
-	> | `--show-types`            | `-T`     | *Show variable types when dumping values –– useful for aggregate data types.*
-	> | `--element-count <count>` | `-Z`     | *Treat the result of the expression as if its type is an array <br> of this many values.*
-	> | `--show-declaration`      | `-c`     | *Show variable declaration line [, in source file].*
-	> | `--show-globals`          | `-g`     | *Show *[static \| extern]* global variables.*
-	> | `--scope`                 | `-s`     | *Show variable scope (`argument`, `local`, `global`, `static`).*
-	> |                           |          |
-	> | **Less Information**      |          |
-	> | `--flat`                  | `-F`     | *Omit [showing] type information.*
-	> | `--no-args`               | `-a`     | *Omit [showing] [function] argument variables.*
-	> | `--no-locals`             | `-l`     | *Omit [showing] local variables.*
-	> |                           |          |
-	> | ...                       | ...      | *For more, see `(lldb) help frame variable`.*
+	> | Flag                                | Shortcut | Description
+	> | -                                   | -    | - |
+	> | **Format**                          |      |
+	> | `--format <format>`                 | `-f` | Specify a format to be used for display.
+	> | `--gdb-format <gdb-format>`         | `-G` | Specify a format using a GDB format <br> specifier string.
+	> | **Configure**                       |      |
+	> | `--count <count>`                   | `-c` | The number of total items to display.
+	> | `--size <byte-size>`                | `-s` | The size in bytes to use when displaying <br> with the selected format.
+	> | `--num-per-line <number-per-line>`  | `-l` | The number of items per line to display.
+	> | `--force`                           | `-r` | Necessary if reading over <br> `target.max-memory-read-size` bytes.
+	> | **Logging Output**                  |      |
+	> | `--outfile <filename>`              | `-o` | Specify a path for capturing command output.
+	> | `--append-outfile`                  | n/a  | Append to the file specified with '--outfile <path>'.
 	>
 	> ***Example(s):***
 	>
@@ -4176,94 +4168,7 @@ ion>]
   memory read [-br] [-f <format>] [-c <count>] [-s <byte-size>] [-o <filename>]
  <address-expression> [<address-expression>]
 
-  memory read [-AFLORTr] -t <none> [-f <format>] [-c <count>] [-G <gdb-format>]
- [-E <count>] [-o <filename>] [-d <none>] [-S <boolean>] [-D <count>] [-P <coun
-t>] [-Y[<count>]] [-V <boolean>] [-Z <count>] <address-expression> [<address-ex
-pression>]
-
-       -D <count> ( --depth <count> )
-            Set the max recurse depth when dumping aggregate types (default is
-            infinity).
-
-       -E <count> ( --offset <count> )
-            How many elements of the specified type to skip before starting to
-            display data.
-
-       -F ( --flat )
-            Display results in a flat format that uses expression paths for
-            each variable or member.
-
-       -G <gdb-format> ( --gdb-format <gdb-format> )
-            Specify a format using a GDB format specifier string.
-
-       -L ( --location )
-            Show variable location information.
-
-       -O ( --object-description )
-            Display using a language-specific description API, if possible.
-
-       -P <count> ( --ptr-depth <count> )
-            The number of pointers to be traversed when dumping values
-            (default is zero).
-
-       -R ( --raw-output )
-            Don't use formatting options.
-
-       -S <boolean> ( --synthetic-type <boolean> )
-            Show the object obeying its synthetic provider, if available.
-
-       -T ( --show-types )
-            Show variable types when dumping values.
-
-       -V <boolean> ( --validate <boolean> )
-            Show results of type validators.
-
-       -Y[<count>] ( --no-summary-depth=[<count>] )
-            Set the depth at which omitting summary information stops (default
-            is 1).
-
-       -Z <count> ( --element-count <count> )
-            Treat the result of the expression as if its type is an array of
-            this many values.
-
-       -b ( --binary )
-            If true, memory will be saved as binary. If false, the memory is
-            saved save as an ASCII dump that uses the format, size, count and
-            number per line settings.
-
-       -c <count> ( --count <count> )
-            The number of total items to display.
-
-       -d <none> ( --dynamic-type <none> )
-            Show the object as its full dynamic type, not its static type, if
-            available.
-            Values: no-dynamic-values | run-target | no-run-target
-
-       -f <format> ( --format <format> )
-            Specify a format to be used for display.
-
-       -l <number-per-line> ( --num-per-line <number-per-line> )
-            The number of items per line to display.
-
-       -o <filename> ( --outfile <filename> )
-            Specify a path for capturing command output.
-
-       -r ( --force )
-            Necessary if reading over target.max-memory-read-size bytes.
-
-       -s <byte-size> ( --size <byte-size> )
-            The size in bytes to use when displaying with the selected format.
-
-       -t <none> ( --type <none> )
-            The name of a type to view memory as.
-
-       --append-outfile
-            Append to the file specified with '--outfile <path>'.
-
-     This command takes options and free-form arguments.  If your arguments
-     resemble option specifiers (i.e., they start with a - or --), you must
-     use ' -- ' between the end of the command options and the beginning of
-     the arguments.
+  memory read <address-expression>
 
 
 See: https://lldb.llvm.org/use/map.html#examining-thread-state
@@ -4274,10 +4179,16 @@ Read memory from address 0xbffff3c0 and show 4 hex uint32_t values.
 (lldb) me r -s4 -fx -c4 0xbffff3c0
 (lldb) x -s4 -fx -c4 0xbffff3c0
 
-LLDB now supports the GDB shorthand format syntax but there can't be space after the command:
-(lldb) memory read/4xw 0xbffff3c0
-(lldb) x/4xw 0xbffff3c0
-(lldb) memory read --gdb-format 4xw 0xbffff3c0
+(x) GDB shorthand format syntax:
+
+(lldb) memory read --count 4 --format hex --size `sizeof(int32_t)` -- my_ptr
+(lldb) x -s4 -fx -c4 my_ptr
+
+(lldb) memory read --gdb-format 4xw -- my_ptr
+(lldb) mem read/4xw -- my_ptr
+(lldb) x/4xw -- my_ptr
+0x6020000000f0: 0xbebebebe 0x00000000 0x00000000 0x00000000
+
 Read memory starting at the expression "argv[0]".
 (gdb) x argv[0]
 (lldb) memory read `argv[0]`
@@ -4296,6 +4207,134 @@ Save binary memory data starting at 0x1000 and ending at 0x2000 to a file.
 (lldb) me r -o /tmp/mem.bin -b 0x1000 0x2000
 
 <br>
+
+
+Examples:
+
+
+(x) Integer
+
+(lldb) x/d -s `sizeof(int)` -- &i
+0x7ffeefbff1ec: 950
+(lldb) x/x -s `sizeof(int)` -- &i
+0x7ffeefbff1ec: 0x000003b6
+(lldb) x/t -s `sizeof(int)` -- &i
+0x7ffeefbff1ec: 0b00000000000000000000001110110110
+
+(x) Float
+
+(lldb) x --format float -s `sizeof(float)` -c1 -- &my_var
+0x7ffeefbff204: 42.4199982
+(lldb) x --format hex -s `sizeof(float)` -c1 -- &my_var
+0x7ffeefbff204: 0x4229ae14
+(lldb) x --format binary -s `sizeof(float)` -c1 -- &my_var
+0x7ffeefbff204: 0b01000010001010011010111000010100
+
+(x) Integer Array (of 8 elements)
+
+(lldb) x/d -s `sizeof(int)` -c 8 -l 1 -- arr
+0x603000000550: 1
+0x603000000554: 2
+0x603000000558: 3
+0x60300000055c: 4
+0x603000000560: 5
+0x603000000564: 6
+0x603000000568: 7
+0x60300000056c: 7
+(lldb) x/x -s `sizeof(int)` -c 8 -l 1 -- arr
+0x603000000550: 0x00000001
+0x603000000554: 0x00000002
+0x603000000558: 0x00000003
+0x60300000055c: 0x00000004
+0x603000000560: 0x00000005
+0x603000000564: 0x00000006
+0x603000000568: 0x00000007
+0x60300000056c: 0x00000007
+(lldb) x/t -s `sizeof(int)` -c 8 -l 1 -- arr
+0x603000000550: 0b00000000000000000000000000000001
+0x603000000554: 0b00000000000000000000000000000010
+0x603000000558: 0b00000000000000000000000000000011
+0x60300000055c: 0b00000000000000000000000000000100
+0x603000000560: 0b00000000000000000000000000000101
+0x603000000564: 0b00000000000000000000000000000110
+0x603000000568: 0b00000000000000000000000000000111
+0x60300000056c: 0b00000000000000000000000000000111
+
+(lldb) x/d -s `sizeof(int)` -c10 -l2 -- arr
+0x603000000550: 1 2
+0x603000000558: 3 4
+0x603000000560: 5 6
+0x603000000568: 7 7
+0x603000000570: 2 50331647
+
+(lldb) x/x -s `sizeof(int)` -c10 -l5 -- arr
+0x603000000550: 0x00000001 0x00000002 0x00000003 0x00000004 0x00000005
+0x603000000564: 0x00000006 0x00000007 0x00000007 0x00000002 0x02ffffff
+
+(lldb) x/x -s `sizeof(int)` -c10 -l2 -- arr
+0x603000000550: 0x00000001 0x00000002
+0x603000000558: 0x00000003 0x00000004
+0x603000000560: 0x00000005 0x00000006
+0x603000000568: 0x00000007 0x00000007
+0x603000000570: 0x00000002 0x02ffffff
+
+
+(x) String
+
+(lldb) x/s -- &name
+0x7ffeefbfef80: "James"
+
+(lldb) x/c -s 1 -c10 -- &name
+0x7ffeefbfef80: James\0\0\0\0\0
+
+(lldb) x/c -s 1 -c10 -l1 -- &name
+0x7ffeefbfef80: J
+0x7ffeefbfef81: a
+0x7ffeefbfef82: m
+0x7ffeefbfef83: e
+0x7ffeefbfef84: s
+0x7ffeefbfef85: \0
+0x7ffeefbfef86: \0
+0x7ffeefbfef87: \0
+0x7ffeefbfef88: \0
+0x7ffeefbfef89: \0
+
+(lldb) x/d -s1 -c10 -- &name
+0x7ffeefbfef80: 74
+0x7ffeefbfef81: 97
+0x7ffeefbfef82: 109
+0x7ffeefbfef83: 101
+0x7ffeefbfef84: 115
+0x7ffeefbfef85: 0
+0x7ffeefbfef86: 0
+0x7ffeefbfef87: 0
+0x7ffeefbfef88: 0
+0x7ffeefbfef89: 0
+
+(lldb) x/x -s1 -c10 -l5 -- &name
+0x7ffeefbfef80: 0x4a 0x61 0x6d 0x65 0x73
+0x7ffeefbfef85: 0x00 0x00 0x00 0x00 0x00
+
+(lldb) x/t -s1 -c10 -l5 -- &name
+0x7ffeefbfef80: 0b01001010 0b01100001 0b01101101 0b01100101 0b01110011
+0x7ffeefbfef85: 0b00000000 0b00000000 0b00000000 0b00000000 0b00000000
+
+
+(x) Array of Strings
+
+(lldb) x/s -c10 -- *av
+0x7ffeefbff510: "/nfs/2018/a/akharrou/Desktop/Directory/Directory/a"
+0x7ffeefbff543: "ARCHFLAGS=-arch x86_64"
+0x7ffeefbff55a: "Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.KDQ26cchJb/Render
+"
+0x7ffeefbff5a6: "COLORTERM=truecolor"
+0x7ffeefbff5ba: "COMPUTER=e1z2r1p1"
+0x7ffeefbff5cc: "CPPFLAGS=-I/nfs/2018/a/akharrou/.brew/opt/ncurses/include"
+0x7ffeefbff606: "DB_URI=mongodb+srv://42:42@42-buildthebay-project-7nufr.mongodb.net/btb"
+0x7ffeefbff64e: "DISPLAY=/private/tmp/com.apple.launchd.lhFgB51LKL/org.macosforge.xquartz:0"
+0x7ffeefbff699: "HARD_DRIVE=/Volumes/DISKDRIVE"
+0x7ffeefbff6b7: "HARD_DRIVE_NAME=DISKDRIVE"
+
 
 -	#### Overwrite (modify) memory:
 
