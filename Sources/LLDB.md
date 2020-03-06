@@ -4188,6 +4188,15 @@ Commands to:
 You can inspect a your process's memory with the `memory` command:
 
 ---
+<!--
+Command Options Usage:
+  memory read [-r] [-f <format>] [-c <count>] [-G <gdb-format>] [-s <byte-size>
+] [-l <number-per-line>] [-o <filename>] <address-expression> [<address-express
+ion>]
+  memory read [-br] [-f <format>] [-c <count>] [-s <byte-size>] [-o <filename>]
+ <address-expression> [<address-expression>]
+
+  memory read <address-expression> -->
 
 -	#### Read (print) Memory:
 
@@ -4384,7 +4393,6 @@ You can inspect a your process's memory with the `memory` command:
 	> x7ffeefbff510: "/path/to/executable"
 	> x7ffeefbff543: "ARCHFLAGS=-arch x86_64"
 	> x7ffeefbff55a: "Apple_PubSub_Socket_Render=/not-so-public/tmp/com.apple.launchd.dadq260jdab/Render
-	>
 	> x7ffeefbff5a6: "COLORTERM=dqwiqjw"
 	> x7ffeefbff5ba: "COMPUTER=aidoqwjd"
 	> x7ffeefbff5cc: "CPPFLAGS=-/some/path/to/include"
@@ -4395,25 +4403,18 @@ You can inspect a your process's memory with the `memory` command:
 	> ```
 	> *<small>[**Note:** Static arrays (e.g. `char[]`, `int[]`) must be typecast, ex: `x (char*)ptr`. - **end note**]</small>*
 	>
-	> ##### (3) GDB shorthand format syntax:
-	>
-	> ```shell
-	> (lldb) memory read --count 4 --format hex --size `sizeof(int32_t)` -- my_ptr
-	> (lldb) x -s4 -fx -c4 my_ptr
-	> (lldb) memory read --gdb-format 4xw -- my_ptr
-	> (lldb) mem read/4xw -- my_ptr
-	> (lldb) x/4xw -- my_ptr
-	> ```
-	> ```shell
-	> x6020000000f0: 0xbebebebe 0x00000000 0x00000000 0x00000000
-	> ```
-	>
-	> ##### (1) Read 512 bytes of memory from address `buffer` and save results to a local file as text.
+	> ##### (3) Log [output] to file
 	>
 	> ```shell
 	> (lldb) memory read --outfile /tmp/mem.txt --count 512 -- buffer
-	> (lldb) me read -o/tmp/mem.txt -c512 buffer
-	> (lldb) x/512bx -o/tmp/mem.txt -- buffer
+	> (lldb) me read -o /tmp/mem.txt -c512 buffer
+	> (lldb) x/512bx -o /tmp/mem.txt -- buffer
+	> ```
+	>
+	> ```shell
+	> (lldb) memory read --append-outfile /tmp/mem.txt --count 512 -- buffer
+	> (lldb) me read  --append-outfile /tmp/mem.txt -c512 buffer
+	> (lldb) x/512bx  --append-outfile /tmp/mem.txt -- buffer
 	> ```
 	>
 	> ##### (1) Save binary memory data starting at 0x1000 and ending at 0x2000 to a file.
@@ -4435,20 +4436,7 @@ You can inspect a your process's memory with the `memory` command:
 	>
 	> *- **end note**]</small>*
 
-Command Options Usage:
-  memory read [-r] [-f <format>] [-c <count>] [-G <gdb-format>] [-s <byte-size>
-] [-l <number-per-line>] [-o <filename>] <address-expression> [<address-express
-ion>]
-  memory read [-br] [-f <format>] [-c <count>] [-s <byte-size>] [-o <filename>]
- <address-expression> [<address-expression>]
-
-  memory read <address-expression>
-
-
-See: https://lldb.llvm.org/use/map.html#examining-thread-state
-
-
-
+<br>
 
 -	#### Overwrite (modify) memory:
 
@@ -4597,7 +4585,8 @@ https://lists.apple.com/archives/xcode-users/2015/Oct/msg00150.html
 > | 3 | Documentation | LLDB | [GDB to LLDB Command Map :: Examining Thread State (scroll down)](https://lldb.llvm.org/use/map.html#examining-thread-state)
 > | 9 | Documentation | Apple | [LLDB Tutorial :: Evaluating Alternative Code](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW10)
 
->recall
+<!-- See: https://lldb.llvm.org/use/map.html#examining-thread-state -->
+
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.8.8. Instructions *(Advanced)*
