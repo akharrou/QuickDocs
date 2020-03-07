@@ -4219,26 +4219,6 @@ You can inspect a your process's memory with the `memory` command:
 	>
 	> ***Example(s):***
 	>
-	> ##### (0) Arbitrary Address:
-	>
-	> ```shell
-	> (lldb) memory read 0x60300000055c
-	> (lldb) x 0x60300000055c
-	> 0x60300000055c: 04 00 00 00 05 00 00 00 06 00 00 00 07 00 00 00  ................
-	> 0x60300000056c: 07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-	>
-	> (lldb) memory read --format decimal --size 4 --count 1 0x60300000055c
-	> (lldb) x/1dw 0x60300000055c
-	> 0x60300000055c: 4
-	>
-	> (lldb) memory read --format decimal --size 4 --count 8 --num-per-line 2 0x60300000055c
-	> (lldb) x/8dw -l2 0x60300000055c
-	> 0x60300000055c: 4 5
-	> 0x603000000564: 6 7
-	> 0x60300000056c: 7 0
-	> 0x603000000574: 0 0
-	> ```
-	>
 	> ##### (1) Non-Aggregate Types:
 	>
 	> ##### (1.1) Integer:
@@ -4336,6 +4316,24 @@ You can inspect a your process's memory with the `memory` command:
 	> (lldb) x/10xw -l5 -- arr
 	> x603000000550: 0x00000001 0x00000002 0x00000003 0x00000004 0x00000005
 	> x603000000564: 0x00000006 0x00000007 0x00000007 0x00000002 0x02ffffff
+	>
+	> (lldb) x/100 -fY arr
+	> 0x603000000550: 01 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00  ................
+	> 0x603000000560: 05 00 00 00 06 00 00 00 07 00 00 00 07 00 00 00  ................
+	> 0x603000000570: 02 00 00 00 ff ff ff 02 20 00 00 00 01 00 80 78  ....���. ......x
+	> 0x603000000580: b0 05 00 00 30 60 00 00 37 00 00 00 3f 00 00 00  �...0`..7...?...
+	> 0x603000000590: 80 0a 00 00 90 61 00 00 00 00 00 00 00 00 00 00  .....a..........
+	> 0x6030000005a0: 02 00 00 00 ff ff ff 02 20 00 00 00 02 00 80 19  ....���. .......
+	> 0x6030000005b0: 1d 26 c5 60                                      .&�`
+	>
+	> (lldb) x/100 -fY `arr - 10`
+	> 0x603000000528: 02 00 00 00 02 00 00 00 02 00 00 00 02 00 00 00  ................
+	> 0x603000000538: 00 00 00 00 00 00 00 00 02 00 00 00 ff ff ff 02  ............���.
+	> 0x603000000548: 20 00 00 00 02 00 00 19 01 00 00 00 02 00 00 00   ...............
+	> 0x603000000558: 03 00 00 00 04 00 00 00 05 00 00 00 06 00 00 00  ................
+	> 0x603000000568: 07 00 00 00 07 00 00 00 02 00 00 00 ff ff ff 02  ............���.
+	> 0x603000000578: 20 00 00 00 01 00 80 78 b0 05 00 00 30 60 00 00   ......x�...0`..
+	> 0x603000000588: 37 00 00 00                                      7...
 	> ```
 	>
 	> ##### (2.2) *[Dynamic]* Character Array *(`char*`)*
@@ -4382,13 +4380,31 @@ You can inspect a your process's memory with the `memory` command:
 	> (lldb) x/10tb -l5 -- name
 	> x7ffeefbfef80: 0b01001010 0b01100001 0b01101101 0b01100101 0b01110011
 	> x7ffeefbfef85: 0b00000000 0b00000000 0b00000000 0b00000000 0b00000000
+	>
+	> (lldb) x/100 -fY name
+	> 0x100001de0: 4a 61 6d 65 73 00 00 00 00 00 00 00 00 00 00 00  James...........
+	> 0x100001df0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e20: 25 69 2c 20 00 00 00 00 00 00 00 00 00 00 00 00  %i, ............
+	> 0x100001e30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e40: 00 00 00 00                                      ....
+	>
+	> (lldb) x/100 -fY `name - 50`
+	> 0x100001dae: 72 61 6c 00 65 67 5f 61 67 65 00 66 67 5f 6e 65  ral.eg_age.fg_ne
+	> 0x100001dbe: 77 5f 61 67 65 00 3c 73 74 72 69 6e 67 20 6c 69  w_age.<string li
+	> 0x100001dce: 74 65 72 61 6c 3e 00 75 74 69 6c 73 2e 63 00 00  teral>.utils.c..
+	> 0x100001dde: 00 00 4a 61 6d 65 73 00 00 00 00 00 00 00 00 00  ..James.........
+	> 0x100001dee: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001dfe: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e0e: 00 00 00 00                                      ....
 	> ```
 	>
 	> ##### (2.3) *[Dynamic]* Pointer Array *(`char **`)*:
 	>
 	> ```shell
-	> (lldb) x/s -c10 -- *av
-	> (lldb) x/10s -- *av
+	> (lldb) x/s -c10 -- *argv
+	> (lldb) x/10s -- *argv
 	> x7ffeefbff510: "/path/to/executable"
 	> x7ffeefbff543: "ARCHFLAGS=-arch x86_64"
 	> x7ffeefbff55a: "Apple_PubSub_Socket_Render=/not-so-public/tmp/com.apple.launchd.dadq260jdab/Render
@@ -4399,69 +4415,111 @@ You can inspect a your process's memory with the `memory` command:
 	> x7ffeefbff64e: "DISPLAY=/not-so-private/tmp/com.apple.launchd.ldqwdqwddqwdqLKL/org.macler.xquartz:127"
 	> x7ffeefbff699: "HARD_DRIVE=d98j892jd3"
 	> x7ffeefbff6b7: "HARD_DRIVE_NAME=2id109239dk"
+	>
+	> (lldb) x/224 -fY *argv
+	> 0x7ffeefbff500: 2f 6e 66 73 2f 32 30 31 38 2f 61 2f 61 6b 68 61  /asds/2qwd0qw/qw
+	> 0x7ffeefbff510: 72 72 6f 75 2f 44 65 73 6b 74 6f 70 2f 44 69 72  rresdq/wdqw/p/ad
+	> 0x7ffeefbff520: 65 63 74 6f 72 79 2f 44 69 72 65 63 74 6f 72 79  ectory/qww2d2qry
+	> 0x7ffeefbff530: 2f 61 00 41 52 43 48 46 4c 41 47 53 3d 2d 61 72  /a.Ad23;dHFGS=-a
+	> 0x7ffeefbff540: 63 68 20 78 38 36 5f 36 34 00 41 70 70 6c 65 5f  ch _dqd64.Apple_
+	> 0x7ffeefbff550: 50 75 62 53 75 62 5f 53 6f 63 6b 65 74 5f 52 65  PubSu_13e1/e2/de
+	> 0x7ffeefbff560: 6e 64 65 72 3d 2f 70 72 69 76 61 74 65 2f 74 6d  nder=/pr23ite/tm
+	> 0x7ffeefbff570: 70 2f 63 6f 6d 2e 61 70 70 6c 65 2e 6c 61 75 6e  p/com.apple.laun
+	> 0x7ffeefbff580: 63 68 64 2e 31 5a 6d 72 6f 33 5a 65 41 77 2f 52  chd.hhDadd23Z/d3
+	> 0x7ffeefbff590: 65 6e 64 65 72 00 43 4f 4c 4f 52 54 45 52 4d 3d  ender.COLORT23M=
+	> 0x7ffeefbff5a0: 74 72 75 65 63 6f 6c 6f 72 00 43 4f 4d 50 55 54  truecolor.COMd3T
+	> 0x7ffeefbff5b0: 45 52 3d 65 31 7a 32 72 31 70 31 00 43 50 50 46  ER=2d23d233z1.CP
+	> 0x7ffeefbff5c0: 4c 41 47 53 3d 2d 49 2f 6e 66 73 2f 32 30 31 38  LAGS=-I/e1dc2/28
+	> 0x7ffeefbff5d0: 2f 61 2f 61 6b 68 61 72 72 6f 75 2f 2e 62 72 65  /a/d23d3/d23.b/e
 	> ```
 	> *<small>[**Note:** Static arrays (e.g. `char[]`, `int[]`) must be typecast: `x (char*)ptr`. - **end note**]</small>*
 	>
-	> ##### (3) Hexdump memory form address A to B
-	>
-	> ##### (3.1) Program Argument Vector
+	> ##### (3) Read memory form address A to B
 	>
 	> ```shell
-	> memory region argv
-	> [0x00007ffeef400000-0x00007ffeefc00000) rw-
-	> ```
-	> ```shell
-	> (lldb) memory read --binary 0x00007ffeef400000 0x00007ffeefc00000
-	> (lldb) x -b 0x00007ffeefbff510 0x00007ffeefbff610
-	> 0x7ffeefbff510: 2f 6e 66 73 2f 32 30 31 38 2f 61 2f 61 6b 68 61  /asds/2qwd0qw/qw
-	> 0x7ffeefbff520: 72 72 6f 75 2f 44 65 73 6b 74 6f 70 2f 44 69 72  rresdq/wdqw/p/ad
-	> 0x7ffeefbff530: 65 63 74 6f 72 79 2f 44 69 72 65 63 74 6f 72 79  ectory/qww2d2qry
-	> 0x7ffeefbff540: 2f 61 00 41 52 43 48 46 4c 41 47 53 3d 2d 61 72  /a.Ad23;dHFGS=-a
-	> 0x7ffeefbff550: 63 68 20 78 38 36 5f 36 34 00 41 70 70 6c 65 5f  ch _dqd64.Apple_
-	> 0x7ffeefbff560: 50 75 62 53 75 62 5f 53 6f 63 6b 65 74 5f 52 65  PubSu_13e1/e2/de
-	> 0x7ffeefbff570: 6e 64 65 72 3d 2f 70 72 69 76 61 74 65 2f 74 6d  nder=/pr23ite/tm
-	> 0x7ffeefbff580: 70 2f 63 6f 6d 2e 61 70 70 6c 65 2e 6c 61 75 6e  p/com.apple.laun
-	> 0x7ffeefbff590: 63 68 64 2e 68 68 44 61 34 4c 49 71 62 5a 2f 52  chd.hhDadd23Z/d3
-	> 0x7ffeefbff5a0: 65 6e 64 65 72 00 43 4f 4c 4f 52 54 45 52 4d 3d  ender.COLORT23M=
-	> 0x7ffeefbff5b0: 74 72 75 65 63 6f 6c 6f 72 00 43 4f 4d 50 55 54  truecolor.COMd3T
-	> 0x7ffeefbff5c0: 45 52 3d 65 31 7a 32 72 31 70 31 00 43 50 50 46  ER=2d23d233z1.CP
-	> 0x7ffeefbff5d0: 4c 41 47 53 3d 2d 49 2f 6e 66 73 2f 32 30 31 38  LAGS=-I/e1dc2/28
-	> 0x7ffeefbff5e0: 2f 61 2f 61 6b 68 61 72 72 6f 75 2f 2e 62 72 65  /a/d23d3/d23.b/e
-	> 0x7ffeefbff5f0: 77 2f 6f 70 74 2f 6e 63 75 72 73 65 73 2f 69 6e  w/opt/nrses/inas
-	> 0x7ffeefbff600: 63 6c 75 64 65 00 44 42 5f 55 52 49 3d 6d 6f 6e  clude.D.d2RI=mon
+	> (lldb) x -b 0x0000000100001de0 0x0000000100001ee0
+	> 0x100001de0: 4a 61 6d 65 73 00 00 00 00 00 00 00 00 00 00 00  James...........
+	> 0x100001df0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e20: 25 69 2c 20 00 00 00 00 00 00 00 00 00 00 00 00  %i, ............
+	> 0x100001e30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e40: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e60: 0a 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001e90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001ea0: 48 65 6c 6c 6f 21 0a 00 00 00 00 00 00 00 00 00  Hello!..........
+	> 0x100001eb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001ec0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100001ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
 	> ```
 	>
-	>
-	> ##### (3.1) Program Argument Vector
+	> ##### (3.2) Instructions
 	>
 	> ```shell
+	> (lldb) frame select
+	> frame #0: 0x000000010000185f a`main(ac=1, av=0x00007ffeefbff270) at loopInput.c:4
+	> 5
+	> 42       printf("\n");
+	> 43
+	> 44       *my_ptr = 10;
+	> -> 45       if (ac > 1)
+	> 46           *my_ptr = atoi(av[1]);
+	> 47
+	> 48       foo(my_ptr);
+	>
+	> (lldb) memory region 0x000000010000185f
+	> [0x0000000100000000-0x0000000100002000) r-x __TEXT
+	>
 	> (lldb) memory read --format instruction --force --binary 0x0000000100000000 0x0000000100002000
-	>     0x100000000: cf        iretl
-	>     0x100000001: fa        cli
-	>     0x100000002: ed        inl    %dx, %eax
-	>     0x100000003: fe 07     incb   (%rdi)
-	>     0x100000005: 00 00     addb   %al, (%rax)
-	>     0x100000007: 01 03     addl   %eax, (%rbx)
-	>     0x100000009: 00 00     addb   %al, (%rax)
-	>     0x10000000b: 80 02 00  addb   $0x0, (%rdx)
-	>     0x10000000e: 00 00     addb   %al, (%rax)
-	>     0x100000010: 12 00     adcb   (%rax), %al
-	>     0x100000012: 00 00     addb   %al, (%rax)
-	>     0x100000014: 08 09     orb    %cl, (%rcx)
-	>     0x100000016: 00 00     addb   %al, (%rax)
-	>     0x100000018: 85 00     testl  (%rax), %eax
-	>     0x10000001a: 20 00     andb   %al, (%rax)
-	>     0x10000001c: 00 00     addb   %al, (%rax)
-	>     0x10000001e: 00 00     addb   %al, (%rax)
-	>     0x100000020: 19 00     sbbl   %eax, (%rax)
-	>     0x100000022: 00 00     addb   %al, (%rax)
-	>     0x100000024: 48 00 00  addb   %al, (%rax)
-	>     0x100000027: 00 5f 5f  addb   %bl, 0x5f(%rdi)
-	>     0x10000002a: 50        pushq  %rax
 	> (lldb) x -fi -r -b 0x0000000100000000 0x0000000100002000
+	> 	0x100000000: cf        iretl
+	> 	0x100000001: fa        cli
+	> 	0x100000002: ed        inl    %dx, %eax
+	> 	0x100000003: fe 07     incb   (%rdi)
+	> 	0x100000005: 00 00     addb   %al, (%rax)
+	> 	0x100000007: 01 03     addl   %eax, (%rbx)
+	> 	0x100000009: 00 00     addb   %al, (%rax)
+	> 	0x10000000b: 80 02 00  addb   $0x0, (%rdx)
+	> 	0x10000000e: 00 00     addb   %al, (%rax)
+	> 	0x100000010: 12 00     adcb   (%rax), %al
+	> 	0x100000012: 00 00     addb   %al, (%rax)
+	> 	0x100000014: 08 09     orb    %cl, (%rcx)
+	> 	0x100000016: 00 00     addb   %al, (%rax)
+	> 	0x100000018: 85 00     testl  (%rax), %eax
+	> 	0x10000001a: 20 00     andb   %al, (%rax)
+	> 	0x10000001c: 00 00     addb   %al, (%rax)
+	> 	0x10000001e: 00 00     addb   %al, (%rax)
+	> 	0x100000020: 19 00     sbbl   %eax, (%rax)
+	> 	0x100000022: 00 00     addb   %al, (%rax)
+	> 	0x100000024: 48 00 00  addb   %al, (%rax)
+	> 	0x100000027: 00 5f 5f  addb   %bl, 0x5f(%rdi)
+	> 	0x10000002a: 50        pushq  %rax
 	> ```
 	>
-	> ##### (4) Log output to file
+	> ##### (4) Arbitrary Address:
+	>
+	> ```shell
+	> (lldb) memory read 0x60300000055c
+	> (lldb) x 0x60300000055c
+	> 0x60300000055c: 04 00 00 00 05 00 00 00 06 00 00 00 07 00 00 00  ................
+	> 0x60300000056c: 07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	>
+	> (lldb) memory read --format decimal --size 4 --count 1 0x60300000055c
+	> (lldb) x/1dw 0x60300000055c
+	> 0x60300000055c: 4
+	>
+	> (lldb) memory read --format decimal --size 4 --count 8 --num-per-line 2 0x60300000055c
+	> (lldb) x/8dw -l2 0x60300000055c
+	> 0x60300000055c: 4 5
+	> 0x603000000564: 6 7
+	> 0x60300000056c: 7 0
+	> 0x603000000574: 0 0
+	> ```
+	>
+	> ##### (5) Log output to file
 	>
 	> ```shell
 	> (lldb) memory read --outfile /tmp/mem.txt --count 512 -- buffer
@@ -4509,18 +4567,6 @@ You can inspect a your process's memory with the `memory` command:
 	> | `--offset <offset>`   | `-o`      | *Start writing bytes from an offset within the input file.*
 	>
 	> ***Example(s):***
-	>
-	> #### (0) Arbitrary Memory Address
-	>
-	> ```shell
-	> (lldb) x/1dw 0x60300000055c
-	> 0x60300000055c: 3
-	>
-	> (lldb) memory write --format decimal 0x60300000055c -- 4
-	>
-	> (lldb) x/1dw 0x60300000055c
-	> 0x60300000055c: 4
-	> ```
 	>
 	> #### (1) Non-aggregate types
 	>
@@ -4589,7 +4635,19 @@ You can inspect a your process's memory with the `memory` command:
 	> }
 	> ```
 	>
-	> #### (3) Write from file
+	> #### (3) Arbitrary Memory Address
+	>
+	> ```shell
+	> (lldb) x/1dw 0x60300000055c
+	> 0x60300000055c: 3
+	>
+	> (lldb) memory write --format decimal 0x60300000055c -- 4
+	>
+	> (lldb) x/1dw 0x60300000055c
+	> 0x60300000055c: 4
+	> ```
+	>
+	> #### (4) Write from file
 	>
 	> ```shell
 	> (lldb) memory write --size 5 --infile inputFile.txt name
@@ -4605,77 +4663,67 @@ You can inspect a your process's memory with the `memory` command:
 
 <br>
 
--	#### Memory Region Information:
+TODO : tags for mem info
+-	#### Memory Information:
 
 	> <small>`[Search Tags: ]`</small>
+	-	#### Region:
 
-	> ***Synopsis:***
-	> ```shell
-	> $> memory region <address>
-	> ```
-	>
-	> ***Example(s):***
-	>
-	> #### (1) Memory Region of Stack Frame (function) Instructions
-	>
-	> ```shell
-	> (lldb) f
-	> frame #0: 0x000000010000185f a`main(ac=1, av=0x00007ffeefbff270) at loopInput.c:45
-	>    42       printf("\n");
-	>    43
-	>    44       *my_ptr = 10;
-	> -> 45       if (ac > 1)
-	>    46           *my_ptr = atoi(av[1]);
-	>    47
-	>    48       foo(my_ptr);
-	> ```
-	> ```shell
-	> (lldb) memory reg 0x000000010000185f
-	> [0x0000000100000000-0x0000000100002000) r-x __TEXT   # notice read & execute permissions
-	> ```
-	> ```shell
-	> (lldb) memory read --force 0x0000000100000000 0x0000000100002000
-	> 0x100000000: cf fa ed fe 07 00 00 01 03 00 00 80 02 00 00 00  ����............
-	> 0x100000010: 12 00 00 00 08 09 00 00 85 00 20 00 00 00 00 00  .......... .....
-	> 0x100000020: 19 00 00 00 48 00 00 00 5f 5f 50 41 47 45 5a 45  ....H...__PAGEZE
-	> 0x100000030: 52 4f 00 00 00 00 00 00 00 00 00 00 00 00 00 00  RO..............
-	> 0x100000040: 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00  ................
-	> 0x100000050: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-	> 0x100000060: 00 00 00 00 00 00 00 00 19 00 00 00 c8 02 00 00  ............�...
-	> 0x100000070: 5f 5f 54 45 58 54 00 00 00 00 00 00 00 00 00 00  __TEXT..........
-	> ...
-	> ```
-	> ```shell
-	> (lldb) memory read --force --format binary 0x0000000100000000 0x0000000100002000
-	> 0x100000000: 0b11111110111011011111101011001111
-	> 0x100000004: 0b00000001000000000000000000000111
-	> 0x100000008: 0b10000000000000000000000000000011
-	> 0x10000000c: 0b00000000000000000000000000000010
-	> 0x100000010: 0b00000000000000000000000000010010
-	> 0x100000014: 0b00000000000000000000100100001000
-	> 0x100000018: 0b00000000001000000000000010000101
-	> ...
-	> ```
-	>
-	> #### (2)
+		> ***Synopsis:***
+		> ```shell
+		> $> memory region <address>
+		> ```
+		>
+		> ***Example(s):***
+		>
+		> ```shell
+		> (lldb) memory reg 0x000000010000185f
+		> [0x0000000100000000-0x0000000100002000) r-x __TEXT
+		> ```
 
+	-	#### History:
+
+		> ***Synopsis:***
+		> ```shell
+		> $> memory history <address>
+		> ```
+		>
+		> ***Example(s):***
+		>
+		> ```shell
+		> (lldb) memory history my_ptr
+		> (lldb) me hi my_ptr
+		> ```
+		> ```shell
+		> thread #4294967295: tid = 0x0001, 0x00000001000f8fdd libclang_rt.asan_osx_dynamic.dylib`wrap_free + 189, name = 'Memory deallocated by Thread 1'
+		> 	frame #0: 0x00000001000f8fdd libclang_rt.asan_osx_dynamic.dylib`wrap_free + 189
+		> 	frame #1: 0x00000001000019c7 a`main(ac=<unavailable>, av=<unavailable>) at loopInput.c:49
+		> 	frame #2: 0x00007fff6186b014 libdyld.dylib
+		> thread #4294967295: tid = 0x0001, 0x00000001000f8e13 libclang_rt.asan_osx_dynamic.dylib`wrap_malloc + 179, name = 'Memory allocated by Thread 1'
+		> 	frame #0: 0x00000001000f8e13 libclang_rt.asan_osx_dynamic.dylib`wrap_malloc + 179
+		> 	frame #1: 0x0000000100000c5d a`main(ac=<unavailable>, av=<unavailable>) at loopInput.c:24
+		> 	frame #2: 0x00007fff6186b014 libdyld.dylib
+		> ```
+
+<br>
+
+TODO : tags for mem find
 -	#### Find value in memory:
 
 	> <small>`[Search Tags: ]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> $> <command>
-	> ```
-	> ***Shorthand:***
-	> ```shell
-	> $> <shorthand>
+	> $> memory find -e <expr> [-c <count>] [-o <offset>] <address-expression> <address-expression>
+	> $> memory find -s <name> [-c <count>] [-o <offset>] <address-expression> <address-expression>
 	> ```
 	>
 	> ***Options:***
-	> | Flag                      | Shortcut  | Description
-	> | -                         | -         | - |
-	> | `--<full>`                | `-<short>`| *<description>*
+	> | Flag                     | Shortcut  | Description
+	> | -                        | -         | - |
+	> | `--expression <expr>`    | `-e`      | Evaluate an expression to obtain a <br> byte pattern.
+	> | `--string <name>`        | `-s`      | Use text to find a byte pattern.
+	> | `--dump-offset <offset>` | `-o`      | When dumping memory for a match, an <br> offset from the match location to start <br> dumping from.
 	>
 	> ***Example(s):***
 	>
@@ -4690,44 +4738,12 @@ You can inspect a your process's memory with the `memory` command:
 	> ```shell
 	> $> <output>
 	> ```
-
-(lldb) h mem find
-     Find a value in the memory of the current target process.
-
-Syntax:
-
-Command Options Usage:
-  memory find -e <expr> [-c <count>] [-o <offset>] <address-expression> <ad
-dress-expression>
-  memory find -s <name> [-c <count>] [-o <offset>] <address-expression> <ad
-dress-expression>
-
-       -c <count> ( --count <count> )
-            How many times to perform the search.
-
-       -e <expr> ( --expression <expr> )
-            Evaluate an expression to obtain a byte pattern.
-
-       -o <offset> ( --dump-offset <offset> )
-            When dumping memory for a match, an offset from the match
-            location to start dumping from.
-
-       -s <name> ( --string <name> )
-            Use text to find a byte pattern.
-
-     This command takes options and free-form arguments.  If your
-     arguments resemble option specifiers (i.e., they start with a - or
-     --), you must use ' -- ' between the end of the command options and
-     the beginning of the arguments.
-
-https://stackoverflow.com/questions/33098321/how-to-use-lldb-memory-find-command
-https://stackoverflow.com/questions/24431619/find-a-string-memory-using-lldb?rq=1
-https://lists.apple.com/archives/xcode-users/2015/Oct/msg00150.html
-
-<br>
-
-
-
+	>
+	> *<small>[**Note:***
+	>
+	> -	*This command takes options and free-form arguments. If your arguments resemble option specifiers (i.e., they start with a - or --), you must use ' -- ' between the end of the command options and the beginning of the arguments.*
+	>
+	> *- **end note**]</small>*
 
 <br>
 <br>
@@ -4749,7 +4765,12 @@ https://lists.apple.com/archives/xcode-users/2015/Oct/msg00150.html
 > | 3 | Documentation | LLDB | [GDB to LLDB Command Map :: Examining Thread State (scroll down)](https://lldb.llvm.org/use/map.html#examining-thread-state)
 > | 9 | Documentation | Apple | [LLDB Tutorial :: Evaluating Alternative Code](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW10)
 
-<!-- See: https://lldb.llvm.org/use/map.html#examining-thread-state -->
+<!--
+https://lldb.llvm.org/use/map.html#examining-thread-state
+https://stackoverflow.com/questions/33098321/how-to-use-lldb-memory-find-command
+https://stackoverflow.com/questions/24431619/find-a-string-memory-using-lldb?rq=1
+https://lists.apple.com/archives/xcode-users/2015/Oct/msg00150.html
+-->
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
