@@ -4224,11 +4224,51 @@ You can inspect a your process's memory with the `memory` command:
 	> ##### (1.1) Integer:
 	>
 	> ```shell
-	> (lldb) memory read --fomrat decimal --size `sizeof(int)` -- &my_int    # in decimal
-	> (lldb) me read -f d -s `sizeof(int)` -- &my_int
-	> (lldb) x/d -s `sizeof(int)` -- &my_int
-	> (lldb) x/1dw -- &my_int                                                # gdb shortahnd, see: §3.8.4.2, Formatting Output (tag: formatting)
-	> x7ffeefbff1ec: 950
+	> (lldb) memory read --format "bytes with ASCII" -- my_intPtr
+	> (lldb) x -f Y -- my_intPtr
+	> (lldb) x my_intPtr
+	> 0x6040000006d0: 65 00 00 00 01 00 00 00 02 00 00 00 03 00 00 00  e...............
+	> 0x6040000006e0: 04 00 00 00 05 00 00 00 06 00 00 00 07 00 00 00  ................
+	>
+	> (lldb) x --format decimal -- my_intPtr
+	> (lldb) x -fd my_intPtr
+	> 0x6040000006d0: 101
+	> 0x6040000006d4: 1
+	> 0x6040000006d8: 2
+	> 0x6040000006dc: 3
+	> 0x6040000006e0: 4
+	> 0x6040000006e4: 5
+	> 0x6040000006e8: 6
+	> 0x6040000006ec: 7
+	>
+	> (lldb) x --format decimal --size `sizeof(int)` -- my_intPtr
+	> (lldb) x -f d -s `sizeof(*my_intPtr)` -- my_intPtr
+	> (lldb) x -f d -s `sizeof(int)` my_intPtr
+	> (lldb) x -f d -s 4 my_intPtr
+	> 0x6040000006d0: 101
+	> 0x6040000006d4: 1
+	> 0x6040000006d8: 2
+	> 0x6040000006dc: 3
+	> 0x6040000006e0: 4
+	> 0x6040000006e4: 5
+	> 0x6040000006e8: 6
+	> 0x6040000006ec: 7
+	>
+	> (lldb) x -c3 -fd my_intPtr
+	> (lldb) x/3d my_intPtr
+	> 0x6040000006d0: 101
+	> 0x6040000006d4: 1
+	> 0x6040000006d8: 2
+	>
+	> (lldb) x --count 1 --format decimal -- my_intPtr
+	> (lldb) x -c1 -fd my_intPtr
+	> (lldb) x/d my_intPtr
+	> 0x6040000006d0: 101
+	>
+	> (lldb) memory read --count 1 --format decimal --size `sizeof(*my_intPtr)` -- my_intPtr
+	> (lldb) x -c 1 -f d -s `sizeof(*my_intPtr)` my_intPtr
+	> (lldb) x/1dw my_intPtr
+	> 0x6040000006d0: 101
 	>
 	> (lldb) x/x -s `sizeof(int)` -- &my_int                                 # in hex
 	> (lldb) x/1xw -- &my_int
@@ -4237,6 +4277,12 @@ You can inspect a your process's memory with the `memory` command:
 	> (lldb) x/t -s `sizeof(int)` -- &my_int                                 # in binary
 	> (lldb) x/1tw -- &my_int
 	> x7ffeefbff1ec: 0b00000000000000000000001110110110
+	>
+	> (lldb) memory read --fomrat decimal --size `sizeof(int)` -- &my_int    # in decimal
+	> (lldb) me read -f d -s `sizeof(int)` -- &my_int
+	> (lldb) x/d -s `sizeof(int)` -- &my_int
+	> (lldb) x/1dw -- &my_int                                                # gdb shortahnd, see: §3.8.4.2, Formatting Output (tag: formatting)
+	> x7ffeefbff1ec: 950
 	> ```
 	>
 	> ##### (1.2) Float:
