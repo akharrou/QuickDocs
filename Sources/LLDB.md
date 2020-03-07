@@ -4574,14 +4574,14 @@ You can inspect a your process's memory with the `memory` command:
 	>
 	> ##### (1.3) Integer Pointed to by *[Int]* Pointer
 	> ```shell
-	> (lldb) memory write --format decimal my_ptr -- 72
-	> (lldb) me w -f d my_ptr -- 72
+	> (lldb) memory write --format decimal my_intPtr -- 72
+	> (lldb) me w -f d my_intPtr -- 72
 	> ```
 	>
 	> ##### (1.4) Pointer Address
 	> ```shell
-	> (lldb) memory write -s8 &my_ptr -- 0x00006020000000f8
-	> (lldb) me w -s8 &my_ptr -- 0x00006020000000f8
+	> (lldb) memory write --size 8 &my_voidPtr -- 0x00006020000000f8
+	> (lldb) me w -s 8 &my_voidPtr -- 0x00006020000000f8
 	> ```
 	>
 	> #### (2) Aggregate types
@@ -4594,33 +4594,37 @@ You can inspect a your process's memory with the `memory` command:
 	>
 	> ##### (2.2) Integer Arrays
 	> ```shell
-	> (lldb) e -Z8 -- arr
-	> (int *) $0 = 0x0000603000000580 {
-	>   (int) [0] = 8
-	>   (int) [1] = 7
-	>   (int) [2] = 6
-	>   (int) [3] = 5
+	> (lldb) e -Z10 -- my_intPtr
+	> (int *) $56 = 0x00006040000006d0 {
+	>   (int) [0] = 101
+	>   (int) [1] = 1
+	>   (int) [2] = 2
+	>   (int) [3] = 3
 	>   (int) [4] = 4
-	>   (int) [5] = 3
-	>   (int) [6] = 2
-	>   (int) [7] = 1
+	>   (int) [5] = 5
+	>   (int) [6] = 6
+	>   (int) [7] = 7
+	>   (int) [8] = 8
+	>   (int) [9] = 9
 	> }
 	> ```
 	> ```shell
-	> (lldb) memory write --format decimal --size 4 arr -- 1 2 3 4 5 6 7 8
-	> (lldb) me w -f d -s 4 arr -- 1 2 3 4 5 6 7 8
+	> (lldb) memory write --format decimal --size 4 my_intPtr -- -101 9 8 7 6 5 4 3 2 1
+	> (lldb) me w -f d -s 4 my_intPtr -- -101 9 8 7 6 5 4 3 2 1
 	> ```
 	> ```shell
-	> (lldb) e -Z8 -- arr
-	> (int *) $1 = 0x0000603000000580 {
-	>   (int) [0] = 1
-	>   (int) [1] = 2
-	>   (int) [2] = 3
-	>   (int) [3] = 4
-	>   (int) [4] = 5
-	>   (int) [5] = 6
-	>   (int) [6] = 7
-	>   (int) [7] = 8
+	> (lldb) e -Z10 -- my_intPtr
+	> (int *) $58 = 0x00006040000006d0 {
+	>   (int) [0] = -101
+	>   (int) [1] = 9
+	>   (int) [2] = 8
+	>   (int) [3] = 7
+	>   (int) [4] = 6
+	>   (int) [5] = 5
+	>   (int) [6] = 4
+	>   (int) [7] = 3
+	>   (int) [8] = 2
+	>   (int) [9] = 1
 	> }
 	> ```
 	>
@@ -4639,7 +4643,7 @@ You can inspect a your process's memory with the `memory` command:
 	> #### (4) Write from file
 	>
 	> ```shell
-	> (lldb) memory write --size 5 --infile inputFile.txt name
+	> (lldb) memory write --size 5 --infile inputFile.txt -- name
 	> ```
 	>
 	> > *To clarify –– we are saying: write 5 bytes from `inputFile.txt` to the memory block that `(char*) name` points to.*
