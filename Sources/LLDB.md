@@ -4188,15 +4188,6 @@ Commands to:
 You can inspect a your process's memory with the `memory` command:
 
 ---
-<!--
-Command Options Usage:
-  memory read [-r] [-f <format>] [-c <count>] [-G <gdb-format>] [-s <byte-size>
-] [-l <number-per-line>] [-o <filename>] <address-expression> [<address-express
-ion>]
-  memory read [-br] [-f <format>] [-c <count>] [-s <byte-size>] [-o <filename>]
- <address-expression> [<address-expression>]
-
-  memory read <address-expression> -->
 
 -	#### Read (print) Memory:
 
@@ -4204,7 +4195,7 @@ ion>]
 
 	> ***Synopsis:***
 	> ```shell
-	> $> memory read
+	> $> memory read [-c <count>] [-s <size>] [-l <number-per-line>] [-o <filename>]
 	> ```
 	> ***Shorthand:***
 	> ```shell
@@ -4227,6 +4218,26 @@ ion>]
 	> | `--append-outfile`                  | --       | *Append to the file specified with <br> `--outfile <path>`.*
 	>
 	> ***Example(s):***
+	>
+	> ##### (0) Arbitrary Address:
+	>
+	> ```shell
+	> (lldb) memory read 0x60300000055c
+	> (lldb) x 0x60300000055c
+	> 0x60300000055c: 04 00 00 00 05 00 00 00 06 00 00 00 07 00 00 00  ................
+	> 0x60300000056c: 07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	>
+	> (lldb) memory read --format decimal --size 4 --count 1 0x60300000055c
+	> (lldb) x/1dw 0x60300000055c
+	> 0x60300000055c: 4
+	>
+	> (lldb) memory read --format decimal --size 4 --count 8 --num-per-line 2 0x60300000055c
+	> (lldb) x/8dw -l2 0x60300000055c
+	> 0x60300000055c: 4 5
+	> 0x603000000564: 6 7
+	> 0x60300000056c: 7 0
+	> 0x603000000574: 0 0
+	> ```
 	>
 	> ##### (1) Non-Aggregate Types:
 	>
@@ -4389,9 +4400,68 @@ ion>]
 	> x7ffeefbff699: "HARD_DRIVE=d98j892jd3"
 	> x7ffeefbff6b7: "HARD_DRIVE_NAME=2id109239dk"
 	> ```
-	> *<small>[**Note:** Static arrays (e.g. `char[]`, `int[]`) must be typecast, ex: `x (char*)ptr`. - **end note**]</small>*
+	> *<small>[**Note:** Static arrays (e.g. `char[]`, `int[]`) must be typecast: `x (char*)ptr`. - **end note**]</small>*
 	>
-	> ##### (3) Log [output] to file
+	> ##### (3) Hexdump memory form address A to B
+	>
+	> ##### (3.1) Program Argument Vector
+	>
+	> ```shell
+	> memory region argv
+	> [0x00007ffeef400000-0x00007ffeefc00000) rw-
+	> ```
+	> ```shell
+	> (lldb) memory read --binary 0x00007ffeef400000 0x00007ffeefc00000
+	> (lldb) x -b 0x00007ffeefbff510 0x00007ffeefbff610
+	> 0x7ffeefbff510: 2f 6e 66 73 2f 32 30 31 38 2f 61 2f 61 6b 68 61  /asds/2qwd0qw/qw
+	> 0x7ffeefbff520: 72 72 6f 75 2f 44 65 73 6b 74 6f 70 2f 44 69 72  rresdq/wdqw/p/ad
+	> 0x7ffeefbff530: 65 63 74 6f 72 79 2f 44 69 72 65 63 74 6f 72 79  ectory/qww2d2qry
+	> 0x7ffeefbff540: 2f 61 00 41 52 43 48 46 4c 41 47 53 3d 2d 61 72  /a.Ad23;dHFGS=-a
+	> 0x7ffeefbff550: 63 68 20 78 38 36 5f 36 34 00 41 70 70 6c 65 5f  ch _dqd64.Apple_
+	> 0x7ffeefbff560: 50 75 62 53 75 62 5f 53 6f 63 6b 65 74 5f 52 65  PubSu_13e1/e2/de
+	> 0x7ffeefbff570: 6e 64 65 72 3d 2f 70 72 69 76 61 74 65 2f 74 6d  nder=/pr23ite/tm
+	> 0x7ffeefbff580: 70 2f 63 6f 6d 2e 61 70 70 6c 65 2e 6c 61 75 6e  p/com.apple.laun
+	> 0x7ffeefbff590: 63 68 64 2e 68 68 44 61 34 4c 49 71 62 5a 2f 52  chd.hhDadd23Z/d3
+	> 0x7ffeefbff5a0: 65 6e 64 65 72 00 43 4f 4c 4f 52 54 45 52 4d 3d  ender.COLORT23M=
+	> 0x7ffeefbff5b0: 74 72 75 65 63 6f 6c 6f 72 00 43 4f 4d 50 55 54  truecolor.COMd3T
+	> 0x7ffeefbff5c0: 45 52 3d 65 31 7a 32 72 31 70 31 00 43 50 50 46  ER=2d23d233z1.CP
+	> 0x7ffeefbff5d0: 4c 41 47 53 3d 2d 49 2f 6e 66 73 2f 32 30 31 38  LAGS=-I/e1dc2/28
+	> 0x7ffeefbff5e0: 2f 61 2f 61 6b 68 61 72 72 6f 75 2f 2e 62 72 65  /a/d23d3/d23.b/e
+	> 0x7ffeefbff5f0: 77 2f 6f 70 74 2f 6e 63 75 72 73 65 73 2f 69 6e  w/opt/nrses/inas
+	> 0x7ffeefbff600: 63 6c 75 64 65 00 44 42 5f 55 52 49 3d 6d 6f 6e  clude.D.d2RI=mon
+	> ```
+	>
+	>
+	> ##### (3.1) Program Argument Vector
+	>
+	> ```shell
+	> (lldb) memory read --format instruction --force --binary 0x0000000100000000 0x0000000100002000
+	>     0x100000000: cf        iretl
+	>     0x100000001: fa        cli
+	>     0x100000002: ed        inl    %dx, %eax
+	>     0x100000003: fe 07     incb   (%rdi)
+	>     0x100000005: 00 00     addb   %al, (%rax)
+	>     0x100000007: 01 03     addl   %eax, (%rbx)
+	>     0x100000009: 00 00     addb   %al, (%rax)
+	>     0x10000000b: 80 02 00  addb   $0x0, (%rdx)
+	>     0x10000000e: 00 00     addb   %al, (%rax)
+	>     0x100000010: 12 00     adcb   (%rax), %al
+	>     0x100000012: 00 00     addb   %al, (%rax)
+	>     0x100000014: 08 09     orb    %cl, (%rcx)
+	>     0x100000016: 00 00     addb   %al, (%rax)
+	>     0x100000018: 85 00     testl  (%rax), %eax
+	>     0x10000001a: 20 00     andb   %al, (%rax)
+	>     0x10000001c: 00 00     addb   %al, (%rax)
+	>     0x10000001e: 00 00     addb   %al, (%rax)
+	>     0x100000020: 19 00     sbbl   %eax, (%rax)
+	>     0x100000022: 00 00     addb   %al, (%rax)
+	>     0x100000024: 48 00 00  addb   %al, (%rax)
+	>     0x100000027: 00 5f 5f  addb   %bl, 0x5f(%rdi)
+	>     0x10000002a: 50        pushq  %rax
+	> (lldb) x -fi -r -b 0x0000000100000000 0x0000000100002000
+	> ```
+	>
+	> ##### (4) Log output to file
 	>
 	> ```shell
 	> (lldb) memory read --outfile /tmp/mem.txt --count 512 -- buffer
@@ -4402,13 +4472,9 @@ ion>]
 	> (lldb) me read  --append-outfile /tmp/mem.txt -c512 buffer
 	> (lldb) x/512bx  --append-outfile /tmp/mem.txt -- buffer
 	> ```
-	>
-	> ##### (1) Save binary memory data starting at 0x1000 and ending at 0x2000 to a file.
-	>
 	> ```shell
-	> (lldb) memory read --outfile /tmp/mem.bin --binary 0x1000 0x2000
-	> (lldb) me read -o /tmp/mem.bin -b 0x1000 0x2000
-	> (lldb) x -o /tmp/mem.bin -b 0x1000 0x2000
+	> (lldb) memory read --outfile /tmp/mem.txt --binary 0x00007ffeefbff510 0x00007ffeefbff610
+	> (lldb) x -o /tmp/mem.txt -b 0x00007ffeefbff510 0x00007ffeefbff610
 	> ```
 	>
 	> *<small>[**Note:***
@@ -4426,62 +4492,172 @@ ion>]
 
 -	#### Overwrite (modify) memory:
 
+	> <small>`[Search Tags: >writetomemory >write2memory >wr2memory >wrtomemory >wrmemory >writetomem >write2mem >wr2mem >wrtomem >writetom >write2m >wr2m >wrtom >overwritememory >overwritemem >overwritem >wrmemory >wrmem >wrm >writmemory >writmem >writm >memorywrite >writememory >memwrite >writemem >mwrite >writem]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> $> memory write [-f <format>] [-s <byte-size>] <address> <value> [<value> ...]
+	> $> memory write -i <filename> [-o <offset>] [-s <byte-size>] <address> <value> [<value> ...]
+	> ```
+	>
+	> ***Options:***
+	> | Flag                  | Shortcut  | Description
+	> | -                     | -         | - |
+	> | `--format <format>`   | `-f`      | *Specify a format in which the specified values are represented.*
+	> ||||
+	> | `--infile <filename>` | `-i`      | *Write memory using the contents of a file.*
+	> | `--offset <offset>`   | `-o`      | *Start writing bytes from an offset within the input file.*
+	>
+	> ***Example(s):***
+	>
+	> #### (0) Arbitrary Memory Address
+	>
+	> ```shell
+	> (lldb) x/1dw 0x60300000055c
+	> 0x60300000055c: 3
+	>
+	> (lldb) memory write --format decimal 0x60300000055c -- 4
+	>
+	> (lldb) x/1dw 0x60300000055c
+	> 0x60300000055c: 4
+	> ```
+	>
+	> #### (1) Non-aggregate types
+	>
+	> ##### (1.1) Integer
+	> ```shell
+	> (lldb) memory write --format decimal &my_int -- 72
+	> (lldb) me w -f d &my_int -- 72
+	> ```
+	>
+	> ##### (1.2) Float
+	> ```shell
+	> (lldb) memory write --format float &my_float -- 12.12
+	> (lldb) me w -f f &my_float -- 12.12
+	> error: unsupported format for writing memory
+	> ```
+	>
+	> ##### (1.3) Integer Pointed to by *[Int]* Pointer
+	> ```shell
+	> (lldb) memory write --format decimal my_ptr -- 72
+	> (lldb) me w -f d my_ptr -- 72
+	> ```
+	>
+	> ##### (1.4) Pointer Address
+	> ```shell
+	> (lldb) memory write -s8 &my_ptr -- 0x00006020000000f8
+	> (lldb) me w -s8 &my_ptr -- 0x00006020000000f8
+	> ```
+	>
+	> #### (2) Aggregate types
+	>
+	> ##### (2.1) Character Arrays *(C-String)*
+	> ```shell
+	> (lldb) memory write --format c-string name -- "New String Value"
+	> (lldb) me w -f s name -- "New String Value"
+	> ```
+	>
+	> ##### (2.2) Integer Arrays
+	> ```shell
+	> (lldb) e -Z8 -- arr
+	> (int *) $0 = 0x0000603000000580 {
+	>   (int) [0] = 8
+	>   (int) [1] = 7
+	>   (int) [2] = 6
+	>   (int) [3] = 5
+	>   (int) [4] = 4
+	>   (int) [5] = 3
+	>   (int) [6] = 2
+	>   (int) [7] = 1
+	> }
+	> ```
+	> ```shell
+	> (lldb) memory write --format decimal --size 4 arr -- 1 2 3 4 5 6 7 8
+	> (lldb) me w -f d -s 4 arr -- 1 2 3 4 5 6 7 8
+	> ```
+	> ```shell
+	> (lldb) e -Z8 -- arr
+	> (int *) $1 = 0x0000603000000580 {
+	>   (int) [0] = 1
+	>   (int) [1] = 2
+	>   (int) [2] = 3
+	>   (int) [3] = 4
+	>   (int) [4] = 5
+	>   (int) [5] = 6
+	>   (int) [6] = 7
+	>   (int) [7] = 8
+	> }
+	> ```
+	>
+	> #### (3) Write from file
+	>
+	> ```shell
+	> (lldb) memory write --size 5 --infile inputFile.txt name
+	> ```
+	>
+	> > *To clarify –– we are saying: write 5 bytes from `inputFile.txt` to the memory block that `(char*) name` points to.*
+	>
+	> *<small>[**Note:***
+	>
+	> -	*This command takes options and free-form arguments. If your arguments resemble option specifiers (i.e., they start with a - or --), you must use ' -- ' between the end of the command options and the beginning of the arguments.*
+	>
+	> *- **end note**]</small>*
+
+<br>
+
+-	#### Memory Region Information:
+
 	> <small>`[Search Tags: ]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> $> memory write [--format <format>]
+	> $> memory region <address>
 	> ```
-	>
-	> ***Options:***
-	> | Flag                      | Shortcut  | Description
-	> | -                         | -         | - |
-	> | `--<full>`                | `-<short>`| *<description>*
-	> | `--<full>`                | `-<short>`| *<description>*
-	> | `--<full>`                | `-<short>`| *<description>*
-	> | `--<full>`                | `-<short>`| *<description>*
 	>
 	> ***Example(s):***
 	>
-	> #### (1) `<title>`
+	> #### (1) Memory Region of Stack Frame (function) Instructions
 	>
-	> ##### (1.1) `<subtitle>`
 	> ```shell
-	> $> <command>
+	> (lldb) f
+	> frame #0: 0x000000010000185f a`main(ac=1, av=0x00007ffeefbff270) at loopInput.c:45
+	>    42       printf("\n");
+	>    43
+	>    44       *my_ptr = 10;
+	> -> 45       if (ac > 1)
+	>    46           *my_ptr = atoi(av[1]);
+	>    47
+	>    48       foo(my_ptr);
 	> ```
 	> ```shell
-	> $> <output>
+	> (lldb) memory reg 0x000000010000185f
+	> [0x0000000100000000-0x0000000100002000) r-x __TEXT   # notice read & execute permissions
 	> ```
-
-
-Description:
-     Write to the memory of the current target process.
-
-Syntax:
-
-Command Options Usage:
-  memory write [-f <format>] [-s <byte-size>] <address> <value> [<value> [...]]
-  memory write -i <filename> [-s <byte-size>] [-o <offset>] <address> <value> [
-<value> [...]]
-
-       -f <format> ( --format <format> )
-            Specify a format to be used for display.
-
-       -i <filename> ( --infile <filename> )
-            Write memory using the contents of a file.
-
-       -o <offset> ( --offset <offset> )
-            Start writing bytes from an offset within the input file.
-
-       -s <byte-size> ( --size <byte-size> )
-            The size in bytes to use when displaying with the selected format.
-
-     This command takes options and free-form arguments.  If your arguments
-     resemble option specifiers (i.e., they start with a - or --), you must
-     use ' -- ' between the end of the command options and the beginning of
-     the arguments.
-
-<br>
+	> ```shell
+	> (lldb) memory read --force 0x0000000100000000 0x0000000100002000
+	> 0x100000000: cf fa ed fe 07 00 00 01 03 00 00 80 02 00 00 00  ����............
+	> 0x100000010: 12 00 00 00 08 09 00 00 85 00 20 00 00 00 00 00  .......... .....
+	> 0x100000020: 19 00 00 00 48 00 00 00 5f 5f 50 41 47 45 5a 45  ....H...__PAGEZE
+	> 0x100000030: 52 4f 00 00 00 00 00 00 00 00 00 00 00 00 00 00  RO..............
+	> 0x100000040: 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100000050: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100000060: 00 00 00 00 00 00 00 00 19 00 00 00 c8 02 00 00  ............�...
+	> 0x100000070: 5f 5f 54 45 58 54 00 00 00 00 00 00 00 00 00 00  __TEXT..........
+	> ...
+	> ```
+	> ```shell
+	> (lldb) memory read --force --format binary 0x0000000100000000 0x0000000100002000
+	> 0x100000000: 0b11111110111011011111101011001111
+	> 0x100000004: 0b00000001000000000000000000000111
+	> 0x100000008: 0b10000000000000000000000000000011
+	> 0x10000000c: 0b00000000000000000000000000000010
+	> 0x100000010: 0b00000000000000000000000000010010
+	> 0x100000014: 0b00000000000000000000100100001000
+	> 0x100000018: 0b00000000001000000000000010000101
+	> ...
+	> ```
+	>
+	> #### (2)
 
 -	#### Find value in memory:
 
@@ -4503,11 +4679,13 @@ Command Options Usage:
 	>
 	> ***Example(s):***
 	>
-	> #### (1) `<title>`
+	> #### (1) Find a byte string
 	>
-	> ##### (1.1) `<subtitle>`
 	> ```shell
-	> $> <command>
+	> (lldb) memory find -s "James" 0x0000000100000000 0x0000000200000000
+	> data found at location: 0x100001de0
+	> 0x100001de0: 4a 61 6d 65 73 00 00 00 00 00 00 00 00 00 00 00  James...........
+	> 0x100001df0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
 	> ```
 	> ```shell
 	> $> <output>
