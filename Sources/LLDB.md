@@ -4226,11 +4226,11 @@ You can inspect a your process's memory with the `memory` command:
 	> ```shell
 	> (lldb) memory read --format "bytes with ASCII" -- my_intPtr
 	> (lldb) x -f Y -- my_intPtr
-	> (lldb) x my_intPtr
+	> (lldb) x my_intPtr                                    # default
 	> 0x6040000006d0: 65 00 00 00 01 00 00 00 02 00 00 00 03 00 00 00  e...............
 	> 0x6040000006e0: 04 00 00 00 05 00 00 00 06 00 00 00 07 00 00 00  ................
 	>
-	> (lldb) x --format decimal -- my_intPtr
+	> (lldb) x --format decimal -- my_intPtr                # decimal format
 	> (lldb) x -fd my_intPtr
 	> 0x6040000006d0: 101
 	> 0x6040000006d4: 1
@@ -4241,9 +4241,8 @@ You can inspect a your process's memory with the `memory` command:
 	> 0x6040000006e8: 6
 	> 0x6040000006ec: 7
 	>
-	> (lldb) x --format decimal --size `sizeof(int)` -- my_intPtr
+	> (lldb) x -f d --size `sizeof(int)` -- my_intPtr       # size
 	> (lldb) x -f d -s `sizeof(*my_intPtr)` -- my_intPtr
-	> (lldb) x -f d -s `sizeof(int)` my_intPtr
 	> (lldb) x -f d -s 4 my_intPtr
 	> 0x6040000006d0: 101
 	> 0x6040000006d4: 1
@@ -4254,199 +4253,157 @@ You can inspect a your process's memory with the `memory` command:
 	> 0x6040000006e8: 6
 	> 0x6040000006ec: 7
 	>
-	> (lldb) x -c3 -fd my_intPtr
-	> (lldb) x/3d my_intPtr
+	> (lldb) x --count 3 -f d -s 4 -- my_intPtr            # count 3
+	> (lldb) x -c 3 -f d -s 4 my_intPtr
 	> 0x6040000006d0: 101
 	> 0x6040000006d4: 1
 	> 0x6040000006d8: 2
 	>
-	> (lldb) x --count 1 --format decimal -- my_intPtr
-	> (lldb) x -c1 -fd my_intPtr
-	> (lldb) x/d my_intPtr
-	> 0x6040000006d0: 101
-	>
-	> (lldb) memory read --count 1 --format decimal --size `sizeof(*my_intPtr)` -- my_intPtr
-	> (lldb) x -c 1 -f d -s `sizeof(*my_intPtr)` my_intPtr
+	> (lldb) x -c1 -fd -s4 my_intPtr                       # count 1
 	> (lldb) x/1dw my_intPtr
 	> 0x6040000006d0: 101
 	>
-	> (lldb) x/x -s `sizeof(int)` -- &my_int                                 # in hex
-	> (lldb) x/1xw -- &my_int
-	> x7ffeefbff1ec: 0x000003b6
+	> (lldb) x -c1 -fd my_intPtr                           # omit size
+	> (lldb) x/1d my_intPtr
+	> 0x6040000006d0: 101
 	>
-	> (lldb) x/t -s `sizeof(int)` -- &my_int                                 # in binary
-	> (lldb) x/1tw -- &my_int
-	> x7ffeefbff1ec: 0b00000000000000000000001110110110
+	> (lldb) x/d my_intPtr                                 # omit count
+	> 0x6040000006d0: 101
 	>
-	> (lldb) memory read --fomrat decimal --size `sizeof(int)` -- &my_int    # in decimal
-	> (lldb) me read -f d -s `sizeof(int)` -- &my_int
-	> (lldb) x/d -s `sizeof(int)` -- &my_int
-	> (lldb) x/1dw -- &my_int                                                # gdb shortahnd, see: §3.8.4.2, Formatting Output (tag: formatting)
-	> x7ffeefbff1ec: 950
+	> (lldb) x/x my_intPtr                                 # in hex
+	> 0x6040000006d0: 0x00000065
+	>
+	> (lldb) x/o my_intPtr                                 # in octal
+	> 0x6040000006d0: 0145
+	>
+	> (lldb) x -f b my_intPtr                              # in binary
+	> (lldb) x/t my_intPtr
+	> 0x6040000006d0: 0b00000000000000000000000001100101
+	>
+	> (lldb) x -f b &my_int                                # 'int' itself
+	> (lldb) x/t &my_int
+	> 0x6040000006d0: 0b00000000000000000000000001100101
 	> ```
 	>
 	> ##### (1.2) Float:
 	>
 	> ```shell
-	> (lldb) x/f -- &my_float
-	> (lldb) x/f -s `sizeof(float)` -c1 -- &my_float                         # in float
+	> (lldb) x -c1 -ff -s`sizeof(float)` -- &my_float      # in float (32bit)
+	> (lldb) x -c1 -ff -s4 -- &my_float
 	> (lldb) x/1fw -- &my_float
-	> x7ffeefbff204: 42.4199982
+	> (lldb) x/f &my_float
+	> x7ffeefbff204: 101.4199982
 	>
-	> (lldb) x/x -- &my_float
-	> (lldb) x/x -s `sizeof(float)` -c1 -- &my_float                         # in hex
-	> (lldb) x/1xw -- &my_float
-	> x7ffeefbff204: 0x4229ae14
+	> (lldb) x/x &my_float                                 # in hex
+	> x7ffeefbff204: 0x42cad70a
 	>
-	> (lldb) x/t -- &my_float
-	> (lldb) x/t -s `sizeof(float)` -c1 -- &my_float                         # in binary
-	> (lldb) x/1tw -- &my_float
-	> x7ffeefbff204: 0b01000010001010011010111000010100
+	> (lldb) x/t &my_float                                 # in binary
+	> x7ffeefbff204: 0b01000010110010101101011100001010
 	> ```
 	>
 	> ##### (2) Aggregate Types:
 	>
-	> ##### (2.1) *[Dynamic]* Integer Array *(`int*`)* *with 8 elements*:
+	> *<small>[**Note:** Static arrays (e.g. `char[]`, `int[]`) must be typecast: `x (char*)ptr`. - **end note**]</small>*
+	>
+	> ##### (2.1) Integer Array *(`int*`)* *(contains 10 elements)*:
 	>
 	> ```shell
-	> (lldb) x/d -s `sizeof(int)` -c 8 -l 1 -- arr       # in decimal, 8 elements, 1 element per line,
-	> (lldb) x/8dw -l 1 -- arr
-	> x603000000550: 1
-	> x603000000554: 2
-	> x603000000558: 3
-	> x60300000055c: 4
-	> x603000000560: 5
-	> x603000000564: 6
-	> x603000000568: 7
-	> x60300000056c: 7
+	> (lldb) x/10dw my_intPtr
+	> (lldb) x/10d my_intPtr
+	> (lldb) x/10 my_intPtr
+	> 0x6040000006d0: 101
+	> 0x6040000006d4: 1
+	> 0x6040000006d8: 2
+	> 0x6040000006dc: 3
+	> 0x6040000006e0: 4
+	> 0x6040000006e4: 5
+	> 0x6040000006e8: 6
+	> 0x6040000006ec: 7
+	> 0x6040000006f0: 8
+	> 0x6040000006f4: 9
 	>
-	> (lldb) x/x -s `sizeof(int)` -c 8 -l 1 -- arr       # in hex, " ", " "
-	> (lldb) x/8xw -l 1 -- arr
-	> x603000000550: 0x00000001
-	> x603000000554: 0x00000002
-	> x603000000558: 0x00000003
-	> x60300000055c: 0x00000004
-	> x603000000560: 0x00000005
-	> x603000000564: 0x00000006
-	> x603000000568: 0x00000007
-	> x60300000056c: 0x00000007
+	> (lldb) x/10d --num-per-line 5 -- my_intPtr
+	> (lldb) x/10d -l 5 my_intPtr
+	> 0x6040000006d0: 101 1 2 3 4
+	> 0x6040000006e4: 5 6 7 8 9
 	>
-	> (lldb) x/t -s `sizeof(int)` -c 8 -l 1 -- arr       # in binary, " ", " "
-	> (lldb) x/8tw -l 1 -- arr
-	> x603000000550: 0b00000000000000000000000000000001
-	> x603000000554: 0b00000000000000000000000000000010
-	> x603000000558: 0b00000000000000000000000000000011
-	> x60300000055c: 0b00000000000000000000000000000100
-	> x603000000560: 0b00000000000000000000000000000101
-	> x603000000564: 0b00000000000000000000000000000110
-	> x603000000568: 0b00000000000000000000000000000111
-	> x60300000056c: 0b00000000000000000000000000000111
+	> (lldb) x/40 -f Y -l 4 -- my_intPtr
+	> 0x6040000006d0: 65 00 00 00  e...
+	> 0x6040000006d4: 01 00 00 00  ....
+	> 0x6040000006d8: 02 00 00 00  ....
+	> 0x6040000006dc: 03 00 00 00  ....
+	> 0x6040000006e0: 04 00 00 00  ....
+	> 0x6040000006e4: 05 00 00 00  ....
+	> 0x6040000006e8: 06 00 00 00  ....
+	> 0x6040000006ec: 07 00 00 00  ....
+	> 0x6040000006f0: 08 00 00 00  ....
+	> 0x6040000006f4: 09 00 00 00  ....
 	>
-	> (lldb) x/d -s `sizeof(int)` -c10 -l2 -- arr        # in decimal, 10 elements (2 past the array bound), 2 per line
-	> (lldb) x/10dw -l2 -- arr
-	> x603000000550: 1 2
-	> x603000000558: 3 4
-	> x603000000560: 5 6
-	> x603000000568: 7 7
-	> x603000000570: 2 50331647
-	>
-	> (lldb) x/x -s `sizeof(int)` -c10 -l2 -- arr        # in hex, " ", " "
-	> (lldb) x/10xw -l2 -- arr
-	> x603000000550: 0x00000001 0x00000002
-	> x603000000558: 0x00000003 0x00000004
-	> x603000000560: 0x00000005 0x00000006
-	> x603000000568: 0x00000007 0x00000007
-	> x603000000570: 0x00000002 0x02ffffff
-	>
-	> (lldb) x/x -s `sizeof(int)` -c10 -l5 -- arr        # " ", " ", 5 per line
-	> (lldb) x/10xw -l5 -- arr
-	> x603000000550: 0x00000001 0x00000002 0x00000003 0x00000004 0x00000005
-	> x603000000564: 0x00000006 0x00000007 0x00000007 0x00000002 0x02ffffff
-	>
-	> (lldb) x/100 -fY arr
-	> 0x603000000550: 01 00 00 00 02 00 00 00 03 00 00 00 04 00 00 00  ................
-	> 0x603000000560: 05 00 00 00 06 00 00 00 07 00 00 00 07 00 00 00  ................
-	> 0x603000000570: 02 00 00 00 ff ff ff 02 20 00 00 00 01 00 80 78  ....���. ......x
-	> 0x603000000580: b0 05 00 00 30 60 00 00 37 00 00 00 3f 00 00 00  �...0`..7...?...
-	> 0x603000000590: 80 0a 00 00 90 61 00 00 00 00 00 00 00 00 00 00  .....a..........
-	> 0x6030000005a0: 02 00 00 00 ff ff ff 02 20 00 00 00 02 00 80 19  ....���. .......
-	> 0x6030000005b0: 1d 26 c5 60                                      .&�`
-	>
-	> (lldb) x/100 -fY `arr - 10`
-	> 0x603000000528: 02 00 00 00 02 00 00 00 02 00 00 00 02 00 00 00  ................
-	> 0x603000000538: 00 00 00 00 00 00 00 00 02 00 00 00 ff ff ff 02  ............���.
-	> 0x603000000548: 20 00 00 00 02 00 00 19 01 00 00 00 02 00 00 00   ...............
-	> 0x603000000558: 03 00 00 00 04 00 00 00 05 00 00 00 06 00 00 00  ................
-	> 0x603000000568: 07 00 00 00 07 00 00 00 02 00 00 00 ff ff ff 02  ............���.
-	> 0x603000000578: 20 00 00 00 01 00 80 78 b0 05 00 00 30 60 00 00   ......x�...0`..
-	> 0x603000000588: 37 00 00 00                                      7...
+	> (lldb) x/56 -f Y -l 4 -- `my_intPtr - 2`
+	> 0x6040000006c8: 28 00 00 00  (...
+	> 0x6040000006cc: 01 00 00 38  ...8
+	> # --- Pre -------------------------
+	> 0x6040000006d0: 65 00 00 00  e...
+	> 0x6040000006d4: 01 00 00 00  ....
+	> 0x6040000006d8: 02 00 00 00  ....
+	> 0x6040000006dc: 03 00 00 00  ....
+	> 0x6040000006e0: 04 00 00 00  ....
+	> 0x6040000006e4: 05 00 00 00  ....
+	> 0x6040000006e8: 06 00 00 00  ....
+	> 0x6040000006ec: 07 00 00 00  ....
+	> 0x6040000006f0: 08 00 00 00  ....
+	> 0x6040000006f4: 09 00 00 00  ....
+	> # --- Post ------------------------
+	> 0x6040000006f8: 00 00 00 00  ....
+	> 0x6040000006fc: 00 00 00 00  ....
 	> ```
 	>
-	> ##### (2.2) *[Dynamic]* Character Array *(`char*`)*
+	> ##### (2.2) Character Arrays
+	>
+	> ###### (2.2.1) Static Array *(`char[]`)*
+	>
+	> ```shell
+	> (lldb) x static_name
+	> error: invalid start address expression.
+	> error: address expression "static_name" resulted in a value whose type can't be converted to an
+	>  address: char [13]
+	>
+	> (lldb) x (char*)static_name
+	> (lldb) x &static_name
+	> 0x7ffeefbfd960: 73 74 61 74 69 63 20 4a 61 6d 65 73 00 00 00 00  static James....
+	> 0x7ffeefbfd970: 01 00 00 00 fe 7f 00 00 08 00 00 00 00 00 00 00  ....�...........
+	>
+	> (lldb) x/s &static_name
+	> 0x7ffeefbfd960: "static James"
+	> ```
+	>
+	> ###### (2.2.2) Dynamic Array *(`char*`)*
 	>
 	> ```shell
 	> (lldb) x/s -- name
 	> x7ffeefbfef80: "James"
 	>
-	> (lldb) x/c -s 1 -c10 -- name
-	> (lldb) x/10cb -- name
-	> x7ffeefbfef80: James\0\0\0\0\0
+	> (lldb) x/c --size `(int) strlen(name) * 3` -- `name - (int) strlen(name)`
+	> (lldb) x/15c -- `name - 5`
+	> 0x100009d9b: \0\0\0\0\0James\0\0\0\0\0
 	>
-	> (lldb) x/c -s 1 -c10 -l1 -- name
-	> (lldb) x/10cb -l1 -- name
-	> x7ffeefbfef80: J
-	> x7ffeefbfef82: m
-	> x7ffeefbfef83: e
-	> x7ffeefbfef84: s
-	> x7ffeefbfef85: \0
-	> x7ffeefbfef86: \0
-	> x7ffeefbfef87: \0
-	> x7ffeefbfef88: \0
-	> x7ffeefbfef89: \0
+	> (lldb) x/15d -l5  -- `name - 5`
+	> 0x100009d9b: 0 0 0 0 0
+	> 0x100009da0: 74 97 109 101 115
+	> 0x100009da5: 0 0 0 0 0
 	>
-	> (lldb) x/d -s1 -c10 -- name
-	> (lldb) x/10db -l1 -- name
-	> x7ffeefbfef80: 74
-	> x7ffeefbfef81: 97
-	> x7ffeefbfef82: 109
-	> x7ffeefbfef83: 101
-	> x7ffeefbfef84: 115
-	> x7ffeefbfef85: 0
-	> x7ffeefbfef86: 0
-	> x7ffeefbfef87: 0
-	> x7ffeefbfef88: 0
-	> x7ffeefbfef89: 0
-	>
-	> (lldb) x/x -s1 -c10 -l5 -- name
-	> (lldb) x/10xb -l5 -- name
-	> x7ffeefbfef80: 0x4a 0x61 0x6d 0x65 0x73
-	> x7ffeefbfef85: 0x00 0x00 0x00 0x00 0x00
-	>
-	> (lldb) x/t -s1 -c10 -l5 -- name
-	> (lldb) x/10tb -l5 -- name
-	> x7ffeefbfef80: 0b01001010 0b01100001 0b01101101 0b01100101 0b01110011
-	> x7ffeefbfef85: 0b00000000 0b00000000 0b00000000 0b00000000 0b00000000
-	>
-	> (lldb) x/100 -fY name
-	> 0x100001de0: 4a 61 6d 65 73 00 00 00 00 00 00 00 00 00 00 00  James...........
-	> 0x100001df0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-	> 0x100001e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-	> 0x100001e10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-	> 0x100001e20: 25 69 2c 20 00 00 00 00 00 00 00 00 00 00 00 00  %i, ............
-	> 0x100001e30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-	> 0x100001e40: 00 00 00 00                                      ....
-	>
-	> (lldb) x/100 -fY `name - 50`
-	> 0x100001dae: 72 61 6c 00 65 67 5f 61 67 65 00 66 67 5f 6e 65  ral.eg_age.fg_ne
-	> 0x100001dbe: 77 5f 61 67 65 00 3c 73 74 72 69 6e 67 20 6c 69  w_age.<string li
-	> 0x100001dce: 74 65 72 61 6c 3e 00 75 74 69 6c 73 2e 63 00 00  teral>.utils.c..
-	> 0x100001dde: 00 00 4a 61 6d 65 73 00 00 00 00 00 00 00 00 00  ..James.........
-	> 0x100001dee: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-	> 0x100001dfe: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-	> 0x100001e0e: 00 00 00 00                                      ....
+	> (lldb) x/128b -fY name
+	> 0x100009da0: 4a 61 6d 65 73 00 00 00 00 00 00 00 00 00 00 00  James...........
+	> 0x100009db0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100009dc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100009dd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100009de0: 73 74 61 74 69 63 20 4a 61 6d 65 73 00 00 00 00  static James....
+	> 0x100009df0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100009e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> 0x100009e10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
 	> ```
 	>
-	> ##### (2.3) *[Dynamic]* Pointer Array *(`char **`)*:
+	> ##### (2.3) Pointer Array *(`char **`)*:
 	>
 	> ```shell
 	> (lldb) x/s -c10 -- *argv
@@ -4478,7 +4435,6 @@ You can inspect a your process's memory with the `memory` command:
 	> 0x7ffeefbff5c0: 4c 41 47 53 3d 2d 49 2f 6e 66 73 2f 32 30 31 38  LAGS=-I/e1dc2/28
 	> 0x7ffeefbff5d0: 2f 61 2f 61 6b 68 61 72 72 6f 75 2f 2e 62 72 65  /a/d23d3/d23.b/e
 	> ```
-	> *<small>[**Note:** Static arrays (e.g. `char[]`, `int[]`) must be typecast: `x (char*)ptr`. - **end note**]</small>*
 	>
 	> ##### (3) Read memory form address A to B
 	>
@@ -4502,7 +4458,7 @@ You can inspect a your process's memory with the `memory` command:
 	> 0x100001ed0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
 	> ```
 	>
-	> ##### (3.2) Instructions
+	> ##### (4) Instructions
 	>
 	> ```shell
 	> (lldb) frame select
@@ -4545,36 +4501,23 @@ You can inspect a your process's memory with the `memory` command:
 	> 	0x10000002a: 50        pushq  %rax
 	> ```
 	>
-	> ##### (4) Arbitrary Address:
+	> ##### (5) Arbitrary Address:
 	>
 	> ```shell
 	> (lldb) memory read 0x60300000055c
 	> (lldb) x 0x60300000055c
 	> 0x60300000055c: 04 00 00 00 05 00 00 00 06 00 00 00 07 00 00 00  ................
 	> 0x60300000056c: 07 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
-	>
-	> (lldb) memory read --format decimal --size 4 --count 1 0x60300000055c
-	> (lldb) x/1dw 0x60300000055c
-	> 0x60300000055c: 4
-	>
-	> (lldb) memory read --format decimal --size 4 --count 8 --num-per-line 2 0x60300000055c
-	> (lldb) x/8dw -l2 0x60300000055c
-	> 0x60300000055c: 4 5
-	> 0x603000000564: 6 7
-	> 0x60300000056c: 7 0
-	> 0x603000000574: 0 0
 	> ```
 	>
-	> ##### (5) Log output to file
+	> ##### (6) Log output to file
 	>
 	> ```shell
 	> (lldb) memory read --outfile /tmp/mem.txt --count 512 -- buffer
-	> (lldb) me read -o /tmp/mem.txt -c512 buffer
 	> (lldb) x/512bx -o /tmp/mem.txt -- buffer
 	>
 	> (lldb) memory read --append-outfile /tmp/mem.txt --count 512 -- buffer
-	> (lldb) me read  --append-outfile /tmp/mem.txt -c512 buffer
-	> (lldb) x/512bx  --append-outfile /tmp/mem.txt -- buffer
+	> (lldb) x/512bx --append-outfile /tmp/mem.txt -- buffer
 	> ```
 	> ```shell
 	> (lldb) memory read --outfile /tmp/mem.txt --binary 0x00007ffeefbff510 0x00007ffeefbff610
