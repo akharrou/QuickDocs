@@ -4667,10 +4667,13 @@ TODO : tags for mem info
 		> $> memory region <address>
 		> ```
 		>
+		> ***Description:*** <br>
+		> Get information on the memory region containing an address in the current target process.
+		>
 		> ***Example(s):***
 		>
 		> ```shell
-		> (lldb) memory reg 0x000000010000185f
+		> (lldb) memory region 0x000000010000185f
 		> [0x0000000100000000-0x0000000100002000) r-x __TEXT
 		> ```
 
@@ -4681,13 +4684,13 @@ TODO : tags for mem info
 		> $> memory history <address>
 		> ```
 		>
+		> ***Description:*** <br>
+		> Print recorded stack traces for allocation/deallocation events associated with an address.
+		>
 		> ***Example(s):***
 		>
 		> ```shell
 		> (lldb) memory history my_ptr
-		> (lldb) me hi my_ptr
-		> ```
-		> ```shell
 		> thread #4294967295: tid = 0x0001, 0x00000001000f8fdd libclang_rt.asan_osx_dynamic.dylib`wrap_free + 189, name = 'Memory deallocated by Thread 1'
 		> 	frame #0: 0x00000001000f8fdd libclang_rt.asan_osx_dynamic.dylib`wrap_free + 189
 		> 	frame #1: 0x00000001000019c7 a`main(ac=<unavailable>, av=<unavailable>) at loopInput.c:49
