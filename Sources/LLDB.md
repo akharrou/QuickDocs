@@ -4656,19 +4656,17 @@ You can inspect a your process's memory with the `memory` command:
 
 <br>
 
-TODO : tags for mem info
 -	#### Memory Information:
 
-	> <small>`[Search Tags: ]`</small>
+	> <small>`[Search Tags: >memoryinformation >informationmemory >infomemory >infmemory >meminformation >informationmem >infomem >infmem >meinformation >informationme >infome >infme >minformation >informationm >infom >infm >memoryregion >regionmemory >regmemory >memregion >regionmem >regmem >meregion >regionme >regme >mregion >regionm >regm >memoryhistory >historymemory >histmemory >hstmemory >memhistory >historymem >histmem >hstmem >mehistory >historyme >histme >hstme >mhistory >historym >histm >hstm >memoryabout >aboutmemory >memoryabt >abtmemory >memabout >aboutmem >memabt >abtmem >meabout >aboutme >meabt >abtme >mabout >aboutm >mabt >abtm >memorydescription >descriptionmemory >descriptmemory >memorydscrpt >dscrptmemory >memdescription >descriptionmem >descriptmem >memdscrpt >dscrptmem >medescription >descriptionme >descriptme >medscrpt >dscrptme >mdescription >descriptionm >descriptm >mdscrpt >dscrptm]`</small>
+
 	-	#### Region:
 
 		> ***Synopsis:***
 		> ```shell
 		> $> memory region <address>
 		> ```
-		>
-		> ***Description:*** <br>
-		> Get information on the memory region containing an address in the current target process.
+		> > Get information on the memory region containing an address in the current target process.
 		>
 		> ***Example(s):***
 		>
@@ -4683,9 +4681,7 @@ TODO : tags for mem info
 		> ```shell
 		> $> memory history <address>
 		> ```
-		>
-		> ***Description:*** <br>
-		> Print recorded stack traces for allocation/deallocation events associated with an address.
+		> > Print recorded stack traces for allocation/deallocation events associated with an address.
 		>
 		> ***Example(s):***
 		>
@@ -4703,7 +4699,6 @@ TODO : tags for mem info
 
 <br>
 
-TODO : tags for mem find
 -	#### Find value in memory:
 
 	> <small>`[Search Tags: ]`</small>
@@ -4719,6 +4714,7 @@ TODO : tags for mem find
 	> | -                        | -         | - |
 	> | `--expression <expr>`    | `-e`      | Evaluate an expression to obtain a <br> byte pattern.
 	> | `--string <name>`        | `-s`      | Use text to find a byte pattern.
+	> ||||
 	> | `--dump-offset <offset>` | `-o`      | When dumping memory for a match, an <br> offset from the match location to start <br> dumping from.
 	>
 	> ***Example(s):***
@@ -4740,6 +4736,7 @@ TODO : tags for mem find
 	> -	*This command takes options and free-form arguments. If your arguments resemble option specifiers (i.e., they start with a - or --), you must use ' -- ' between the end of the command options and the beginning of the arguments.*
 	>
 	> *- **end note**]</small>*
+
 
 <br>
 <br>
