@@ -4701,12 +4701,12 @@ You can inspect a your process's memory with the `memory` command:
 
 -	#### Find value in memory:
 
-	> <small>`[Search Tags: ]`</small>
+	> <small>`[Search Tags: >findmemory >memoryfind >memfind >mefind >mfind >lookmemory >lookupmemory >memorylookup >memlookup >melookup >mlookup >searchmemory >memorysearch >memsearch >mesearch >msearch >srchmemory >memorysrch >memsrch >mesrch >msrch]`</small>
 
 	> ***Synopsis:***
 	> ```shell
-	> $> memory find -e <expr> [-c <count>] [-o <offset>] <address-expression> <address-expression>
-	> $> memory find -s <name> [-c <count>] [-o <offset>] <address-expression> <address-expression>
+	> $> memory find -e <expr> <address-expression> <address-expression>
+	> $> memory find -s <name> <address-expression> <address-expression>
 	> ```
 	>
 	> ***Options:***
@@ -4719,16 +4719,31 @@ You can inspect a your process's memory with the `memory` command:
 	>
 	> ***Example(s):***
 	>
-	> #### (1) Find a byte string
+	> #### (1) Find a Byte Pattern
 	>
 	> ```shell
-	> (lldb) memory find -s "James" 0x0000000100000000 0x0000000200000000
-	> data found at location: 0x100001de0
-	> 0x100001de0: 4a 61 6d 65 73 00 00 00 00 00 00 00 00 00 00 00  James...........
-	> 0x100001df0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> (lldb) memory find -s "Hello, world !" 0x0000000100000000 0x000000010000a000
+	> data found at location: 0x100009e60
+	> 0x100009e60: 48 65 6c 6c 6f 2c 20 77 6f 72 6c 64 20 21 00 00  Hello, world !..
+	> (lldb) 9e70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
 	> ```
 	> ```shell
-	> $> <output>
+	> (lldb) memory find -s "Hello, world !" -o 7 0x0000000100000000 0x000000010000a000
+	> data found at location: 0x100009e60
+	> 0x100009e67: 77 6f 72 6c 64 20 21 00 00 00 00 00 00 00 00 00  world !.........
+	> 0x100009e77: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	> ```
+	>
+	> #### (2) Find a value
+	>
+	> ```shell
+	> (lldb) x/d -- my_charPtr
+	> 0x100009e60: 1819043144
+	>
+	> (lldb) mem find -e "1819043144" 0x0000000100000000 0x000000010000a000
+	> data found at location: 0x100009e60
+	> 0x100009e60: 48 65 6c 6c 6f 2c 20 77 6f 72 6c 64 20 21 00 00  Hello, world !..
+	> 0x100009e70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
 	> ```
 	>
 	> *<small>[**Note:***
@@ -4745,25 +4760,12 @@ You can inspect a your process's memory with the `memory` command:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory`
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory` <br> `(lldb) help memory read` <br> `(lldb) help memory write` <br> `(lldb) help memory history` <br> `(lldb) help memory region` <br> `(lldb) help memory find`
 > | |
-> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory find`
-> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory history`
-> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory read`
-> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory region`
-> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help memory write`
-> | |
-> | 1 | Q&A Forum | StackOverflow | [How to print memory using lldb ?](https://stackoverflow.com/questions/19748866/how-to-print-memory-in-0xb0987654-using-lldb)
-> | 8 | Documentation | LLDB | [(Official) Tutorial :: Examining Thread State (scroll down)](https://lldb.llvm.org/use/map.html#examining-thread-state)
-> | 3 | Documentation | LLDB | [GDB to LLDB Command Map :: Examining Thread State (scroll down)](https://lldb.llvm.org/use/map.html#examining-thread-state)
-> | 9 | Documentation | Apple | [LLDB Tutorial :: Evaluating Alternative Code](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-terminal-workflow-tutorial.html#//apple_ref/doc/uid/TP40012917-CH4-SW10)
-
-<!--
-https://lldb.llvm.org/use/map.html#examining-thread-state
-https://stackoverflow.com/questions/33098321/how-to-use-lldb-memory-find-command
-https://stackoverflow.com/questions/24431619/find-a-string-memory-using-lldb?rq=1
-https://lists.apple.com/archives/xcode-users/2015/Oct/msg00150.html
--->
+> | 2 | Documentation | LLDB | [GDB to LLDB Command Map :: Examining <br> Thread State (scroll down)](https://lldb.llvm.org/use/map.html#examining-thread-state)
+> | 3 | Q&A Forum | StackOverflow | [How to print memory using lldb ?](https://stackoverflow.com/questions/19748866/how-to-print-memory-in-0xb0987654-using-lldb)
+> | 3 | Q&A Forum | StackOverflow | [How to use `lldb` memory find command ?](https://stackoverflow.com/questions/33098321/how-to-use-lldb-memory-find-command)
+> | 3 | Q&A Forum | StackOverflow | [Find a string memory using lldb ?](https://stackoverflow.com/questions/24431619/find-a-string-memory-using-lldb?rq=1)
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
