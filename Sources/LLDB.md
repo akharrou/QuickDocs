@@ -57,9 +57,9 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.6. Registers *(Advanced)*](#386-registers)
 		- [3.8.7. Memory *(Advanced)*](#387-memory-advanced)
 		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)        <!-- TODO: do chapter -->
-	- [3.9. Self-Help Commands](#39-selfhelp-commands)                          <!-- TODO: do chapter -->
-		- [3.9.1. `help`](#391-help)                                            <!-- TODO: do chapter -->
-		- [3.9.2. `apropos`](#392-apropos)                                      <!-- TODO: do chapter -->
+	- [3.9. Self-Help](#39-selfhelp)                                            <!-- TODO: do chapter -->
+		- [3.9.1. Library: `apropos`](#391-library-apropos)                     <!-- TODO: do chapter -->
+		- [3.9.2. Documentation: `help`](#392-library-help)                     <!-- TODO: do chapter -->
 	- [3.10. Configure LLDB *(Advanced)*](#34-setup-lldb)                       <!-- TODO: do chapter -->
 		- [3.10.1. Settings](#)                                                 <!-- TODO: do chapter ::: Most important alias (on macosx, because homebrew): alias lldb='PATH="/usr/bin:/bin:/usr/sbin:/sbin" lldb' ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
 		- [3.10.2. Commands](#)                                                 <!-- TODO: do chapter -->
@@ -4948,19 +4948,18 @@ APPLE GUIDE :: https://developer.apple.com/library/archive/documentation/IDEs/Co
 > | 1 | n/a               | n/a                    | n/a
 
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-## 3.9. Self-Help Commands
-<small>`[Search Tags: ]`</small>
+## 3.9. Self-Help
+<small>`[Search Tags: >helper >selfhelper >manual >manpage >pages >pgs >librarian >library >documents >documentation >support >informationcenter >centerinformation >infocenter]`</small>
 <br>
+
 
 Contents
 ---
-- [1 `help`](#tag)
-- [2 `apropos`](#tag)
+- [1 Library: `apropos`](#tag)
+- [2 Documentation: `help`](#tag)
 ---
 
-> TODO: ## 3.9. Self-Help Commands
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
+There are two tools for self-help, namely: `apropos` & `help`. The former lists all possibly relevant commands and aliases to your input; the latter, without passed input, lists all the possibly relevant `lldb` commands and aliases and, when passed input, lists documentation specific to your input, it's the `man` of `lldb` so to speak.
 
 
 <br>
@@ -4970,64 +4969,50 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
-
-
----
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.9.1. `help`
-<small>`[Search Tags: ]`</small>
-<br>
-
-> TODO: ### 3.9.1. `help`
-
-
-(lldb) h h
-     Show a list of all debugger commands, or give details about a specific
-     command.
-
-Syntax: help <cmd-options> [<cmd-name> [<cmd-name> [...]]]
-
-Command Options Usage:
-  help [-ahu] [<cmd-name> [<cmd-name> [...]]]
-
-       -a ( --hide-aliases )
-            Hide aliases in the command list.
-
-       -h ( --show-hidden-commands )
-            Include commands prefixed with an underscore.
-
-       -u ( --hide-user-commands )
-            Hide user-defined commands from the list.
-
-     This command takes options and free-form arguments.  If your arguments
-     resemble option specifiers (i.e., they start with a - or --), you must
-     use ' -- ' between the end of the command options and the beginning of
-     the arguments.
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help apropos`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help help`
 
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.9.2. `apropos`
-<small>`[Search Tags: ]`</small>
+### 3.9.2. Library: `apropos`
+<small>`[Search Tags: >relevantcmds >relevantaliases >relevantinformation >relevantsearch]`</small>
 <br>
 
-> TODO: ### 3.9.2. `apropos`
 
-(lldb) h apropos
-     List debugger commands related to a word or subject.
+-	#### List relevant commands and aliases:
 
-Syntax:
+	> <small>`[Search Tags: >apropos]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> $> apropos <command | alias>
+	> ```
+	>
+	> ***Example(s):***
+	>
+	> ```shell
+	> (lldb) apropos backtrace
+	> The following commands may relate to 'backtrace':
+	>   frame select     -- Select the current stack frame by index from within the
+	>                       current thread (see 'thread backtrace'.)
+	>   thread backtrace -- Show thread call stacks.  Defaults to the current
+	>                       thread, thread indexes can be specified as
+	>                       arguments.
+	>                       Use the thread-index "all" to see all threads.
+	>                       Use the thread-index "unique" to see threads grouped by
+	>                       unique call stacks.
+	>   f                -- Select the current stack frame by index from within the
+	>                       current thread (see 'thread backtrace'.)
+	>
+	> The following settings variables may relate to 'backtrace':
+	>
+	>
+	>   frame-format-unique -- The default frame format string to use when
+	>                          displaying stack frameinformation for threads from
+	>                          thread backtrace unique.
+	> ```
+
 
 <br>
 <br>
@@ -5036,7 +5021,137 @@ Syntax:
 >
 > | # | Type               | Author                 | Link
 > | - | ------------------ | ---------------------- | --------------------------
-> | 1 | n/a               | n/a                    | n/a
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help apropos`
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.9.2. Documentation: `help`
+<small>`[Search Tags: >helpcommand >helpcmd >cmdhelp >commandhelp >selfhelpcmd >selfhelpcommand >cmdselfhelp >commandselfhelp]`</small>
+<br>
+
+
+-	#### List all commands & aliases:
+
+	> <small>`[Search Tags: >listdocumentations >listhelp >helplist]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> $> help
+	> ```
+	>
+	> ***Example(s):***
+	>
+	> #### (1) List `LLDB` commands and aliases
+	> ```shell
+	> (lldb) help
+	> Debugger commands:
+	>   apropos           -- List debugger commands related to a word or subject.
+	>   breakpoint        -- Commands for operating on breakpoints (see 'help b'
+	>                        for shorthand.)
+	>   .
+	>   .
+	>   .
+	>   version           -- Show the LLDB debugger version.
+	>   watchpoint        -- Commands for operating on watchpoints.
+	>
+	>
+	> Current command abbreviations (type 'help command alias' for more info):
+	>   add-dsym  -- Add a debug symbol file to one of the target's current modules
+	>                by specifying a path to a debug symbols file, or using the
+	>                options to specify a module to download symbols for.
+	>   attach    -- Attach to process by ID or name.
+	>   b         -- Set a breakpoint using one of several shorthand formats.
+	>   bt        -- Show the current thread's call stack.  Any numeric argument
+	>                displays at most that many frames.  The argument 'all'
+	>                displays all threads.
+	>   .
+	>   .
+	>   .
+	> ```
+
+-	#### List command/alias documentation:
+
+	> <small>`[Search Tags: >documentation >documentor >docs >manpage]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> $> help <cmd> [<subcmd> ...]
+	> ```
+	>
+	> ***Example(s):***
+	>
+	> #### (1) Lookup documentation for...
+	>
+	> ##### (1.1) a Command
+	> ```shell
+	> (lldb) help frame
+	>      Commands for selecting and examing the current thread's stack frames.
+	>
+	> Syntax: frame
+	>
+	> The following subcommands are supported:
+	>
+	>       info     -- List information about the current stack frame in the
+	>                   current thread.
+	>       select   -- Select the current stack frame by index from within the
+	>                   current thread (see 'thread backtrace'.)
+	>       variable -- Show variables for the current stack frame. Defaults to all
+	>                   arguments and local variables in scope. Names of argument,
+	>                   local, file static and file global variables can be
+	>                   specified. Children of aggregate variables can be specified
+	>                   such as 'var-\>child.x'.
+	>
+	> For more help on any particular subcommand, type 'help <command> <subcommand>'.
+	> ```
+	>
+	> ##### (1.2) a Subcommand
+	> ```shell
+	> (lldb) help frame select
+	>      Select the current stack frame by index from within the current thread
+	>      (see 'thread backtrace'.)
+	>
+	> Syntax:
+	>
+	> Command Options Usage:
+	>   frame select [-r <offset>] [<frame-index>]
+	>
+	>        -r <offset> ( --relative <offset> )
+	>             A relative frame index offset from the current frame index.
+	>
+	>      This command takes options and free-form arguments.  If your arguments
+	>      resemble option specifiers (i.e., they start with a - or --), you must
+	>      use ' -- ' between the end of the command options and the beginning of
+	>      the arguments.
+	>   . . .
+	> ```
+	>
+	> ##### (1.3) an Alias
+	>
+	> ```shell
+	> (lldb) help f
+	>      Select the current stack frame by index from within the current thread
+	>      (see 'thread backtrace'.)
+	>
+	> Syntax:
+	>
+	> Command Options Usage:
+	>   f [-r <offset>] [<frame-index>]
+	>
+	>   . . .
+	>
+	> 'f' is an abbreviation for 'frame select'
+	> ```
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help help`
 
 
 <!--
