@@ -53,13 +53,13 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.2. Threads](#382-threads)
 		- [3.8.3. Stack Frames](#383-stack-frames)
 		- [3.8.4. Variables](#384-variables)
-		- [3.8.5. Registers *(Advanced)*](#385-registers)
-		- [3.8.6. Expressions *(Advanced)*](#386-expressions)
-		- [3.8.7. Memory *(Advanced)*](#387-memory-advanced)                    <!-- TODO: do chapter ::: `x` is an alias for `memory read`-->
+		- [3.8.5. Expressions](#385-expressions)
+		- [3.8.6. Registers *(Advanced)*](#386-registers)
+		- [3.8.7. Memory *(Advanced)*](#387-memory-advanced)
 		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)        <!-- TODO: do chapter -->
-	- [3.9. Self-Help Commands](#)                                              <!-- TODO: do chapter -->
-		- [3.9.1. `help`](#)                                                    <!-- TODO: do chapter -->
-		- [3.9.2. `apropos`](#)                                                 <!-- TODO: do chapter -->
+	- [3.9. Self-Help Commands](#39-selfhelp-commands)                          <!-- TODO: do chapter -->
+		- [3.9.1. `help`](#391-help)                                            <!-- TODO: do chapter -->
+		- [3.9.2. `apropos`](#392-apropos)                                      <!-- TODO: do chapter -->
 	- [3.10. Configure LLDB *(Advanced)*](#34-setup-lldb)                       <!-- TODO: do chapter -->
 		- [3.10.1. Settings](#)                                                 <!-- TODO: do chapter ::: Most important alias (on macosx, because homebrew): alias lldb='PATH="/usr/bin:/bin:/usr/sbin:/sbin" lldb' ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
 		- [3.10.2. Commands](#)                                                 <!-- TODO: do chapter -->
@@ -3450,15 +3450,9 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 	> ##### (2) " " in different formats
 	> ```shell
 	> (lldb) frame variable --format hex *my_ptr    # (lowercase) hexadecimal
-	> (int) *my_ptr = 0x52800003
-	>
-	> (lldb) frame variable -f hex *my_ptr          # shorthand
-	> (int) *my_ptr = 0x52800003
-	>
-	> (lldb) fr v -f x *my_ptr                      # shorthand
-	> (int) *my_ptr = 0x52800003
-	>
-	> (lldb) fr v/x *my_ptr                         # shorthand
+	> (lldb) frame variable -f hex *my_ptr
+	> (lldb) fr v -f x *my_ptr
+	> (lldb) fr v/x *my_ptr
 	> (int) *my_ptr = 0x52800003
 	> ```
 	> ```shell
@@ -3752,147 +3746,7 @@ You can inspect a stack frame's variables, as well as *[static | extern]* global
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.8.5. Registers
-<small>`[Search Tags: >regexam >registerexam >regexamine >registerexamine >regexamination >registerexamination >regexaminating >registerexaminating >examinationregisters >registersexamination >examinatingregisters >registersexaminating >examineregisters >registersexamine >examregisters >registersexam >examinationregistrs >registrsexamination >examinatingregistrs >registrsexaminating >examineregistrs >registrsexamine >examregistrs >registrsexam >examinationregs >regsexamination >examinatingregs >regsexaminating >examineregs >regsexamine >examregs >regsexam >examinationrgs >rgsexamination >examinatingrgs >rgsexaminating >examinergs >rgsexamine >examrgs >rgsexam]`</small>
-<br>
-
-
-Contents
----
-- [1 Print *(read)* Registers](#read-print-registers)
-- [2 Write to Registers](#over-write-modify-registers)
----
-
--	#### Read *(print)* registers:
-
-	> <small>`[Search Tags: >registershow >registersshow >showregister >showregisters >listregisters >displayregisters >dispregisters >listregisterss >displayregisterss >dispregisterss >registerslist >registersdisplay >registersslist >registerssdisplay >registerlist >registerdisplay >registerslist >registersdisplay >registerprint >registersprint >printregister >printregisters >regsshow >regshow >showregs >showreg >listregss >displayregss >dispregss >listregs >displayregs >dispregs >regsslist >regssdisplay >regslist >regsdisplay >regslist >regsdisplay >reglist >regdisplay >regsprint >regprint >printregs >printreg >registerread >registersread >regsread >regread >registerrd >registersrd >regsrd >regrd >readregister >readregisters >readregs >rdregister >rdregisters >rdregs]`</small>
-
-	> ***Synopsis:***
-	> ```shell
-	> $> register read [--all] [--format <format>] [--set <index>] [<register-name> ...]
-	> ```
-	>
-	> ***Options:***
-	> | Flag | Shortcut | Description
-	> | - | - | - |
-	> |                     |      |
-    > | `--all`             | `-a` | *Show all register sets.*
-    > | `--format <format>` | `-f` | *Specify a format to be used for display. <br> <br> See [Format Table](#format-table) for all available formats.*
-    > | `--set <index>`     | `-s` | *Specify which register sets to dump by index.*
-	>
-	> ***Example(s):*** <br>
-	>
-	> #### (1) Read Register(s)
-	>
-	> ##### (1.1) One in Specific
-	> ```shell
-	> (lldb) register read eax
-	> (lldb) re r eax
-	> ```
-	> ```shell
-	>      eax = 0x00004888
-	> ```
-	>
-	> ##### (1.1.1) " " in different formats
-	> ```shell
-	> (lldb) register read --format hex eax       # (lowercase) hexadecimal
-	>      eax = 0x00004888
-	>
-	> (lldb) re r -f hex eax                      # shorthand
-	>      eax = 0x00004888
-	>
-	> (lldb) re r -f x eax                        # shorthand
-	>      eax = 0x00004888
-	>
-	> (lldb) re r/x eax                           # shorthand
-	>      eax = 0x00004888
-	>
-	> (lldb) re r/d eax                           # decimal
-	>      eax = 18568
-	>
-	> (lldb) re r/o eax                           # octal
-	>      eax = 044210
-	>
-	> (lldb) re r/t eax                           # binary
-	>      eax = 0b00000000000000000100100010001000
-	> ```
-	>
-	> > *<small>[**Note:** See [§3.8.4 :: Format Table](#format-table) for all formats. - **end note**]</small>*
-	>
-	> ##### (1.2) Multiple in specific
-	> ```shell
-	> (lldb) register read rax rbx rcx rdx eax ebx ecx
-	> (lldb) re r rax rbx rcx rdx eax ebx ecx
-	> ```
-	> ```shell
-	>     rax = 0x0000000000000000
-	>     rbx = 0x0000000000000000
-	>     rcx = 0x0000000000000050
-	>     rdx = 0x0000000000000051
-	>     eax = 0x00000000
-	>     ebx = 0x00000000
-	>     ecx = 0x00000050
-	> ```
-	>
-	> ##### (1.3) All
-	> ```shell
-	> (lldb) register read --all
-	> (lldb) re r -a
-	> ```
-	>
-	> #### (2) Read a set of registers
-	> ```shell
-	> (lldb) register read --set 2        # e.g. the "Exception State Registers', #2
-	> (lldb) re r -s 2
-	> ```
-	> ```shell
-	> Exception State Registers:
-	>     trapno = 0x00000003
-	>        err = 0x00000000
-	>   faultvaddr = 0x0000000100ba41d0  libclang_rt.asan_osx_dynamic.dylib`__sanitizer::theDepot + 6046032
-	> ```
-	>
-
-<br>
-
--	#### Overwrite (modify) registers:
-
-	> <small>`[Search Tags: >registerwrite >registerswrite >writeregister >writeregisters >regswrite >regwrite >writeregs >writereg >modifyregisters >modifyregisterss >registersmodify >registerssmodify >registermodify >registersmodify >modifyregss >modifyregs >regssmodify >regsmodify >regsmodify >regmodify >changeregisters >changeregisterss >registerschange >registersschange >registerchange >registerschange >changeregss >changeregs >regsschange >regschange >regschange >regchange >assignregisters >assignregisterss >registersassign >registerssassign >registerassign >registersassign >assignregss >assignregs >regssassign >regsassign >regsassign >regassign >modregister >modiregister >modifregister >mdregister >modregisters >modiregisters >modifregisters >mdregisters >registeroverwrite >registersoverwrite >overwriteregister >overwriteregisters >regsoverwrite >regoverwrite >overwriteregs]`</small>
-
-	> ***Synopsis:***
-	> ```shell
-	> $> register write <register-name> <value>
-	> ```
-	>
-	> ***Example(s):***
-	> ```shell
-	> register write eax 800                       # write a value in decimal format
-	> re w eax 800
-	> ```
-	> ```shell
-	> register write eax 0x972362355               # " "  in (lowercase) hexadecimal format
-	> re w eax 0x972362355
-	> ```
-	> ```shell
-	> register write eax 0b10000000                # " "  in binary format
-	> re w eax 0b10000000
-	> ```
-
-
-<br>
-<br>
-
-> ***Further Reading:***
->
-> | # | Type               | Author                 | Link
-> | - | ------------------ | ---------------------- | --------------------------
-> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help register read`
-> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help register write`
-
-
----
-[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.8.6. Expressions
+### 3.8.5. Expressions
 <small>`[Search Tags: >exprexam >expressionexam >examexpression >exprexamine >expressionexamine >examineexpression >exprexamination >expressionexamination >examinationexpression >exprexaminating >expressionexaminating >examinatingexpression]`</small>
 <br>
 <br>
@@ -4168,13 +4022,151 @@ Contents
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.8.6. Registers
+<small>`[Search Tags: >regexam >registerexam >regexamine >registerexamine >regexamination >registerexamination >regexaminating >registerexaminating >examinationregisters >registersexamination >examinatingregisters >registersexaminating >examineregisters >registersexamine >examregisters >registersexam >examinationregistrs >registrsexamination >examinatingregistrs >registrsexaminating >examineregistrs >registrsexamine >examregistrs >registrsexam >examinationregs >regsexamination >examinatingregs >regsexaminating >examineregs >regsexamine >examregs >regsexam >examinationrgs >rgsexamination >examinatingrgs >rgsexaminating >examinergs >rgsexamine >examrgs >rgsexam]`</small>
+<br>
+
+
+Contents
+---
+- [1 Print *(read)* Registers](#read-print-registers)
+- [2 Write to Registers](#over-write-modify-registers)
+---
+
+-	#### Read *(print)* registers:
+
+	> <small>`[Search Tags: >registershow >registersshow >showregister >showregisters >listregisters >displayregisters >dispregisters >listregisterss >displayregisterss >dispregisterss >registerslist >registersdisplay >registersslist >registerssdisplay >registerlist >registerdisplay >registerslist >registersdisplay >registerprint >registersprint >printregister >printregisters >regsshow >regshow >showregs >showreg >listregss >displayregss >dispregss >listregs >displayregs >dispregs >regsslist >regssdisplay >regslist >regsdisplay >regslist >regsdisplay >reglist >regdisplay >regsprint >regprint >printregs >printreg >registerread >registersread >regsread >regread >registerrd >registersrd >regsrd >regrd >readregister >readregisters >readregs >rdregister >rdregisters >rdregs]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> $> register read [--all] [--format <format>] [--set <index>] [<register-name> ...]
+	> ```
+	>
+	> ***Options:***
+	> | Flag | Shortcut | Description
+	> | - | - | - |
+	> |                     |      |
+    > | `--all`             | `-a` | *Show all register sets.*
+    > | `--format <format>` | `-f` | *Specify a format to be used for display. <br> <br> See [Format Table](#format-table) for all available formats.*
+    > | `--set <index>`     | `-s` | *Specify which register sets to dump by index.*
+	>
+	> ***Example(s):*** <br>
+	>
+	> #### (1) Read Register(s)
+	>
+	> ##### (1.1) One in Specific
+	> ```shell
+	> (lldb) register read eax
+	> (lldb) re r eax
+	> ```
+	> ```shell
+	>      eax = 0x00004888
+	> ```
+	>
+	> ##### (1.1.1) " " in different formats
+	> ```shell
+	> (lldb) register read --format hex eax       # (lowercase) hexadecimal
+	>      eax = 0x00004888
+	>
+	> (lldb) re r -f hex eax                      # shorthand
+	>      eax = 0x00004888
+	>
+	> (lldb) re r -f x eax                        # shorthand
+	>      eax = 0x00004888
+	>
+	> (lldb) re r/x eax                           # shorthand
+	>      eax = 0x00004888
+	>
+	> (lldb) re r/d eax                           # decimal
+	>      eax = 18568
+	>
+	> (lldb) re r/o eax                           # octal
+	>      eax = 044210
+	>
+	> (lldb) re r/t eax                           # binary
+	>      eax = 0b00000000000000000100100010001000
+	> ```
+	>
+	> > *<small>[**Note:** See [§3.8.4 :: Format Table](#format-table) for all formats. - **end note**]</small>*
+	>
+	> ##### (1.2) Multiple in specific
+	> ```shell
+	> (lldb) register read rax rbx rcx rdx eax ebx ecx
+	> (lldb) re r rax rbx rcx rdx eax ebx ecx
+	> ```
+	> ```shell
+	>     rax = 0x0000000000000000
+	>     rbx = 0x0000000000000000
+	>     rcx = 0x0000000000000050
+	>     rdx = 0x0000000000000051
+	>     eax = 0x00000000
+	>     ebx = 0x00000000
+	>     ecx = 0x00000050
+	> ```
+	>
+	> ##### (1.3) All
+	> ```shell
+	> (lldb) register read --all
+	> (lldb) re r -a
+	> ```
+	>
+	> #### (2) Read a set of registers
+	> ```shell
+	> (lldb) register read --set 2        # e.g. the "Exception State Registers', #2
+	> (lldb) re r -s 2
+	> ```
+	> ```shell
+	> Exception State Registers:
+	>     trapno = 0x00000003
+	>        err = 0x00000000
+	>   faultvaddr = 0x0000000100ba41d0  libclang_rt.asan_osx_dynamic.dylib`__sanitizer::theDepot + 6046032
+	> ```
+	>
+
+<br>
+
+-	#### Overwrite (modify) registers:
+
+	> <small>`[Search Tags: >registerwrite >registerswrite >writeregister >writeregisters >regswrite >regwrite >writeregs >writereg >modifyregisters >modifyregisterss >registersmodify >registerssmodify >registermodify >registersmodify >modifyregss >modifyregs >regssmodify >regsmodify >regsmodify >regmodify >changeregisters >changeregisterss >registerschange >registersschange >registerchange >registerschange >changeregss >changeregs >regsschange >regschange >regschange >regchange >assignregisters >assignregisterss >registersassign >registerssassign >registerassign >registersassign >assignregss >assignregs >regssassign >regsassign >regsassign >regassign >modregister >modiregister >modifregister >mdregister >modregisters >modiregisters >modifregisters >mdregisters >registeroverwrite >registersoverwrite >overwriteregister >overwriteregisters >regsoverwrite >regoverwrite >overwriteregs]`</small>
+
+	> ***Synopsis:***
+	> ```shell
+	> $> register write <register-name> <value>
+	> ```
+	>
+	> ***Example(s):***
+	> ```shell
+	> register write eax 800                       # write a value in decimal format
+	> re w eax 800
+	> ```
+	> ```shell
+	> register write eax 0x972362355               # " "  in (lowercase) hexadecimal format
+	> re w eax 0x972362355
+	> ```
+	> ```shell
+	> register write eax 0b10000000                # " "  in binary format
+	> re w eax 0b10000000
+	> ```
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | Manual Page | Unix / Linux / MacOS | `(lldb) help register read`
+> | 2 | Manual Page | Unix / Linux / MacOS | `(lldb) help register write`
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
 ### 3.8.7. Memory *(Advanced)*
 <small>`[Search Tags: >mmexam >exammm >mmexamine >examinemm >mmexamination >examinationmm >mmexaminating >examinatingmm >memexam >memexamine >memexamination >memexaminating >memoryexam >memoryexamine >memoryexamination >memoryexaminating >exammemory >examinememory >examinationmemory >examinatingmemory >heapexam >examheap >heapexamine >examineheap >heapexamination >examinationheap >heapexaminating >examinatingheap >memoryinsp >inspmemory >memoryinspct >inspctmemory >memoryinspect >inspectmemory >meminsp >meminspct >meminspect >mminsp >mminspct >mminspect]`</small>
 <br>
 <br>
 
-
-> TODO: ### 3.8.7. Memory *(Advanced)*
 
 Commands to:
 ---
@@ -4226,7 +4218,7 @@ You can inspect a your process's memory with the `memory` command:
 	> ```shell
 	> (lldb) memory read --format "bytes with ASCII" -- my_intPtr
 	> (lldb) x -f Y -- my_intPtr
-	> (lldb) x my_intPtr                                    # default
+	> (lldb) x my_intPtr
 	> 0x6040000006d0: 65 00 00 00 01 00 00 00 02 00 00 00 03 00 00 00  e...............
 	> 0x6040000006e0: 04 00 00 00 05 00 00 00 06 00 00 00 07 00 00 00  ................
 	>
@@ -4777,8 +4769,265 @@ You can inspect a your process's memory with the `memory` command:
 
 > TODO: ### 3.8.8. Instructions *(Advanced)*
 
+(lldb) apropos disassemble
+The following commands may relate to 'disassemble':
+  disassemble -- Disassemble specified instructions in the current target.
+                 Defaults to the current function for the current thread and
+                 stack frame.
+  di          -- Disassemble specified instructions in the current target.
+                 Defaults to the current function for the current thread and
+                 stack frame.
+  dis         -- Disassemble specified instructions in the current target.
+                 Defaults to the current function for the current thread and
+                 stack frame.
+
+(lldb) h disassemble
+     Disassemble specified instructions in the current target.  Defaults to
+     the current function for the current thread and stack frame.
+
+Syntax: disassemble <cmd-options>
+
+Command Options Usage:
+  disassemble [-bmr] -s <address-expression> [-C <num-lines>] [-P <plugin>] [-
+F <disassembly-flavor>] [-A <arch>] [-e <address-expression>]
+  disassemble [-bmr] -s <address-expression> [-C <num-lines>] [-P <plugin>] [-
+F <disassembly-flavor>] [-A <arch>] [-c <num-lines>]
+  disassemble [-bmr] [-C <num-lines>] [-P <plugin>] [-F <disassembly-flavor>]
+[-A <arch>] [-c <num-lines>] [-n <function-name>]
+  disassemble [-bfmr] [-C <num-lines>] [-P <plugin>] [-F <disassembly-flavor>]
+ [-A <arch>] [-c <num-lines>]
+  disassemble [-bmpr] [-C <num-lines>] [-P <plugin>] [-F <disassembly-flavor>]
+ [-A <arch>] [-c <num-lines>]
+  disassemble [-blmr] [-C <num-lines>] [-P <plugin>] [-F <disassembly-flavor>]
+ [-A <arch>]
+  disassemble [-bmr] [-C <num-lines>] [-P <plugin>] [-F <disassembly-flavor>]
+[-A <arch>] [-a <address-expression>]
+
+       -A <arch> ( --arch <arch> )
+            Specify the architecture to use from cross disassembly.
+
+       -C <num-lines> ( --context <num-lines> )
+            Number of context lines of source to show.
+
+       -F <disassembly-flavor> ( --flavor <disassembly-flavor> )
+            Name of the disassembly flavor you want to use.  Currently the
+            only valid options are default, and for Intel architectures, att
+            and intel.
+
+       -P <plugin> ( --plugin <plugin> )
+            Name of the disassembler plugin you want to use.
+
+       -a <address-expression> ( --address <address-expression> )
+            Disassemble function containing this address.
+
+       -b ( --bytes )
+            Show opcode bytes when disassembling.
+
+       -c <num-lines> ( --count <num-lines> )
+            Number of instructions to display.
+
+       -e <address-expression> ( --end-address <address-expression> )
+            Address at which to end disassembling.
+
+       -f ( --frame )
+            Disassemble from the start of the current frame's function.
+
+       -l ( --line )
+            Disassemble the current frame's current source line instructions
+            if there is debug line table information, else disassemble around
+            the pc.
+
+       -m ( --mixed )
+            Enable mixed source and assembly display.
+
+       -n <function-name> ( --name <function-name> )
+            Disassemble entire contents of the given function name.
+
+       -p ( --pc )
+            Disassemble around the current pc.
+
+       -r ( --raw )
+            Print raw disassembly with no symbol information.
+
+       -s <address-expression> ( --start-address <address-expression> )
+            Address at which to start disassembling.
+
+MANPAGES ::
+
+
+
+
+Backtrace and disassemble every time you stop.
+
+ —
+
+(lldb) target stop-hook add
+
+Enter your stop hook command(s). Type 'DONE' to end.
+
+> bt
+
+> disassemble --pc
+
+> DONE
+
+Stop hook #1 added.
+
+LLDB GDB TO LLDB COMMANDS :: https://lldb.llvm.org/use/map.html#execution-commands%20
+APPLE GUIDE :: https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html#//apple_ref/doc/uid/TP40012917-CH3-SW3 (scroll down)
+
+
+
+Disassemble the current function for the current frame.
+
+(gdb) disassemble
+
+(lldb) disassemble --frame
+
+(lldb) di -f
+
+Disassemble any functions named main.
+
+(gdb) disassemble main
+
+(lldb) disassemble --name main
+
+(lldb) di -n main
+
+Disassemble an address range.
+
+(gdb) disassemble 0x1eb8 0x1ec3
+
+(lldb) disassemble --start-address 0x1eb8 --end-address 0x1ec3
+
+(lldb) di -s 0x1eb8 -e 0x1ec3
+
+Disassemble 20 instructions from a given address.
+
+(gdb) x/20i 0x1eb8
+
+(lldb) disassemble --start-address 0x1eb8 --count 20
+
+(lldb) di -s 0x1eb8 -c 20
+
+Show mixed source and disassembly for the current function for the current frame.
+
+ —
+
+(lldb) disassemble --frame --mixed
+
+(lldb) di -f -m
+
+Disassemble the current function for the current frame and show the opcode bytes.
+
+ —
+
+(lldb) disassemble --frame --bytes
+
+(lldb) di -f -b
+
+Disassemble the current source line for the current frame.
+
+ —
+
+(lldb) disassemble --line
+
+(lldb) di -l
+
+LLDB GDB TO LLDB COMMANDS :: https://lldb.llvm.org/use/map.html#examining-thread-state
+APPLE GUIDE :: https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/gdb_to_lldb_transition_guide/document/lldb-command-examples.html#//apple_ref/doc/uid/TP40012917-CH3-SW7 (scroll down)
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+## 3.9. Self-Help Commands
+<small>`[Search Tags: ]`</small>
+<br>
+
+Contents
+---
+- [1 `help`](#tag)
+- [2 `apropos`](#tag)
+---
+
+> TODO: ## 3.9. Self-Help Commands
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque id diam vel quam elementum pulvinar. Orci nulla pellentesque dignissim enim. Magna fringilla urna porttitor rhoncus dolor purus. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Faucibus turpis in eu mi bibendum. Ultrices neque ornare aenean euismod elementum. Consectetur lorem donec massa sapien faucibus. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Rhoncus urna neque viverra justo nec ultrices dui. Sed faucibus turpis in eu mi bibendum.
 
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.9.1. `help`
+<small>`[Search Tags: ]`</small>
+<br>
+
+> TODO: ### 3.9.1. `help`
+
+
+(lldb) h h
+     Show a list of all debugger commands, or give details about a specific
+     command.
+
+Syntax: help <cmd-options> [<cmd-name> [<cmd-name> [...]]]
+
+Command Options Usage:
+  help [-ahu] [<cmd-name> [<cmd-name> [...]]]
+
+       -a ( --hide-aliases )
+            Hide aliases in the command list.
+
+       -h ( --show-hidden-commands )
+            Include commands prefixed with an underscore.
+
+       -u ( --hide-user-commands )
+            Hide user-defined commands from the list.
+
+     This command takes options and free-form arguments.  If your arguments
+     resemble option specifiers (i.e., they start with a - or --), you must
+     use ' -- ' between the end of the command options and the beginning of
+     the arguments.
+
+
+<br>
+<br>
+
+> ***Further Reading:***
+>
+> | # | Type               | Author                 | Link
+> | - | ------------------ | ---------------------- | --------------------------
+> | 1 | n/a               | n/a                    | n/a
+
+
+---
+[🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
+### 3.9.2. `apropos`
+<small>`[Search Tags: ]`</small>
+<br>
+
+> TODO: ### 3.9.2. `apropos`
+
+(lldb) h apropos
+     List debugger commands related to a word or subject.
+
+Syntax:
 
 <br>
 <br>
