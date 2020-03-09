@@ -57,9 +57,9 @@ QuickDocs \| Low Level Debugger (LLDB)
 		- [3.8.6. Registers *(Advanced)*](#386-registers)
 		- [3.8.7. Memory *(Advanced)*](#387-memory-advanced)
 		- [3.8.8. Instructions *(Advanced)*](#388-assembly-instructions)        <!-- TODO: do chapter -->
-	- [3.9. Self-Help](#39-selfhelp)                                            <!-- TODO: do chapter -->
-		- [3.9.1. Library: `apropos`](#391-library-apropos)                     <!-- TODO: do chapter -->
-		- [3.9.2. Documentation: `help`](#392-library-help)                     <!-- TODO: do chapter -->
+	- [3.9. Self-Help](#39-self-help)
+		- [3.9.1. Library: `apropos`](#391-library-apropos)
+		- [3.9.2. Documentation: `help`](#392-library-help)
 	- [3.10. Configure LLDB *(Advanced)*](#34-setup-lldb)                       <!-- TODO: do chapter -->
 		- [3.10.1. Settings](#)                                                 <!-- TODO: do chapter ::: Most important alias (on macosx, because homebrew): alias lldb='PATH="/usr/bin:/bin:/usr/sbin:/sbin" lldb' ::: By default, lldb does defined aliases to all common gdb process control commands (“s”, “step”, “n”, “next”, “finish”). If we have missed any, please add them to your ~/.lldbinit file using the “command alias” command. -->
 		- [3.10.2. Commands](#)                                                 <!-- TODO: do chapter -->
@@ -4959,7 +4959,7 @@ Contents
 - [2 Documentation: `help`](#tag)
 ---
 
-There are two tools for self-help, namely: `apropos` & `help`. The former lists all possibly relevant commands and aliases to your input; the latter, without passed input, lists all the possibly relevant `lldb` commands and aliases and, when passed input, lists documentation specific to your input, it's the `man` of `lldb` so to speak.
+There are two tools for self-help, namely: `apropos` & `help`. The former lists all possibly relevant commands and aliases to your input; the latter, without passed input, lists all `lldb` commands and aliases and, when passed input, lists documentation specific to your input, it's the `man` of `lldb` so to speak.
 
 
 <br>
@@ -4975,7 +4975,7 @@ There are two tools for self-help, namely: `apropos` & `help`. The former lists 
 
 ---
 [🏠](#contents) | [⬅️](#PREVIOUS) | [➡️](#NEXT)
-### 3.9.2. Library: `apropos`
+### 3.9.1. Library: `apropos`
 <small>`[Search Tags: >relevantcmds >relevantaliases >relevantinformation >relevantsearch]`</small>
 <br>
 
@@ -4993,6 +4993,8 @@ There are two tools for self-help, namely: `apropos` & `help`. The former lists 
 	>
 	> ```shell
 	> (lldb) apropos backtrace
+	> ```
+	> ```shell
 	> The following commands may relate to 'backtrace':
 	>   frame select     -- Select the current stack frame by index from within the
 	>                       current thread (see 'thread backtrace'.)
@@ -5041,8 +5043,6 @@ There are two tools for self-help, namely: `apropos` & `help`. The former lists 
 	> ```
 	>
 	> ***Example(s):***
-	>
-	> #### (1) List `LLDB` commands and aliases
 	> ```shell
 	> (lldb) help
 	> Debugger commands:
